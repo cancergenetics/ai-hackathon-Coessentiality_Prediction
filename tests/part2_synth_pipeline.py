@@ -25,6 +25,9 @@ from part2 import assoc, bench, confirm, controls, covariates as covmod, cscore,
 from part2.cmap import symbol  # noqa: E402
 
 REL_CTX = "data_cache/part2/contexts/context_table.parquet"
+# registered permutation count (H3a/H3b/H2 registry `statistic`: 10,000 permutations, GPD tail only when p_perm < 1e-4);
+# with fewer, the exact permutation p floors at 1/(B+1) and BB at q*R/M over ~90 units/family has no power
+N_PERM = 10_000
 
 
 # ------------------------------------------------------------------------------------------------ repo
@@ -138,7 +141,8 @@ def _scores_for(E, fmap, units, ctxs, annot):
 def _metrics(res, truth, expected=frozenset(), null_units=None, planted=None):
     """False positive: a discovery not in `truth` (nor `expected`); with null_units (H3a one-vs-rest), only
     discoveries on units carrying no planted signal at all count as false (weak true one-vs-rest differences on
-    signal-carrying units, |diff| < 0.03, are reported as 'other'). Power over `planted` (default truth)."""
+    signal-carrying units, |diff| < 0.03, are reported as 'other'). Power over `planted` (default truth). fdp = pooled
+    FDP over all discoveries; fdp_bb = BB's error rate (mean over selected context families of the family FDP)."""
     d = set(map(tuple, res.loc[res.discovery, ["context", "unit"]].values))
     planted = truth if planted is None else planted
     fp = d - truth - set(expected)
@@ -147,9 +151,17 @@ def _metrics(res, truth, expected=frozenset(), null_units=None, planted=None):
         other = {x for x in fp if x[1] not in null_units}
         fp = fp - other
     tp = d & planted
+    # Benjamini-Bogomolov (families = contexts) controls E[average over selected families of the within-family FDP],
+    # not the pooled FDP over all discoveries; every BB-selected family has >= 1 rejection, so the selected families
+    # are the contexts with a discovery (results/part2/verify/h3a_fdr_diagnosis.md)
+    fam = {}
+    for x in d:
+        fam.setdefault(x[0], [0, 0])[0] += 1
+        fam[x[0]][1] += x in fp
+    fdp_bb = sum(v / r for r, v in fam.values()) / max(len(fam), 1)
     return dict(n_discoveries=len(d), true_pos=len(d & truth), false_pos=len(fp), other=len(other),
                 n_truth=len(truth), n_planted=len(planted), power=len(tp) / len(planted) if planted else None,
-                fdp=len(fp) / max(len(d), 1))
+                fdp=len(fp) / max(len(d), 1), fdp_bb=fdp_bb, n_families_selected=len(fam))
 
 
 def _h3_metrics(res, sim, key):
@@ -158,7 +170,7 @@ def _h3_metrics(res, sim, key):
     return _metrics(res, sim.truth["H3b"])
 
 
-def discovery(sim, proj, inputs, n_perm=2000, groups=True, save=True):
+def discovery(sim, proj, inputs, n_perm=N_PERM, groups=True, save=True):
     """H3a + H3b discovery runs. Returns dict with results, score frames, covariates."""
     tab = pd.read_parquet(proj.root / REL_CTX)
     E_A = assoc.load_A_effects(proj=proj)
@@ -177,7 +189,7 @@ def discovery(sim, proj, inputs, n_perm=2000, groups=True, save=True):
     return E_A, tab, out
 
 
-def run_pipeline(sim: synth.Synth, root: Path, n_perm: int = 2000, K: int = 1000, B_bench: int = 200) -> dict:
+def run_pipeline(sim: synth.Synth, root: Path, n_perm: int = N_PERM, K: int = 1000, B_bench: int = 200) -> dict:
     T, t0 = {}, time.time()
     loss, kind, events = h1_inputs(sim)
     R = build_repo(root, sim, events)
@@ -378,7 +390,7 @@ def synth_commit(root, msg):
 
 # ------------------------------------------------------------------------------------------------ null / power sims
 def fdr_sims(n_sims: int = 50, seed0: int = 10_000, null: bool = True, lineage_null: bool = True, effect: float = 0.3,
-             n_perm: int = 1000, workdir: Path | None = None) -> pd.DataFrame:
+             n_perm: int = N_PERM, workdir: Path | None = None) -> pd.DataFrame:
     rows = []
     with tempfile.TemporaryDirectory(dir=workdir) as td:
         for i in range(n_sims):
@@ -407,6 +419,7 @@ if __name__ == "__main__":
         global_null_50=dict(H3a_mean_fdp=float(nul.H3a_fdp.mean()), H3b_mean_fdp=float(nul.H3b_fdp.mean())),
         H3b_null_with_confounded_lineage_effects_50=dict(H3b_mean_fdp=float(nul_conf.H3b_fdp.mean()),
                                                          H3a_mean_fdp=float(nul_conf.H3a_fdp.mean()),
+                                                         H3a_mean_fdp_bb=float(nul_conf.H3a_fdp_bb.mean()),
                                                          H3a_power=float(nul_conf.H3a_power.mean())),
         planted_effect015_20=dict(H3a_mean_fdp=float(mix.H3a_fdp.mean()), H3b_mean_fdp=float(mix.H3b_fdp.mean()),
                                   H3a_power=float(mix.H3a_power.mean()), H3b_power=float(mix.H3b_power.mean())),

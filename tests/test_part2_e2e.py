@@ -22,7 +22,7 @@ Q = 0.05
 
 @pytest.fixture(scope="module")
 def run(tmp_path_factory):
-    return P.run_pipeline(synth.simulate(1), tmp_path_factory.mktemp("e2e") / "repo", n_perm=1000, K=1000,
+    return P.run_pipeline(synth.simulate(1), tmp_path_factory.mktemp("e2e") / "repo", n_perm=P.N_PERM, K=1000,
                           B_bench=100), tmp_path_factory
 
 
@@ -77,7 +77,12 @@ def test_fdr_global_null_50():
 
 def test_fdr_h3b_null_with_confounded_lineage_effects_50():
     """No genotype effects, but planted lineage effects incl. Pancreas on a complex while KRAS is enriched in
-    Pancreas: lineage_FE must keep H3b at the null; H3a must find the lineage effects without false units."""
+    Pancreas: lineage_FE must keep H3b at the null; H3a must find the lineage effects without false units.
+    H3a's registered error rate is Benjamini-Bogomolov's (families = contexts): the expected average, over selected
+    context families, of the within-family FDP. The pooled FDP over all H3a discoveries is not controlled by BB (each
+    family's BH admits ~a(T_f + 1) false discoveries for T_f true ones; ~1.4 true per family here gives pooled
+    ~0.066 with exact p-values, results/part2/verify/h3a_fdr_diagnosis.md), so it is reported, not bounded."""
     df = P.fdr_sims(50, seed0=20_000, null=True, lineage_null=False)
     assert _binom_ok(int((df.H3b_fdp > 0).sum()), len(df)), df.H3b_fdp.mean()
-    assert df.H3a_fdp.mean() <= Q + 0.02 and df.H3a_power.mean() >= 0.95
+    assert df.H3a_fdp_bb.mean() <= Q + 0.02, (df.H3a_fdp_bb.mean(), df.H3a_fdp.mean())
+    assert df.H3a_power.mean() >= 0.95, df.H3a_power.mean()

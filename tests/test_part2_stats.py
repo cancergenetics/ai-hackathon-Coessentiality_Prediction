@@ -115,6 +115,21 @@ def test_gpd_tail():
     assert stats.perm_pvalue(1.0, null, "greater") == pytest.approx((np.sum(null >= 1.0) + 1) / 20001)
 
 
+def test_gpd_only_below_registered_resolution():
+    """Registered rule (H3a/H3b/H2 `statistic`): GPD tail only when p_perm < 1e-4. Above that the exact permutation p
+    (k + 1) / (B + 1) is returned, even with < 10 exceedances: the GPD extrapolation's noise made the re-entered p
+    anti-conservative at BH thresholds (size 1.4-1.7x at 5e-4..2e-3 with B = 1000; results/part2/verify/
+    h3a_fdr_diagnosis.md)."""
+    rng = np.random.default_rng(5)
+    null = rng.normal(size=1000)
+    for t in (2.8, 3.1, 6.0):                                   # 0-5 exceedances: still the exact p at B = 1000
+        assert stats.perm_pvalue(t, null, "greater") == (np.sum(null >= t) + 1) / 1001
+    null = rng.normal(size=10000)
+    t = 3.0                                                   # p ~ 1.3e-3: exact permutation p at B = 10,000
+    assert stats.perm_pvalue(t, null, "greater") == (np.sum(null >= t) + 1) / 10001
+    assert stats.perm_pvalue(5.0, null, "greater") < 1e-4      # beyond every permutation: GPD tail
+
+
 def test_bh_known_answer():
     p = np.array([0.001, 0.008, 0.039, 0.041, 0.042, 0.06, 0.074, 0.205, 0.212, 0.216])
     rej, adj = stats.bh(p, 0.05)

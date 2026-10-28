@@ -123,15 +123,18 @@ def freedman_lane(y, X, j: int, perms: np.ndarray, alternative: str = "two-sided
 
 
 def perm_pvalue(t_obs: float, t_null: np.ndarray, alternative: str = "two-sided", gpd: bool = True,
-                n_exc: int = 250, min_exceed: int = 10) -> float:
-    """(1 + #exceed) / (B + 1); if fewer than min_exceed exceedances and gpd, a generalised Pareto tail is fitted to
-    the n_exc largest null statistics (Knijnenburg et al. 2009) and p = (n_exc / B) * (1 - F_GPD(t - u))."""
+                n_exc: int = 250, min_exceed: int = 10, gpd_below: float = 1e-4) -> float:
+    """(1 + #exceed) / (B + 1); only when that empirical p is below gpd_below (registered rule: 'GPD tail when
+    p_perm < 1e-4', with 10,000 permutations) and there are fewer than min_exceed exceedances is a generalised Pareto
+    tail fitted to the n_exc largest null statistics (Knijnenburg et al. 2009): p = (n_exc / B) * (1 - F_GPD(t - u)).
+    The empirical p is exactly valid; the GPD estimate is not (its noise makes P(p_hat <= x) > x at small x), so it is
+    confined to the range the permutations cannot resolve (results/part2/verify/h3a_fdr_diagnosis.md)."""
     s = {"two-sided": np.abs, "greater": lambda v: v, "less": lambda v: -v}[alternative]
     T, tn = float(s(np.asarray(t_obs))), s(np.asarray(t_null, float))
     B = len(tn)
     k = int(np.sum(tn >= T))
     p_emp = (k + 1) / (B + 1)
-    if not gpd or k >= min_exceed or B < 4 * n_exc:
+    if not gpd or k >= min_exceed or B < 4 * n_exc or p_emp >= gpd_below:
         return float(p_emp)
     srt = np.sort(tn)[::-1]
     u = 0.5 * (srt[n_exc - 1] + srt[n_exc])
