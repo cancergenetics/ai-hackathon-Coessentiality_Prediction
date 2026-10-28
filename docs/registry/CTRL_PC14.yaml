@@ -1,0 +1,81 @@
+# Pre-registered control PC14 (DESIGN v3.1 2.7). Drafted at FZ-R; only the fields listed in `pending`
+# may change before the first run (filled at FZ-C / FZ-X; check with part2.registry.fill_only_changes).
+id: CTRL_PC14
+direction: controls
+hypothesis: |
+  RB1-LoF lines are less dependent on CDK4, CDK6 and CCND1 (gene level only).
+sign: "-"
+context_family:
+  name: "PC14 context"
+  contexts:
+    - id: LoF:RB1
+      definition: "LoF(RB1); MSI-H lines NaN"
+      reference: "no LoF(RB1) (MSS lines)"
+      n_A: 49
+      ref_A: 850
+      n_L: 17
+      ref_L: 283
+      size_class_A: confirmatory
+      lockbox_testable: true
+control:
+  design_id: PC14
+  level: "G"
+  design_sign: "-"
+  sign_mapping: "Same as DESIGN. '-' = less dependent (higher gene effect) in context = 1 than in the reference; alternative = greater"
+  targets: [CDK4, CDK6, CCND1]
+  gene_units:
+    - "CDK4 (1019)"
+    - "CDK6 (1021)"
+    - "CCND1 (595)"
+  complex_unit: "none (gene level only; DESIGN 2.6 'gene-level only')"
+  removed_members: "not applicable (gene level only)"
+complex_set_hash: 162e0f3c4391022a
+score: gene
+covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+covariate_rule: "DESIGN 2.5 covariate set for this context type; no covariate is a function of the context (DESIGN 2.2)"
+statistic: >
+  HC3 OLS t with Satterthwaite df, one test per unit (gene units and the complex unit), one-sided at
+  alpha = 0.05 in A (alternative = less for '+', greater for '-'); complete-case per test, n reported.
+  No multiplicity correction: fixed denominator of 23 control entries (DESIGN 2.7).
+fdr_family:
+  method: none
+  q: 0.05
+family_m:
+  formula: "number of gene units + 1 if the complex unit is evaluable (one one-sided test each)"
+  value: 3
+kill_rule:
+  direction: none
+  counted: false
+  rule: "gene-level only control (DESIGN 2.6): reported, never counted toward any direction"
+lockbox:
+  testable: true
+  n_L: 17
+  confirmation_rule: >
+    Reported, not part of the kill rule. Same sign and one-sided p < 0.05 in L at the same level and
+    readout (HC3, Satterthwaite df; exact PatientID-blocked within-lineage Freedman-Lane
+    permutation, 10,000 permutations, when fewer than 20 context models are in L).
+    Requires >= 5 context and >= 5 reference models in L.
+  rare_route: >
+    If not lockbox-testable: leave-one-lineage-out (LOSO) same sign, DEMETER2 on A models same sign,
+    and leave-one-model-out same sign; labelled 'not lockbox-testable'.
+  target_list: results/part2/lockbox_targets/CTRL_PC14.json
+multiverse:
+  scores: [eigengene, within_line_rank, expression_masked, pan_essential_referenced]
+  covariate_sensitivity: [NNMD, doubling_time, CasActivity, GrowthPattern]
+  robustness: [leave-one-lineage-out (LOSO) same sign p < 0.05, leave-top-2-out same sign p < 0.05, breadth]
+  use: "reported per control; never selected; the kill rule uses the primary readout only"
+seeds:
+  permutation: 4413
+success_criterion: "recovered: expected sign with one-sided HC3 p < 0.05 in A at the complex level (gene level for this gene-only control); lockbox confirmation reported separately"
+stopping_rule: >
+  Runs once, in the single controls script after FZ-C and FZ-X, together with every other control
+  entry; no re-run and no change of readout, covariates or context after results are seen. The kill-rule
+  tally uses A results only and is committed before any direction's discovery run. Then one lockbox read
+  (crispr) for this entry, after which status is set to closed.
+frozen_inputs:
+  - results/part2/contexts/checksums.json
+  - results/part2/lockbox/manifest.json
+  - FZ-X   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
+pending:
+  - "frozen_inputs[2]"
+status: open

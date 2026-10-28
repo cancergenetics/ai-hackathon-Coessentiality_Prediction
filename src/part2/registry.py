@@ -6,7 +6,10 @@ flow sequences ``[a, b]``, block scalars ``|`` / ``>``, single/double-quoted str
 true/false/null, ``#`` comments. Anything else (anchors, tags, multi-document streams, flow mappings) is rejected.
 
 An entry is usable by run_association / read_lockbox only if it validates AND its file is committed in git with no
-uncommitted modification (the committed blob SHA is recorded in every trial / ledger line).
+uncommitted modification (the committed blob SHA is recorded in every trial / ledger line) AND it holds no freeze
+placeholder. Entries drafted at FZ-R before the complex map exists carry the placeholders ``FZ-C`` / ``FZ-X`` (listed
+in ``pending``); such an entry is registered (it counts for the lockbox read order) but cannot be run until the PI fills
+the placeholders in a commit that changes nothing else (checked with ``fill_only_changes``).
 """
 from __future__ import annotations
 
@@ -20,6 +23,12 @@ SIGNS = ("+", "-", "two-sided", "per-context")
 SCORES = ("S_C_mean_winsor3", "eigengene", "within_line_rank", "expression_masked", "pan_essential_referenced",
           "gene", "submodule_vs_sibling", "member_resolved")
 STATUSES = ("open", "closed")
+FDR_METHODS = ("benjamini_bogomolov", "bh", "stagewise_bb", "none")
+PLACEHOLDERS = ("FZ-C", "FZ-X")                              # value filled at the named freeze point (DESIGN §0 F4)
+OPTIONAL = {                                                 # type-checked when present; other extra keys are free
+    "pending": list, "family_m": dict, "multiverse": dict, "lockbox": dict, "kill_rule": dict, "run_after": list,
+    "statistic": str, "control": dict, "calibration": dict, "seeds": dict,
+}
 REQUIRED = {
     "id": str, "direction": str, "hypothesis": str, "sign": str, "context_family": dict, "complex_set_hash": str,
     "score": str, "covariates": list, "fdr_family": dict, "success_criterion": str, "stopping_rule": str,
@@ -236,8 +245,12 @@ def validate(entry: dict, stem: str | None = None) -> list[str]:
         errs.append(f"score must be one of {SCORES}")
     if entry["status"] not in STATUSES:
         errs.append(f"status must be one of {STATUSES}")
-    if not re.match(r"^[0-9a-f]{16,64}$", str(entry["complex_set_hash"])):
-        errs.append("complex_set_hash: 16-64 lowercase hex characters (part2.registry.set_hash of the tested units)")
+    if entry["complex_set_hash"] not in PLACEHOLDERS and not re.match(r"^[0-9a-f]{16,64}$", entry["complex_set_hash"]):
+        errs.append("complex_set_hash: 16-64 lowercase hex characters (part2.registry.set_hash of the tested units) "
+                    f"or a freeze placeholder {PLACEHOLDERS}")
+    for k, t in OPTIONAL.items():
+        if k in entry and not isinstance(entry[k], t):
+            errs.append(f"{k}: expected {t.__name__}")
     if not all(isinstance(c, str) and c for c in entry["covariates"]):
         errs.append("covariates: list of non-empty strings")
     if not all(isinstance(c, str) and c for c in entry["frozen_inputs"]):
@@ -246,8 +259,11 @@ def validate(entry: dict, stem: str | None = None) -> list[str]:
     if not isinstance(cf.get("name"), str):
         errs.append("context_family.name missing")
     ctxs = cf.get("contexts")
-    if not isinstance(ctxs, list) or not ctxs:
-        errs.append("context_family.contexts: non-empty list")
+    if ctxs == "FZ-X":
+        if not isinstance(cf.get("enumeration_rule"), str) or not cf["enumeration_rule"].strip():
+            errs.append("context_family.contexts = FZ-X needs context_family.enumeration_rule")
+    elif not isinstance(ctxs, list) or not ctxs:
+        errs.append("context_family.contexts: non-empty list (or the placeholder FZ-X with an enumeration_rule)")
     else:
         ids = []
         for i, c in enumerate(ctxs):
@@ -257,16 +273,73 @@ def validate(entry: dict, stem: str | None = None) -> list[str]:
             ids.append(c["id"])
             if entry["sign"] == "per-context" and c.get("sign") not in ("+", "-", "two-sided"):
                 errs.append(f"context {c['id']}: sign required when sign is per-context")
+            if "covariates" in c and not (isinstance(c["covariates"], list) and
+                                          all(isinstance(x, str) and x for x in c["covariates"])):
+                errs.append(f"context {c['id']}: covariates must be a list of strings (overrides the entry list)")
         if len(set(ids)) != len(ids):
             errs.append("context ids not unique")
     ff = entry["fdr_family"]
-    if ff.get("method") not in ("benjamini_bogomolov", "bh", "none"):
-        errs.append("fdr_family.method: benjamini_bogomolov | bh | none")
+    if ff.get("method") not in FDR_METHODS:
+        errs.append("fdr_family.method: " + " | ".join(FDR_METHODS))
+    if ff.get("method") == "stagewise_bb":
+        par = ff.get("parent_directions")
+        if not isinstance(par, list) or not par or not set(par) <= set(DIRECTIONS):
+            errs.append("fdr_family.parent_directions: non-empty list of directions (stagewise_bb)")
     if not isinstance(ff.get("q"), (int, float)) or not 0 < ff["q"] < 1:
         errs.append("fdr_family.q in (0, 1)")
     if ff.get("method") == "benjamini_bogomolov" and ff.get("families") not in ("contexts", "complexes"):
         errs.append("fdr_family.families: contexts | complexes")
+    fm = entry.get("family_m")
+    if isinstance(fm, dict) and not isinstance(fm.get("formula"), str):
+        errs.append("family_m.formula: string")
+    ph = placeholders(entry)
+    pend = entry.get("pending", [])
+    if isinstance(pend, list) and sorted(map(str, pend)) != sorted(ph):
+        errs.append(f"pending must list exactly the fields holding freeze placeholders: {sorted(ph)}")
+    if ph and entry["status"] == "closed":
+        errs.append("a closed entry cannot hold freeze placeholders")
     return errs
+
+
+def placeholders(x, prefix: str = "") -> list[str]:
+    """Dotted paths (list items as [i]) of every value equal to a freeze placeholder (FZ-C / FZ-X)."""
+    if isinstance(x, dict):
+        return [p for k, v in x.items() if not (k == "pending" and not prefix)
+                for p in placeholders(v, f"{prefix}.{k}" if prefix else k)]
+    if isinstance(x, list):
+        return [p for i, v in enumerate(x) for p in placeholders(v, f"{prefix}[{i}]")]
+    return [prefix] if isinstance(x, str) and x in PLACEHOLDERS else []
+
+
+def _leaves(x, prefix: str = ""):
+    if isinstance(x, dict) and x:
+        for k, v in x.items():
+            yield from _leaves(v, f"{prefix}.{k}" if prefix else k)
+    elif isinstance(x, list) and x:
+        for i, v in enumerate(x):
+            yield from _leaves(v, f"{prefix}[{i}]")
+    else:
+        yield prefix, x
+
+
+def fill_only_changes(old: dict, new: dict) -> list[str]:
+    """Paths that differ between two versions of an entry and are NOT the fill of a pending placeholder of `old`.
+    An empty list means the edit only replaced placeholders (and removed them from `pending`). Run it on the
+    committed FZ-R version vs the filled version before committing a fill at FZ-C / FZ-X."""
+    allowed = [str(a) for a in old.get("pending", [])]
+    lo, ln = dict(_leaves(old)), dict(_leaves(new))
+    bad = []
+    for path in sorted(set(lo) | set(ln)):
+        if path in lo and path in ln and lo[path] == ln[path]:
+            continue
+        if path == "pending" or path.startswith("pending["):
+            continue
+        if any(path == a or path.startswith(a + ".") or path.startswith(a + "[") for a in allowed):
+            continue
+        bad.append(path)
+    if not set(map(str, new.get("pending", []))) <= set(allowed):
+        bad.append("pending (new placeholders added)")
+    return bad
 
 
 def set_hash(units) -> str:
@@ -301,7 +374,8 @@ def committed_blob(root, path) -> str:
     return r.stdout.strip()
 
 
-def load_entry(registry_dir, analysis_id: str, root=None, require_committed: bool = True) -> tuple[dict, str | None]:
+def load_entry(registry_dir, analysis_id: str, root=None, require_committed: bool = True,
+               allow_pending: bool = False) -> tuple[dict, str | None]:
     if not re.match(r"^[A-Za-z0-9_.\-]+$", str(analysis_id)):
         raise RegistryError(f"bad analysis id {analysis_id!r}")
     p = Path(registry_dir) / f"{analysis_id}.yaml"
@@ -311,6 +385,10 @@ def load_entry(registry_dir, analysis_id: str, root=None, require_committed: boo
     errs = validate(entry, analysis_id)
     if errs:
         raise RegistryError(f"{p.name}: " + "; ".join(errs))
+    ph = placeholders(entry)
+    if ph and not allow_pending:
+        raise RegistryError(f"{analysis_id} holds unfilled freeze placeholders {ph}: fill them at FZ-C/FZ-X "
+                            "(fill_only_changes) and commit before running it or reading the lockbox")
     blob = committed_blob(root, p) if require_committed else None
     return entry, blob
 

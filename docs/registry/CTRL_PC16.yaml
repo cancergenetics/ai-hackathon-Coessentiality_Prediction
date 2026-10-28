@@ -1,0 +1,82 @@
+# Pre-registered control PC16 (DESIGN v3.1 2.7). Drafted at FZ-R; only the fields listed in `pending`
+# may change before the first run (filled at FZ-C / FZ-X; check with part2.registry.fill_only_changes).
+id: CTRL_PC16
+direction: controls
+hypothesis: |
+  KMT2A-rearranged lines are more dependent on MEN1 and MLLT1 than lines without KMT2A-r (NPM1-mutant lines
+  removed from the reference; gene level only).
+sign: "+"
+context_family:
+  name: "PC16 context"
+  contexts:
+    - id: KMT2A_r_vs_nonNPM1c
+      definition: "KMT2A-r; reference excludes NPM1-mutant (damaging >= 1) lines (PC16)"
+      reference: "no KMT2A-r and no NPM1 damaging mutation"
+      n_A: 10
+      ref_A: 947
+      n_L: 3
+      ref_L: 314
+      size_class_A: exploratory
+      lockbox_testable: false
+control:
+  design_id: PC16
+  level: "G"
+  design_sign: "+"
+  sign_mapping: "Same as DESIGN. '+' = more dependent (lower gene effect) in context = 1 than in the reference; alternative = less"
+  targets: [MEN1, MLLT1]
+  gene_units:
+    - "MEN1 (4221)"
+    - "MLLT1 (4298)"
+  complex_unit: "none (gene level only; DESIGN 2.6 'gene-level only')"
+  removed_members: "not applicable (gene level only)"
+  note: "n_A = 10 < 12: exploratory size; reported with the fixed denominator, never counted."
+complex_set_hash: 4270cdc648cd1ec3
+score: gene
+covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+covariate_rule: "fusion context: no burden/MSIScore (not a mutation context); no function of the context among covariates"
+statistic: >
+  HC3 OLS t with Satterthwaite df, one test per unit (gene units and the complex unit), one-sided at
+  alpha = 0.05 in A (alternative = less for '+', greater for '-'); complete-case per test, n reported.
+  No multiplicity correction: fixed denominator of 23 control entries (DESIGN 2.7).
+fdr_family:
+  method: none
+  q: 0.05
+family_m:
+  formula: "number of gene units + 1 if the complex unit is evaluable (one one-sided test each)"
+  value: 2
+kill_rule:
+  direction: none
+  counted: false
+  rule: "gene-level only control (DESIGN 2.6): reported, never counted toward any direction"
+lockbox:
+  testable: false
+  n_L: 3
+  confirmation_rule: >
+    Reported, not part of the kill rule. Same sign and one-sided p < 0.05 in L at the same level and
+    readout (HC3, Satterthwaite df; exact PatientID-blocked within-lineage Freedman-Lane
+    permutation, 10,000 permutations, when fewer than 20 context models are in L).
+    Requires >= 5 context and >= 5 reference models in L.
+  rare_route: >
+    If not lockbox-testable: leave-one-lineage-out (LOSO) same sign, DEMETER2 on A models same sign,
+    and leave-one-model-out same sign; labelled 'not lockbox-testable'.
+  target_list: results/part2/lockbox_targets/CTRL_PC16.json
+multiverse:
+  scores: [eigengene, within_line_rank, expression_masked, pan_essential_referenced]
+  covariate_sensitivity: [NNMD, doubling_time, CasActivity, GrowthPattern]
+  robustness: [leave-one-lineage-out (LOSO) same sign p < 0.05, leave-top-2-out same sign p < 0.05, breadth]
+  use: "reported per control; never selected; the kill rule uses the primary readout only"
+seeds:
+  permutation: 4415
+success_criterion: "recovered: expected sign with one-sided HC3 p < 0.05 in A at the complex level (gene level for this gene-only control); lockbox confirmation reported separately"
+stopping_rule: >
+  Runs once, in the single controls script after FZ-C and FZ-X, together with every other control
+  entry; no re-run and no change of readout, covariates or context after results are seen. The kill-rule
+  tally uses A results only and is committed before any direction's discovery run. Then one lockbox read
+  (crispr) for this entry, after which status is set to closed.
+frozen_inputs:
+  - results/part2/contexts/checksums.json
+  - results/part2/lockbox/manifest.json
+  - FZ-X   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
+pending:
+  - "frozen_inputs[2]"
+status: open
