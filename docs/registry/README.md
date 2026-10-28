@@ -42,7 +42,7 @@ The git blob SHA of the committed entry is written to every trial line (`results
 Field extensions (FZ-R):
 - `complex_set_hash` may be the placeholder `FZ-C` or `FZ-X`.
 - `context_family.contexts` may be `FZ-X` (with `context_family.enumeration_rule`). A context item may also carry `covariates` (a list that overrides the entry list for that context; the §2.2 covariate rule is applied per context), `role` (`primary`, the default, or `sensitivity`: registered so it can be run for discovered hits, never part of the family or of m), `removed_members`, `type`, `n_A`/`ref_A`/`n_L`/`ref_L` and `lockbox_testable` (FZ-LB counts from `results/part2/lockbox/context_counts.tsv`).
-- `fdr_family.method` may be `stagewise_bb` (H2; needs `parent_directions`). `run_association` refuses it until it is implemented.
+- `fdr_family.method` may be `stagewise_bb` (H2; needs `parent_directions`). `run_association` runs it only with a `parent_selection` (`assoc.parent_selection_from` the parent directions' discovery tables) and only when every parent direction has a discovery line in the committed `trials.jsonl`; it tests only the eligible (context, sub-module) pairs, BH within each (context, parent) family at q·R_x/m_x.
 
 ## Optional fields (type-checked when present)
 
@@ -113,3 +113,5 @@ status: open
 ```
 
 `genes` are the outcome columns returned for the lockbox models. Before any outcome is loaded, the read is appended to `results/part2/lockbox_ledger.jsonl` and committed. There is one read per entry and per source (`crispr`, `demeter2`).
+
+An entry with no discovery is closed with a zero-target list (`"genes": [], "zero_targets": true`): the ledger line is committed and nothing is read. The confirmation step (`part2.confirm`: `write_target_list` → `confirm_entry` → `close_entry`) writes `results/part2/assoc/<id>/confirmation_<source>.json` and sets `status: closed` in a commit that changes nothing else. `benchmark` / `bridge` reads are refused until every confirmatory entry has a ledger line **and** is committed with `status: closed`.
