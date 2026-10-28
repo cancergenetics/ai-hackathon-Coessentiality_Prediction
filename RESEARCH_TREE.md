@@ -43,7 +43,7 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - [x] FZ-C (27fa9b2; tiers/bridge 9498d05; merged 262e7b6): selected z0=6, k=10 (split-half 0.343). zavg 367 complexes / 3,642 genes / 132 sub-modules, 28% locus-flagged. Tiers: 159 T1 / 74 T2 / 124 T3-neg / 10 T3-nc. Runtime: score runs 70 min, selection 69 min, map build ~4 min.
   - [-] Bridge (primary methods endpoint): ΔBioPlex precision zavg − GLS −0.025 [−0.075, 0.031], null. Non-locus +0.003. Protein co-abundance favours GLS (−0.061 [−0.101, −0.018]). Pair-AP vs BioPlex: zavg 0.0345, Pearson 0.0223, GLS 0.0215.
   - [x] FZ-C independent review (e0d17c0): ACCEPT-WITH-NOTES; byte-identical rebuild (444 s)
-  - [ ] Map-to-map variability over 20 bootstrap maps (before G2)
+  - [x] Map-to-map variability (134a31c; PI re-ran analyse stage, identical): median best-match Jaccard of frozen complexes in bootstrap maps, zavg 0.69 (73% ≥0.5; 3–4 genes 0.50, 17–60 genes 0.82) vs GLS 0.67 (71%); random size-matched sets 0.05–0.08 (96% of zavg complexes above random P95); pairwise ARI zavg 0.754 / GLS 0.747 (covered genes). Runtime 325 s + 32 s. Not independent of the frozen map (same subsamples); random baseline is a floor.
   - [x] Association engine (48d1076; synthetic). H3a FDR fix 02f62ee (BB rate 0.046, pooled 0.068 over 1,000 simulations)
   - [ ] FZ-X: registry fills (complex-set hash, m per family), H1 events, lockbox-testable list
   - [ ] Controls run → H3a → H3b → H1 → H2 → lockbox confirmations → BENCH / BRIDGE-L
