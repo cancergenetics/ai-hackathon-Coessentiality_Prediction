@@ -1,14 +1,13 @@
-# LESSONS.md — process rules (rule + evidence)
-
-Inherited from Part 1 (external/part1_locked/LESSONS.md), still applicable:
-1. Reviewers and non-evaluating agents get no test-label access; say "compute no metric on test pairs" in every brief until the test look. (Part 1 D1 contamination.)
-2. Fix PYTHONHASHSEED and seeds for any graph/community code; regenerate in a subprocess to test determinism. (Part 1 Louvain tie-break bug.)
-3. Run a power simulation before freezing any statistical gate. (Part 1 D2.)
-4. Verifiers re-implement from raw data and sweep neighbouring configs. (Part 1 a2f8622/460fd36.)
-5. Pre-register the exact look command before a held-out look; one look. (Part 1 IFT look #1 clean.)
-6. Update the tree in the same commit as each result. (Part 1 tree went stale.)
-7. torch and LightGBM in one pytest process can deadlock on OpenMP; separate processes. (Part 1 final suite.)
-
-Project 2:
-8. Audit briefs must forbid counting test pairs inside any score-derived list (top-k tables are metrics in disguise). (D1: audit agent computed test hits in the z≥3 table.)
-9. Request all external data in one batch right after the literature review's dataset section, not piecemeal. (Two request rounds were needed on day 1.)
+# LESSONS.md — process rules (rule + evidence). Pruned at M2 (docs/retros/retro_M2.md).
+1. Non-evaluating agents and reviewers get no test-label access; every brief says "compute no metric, score or count on test pairs", including top-k/score-threshold tables (they are metrics in disguise). (Part 1 D1; project D1; BRIEF_round1/2.md)
+2. Fix PYTHONHASHSEED and all seeds for graph/community code; verify determinism by regenerating in a subprocess. (Part 1 Louvain tie-break bug)
+3. Run a power simulation before freezing any statistical gate or CI scheme (and check the CI is well-defined: B, resampling unit, size matching). (Part 1 D2; round3_final B1)
+4. Verifiers get only protocol + raw inputs, re-implement from raw data, sweep neighbouring configs, and report before seeing the harness numbers. (Part 1 a2f8622/460fd36; round1_ai_failure SHOULD-4)
+5. Pre-register the exact look command; commit the "started" record before reading labels; one look; a relook is non-confirmatory. (Part 1 IFT look 1; round2_ai_failure M-B3)
+6. Update the tree in the same commit as each result, and grep any "disclosed/see file X/done" claim against the file before writing it. (Part 1 stale tree; round1_pi M1; round2_pi gap)
+7. torch and LightGBM in one pytest process can deadlock on OpenMP; use separate processes. (Part 1 final suite)
+8. Request all external data in one batch right after the literature review's dataset section. (day-1 two request rounds; d6bf744)
+9. Before any gate that needs a clean tree or pinned env, commit or isolate (worktree/own venv) concurrent agents' work; never let two writers share a gated tree. (round3_final untracked files; round2_ai_failure S-B5)
+10. Draw the data-flow order (who is built on which split, who reads the lockbox when) before hardening code; review structure before harness. (round3_final B2/B3; round1_ai_failure MUST-7)
+11. Reviews: independent roles, MUST/SHOULD/COULD, require label-free runs (tests, gate calls, scratch-repo simulations) and apply the real freeze edit as a test on the final artifact. (round2_ai_failure M-B1; round1_ai_failure)
+12. Commit compact summaries + hashes, not repeated multi-thousand-line generated JSON; one source for version labels. (958cfda 12k-line diff; round3_final version label drift)
