@@ -26,9 +26,9 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - [x] R3: final reviewer → DESIGN v3.1 (3 blocking fixes); protocol ready to freeze
 - [ ] P1 Test-set evaluation
   - [x] Part 1 audit → docs/part1_audit.md: PASS (timeline, references, content, hyper-parameters); test set pair-disjoint from train; 1,121 test proteins (329 shared with train)
-  - [~] TEST_PROTOCOL v1.2 + harness ready; freeze + look pending clean tree
-  - [ ] Score test pairs: zavg_BEF + Pearson/Spearman/GLS; metrics + bootstrap CIs + calibration
-  - [ ] Independent re-derivation
+  - [x] TEST_PROTOCOL v1.2 frozen 039a843 (marker sha 524c4d68…); intent ab674b7; started 7afcf06 (before labels); results 0861e59 (test_results.json sha e7617d79…); runtime 33 min eval + 3.3 min scoring
+  - [!] Single look, confirmatory: ITT AP zavg_BEF 0.333 [0.256,0.410] vs GLS 0.212, Spearman 0.204, Pearson 0.197 (B 0.310; post hoc PC-removed Pearson 0.239). ΔAP vs GLS +0.121 [+0.079,+0.159] (+57%), vs Spearman +0.129 [+0.023,+0.216], vs Pearson +0.136 [+0.039,+0.220]. AUROC 0.789 vs 0.730/0.756/0.749. Locked "clearly beats" verdict PASS on S1 (AP 0.349) and ITT; B fails vs GLS (as on IFT). Macro per-cluster AP ≈ GLS (0.297 vs 0.292): gain concentrated in large complexes, as in Part 1. Rule b P/R/F1 0.553/0.328/0.411.
+  - [~] Independent re-derivation (verifier agent)
 - [ ] P2 Context-specific complex dependencies
   - [~] Construction infrastructure (lean locked recompute, consensus/persistence clustering, toy sims)
 - [ ] M-final Manuscript + peer review + REPORT.md
