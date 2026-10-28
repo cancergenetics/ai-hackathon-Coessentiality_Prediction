@@ -1,0 +1,15 @@
+{
+ "analysis_id": "CTRL_PC1",
+ "fdr_method": "none",
+ "full_table": "data_cache/part2/assoc/CTRL_PC1/controls.parquet",
+ "full_table_sha256": "ac8e6a225d7ee640bfc0ae9aaa11d18bed70a1af4c60667890cb905f2ba6c98e",
+ "head": "e82b6578e2b91a8b2b174e19737a346c640e256d",
+ "hits_released": false,
+ "n_discovery": 0,
+ "n_evaluable": 2,
+ "n_not_evaluable": 0,
+ "n_perm_retested": 0,
+ "n_tests": 2,
+ "registry_blob": "d8d0784bdac299663589317bed16ea5b0d4f589e",
+ "tag": "controls"
+}

@@ -1,0 +1,62 @@
+{
+ "H1": {
+  "controls": [
+   "PC12",
+   "PC15",
+   "PC6",
+   "PC7",
+   "PC8"
+  ],
+  "evaluable": 3,
+  "fraction": 1.0,
+  "n_controls": 5,
+  "recovered": 3,
+  "thin_coverage": false,
+  "verdict": "passes"
+ },
+ "H2": {
+  "controls": [
+   "PC21",
+   "PC22"
+  ],
+  "evaluable": 0,
+  "fraction": null,
+  "n_controls": 2,
+  "recovered": 0,
+  "thin_coverage": false,
+  "verdict": "n/a (0 evaluable controls; direction exploratory)"
+ },
+ "H3a": {
+  "controls": [
+   "PC17",
+   "PC20"
+  ],
+  "evaluable": 2,
+  "fraction": 1.0,
+  "n_controls": 2,
+  "recovered": 2,
+  "thin_coverage": true,
+  "verdict": "passes"
+ },
+ "H3b": {
+  "controls": [
+   "PC1",
+   "PC10",
+   "PC11",
+   "PC13",
+   "PC18",
+   "PC19a",
+   "PC19b",
+   "PC2",
+   "PC4",
+   "PC5",
+   "PC9"
+  ],
+  "evaluable": 10,
+  "fraction": 1.0,
+  "n_controls": 11,
+  "recovered": 10,
+  "thin_coverage": false,
+  "verdict": "passes"
+ }
+}

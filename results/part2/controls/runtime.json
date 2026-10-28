@@ -1,0 +1,18 @@
+{
+ "command": "PART1_DIR=... PYTHONHASHSEED=0 /usr/bin/time -l .venv/bin/python scripts/34_run_controls.py --map results/part2/fzx/zavg_engine_membership.tsv --context-table data_cache/part2/contexts/context_table.parquet",
+ "code_commit": "996a9a3797e3312b384203c221be2f135a09e7bc",
+ "intent_commit": "e82b657",
+ "start_utc": "2026-10-28T23:55:55Z",
+ "end_utc": "2026-10-28T23:56:39Z",
+ "exit_status": 0,
+ "wall_s": 28.04,
+ "user_s": 13.31,
+ "sys_s": 5.75,
+ "peak_rss_bytes": 2561245184,
+ "peak_memory_footprint_bytes": 2204306648,
+ "n_runs": 1,
+ "relook": false,
+ "n_trial_lines": 23,
+ "n_perm": 0,
+ "note": "Single look. No re-run. The start and end times bracket the shell call, including interpreter start-up."
+}

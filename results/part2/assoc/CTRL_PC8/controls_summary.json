@@ -1,0 +1,15 @@
+{
+ "analysis_id": "CTRL_PC8",
+ "fdr_method": "none",
+ "full_table": "data_cache/part2/assoc/CTRL_PC8/controls.parquet",
+ "full_table_sha256": "33b2d8f92bc763536738c4c3fabc21f0df23d62ef35570cee6048a4c6d94c718",
+ "head": "e82b6578e2b91a8b2b174e19737a346c640e256d",
+ "hits_released": false,
+ "n_discovery": 0,
+ "n_evaluable": 1,
+ "n_not_evaluable": 0,
+ "n_perm_retested": 0,
+ "n_tests": 1,
+ "registry_blob": "5729bce8836a302aef46f61414c62e2a9d0e3a8c",
+ "tag": "controls"
+}

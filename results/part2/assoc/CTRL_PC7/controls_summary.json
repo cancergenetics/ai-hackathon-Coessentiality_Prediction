@@ -1,0 +1,15 @@
+{
+ "analysis_id": "CTRL_PC7",
+ "fdr_method": "none",
+ "full_table": "data_cache/part2/assoc/CTRL_PC7/controls.parquet",
+ "full_table_sha256": "2242b9ad19e8214674b40be5c7a86a055b4ad88c3033a429f10dd20dbc915551",
+ "head": "e82b6578e2b91a8b2b174e19737a346c640e256d",
+ "hits_released": false,
+ "n_discovery": 0,
+ "n_evaluable": 1,
+ "n_not_evaluable": 0,
+ "n_perm_retested": 0,
+ "n_tests": 1,
+ "registry_blob": "e529af8e6067b9fe4d4cf0f90aaf82797a198d43",
+ "tag": "controls"
+}
