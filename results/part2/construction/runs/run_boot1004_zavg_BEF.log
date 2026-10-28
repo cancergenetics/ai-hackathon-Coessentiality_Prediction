@@ -1,0 +1,38 @@
+2026-10-28 19:20:27,524 score_block zavg_BEF n_models=806 |S|=6022: 157.3 s, peak RSS 3.07 GB
+{
+ "set": "boot1004",
+ "method": "zavg_BEF",
+ "n_models": 806,
+ "n_S": 6022,
+ "model_set_hash": "55316d5713756049",
+ "S_hash": "8c264ca513f8",
+ "runtime_s": 157.3,
+ "stages_s": {
+  "init": 0.17,
+  "eig+profiles": 0.41,
+  "f_row_stats": 2.36,
+  "neighbours": 8.68,
+  "so_row_stats": 8.02,
+  "embedding_arpack": 118.98,
+  "null_moments": 1.27,
+  "block_scan": 17.14
+ },
+ "peak_rss_gb": 3.07,
+ "null_moments": {
+  "B": {
+   "mean": 0.0006244481184753711,
+   "sd": 0.9940845939206324
+  },
+  "E": {
+   "mean": -2.1824850126670387e-05,
+   "sd": 0.04571742483382466
+  },
+  "F": {
+   "mean": 0.0006246140496014083,
+   "sd": 0.03508290546560591
+  }
+ },
+ "rect": false,
+ "part1_lock": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
+ "cache": "data_cache/part2/blocks/zavg_BEF_55316d5713756049_S8c264ca513f8.npz"
+}

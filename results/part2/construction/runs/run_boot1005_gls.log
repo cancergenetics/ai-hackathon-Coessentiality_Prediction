@@ -1,0 +1,19 @@
+2026-10-28 20:16:59,976 score_block gls n_models=806 |S|=6022: 1.6 s, peak RSS 1.51 GB
+{
+ "set": "boot1005",
+ "method": "gls",
+ "n_models": 806,
+ "n_S": 6022,
+ "model_set_hash": "9fe3dcf674523b9d",
+ "S_hash": "8c264ca513f8",
+ "runtime_s": 1.6,
+ "stages_s": {
+  "covariance": 0.08,
+  "pattern_pairs": 1.49
+ },
+ "peak_rss_gb": 1.51,
+ "null_moments": null,
+ "rect": false,
+ "part1_lock": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
+ "cache": "data_cache/part2/blocks/gls_9fe3dcf674523b9d_S8c264ca513f8.npz"
+}

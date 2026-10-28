@@ -79,6 +79,8 @@ def _sel_job(args):
     rows = selection.split_half_rows(si, g1, g2, za, zb, z0, sel, CCFG, SCFG, arm, band, 4000, chrom, pos)
     for r in rows:
         r.update(method=method, z0=z0, k=k, runtime_s=round(time.perf_counter() - t, 1), **extra)
+    print(f"sel {method} z0={z0} k={k} split={si} {time.perf_counter() - t:.0f}s "
+          f"stat={rows[0]['stat']:.4f} peak_rss={scores.peak_rss_gb():.2f}GB", flush=True)
     return rows
 
 
