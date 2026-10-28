@@ -1,0 +1,145 @@
+entry	context	role	n_A	ref_A	n_L	ref_L	registry_match	testable	registry_testable	testable_match
+H3a_lineage_atlas	lineage:Biliary Tract	primary	27	980	9	329	True	True	True	True
+H3a_lineage_atlas	lineage:Bladder/Urinary Tract	primary	25	982	9	329	True	True	True	True
+H3a_lineage_atlas	lineage:Bone	primary	44	963	15	323	True	True	True	True
+H3a_lineage_atlas	lineage:Bowel	primary	64	943	21	317	True	True	True	True
+H3a_lineage_atlas	lineage:Breast	primary	50	957	17	321	True	True	True	True
+H3a_lineage_atlas	lineage:CNS/Brain	primary	99	908	33	305	True	True	True	True
+H3a_lineage_atlas	lineage:Cervix	primary	13	994	5	333	True	True	True	True
+H3a_lineage_atlas	lineage:Esophagus/Stomach	primary	72	935	24	314	True	True	True	True
+H3a_lineage_atlas	lineage:Head and Neck	primary	58	949	19	319	True	True	True	True
+H3a_lineage_atlas	lineage:Kidney	primary	26	981	9	329	True	True	True	True
+H3a_lineage_atlas	lineage:Liver	primary	19	988	6	332	True	True	True	True
+H3a_lineage_atlas	lineage:Lung	primary	93	914	31	307	True	True	True	True
+H3a_lineage_atlas	lineage:Lymphoid	primary	73	934	24	314	True	True	True	True
+H3a_lineage_atlas	lineage:Myeloid	primary	33	974	11	327	True	True	True	True
+H3a_lineage_atlas	lineage:Ovary/Fallopian Tube	primary	46	961	16	322	True	True	True	True
+H3a_lineage_atlas	lineage:Pancreas	primary	53	954	18	320	True	True	True	True
+H3a_lineage_atlas	lineage:Peripheral Nervous System	primary	35	972	12	326	True	True	True	True
+H3a_lineage_atlas	lineage:Pleura	primary	16	991	5	333	True	True	True	True
+H3a_lineage_atlas	lineage:Prostate	primary	14	993	5	333	True	True	True	True
+H3a_lineage_atlas	lineage:Skin	primary	51	956	17	321	True	True	True	True
+H3a_lineage_atlas	lineage:Soft Tissue	primary	38	969	12	326	True	True	True	True
+H3a_lineage_atlas	lineage:Uterus	primary	28	979	10	328	True	True	True	True
+H3a_lineage_atlas	melanoma	primary	50	957	19	319	True	True	True	True
+H3b_driver_family	hotspot:KRAS	primary	154	853	52	286	True	True	True	True
+H3b_driver_family	hotspot:NRAS	primary	48	959	16	322	True	True	True	True
+H3b_driver_family	hotspot:BRAF	primary	66	941	22	316	True	True	True	True
+H3b_driver_family	hotspot:PIK3CA	primary	100	907	33	305	True	True	True	True
+H3b_driver_family	TP53_altered	primary	668	319	219	109	True	True	True	True
+H3b_driver_family	MSI_H	primary	59	948	20	318	True	True	True	True
+H3b_driver_family	WGD	primary	553	227	178	74	True	True	True	True
+H3b_driver_family	9p21_loss	primary	148	803	49	271	True	True	True	True
+H3b_driver_family	MYC_amp	primary	174	736	47	251	True	True	True	True
+H3b_driver_family	MYCN_amp	primary	28	882	8	290	True	True	True	True
+H3b_driver_family	LoY	primary	216	311	74	93	True	True	True	True
+H3b_driver_family	sex_female	primary	408	556	138	178	True	True	True	True
+H3b_driver_family	NRF2_active	primary	31	878	10	290	True	True	True	True
+H3b_driver_family	LoF:ARID1A	primary	37	858	12	285	True	True	True	True
+H3b_driver_family	LoF:SMARCA4	primary	30	871	10	291	True	True	True	True
+H3b_driver_family	LoF:STAG2	primary	16	888	5	296	True	True	True	True
+H3b_driver_family	LoF:PTEN	primary	88	816	29	273	True	True	True	True
+H3b_driver_family	LoF:RB1	primary	49	850	17	283	True	True	True	True
+H3b_driver_family	LoF:KMT2D	primary	12	882	4	293	True	False	False	True
+H3b_driver_family	fusion:EWSR1::FLI1|ERG	primary	15	943	4	314	True	False	False	True
+H3b_driver_family	PIK3CA_hotspot_noPTENLoF	sensitivity	94	825	32	277	True	True	True	True
+H3b_driver_family	LoF:TP53	sensitivity	592	333	193	104	True	True	True	True
+H3b_driver_family	hotspot:TP53	sensitivity	496	511	185	153	True	True	True	True
+H3b_driver_family	WGD_anyprofile	sensitivity	644	277	220	91	True	True	True	True
+H3b_driver_family	CN_homdel:CDKN2A	sensitivity	256	685	83	231	True	True	True	True
+H3b_driver_family	CN_highamp:MYC	sensitivity	74	836	21	277	True	True	True	True
+H3b_driver_family	CN_highamp:MYCN	sensitivity	25	885	8	290	True	True	True	True
+H3b_driver_family	LoF:KEAP1	sensitivity	12	893	6	294	True	True	True	True
+H3b_driver_family	LoF_inclMSI:ARID1A	sensitivity	53	889	19	295	True	True	True	True
+H3b_driver_family	LoF_inclMSI:SMARCA4	sensitivity	32	922	10	310	True	True	True	True
+H3b_driver_family	LoF_inclMSI:STAG2	sensitivity	19	942	5	316	True	True	True	True
+H3b_driver_family	LoF_inclMSI:PTEN	sensitivity	105	852	34	286	True	True	True	True
+H3b_driver_family	PTEN_LoF_noPIK3CAhs	sensitivity	82	752	28	253	True	True	True	True
+H3b_driver_family	LoF_inclMSI:RB1	sensitivity	54	902	21	299	True	True	True	True
+H3b_driver_family	LoF_inclMSI:KMT2D	sensitivity	16	915	9	303	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Biliary Tract	primary	27	980	9	329	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Bladder/Urinary Tract	primary	25	982	9	329	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Bone	primary	44	963	15	323	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Bowel	primary	64	943	21	317	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Breast	primary	50	957	17	321	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:CNS/Brain	primary	99	908	33	305	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Cervix	primary	13	994	5	333	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Esophagus/Stomach	primary	72	935	24	314	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Head and Neck	primary	58	949	19	319	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Kidney	primary	26	981	9	329	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Liver	primary	19	988	6	332	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Lung	primary	93	914	31	307	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Lymphoid	primary	73	934	24	314	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Myeloid	primary	33	974	11	327	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Ovary/Fallopian Tube	primary	46	961	16	322	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Pancreas	primary	53	954	18	320	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Peripheral Nervous System	primary	35	972	12	326	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Pleura	primary	16	991	5	333	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Prostate	primary	14	993	5	333	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Skin	primary	51	956	17	321	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Soft Tissue	primary	38	969	12	326	True	True	True	True
+BRIDGE-L_confirmation_rate	lineage:Uterus	primary	28	979	10	328	True	True	True	True
+BRIDGE-L_confirmation_rate	melanoma	primary	50	957	19	319	True	True	True	True
+BRIDGE-L_confirmation_rate	hotspot:KRAS	primary	154	853	52	286	True	True	True	True
+BRIDGE-L_confirmation_rate	hotspot:NRAS	primary	48	959	16	322	True	True	True	True
+BRIDGE-L_confirmation_rate	hotspot:BRAF	primary	66	941	22	316	True	True	True	True
+BRIDGE-L_confirmation_rate	hotspot:PIK3CA	primary	100	907	33	305	True	True	True	True
+BRIDGE-L_confirmation_rate	TP53_altered	primary	668	319	219	109	True	True	True	True
+BRIDGE-L_confirmation_rate	MSI_H	primary	59	948	20	318	True	True	True	True
+BRIDGE-L_confirmation_rate	WGD	primary	553	227	178	74	True	True	True	True
+BRIDGE-L_confirmation_rate	9p21_loss	primary	148	803	49	271	True	True	True	True
+BRIDGE-L_confirmation_rate	MYC_amp	primary	174	736	47	251	True	True	True	True
+BRIDGE-L_confirmation_rate	MYCN_amp	primary	28	882	8	290	True	True	True	True
+BRIDGE-L_confirmation_rate	LoY	primary	216	311	74	93	True	True	True	True
+BRIDGE-L_confirmation_rate	sex_female	primary	408	556	138	178	True	True	True	True
+BRIDGE-L_confirmation_rate	NRF2_active	primary	31	878	10	290	True	True	True	True
+BRIDGE-L_confirmation_rate	LoF:ARID1A	primary	37	858	12	285	True	True	True	True
+BRIDGE-L_confirmation_rate	LoF:SMARCA4	primary	30	871	10	291	True	True	True	True
+BRIDGE-L_confirmation_rate	LoF:STAG2	primary	16	888	5	296	True	True	True	True
+BRIDGE-L_confirmation_rate	LoF:PTEN	primary	88	816	29	273	True	True	True	True
+BRIDGE-L_confirmation_rate	LoF:RB1	primary	49	850	17	283	True	True	True	True
+BRIDGE-L_confirmation_rate	LoF:KMT2D	primary	12	882	4	293	True	False	False	True
+BRIDGE-L_confirmation_rate	fusion:EWSR1::FLI1|ERG	primary	15	943	4	314	True	False	False	True
+H2_submodule_divergence	lineage:Biliary Tract	primary	27	980	9	329	True	True	True	True
+H2_submodule_divergence	lineage:Bladder/Urinary Tract	primary	25	982	9	329	True	True	True	True
+H2_submodule_divergence	lineage:Bone	primary	44	963	15	323	True	True	True	True
+H2_submodule_divergence	lineage:Bowel	primary	64	943	21	317	True	True	True	True
+H2_submodule_divergence	lineage:Breast	primary	50	957	17	321	True	True	True	True
+H2_submodule_divergence	lineage:CNS/Brain	primary	99	908	33	305	True	True	True	True
+H2_submodule_divergence	lineage:Cervix	primary	13	994	5	333	True	True	True	True
+H2_submodule_divergence	lineage:Esophagus/Stomach	primary	72	935	24	314	True	True	True	True
+H2_submodule_divergence	lineage:Head and Neck	primary	58	949	19	319	True	True	True	True
+H2_submodule_divergence	lineage:Kidney	primary	26	981	9	329	True	True	True	True
+H2_submodule_divergence	lineage:Liver	primary	19	988	6	332	True	True	True	True
+H2_submodule_divergence	lineage:Lung	primary	93	914	31	307	True	True	True	True
+H2_submodule_divergence	lineage:Lymphoid	primary	73	934	24	314	True	True	True	True
+H2_submodule_divergence	lineage:Myeloid	primary	33	974	11	327	True	True	True	True
+H2_submodule_divergence	lineage:Ovary/Fallopian Tube	primary	46	961	16	322	True	True	True	True
+H2_submodule_divergence	lineage:Pancreas	primary	53	954	18	320	True	True	True	True
+H2_submodule_divergence	lineage:Peripheral Nervous System	primary	35	972	12	326	True	True	True	True
+H2_submodule_divergence	lineage:Pleura	primary	16	991	5	333	True	True	True	True
+H2_submodule_divergence	lineage:Prostate	primary	14	993	5	333	True	True	True	True
+H2_submodule_divergence	lineage:Skin	primary	51	956	17	321	True	True	True	True
+H2_submodule_divergence	lineage:Soft Tissue	primary	38	969	12	326	True	True	True	True
+H2_submodule_divergence	lineage:Uterus	primary	28	979	10	328	True	True	True	True
+H2_submodule_divergence	melanoma	primary	50	957	19	319	True	True	True	True
+H2_submodule_divergence	hotspot:KRAS	primary	154	853	52	286	True	True	True	True
+H2_submodule_divergence	hotspot:NRAS	primary	48	959	16	322	True	True	True	True
+H2_submodule_divergence	hotspot:BRAF	primary	66	941	22	316	True	True	True	True
+H2_submodule_divergence	hotspot:PIK3CA	primary	100	907	33	305	True	True	True	True
+H2_submodule_divergence	TP53_altered	primary	668	319	219	109	True	True	True	True
+H2_submodule_divergence	MSI_H	primary	59	948	20	318	True	True	True	True
+H2_submodule_divergence	WGD	primary	553	227	178	74	True	True	True	True
+H2_submodule_divergence	9p21_loss	primary	148	803	49	271	True	True	True	True
+H2_submodule_divergence	MYC_amp	primary	174	736	47	251	True	True	True	True
+H2_submodule_divergence	MYCN_amp	primary	28	882	8	290	True	True	True	True
+H2_submodule_divergence	LoY	primary	216	311	74	93	True	True	True	True
+H2_submodule_divergence	sex_female	primary	408	556	138	178	True	True	True	True
+H2_submodule_divergence	NRF2_active	primary	31	878	10	290	True	True	True	True
+H2_submodule_divergence	LoF:ARID1A	primary	37	858	12	285	True	True	True	True
+H2_submodule_divergence	LoF:SMARCA4	primary	30	871	10	291	True	True	True	True
+H2_submodule_divergence	LoF:STAG2	primary	16	888	5	296	True	True	True	True
+H2_submodule_divergence	LoF:PTEN	primary	88	816	29	273	True	True	True	True
+H2_submodule_divergence	LoF:RB1	primary	49	850	17	283	True	True	True	True
+H2_submodule_divergence	LoF:KMT2D	primary	12	882	4	293	True	False	False	True
+H2_submodule_divergence	fusion:EWSR1::FLI1|ERG	primary	15	943	4	314	True	False	False	True

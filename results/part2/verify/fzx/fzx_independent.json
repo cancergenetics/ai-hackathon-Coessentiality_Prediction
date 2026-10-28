@@ -1,0 +1,861 @@
+{
+ "n_U_A_L": [
+  1345,
+  1007,
+  338
+ ],
+ "units": {
+  "zavg": [
+   367,
+   "53f9dbf46370d237"
+  ],
+  "gls": [
+   379,
+   "14b6c53a01146a61"
+  ],
+  "h2": [
+   109,
+   "141a70b7133ed8a4",
+   51
+  ],
+  "n_submodules": 132
+ },
+ "context_counts_all_match": true,
+ "H3a_lineages_ge12_A": [
+  "Biliary Tract",
+  "Bladder/Urinary Tract",
+  "Bone",
+  "Bowel",
+  "Breast",
+  "CNS/Brain",
+  "Cervix",
+  "Esophagus/Stomach",
+  "Head and Neck",
+  "Kidney",
+  "Liver",
+  "Lung",
+  "Lymphoid",
+  "Myeloid",
+  "Ovary/Fallopian Tube",
+  "Pancreas",
+  "Peripheral Nervous System",
+  "Pleura",
+  "Prostate",
+  "Skin",
+  "Soft Tissue",
+  "Uterus"
+ ],
+ "H3a_registry_ids": [
+  "lineage:Biliary Tract",
+  "lineage:Bladder/Urinary Tract",
+  "lineage:Bone",
+  "lineage:Bowel",
+  "lineage:Breast",
+  "lineage:CNS/Brain",
+  "lineage:Cervix",
+  "lineage:Esophagus/Stomach",
+  "lineage:Head and Neck",
+  "lineage:Kidney",
+  "lineage:Liver",
+  "lineage:Lung",
+  "lineage:Lymphoid",
+  "lineage:Myeloid",
+  "lineage:Ovary/Fallopian Tube",
+  "lineage:Pancreas",
+  "lineage:Peripheral Nervous System",
+  "lineage:Pleura",
+  "lineage:Prostate",
+  "lineage:Skin",
+  "lineage:Soft Tissue",
+  "lineage:Uterus",
+  "melanoma"
+ ],
+ "H3a_lineage_list_matches": true,
+ "H3b_primary": [
+  [
+   "hotspot:KRAS",
+   154,
+   52,
+   true
+  ],
+  [
+   "hotspot:NRAS",
+   48,
+   16,
+   true
+  ],
+  [
+   "hotspot:BRAF",
+   66,
+   22,
+   true
+  ],
+  [
+   "hotspot:PIK3CA",
+   100,
+   33,
+   true
+  ],
+  [
+   "TP53_altered",
+   668,
+   219,
+   true
+  ],
+  [
+   "MSI_H",
+   59,
+   20,
+   true
+  ],
+  [
+   "WGD",
+   553,
+   178,
+   true
+  ],
+  [
+   "9p21_loss",
+   148,
+   49,
+   true
+  ],
+  [
+   "MYC_amp",
+   174,
+   47,
+   true
+  ],
+  [
+   "MYCN_amp",
+   28,
+   8,
+   true
+  ],
+  [
+   "LoY",
+   216,
+   74,
+   true
+  ],
+  [
+   "sex_female",
+   408,
+   138,
+   true
+  ],
+  [
+   "NRF2_active",
+   31,
+   10,
+   true
+  ],
+  [
+   "LoF:ARID1A",
+   37,
+   12,
+   true
+  ],
+  [
+   "LoF:SMARCA4",
+   30,
+   10,
+   true
+  ],
+  [
+   "LoF:STAG2",
+   16,
+   5,
+   true
+  ],
+  [
+   "LoF:PTEN",
+   88,
+   29,
+   true
+  ],
+  [
+   "LoF:RB1",
+   49,
+   17,
+   true
+  ],
+  [
+   "LoF:KMT2D",
+   12,
+   4,
+   false
+  ],
+  [
+   "fusion:EWSR1::FLI1|ERG",
+   15,
+   4,
+   false
+  ]
+ ],
+ "H3b_excluded_fzr": [
+  [
+   "LoF:CREBBP",
+   9
+  ],
+  [
+   "fusion:KMT2A-r",
+   10
+  ],
+  [
+   "fusion:BCR::ABL1",
+   11
+  ],
+  [
+   "fusion:PAX3|7::FOXO1",
+   7
+  ],
+  [
+   "fusion:SS18::SSX",
+   5
+  ]
+ ],
+ "H3b_excluded_recount": [
+  [
+   "LoF:CREBBP",
+   9,
+   9
+  ],
+  [
+   "fusion:KMT2A-r",
+   10,
+   10
+  ],
+  [
+   "fusion:BCR::ABL1",
+   11,
+   11
+  ],
+  [
+   "fusion:PAX3|7::FOXO1",
+   7,
+   7
+  ],
+  [
+   "fusion:SS18::SSX",
+   5,
+   5
+  ]
+ ],
+ "A_with_gene_effect": 1007,
+ "evaluability_rows": {
+  "mine": 32078,
+  "producer": 32078,
+  "both": 32078
+ },
+ "evaluability_diffs": {
+  "n_used": 4,
+  "n": 0,
+  "n_context": 0,
+  "n_ref": 0,
+  "evaluable": 0
+ },
+ "m": {
+  "H3a": 8441,
+  "H3b": 7340,
+  "BRIDGE_H3a": 8717,
+  "BRIDGE_H3b": 7577
+ },
+ "H3b_min_ncontext_cc": {
+  "LoF:KMT2D": 12,
+  "fusion:EWSR1::FLI1|ERG": 15,
+  "LoF:STAG2": 16,
+  "MYCN_amp": 23,
+  "LoF:SMARCA4": 30,
+  "NRF2_active": 31
+ },
+ "H3b_contexts_below12_cc": [],
+ "bridge_nonevaluable": [
+  [
+   "MYC_amp",
+   "G0137",
+   1
+  ],
+  [
+   "LoY",
+   "G0196",
+   0
+  ],
+  [
+   "sex_female",
+   "G0196",
+   0
+  ]
+ ],
+ "lof_homdel_shares": {
+  "ARID1A": 0.0,
+  "SMARCA4": 0.033,
+  "STAG2": 0.0,
+  "PTEN": 0.17,
+  "RB1": 0.143,
+  "KMT2D": 0.0
+ },
+ "control_targets": {
+  "SMARCA2": {
+   "level1": [],
+   "level2": []
+  },
+  "STAG1": {
+   "level1": [],
+   "level2": []
+  },
+  "KIF18A": {
+   "level1": [],
+   "level2": []
+  },
+  "CDK6": {
+   "level1": [],
+   "level2": []
+  },
+  "CCND3": {
+   "level1": [
+    "Z0113"
+   ],
+   "level2": []
+  },
+  "CDK4": {
+   "level1": [
+    "Z0037"
+   ],
+   "level2": []
+  },
+  "CCND1": {
+   "level1": [
+    "Z0037"
+   ],
+   "level2": []
+  },
+  "BRD9": {
+   "level1": [
+    "Z0186"
+   ],
+   "level2": []
+  },
+  "BICRA": {
+   "level1": [],
+   "level2": []
+  },
+  "ARID1A": {
+   "level1": [
+    "Z0109"
+   ],
+   "level2": []
+  },
+  "ARID1B": {
+   "level1": [
+    "Z0109"
+   ],
+   "level2": []
+  },
+  "DPF2": {
+   "level1": [
+    "Z0109"
+   ],
+   "level2": []
+  },
+  "VPS4A": {
+   "level1": [
+    "Z0115"
+   ],
+   "level2": [
+    "Z0115.1"
+   ]
+  },
+  "WRN": {
+   "level1": [
+    "Z0157"
+   ],
+   "level2": []
+  },
+  "MDM2": {
+   "level1": [
+    "Z0166"
+   ],
+   "level2": []
+  },
+  "SHOC2": {
+   "level1": [
+    "Z0132"
+   ],
+   "level2": []
+  },
+  "PRMT5": {
+   "level1": [
+    "Z0228"
+   ],
+   "level2": []
+  },
+  "PELO": {
+   "level1": [
+    "Z0286"
+   ],
+   "level2": []
+  },
+  "NFE2L2": {
+   "level1": [
+    "Z0264"
+   ],
+   "level2": [
+    "Z0264.1"
+   ]
+  },
+  "DDX3X": {
+   "level1": [
+    "Z0137"
+   ],
+   "level2": []
+  },
+  "PIK3CB": {
+   "level1": [
+    "Z0077"
+   ],
+   "level2": []
+  },
+  "PIK3CA": {
+   "level1": [
+    "Z0077"
+   ],
+   "level2": []
+  },
+  "SOX10": {
+   "level1": [
+    "Z0018"
+   ],
+   "level2": [
+    "Z0018.1"
+   ]
+  },
+  "MYB": {
+   "level1": [
+    "Z0113"
+   ],
+   "level2": []
+  }
+ },
+ "attachments": {
+  "total": 2563,
+  "level1": 1919,
+  "level1_nonlocus": 485,
+  "level1_locus": 1434,
+  "level2": 644
+ },
+ "h1": {
+  "mine": 341,
+  "producer": 341,
+  "both": 341,
+  "only_mine": [],
+  "only_producer": [],
+  "by_type_mine": {
+   "silencing": 318,
+   "LoF": 20,
+   "CN": 3
+  },
+  "type_inclusive_differs": [
+   "Z0164|MAP2K4",
+   "Z0109|SMARCB1",
+   "Z0041|PLAA",
+   "Z0286|FOCAD"
+  ]
+ },
+ "h1_field_diffs": {
+  "type": [],
+  "n_P": [],
+  "n_N": [],
+  "n_A": [],
+  "ref_A": [],
+  "n_L": [],
+  "ref_L": [],
+  "testable": [],
+  "locus": [],
+  "link": []
+ },
+ "h1_m_hash": {
+  "all": [
+   366,
+   "533ed754285791ff"
+  ],
+  "H1": [
+   23,
+   27,
+   "4a5dcc9d02bc4b23"
+  ],
+  "H1S": [
+   318,
+   339,
+   "d6264047856ff8e9"
+  ],
+  "H1_testable": 21,
+  "H1S_testable": 253,
+  "locus": 124,
+  "locus_silencing": 123,
+  "P_axis": 25,
+  "H1_P_axis": 4
+ },
+ "sensitivity": {
+  "extra_lof_check_ignored": {
+   "n": 337,
+   "by_type": {
+    "silencing": 314,
+    "LoF": 20,
+    "CN": 3
+   },
+   "events_changed": [
+    [
+     "Z0028|ARHGAP21",
+     "silencing",
+     12
+    ],
+    [
+     "Z0031|ALDOC",
+     "silencing",
+     75
+    ],
+    [
+     "Z0031|ALDOC",
+     "silencing",
+     77
+    ],
+    [
+     "Z0035|CDH2",
+     "silencing",
+     85
+    ],
+    [
+     "Z0035|CDH2",
+     "silencing",
+     86
+    ],
+    [
+     "Z0059|YAP1",
+     "silencing",
+     19
+    ],
+    [
+     "Z0059|YAP1",
+     "silencing",
+     20
+    ],
+    [
+     "Z0065|SATB1",
+     "silencing",
+     12
+    ],
+    [
+     "Z0088|BCR",
+     "silencing",
+     13
+    ],
+    [
+     "Z0088|BCR",
+     "silencing",
+     15
+    ],
+    [
+     "Z0121|ACSL4",
+     "silencing",
+     14
+    ],
+    [
+     "Z0121|ACSL4",
+     "silencing",
+     16
+    ],
+    [
+     "Z0240|STRN",
+     "silencing",
+     13
+    ],
+    [
+     "Z0267|DIAPH3",
+     "silencing",
+     13
+    ]
+   ]
+  },
+  "locus_attachments_included": {
+   "n": 552,
+   "by_type": {
+    "silencing": 528,
+    "LoF": 21,
+    "CN": 3
+   },
+   "extra_events": [
+    "Z0005|ITGB4",
+    "Z0007|TSPAN1",
+    "Z0013|SEPTIN5",
+    "Z0017|ARHGAP33",
+    "Z0017|CD22",
+    "Z0017|FXYD3",
+    "Z0017|FXYD5",
+    "Z0017|GRAMD1A",
+    "Z0017|HCST",
+    "Z0017|LGALS4",
+    "Z0022|CBX2",
+    "Z0024|DTX3",
+    "Z0024|MARCHF9",
+    "Z0024|SELPLG",
+    "Z0025|MMP14",
+    "Z0025|NFATC4",
+    "Z0025|SLC7A8",
+    "Z0025|STXBP6",
+    "Z0031|LGALS9",
+    "Z0036|ACSF2",
+    "Z0036|COL1A1",
+    "Z0038|APOC2",
+    "Z0038|CBLC",
+    "Z0044|ITPRIPL1",
+    "Z0044|SEMA4C",
+    "Z0046|PCOLCE",
+    "Z0046|SERPINE1",
+    "Z0048|CERS1",
+    "Z0050|GRB7",
+    "Z0059|AMOTL1",
+    "Z0060|MLLT3",
+    "Z0065|LDAH",
+    "Z0091|SPOCD1",
+    "Z0100|FBXO17",
+    "Z0107|CLIC3",
+    "Z0107|EGFL7",
+    "Z0107|NPDC1",
+    "Z0108|KRT15",
+    "Z0108|MYH14",
+    "Z0111|CD82"
+   ]
+  }
+ },
+ "spot_checks": [
+  {
+   "event": "Z0321|BTK",
+   "link": "attached",
+   "type": "silencing",
+   "n_A": 26,
+   "ref_A": 103,
+   "n_L": 9,
+   "ref_L": 36,
+   "n_A_lof": 0,
+   "n_A_homdel": 0,
+   "n_A_sil": 26,
+   "lof_check": "extra",
+   "lof_pass": false,
+   "n_P": 0,
+   "n_N": 8,
+   "locus": false
+  },
+  {
+   "event": "Z0234|EPAS1",
+   "link": "attached",
+   "type": "silencing",
+   "n_A": 55,
+   "ref_A": 850,
+   "n_L": 19,
+   "ref_L": 285,
+   "n_A_lof": 0,
+   "n_A_homdel": 0,
+   "n_A_sil": 55,
+   "lof_check": "none",
+   "lof_pass": false,
+   "n_P": 0,
+   "n_N": 3,
+   "locus": false
+  },
+  {
+   "event": "Z0279|NOTCH2",
+   "link": "member",
+   "type": "silencing",
+   "n_A": 19,
+   "ref_A": 922,
+   "n_L": 10,
+   "ref_L": 300,
+   "n_A_lof": 0,
+   "n_A_homdel": 0,
+   "n_A_sil": 19,
+   "lof_check": "none",
+   "lof_pass": false,
+   "n_P": 0,
+   "n_N": 13,
+   "locus": false
+  },
+  {
+   "event": "Z0200|RB1",
+   "link": "attached",
+   "type": "LoF",
+   "n_A": 60,
+   "ref_A": 886,
+   "n_L": 19,
+   "ref_L": 294,
+   "n_A_lof": 49,
+   "n_A_homdel": 7,
+   "n_A_sil": 13,
+   "lof_check": "orig",
+   "lof_pass": true,
+   "n_P": 0,
+   "n_N": 4,
+   "locus": false
+  },
+  {
+   "event": "Z0292|STK11",
+   "link": "member",
+   "type": "LoF",
+   "n_A": 43,
+   "ref_A": 913,
+   "n_L": 12,
+   "ref_L": 307,
+   "n_A_lof": 34,
+   "n_A_homdel": 5,
+   "n_A_sil": 9,
+   "lof_check": "orig",
+   "lof_pass": true,
+   "n_P": 0,
+   "n_N": 6,
+   "locus": false
+  },
+  {
+   "event": "Z0171|BAP1",
+   "link": "member",
+   "type": "LoF",
+   "n_A": 14,
+   "ref_A": 947,
+   "n_L": 6,
+   "ref_L": 314,
+   "n_A_lof": 12,
+   "n_A_homdel": 0,
+   "n_A_sil": 2,
+   "lof_check": "orig",
+   "lof_pass": true,
+   "n_P": 0,
+   "n_N": 6,
+   "locus": false
+  },
+  {
+   "event": "Z0048|HOMER3",
+   "link": "member",
+   "type": "silencing",
+   "n_A": 20,
+   "ref_A": 918,
+   "n_L": 6,
+   "ref_L": 308,
+   "n_A_lof": 0,
+   "n_A_homdel": 0,
+   "n_A_sil": 20,
+   "lof_check": "none",
+   "lof_pass": false,
+   "n_P": 0,
+   "n_N": 15,
+   "locus": true
+  },
+  {
+   "event": "Z0124|KEAP1",
+   "link": "member",
+   "type": "LoF",
+   "n_A": 13,
+   "ref_A": 946,
+   "n_L": 6,
+   "ref_L": 313,
+   "n_A_lof": 12,
+   "n_A_homdel": 1,
+   "n_A_sil": 1,
+   "lof_check": "orig",
+   "lof_pass": true,
+   "n_P": 0,
+   "n_N": 9,
+   "locus": false
+  },
+  {
+   "event": "Z0014|MED12",
+   "link": "member",
+   "type": "LoF",
+   "n_A": 12,
+   "ref_A": 939,
+   "n_L": 6,
+   "ref_L": 315,
+   "n_A_lof": 10,
+   "n_A_homdel": 2,
+   "n_A_sil": 2,
+   "lof_check": "orig",
+   "lof_pass": true,
+   "n_P": 0,
+   "n_N": 22,
+   "locus": false
+  },
+  {
+   "event": "Z0157|PSD4",
+   "link": "member",
+   "type": "silencing",
+   "n_A": 15,
+   "ref_A": 753,
+   "n_L": 6,
+   "ref_L": 251,
+   "n_A_lof": 0,
+   "n_A_homdel": 0,
+   "n_A_sil": 15,
+   "lof_check": "none",
+   "lof_pass": false,
+   "n_P": 0,
+   "n_N": 7,
+   "locus": false
+  }
+ ],
+ "symbol_mismatches": [
+  {
+   "hgnc": "C3orf20",
+   "depmap": "FAM194C",
+   "entrez": 84077,
+   "depmap_in_ensembl_paralogs": false,
+   "hgnc_in_ensembl_paralogs": false
+  },
+  {
+   "hgnc": "C17orf50",
+   "depmap": "PGBDF",
+   "entrez": 146853,
+   "depmap_in_ensembl_paralogs": false,
+   "hgnc_in_ensembl_paralogs": false
+  },
+  {
+   "hgnc": "TNFAIP8L2",
+   "depmap": "TIPE2",
+   "entrez": 79626,
+   "depmap_in_ensembl_paralogs": false,
+   "hgnc_in_ensembl_paralogs": true
+  },
+  {
+   "hgnc": "ZBTB8OS",
+   "depmap": "TSLIG1",
+   "entrez": 339487,
+   "depmap_in_ensembl_paralogs": false,
+   "hgnc_in_ensembl_paralogs": false
+  },
+  {
+   "hgnc": "C2orf49",
+   "depmap": "TSLIG2",
+   "entrez": 79074,
+   "depmap_in_ensembl_paralogs": false,
+   "hgnc_in_ensembl_paralogs": false
+  },
+  {
+   "hgnc": "FAM98A",
+   "depmap": "TSLIG3A",
+   "entrez": 25940,
+   "depmap_in_ensembl_paralogs": false,
+   "hgnc_in_ensembl_paralogs": true
+  },
+  {
+   "hgnc": "FAM98B",
+   "depmap": "TSLIG3B",
+   "entrez": 283742,
+   "depmap_in_ensembl_paralogs": false,
+   "hgnc_in_ensembl_paralogs": true
+  },
+  {
+   "hgnc": "FAM98C",
+   "depmap": "TSLIG3C",
+   "entrez": 147965,
+   "depmap_in_ensembl_paralogs": false,
+   "hgnc_in_ensembl_paralogs": true
+  }
+ ]
+}
