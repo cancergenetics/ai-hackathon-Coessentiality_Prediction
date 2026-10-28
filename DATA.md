@@ -22,6 +22,9 @@ Checksums: SHA-256 via `shasum -a 256`, computed 2026-10-28 (re-check: `scripts/
 | DepMAP/OmicsFusionFiltered.csv | DepMap Portal, user 2026-10-28 | 26Q3 (user) | 985ac6383a95c39f36856c583f32c7990c9f5464d982a2dd84a9dc07fcbc979b | CC BY 4.0 |
 | DepMAP_RNAi/D2_combined_gene_dep_scores.csv | DepMap Portal "DEMETER2 Data v6" (McFarland et al. 2018), user 2026-10-28 | DEMETER2 v6 (user-stated) | 6bfe7b24ef191debccd502b7dfe61c4b0763caba3e02c6c14e521c8226bb98a7 | CC BY 4.0 |
 | Proteomics/protein_quant_current_normalized.xlsx | CCLE proteomics, Nusinow et al. 2020 (Cell), user 2026-10-28 | as published (xlsx, not csv as requested) | a0ec29ad609d309d884852c268e3382ea6b38bca171af2cf59e4f38a518d21ff | per publisher / DepMap terms (unverified) |
+| BioPlex/BioPlex_293T_Network_10K_Dec_2019.tsv | BioPlex 3.0 (Huttlin et al. 2021, Cell), bioplex.hms.harvard.edu, user 2026-10-28 | Dec 2019 release | 5a98def087fc77c7bf07aac79e2553fd64ea1a27a7d0c4617870476f3f120833 | BioPlex terms (free for research; unverified) |
+| BioPlex/BioPlex_HCT116_Network_5.5K_Dec_2019.tsv | as above | Dec 2019 release | b37be6de6fe15e948151ab9480cfcb88a6795780cf7a4059b386b07f3c1e760d | as above |
+| Paralogs/ensembl116_human_paralogues.tsv | Ensembl BioMart human paralogues, user 2026-10-28 | Ensembl 116 | 003adc6bb6e0f1ad3500aee537a4df99b6d63fafc32ef024835c76f4c9570700 | Ensembl: no restrictions |
 
 DepMap and HGNC checksums are identical to those recorded in Part 1 (`external/part1_locked/DATA.md`).
 
@@ -32,7 +35,7 @@ DepMap and HGNC checksums are identical to those recorded in Part 1 (`external/p
 | Genome-wide pair scores (`outputs/all_pairs/zavg_BEF.npy`, `z_B/z_E/z_F.npy`, `genes.tsv`) | produced by Part 1 `mvp/scripts/predict_all_pairs.py` from commit 0287470 | 2026-10-28 12:44 UTC | see `external`-side `manifest.json`; recorded by scripts that load them | label-free; read in place from the Part 1 folder (not copied, not modified) |
 
 ## Pending external datasets
-See DATA_REQUEST.md. Still pending (2026-10-28 15:45): BioPlex 3.0 (item 7), Ensembl paralogs (item 12).
+All requested items 1–7 and 10–13 provided by 2026-10-28 16:20 UTC. Optional items 8–9 (CORUM, Complex Portal) not provided: post hoc interpretation uses HGNC gene_group + literature only.
 
 ## Notes / explicit assumptions
 - hu.MAP pairs are UniProt accessions. Mapping as Part 1: UniProt → HGNC (Approved, `uniprot_ids`) → Entrez → DepMap column `SYMBOL (ENTREZ)`.
