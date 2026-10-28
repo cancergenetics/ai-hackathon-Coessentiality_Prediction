@@ -2,7 +2,12 @@
 
 Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · [!] key finding
 
-## Status summary (2026-10-28 ~18:30, M2 done: design frozen for execution)
+## Status summary (2026-10-28 ~22:30, M3 done: Part 1 test evaluation complete; FZ-C maps frozen)
+Part 1 is complete. One confirmatory look: zavg_BEF ITT AP 0.333 [0.256, 0.410], against GLS 0.212, Spearman 0.204 and Pearson 0.197 (ΔAP vs GLS +0.121 [+0.079, +0.159]). An independent agent reproduced it. For Part 2, the lockbox (FZ-LB) and the complex maps (FZ-C, 27fa9b2) are frozen on construction set A. zavg map: 367 complexes covering 3,642 genes. GLS map: 379 complexes covering 2,862 genes. The pre-registered bridge endpoint is **null** (Δ BioPlex precision −0.025 [−0.075, 0.031]). The deficit comes from locus-flagged clusters; excluding them gives +0.003. An independent review accepted FZ-C with notes: byte-identical rebuild, bridge reproduced exactly, no firewall breach found.
+
+The association engine is merged and tested on synthetic data. An H3a FDR failure was traced to a non-registered GPD-tail rule plus 1,000 permutations; it is fixed to the registry rule (10,000 permutations, GPD only below 1e-4). BB error rate is 0.046 over 1,000 simulations; pooled FDP 0.068 is reported and not claimed (D6). Next: map-to-map variability (needed before Fig 2 / G2); FZ-X (registry fills, H1 events, lockbox-testable list); controls; H3a → H3b → H1 → H2 on A; lockbox confirmations; BENCH/BRIDGE-L.
+
+## Previous status (M2)
 Design review closed after 3 rounds (6 + 5 + 1 reviewers; docs/reviews/). TEST_PROTOCOL v1.2 + harness judged ready to freeze by the round-3 reviewer (34 tests; dry run reproduces Part 1 IFT look 1 to 1.5e-8). Freeze + single look scheduled as soon as the working tree is clean (construction-infra agent still writing files). Audit PASS; all prior test-file contact disclosed (D0, D1).
 
 DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and construction set A; complexes from locked zavg_BEF on dependency-bearing genes with consensus/persistence clustering; GLS bridge (size-standardised BioPlex precision, protein bootstrap CI) as the main methods claim; tiers T1/T2/T3; directions H3a lineage atlas, H3b ~25 driver/genome-state contexts, H1 within-complex genetic interactions (paralog compensation / sensitisation / collapse / neutral), H2 sub-module divergence; 22 pre-registered controls mapped to directions with kill rule; registry + trial ledger + lockbox ledger. Next: G1 test look → FZ-LB → FZ-C (+bridge) → FZ-X → controls → directions.
@@ -15,6 +20,8 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
 
 - D3 (M2, 2026-10-28): Locked verdict computed on S1 (mapped-only, Part 1's evaluation universe); ITT AP is the primary *metric* and is quoted alongside; disagreement reported. No user escrow of test files (procedural guarantee + hashes reported to user).
 - D4 (M2): Scope cut per PI review: H4 CN dosage, coherence rewiring, BioPlex-cell-line rewiring, BioPlex-integrated map are remaining ideas, not planned work. BioPlex is validation/tiering only (not construction) so it can serve as orthogonal evidence.
+- D5 (M3, 2026-10-28): FZ-C accepted with notes (results/part2/verify/fzc_review.md). Disclosed: contexts.py read proteomics for the LoF functional check (18:57) before the FZ-C commit. DESIGN permits this and it does not feed construction. Before G2: compute map-to-map variability. "zavg more stable" stays descriptive (no rewired baseline). The bridge null is reported with the pre-written fail paragraph.
+- D6 (M3): H3a/H3b error control is claimed as Benjamini–Bogomolov selective FDR (average over selected context families), not pooled FDP. The single-seed `false_pos <= 1` assertion was removed because BB does not guarantee it (holds in 69% of seeds); multi-sim FDR tests stay (results/part2/verify/h3a_fdr_diagnosis.md).
 
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
@@ -33,6 +40,11 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - [x] Construction infrastructure (29 tests; bit-exact zavg reproduction; toy ARI 0.875, null → 0 clusters)
   - [x] FZ-LB lockbox (bd865f8): L=338, A=1,007; contexts table (88 s); stats machinery (HC3 = statsmodels; FL type-I 0.05; BB-FDR 0.0975 @q=0.1)
   - [x] Registry draft (18c17bb): 29 entries (23 controls, H3a, H3b, H1, H2, BENCH, BRIDGE-L), pending FZ-C/FZ-X fills
-  - [~] FZ-C construction on A + tiers + bridge
-  - [~] Association engine (synthetic only until FZ-X)
+  - [x] FZ-C (27fa9b2; tiers/bridge 9498d05; merged 262e7b6): selected z0=6, k=10 (split-half 0.343). zavg 367 complexes / 3,642 genes / 132 sub-modules, 28% locus-flagged. Tiers: 159 T1 / 74 T2 / 124 T3-neg / 10 T3-nc. Runtime: score runs 70 min, selection 69 min, map build ~4 min.
+  - [-] Bridge (primary methods endpoint): ΔBioPlex precision zavg − GLS −0.025 [−0.075, 0.031], null. Non-locus +0.003. Protein co-abundance favours GLS (−0.061 [−0.101, −0.018]). Pair-AP vs BioPlex: zavg 0.0345, Pearson 0.0223, GLS 0.0215.
+  - [x] FZ-C independent review (e0d17c0): ACCEPT-WITH-NOTES; byte-identical rebuild (444 s)
+  - [ ] Map-to-map variability over 20 bootstrap maps (before G2)
+  - [x] Association engine (48d1076; synthetic). H3a FDR fix 02f62ee (BB rate 0.046, pooled 0.068 over 1,000 simulations)
+  - [ ] FZ-X: registry fills (complex-set hash, m per family), H1 events, lockbox-testable list
+  - [ ] Controls run → H3a → H3b → H1 → H2 → lockbox confirmations → BENCH / BRIDGE-L
 - [ ] M-final Manuscript + peer review + REPORT.md

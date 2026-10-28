@@ -12,3 +12,5 @@
 11. Reviews: independent roles, MUST/SHOULD/COULD, require label-free runs (tests, gate calls, scratch-repo simulations) and apply the real freeze edit as a test on the final artifact. (round2_ai_failure M-B1; round1_ai_failure)
 12. Commit compact summaries + hashes, not repeated multi-thousand-line generated JSON; one source for version labels. (958cfda 12k-line diff; round3_final version label drift)
 13. Wait on background jobs by PID (kill -0), never pgrep -f on a pattern that appears in the waiter's own command line. (M3: two watcher loops matched themselves.)
+14. Stochastic tests: assert error rates over ≥50 sims against the guarantee the registered procedure actually gives; never a single-seed count threshold, and match code defaults (B, tail rules) to the registry text. (M3: GPD tail rule + B=1000 inflated null size 1.3–1.8×, hidden by a lucky single seed; 02f62ee)
+15. Run the whole test suite (incl. cross-part guards) before each merge, not only the module's tests. (M3: lockbox firewall pattern list tripped the Part 1 guard, unnoticed since 10b5f90)

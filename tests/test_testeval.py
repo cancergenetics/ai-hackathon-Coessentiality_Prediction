@@ -426,15 +426,23 @@ def test_freeze_gate_rejects_drafts_and_hash_changes():
 
 def test_documented_header_edit_passes_text_check():
     """The documented freeze (only the header line changed to FROZEN) must pass check_protocol_text, and the
-    unedited protocol must fail it."""
+    draft protocol must fail it. Before the freeze (039a843) the file is the draft; after it, the frozen file must pass
+    and the same text with the header reverted to DRAFT must fail."""
     from testeval import protocol as PR
     text = (ROOT / "docs" / "TEST_PROTOCOL.md").read_text()
     lines = text.splitlines(keepends=True)
-    i = next(k for k, l in enumerate(lines[:6]) if l.startswith("**DRAFT v"))
-    lines[i] = re.sub(r"^\*\*DRAFT (v[0-9.]+)\*\*.*$", r"**FROZEN \1** (2026-10-29)", lines[i].rstrip("\n")) + "\n"
-    PR.check_protocol_text("".join(lines))
+    i = next(k for k, l in enumerate(lines[:6]) if l.startswith(("**DRAFT v", "**FROZEN v")))
+    if lines[i].startswith("**DRAFT v"):
+        draft = text
+        lines[i] = re.sub(r"^\*\*DRAFT (v[0-9.]+)\*\*.*$", r"**FROZEN \1** (2026-10-29)", lines[i].rstrip("\n")) + "\n"
+        frozen = "".join(lines)
+    else:
+        frozen = text
+        lines[i] = re.sub(r"^\*\*FROZEN (v[0-9.]+)\*\*.*$", r"**DRAFT \1**", lines[i].rstrip("\n")) + "\n"
+        draft = "".join(lines)
+    PR.check_protocol_text(frozen)
     with pytest.raises(SystemExit):
-        PR.check_protocol_text(text)
+        PR.check_protocol_text(draft)
 
 
 def test_train_files_pinned(tmp_path):
