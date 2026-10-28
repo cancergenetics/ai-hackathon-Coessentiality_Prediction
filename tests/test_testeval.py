@@ -396,8 +396,10 @@ def test_only_entry_points_touch_test_files():
             hits.append(p.name)
         if "test_files(" in txt:
             calls.append(p.name)
-    # protocol.py: DATA.md hash parse; test_part2_firewall.py: a forbidden-pattern list of another grep guard
-    assert sorted(hits) == ["audit_part1.py", "paths.py", "protocol.py", "test_part2_firewall.py"]
+    # protocol.py: DATA.md hash parse; test_part2_firewall.py, test_part2_lockbox_firewall.py: forbidden-pattern lists
+    # of other grep guards (they assert these names never appear in Part 2 code)
+    assert sorted(hits) == ["audit_part1.py", "paths.py", "protocol.py", "test_part2_firewall.py",
+                            "test_part2_lockbox_firewall.py"]
     assert sorted(set(calls) - {"paths.py"}) == ["19_make_pair_files.py", "21_evaluate_test.py", "protocol.py"]
 
 

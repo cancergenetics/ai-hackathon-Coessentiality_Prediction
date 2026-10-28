@@ -148,3 +148,15 @@ So this assertion is a single-realisation check that holds in only about 69% of 
 guarantees. It was **not** weakened here, and the decision is left to the authors. Options are to bound a
 per-realisation quantity that is justified by the sims, or to rely on the FDR simulation tests for error control and
 keep the power and H1 checks for this seed.
+
+## PI decision (2026-10-28)
+
+The per-seed assertion `false_pos <= 1` for H3a/H3b in `test_planted_effects_recovered` is removed. It was an
+arbitrary single-realisation threshold, not a property of the registered BB procedure. Error control stays asserted,
+over many simulations, by `test_fdr_global_null_50` and `test_fdr_h3b_null_with_confounded_lineage_effects_50` (BB rate
+≤ Q + 0.02) and by the 1000-sim evidence above. Power (= 1.0) and H3b true_pos (= 5) stay asserted on seed 1. Neither
+the method nor the registered procedure was changed to pass a test.
+
+Consequence for reporting: H3a/H3b claims are worded as Benjamini–Bogomolov selective FDR (average over selected
+context families) at q = 0.05. The pooled FDP over all reported pairs is not claimed. In this design it runs at about
+6.8% (synthetic), and the manuscript states this.

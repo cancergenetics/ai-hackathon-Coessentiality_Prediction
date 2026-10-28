@@ -29,9 +29,12 @@ def run(tmp_path_factory):
 def test_planted_effects_recovered(run):
     r, _ = run
     assert r["kill_rule"] == {"H3a": "passes", "H3b": "passes", "H1": "passes", "H2": "passes"}
+    # Error control for H3a/H3b is asserted by the multi-sim FDR tests below, not on this one realisation: the former
+    # per-seed check `false_pos <= 1` is not a property BB guarantees (holds in ~69% of seeds under the registered
+    # procedure; seed 1 has 2 false positives, both also rejected by analytic BB). PI decision 2026-10-28,
+    # results/part2/verify/h3a_fdr_diagnosis.md.
     for d in ("H3a", "H3b"):
         assert r[d]["power"] == 1.0, r[d]                 # every planted (context, complex) pair discovered
-        assert r[d]["false_pos"] <= 1, r[d]
     assert r["H2"]["power"] == 1.0 and r["H2"]["false_pos"] == 0, r["H2"]
     assert r["H3b"]["true_pos"] == 5
 
