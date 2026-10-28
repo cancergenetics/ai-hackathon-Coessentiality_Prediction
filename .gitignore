@@ -1,0 +1,15 @@
+# restricted / large raw data: never commit
+/datasets/
+data_cache/
+external/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.npy
+*.npz
+*.parquet
+*.feather
+*.pkl
+manuscript/*.built.md
+manuscript/~$*
