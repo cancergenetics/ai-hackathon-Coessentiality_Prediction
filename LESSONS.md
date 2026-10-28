@@ -10,3 +10,5 @@ Inherited from Part 1 (external/part1_locked/LESSONS.md), still applicable:
 7. torch and LightGBM in one pytest process can deadlock on OpenMP; separate processes. (Part 1 final suite.)
 
 Project 2:
+8. Audit briefs must forbid counting test pairs inside any score-derived list (top-k tables are metrics in disguise). (D1: audit agent computed test hits in the z≥3 table.)
+9. Request all external data in one batch right after the literature review's dataset section, not piecemeal. (Two request rounds were needed on day 1.)

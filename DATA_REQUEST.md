@@ -25,3 +25,13 @@ All DepMap files should come from the **same release as CRISPRGeneEffect.csv (26
 Notes
 - If 26Q3 files are not available, any DepMap release is acceptable *provided* you tell us which; we will restrict to ModelIDs present in CRISPRGeneEffect.csv and record the mismatch in DATA.md.
 - Items 1–5 and 7 are the priority. Items 6, 8, 9 are optional.
+
+## Round 2 requests (2026-10-28, after LITERATURE.md §8)
+User confirmed items 1–7 will be provided; CORUM/Complex Portal (8, 9) skipped.
+
+| # | File | Put at | Why |
+|---|---|---|---|
+| 10 | DepMap 26Q3 `OmicsFusionFiltered.csv` | `datasets/DepMAP/` | Fusion contexts with known complex biology: SS18::SSX → ncBAF/BRD9, EWSR1::FLI1, KMT2A-r → menin/DOT1L/ENL, PAX3/7::FOXO1. |
+| 11 | DepMap RNAi DEMETER2 `D2_combined_gene_dep_scores.csv` (McFarland 2018; DepMap portal "DEMETER2 Data v6") | `datasets/DepMAP_RNAi/` | Orthogonal perturbation modality to replicate complex–context associations. |
+| 12 | Ensembl BioMart human paralogues (Ensembl gene ID, paralogue gene ID, %identity; any release ≥110) | `datasets/Paralogs/` | Sequence-based paralog pairs for paralog-switching within complexes (not curated complexes). |
+| 13 | CCLE proteomics `protein_quant_current_normalized.csv` (Nusinow 2020) | `datasets/Proteomics/` | Optional: subunit co-abundance / collateral loss validation. |
