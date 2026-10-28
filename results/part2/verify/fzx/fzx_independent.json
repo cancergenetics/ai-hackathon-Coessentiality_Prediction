@@ -249,7 +249,7 @@
   "both": 32078
  },
  "evaluability_diffs": {
-  "n_used": 4,
+  "n_used": 0,
   "n": 0,
   "n_context": 0,
   "n_ref": 0,
@@ -857,5 +857,53 @@
    "depmap_in_ensembl_paralogs": false,
    "hgnc_in_ensembl_paralogs": true
   }
+ ],
+ "A2": {
+  "H1": [
+   24,
+   28,
+   "686659438f7d781c",
+   22
+  ],
+  "H1S": [
+   317,
+   338,
+   "736ed74bc58bc04a",
+   252
+  ],
+  "moved_vs_A1": [
+   "Z0109|SMARCB1"
+  ],
+  "near_threshold": [
+   [
+    "Z0088|BCR",
+    "silencing",
+    0.466667
+   ],
+   [
+    "Z0205|BRCA1",
+    "LoF",
+    0.642857
+   ],
+   [
+    "Z0200|CDKN2C",
+    "silencing",
+    0.322581
+   ]
+  ],
+  "entry_mismatches_vs_producer": [],
+  "share_mismatches_vs_producer": [],
+  "H1_units_file": "686659438f7d781c",
+  "H1S_units_file": "736ed74bc58bc04a"
+ },
+ "xgam_in_maps": [
+  "DDX3X",
+  "EIF1AX",
+  "KDM5C",
+  "KDM6A",
+  "RBMX",
+  "RPS4X",
+  "USP9X",
+  "ZFX"
  ]
 }

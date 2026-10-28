@@ -244,3 +244,74 @@ The registered rule handles all four:
 - I did not re-implement the HC3 full-rank check. With n ≥ 12 / 12 everywhere, no design failure was reported.
 - I did not quantify the "lineage-restricted" share of the silencing events.
 - I did not run the full test suite, only `test_part2_fzx.py` and `test_registry_entries.py`.
+
+## Delta review (fb264b8, on top of merge adb29e0)
+
+### Verdict: **ACCEPT**
+
+M1 and M2 are resolved, and every claim below was verified independently. I extended
+`scripts/verify/fzx_independent.py` with:
+- the A2 genetic-share rule, computed from my own loss calls: a model counts if it carries a LoF call (functional
+  check passed) or a hom-del call, and the event is genetic if the share is ≥ 0.5;
+- my own gametolog derivation: an X-linked gene that has an Ensembl-116 paralogue (by ENSG) on chrY in the primary
+  coordinates.
+
+The script still uses none of the producer's analysis code. The only exception is a separate comparison of outputs,
+`load_annotation`, used read-only.
+
+### A2 split: matches
+
+| Entry | Events | m | Hash | Lockbox-testable |
+|---|---|---|---|---|
+| H1 | 24 | 28 | `686659438f7d781c` | 22 |
+| H1S | 317 | 338 | `736ed74bc58bc04a` | 252 |
+
+- **Only SMARCB1 moves.** The symmetric difference against A1 is `Z0109|SMARCB1`, with genetic share 0.706. No other
+  event should have moved.
+- **Entries and shares.** My entry assignment and genetic shares agree with `h1_event_split_A2.tsv` for all 341
+  events (0 mismatches).
+- **Unit files.** The A2 unit files hash to the registered values.
+- **Events near the 0.5 threshold:**
+  - BCR, 0.467 (silencing; correctly H1S, with only a small margin);
+  - BRCA1, 0.643 (LoF);
+  - CDKN2C, 0.323.
+
+### M2 gametologs: matches
+
+- **Hardcoded genes.** The derivation (`cscore.paralogs_by_ensembl_id` and `load_annotation`) has none. RBMX and FAM98
+  appear only in comments.
+- **Gametolog sets.** Over all gene-effect columns, the producer's `x_gametolog` set equals mine: 16 genes, with no
+  difference either way. Eight of them are map members: DDX3X, EIF1AX, KDM5C, KDM6A, RBMX, RPS4X, USP9X and ZFX.
+- **Evaluability.** My recompute now agrees with the frozen `evaluability_tests.tsv.gz` on all 32,078 rows, including
+  n_used: the four M2 rows now show 11 and 7. Every m, unit set, hash, control unit and H1 event is unchanged.
+- **Renamed genes.** Paralogy is now recovered for TSLIG3A–TSLIG3B, TSLIG3A–TSLIG3C and TIPE2–TNFAIP8.
+
+### Merge of main: no unintended changes
+
+- `diff(git diff 8f63b6e db75052, git diff f6e7ffd adb29e0)` is empty, so the merge brings exactly main's delta. The
+  reverse check also holds: the branch delta is preserved.
+- fb264b8 changes no registry entry other than H1 and H1S. It touches nothing under `results/part2/construction`
+  beyond main's variability files.
+- The scripts are now 41, 42 and 43, so there is no clash with `39_map_variability.py`.
+
+### No outcomes read: holds
+
+- `trials.jsonl` and `lockbox_ledger.jsonl` exist in no commit (`git log --all`).
+- 41 still reads gene effects only as `notna()`.
+- 42 and 43 read only the frozen event and count tables.
+
+### Re-run
+
+- **Script 41.** A fresh-process run on a detached checkout of fb264b8, with an isolated `data_cache/part2/fzx`,
+  reproduces every list and every registry YAML byte for byte, and also `h1_loss_table.parquet`. The manifest differs
+  only in `created` (now UTC), `parent_commit`, `runtime_s` and `timings_s`.
+- **Tests.** fzx, registry, cscore and both firewall test files: 53 passed.
+
+### Notes (non-blocking)
+
+- **SMARCB1 analysis specification.** SMARCB1 enters H1 with its FZ-X rule-6 type, silencing, so it uses the base
+  covariate set: no Ploidy, WGD or TP53 CN covariates, and no log_burden or MSIScore. The PI ruling says this
+  explicitly, and its N component is identical under the CN rule. A CN-covariate sensitivity for this one event
+  would be sensible to report.
+- **H1S labels.** The H1S label `direction: H1S` and the line "if H1 is killed, H1S is reported as killed" are text
+  only. Any future claims or figure code must carry them over.

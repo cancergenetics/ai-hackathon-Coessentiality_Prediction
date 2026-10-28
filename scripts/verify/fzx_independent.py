@@ -414,7 +414,8 @@ def main():
                                 type_inclusive_LoF=typ_incl, n_P=len(P), n_N=len(N), n_A=nA, ref_A=rA, n_L=nL,
                                 ref_L=rL, testable=nL >= 5 and rL >= 5, locus=locus_z[u],
                                 n_A_lof=int((a & la).sum()), n_A_homdel=int((b & la).sum()),
-                                n_A_sil=int((c & la).sum()), lof_check=("orig" if g in in_orig else
+                                n_A_sil=int((c & la).sum()),
+                                genetic_share=round(float(((a | b) & la).sum() / la.sum()), 6), lof_check=("orig" if g in in_orig else
                                                                         "extra" if g in set(extra.entrez) else "none"),
                                 lof_pass=g in pass_set))
         return pd.DataFrame(evs)
@@ -478,6 +479,31 @@ def main():
     rep["symbol_mismatches"] = [dict(hgnc=r.symbol, depmap=r.dsym, entrez=int(r.entrez),
                                      depmap_in_ensembl_paralogs=r.dsym in ens_names,
                                      hgnc_in_ensembl_paralogs=r.symbol in ens_names) for r in mm.itertuples()]
+    # ---- delta review: amendment A2 (event genetic iff >= 50% of A loss models carry a LoF or hom-del call)
+    g_ = mine[mine.genetic_share >= 0.5]
+    s2_ = mine[mine.genetic_share < 0.5]
+    a2p = pd.read_csv(FZX / "h1_event_split_A2.tsv", sep="\t", keep_default_na=False) \
+        if (FZX / "h1_event_split_A2.tsv").exists() else None
+    a2 = dict(H1=[len(g_), len(units_of(g_)), shash(units_of(g_)), int(g_.testable.sum())],
+              H1S=[len(s2_), len(units_of(s2_)), shash(units_of(s2_)), int(s2_.testable.sum())],
+              moved_vs_A1=sorted(set(g_.event) ^ set(p_.event)),
+              near_threshold=mine[(mine.genetic_share >= 0.3) & (mine.genetic_share < 0.7)][
+                  ["event", "type", "genetic_share"]].values.tolist())
+    if a2p is not None:
+        pm = dict(zip(a2p.event, a2p.entry))
+        mm_ = {e: ("H1_within_complex_GI" if gs >= 0.5 else "H1S_silencing_GI")
+               for e, gs in zip(mine.event, mine.genetic_share)}
+        a2["entry_mismatches_vs_producer"] = sorted(e for e in mm_ if pm.get(e) != mm_[e])
+        a2["share_mismatches_vs_producer"] = sorted(
+            e for e, gs in zip(mine.event, mine.genetic_share)
+            if abs(float(dict(zip(a2p.event, a2p.genetic_share)).get(e, -1)) - gs) > 1e-3)
+        for k, f in (("H1_units_file", "units_h1_components_A2.txt"), ("H1S_units_file", "units_h1s_components_A2.txt")):
+            a2[k] = shash((FZX / f).read_text().split())
+    rep["A2"] = a2
+    # gametologs (my derivation: X-linked gene with an Ensembl-116 paralogue, by ENSG, located on chrY)
+    rep["xgam_in_maps"] = sorted(sym.get(x, x) for x in xgam
+                                 if any(x in members_z[u] for u in members_z) or any(x in members_g[u] for u in members_g))
+    pd.Series(sorted(xgam)).to_csv(OUT / "x_gametologs_entrez.tsv", sep="\t", index=False, header=["entrez"])
     (OUT / "fzx_independent.json").write_text(json.dumps(rep, indent=1, default=str) + "\n")
     print(json.dumps(rep, indent=1, default=str)[:20000])
 

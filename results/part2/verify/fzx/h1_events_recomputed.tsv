@@ -1,342 +1,342 @@
-event	entrez	unit	link	type	type_inclusive_LoF	n_P	n_N	n_A	ref_A	n_L	ref_L	testable	locus	n_A_lof	n_A_homdel	n_A_sil	lof_check	lof_pass
-Z0282|AHR	196	Z0282	member	silencing	silencing	0	10	52	842	22	275	True	False	0	1	51	extra	False
-Z0149|CRYBG1	202	Z0149	attached	silencing	silencing	0	9	65	709	24	233	True	False	0	0	65	none	False
-Z0134|AK4	205	Z0134	member	silencing	silencing	0	8	53	906	24	297	True	True	0	0	53	extra	False
-Z0031|ALDOC	230	Z0031	member	silencing	silencing	0	17	77	840	19	294	True	True	3	0	75	extra	True
-Z0301|ANPEP	290	Z0301	attached	silencing	silencing	0	5	13	381	2	129	False	False	0	0	13	none	False
-Z0174|APC	324	Z0174	member	LoF	LoF	0	5	48	868	19	293	True	False	44	0	4	orig	True
-Z0017|APLP1	333	Z0017	member	silencing	silencing	0	20	33	707	6	255	True	True	0	1	32	extra	False
-Z0297|ATP2B4	493	Z0297	member	silencing	silencing	0	4	23	923	9	307	True	True	0	0	23	none	False
-Z0290|ALDH7A1	501	Z0290	attached	silencing	silencing	0	8	37	862	14	288	True	False	0	0	37	none	False
-Z0259|ATP6V0A1	535	Z0259	member	silencing	silencing	0	8	16	943	5	315	True	False	0	1	15	extra	False
-Z0037|CCND1	595	Z0037	member	silencing	silencing	0	16	15	891	11	289	True	True	0	0	15	none	False
-Z0096|BCL6	604	Z0096	member	silencing	silencing	0	11	22	908	14	294	True	False	0	0	22	none	False
-Z0088|BCR	613	Z0088	attached	silencing	silencing	0	12	15	942	4	314	False	False	7	5	8	extra	True
-Z0211|CFB	629	Z0211	attached	silencing	silencing	0	4	61	642	18	220	True	False	0	0	61	none	False
-Z0205|BRCA1	672	Z0205	member	LoF	LoF	0	3	14	937	4	313	False	False	9	0	5	orig	True
-Z0319|BTK	695	Z0319	attached	silencing	silencing	1	9	26	103	9	36	True	False	0	0	26	extra	False
-Z0321|BTK	695	Z0321	attached	silencing	silencing	0	8	26	103	9	36	True	False	0	0	26	extra	False
-Z0350|CAPN5	726	Z0350	member	silencing	silencing	0	7	19	796	5	258	True	True	0	0	19	none	False
-Z0122|FMNL1	752	Z0122	member	silencing	silencing	0	9	19	793	3	267	False	True	0	0	19	none	False
-Z0210|CA8	767	Z0210	member	silencing	silencing	0	3	22	317	5	124	True	True	0	0	22	none	False
-Z0155|CACNB3	784	Z0155	member	silencing	silencing	0	7	13	938	0	317	False	True	0	0	13	none	False
-Z0343|RUNX2	860	Z0343	member	silencing	silencing	0	3	40	703	17	224	True	False	0	0	40	none	False
-Z0088|RUNX1	861	Z0088	member	silencing	silencing	0	11	54	859	22	286	True	False	0	1	53	extra	False
-Z0334|CCND2	894	Z0334	member	silencing	silencing	0	9	24	343	5	107	True	False	0	0	24	none	False
-Z0319|CD19	930	Z0319	member	silencing	silencing	0	9	36	101	10	31	True	False	0	0	36	none	False
-Z0096|CD79A	973	Z0096	attached	silencing	silencing	0	12	23	160	6	55	True	False	0	0	23	extra	False
-Z0319|CD79A	973	Z0319	attached	silencing	silencing	1	9	23	160	6	55	True	False	0	0	23	extra	False
-Z0321|CD79A	973	Z0321	attached	silencing	silencing	0	8	23	160	6	55	True	False	0	0	23	extra	False
-Z0319|CD79B	974	Z0319	member	silencing	silencing	0	9	22	129	5	49	True	False	0	0	22	extra	False
-Z0035|CDH1	999	Z0035	member	silencing	silencing	1	15	69	562	27	173	True	False	0	3	66	orig	False
-Z0035|CDH2	1000	Z0035	member	silencing	silencing	1	15	86	589	34	187	True	False	2	1	84	extra	True
-Z0160|CDH11	1009	Z0160	member	silencing	silencing	0	7	40	347	14	117	True	False	8	0	32	orig	True
-Z0158|CDKN1A	1026	Z0158	attached	silencing	silencing	0	8	12	940	12	307	True	False	0	0	12	extra	False
-Z0200|CDKN2C	1031	Z0200	attached	silencing	silencing	0	4	31	922	10	309	True	False	10	10	21	orig	True
-Z0113|CEBPA	1050	Z0113	member	silencing	silencing	0	10	12	578	4	192	False	False	0	0	12	extra	False
-Z0210|CEBPD	1052	Z0210	member	silencing	silencing	0	3	23	858	8	285	True	True	0	0	23	none	False
-Z0037|CPT1A	1374	Z0037	member	silencing	silencing	0	16	42	918	10	311	True	True	0	0	42	none	False
-Z0341|CPT1B	1375	Z0341	member	silencing	silencing	0	3	48	893	8	310	True	True	0	0	48	none	False
-Z0091|CSF3R	1441	Z0091	member	silencing	silencing	0	11	12	61	2	27	False	True	0	0	12	none	False
-Z0273|CST6	1474	Z0273	member	silencing	silencing	0	20	33	308	13	91	True	True	0	0	33	none	False
-Z0005|CYB561	1534	Z0005	member	silencing	silencing	0	26	28	903	7	299	True	True	0	0	28	extra	False
-Z0297|CD55	1604	Z0297	member	silencing	silencing	0	4	62	897	14	307	True	True	2	2	60	extra	True
-Z0117|DGKA	1606	Z0117	member	silencing	silencing	0	10	15	933	2	316	False	True	0	0	15	none	False
-Z0172|COCH	1690	Z0172	member	silencing	silencing	0	6	54	622	21	220	True	True	0	0	54	extra	False
-Z0089|DHCR24	1718	Z0089	attached	silencing	silencing	0	12	13	949	6	315	True	False	0	0	13	none	False
-Z0233|DNM1	1759	Z0233	member	silencing	silencing	0	2	20	778	9	254	True	True	0	0	20	none	False
-Z0096|DOCK2	1794	Z0096	member	silencing	silencing	0	11	13	330	4	112	False	False	0	0	13	extra	False
-Z0018|DUSP4	1846	Z0018	member	silencing	silencing	1	19	58	759	26	246	True	False	0	0	58	extra	False
-Z0084|DUSP6	1848	Z0084	attached	silencing	silencing	0	13	30	904	13	296	True	False	0	0	30	extra	False
-Z0319|EBF1	1879	Z0319	member	silencing	silencing	0	9	29	288	6	101	True	False	0	0	29	none	False
-Z0310|ECM1	1893	Z0310	member	silencing	silencing	0	13	31	728	10	245	True	True	0	0	31	none	False
-Z0072|LPAR1	1902	Z0072	member	silencing	silencing	0	13	41	661	24	203	True	False	0	0	41	none	False
-Z0051|EGFR	1956	Z0051	member	silencing	silencing	0	15	54	749	24	245	True	False	0	0	54	extra	False
-Z0037|CTTN	2017	Z0037	member	silencing	silencing	0	16	12	940	3	314	False	True	0	0	12	none	False
-Z0186|EP300	2033	Z0186	member	LoF	LoF	1	3	12	904	4	297	False	False	10	0	2	orig	True
-Z0234|EPAS1	2034	Z0234	attached	silencing	silencing	0	3	55	850	19	285	True	False	0	0	55	none	False
-Z0149|ERBB3	2065	Z0149	member	silencing	silencing	0	8	48	670	18	223	True	False	0	0	48	extra	False
-Z0165|MECOM	2122	Z0165	member	silencing	silencing	0	7	31	644	7	208	True	False	0	0	31	none	False
-Z0241|F2RL1	2150	Z0241	attached	silencing	silencing	0	3	39	701	14	226	True	False	0	0	39	none	False
-Z0173|F3	2152	Z0173	member	silencing	silencing	0	5	39	828	20	271	True	True	0	0	39	none	False
-Z0007|FAAH	2166	Z0007	member	silencing	silencing	0	25	13	635	7	210	True	True	0	0	13	extra	False
-Z0121|ACSL4	2182	Z0121	member	silencing	silencing	0	9	16	943	6	314	True	False	4	2	12	extra	True
-Z0291|GPC4	2239	Z0291	attached	silencing	silencing	0	8	54	586	17	193	True	False	0	0	54	none	False
-Z0067|FGFR1	2260	Z0067	member	silencing	silencing	0	13	35	809	7	280	True	False	0	0	35	none	False
-Z0176|FGFR2	2263	Z0176	member	silencing	silencing	0	5	28	569	17	183	True	False	0	0	28	extra	False
-Z0149|FGFR4	2264	Z0149	attached	silencing	silencing	0	9	22	759	9	252	True	False	0	0	22	extra	False
-Z0333|FHL2	2274	Z0333	attached	silencing	silencing	0	10	37	873	16	290	True	False	0	0	37	none	False
-Z0160|FLI1	2313	Z0160	member	silencing	silencing	0	7	15	368	3	133	False	False	0	0	15	extra	False
-Z0165|FOSL2	2355	Z0165	member	silencing	silencing	0	7	16	914	6	302	True	False	0	0	16	none	False
-Z0051|GAB1	2549	Z0051	member	silencing	silencing	0	15	19	903	6	295	True	False	0	0	19	none	False
-Z0024|B4GALNT1	2583	Z0024	member	silencing	silencing	0	18	12	704	3	236	False	True	0	0	12	none	False
-Z0092|GATA6	2627	Z0092	member	silencing	silencing	0	11	18	645	10	204	True	False	0	0	18	extra	False
-Z0209|GBP1	2633	Z0209	member	silencing	silencing	0	3	58	684	18	226	True	True	0	0	58	extra	False
-Z0217|GJB5	2709	Z0217	attached	silencing	silencing	0	4	15	291	10	88	True	False	0	0	15	none	False
-Z0127|GLUL	2752	Z0127	member	silencing	silencing	0	9	54	907	18	303	True	False	0	0	54	none	False
-Z0251|GSTM2	2946	Z0251	member	silencing	silencing	1	14	39	664	22	224	True	True	0	0	39	none	False
-Z0251|GSTM4	2948	Z0251	member	silencing	silencing	1	14	60	892	20	295	True	True	0	0	60	none	False
-Z0288|GSTP1	2950	Z0288	member	silencing	silencing	0	9	18	937	5	315	True	True	0	0	18	none	False
-Z0088|HHEX	3087	Z0088	member	silencing	silencing	0	11	14	706	6	232	True	False	0	0	14	none	False
-Z0045|HK2	3099	Z0045	member	silencing	silencing	0	15	13	948	4	315	False	False	0	0	13	none	False
-Z0149|FOXA1	3169	Z0149	member	silencing	silencing	0	8	51	563	19	180	True	False	0	0	51	none	False
-Z0273|SLC29A2	3177	Z0273	member	silencing	silencing	0	20	22	820	12	263	True	True	0	0	22	extra	False
-Z0117|HOXC10	3226	Z0117	member	silencing	silencing	1	9	79	603	20	201	True	True	0	0	79	none	False
-Z0279|HES1	3280	Z0279	member	silencing	silencing	0	13	21	875	15	283	True	False	0	0	21	extra	False
-Z0113|IRF8	3394	Z0113	member	silencing	silencing	0	10	21	250	5	77	True	False	0	0	21	none	False
-Z0116|ID1	3397	Z0116	member	silencing	silencing	0	10	16	913	5	307	True	True	0	0	16	none	False
-Z0356|ID3	3399	Z0356	attached	silencing	silencing	0	4	13	932	2	310	False	False	0	0	13	extra	False
-Z0316|IGF1R	3480	Z0316	member	silencing	silencing	1	10	12	901	4	291	False	False	0	1	11	extra	False
-Z0169|IGFBP6	3489	Z0169	member	silencing	silencing	0	6	69	770	18	262	True	True	0	0	69	none	False
-Z0110|IL6ST	3572	Z0110	member	silencing	silencing	0	10	13	946	3	317	False	False	0	0	13	extra	False
-Z0334|IRF4	3662	Z0334	member	silencing	silencing	0	9	32	116	10	39	True	False	0	0	32	none	False
-Z0059|ITGA3	3675	Z0059	member	silencing	silencing	0	14	16	899	5	306	True	False	0	0	16	none	False
-Z0123|ITGB3	3690	Z0123	member	silencing	silencing	0	9	17	393	1	135	False	False	0	0	17	extra	False
-Z0108|JUP	3728	Z0108	member	silencing	silencing	0	10	15	894	9	295	True	True	0	0	15	none	False
-Z0212|LAIR1	3903	Z0212	member	silencing	silencing	0	3	30	92	7	36	True	True	0	0	30	none	False
-Z0096|LCP1	3936	Z0096	attached	silencing	silencing	0	12	20	652	2	221	False	False	0	0	20	extra	False
-Z0290|LFNG	3955	Z0290	attached	silencing	silencing	0	8	40	802	14	265	True	False	0	0	40	none	False
-Z0005|LLGL2	3993	Z0005	member	silencing	silencing	0	26	17	853	7	288	True	True	0	0	17	none	False
-Z0291|LRP5	4041	Z0291	member	silencing	silencing	0	7	16	922	5	307	True	False	0	0	16	none	False
-Z0113|LYL1	4066	Z0113	member	silencing	silencing	0	10	22	236	7	70	True	False	0	0	22	none	False
-Z0319|LYN	4067	Z0319	attached	silencing	silencing	1	9	20	858	8	283	True	False	0	1	19	extra	False
-Z0307|EPCAM	4072	Z0307	member	silencing	silencing	0	3	23	674	7	229	True	True	0	1	22	orig	False
-Z0279|SMAD3	4088	Z0279	attached	silencing	silencing	0	14	19	939	7	313	True	False	0	1	18	extra	False
-Z0304|SMAD4	4089	Z0304	member	LoF	LoF	0	3	76	878	26	295	True	False	68	23	8	orig	True
-Z0334|SMAD7	4092	Z0334	member	silencing	silencing	0	9	31	904	16	291	True	False	0	0	31	none	False
-Z0356|MEF2C	4208	Z0356	member	silencing	silencing	0	3	23	534	3	186	False	False	0	0	23	none	False
-Z0065|MEIS2	4212	Z0065	attached	silencing	silencing	0	14	27	873	10	283	True	False	0	0	27	none	False
-Z0118|MET	4233	Z0118	member	silencing	silencing	0	10	45	820	16	267	True	True	0	0	45	extra	False
-Z0008|MKI67	4288	Z0008	member	silencing	silencing	0	25	14	922	3	314	False	False	0	0	14	none	False
-Z0035|AFDN	4301	Z0035	member	silencing	silencing	0	16	17	933	2	311	False	False	0	1	16	extra	False
-Z0267|MYO1B	4430	Z0267	attached	silencing	silencing	0	5	37	861	12	284	True	False	0	0	37	none	False
-Z0311|MYD88	4615	Z0311	member	silencing	silencing	0	13	44	912	14	306	True	False	0	0	44	none	False
-Z0170|MYO6	4646	Z0170	member	silencing	silencing	0	6	15	896	4	303	False	True	0	0	15	none	False
-Z0016|MYO10	4651	Z0016	member	silencing	silencing	0	21	39	839	16	273	True	False	0	0	39	none	False
-Z0304|NEO1	4756	Z0304	attached	silencing	silencing	0	4	49	885	14	293	True	False	0	0	49	none	False
-Z0052|NF1	4763	Z0052	member	LoF	LoF	0	15	40	893	16	294	True	False	38	2	2	orig	True
-Z0333|NF2	4771	Z0333	member	LoF	LoF	0	9	26	925	6	311	True	False	22	1	5	orig	True
-Z0084|NFATC2	4773	Z0084	attached	silencing	silencing	0	13	13	449	4	133	False	False	0	0	13	none	False
-Z0279|NOTCH2	4853	Z0279	member	silencing	silencing	0	13	19	922	10	300	True	False	0	0	19	none	False
-Z0072|PAWR	5074	Z0072	attached	silencing	silencing	0	14	38	901	8	308	True	False	0	0	38	none	False
-Z0319|PAX5	5079	Z0319	member	silencing	silencing	0	9	33	101	7	42	True	False	0	0	33	none	False
-Z0065|PBX1	5087	Z0065	attached	silencing	silencing	0	14	43	738	20	233	True	False	0	0	43	none	False
-Z0036|PDK2	5164	Z0036	member	silencing	silencing	0	16	16	944	11	309	True	True	0	0	16	none	False
-Z0035|ATP8B1	5205	Z0035	attached	silencing	silencing	0	17	31	700	16	223	True	False	0	0	31	extra	False
-Z0323|PLAUR	5329	Z0323	attached	silencing	silencing	0	8	13	923	10	301	True	False	0	0	13	none	False
-Z0096|POU2AF1	5450	Z0096	member	silencing	silencing	0	11	12	142	1	43	False	False	0	0	12	extra	False
-Z0281|PRKCZ	5590	Z0281	member	silencing	silencing	0	10	23	801	14	258	True	True	0	0	23	extra	False
-Z0181|MAP2K6	5608	Z0181	attached	silencing	silencing	0	6	13	671	4	239	False	False	0	0	13	none	False
-Z0202|PROS1	5627	Z0202	member	silencing	silencing	0	3	27	754	9	245	True	True	0	0	27	none	False
-Z0207|PSMB8	5696	Z0207	attached	silencing	silencing	0	4	63	881	18	297	True	False	0	0	63	none	False
-Z0130|PTEN	5728	Z0130	member	LoF	LoF	0	9	94	839	31	281	True	False	88	15	6	orig	True
-Z0223|PTPN6	5777	Z0223	attached	silencing	silencing	0	4	65	657	23	222	True	False	0	0	65	none	False
-Z0333|PTPN14	5784	Z0333	attached	silencing	silencing	0	10	13	819	8	271	True	False	0	0	13	extra	False
-Z0022|RAC3	5881	Z0022	member	silencing	silencing	0	18	12	948	4	317	False	True	0	0	12	none	False
-Z0200|RB1	5925	Z0200	attached	LoF	LoF	0	4	60	886	19	294	True	False	49	7	13	orig	True
-Z0106|SALL1	6299	Z0106	member	silencing	silencing	0	10	22	274	6	104	True	False	0	0	22	none	False
-Z0065|SATB1	6304	Z0065	member	silencing	silencing	0	13	12	688	5	224	True	False	2	0	10	extra	True
-Z0164|MAP2K4	6416	Z0164	member	CN	LoF	1	6	16	944	11	308	True	True	13	9	4	orig	True
-Z0059|SNAI2	6591	Z0059	member	silencing	silencing	0	14	51	613	12	200	True	False	0	0	51	none	False
-Z0109|SMARCA4	6597	Z0109	member	LoF	LoF	0	10	31	912	12	305	True	False	30	1	1	orig	True
-Z0109|SMARCB1	6598	Z0109	member	silencing	LoF	0	10	17	943	5	316	True	False	12	7	5	orig	True
-Z0018|SOX9	6662	Z0018	member	silencing	silencing	1	19	50	750	22	235	True	False	0	0	50	extra	False
-Z0018|SOX10	6663	Z0018	member	silencing	silencing	1	19	16	64	2	30	False	False	0	0	16	none	False
-Z0113|SPI1	6688	Z0113	member	silencing	silencing	0	10	34	74	9	29	True	False	0	0	34	none	False
-Z0208|SPINT1	6692	Z0208	member	silencing	silencing	0	3	45	709	14	233	True	True	0	0	45	none	False
-Z0252|STAT5A	6776	Z0252	member	silencing	silencing	0	11	21	670	4	220	False	True	0	1	20	extra	False
-Z0292|STK11	6794	Z0292	member	LoF	LoF	0	6	43	913	12	307	True	False	34	5	9	orig	True
-Z0240|STRN	6801	Z0240	attached	silencing	silencing	0	3	13	948	2	318	False	False	2	0	11	extra	True
-Z0319|SYK	6850	Z0319	member	silencing	silencing	0	9	53	485	21	149	True	False	0	0	53	none	False
-Z0149|TBX3	6926	Z0149	member	silencing	silencing	0	8	41	638	9	215	True	False	0	0	41	extra	False
-Z0035|HNF1B	6928	Z0035	member	silencing	silencing	0	16	22	247	8	79	True	False	0	0	22	extra	False
-Z0098|PRDX2	7001	Z0098	member	silencing	silencing	0	11	25	937	8	313	True	True	0	0	25	none	False
-Z0018|TFAP2A	7020	Z0018	member	silencing	silencing	0	20	38	798	15	263	True	False	0	0	38	extra	False
-Z0120|TFAP2C	7022	Z0120	member	silencing	silencing	0	9	18	582	7	195	True	True	0	0	18	none	False
-Z0279|TGFBR2	7048	Z0279	member	silencing	silencing	1	12	67	843	27	267	True	False	15	4	52	orig	True
-Z0120|TGIF1	7050	Z0120	member	silencing	silencing	0	9	21	940	5	316	True	True	0	0	21	none	False
-Z0318|TNFAIP3	7128	Z0318	member	silencing	silencing	0	9	13	848	4	276	False	False	0	0	13	extra	False
-Z0158|TP53	7157	Z0158	attached	LoF	LoF	0	8	605	318	195	108	True	False	592	4	15	orig	True
-Z0261|TPM2	7169	Z0261	member	silencing	silencing	0	8	31	879	12	288	True	True	0	0	31	none	False
-Z0046|TRIP6	7205	Z0046	member	silencing	silencing	0	15	75	874	23	292	True	True	0	0	75	none	False
-Z0149|TRPS1	7227	Z0149	member	silencing	silencing	0	8	12	678	4	212	False	False	0	0	12	extra	False
-Z0171|KDM6A	7403	Z0171	member	LoF	LoF	0	6	18	936	8	310	True	False	14	4	4	orig	True
-Z0145|VHL	7428	Z0145	member	LoF	LoF	0	8	16	944	7	312	True	False	15	0	1	orig	True
-Z0096|WIPF1	7456	Z0096	attached	silencing	silencing	0	12	14	668	7	213	True	False	0	0	14	none	False
-Z0291|WNT7B	7477	Z0291	attached	silencing	silencing	0	8	39	562	19	181	True	False	0	0	39	none	False
-Z0133|ZNF91	7644	Z0133	member	silencing	silencing	1	8	42	858	14	293	True	True	3	2	40	extra	True
-Z0177|ZP3	7784	Z0177	member	silencing	silencing	0	5	14	815	10	263	True	True	0	0	14	none	False
-Z0035|PAX8	7849	Z0035	member	silencing	silencing	0	16	20	595	2	202	False	False	0	0	20	none	False
-Z0132|FOSL1	8061	Z0132	member	silencing	silencing	0	9	54	824	18	275	True	False	0	0	54	extra	False
-Z0171|KMT2D	8085	Z0171	member	LoF	LoF	1	5	12	873	7	285	True	False	12	0	0	orig	True
-Z0024|HMGA2	8091	Z0024	member	silencing	silencing	0	18	87	739	29	241	True	True	0	0	87	none	False
-Z0109|ARID1A	8289	Z0109	member	LoF	LoF	1	9	37	858	12	282	True	False	37	0	0	orig	True
-Z0171|BAP1	8314	Z0171	member	LoF	LoF	0	6	14	947	6	314	True	False	12	0	2	orig	True
-Z0312|RAD54L	8438	Z0312	member	silencing	silencing	0	13	12	948	1	319	False	False	0	0	12	none	False
-Z0165|BHLHE40	8553	Z0165	attached	silencing	silencing	0	8	22	934	10	309	True	False	0	1	21	extra	False
-Z0273|CTSF	8722	Z0273	member	silencing	silencing	0	20	37	783	15	257	True	True	0	0	37	none	False
-Z0234|TNFSF10	8743	Z0234	member	silencing	silencing	0	2	66	680	21	213	True	False	0	0	66	extra	False
-Z0333|NRP1	8829	Z0333	attached	silencing	silencing	0	10	63	791	22	264	True	False	0	0	63	none	False
-Z0005|SLC16A5	9121	Z0005	member	silencing	silencing	0	26	51	619	19	209	True	True	0	0	51	none	False
-Z0251|SLC16A4	9122	Z0251	member	silencing	silencing	0	15	33	541	13	183	True	True	0	0	33	none	False
-Z0022|SLC16A3	9123	Z0022	member	silencing	silencing	0	18	70	878	18	300	True	True	0	0	70	none	False
-Z0069|CCNE2	9134	Z0069	member	silencing	silencing	1	12	20	942	5	313	True	False	0	0	20	none	False
-Z0137|GCNT3	9245	Z0137	member	silencing	silencing	0	8	42	361	10	127	True	False	0	0	42	none	False
-Z0041|PLAA	9373	Z0041	member	CN	LoF	0	15	26	932	8	313	True	False	22	21	4	orig	True
-Z0035|ARHGAP29	9411	Z0035	member	silencing	silencing	0	16	65	774	29	253	True	False	0	0	65	none	False
-Z0121|FADS2	9415	Z0121	member	silencing	silencing	0	9	25	924	5	312	True	False	0	0	25	none	False
-Z0290|QKI	9444	Z0290	member	silencing	silencing	0	7	17	900	5	299	True	False	0	0	17	extra	False
-Z0333|MAP4K4	9448	Z0333	attached	silencing	silencing	0	10	15	942	2	315	False	False	0	0	15	none	False
-Z0048|HOMER3	9454	Z0048	member	silencing	silencing	0	15	20	918	6	308	True	True	0	0	20	none	False
-Z0194|NFE2L3	9603	Z0194	member	silencing	silencing	0	4	31	924	5	315	True	True	0	0	31	none	False
-Z0273|RIN1	9610	Z0273	member	silencing	silencing	0	20	33	821	15	272	True	True	0	0	33	none	False
-Z0029|ISG15	9636	Z0029	member	silencing	silencing	0	17	15	936	7	312	True	False	0	0	15	none	False
-Z0011|ESPL1	9700	Z0011	member	silencing	silencing	0	23	13	937	6	311	True	False	0	0	13	none	False
-Z0120|MTSS1	9788	Z0120	member	silencing	silencing	0	9	17	706	4	244	False	True	0	0	17	none	False
-Z0124|KEAP1	9817	Z0124	member	LoF	LoF	0	9	13	946	6	313	True	False	12	1	1	orig	True
-Z0018|ZEB2	9839	Z0018	member	silencing	silencing	0	20	21	515	6	173	True	False	0	1	20	extra	False
-Z0354|SV2A	9900	Z0354	member	silencing	silencing	0	3	30	518	12	184	True	True	0	0	30	none	False
-Z0011|KIF14	9928	Z0011	member	silencing	silencing	0	23	13	925	7	308	True	False	0	0	13	extra	False
-Z0014|MED12	9968	Z0014	member	LoF	LoF	0	22	12	939	6	315	True	False	10	2	2	orig	True
-Z0176|GNE	10020	Z0176	member	silencing	silencing	0	5	26	902	12	300	True	False	0	0	26	none	False
-Z0007|PDZK1IP1	10158	Z0007	member	silencing	silencing	0	25	71	386	23	126	True	True	0	0	71	none	False
-Z0020|RASGRP2	10235	Z0020	member	silencing	silencing	0	19	23	294	7	107	True	True	0	0	23	none	False
-Z0059|YAP1	10413	Z0059	member	silencing	silencing	0	14	20	853	9	277	True	False	3	2	17	extra	True
-Z0106|ACAA2	10449	Z0106	member	silencing	silencing	0	10	12	941	5	312	True	False	0	0	12	none	False
-Z0290|ZBTB18	10472	Z0290	member	silencing	silencing	0	7	20	920	9	307	True	False	0	0	20	none	False
-Z0311|BATF	10538	Z0311	member	silencing	silencing	0	13	17	317	7	98	True	False	0	0	17	none	False
-Z0092|AGR2	10551	Z0092	member	silencing	silencing	0	11	58	539	28	182	True	False	0	1	57	extra	False
-Z0107|AGPAT2	10555	Z0107	member	silencing	silencing	0	10	21	941	7	314	True	True	0	0	21	extra	False
-Z0065|IGF2BP1	10642	Z0065	member	silencing	silencing	0	13	23	456	10	161	True	False	0	0	23	none	False
-Z0291|SPINT2	10653	Z0291	member	silencing	silencing	0	7	25	813	8	272	True	False	0	0	25	none	False
-Z0326|SLC12A7	10723	Z0326	member	silencing	silencing	0	3	36	829	15	273	True	True	0	0	36	none	False
-Z0278|STAG2	10735	Z0278	member	LoF	LoF	0	14	21	933	5	313	True	False	16	0	5	orig	True
-Z0309|NES	10763	Z0309	member	silencing	silencing	0	14	43	512	12	171	True	True	0	0	43	extra	False
-Z0056|SRCAP	10847	Z0056	member	silencing	silencing	0	14	21	914	6	311	True	False	0	0	21	extra	False
-Z0016|FERMT2	10979	Z0016	member	silencing	silencing	0	21	20	817	9	273	True	False	0	0	20	none	False
-Z0330|SLC27A5	10998	Z0330	member	silencing	silencing	0	11	31	917	18	295	True	True	0	0	31	extra	False
-Z0273|CCDC85B	11007	Z0273	member	silencing	silencing	0	20	26	934	6	315	True	True	0	0	26	none	False
-Z0018|DUSP10	11221	Z0018	member	silencing	silencing	1	19	24	878	12	288	True	False	0	0	24	none	False
-Z0134|RASSF8	11228	Z0134	member	silencing	silencing	0	8	19	774	9	253	True	True	0	0	19	none	False
-Z0044|MGAT4A	11320	Z0044	member	silencing	silencing	0	15	17	724	1	236	False	True	0	0	17	none	False
-Z0050|IKZF3	22806	Z0050	member	silencing	silencing	0	15	15	136	4	39	False	True	0	0	15	none	False
-Z0004|CEP152	22995	Z0004	member	silencing	silencing	0	26	19	913	5	304	True	False	0	0	19	none	False
-Z0087|CYFIP1	23191	Z0087	member	silencing	silencing	0	11	21	938	5	315	True	False	0	0	21	none	False
-Z0309|SYT11	23208	Z0309	member	silencing	silencing	0	14	22	450	4	151	False	True	0	0	22	none	False
-Z0093|MGA	23269	Z0093	member	silencing	silencing	0	11	16	912	0	309	False	False	0	0	16	orig	False
-Z0067|NEDD4L	23327	Z0067	attached	silencing	silencing	0	14	19	941	9	312	True	False	0	0	19	none	False
-Z0072|ARHGEF12	23365	Z0072	attached	silencing	silencing	0	14	13	940	7	310	True	False	0	0	13	extra	False
-Z0169|TNS2	23371	Z0169	member	silencing	silencing	0	6	12	764	6	254	True	True	0	0	12	none	False
-Z0157|PSD4	23550	Z0157	member	silencing	silencing	0	7	15	753	6	251	True	False	0	0	15	none	False
-Z0321|SLC7A11	23657	Z0321	member	silencing	silencing	0	7	20	926	5	314	True	False	0	0	20	none	False
-Z0089|CEMIP2	23670	Z0089	attached	silencing	silencing	0	12	17	928	2	309	False	False	0	0	17	none	False
-Z0241|RASGRP3	25780	Z0241	attached	silencing	silencing	0	3	25	402	5	140	True	False	0	0	25	none	False
-Z0149|SPDEF	25803	Z0149	member	silencing	silencing	0	8	18	190	4	65	False	False	0	0	18	none	False
-Z0255|BAMBI	25805	Z0255	member	silencing	silencing	0	11	47	794	12	269	True	False	0	0	47	none	False
-Z0169|TMT1A	25840	Z0169	member	silencing	silencing	0	6	56	678	14	229	True	True	0	0	56	none	False
-Z0157|PLEKHG4	25894	Z0157	attached	silencing	silencing	0	8	27	802	10	265	True	False	0	0	27	none	False
-Z0304|LRIG1	26018	Z0304	attached	silencing	silencing	0	4	35	805	14	262	True	False	0	0	35	none	False
-Z0319|LDLRAP1	26119	Z0319	member	silencing	silencing	0	9	20	929	3	313	False	False	0	0	20	none	False
-Z0037|MYEOV	26579	Z0037	member	silencing	silencing	0	16	67	694	21	238	True	True	0	0	67	none	False
-Z0125|CPNE7	27132	Z0125	member	silencing	silencing	0	9	17	660	7	219	True	True	0	0	17	none	False
-Z0319|BLNK	29760	Z0319	attached	silencing	silencing	0	10	20	295	6	103	True	False	0	0	20	extra	False
-Z0321|BLNK	29760	Z0321	attached	silencing	silencing	0	8	20	295	6	103	True	False	0	0	20	extra	False
-Z0234|CARD10	29775	Z0234	member	silencing	silencing	0	2	18	794	12	259	True	False	0	0	18	none	False
-Z0013|ZDHHC8	29801	Z0013	member	silencing	silencing	0	22	15	942	15	301	True	True	0	0	15	none	False
-Z0288|RHOD	29984	Z0288	member	silencing	silencing	0	9	80	595	24	204	True	True	0	0	80	none	False
-Z0035|F11R	50848	Z0035	member	silencing	silencing	0	16	17	883	4	301	False	False	0	0	17	none	False
-Z0233|CERCAM	51148	Z0233	member	silencing	silencing	0	2	32	891	7	300	True	True	0	0	32	extra	False
-Z0025|SLC22A17	51310	Z0025	member	silencing	silencing	0	18	15	525	3	174	False	True	0	0	15	extra	False
-Z0169|CSAD	51380	Z0169	member	silencing	silencing	0	6	25	915	5	313	True	True	0	0	25	none	False
-Z0154|TRPV2	51393	Z0154	member	silencing	silencing	0	7	12	374	3	130	False	True	0	0	12	none	False
-Z0333|AMOTL2	51421	Z0333	attached	silencing	silencing	0	10	14	852	7	282	True	False	0	0	14	none	False
-Z0048|ISYNA1	51477	Z0048	member	silencing	silencing	0	15	27	919	8	308	True	True	0	0	27	none	False
-Z0008|GTSE1	51512	Z0008	member	silencing	silencing	0	25	15	946	2	318	False	False	0	0	15	none	False
-Z0035|RIPK4	54101	Z0035	attached	silencing	silencing	0	17	33	667	11	222	True	False	0	2	31	extra	False
-Z0319|SASH3	54440	Z0319	attached	silencing	silencing	0	10	27	86	6	33	True	False	0	1	26	extra	False
-Z0286|FOCAD	54914	Z0286	member	CN	LoF	0	9	46	911	13	307	True	False	31	32	12	orig	True
-Z0037|ANO1	55107	Z0037	member	silencing	silencing	0	16	33	408	18	129	True	True	0	0	33	extra	False
-Z0201|PBRM1	55193	Z0201	member	LoF	LoF	0	3	14	938	7	309	True	False	12	0	3	orig	True
-Z0333|KIRREL1	55243	Z0333	attached	silencing	silencing	0	10	50	741	19	240	True	False	0	0	50	none	False
-Z0092|FERMT1	55612	Z0092	member	silencing	silencing	0	11	16	692	13	217	True	False	0	0	16	none	False
-Z0134|FAR2	55711	Z0134	member	silencing	silencing	0	8	39	745	5	253	True	True	0	0	39	extra	False
-Z0004|CPAP	55835	Z0004	member	silencing	silencing	0	26	13	923	4	309	False	False	0	0	13	extra	False
-Z0121|AGPAT3	56894	Z0121	member	silencing	silencing	0	9	15	945	3	318	False	False	0	0	15	none	False
-Z0008|KIF15	56992	Z0008	member	silencing	silencing	0	25	15	933	4	309	False	False	0	0	15	none	False
-Z0008|KNL1	57082	Z0008	member	silencing	silencing	0	25	18	935	4	314	False	False	0	0	18	none	False
-Z0309|RAB25	57111	Z0309	member	silencing	silencing	0	14	95	426	41	131	True	True	0	0	95	none	False
-Z0160|PREX1	57580	Z0160	member	silencing	silencing	0	7	20	578	9	200	True	False	0	0	20	none	False
-Z0028|ARHGAP21	57584	Z0028	member	silencing	silencing	0	17	12	948	5	314	True	False	1	0	11	extra	True
-Z0108|ARHGAP23	57636	Z0108	member	silencing	silencing	0	10	51	830	22	270	True	True	0	0	51	extra	False
-Z0168|PLEKHB1	58473	Z0168	member	silencing	silencing	0	6	27	607	7	201	True	True	0	0	27	none	False
-Z0118|FKBP10	60681	Z0118	member	silencing	silencing	0	10	74	833	25	277	True	True	0	0	74	none	False
-Z0165|SOX17	64321	Z0165	member	silencing	silencing	0	7	17	89	6	29	True	False	0	0	17	extra	False
-Z0318|NFKBIZ	64332	Z0318	attached	silencing	silencing	0	10	27	904	5	302	True	False	0	0	27	none	False
-Z0016|TNS3	64759	Z0016	member	silencing	silencing	0	21	46	865	16	283	True	False	0	0	46	none	False
-Z0281|VWA1	64856	Z0281	member	silencing	silencing	0	10	44	773	18	256	True	True	0	0	44	none	False
-Z0330|ZSCAN18	65982	Z0330	member	silencing	silencing	0	11	78	564	28	193	True	True	0	0	78	extra	False
-Z0273|LRFN4	78999	Z0273	member	silencing	silencing	0	20	34	915	20	292	True	True	0	0	34	none	False
-Z0091|CCDC28B	79140	Z0091	member	silencing	silencing	0	11	14	932	8	307	True	True	0	0	14	none	False
-Z0194|PRR15L	79170	Z0194	member	silencing	silencing	0	4	39	329	14	108	True	True	0	0	39	none	False
-Z0134|BHLHE41	79365	Z0134	member	silencing	silencing	0	8	25	671	11	211	True	True	0	0	25	none	False
-Z0251|EPS8L3	79574	Z0251	member	silencing	silencing	0	15	49	197	24	55	True	True	0	0	49	extra	False
-Z0005|RHBDF2	79651	Z0005	member	silencing	silencing	0	26	21	930	11	304	True	True	0	0	21	none	False
-Z0054|GSDMD	79792	Z0054	member	silencing	silencing	0	15	78	860	30	285	True	True	0	0	78	none	False
-Z0182|WDR76	79968	Z0182	member	silencing	silencing	0	5	15	944	3	317	False	True	0	0	15	none	False
-Z0291|WLS	79971	Z0291	member	silencing	silencing	0	7	37	852	10	286	True	False	0	0	37	none	False
-Z0149|GRHL2	79977	Z0149	member	silencing	silencing	0	8	52	403	31	121	True	False	0	0	52	none	False
-Z0016|DOCK5	80005	Z0016	member	silencing	silencing	0	21	12	824	6	278	True	False	0	0	12	none	False
-Z0004|TEDC2	80178	Z0004	member	silencing	silencing	0	26	12	941	4	316	False	False	0	0	12	none	False
-Z0005|LIMD2	80774	Z0005	member	silencing	silencing	0	26	26	817	13	272	True	True	0	0	26	none	False
-Z0267|DIAPH3	81624	Z0267	member	silencing	silencing	1	3	13	942	3	316	False	False	2	0	11	extra	True
-Z0144|YPEL3	83719	Z0144	member	silencing	silencing	0	8	62	898	20	300	True	True	0	0	62	none	False
-Z0031|RAB34	83871	Z0031	member	silencing	silencing	0	17	111	752	40	255	True	True	0	0	111	none	False
-Z0260|B3GNT5	84002	Z0260	member	silencing	silencing	1	7	69	819	30	267	True	False	0	0	69	none	False
-Z0021|GINS4	84296	Z0021	member	silencing	silencing	0	19	15	945	3	318	False	False	0	0	15	none	False
-Z0054|PARP10	84875	Z0054	member	silencing	silencing	0	15	46	888	15	300	True	True	0	0	46	none	False
-Z0321|AIFM2	84883	Z0321	member	silencing	silencing	0	7	22	878	11	284	True	False	0	0	22	none	False
-Z0055|TUBGCP6	85378	Z0055	member	silencing	silencing	0	15	12	938	2	317	False	False	0	0	12	extra	False
-Z0180|TSPYL5	85453	Z0180	member	silencing	silencing	0	5	57	336	27	92	True	False	0	0	57	none	False
-Z0201|ZNF518B	85460	Z0201	attached	silencing	silencing	0	4	15	684	4	222	False	False	0	0	15	none	False
-Z0018|NAV2	89797	Z0018	member	silencing	silencing	0	20	27	745	13	238	True	False	0	0	27	none	False
-Z0005|TRIM47	91107	Z0005	member	silencing	silencing	0	26	41	861	11	295	True	True	0	0	41	extra	False
-Z0181|SCARF2	91179	Z0181	member	silencing	silencing	0	5	18	502	5	161	True	False	0	0	18	none	False
-Z0017|DMKN	93099	Z0017	member	silencing	silencing	0	20	59	696	28	224	True	True	0	0	59	none	False
-Z0054|NAPRT	93100	Z0054	member	silencing	silencing	0	15	19	937	6	315	True	True	0	0	19	none	False
-Z0004|CEP41	95681	Z0004	attached	silencing	silencing	0	27	12	932	3	312	False	False	0	0	12	none	False
-Z0054|RHPN1	114822	Z0054	member	silencing	silencing	0	15	17	753	6	249	True	True	0	0	17	none	False
-Z0118|NT5C3B	115024	Z0118	member	silencing	silencing	0	10	12	950	3	317	False	True	0	0	12	none	False
-Z0123|ARHGEF25	115557	Z0123	member	silencing	silencing	0	9	14	690	5	234	True	False	0	0	14	extra	False
-Z0321|PIK3AP1	118788	Z0321	attached	silencing	silencing	0	8	16	444	4	144	False	False	0	0	16	none	False
-Z0291|CYP2R1	120227	Z0291	attached	silencing	silencing	0	8	34	924	18	300	True	False	0	0	34	extra	False
-Z0304|LRIG3	121227	Z0304	attached	silencing	silencing	0	4	23	835	12	272	True	False	0	0	23	none	False
-Z0241|KDF1	126695	Z0241	member	silencing	silencing	0	2	46	442	27	138	True	False	0	0	46	extra	False
-Z0322|LIX1L	128077	Z0322	member	silencing	silencing	0	7	28	807	12	264	True	True	0	0	28	none	False
-Z0107|DIPK1B	138311	Z0107	member	silencing	silencing	0	10	14	657	5	214	True	True	0	0	14	none	False
-Z0290|LDLRAD3	143458	Z0290	attached	silencing	silencing	0	8	15	877	7	291	True	False	0	0	15	none	False
-Z0337|KIF18B	146909	Z0337	member	silencing	silencing	0	6	20	940	6	313	True	False	0	0	20	none	False
-Z0033|SPC24	147841	Z0033	member	silencing	silencing	0	17	18	943	5	315	True	False	0	0	18	none	False
-Z0133|ZNF714	148206	Z0133	member	silencing	silencing	3	6	46	867	20	280	True	True	2	2	44	extra	True
-Z0310|CIART	148523	Z0310	member	silencing	silencing	0	13	15	623	7	206	True	True	0	0	15	none	False
-Z0018|IGSF11	152404	Z0018	attached	silencing	silencing	0	21	18	211	3	77	False	False	0	0	18	none	False
-Z0351|ESCO2	157570	Z0351	member	silencing	silencing	0	5	19	925	4	312	False	False	0	0	19	extra	False
-Z0017|SYNE4	163183	Z0017	member	silencing	silencing	0	20	13	329	2	106	False	True	0	0	13	none	False
-Z0133|ZNF100	163227	Z0133	member	silencing	silencing	3	6	14	807	3	281	False	True	2	2	12	extra	True
-Z0188|ZNF367	195828	Z0188	member	silencing	silencing	0	4	12	944	5	315	True	False	0	0	12	none	False
-Z0038|CADM4	199731	Z0038	member	silencing	silencing	0	16	15	850	8	273	True	True	0	0	15	none	False
-Z0296|MUC20	200958	Z0296	member	silencing	silencing	0	5	25	431	10	142	True	True	0	0	25	none	False
-Z0005|UNC13D	201294	Z0005	member	silencing	silencing	0	26	35	598	9	195	True	True	0	0	35	none	False
-Z0067|DIPK2A	205428	Z0067	attached	silencing	silencing	0	14	18	938	5	316	True	False	0	0	18	none	False
-Z0004|HYLS1	219844	Z0004	member	silencing	silencing	0	26	14	927	3	309	False	False	0	0	14	extra	False
-Z0180|JAZF1	221895	Z0180	member	silencing	silencing	0	5	12	758	5	258	True	False	0	0	12	none	False
-Z0334|ZBTB38	253461	Z0334	member	silencing	silencing	0	9	21	928	3	312	False	False	0	0	21	none	False
-Z0071|EHBP1L1	254102	Z0071	member	silencing	silencing	0	13	17	933	7	312	True	False	0	0	17	extra	False
-Z0162|PCSK9	255738	Z0162	member	silencing	silencing	0	7	36	447	17	131	True	True	0	0	36	none	False
-Z0005|HID1	283987	Z0005	member	silencing	silencing	0	26	31	667	11	213	True	True	0	0	31	none	False
-Z0279|METRNL	284207	Z0279	attached	silencing	silencing	0	14	40	895	18	292	True	False	0	0	40	none	False
-Z0190|STING1	340061	Z0190	attached	silencing	silencing	0	5	123	817	36	278	True	False	0	0	123	none	False
-Z0005|MXRA7	439921	Z0005	member	silencing	silencing	0	26	18	914	6	301	True	True	0	0	18	none	False
-Z0133|ZNF506	440515	Z0133	member	silencing	silencing	3	6	38	798	8	270	True	True	0	0	38	none	False
-Z0302|PEX39	441150	Z0302	member	silencing	silencing	0	4	17	922	4	313	False	True	0	0	17	none	False
-Z0164|GPX8	493869	Z0164	member	silencing	silencing	0	7	36	812	9	270	True	True	0	0	36	none	False
-Z0221|TMEM35B	100506144	Z0221	member	silencing	silencing	0	3	12	949	5	316	True	False	0	1	11	extra	False
+event	entrez	unit	link	type	type_inclusive_LoF	n_P	n_N	n_A	ref_A	n_L	ref_L	testable	locus	n_A_lof	n_A_homdel	n_A_sil	genetic_share	lof_check	lof_pass
+Z0282|AHR	196	Z0282	member	silencing	silencing	0	10	52	842	22	275	True	False	0	1	51	0.019231	extra	False
+Z0149|CRYBG1	202	Z0149	attached	silencing	silencing	0	9	65	709	24	233	True	False	0	0	65	0.0	none	False
+Z0134|AK4	205	Z0134	member	silencing	silencing	0	8	53	906	24	297	True	True	0	0	53	0.0	extra	False
+Z0031|ALDOC	230	Z0031	member	silencing	silencing	0	17	77	840	19	294	True	True	3	0	75	0.038961	extra	True
+Z0301|ANPEP	290	Z0301	attached	silencing	silencing	0	5	13	381	2	129	False	False	0	0	13	0.0	none	False
+Z0174|APC	324	Z0174	member	LoF	LoF	0	5	48	868	19	293	True	False	44	0	4	0.916667	orig	True
+Z0017|APLP1	333	Z0017	member	silencing	silencing	0	20	33	707	6	255	True	True	0	1	32	0.030303	extra	False
+Z0297|ATP2B4	493	Z0297	member	silencing	silencing	0	4	23	923	9	307	True	True	0	0	23	0.0	none	False
+Z0290|ALDH7A1	501	Z0290	attached	silencing	silencing	0	8	37	862	14	288	True	False	0	0	37	0.0	none	False
+Z0259|ATP6V0A1	535	Z0259	member	silencing	silencing	0	8	16	943	5	315	True	False	0	1	15	0.0625	extra	False
+Z0037|CCND1	595	Z0037	member	silencing	silencing	0	16	15	891	11	289	True	True	0	0	15	0.0	none	False
+Z0096|BCL6	604	Z0096	member	silencing	silencing	0	11	22	908	14	294	True	False	0	0	22	0.0	none	False
+Z0088|BCR	613	Z0088	attached	silencing	silencing	0	12	15	942	4	314	False	False	7	5	8	0.466667	extra	True
+Z0211|CFB	629	Z0211	attached	silencing	silencing	0	4	61	642	18	220	True	False	0	0	61	0.0	none	False
+Z0205|BRCA1	672	Z0205	member	LoF	LoF	0	3	14	937	4	313	False	False	9	0	5	0.642857	orig	True
+Z0319|BTK	695	Z0319	attached	silencing	silencing	1	9	26	103	9	36	True	False	0	0	26	0.0	extra	False
+Z0321|BTK	695	Z0321	attached	silencing	silencing	0	8	26	103	9	36	True	False	0	0	26	0.0	extra	False
+Z0350|CAPN5	726	Z0350	member	silencing	silencing	0	7	19	796	5	258	True	True	0	0	19	0.0	none	False
+Z0122|FMNL1	752	Z0122	member	silencing	silencing	0	9	19	793	3	267	False	True	0	0	19	0.0	none	False
+Z0210|CA8	767	Z0210	member	silencing	silencing	0	3	22	317	5	124	True	True	0	0	22	0.0	none	False
+Z0155|CACNB3	784	Z0155	member	silencing	silencing	0	7	13	938	0	317	False	True	0	0	13	0.0	none	False
+Z0343|RUNX2	860	Z0343	member	silencing	silencing	0	3	40	703	17	224	True	False	0	0	40	0.0	none	False
+Z0088|RUNX1	861	Z0088	member	silencing	silencing	0	11	54	859	22	286	True	False	0	1	53	0.018519	extra	False
+Z0334|CCND2	894	Z0334	member	silencing	silencing	0	9	24	343	5	107	True	False	0	0	24	0.0	none	False
+Z0319|CD19	930	Z0319	member	silencing	silencing	0	9	36	101	10	31	True	False	0	0	36	0.0	none	False
+Z0096|CD79A	973	Z0096	attached	silencing	silencing	0	12	23	160	6	55	True	False	0	0	23	0.0	extra	False
+Z0319|CD79A	973	Z0319	attached	silencing	silencing	1	9	23	160	6	55	True	False	0	0	23	0.0	extra	False
+Z0321|CD79A	973	Z0321	attached	silencing	silencing	0	8	23	160	6	55	True	False	0	0	23	0.0	extra	False
+Z0319|CD79B	974	Z0319	member	silencing	silencing	0	9	22	129	5	49	True	False	0	0	22	0.0	extra	False
+Z0035|CDH1	999	Z0035	member	silencing	silencing	1	15	69	562	27	173	True	False	0	3	66	0.043478	orig	False
+Z0035|CDH2	1000	Z0035	member	silencing	silencing	1	15	86	589	34	187	True	False	2	1	84	0.023256	extra	True
+Z0160|CDH11	1009	Z0160	member	silencing	silencing	0	7	40	347	14	117	True	False	8	0	32	0.2	orig	True
+Z0158|CDKN1A	1026	Z0158	attached	silencing	silencing	0	8	12	940	12	307	True	False	0	0	12	0.0	extra	False
+Z0200|CDKN2C	1031	Z0200	attached	silencing	silencing	0	4	31	922	10	309	True	False	10	10	21	0.322581	orig	True
+Z0113|CEBPA	1050	Z0113	member	silencing	silencing	0	10	12	578	4	192	False	False	0	0	12	0.0	extra	False
+Z0210|CEBPD	1052	Z0210	member	silencing	silencing	0	3	23	858	8	285	True	True	0	0	23	0.0	none	False
+Z0037|CPT1A	1374	Z0037	member	silencing	silencing	0	16	42	918	10	311	True	True	0	0	42	0.0	none	False
+Z0341|CPT1B	1375	Z0341	member	silencing	silencing	0	3	48	893	8	310	True	True	0	0	48	0.0	none	False
+Z0091|CSF3R	1441	Z0091	member	silencing	silencing	0	11	12	61	2	27	False	True	0	0	12	0.0	none	False
+Z0273|CST6	1474	Z0273	member	silencing	silencing	0	20	33	308	13	91	True	True	0	0	33	0.0	none	False
+Z0005|CYB561	1534	Z0005	member	silencing	silencing	0	26	28	903	7	299	True	True	0	0	28	0.0	extra	False
+Z0297|CD55	1604	Z0297	member	silencing	silencing	0	4	62	897	14	307	True	True	2	2	60	0.032258	extra	True
+Z0117|DGKA	1606	Z0117	member	silencing	silencing	0	10	15	933	2	316	False	True	0	0	15	0.0	none	False
+Z0172|COCH	1690	Z0172	member	silencing	silencing	0	6	54	622	21	220	True	True	0	0	54	0.0	extra	False
+Z0089|DHCR24	1718	Z0089	attached	silencing	silencing	0	12	13	949	6	315	True	False	0	0	13	0.0	none	False
+Z0233|DNM1	1759	Z0233	member	silencing	silencing	0	2	20	778	9	254	True	True	0	0	20	0.0	none	False
+Z0096|DOCK2	1794	Z0096	member	silencing	silencing	0	11	13	330	4	112	False	False	0	0	13	0.0	extra	False
+Z0018|DUSP4	1846	Z0018	member	silencing	silencing	1	19	58	759	26	246	True	False	0	0	58	0.0	extra	False
+Z0084|DUSP6	1848	Z0084	attached	silencing	silencing	0	13	30	904	13	296	True	False	0	0	30	0.0	extra	False
+Z0319|EBF1	1879	Z0319	member	silencing	silencing	0	9	29	288	6	101	True	False	0	0	29	0.0	none	False
+Z0310|ECM1	1893	Z0310	member	silencing	silencing	0	13	31	728	10	245	True	True	0	0	31	0.0	none	False
+Z0072|LPAR1	1902	Z0072	member	silencing	silencing	0	13	41	661	24	203	True	False	0	0	41	0.0	none	False
+Z0051|EGFR	1956	Z0051	member	silencing	silencing	0	15	54	749	24	245	True	False	0	0	54	0.0	extra	False
+Z0037|CTTN	2017	Z0037	member	silencing	silencing	0	16	12	940	3	314	False	True	0	0	12	0.0	none	False
+Z0186|EP300	2033	Z0186	member	LoF	LoF	1	3	12	904	4	297	False	False	10	0	2	0.833333	orig	True
+Z0234|EPAS1	2034	Z0234	attached	silencing	silencing	0	3	55	850	19	285	True	False	0	0	55	0.0	none	False
+Z0149|ERBB3	2065	Z0149	member	silencing	silencing	0	8	48	670	18	223	True	False	0	0	48	0.0	extra	False
+Z0165|MECOM	2122	Z0165	member	silencing	silencing	0	7	31	644	7	208	True	False	0	0	31	0.0	none	False
+Z0241|F2RL1	2150	Z0241	attached	silencing	silencing	0	3	39	701	14	226	True	False	0	0	39	0.0	none	False
+Z0173|F3	2152	Z0173	member	silencing	silencing	0	5	39	828	20	271	True	True	0	0	39	0.0	none	False
+Z0007|FAAH	2166	Z0007	member	silencing	silencing	0	25	13	635	7	210	True	True	0	0	13	0.0	extra	False
+Z0121|ACSL4	2182	Z0121	member	silencing	silencing	0	9	16	943	6	314	True	False	4	2	12	0.25	extra	True
+Z0291|GPC4	2239	Z0291	attached	silencing	silencing	0	8	54	586	17	193	True	False	0	0	54	0.0	none	False
+Z0067|FGFR1	2260	Z0067	member	silencing	silencing	0	13	35	809	7	280	True	False	0	0	35	0.0	none	False
+Z0176|FGFR2	2263	Z0176	member	silencing	silencing	0	5	28	569	17	183	True	False	0	0	28	0.0	extra	False
+Z0149|FGFR4	2264	Z0149	attached	silencing	silencing	0	9	22	759	9	252	True	False	0	0	22	0.0	extra	False
+Z0333|FHL2	2274	Z0333	attached	silencing	silencing	0	10	37	873	16	290	True	False	0	0	37	0.0	none	False
+Z0160|FLI1	2313	Z0160	member	silencing	silencing	0	7	15	368	3	133	False	False	0	0	15	0.0	extra	False
+Z0165|FOSL2	2355	Z0165	member	silencing	silencing	0	7	16	914	6	302	True	False	0	0	16	0.0	none	False
+Z0051|GAB1	2549	Z0051	member	silencing	silencing	0	15	19	903	6	295	True	False	0	0	19	0.0	none	False
+Z0024|B4GALNT1	2583	Z0024	member	silencing	silencing	0	18	12	704	3	236	False	True	0	0	12	0.0	none	False
+Z0092|GATA6	2627	Z0092	member	silencing	silencing	0	11	18	645	10	204	True	False	0	0	18	0.0	extra	False
+Z0209|GBP1	2633	Z0209	member	silencing	silencing	0	3	58	684	18	226	True	True	0	0	58	0.0	extra	False
+Z0217|GJB5	2709	Z0217	attached	silencing	silencing	0	4	15	291	10	88	True	False	0	0	15	0.0	none	False
+Z0127|GLUL	2752	Z0127	member	silencing	silencing	0	9	54	907	18	303	True	False	0	0	54	0.0	none	False
+Z0251|GSTM2	2946	Z0251	member	silencing	silencing	1	14	39	664	22	224	True	True	0	0	39	0.0	none	False
+Z0251|GSTM4	2948	Z0251	member	silencing	silencing	1	14	60	892	20	295	True	True	0	0	60	0.0	none	False
+Z0288|GSTP1	2950	Z0288	member	silencing	silencing	0	9	18	937	5	315	True	True	0	0	18	0.0	none	False
+Z0088|HHEX	3087	Z0088	member	silencing	silencing	0	11	14	706	6	232	True	False	0	0	14	0.0	none	False
+Z0045|HK2	3099	Z0045	member	silencing	silencing	0	15	13	948	4	315	False	False	0	0	13	0.0	none	False
+Z0149|FOXA1	3169	Z0149	member	silencing	silencing	0	8	51	563	19	180	True	False	0	0	51	0.0	none	False
+Z0273|SLC29A2	3177	Z0273	member	silencing	silencing	0	20	22	820	12	263	True	True	0	0	22	0.0	extra	False
+Z0117|HOXC10	3226	Z0117	member	silencing	silencing	1	9	79	603	20	201	True	True	0	0	79	0.0	none	False
+Z0279|HES1	3280	Z0279	member	silencing	silencing	0	13	21	875	15	283	True	False	0	0	21	0.0	extra	False
+Z0113|IRF8	3394	Z0113	member	silencing	silencing	0	10	21	250	5	77	True	False	0	0	21	0.0	none	False
+Z0116|ID1	3397	Z0116	member	silencing	silencing	0	10	16	913	5	307	True	True	0	0	16	0.0	none	False
+Z0356|ID3	3399	Z0356	attached	silencing	silencing	0	4	13	932	2	310	False	False	0	0	13	0.0	extra	False
+Z0316|IGF1R	3480	Z0316	member	silencing	silencing	1	10	12	901	4	291	False	False	0	1	11	0.083333	extra	False
+Z0169|IGFBP6	3489	Z0169	member	silencing	silencing	0	6	69	770	18	262	True	True	0	0	69	0.0	none	False
+Z0110|IL6ST	3572	Z0110	member	silencing	silencing	0	10	13	946	3	317	False	False	0	0	13	0.0	extra	False
+Z0334|IRF4	3662	Z0334	member	silencing	silencing	0	9	32	116	10	39	True	False	0	0	32	0.0	none	False
+Z0059|ITGA3	3675	Z0059	member	silencing	silencing	0	14	16	899	5	306	True	False	0	0	16	0.0	none	False
+Z0123|ITGB3	3690	Z0123	member	silencing	silencing	0	9	17	393	1	135	False	False	0	0	17	0.0	extra	False
+Z0108|JUP	3728	Z0108	member	silencing	silencing	0	10	15	894	9	295	True	True	0	0	15	0.0	none	False
+Z0212|LAIR1	3903	Z0212	member	silencing	silencing	0	3	30	92	7	36	True	True	0	0	30	0.0	none	False
+Z0096|LCP1	3936	Z0096	attached	silencing	silencing	0	12	20	652	2	221	False	False	0	0	20	0.0	extra	False
+Z0290|LFNG	3955	Z0290	attached	silencing	silencing	0	8	40	802	14	265	True	False	0	0	40	0.0	none	False
+Z0005|LLGL2	3993	Z0005	member	silencing	silencing	0	26	17	853	7	288	True	True	0	0	17	0.0	none	False
+Z0291|LRP5	4041	Z0291	member	silencing	silencing	0	7	16	922	5	307	True	False	0	0	16	0.0	none	False
+Z0113|LYL1	4066	Z0113	member	silencing	silencing	0	10	22	236	7	70	True	False	0	0	22	0.0	none	False
+Z0319|LYN	4067	Z0319	attached	silencing	silencing	1	9	20	858	8	283	True	False	0	1	19	0.05	extra	False
+Z0307|EPCAM	4072	Z0307	member	silencing	silencing	0	3	23	674	7	229	True	True	0	1	22	0.043478	orig	False
+Z0279|SMAD3	4088	Z0279	attached	silencing	silencing	0	14	19	939	7	313	True	False	0	1	18	0.052632	extra	False
+Z0304|SMAD4	4089	Z0304	member	LoF	LoF	0	3	76	878	26	295	True	False	68	23	8	0.894737	orig	True
+Z0334|SMAD7	4092	Z0334	member	silencing	silencing	0	9	31	904	16	291	True	False	0	0	31	0.0	none	False
+Z0356|MEF2C	4208	Z0356	member	silencing	silencing	0	3	23	534	3	186	False	False	0	0	23	0.0	none	False
+Z0065|MEIS2	4212	Z0065	attached	silencing	silencing	0	14	27	873	10	283	True	False	0	0	27	0.0	none	False
+Z0118|MET	4233	Z0118	member	silencing	silencing	0	10	45	820	16	267	True	True	0	0	45	0.0	extra	False
+Z0008|MKI67	4288	Z0008	member	silencing	silencing	0	25	14	922	3	314	False	False	0	0	14	0.0	none	False
+Z0035|AFDN	4301	Z0035	member	silencing	silencing	0	16	17	933	2	311	False	False	0	1	16	0.058824	extra	False
+Z0267|MYO1B	4430	Z0267	attached	silencing	silencing	0	5	37	861	12	284	True	False	0	0	37	0.0	none	False
+Z0311|MYD88	4615	Z0311	member	silencing	silencing	0	13	44	912	14	306	True	False	0	0	44	0.0	none	False
+Z0170|MYO6	4646	Z0170	member	silencing	silencing	0	6	15	896	4	303	False	True	0	0	15	0.0	none	False
+Z0016|MYO10	4651	Z0016	member	silencing	silencing	0	21	39	839	16	273	True	False	0	0	39	0.0	none	False
+Z0304|NEO1	4756	Z0304	attached	silencing	silencing	0	4	49	885	14	293	True	False	0	0	49	0.0	none	False
+Z0052|NF1	4763	Z0052	member	LoF	LoF	0	15	40	893	16	294	True	False	38	2	2	0.95	orig	True
+Z0333|NF2	4771	Z0333	member	LoF	LoF	0	9	26	925	6	311	True	False	22	1	5	0.846154	orig	True
+Z0084|NFATC2	4773	Z0084	attached	silencing	silencing	0	13	13	449	4	133	False	False	0	0	13	0.0	none	False
+Z0279|NOTCH2	4853	Z0279	member	silencing	silencing	0	13	19	922	10	300	True	False	0	0	19	0.0	none	False
+Z0072|PAWR	5074	Z0072	attached	silencing	silencing	0	14	38	901	8	308	True	False	0	0	38	0.0	none	False
+Z0319|PAX5	5079	Z0319	member	silencing	silencing	0	9	33	101	7	42	True	False	0	0	33	0.0	none	False
+Z0065|PBX1	5087	Z0065	attached	silencing	silencing	0	14	43	738	20	233	True	False	0	0	43	0.0	none	False
+Z0036|PDK2	5164	Z0036	member	silencing	silencing	0	16	16	944	11	309	True	True	0	0	16	0.0	none	False
+Z0035|ATP8B1	5205	Z0035	attached	silencing	silencing	0	17	31	700	16	223	True	False	0	0	31	0.0	extra	False
+Z0323|PLAUR	5329	Z0323	attached	silencing	silencing	0	8	13	923	10	301	True	False	0	0	13	0.0	none	False
+Z0096|POU2AF1	5450	Z0096	member	silencing	silencing	0	11	12	142	1	43	False	False	0	0	12	0.0	extra	False
+Z0281|PRKCZ	5590	Z0281	member	silencing	silencing	0	10	23	801	14	258	True	True	0	0	23	0.0	extra	False
+Z0181|MAP2K6	5608	Z0181	attached	silencing	silencing	0	6	13	671	4	239	False	False	0	0	13	0.0	none	False
+Z0202|PROS1	5627	Z0202	member	silencing	silencing	0	3	27	754	9	245	True	True	0	0	27	0.0	none	False
+Z0207|PSMB8	5696	Z0207	attached	silencing	silencing	0	4	63	881	18	297	True	False	0	0	63	0.0	none	False
+Z0130|PTEN	5728	Z0130	member	LoF	LoF	0	9	94	839	31	281	True	False	88	15	6	0.93617	orig	True
+Z0223|PTPN6	5777	Z0223	attached	silencing	silencing	0	4	65	657	23	222	True	False	0	0	65	0.0	none	False
+Z0333|PTPN14	5784	Z0333	attached	silencing	silencing	0	10	13	819	8	271	True	False	0	0	13	0.0	extra	False
+Z0022|RAC3	5881	Z0022	member	silencing	silencing	0	18	12	948	4	317	False	True	0	0	12	0.0	none	False
+Z0200|RB1	5925	Z0200	attached	LoF	LoF	0	4	60	886	19	294	True	False	49	7	13	0.816667	orig	True
+Z0106|SALL1	6299	Z0106	member	silencing	silencing	0	10	22	274	6	104	True	False	0	0	22	0.0	none	False
+Z0065|SATB1	6304	Z0065	member	silencing	silencing	0	13	12	688	5	224	True	False	2	0	10	0.166667	extra	True
+Z0164|MAP2K4	6416	Z0164	member	CN	LoF	1	6	16	944	11	308	True	True	13	9	4	0.8125	orig	True
+Z0059|SNAI2	6591	Z0059	member	silencing	silencing	0	14	51	613	12	200	True	False	0	0	51	0.0	none	False
+Z0109|SMARCA4	6597	Z0109	member	LoF	LoF	0	10	31	912	12	305	True	False	30	1	1	0.967742	orig	True
+Z0109|SMARCB1	6598	Z0109	member	silencing	LoF	0	10	17	943	5	316	True	False	12	7	5	0.705882	orig	True
+Z0018|SOX9	6662	Z0018	member	silencing	silencing	1	19	50	750	22	235	True	False	0	0	50	0.0	extra	False
+Z0018|SOX10	6663	Z0018	member	silencing	silencing	1	19	16	64	2	30	False	False	0	0	16	0.0	none	False
+Z0113|SPI1	6688	Z0113	member	silencing	silencing	0	10	34	74	9	29	True	False	0	0	34	0.0	none	False
+Z0208|SPINT1	6692	Z0208	member	silencing	silencing	0	3	45	709	14	233	True	True	0	0	45	0.0	none	False
+Z0252|STAT5A	6776	Z0252	member	silencing	silencing	0	11	21	670	4	220	False	True	0	1	20	0.047619	extra	False
+Z0292|STK11	6794	Z0292	member	LoF	LoF	0	6	43	913	12	307	True	False	34	5	9	0.790698	orig	True
+Z0240|STRN	6801	Z0240	attached	silencing	silencing	0	3	13	948	2	318	False	False	2	0	11	0.153846	extra	True
+Z0319|SYK	6850	Z0319	member	silencing	silencing	0	9	53	485	21	149	True	False	0	0	53	0.0	none	False
+Z0149|TBX3	6926	Z0149	member	silencing	silencing	0	8	41	638	9	215	True	False	0	0	41	0.0	extra	False
+Z0035|HNF1B	6928	Z0035	member	silencing	silencing	0	16	22	247	8	79	True	False	0	0	22	0.0	extra	False
+Z0098|PRDX2	7001	Z0098	member	silencing	silencing	0	11	25	937	8	313	True	True	0	0	25	0.0	none	False
+Z0018|TFAP2A	7020	Z0018	member	silencing	silencing	0	20	38	798	15	263	True	False	0	0	38	0.0	extra	False
+Z0120|TFAP2C	7022	Z0120	member	silencing	silencing	0	9	18	582	7	195	True	True	0	0	18	0.0	none	False
+Z0279|TGFBR2	7048	Z0279	member	silencing	silencing	1	12	67	843	27	267	True	False	15	4	52	0.223881	orig	True
+Z0120|TGIF1	7050	Z0120	member	silencing	silencing	0	9	21	940	5	316	True	True	0	0	21	0.0	none	False
+Z0318|TNFAIP3	7128	Z0318	member	silencing	silencing	0	9	13	848	4	276	False	False	0	0	13	0.0	extra	False
+Z0158|TP53	7157	Z0158	attached	LoF	LoF	0	8	605	318	195	108	True	False	592	4	15	0.978512	orig	True
+Z0261|TPM2	7169	Z0261	member	silencing	silencing	0	8	31	879	12	288	True	True	0	0	31	0.0	none	False
+Z0046|TRIP6	7205	Z0046	member	silencing	silencing	0	15	75	874	23	292	True	True	0	0	75	0.0	none	False
+Z0149|TRPS1	7227	Z0149	member	silencing	silencing	0	8	12	678	4	212	False	False	0	0	12	0.0	extra	False
+Z0171|KDM6A	7403	Z0171	member	LoF	LoF	0	6	18	936	8	310	True	False	14	4	4	0.777778	orig	True
+Z0145|VHL	7428	Z0145	member	LoF	LoF	0	8	16	944	7	312	True	False	15	0	1	0.9375	orig	True
+Z0096|WIPF1	7456	Z0096	attached	silencing	silencing	0	12	14	668	7	213	True	False	0	0	14	0.0	none	False
+Z0291|WNT7B	7477	Z0291	attached	silencing	silencing	0	8	39	562	19	181	True	False	0	0	39	0.0	none	False
+Z0133|ZNF91	7644	Z0133	member	silencing	silencing	1	8	42	858	14	293	True	True	3	2	40	0.071429	extra	True
+Z0177|ZP3	7784	Z0177	member	silencing	silencing	0	5	14	815	10	263	True	True	0	0	14	0.0	none	False
+Z0035|PAX8	7849	Z0035	member	silencing	silencing	0	16	20	595	2	202	False	False	0	0	20	0.0	none	False
+Z0132|FOSL1	8061	Z0132	member	silencing	silencing	0	9	54	824	18	275	True	False	0	0	54	0.0	extra	False
+Z0171|KMT2D	8085	Z0171	member	LoF	LoF	1	5	12	873	7	285	True	False	12	0	0	1.0	orig	True
+Z0024|HMGA2	8091	Z0024	member	silencing	silencing	0	18	87	739	29	241	True	True	0	0	87	0.0	none	False
+Z0109|ARID1A	8289	Z0109	member	LoF	LoF	1	9	37	858	12	282	True	False	37	0	0	1.0	orig	True
+Z0171|BAP1	8314	Z0171	member	LoF	LoF	0	6	14	947	6	314	True	False	12	0	2	0.857143	orig	True
+Z0312|RAD54L	8438	Z0312	member	silencing	silencing	0	13	12	948	1	319	False	False	0	0	12	0.0	none	False
+Z0165|BHLHE40	8553	Z0165	attached	silencing	silencing	0	8	22	934	10	309	True	False	0	1	21	0.045455	extra	False
+Z0273|CTSF	8722	Z0273	member	silencing	silencing	0	20	37	783	15	257	True	True	0	0	37	0.0	none	False
+Z0234|TNFSF10	8743	Z0234	member	silencing	silencing	0	2	66	680	21	213	True	False	0	0	66	0.0	extra	False
+Z0333|NRP1	8829	Z0333	attached	silencing	silencing	0	10	63	791	22	264	True	False	0	0	63	0.0	none	False
+Z0005|SLC16A5	9121	Z0005	member	silencing	silencing	0	26	51	619	19	209	True	True	0	0	51	0.0	none	False
+Z0251|SLC16A4	9122	Z0251	member	silencing	silencing	0	15	33	541	13	183	True	True	0	0	33	0.0	none	False
+Z0022|SLC16A3	9123	Z0022	member	silencing	silencing	0	18	70	878	18	300	True	True	0	0	70	0.0	none	False
+Z0069|CCNE2	9134	Z0069	member	silencing	silencing	1	12	20	942	5	313	True	False	0	0	20	0.0	none	False
+Z0137|GCNT3	9245	Z0137	member	silencing	silencing	0	8	42	361	10	127	True	False	0	0	42	0.0	none	False
+Z0041|PLAA	9373	Z0041	member	CN	LoF	0	15	26	932	8	313	True	False	22	21	4	0.846154	orig	True
+Z0035|ARHGAP29	9411	Z0035	member	silencing	silencing	0	16	65	774	29	253	True	False	0	0	65	0.0	none	False
+Z0121|FADS2	9415	Z0121	member	silencing	silencing	0	9	25	924	5	312	True	False	0	0	25	0.0	none	False
+Z0290|QKI	9444	Z0290	member	silencing	silencing	0	7	17	900	5	299	True	False	0	0	17	0.0	extra	False
+Z0333|MAP4K4	9448	Z0333	attached	silencing	silencing	0	10	15	942	2	315	False	False	0	0	15	0.0	none	False
+Z0048|HOMER3	9454	Z0048	member	silencing	silencing	0	15	20	918	6	308	True	True	0	0	20	0.0	none	False
+Z0194|NFE2L3	9603	Z0194	member	silencing	silencing	0	4	31	924	5	315	True	True	0	0	31	0.0	none	False
+Z0273|RIN1	9610	Z0273	member	silencing	silencing	0	20	33	821	15	272	True	True	0	0	33	0.0	none	False
+Z0029|ISG15	9636	Z0029	member	silencing	silencing	0	17	15	936	7	312	True	False	0	0	15	0.0	none	False
+Z0011|ESPL1	9700	Z0011	member	silencing	silencing	0	23	13	937	6	311	True	False	0	0	13	0.0	none	False
+Z0120|MTSS1	9788	Z0120	member	silencing	silencing	0	9	17	706	4	244	False	True	0	0	17	0.0	none	False
+Z0124|KEAP1	9817	Z0124	member	LoF	LoF	0	9	13	946	6	313	True	False	12	1	1	0.923077	orig	True
+Z0018|ZEB2	9839	Z0018	member	silencing	silencing	0	20	21	515	6	173	True	False	0	1	20	0.047619	extra	False
+Z0354|SV2A	9900	Z0354	member	silencing	silencing	0	3	30	518	12	184	True	True	0	0	30	0.0	none	False
+Z0011|KIF14	9928	Z0011	member	silencing	silencing	0	23	13	925	7	308	True	False	0	0	13	0.0	extra	False
+Z0014|MED12	9968	Z0014	member	LoF	LoF	0	22	12	939	6	315	True	False	10	2	2	0.833333	orig	True
+Z0176|GNE	10020	Z0176	member	silencing	silencing	0	5	26	902	12	300	True	False	0	0	26	0.0	none	False
+Z0007|PDZK1IP1	10158	Z0007	member	silencing	silencing	0	25	71	386	23	126	True	True	0	0	71	0.0	none	False
+Z0020|RASGRP2	10235	Z0020	member	silencing	silencing	0	19	23	294	7	107	True	True	0	0	23	0.0	none	False
+Z0059|YAP1	10413	Z0059	member	silencing	silencing	0	14	20	853	9	277	True	False	3	2	17	0.15	extra	True
+Z0106|ACAA2	10449	Z0106	member	silencing	silencing	0	10	12	941	5	312	True	False	0	0	12	0.0	none	False
+Z0290|ZBTB18	10472	Z0290	member	silencing	silencing	0	7	20	920	9	307	True	False	0	0	20	0.0	none	False
+Z0311|BATF	10538	Z0311	member	silencing	silencing	0	13	17	317	7	98	True	False	0	0	17	0.0	none	False
+Z0092|AGR2	10551	Z0092	member	silencing	silencing	0	11	58	539	28	182	True	False	0	1	57	0.017241	extra	False
+Z0107|AGPAT2	10555	Z0107	member	silencing	silencing	0	10	21	941	7	314	True	True	0	0	21	0.0	extra	False
+Z0065|IGF2BP1	10642	Z0065	member	silencing	silencing	0	13	23	456	10	161	True	False	0	0	23	0.0	none	False
+Z0291|SPINT2	10653	Z0291	member	silencing	silencing	0	7	25	813	8	272	True	False	0	0	25	0.0	none	False
+Z0326|SLC12A7	10723	Z0326	member	silencing	silencing	0	3	36	829	15	273	True	True	0	0	36	0.0	none	False
+Z0278|STAG2	10735	Z0278	member	LoF	LoF	0	14	21	933	5	313	True	False	16	0	5	0.761905	orig	True
+Z0309|NES	10763	Z0309	member	silencing	silencing	0	14	43	512	12	171	True	True	0	0	43	0.0	extra	False
+Z0056|SRCAP	10847	Z0056	member	silencing	silencing	0	14	21	914	6	311	True	False	0	0	21	0.0	extra	False
+Z0016|FERMT2	10979	Z0016	member	silencing	silencing	0	21	20	817	9	273	True	False	0	0	20	0.0	none	False
+Z0330|SLC27A5	10998	Z0330	member	silencing	silencing	0	11	31	917	18	295	True	True	0	0	31	0.0	extra	False
+Z0273|CCDC85B	11007	Z0273	member	silencing	silencing	0	20	26	934	6	315	True	True	0	0	26	0.0	none	False
+Z0018|DUSP10	11221	Z0018	member	silencing	silencing	1	19	24	878	12	288	True	False	0	0	24	0.0	none	False
+Z0134|RASSF8	11228	Z0134	member	silencing	silencing	0	8	19	774	9	253	True	True	0	0	19	0.0	none	False
+Z0044|MGAT4A	11320	Z0044	member	silencing	silencing	0	15	17	724	1	236	False	True	0	0	17	0.0	none	False
+Z0050|IKZF3	22806	Z0050	member	silencing	silencing	0	15	15	136	4	39	False	True	0	0	15	0.0	none	False
+Z0004|CEP152	22995	Z0004	member	silencing	silencing	0	26	19	913	5	304	True	False	0	0	19	0.0	none	False
+Z0087|CYFIP1	23191	Z0087	member	silencing	silencing	0	11	21	938	5	315	True	False	0	0	21	0.0	none	False
+Z0309|SYT11	23208	Z0309	member	silencing	silencing	0	14	22	450	4	151	False	True	0	0	22	0.0	none	False
+Z0093|MGA	23269	Z0093	member	silencing	silencing	0	11	16	912	0	309	False	False	0	0	16	0.0	orig	False
+Z0067|NEDD4L	23327	Z0067	attached	silencing	silencing	0	14	19	941	9	312	True	False	0	0	19	0.0	none	False
+Z0072|ARHGEF12	23365	Z0072	attached	silencing	silencing	0	14	13	940	7	310	True	False	0	0	13	0.0	extra	False
+Z0169|TNS2	23371	Z0169	member	silencing	silencing	0	6	12	764	6	254	True	True	0	0	12	0.0	none	False
+Z0157|PSD4	23550	Z0157	member	silencing	silencing	0	7	15	753	6	251	True	False	0	0	15	0.0	none	False
+Z0321|SLC7A11	23657	Z0321	member	silencing	silencing	0	7	20	926	5	314	True	False	0	0	20	0.0	none	False
+Z0089|CEMIP2	23670	Z0089	attached	silencing	silencing	0	12	17	928	2	309	False	False	0	0	17	0.0	none	False
+Z0241|RASGRP3	25780	Z0241	attached	silencing	silencing	0	3	25	402	5	140	True	False	0	0	25	0.0	none	False
+Z0149|SPDEF	25803	Z0149	member	silencing	silencing	0	8	18	190	4	65	False	False	0	0	18	0.0	none	False
+Z0255|BAMBI	25805	Z0255	member	silencing	silencing	0	11	47	794	12	269	True	False	0	0	47	0.0	none	False
+Z0169|TMT1A	25840	Z0169	member	silencing	silencing	0	6	56	678	14	229	True	True	0	0	56	0.0	none	False
+Z0157|PLEKHG4	25894	Z0157	attached	silencing	silencing	0	8	27	802	10	265	True	False	0	0	27	0.0	none	False
+Z0304|LRIG1	26018	Z0304	attached	silencing	silencing	0	4	35	805	14	262	True	False	0	0	35	0.0	none	False
+Z0319|LDLRAP1	26119	Z0319	member	silencing	silencing	0	9	20	929	3	313	False	False	0	0	20	0.0	none	False
+Z0037|MYEOV	26579	Z0037	member	silencing	silencing	0	16	67	694	21	238	True	True	0	0	67	0.0	none	False
+Z0125|CPNE7	27132	Z0125	member	silencing	silencing	0	9	17	660	7	219	True	True	0	0	17	0.0	none	False
+Z0319|BLNK	29760	Z0319	attached	silencing	silencing	0	10	20	295	6	103	True	False	0	0	20	0.0	extra	False
+Z0321|BLNK	29760	Z0321	attached	silencing	silencing	0	8	20	295	6	103	True	False	0	0	20	0.0	extra	False
+Z0234|CARD10	29775	Z0234	member	silencing	silencing	0	2	18	794	12	259	True	False	0	0	18	0.0	none	False
+Z0013|ZDHHC8	29801	Z0013	member	silencing	silencing	0	22	15	942	15	301	True	True	0	0	15	0.0	none	False
+Z0288|RHOD	29984	Z0288	member	silencing	silencing	0	9	80	595	24	204	True	True	0	0	80	0.0	none	False
+Z0035|F11R	50848	Z0035	member	silencing	silencing	0	16	17	883	4	301	False	False	0	0	17	0.0	none	False
+Z0233|CERCAM	51148	Z0233	member	silencing	silencing	0	2	32	891	7	300	True	True	0	0	32	0.0	extra	False
+Z0025|SLC22A17	51310	Z0025	member	silencing	silencing	0	18	15	525	3	174	False	True	0	0	15	0.0	extra	False
+Z0169|CSAD	51380	Z0169	member	silencing	silencing	0	6	25	915	5	313	True	True	0	0	25	0.0	none	False
+Z0154|TRPV2	51393	Z0154	member	silencing	silencing	0	7	12	374	3	130	False	True	0	0	12	0.0	none	False
+Z0333|AMOTL2	51421	Z0333	attached	silencing	silencing	0	10	14	852	7	282	True	False	0	0	14	0.0	none	False
+Z0048|ISYNA1	51477	Z0048	member	silencing	silencing	0	15	27	919	8	308	True	True	0	0	27	0.0	none	False
+Z0008|GTSE1	51512	Z0008	member	silencing	silencing	0	25	15	946	2	318	False	False	0	0	15	0.0	none	False
+Z0035|RIPK4	54101	Z0035	attached	silencing	silencing	0	17	33	667	11	222	True	False	0	2	31	0.060606	extra	False
+Z0319|SASH3	54440	Z0319	attached	silencing	silencing	0	10	27	86	6	33	True	False	0	1	26	0.037037	extra	False
+Z0286|FOCAD	54914	Z0286	member	CN	LoF	0	9	46	911	13	307	True	False	31	32	12	0.73913	orig	True
+Z0037|ANO1	55107	Z0037	member	silencing	silencing	0	16	33	408	18	129	True	True	0	0	33	0.0	extra	False
+Z0201|PBRM1	55193	Z0201	member	LoF	LoF	0	3	14	938	7	309	True	False	12	0	3	0.857143	orig	True
+Z0333|KIRREL1	55243	Z0333	attached	silencing	silencing	0	10	50	741	19	240	True	False	0	0	50	0.0	none	False
+Z0092|FERMT1	55612	Z0092	member	silencing	silencing	0	11	16	692	13	217	True	False	0	0	16	0.0	none	False
+Z0134|FAR2	55711	Z0134	member	silencing	silencing	0	8	39	745	5	253	True	True	0	0	39	0.0	extra	False
+Z0004|CPAP	55835	Z0004	member	silencing	silencing	0	26	13	923	4	309	False	False	0	0	13	0.0	extra	False
+Z0121|AGPAT3	56894	Z0121	member	silencing	silencing	0	9	15	945	3	318	False	False	0	0	15	0.0	none	False
+Z0008|KIF15	56992	Z0008	member	silencing	silencing	0	25	15	933	4	309	False	False	0	0	15	0.0	none	False
+Z0008|KNL1	57082	Z0008	member	silencing	silencing	0	25	18	935	4	314	False	False	0	0	18	0.0	none	False
+Z0309|RAB25	57111	Z0309	member	silencing	silencing	0	14	95	426	41	131	True	True	0	0	95	0.0	none	False
+Z0160|PREX1	57580	Z0160	member	silencing	silencing	0	7	20	578	9	200	True	False	0	0	20	0.0	none	False
+Z0028|ARHGAP21	57584	Z0028	member	silencing	silencing	0	17	12	948	5	314	True	False	1	0	11	0.083333	extra	True
+Z0108|ARHGAP23	57636	Z0108	member	silencing	silencing	0	10	51	830	22	270	True	True	0	0	51	0.0	extra	False
+Z0168|PLEKHB1	58473	Z0168	member	silencing	silencing	0	6	27	607	7	201	True	True	0	0	27	0.0	none	False
+Z0118|FKBP10	60681	Z0118	member	silencing	silencing	0	10	74	833	25	277	True	True	0	0	74	0.0	none	False
+Z0165|SOX17	64321	Z0165	member	silencing	silencing	0	7	17	89	6	29	True	False	0	0	17	0.0	extra	False
+Z0318|NFKBIZ	64332	Z0318	attached	silencing	silencing	0	10	27	904	5	302	True	False	0	0	27	0.0	none	False
+Z0016|TNS3	64759	Z0016	member	silencing	silencing	0	21	46	865	16	283	True	False	0	0	46	0.0	none	False
+Z0281|VWA1	64856	Z0281	member	silencing	silencing	0	10	44	773	18	256	True	True	0	0	44	0.0	none	False
+Z0330|ZSCAN18	65982	Z0330	member	silencing	silencing	0	11	78	564	28	193	True	True	0	0	78	0.0	extra	False
+Z0273|LRFN4	78999	Z0273	member	silencing	silencing	0	20	34	915	20	292	True	True	0	0	34	0.0	none	False
+Z0091|CCDC28B	79140	Z0091	member	silencing	silencing	0	11	14	932	8	307	True	True	0	0	14	0.0	none	False
+Z0194|PRR15L	79170	Z0194	member	silencing	silencing	0	4	39	329	14	108	True	True	0	0	39	0.0	none	False
+Z0134|BHLHE41	79365	Z0134	member	silencing	silencing	0	8	25	671	11	211	True	True	0	0	25	0.0	none	False
+Z0251|EPS8L3	79574	Z0251	member	silencing	silencing	0	15	49	197	24	55	True	True	0	0	49	0.0	extra	False
+Z0005|RHBDF2	79651	Z0005	member	silencing	silencing	0	26	21	930	11	304	True	True	0	0	21	0.0	none	False
+Z0054|GSDMD	79792	Z0054	member	silencing	silencing	0	15	78	860	30	285	True	True	0	0	78	0.0	none	False
+Z0182|WDR76	79968	Z0182	member	silencing	silencing	0	5	15	944	3	317	False	True	0	0	15	0.0	none	False
+Z0291|WLS	79971	Z0291	member	silencing	silencing	0	7	37	852	10	286	True	False	0	0	37	0.0	none	False
+Z0149|GRHL2	79977	Z0149	member	silencing	silencing	0	8	52	403	31	121	True	False	0	0	52	0.0	none	False
+Z0016|DOCK5	80005	Z0016	member	silencing	silencing	0	21	12	824	6	278	True	False	0	0	12	0.0	none	False
+Z0004|TEDC2	80178	Z0004	member	silencing	silencing	0	26	12	941	4	316	False	False	0	0	12	0.0	none	False
+Z0005|LIMD2	80774	Z0005	member	silencing	silencing	0	26	26	817	13	272	True	True	0	0	26	0.0	none	False
+Z0267|DIAPH3	81624	Z0267	member	silencing	silencing	1	3	13	942	3	316	False	False	2	0	11	0.153846	extra	True
+Z0144|YPEL3	83719	Z0144	member	silencing	silencing	0	8	62	898	20	300	True	True	0	0	62	0.0	none	False
+Z0031|RAB34	83871	Z0031	member	silencing	silencing	0	17	111	752	40	255	True	True	0	0	111	0.0	none	False
+Z0260|B3GNT5	84002	Z0260	member	silencing	silencing	1	7	69	819	30	267	True	False	0	0	69	0.0	none	False
+Z0021|GINS4	84296	Z0021	member	silencing	silencing	0	19	15	945	3	318	False	False	0	0	15	0.0	none	False
+Z0054|PARP10	84875	Z0054	member	silencing	silencing	0	15	46	888	15	300	True	True	0	0	46	0.0	none	False
+Z0321|AIFM2	84883	Z0321	member	silencing	silencing	0	7	22	878	11	284	True	False	0	0	22	0.0	none	False
+Z0055|TUBGCP6	85378	Z0055	member	silencing	silencing	0	15	12	938	2	317	False	False	0	0	12	0.0	extra	False
+Z0180|TSPYL5	85453	Z0180	member	silencing	silencing	0	5	57	336	27	92	True	False	0	0	57	0.0	none	False
+Z0201|ZNF518B	85460	Z0201	attached	silencing	silencing	0	4	15	684	4	222	False	False	0	0	15	0.0	none	False
+Z0018|NAV2	89797	Z0018	member	silencing	silencing	0	20	27	745	13	238	True	False	0	0	27	0.0	none	False
+Z0005|TRIM47	91107	Z0005	member	silencing	silencing	0	26	41	861	11	295	True	True	0	0	41	0.0	extra	False
+Z0181|SCARF2	91179	Z0181	member	silencing	silencing	0	5	18	502	5	161	True	False	0	0	18	0.0	none	False
+Z0017|DMKN	93099	Z0017	member	silencing	silencing	0	20	59	696	28	224	True	True	0	0	59	0.0	none	False
+Z0054|NAPRT	93100	Z0054	member	silencing	silencing	0	15	19	937	6	315	True	True	0	0	19	0.0	none	False
+Z0004|CEP41	95681	Z0004	attached	silencing	silencing	0	27	12	932	3	312	False	False	0	0	12	0.0	none	False
+Z0054|RHPN1	114822	Z0054	member	silencing	silencing	0	15	17	753	6	249	True	True	0	0	17	0.0	none	False
+Z0118|NT5C3B	115024	Z0118	member	silencing	silencing	0	10	12	950	3	317	False	True	0	0	12	0.0	none	False
+Z0123|ARHGEF25	115557	Z0123	member	silencing	silencing	0	9	14	690	5	234	True	False	0	0	14	0.0	extra	False
+Z0321|PIK3AP1	118788	Z0321	attached	silencing	silencing	0	8	16	444	4	144	False	False	0	0	16	0.0	none	False
+Z0291|CYP2R1	120227	Z0291	attached	silencing	silencing	0	8	34	924	18	300	True	False	0	0	34	0.0	extra	False
+Z0304|LRIG3	121227	Z0304	attached	silencing	silencing	0	4	23	835	12	272	True	False	0	0	23	0.0	none	False
+Z0241|KDF1	126695	Z0241	member	silencing	silencing	0	2	46	442	27	138	True	False	0	0	46	0.0	extra	False
+Z0322|LIX1L	128077	Z0322	member	silencing	silencing	0	7	28	807	12	264	True	True	0	0	28	0.0	none	False
+Z0107|DIPK1B	138311	Z0107	member	silencing	silencing	0	10	14	657	5	214	True	True	0	0	14	0.0	none	False
+Z0290|LDLRAD3	143458	Z0290	attached	silencing	silencing	0	8	15	877	7	291	True	False	0	0	15	0.0	none	False
+Z0337|KIF18B	146909	Z0337	member	silencing	silencing	0	6	20	940	6	313	True	False	0	0	20	0.0	none	False
+Z0033|SPC24	147841	Z0033	member	silencing	silencing	0	17	18	943	5	315	True	False	0	0	18	0.0	none	False
+Z0133|ZNF714	148206	Z0133	member	silencing	silencing	3	6	46	867	20	280	True	True	2	2	44	0.043478	extra	True
+Z0310|CIART	148523	Z0310	member	silencing	silencing	0	13	15	623	7	206	True	True	0	0	15	0.0	none	False
+Z0018|IGSF11	152404	Z0018	attached	silencing	silencing	0	21	18	211	3	77	False	False	0	0	18	0.0	none	False
+Z0351|ESCO2	157570	Z0351	member	silencing	silencing	0	5	19	925	4	312	False	False	0	0	19	0.0	extra	False
+Z0017|SYNE4	163183	Z0017	member	silencing	silencing	0	20	13	329	2	106	False	True	0	0	13	0.0	none	False
+Z0133|ZNF100	163227	Z0133	member	silencing	silencing	3	6	14	807	3	281	False	True	2	2	12	0.142857	extra	True
+Z0188|ZNF367	195828	Z0188	member	silencing	silencing	0	4	12	944	5	315	True	False	0	0	12	0.0	none	False
+Z0038|CADM4	199731	Z0038	member	silencing	silencing	0	16	15	850	8	273	True	True	0	0	15	0.0	none	False
+Z0296|MUC20	200958	Z0296	member	silencing	silencing	0	5	25	431	10	142	True	True	0	0	25	0.0	none	False
+Z0005|UNC13D	201294	Z0005	member	silencing	silencing	0	26	35	598	9	195	True	True	0	0	35	0.0	none	False
+Z0067|DIPK2A	205428	Z0067	attached	silencing	silencing	0	14	18	938	5	316	True	False	0	0	18	0.0	none	False
+Z0004|HYLS1	219844	Z0004	member	silencing	silencing	0	26	14	927	3	309	False	False	0	0	14	0.0	extra	False
+Z0180|JAZF1	221895	Z0180	member	silencing	silencing	0	5	12	758	5	258	True	False	0	0	12	0.0	none	False
+Z0334|ZBTB38	253461	Z0334	member	silencing	silencing	0	9	21	928	3	312	False	False	0	0	21	0.0	none	False
+Z0071|EHBP1L1	254102	Z0071	member	silencing	silencing	0	13	17	933	7	312	True	False	0	0	17	0.0	extra	False
+Z0162|PCSK9	255738	Z0162	member	silencing	silencing	0	7	36	447	17	131	True	True	0	0	36	0.0	none	False
+Z0005|HID1	283987	Z0005	member	silencing	silencing	0	26	31	667	11	213	True	True	0	0	31	0.0	none	False
+Z0279|METRNL	284207	Z0279	attached	silencing	silencing	0	14	40	895	18	292	True	False	0	0	40	0.0	none	False
+Z0190|STING1	340061	Z0190	attached	silencing	silencing	0	5	123	817	36	278	True	False	0	0	123	0.0	none	False
+Z0005|MXRA7	439921	Z0005	member	silencing	silencing	0	26	18	914	6	301	True	True	0	0	18	0.0	none	False
+Z0133|ZNF506	440515	Z0133	member	silencing	silencing	3	6	38	798	8	270	True	True	0	0	38	0.0	none	False
+Z0302|PEX39	441150	Z0302	member	silencing	silencing	0	4	17	922	4	313	False	True	0	0	17	0.0	none	False
+Z0164|GPX8	493869	Z0164	member	silencing	silencing	0	7	36	812	9	270	True	True	0	0	36	0.0	none	False
+Z0221|TMEM35B	100506144	Z0221	member	silencing	silencing	0	3	12	949	5	316	True	False	0	1	11	0.083333	extra	False
