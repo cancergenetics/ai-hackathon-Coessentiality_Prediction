@@ -1,0 +1,123 @@
+{
+ "n_sample": 6007,
+ "n_sample_mapped": 5645,
+ "comparisons": {
+  "gls: Part1 src/baselines.py": {
+   "reference_tsv": "gls_signed",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 1.3322676295501878e-14,
+   "max_rel_diff": 2.3013460137367232e-11,
+   "n_exact": 200,
+   "spearman_rank_corr": 1.0
+  },
+  "gls: Part1 BaselineEngine on sample": {
+   "reference_tsv": "gls_signed",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "n_exact": 5645,
+   "spearman_rank_corr": 1.0
+  },
+  "pearson: Part1 src/baselines.py": {
+   "reference_tsv": "pearson_signed",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 1.0547118733938987e-15,
+   "max_rel_diff": 7.007841297508773e-13,
+   "n_exact": 206,
+   "spearman_rank_corr": 1.0
+  },
+  "pearson: Part1 BaselineEngine on sample": {
+   "reference_tsv": "pearson_signed",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "n_exact": 5645,
+   "spearman_rank_corr": 1.0
+  },
+  "spearman: Part1 src/baselines.py": {
+   "reference_tsv": "spearman_signed",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 4.440892098500626e-16,
+   "max_rel_diff": 8.542302501186282e-12,
+   "n_exact": 413,
+   "spearman_rank_corr": 1.0
+  },
+  "spearman: Part1 BaselineEngine on sample": {
+   "reference_tsv": "spearman_signed",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "n_exact": 5645,
+   "spearman_rank_corr": 1.0
+  },
+  "zavg_BEF: all-pairs matrix (mvp, float32)": {
+   "reference_tsv": "zavg_BEF",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 3.287641812121933e-06,
+   "max_rel_diff": 0.002131868491033266,
+   "n_exact": 0,
+   "spearman_rank_corr": 1.0
+  },
+  "zavg_BEF:mvp predict_pairs.py": {
+   "reference_tsv": "zavg_BEF",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 3.5425916387055167e-06,
+   "max_rel_diff": 0.002131870016048556,
+   "n_exact": 0,
+   "spearman_rank_corr": 1.0
+  },
+  "B:mvp predict_pairs.py": {
+   "reference_tsv": "B",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "n_exact": 5645,
+   "spearman_rank_corr": 1.0
+  },
+  "zavg_BEF:locked predict_pairs.py on sample file": {
+   "reference_tsv": "zavg_BEF",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "n_exact": 5645,
+   "spearman_rank_corr": 1.0
+  },
+  "B:locked predict_pairs.py on sample file": {
+   "reference_tsv": "B",
+   "n": 5645,
+   "n_nonfinite_new": 0,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "n_exact": 5645,
+   "spearman_rank_corr": 1.0
+  }
+ },
+ "matrix": {
+  "source": "datasets/DepMAP/CRISPRGeneEffect.csv",
+  "file_sha256": "1e0c492944a7297c0eda179081a1e81a1cfe41a97628facd7eddbdda1a7504ee",
+  "shape": [
+   1361,
+   18434
+  ],
+  "npy_sha256": "8a894d2449074934de71cf0e0b44e8d81ec2d70bc756b2d038367c34c9ad27f3",
+  "npy_sha256_matches_manifest": true,
+  "load_s": 3.88
+ },
+ "mapping_agrees_with_tsv_mapped_flag": true,
+ "allpairs_mapped_and_tsv_mapped": 5645,
+ "allpairs_unmapped_but_tsv_mapped": 0,
+ "zavg_BEF:mvp predict_pairs.py: mapped flag agrees": true,
+ "B:mvp predict_pairs.py: mapped flag agrees": true,
+ "zavg_BEF:locked predict_pairs.py on sample file: mapped flag agrees": true,
+ "B:locked predict_pairs.py on sample file: mapped flag agrees": true
+}
