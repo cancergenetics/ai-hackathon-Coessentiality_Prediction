@@ -1,6 +1,6 @@
 # TEST_PROTOCOL.md: pre-registered evaluation of the locked Part 1 method on the withheld hu.MAP test pairs
 
-**DRAFT v1.2** (2026-10-28; revised after design review rounds 1 and 2, see `docs/reviews/round1_protocol_response.md` and §9).
+**FROZEN v1.2** (2026-10-28; revised after design review rounds 1–3, see `docs/reviews/round1_protocol_response.md` and §9).
 
 **Freezing.** At the freeze the PI replaces the line above with `**FROZEN v1.2** (date)`. The pre-freeze status word (the one in the line above) must then occur nowhere in this file. The PI then runs `scripts/22_freeze_protocol.py` and commits this file together with `docs/TEST_PROTOCOL.FROZEN`. Agents never make the freeze commit.
 

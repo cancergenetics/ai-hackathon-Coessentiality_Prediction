@@ -1,0 +1,30 @@
+{
+ "files": {
+  "docs/TEST_PROTOCOL.md": "32de4a9bfb859f4b5f5e95a554ffde841b6ffab03e980c8d8d56cc81adc15e36",
+  "results/test_eval/fitted_rules.json": "822203bd8f7a7e9153e201660dc541069d01ae1bb9c0502ba7c01e2213241d8f",
+  "scripts/19_make_pair_files.py": "9110bfbb9ca12ffea6b57ea1e609facaf82875a9ae273351e660536440c88bed",
+  "scripts/20_score_test_pairs.sh": "c3731257251f6fcf5668a5b45570a7a64f70fd7cc4d44546890e4c9b2355a734",
+  "scripts/20b_score_posthoc_reference.py": "0f1a2ef6f5dfb2861d4ba641b2ad9aa946a76b4d63fd84786c1bab5ba6c01237",
+  "scripts/21_evaluate_test.py": "bb79185e72bd21a472d61e74b3d7fef012f77755313a1546a66691678c334804",
+  "scripts/22_freeze_protocol.py": "1e2967ef61eb158a5309ec4a4bcf04df0f0b730bc2208268ceb20873e7370b8f",
+  "src/testeval/__init__.py": "6c3b5e475fe03ce3861606073ded2928bc580dab1f1fe1249eeb2cd0e20f0575",
+  "src/testeval/bootstrap.py": "f9eaf455121204cb4e4d65e485236c9756a0c9c79428426319d5243efb50680b",
+  "src/testeval/calibration.py": "1a275314ef55b9ad67b9f58a6c7fd9e0adc8479c4c5bcc348a6da98a2c4335d6",
+  "src/testeval/evaluate.py": "0e580a653129e953177238b6cacf525390cf14cec4aa93c6c55c8de9c893c10f",
+  "src/testeval/metrics.py": "363fa4ea5309c64082a79e958982e1bea5580c7c72f0583571851a623ee60060",
+  "src/testeval/pairs.py": "dd3da5881c762a928acd56476b0e9d1f36d9c8bebf9ab89c6dfe9eb8996f9a42",
+  "src/testeval/part1.py": "7720fc69ceb724d00e4d4daec00946d08223dd2a995f8b6c12dda11fb00c0da9",
+  "src/testeval/paths.py": "c9076566b3506db55c2db7400750e7f91646261a79c6ae689c1d33942e611a1a",
+  "src/testeval/posthoc.py": "1ba3be8a14419ce2accb7d5b84fdc4fab96f2a99ec4b3cb3fffa25febfd0323a",
+  "src/testeval/protocol.py": "91af0b0fede75b8d973dc488c9ea72f0bf7fea1daff93b53b07b1f4a1feada74",
+  "tests/test_testeval.py": "a066c610e4625f45d97fe7d5426dbcea6b5c85aab9eb8a38e2c5aafa53984785"
+ },
+ "kind": "TEST_PROTOCOL.FROZEN",
+ "part1_locked_commit": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
+ "pip_freeze_sha256": "95449aff8abba271d7fe4c9f8a75b137cc6b4a8abcf117650b6a9b02814761e3",
+ "test_files": {
+  "Test_negative_pairs.txt": "c4a3e5468da0790690ee910af1822dcaaa301dea1afaad45816e34f5e40ae9de",
+  "Test_positive_pairs.txt": "c4e3e68edcfc088516b3334dbfae248fb8f276c6475c13dc621abc8b4bba2d96"
+ },
+ "version": 1
+}
