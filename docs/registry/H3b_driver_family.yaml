@@ -1,0 +1,523 @@
+# H3b driver / genome-state family (DESIGN v3.1 2.6). Drafted at FZ-R; only `pending` fields may change before
+# the first run (filled at FZ-C / FZ-X; part2.registry.fill_only_changes).
+id: H3b_driver_family
+direction: H3b
+hypothesis: >
+  Driver and genome-state contexts (hotspots, TP53 status, MSI-H, WGD, 9p21 loss, MYC/MYCN amplification, LoY,
+  sex, NRF2 activity, tumour-suppressor LoF, registered fusions) are associated with complex-level dependency
+  (S_C) of the frozen coarse complexes; every context is tested against every frozen coarse complex.
+sign: two-sided
+context_family:
+  name: "H3b: driver / genome-state contexts of DESIGN 2.6 with >= 12 context models in A"
+  inclusion_rule: >
+    The DESIGN 2.6 list, each context in its primary DESIGN 2.2 definition (LoF: MSI-H lines NaN; MYC/MYCN amp:
+    r >= 2; 9p21 loss: MTAP hom-del), included iff >= 12 context models in A (FZ-LB counts). 20 of the 25 listed
+    contexts qualify; 18 of them are lockbox-testable (>= 5 L models). Contexts with role = sensitivity are not
+    part of the family (not in M or m); they are run only for discovered hits.
+  contexts:
+    - id: "hotspot:KRAS"
+      definition: "hotspot matrix KRAS >= 1"
+      role: primary
+      type: "mutation (hotspot)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "KRAS and its in-complex Ensembl-116 paralogs"
+      n_A: 154
+      ref_A: 853
+      n_L: 52
+      ref_L: 286
+      lockbox_testable: true
+    - id: "hotspot:NRAS"
+      definition: "hotspot matrix NRAS >= 1"
+      role: primary
+      type: "mutation (hotspot)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "NRAS and its in-complex Ensembl-116 paralogs"
+      n_A: 48
+      ref_A: 959
+      n_L: 16
+      ref_L: 322
+      lockbox_testable: true
+    - id: "hotspot:BRAF"
+      definition: "hotspot matrix BRAF >= 1"
+      role: primary
+      type: "mutation (hotspot)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "BRAF and its in-complex Ensembl-116 paralogs"
+      n_A: 66
+      ref_A: 941
+      n_L: 22
+      ref_L: 316
+      lockbox_testable: true
+    - id: "hotspot:PIK3CA"
+      definition: "hotspot matrix PIK3CA >= 1"
+      role: primary
+      type: "mutation (hotspot)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "PIK3CA and its in-complex Ensembl-116 paralogs"
+      n_A: 100
+      ref_A: 907
+      n_L: 33
+      ref_L: 305
+      lockbox_testable: true
+    - id: "TP53_altered"
+      definition: "1 = TP53 hotspot or LoF; 0 = no damaging/hotspot/hom-del; NaN = ambiguous single hit or unknown"
+      role: primary
+      type: "mutation (TP53 status; 1 = altered, 0 = WT)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "TP53 and its in-complex Ensembl-116 paralogs"
+      n_A: 668
+      ref_A: 319
+      n_L: 219
+      ref_L: 109
+      lockbox_testable: true
+    - id: "MSI_H"
+      definition: "MSIScore > 20"
+      role: primary
+      type: "genome state (hypermutation)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      removed_members: "none (no single context gene)"
+      n_A: 59
+      ref_A: 948
+      n_L: 20
+      ref_L: 318
+      lockbox_testable: true
+    - id: "WGD"
+      definition: "OmicsGlobalSignatures WGD (default DNA profile)"
+      role: primary
+      type: "genome state"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, TP53_altered]
+      removed_members: "none (no context gene)"
+      n_A: 553
+      ref_A: 227
+      n_L: 178
+      ref_L: 74
+      lockbox_testable: true
+    - id: "9p21_loss"
+      definition: "9p21 loss = MTAP hom-del (PC9; segment reported)"
+      role: primary
+      type: "copy number (hom-del)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "MTAP, CDKN2A, CDKN2B, their in-complex paralogs and every member within +/-10 Mb of MTAP"
+      n_A: 148
+      ref_A: 803
+      n_L: 49
+      ref_L: 271
+      lockbox_testable: true
+    - id: "MYC_amp"
+      definition: "MYC r >= 2"
+      role: primary
+      type: "copy number (amp)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "MYC, its in-complex paralogs and every member within +/-10 Mb of MYC"
+      n_A: 174
+      ref_A: 736
+      n_L: 47
+      ref_L: 251
+      lockbox_testable: true
+    - id: "MYCN_amp"
+      definition: "MYCN r >= 2"
+      role: primary
+      type: "copy number (amp)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "MYCN, its in-complex paralogs and every member within +/-10 Mb of MYCN"
+      n_A: 28
+      ref_A: 882
+      n_L: 8
+      ref_L: 290
+      lockbox_testable: true
+    - id: "LoY"
+      definition: "male lines with chrY_expr_sum < 16.544 (KDE antimode); female/unknown NaN"
+      role: primary
+      type: "chromosome loss (male lines only; female NaN)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "every chrY gene and every X-linked member that is an Ensembl-116 paralog of a chrY gene (gametologs)"
+      n_A: 216
+      ref_A: 311
+      n_L: 74
+      ref_L: 93
+      lockbox_testable: true
+    - id: "sex_female"
+      definition: "Model.csv Sex: Female 1, Male 0, Unknown NaN"
+      role: primary
+      type: "sex (1 = female, 0 = male)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      removed_members: "every chrY gene and every X-linked member that is an Ensembl-116 paralog of a chrY gene (gametologs)"
+      n_A: 408
+      ref_A: 556
+      n_L: 138
+      ref_L: 178
+      lockbox_testable: true
+    - id: "NRF2_active"
+      definition: "LoF KEAP1 or LoF CUL3 or NFE2L2 hotspot; MSI-H lines 1 only via hotspot, else NaN"
+      role: primary
+      type: "mutation (pathway)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "KEAP1, CUL3, NFE2L2 and their in-complex paralogs"
+      n_A: 31
+      ref_A: 878
+      n_L: 10
+      ref_L: 290
+      lockbox_testable: true
+    - id: "LoF:ARID1A"
+      definition: "LoF(ARID1A); MSI-H lines NaN"
+      role: primary
+      type: "mutation (LoF; MSI-H lines NaN)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "ARID1A, its in-complex paralogs, and every member within +/-10 Mb of ARID1A if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 37
+      ref_A: 858
+      n_L: 12
+      ref_L: 285
+      lockbox_testable: true
+    - id: "LoF:SMARCA4"
+      definition: "LoF(SMARCA4); MSI-H lines NaN"
+      role: primary
+      type: "mutation (LoF; MSI-H lines NaN)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "SMARCA4, its in-complex paralogs, and every member within +/-10 Mb of SMARCA4 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 30
+      ref_A: 871
+      n_L: 10
+      ref_L: 291
+      lockbox_testable: true
+    - id: "LoF:STAG2"
+      definition: "LoF(STAG2); MSI-H lines NaN"
+      role: primary
+      type: "mutation (LoF; MSI-H lines NaN)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "STAG2, its in-complex paralogs, and every member within +/-10 Mb of STAG2 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 16
+      ref_A: 888
+      n_L: 5
+      ref_L: 296
+      lockbox_testable: true
+    - id: "LoF:PTEN"
+      definition: "LoF(PTEN); MSI-H lines NaN"
+      role: primary
+      type: "mutation (LoF; MSI-H lines NaN)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "PTEN, its in-complex paralogs, and every member within +/-10 Mb of PTEN if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 88
+      ref_A: 816
+      n_L: 29
+      ref_L: 273
+      lockbox_testable: true
+    - id: "LoF:RB1"
+      definition: "LoF(RB1); MSI-H lines NaN"
+      role: primary
+      type: "mutation (LoF; MSI-H lines NaN)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "RB1, its in-complex paralogs, and every member within +/-10 Mb of RB1 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 49
+      ref_A: 850
+      n_L: 17
+      ref_L: 283
+      lockbox_testable: true
+    - id: "LoF:KMT2D"
+      definition: "LoF(KMT2D); MSI-H lines NaN"
+      role: primary
+      type: "mutation (LoF; MSI-H lines NaN)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "KMT2D, its in-complex paralogs, and every member within +/-10 Mb of KMT2D if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 12
+      ref_A: 882
+      n_L: 4
+      ref_L: 293
+      lockbox_testable: false
+    - id: "fusion:EWSR1::FLI1|ERG"
+      definition: "unordered EWSR1::FLI1, EWSR1::ERG (OmicsFusionFiltered default RNA profile; no RNA -> NaN)"
+      role: primary
+      type: "fusion"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      removed_members: "EWSR1, FLI1, ERG and their in-complex paralogs"
+      n_A: 15
+      ref_A: 943
+      n_L: 4
+      ref_L: 314
+      lockbox_testable: false
+    - id: "PIK3CA_hotspot_noPTENLoF"
+      definition: "PIK3CA hotspot; lines with PTEN LoF NaN (PC19b)"
+      role: sensitivity
+      type: "mutation (hotspot); sensitivity of hotspot PIK3CA"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "PIK3CA and its in-complex Ensembl-116 paralogs"
+      n_A: 94
+      ref_A: 825
+      n_L: 32
+      ref_L: 277
+      lockbox_testable: true
+    - id: "LoF:TP53"
+      definition: "LoF(TP53); MSI-H lines NaN"
+      role: sensitivity
+      type: "mutation (TP53 status; 1 = altered, 0 = WT); sensitivity of TP53_altered"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "TP53 and its in-complex Ensembl-116 paralogs"
+      n_A: 592
+      ref_A: 333
+      n_L: 193
+      ref_L: 104
+      lockbox_testable: true
+    - id: "hotspot:TP53"
+      definition: "hotspot matrix TP53 >= 1"
+      role: sensitivity
+      type: "mutation (TP53 status; 1 = altered, 0 = WT); sensitivity of TP53_altered"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "TP53 and its in-complex Ensembl-116 paralogs"
+      n_A: 496
+      ref_A: 511
+      n_L: 185
+      ref_L: 153
+      lockbox_testable: true
+    - id: "WGD_anyprofile"
+      definition: "SENSITIVITY: WGD of the default DNA profile, else of another DNA profile of the model"
+      role: sensitivity
+      type: "genome state; sensitivity of WGD"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, TP53_altered]
+      removed_members: "none (no context gene)"
+      n_A: 644
+      ref_A: 277
+      n_L: 220
+      ref_L: 91
+      lockbox_testable: true
+    - id: "CN_homdel:CDKN2A"
+      definition: "hom-del CDKN2A (a<0.5 & expr<1 where measured)"
+      role: sensitivity
+      type: "copy number (hom-del); sensitivity of 9p21_loss"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "MTAP, CDKN2A, CDKN2B, their in-complex paralogs and every member within +/-10 Mb of MTAP"
+      n_A: 256
+      ref_A: 685
+      n_L: 83
+      ref_L: 231
+      lockbox_testable: true
+    - id: "CN_highamp:MYC"
+      definition: "high-level amp MYC (r >= 3)"
+      role: sensitivity
+      type: "copy number (amp); sensitivity of MYC_amp"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "MYC, its in-complex paralogs and every member within +/-10 Mb of MYC"
+      n_A: 74
+      ref_A: 836
+      n_L: 21
+      ref_L: 277
+      lockbox_testable: true
+    - id: "CN_highamp:MYCN"
+      definition: "high-level amp MYCN (r >= 3)"
+      role: sensitivity
+      type: "copy number (amp); sensitivity of MYCN_amp"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "MYCN, its in-complex paralogs and every member within +/-10 Mb of MYCN"
+      n_A: 25
+      ref_A: 885
+      n_L: 8
+      ref_L: 290
+      lockbox_testable: true
+    - id: "LoF:KEAP1"
+      definition: "LoF(KEAP1); MSI-H lines NaN"
+      role: sensitivity
+      type: "mutation (pathway); sensitivity of NRF2_active"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "KEAP1, CUL3, NFE2L2 and their in-complex paralogs"
+      n_A: 12
+      ref_A: 893
+      n_L: 6
+      ref_L: 294
+      lockbox_testable: true
+    - id: "LoF_inclMSI:ARID1A"
+      definition: "LoF(ARID1A) incl. MSI-H lines"
+      role: sensitivity
+      type: "mutation (LoF; MSI-H lines NaN); sensitivity of LoF ARID1A"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "ARID1A, its in-complex paralogs, and every member within +/-10 Mb of ARID1A if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 53
+      ref_A: 889
+      n_L: 19
+      ref_L: 295
+      lockbox_testable: true
+    - id: "LoF_inclMSI:SMARCA4"
+      definition: "LoF(SMARCA4) incl. MSI-H lines"
+      role: sensitivity
+      type: "mutation (LoF; MSI-H lines NaN); sensitivity of LoF SMARCA4"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "SMARCA4, its in-complex paralogs, and every member within +/-10 Mb of SMARCA4 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 32
+      ref_A: 922
+      n_L: 10
+      ref_L: 310
+      lockbox_testable: true
+    - id: "LoF_inclMSI:STAG2"
+      definition: "LoF(STAG2) incl. MSI-H lines"
+      role: sensitivity
+      type: "mutation (LoF; MSI-H lines NaN); sensitivity of LoF STAG2"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "STAG2, its in-complex paralogs, and every member within +/-10 Mb of STAG2 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 19
+      ref_A: 942
+      n_L: 5
+      ref_L: 316
+      lockbox_testable: true
+    - id: "LoF_inclMSI:PTEN"
+      definition: "LoF(PTEN) incl. MSI-H lines"
+      role: sensitivity
+      type: "mutation (LoF; MSI-H lines NaN); sensitivity of LoF PTEN"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "PTEN, its in-complex paralogs, and every member within +/-10 Mb of PTEN if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 105
+      ref_A: 852
+      n_L: 34
+      ref_L: 286
+      lockbox_testable: true
+    - id: "PTEN_LoF_noPIK3CAhs"
+      definition: "LoF PTEN; lines with PIK3CA hotspot NaN (PC19a)"
+      role: sensitivity
+      type: "mutation (LoF; MSI-H lines NaN); sensitivity of LoF PTEN"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "PTEN, its in-complex paralogs, and every member within +/-10 Mb of PTEN if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 82
+      ref_A: 752
+      n_L: 28
+      ref_L: 253
+      lockbox_testable: true
+    - id: "LoF_inclMSI:RB1"
+      definition: "LoF(RB1) incl. MSI-H lines"
+      role: sensitivity
+      type: "mutation (LoF; MSI-H lines NaN); sensitivity of LoF RB1"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "RB1, its in-complex paralogs, and every member within +/-10 Mb of RB1 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 54
+      ref_A: 902
+      n_L: 21
+      ref_L: 299
+      lockbox_testable: true
+    - id: "LoF_inclMSI:KMT2D"
+      definition: "LoF(KMT2D) incl. MSI-H lines"
+      role: sensitivity
+      type: "mutation (LoF; MSI-H lines NaN); sensitivity of LoF KMT2D"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "KMT2D, its in-complex paralogs, and every member within +/-10 Mb of KMT2D if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 16
+      ref_A: 915
+      n_L: 9
+      ref_L: 303
+      lockbox_testable: true
+  excluded:
+    - id: "LoF:CREBBP"
+      n_A: 9
+      reason: "n_A < 12 (DESIGN 2.2 size rule); also fails the LoF functional check"
+    - id: "fusion:KMT2A-r"
+      n_A: 10
+      reason: "n_A < 12 (DESIGN 2.2 size rule)"
+    - id: "fusion:BCR::ABL1"
+      n_A: 11
+      reason: "n_A < 12 (DESIGN 2.2 size rule)"
+    - id: "fusion:PAX3|7::FOXO1"
+      n_A: 7
+      reason: "n_A < 12 (DESIGN 2.2 size rule)"
+    - id: "fusion:SS18::SSX"
+      n_A: 5
+      reason: "n_A < 12 (DESIGN 2.2 size rule)"
+complex_set_hash: FZ-C
+units: >
+  All frozen coarse clusters of the zavg_BEF map (FZ-C), all tiers; locus clusters tested (kept in m) but
+  excluded from biological claims. Same unit set (and hash) as H3a_lineage_atlas.
+score: S_C_mean_winsor3
+score_rule: >
+  S_C(m) = mean over the fixed members of C (after the context-specific removals) of CRISPRGeneEffect, each
+  value clipped to [-3, 3] Chronos units before averaging (DESIGN 2.4 'winsorised +/-3'; raw units keep the H1
+  +/-0.1 margin interpretable); members with NaN in model m are skipped; S_C(m) is NaN if fewer than 50% of the
+  remaining members are observed in m. For each context the members listed under removed_members are dropped
+  from S_C for that context's tests only (DESIGN 2.4); +/-10 Mb uses Ensembl 116 coordinates (HGNC arm as
+  fallback where a gene has no Ensembl coordinate).
+covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+covariate_rule: >
+  Every context carries its own covariate list (overrides the entry list): mutation contexts + log_burden +
+  MSIScore; copy-number contexts (and LoY) + Ploidy + WGD + TP53_altered; MSI_H gets neither burden nor MSIScore
+  and WGD gets no Ploidy (DESIGN 2.2 covariate rule: no covariate that is a function of the context); fusions
+  and sex get the base set. Complete-case per test: Ploidy/WGD are NaN in 313 of 1,345 U models, so CN-context n
+  drops; a context falling below 12 A context models after complete-case is reported as exploratory and leaves
+  the family. Sensitivity: Ploidy_anyprofile / WGD_anyprofile in place of Ploidy / WGD.
+statistic: >
+  HC3 OLS t of the context coefficient with Satterthwaite df, two-sided, complete-case per test (n reported). A
+  (context, unit) test is evaluable if >= 12 context and >= 12 reference A models remain after complete-case and
+  >= 2 members remain after removals; non-evaluable tests are listed and excluded from m. Screening hits
+  (BB-adjusted q < 0.1) are re-tested by exact PatientID-blocked Freedman-Lane permutation (10,000 permutations;
+  GPD tail when p_perm < 1e-4), within-lineage for non-lineage contexts and unrestricted across lineages for
+  lineage contexts; permutation p-values re-enter and BB is re-run (DESIGN 2.5).
+fdr_family:
+  method: benjamini_bogomolov
+  families: contexts
+  q: 0.05
+fdr_rule: >
+  Benjamini-Bogomolov over this direction only (one error budget per direction): families = contexts (primary
+  role only); family p = Simes over its units; families selected by BH at q = 0.05 over the M families; within
+  each of the R selected families, BH at q R / M. Discovery = rejection after permutation re-entry.
+family_m:
+  formula: "M = 20 primary context families (minus any that fall below 12 A models after complete-case); m = sum over contexts of evaluable (context, coarse complex) tests"
+  n_families: 20
+  n_units: FZ-C
+  value: FZ-X
+kill_rule:
+  controls: [PC1, PC2, PC4, PC5, PC9, PC10, PC11, PC13, PC18, PC19a, PC19b]
+  rule: >
+    Kill rule (DESIGN 2.6), from the controls run: the direction is dropped if < 50% of its evaluable
+    complex-level controls are recovered. The run and the lockbox read still happen (to report the null and keep
+    the lockbox read order), but a killed direction is labelled 'killed by controls' and contributes no claims.
+    With 0 evaluable controls the rule is n/a and the direction is labelled exploratory; with 1-2 evaluable
+    controls the rule applies as written and the paper states the thin control coverage.
+lockbox:
+  testable_contexts: 18
+  not_testable_contexts: [LoF KMT2D (n_L 4), fusion EWSR1-FLI1 or ERG (n_L 4)]
+  confirmation_rule: >
+    Discovered hit confirmed iff same sign and one-sided p < 0.05 in L (HC3, Satterthwaite df, same score,
+    removals and covariates; exact PatientID-blocked Freedman-Lane permutation, within-lineage for non-lineage
+    contexts, when fewer than 20 context models are in L), for contexts with >= 5 context and >= 5 reference
+    models in L. Other contexts take the rare-context route: leave-one-lineage-out (LOSO) same sign, DEMETER2 on
+    A models same sign and leave-one-model-out same sign, labelled 'not lockbox-testable'. L effects with 95%
+    CIs are reported for every discovered hit, confirmed or not (winner's-curse guard).
+  target_list: results/part2/lockbox_targets/H3b_driver_family.json
+multiverse:
+  scores: [eigengene, within_line_rank, expression_masked, pan_essential_referenced]
+  covariate_sensitivity: [NNMD, doubling_time, CasActivity, GrowthPattern]
+  robustness: [LOSO same sign p < 0.05, leave-top-2-out same sign p < 0.05, breadth]
+  other: [DEMETER2 on A models same sign]
+  context_sensitivity: "role = sensitivity contexts above (LoF incl. MSI-H; WGD/Ploidy any profile; high-level amp; alternative TP53/PIK3CA/PTEN/9p21 definitions)"
+  use: "reported per hit, never selected (DESIGN 2.4)"
+calibration:
+  negative_controls: >
+    Pseudo-contexts: 100 per direction, each matched to a real context in size and lineage composition
+    (lineage-stratified, PatientID-blocked random relabelling of A models; for lineage contexts, random A model
+    sets of the same size), run through the same machinery; random gene sets matched for size, essentiality and
+    coherence, and dispersed never-expressed sets, scored per context. Reported: fraction of pseudo-context
+    tests with p < 0.05 (expected 0.05) and BB rejections (expected ~0). Pre-declared response: if that fraction
+    exceeds 0.075, every real test with p < 0.01 (not only q < 0.1) is re-tested by permutation and BB is
+    re-run. CN contexts additionally get a segment-matched null: pseudo-contexts from hom-del / amp segments of
+    other loci (results/part2/contexts/segments_ge8.tsv) with n_A within +/-25% (round-2 biology item 9).
+  seed: 4700
+seeds:
+  permutation: 4100
+  pseudo_contexts: 4700
+success_criterion: >
+  Strongest-finding rule (DESIGN 2.5): discovery q < 0.05 AND lockbox-confirmed (or the labelled rare-context
+  route) AND LOSO-robust (same sign, p < 0.05) AND not a locus cluster; ranked by the A statistic x tier. Per
+  hit: confirmed as defined under lockbox (rare-context route for LoF:KMT2D and the EWSR1 fusion). Direction:
+  H3b is supported if >= 1 strongest finding exists and the kill rule does not fire; all directions incl. nulls
+  are reported with trial counts.
+stopping_rule: >
+  Exactly one discovery run in A (one run_association call with all primary contexts and all units; trial-ledger
+  line), one permutation pass, then one lockbox read (crispr) whose committed target list holds the members of
+  every discovered unit, after which status is set to closed. If nothing is discovered the entry is closed with
+  a zero-target ledger line. No re-run with other scores, covariates, contexts or units; anything else is a new
+  entry labelled exploratory. Sensitivity contexts and multiverse scores are run only for discovered hits,
+  restricted to the hit's units, and are reported, never selected.
+frozen_inputs:
+  - results/part2/contexts/checksums.json
+  - results/part2/lockbox/manifest.json
+  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - FZ-X   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
+pending:
+  - "complex_set_hash"
+  - "family_m.n_units"
+  - "family_m.value"
+  - "frozen_inputs[2]"
+  - "frozen_inputs[3]"
+status: open

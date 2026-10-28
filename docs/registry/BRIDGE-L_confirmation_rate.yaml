@@ -1,0 +1,471 @@
+# Bridge lockbox-based secondary endpoint (DESIGN v3.1 2.3). Runs only after every controls/H3a/H3b/H1/H2 entry
+# has its lockbox ledger line (enforced by part2.assoc.read_lockbox). Only `pending` fields may change before the run.
+id: BRIDGE-L_confirmation_rate
+direction: bridge
+hypothesis: >
+  H3 discoveries made on the zavg_BEF map are confirmed in the lockbox at a higher size-standardised rate than
+  H3 discoveries made, with identical machinery, on the GLS comparator map (secondary bridge endpoint; the
+  primary bridge endpoint is BioPlex precision and needs no registry entry).
+sign: two-sided
+context_family:
+  name: "the 23 H3a and 20 H3b primary contexts (same definitions, covariates and removals)"
+  contexts:
+    - id: "lineage:Biliary Tract"
+      definition: "OncotreeLineage == Biliary Tract vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 27
+      ref_A: 980
+      n_L: 9
+      ref_L: 329
+      lockbox_testable: true
+    - id: "lineage:Bladder/Urinary Tract"
+      definition: "OncotreeLineage == Bladder/Urinary Tract vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 25
+      ref_A: 982
+      n_L: 9
+      ref_L: 329
+      lockbox_testable: true
+    - id: "lineage:Bone"
+      definition: "OncotreeLineage == Bone vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 44
+      ref_A: 963
+      n_L: 15
+      ref_L: 323
+      lockbox_testable: true
+    - id: "lineage:Bowel"
+      definition: "OncotreeLineage == Bowel vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 64
+      ref_A: 943
+      n_L: 21
+      ref_L: 317
+      lockbox_testable: true
+    - id: "lineage:Breast"
+      definition: "OncotreeLineage == Breast vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 50
+      ref_A: 957
+      n_L: 17
+      ref_L: 321
+      lockbox_testable: true
+    - id: "lineage:CNS/Brain"
+      definition: "OncotreeLineage == CNS/Brain vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 99
+      ref_A: 908
+      n_L: 33
+      ref_L: 305
+      lockbox_testable: true
+    - id: "lineage:Cervix"
+      definition: "OncotreeLineage == Cervix vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 994
+      n_L: 5
+      ref_L: 333
+      lockbox_testable: true
+    - id: "lineage:Esophagus/Stomach"
+      definition: "OncotreeLineage == Esophagus/Stomach vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 72
+      ref_A: 935
+      n_L: 24
+      ref_L: 314
+      lockbox_testable: true
+    - id: "lineage:Head and Neck"
+      definition: "OncotreeLineage == Head and Neck vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 58
+      ref_A: 949
+      n_L: 19
+      ref_L: 319
+      lockbox_testable: true
+    - id: "lineage:Kidney"
+      definition: "OncotreeLineage == Kidney vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 26
+      ref_A: 981
+      n_L: 9
+      ref_L: 329
+      lockbox_testable: true
+    - id: "lineage:Liver"
+      definition: "OncotreeLineage == Liver vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 988
+      n_L: 6
+      ref_L: 332
+      lockbox_testable: true
+    - id: "lineage:Lung"
+      definition: "OncotreeLineage == Lung vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 93
+      ref_A: 914
+      n_L: 31
+      ref_L: 307
+      lockbox_testable: true
+    - id: "lineage:Lymphoid"
+      definition: "OncotreeLineage == Lymphoid vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 73
+      ref_A: 934
+      n_L: 24
+      ref_L: 314
+      lockbox_testable: true
+    - id: "lineage:Myeloid"
+      definition: "OncotreeLineage == Myeloid vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 33
+      ref_A: 974
+      n_L: 11
+      ref_L: 327
+      lockbox_testable: true
+    - id: "lineage:Ovary/Fallopian Tube"
+      definition: "OncotreeLineage == Ovary/Fallopian Tube vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 46
+      ref_A: 961
+      n_L: 16
+      ref_L: 322
+      lockbox_testable: true
+    - id: "lineage:Pancreas"
+      definition: "OncotreeLineage == Pancreas vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 53
+      ref_A: 954
+      n_L: 18
+      ref_L: 320
+      lockbox_testable: true
+    - id: "lineage:Peripheral Nervous System"
+      definition: "OncotreeLineage == Peripheral Nervous System vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 35
+      ref_A: 972
+      n_L: 12
+      ref_L: 326
+      lockbox_testable: true
+    - id: "lineage:Pleura"
+      definition: "OncotreeLineage == Pleura vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 991
+      n_L: 5
+      ref_L: 333
+      lockbox_testable: true
+    - id: "lineage:Prostate"
+      definition: "OncotreeLineage == Prostate vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 993
+      n_L: 5
+      ref_L: 333
+      lockbox_testable: true
+    - id: "lineage:Skin"
+      definition: "OncotreeLineage == Skin vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 51
+      ref_A: 956
+      n_L: 17
+      ref_L: 321
+      lockbox_testable: true
+    - id: "lineage:Soft Tissue"
+      definition: "OncotreeLineage == Soft Tissue vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 38
+      ref_A: 969
+      n_L: 12
+      ref_L: 326
+      lockbox_testable: true
+    - id: "lineage:Uterus"
+      definition: "OncotreeLineage == Uterus vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 28
+      ref_A: 979
+      n_L: 10
+      ref_L: 328
+      lockbox_testable: true
+    - id: "melanoma"
+      definition: "OncotreePrimaryDisease contains 'Melanoma' (any site) vs all other lines"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType]
+      n_A: 50
+      ref_A: 957
+      n_L: 19
+      ref_L: 319
+      lockbox_testable: true
+    - id: "hotspot:KRAS"
+      definition: "hotspot matrix KRAS >= 1"
+      type: "mutation (hotspot) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "KRAS and its in-complex Ensembl-116 paralogs"
+      n_A: 154
+      ref_A: 853
+      n_L: 52
+      ref_L: 286
+      lockbox_testable: true
+    - id: "hotspot:NRAS"
+      definition: "hotspot matrix NRAS >= 1"
+      type: "mutation (hotspot) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "NRAS and its in-complex Ensembl-116 paralogs"
+      n_A: 48
+      ref_A: 959
+      n_L: 16
+      ref_L: 322
+      lockbox_testable: true
+    - id: "hotspot:BRAF"
+      definition: "hotspot matrix BRAF >= 1"
+      type: "mutation (hotspot) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "BRAF and its in-complex Ensembl-116 paralogs"
+      n_A: 66
+      ref_A: 941
+      n_L: 22
+      ref_L: 316
+      lockbox_testable: true
+    - id: "hotspot:PIK3CA"
+      definition: "hotspot matrix PIK3CA >= 1"
+      type: "mutation (hotspot) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "PIK3CA and its in-complex Ensembl-116 paralogs"
+      n_A: 100
+      ref_A: 907
+      n_L: 33
+      ref_L: 305
+      lockbox_testable: true
+    - id: "TP53_altered"
+      definition: "1 = TP53 hotspot or LoF; 0 = no damaging/hotspot/hom-del; NaN = ambiguous single hit or unknown"
+      type: "mutation (TP53 status; 1 = altered, 0 = WT) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "TP53 and its in-complex Ensembl-116 paralogs"
+      n_A: 668
+      ref_A: 319
+      n_L: 219
+      ref_L: 109
+      lockbox_testable: true
+    - id: "MSI_H"
+      definition: "MSIScore > 20"
+      type: "genome state (hypermutation) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      removed_members: "none (no single context gene)"
+      n_A: 59
+      ref_A: 948
+      n_L: 20
+      ref_L: 318
+      lockbox_testable: true
+    - id: "WGD"
+      definition: "OmicsGlobalSignatures WGD (default DNA profile)"
+      type: "genome state (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, TP53_altered]
+      removed_members: "none (no context gene)"
+      n_A: 553
+      ref_A: 227
+      n_L: 178
+      ref_L: 74
+      lockbox_testable: true
+    - id: "9p21_loss"
+      definition: "9p21 loss = MTAP hom-del (PC9; segment reported)"
+      type: "copy number (hom-del) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "MTAP, CDKN2A, CDKN2B, their in-complex paralogs and every member within +/-10 Mb of MTAP"
+      n_A: 148
+      ref_A: 803
+      n_L: 49
+      ref_L: 271
+      lockbox_testable: true
+    - id: "MYC_amp"
+      definition: "MYC r >= 2"
+      type: "copy number (amp) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "MYC, its in-complex paralogs and every member within +/-10 Mb of MYC"
+      n_A: 174
+      ref_A: 736
+      n_L: 47
+      ref_L: 251
+      lockbox_testable: true
+    - id: "MYCN_amp"
+      definition: "MYCN r >= 2"
+      type: "copy number (amp) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "MYCN, its in-complex paralogs and every member within +/-10 Mb of MYCN"
+      n_A: 28
+      ref_A: 882
+      n_L: 8
+      ref_L: 290
+      lockbox_testable: true
+    - id: "LoY"
+      definition: "male lines with chrY_expr_sum < 16.544 (KDE antimode); female/unknown NaN"
+      type: "chromosome loss (male lines only; female NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      removed_members: "every chrY gene and every X-linked member that is an Ensembl-116 paralog of a chrY gene (gametologs)"
+      n_A: 216
+      ref_A: 311
+      n_L: 74
+      ref_L: 93
+      lockbox_testable: true
+    - id: "sex_female"
+      definition: "Model.csv Sex: Female 1, Male 0, Unknown NaN"
+      type: "sex (1 = female, 0 = male) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      removed_members: "every chrY gene and every X-linked member that is an Ensembl-116 paralog of a chrY gene (gametologs)"
+      n_A: 408
+      ref_A: 556
+      n_L: 138
+      ref_L: 178
+      lockbox_testable: true
+    - id: "NRF2_active"
+      definition: "LoF KEAP1 or LoF CUL3 or NFE2L2 hotspot; MSI-H lines 1 only via hotspot, else NaN"
+      type: "mutation (pathway) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "KEAP1, CUL3, NFE2L2 and their in-complex paralogs"
+      n_A: 31
+      ref_A: 878
+      n_L: 10
+      ref_L: 290
+      lockbox_testable: true
+    - id: "LoF:ARID1A"
+      definition: "LoF(ARID1A); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "ARID1A, its in-complex paralogs, and every member within +/-10 Mb of ARID1A if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 37
+      ref_A: 858
+      n_L: 12
+      ref_L: 285
+      lockbox_testable: true
+    - id: "LoF:SMARCA4"
+      definition: "LoF(SMARCA4); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "SMARCA4, its in-complex paralogs, and every member within +/-10 Mb of SMARCA4 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 30
+      ref_A: 871
+      n_L: 10
+      ref_L: 291
+      lockbox_testable: true
+    - id: "LoF:STAG2"
+      definition: "LoF(STAG2); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "STAG2, its in-complex paralogs, and every member within +/-10 Mb of STAG2 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 16
+      ref_A: 888
+      n_L: 5
+      ref_L: 296
+      lockbox_testable: true
+    - id: "LoF:PTEN"
+      definition: "LoF(PTEN); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "PTEN, its in-complex paralogs, and every member within +/-10 Mb of PTEN if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 88
+      ref_A: 816
+      n_L: 29
+      ref_L: 273
+      lockbox_testable: true
+    - id: "LoF:RB1"
+      definition: "LoF(RB1); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "RB1, its in-complex paralogs, and every member within +/-10 Mb of RB1 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 49
+      ref_A: 850
+      n_L: 17
+      ref_L: 283
+      lockbox_testable: true
+    - id: "LoF:KMT2D"
+      definition: "LoF(KMT2D); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      removed_members: "KMT2D, its in-complex paralogs, and every member within +/-10 Mb of KMT2D if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 12
+      ref_A: 882
+      n_L: 4
+      ref_L: 293
+      lockbox_testable: false
+    - id: "fusion:EWSR1::FLI1|ERG"
+      definition: "unordered EWSR1::FLI1, EWSR1::ERG (OmicsFusionFiltered default RNA profile; no RNA -> NaN)"
+      type: "fusion (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      removed_members: "EWSR1, FLI1, ERG and their in-complex paralogs"
+      n_A: 15
+      ref_A: 943
+      n_L: 4
+      ref_L: 314
+      lockbox_testable: false
+complex_set_hash: FZ-C
+units: >
+  Frozen coarse clusters of the GLS comparator map (built with the same pipeline on the same S and frozen at
+  FZ-C with the zavg map). The zavg outcomes are taken from the closed H3a/H3b entries (no new zavg read).
+score: S_C_mean_winsor3
+covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+covariate_rule: >
+  Per-context lists exactly as in H3a_lineage_atlas and H3b_driver_family.
+statistic: >
+  GLS-map discovery in A with the H3a and H3b machinery unchanged: two run_association calls (the 23 H3a
+  contexts; the 20 H3b contexts), each with its own Benjamini-Bogomolov family at q = 0.05 and permutation
+  re-entry. Then one lockbox read for members of GLS-map discoveries; confirmation as in H3a/H3b.
+fdr_family:
+  method: benjamini_bogomolov
+  families: contexts
+  q: 0.05
+estimand: |
+  Per map: confirmation rate = confirmed / discovered (lockbox-testable contexts only) within cluster-size bins
+     {3-4, 5-8, 9-16, 17-60}, averaged with the bin weights of the pooled zavg + GLS discovered-cluster size
+     distribution.
+  Difference zavg - GLS with 95% CI by bootstrap over discovered hits within map and bin (B = 2000, seed 5200).
+family_m:
+  formula: "GLS map: m = sum over the 43 contexts of evaluable (context, GLS coarse cluster) tests (H3a and H3b budgets separate)"
+  value: FZ-X
+lockbox:
+  target_list: results/part2/lockbox_targets/BRIDGE-L_confirmation_rate.json
+  rule: >
+    One read (crispr) of the members of GLS-map discovered clusters, only after every controls/H3a/H3b/H1/H2
+    entry has a ledger line.
+multiverse:
+  other: [unweighted confirmation rate, matched gene coverage subset, T1/T2 clusters only]
+  use: "reported, never selected"
+seeds:
+  permutation: 4500
+  bootstrap: 5200
+run_after: [every controls/H3a/H3b/H1/H2 entry closed with its lockbox ledger line]
+success_criterion: >
+  Secondary endpoint: 'supports the bridge' if the size-standardised difference zavg - GLS > 0 with its 95% CI
+  excluding 0; otherwise reported without a claim. It never overrides the primary bridge endpoint.
+stopping_rule: >
+  One GLS-map discovery pass (two calls), one permutation pass, one lockbox read, then closed.
+frozen_inputs:
+  - results/part2/contexts/checksums.json
+  - results/part2/lockbox/manifest.json
+  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - FZ-X   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
+pending:
+  - "complex_set_hash"
+  - "family_m.value"
+  - "frozen_inputs[2]"
+  - "frozen_inputs[3]"
+status: open

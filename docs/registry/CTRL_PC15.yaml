@@ -1,0 +1,91 @@
+# Pre-registered control PC15 (DESIGN v3.1 2.7). Drafted at FZ-R; only the fields listed in `pending`
+# may change before the first run (filled at FZ-C / FZ-X; check with part2.registry.fill_only_changes).
+id: CTRL_PC15
+direction: controls
+hypothesis: |
+  SMARCB1-LoF or SS18::SSX lines are more dependent on BRD9 (gene) and on the frozen coarse cluster containing
+  BRD9 (ncBAF; complex).
+sign: "+"
+context_family:
+  name: "PC15 context"
+  contexts:
+    - id: SMARCB1_LoF_or_SS18SSX
+      definition: "LoF SMARCB1 or SS18::SSX (PC15/PC22)"
+      reference: "neither SMARCB1 LoF nor SS18::SSX"
+      n_A: 17
+      ref_A: 882
+      n_L: 4
+      ref_L: 294
+      size_class_A: confirmatory
+      lockbox_testable: false
+control:
+  design_id: PC15
+  level: "G+C"
+  design_sign: "+"
+  sign_mapping: "Same as DESIGN. '+' = more dependent (lower gene effect) in context = 1 than in the reference; alternative = less"
+  targets: [BRD9]
+  gene_units:
+    - "BRD9 (65980)"
+  complex_unit: FZ-C
+  complex_unit_rule: "frozen coarse cluster containing BRD9; 'not evaluable at complex level' if BRD9 is unclustered (not a member of any frozen coarse cluster) or fewer than 2 members remain after removals. The sub-module containing the target (if any) is reported as a secondary readout, not counted"
+  readout_C: "S_C_mean_winsor3 of that cluster after the removals below (DESIGN 2.4)"
+  removed_members: "SMARCB1, SS18 and their in-complex paralogs (e.g. SS18L1); BRD9 retained"
+complex_set_hash: FZ-C
+score: S_C_mean_winsor3
+covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+covariate_rule: "DESIGN 2.5 covariate set for this context type; no covariate is a function of the context (DESIGN 2.2)"
+statistic: >
+  HC3 OLS t with Satterthwaite df, one test per unit (gene units and the complex unit), one-sided at
+  alpha = 0.05 in A (alternative = less for '+', greater for '-'); complete-case per test, n reported.
+  No multiplicity correction: fixed denominator of 23 control entries (DESIGN 2.7).
+fdr_family:
+  method: none
+  q: 0.05
+family_m:
+  formula: "number of gene units + 1 if the complex unit is evaluable (one one-sided test each)"
+  value: FZ-C
+kill_rule:
+  direction: H1
+  counted: true
+  level: C
+  recovered_if: "complex-level readout has the expected sign with one-sided HC3 p < 0.05 in A"
+  evaluable_if: "the complex unit exists (complex_unit filled with a frozen unit ID) and the context has >= 12 A models after complete-case"
+  rule: "the mapped direction is dropped (and reported) if < 50% of its evaluable complex-level controls are recovered (DESIGN 2.6)"
+lockbox:
+  testable: false
+  n_L: 4
+  confirmation_rule: >
+    Reported, not part of the kill rule. Same sign and one-sided p < 0.05 in L at the same level and
+    readout (HC3, Satterthwaite df; exact PatientID-blocked within-lineage Freedman-Lane
+    permutation, 10,000 permutations, when fewer than 20 context models are in L).
+    Requires >= 5 context and >= 5 reference models in L.
+  rare_route: >
+    If not lockbox-testable: leave-one-lineage-out (LOSO) same sign, DEMETER2 on A models same sign,
+    and leave-one-model-out same sign; labelled 'not lockbox-testable'.
+  target_list: results/part2/lockbox_targets/CTRL_PC15.json
+multiverse:
+  scores: [eigengene, within_line_rank, expression_masked, pan_essential_referenced]
+  covariate_sensitivity: [NNMD, doubling_time, CasActivity, GrowthPattern]
+  robustness: [leave-one-lineage-out (LOSO) same sign p < 0.05, leave-top-2-out same sign p < 0.05, breadth]
+  other: ["member-resolved BRD9 profile within the cluster (reported)"]
+  use: "reported per control; never selected; the kill rule uses the primary readout only"
+seeds:
+  permutation: 4414
+success_criterion: "recovered: expected sign with one-sided HC3 p < 0.05 in A at the complex level; lockbox confirmation reported separately"
+stopping_rule: >
+  Runs once, in the single controls script after FZ-C and FZ-X, together with every other control
+  entry; no re-run and no change of readout, covariates or context after results are seen. The kill-rule
+  tally uses A results only and is committed before any direction's discovery run. Then one lockbox read
+  (crispr) for this entry, after which status is set to closed.
+frozen_inputs:
+  - results/part2/contexts/checksums.json
+  - results/part2/lockbox/manifest.json
+  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - FZ-X   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
+pending:
+  - "complex_set_hash"
+  - "control.complex_unit"
+  - "family_m.value"
+  - "frozen_inputs[2]"
+  - "frozen_inputs[3]"
+status: open

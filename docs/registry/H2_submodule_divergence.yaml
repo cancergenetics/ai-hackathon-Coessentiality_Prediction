@@ -1,0 +1,509 @@
+# H2 sub-module divergence (DESIGN v3.1 2.6). Drafted at FZ-R; only `pending` fields may change before the
+# first run (part2.registry.fill_only_changes). Runs after the H3a and H3b discovery runs are committed.
+id: H2_submodule_divergence
+direction: H2
+hypothesis: >
+  Within complexes whose dependency is associated with a lineage or driver context (H3a/H3b discoveries),
+  sub-modules diverge from the rest of their complex: the sub-module score, residualised on its sibling
+  complement (parent minus sub-module), is associated with the same context. Headline (Fig 5).
+sign: two-sided
+context_family:
+  name: "H2: the 23 H3a and 20 H3b primary contexts (same definitions and removals)"
+  contexts:
+    - id: "lineage:Biliary Tract"
+      definition: "OncotreeLineage == Biliary Tract vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 27
+      ref_A: 980
+      n_L: 9
+      ref_L: 329
+      lockbox_testable: true
+    - id: "lineage:Bladder/Urinary Tract"
+      definition: "OncotreeLineage == Bladder/Urinary Tract vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 25
+      ref_A: 982
+      n_L: 9
+      ref_L: 329
+      lockbox_testable: true
+    - id: "lineage:Bone"
+      definition: "OncotreeLineage == Bone vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 44
+      ref_A: 963
+      n_L: 15
+      ref_L: 323
+      lockbox_testable: true
+    - id: "lineage:Bowel"
+      definition: "OncotreeLineage == Bowel vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 64
+      ref_A: 943
+      n_L: 21
+      ref_L: 317
+      lockbox_testable: true
+    - id: "lineage:Breast"
+      definition: "OncotreeLineage == Breast vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 50
+      ref_A: 957
+      n_L: 17
+      ref_L: 321
+      lockbox_testable: true
+    - id: "lineage:CNS/Brain"
+      definition: "OncotreeLineage == CNS/Brain vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 99
+      ref_A: 908
+      n_L: 33
+      ref_L: 305
+      lockbox_testable: true
+    - id: "lineage:Cervix"
+      definition: "OncotreeLineage == Cervix vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 13
+      ref_A: 994
+      n_L: 5
+      ref_L: 333
+      lockbox_testable: true
+    - id: "lineage:Esophagus/Stomach"
+      definition: "OncotreeLineage == Esophagus/Stomach vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 72
+      ref_A: 935
+      n_L: 24
+      ref_L: 314
+      lockbox_testable: true
+    - id: "lineage:Head and Neck"
+      definition: "OncotreeLineage == Head and Neck vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 58
+      ref_A: 949
+      n_L: 19
+      ref_L: 319
+      lockbox_testable: true
+    - id: "lineage:Kidney"
+      definition: "OncotreeLineage == Kidney vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 26
+      ref_A: 981
+      n_L: 9
+      ref_L: 329
+      lockbox_testable: true
+    - id: "lineage:Liver"
+      definition: "OncotreeLineage == Liver vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 19
+      ref_A: 988
+      n_L: 6
+      ref_L: 332
+      lockbox_testable: true
+    - id: "lineage:Lung"
+      definition: "OncotreeLineage == Lung vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 93
+      ref_A: 914
+      n_L: 31
+      ref_L: 307
+      lockbox_testable: true
+    - id: "lineage:Lymphoid"
+      definition: "OncotreeLineage == Lymphoid vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 73
+      ref_A: 934
+      n_L: 24
+      ref_L: 314
+      lockbox_testable: true
+    - id: "lineage:Myeloid"
+      definition: "OncotreeLineage == Myeloid vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 33
+      ref_A: 974
+      n_L: 11
+      ref_L: 327
+      lockbox_testable: true
+    - id: "lineage:Ovary/Fallopian Tube"
+      definition: "OncotreeLineage == Ovary/Fallopian Tube vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 46
+      ref_A: 961
+      n_L: 16
+      ref_L: 322
+      lockbox_testable: true
+    - id: "lineage:Pancreas"
+      definition: "OncotreeLineage == Pancreas vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 53
+      ref_A: 954
+      n_L: 18
+      ref_L: 320
+      lockbox_testable: true
+    - id: "lineage:Peripheral Nervous System"
+      definition: "OncotreeLineage == Peripheral Nervous System vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 35
+      ref_A: 972
+      n_L: 12
+      ref_L: 326
+      lockbox_testable: true
+    - id: "lineage:Pleura"
+      definition: "OncotreeLineage == Pleura vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 16
+      ref_A: 991
+      n_L: 5
+      ref_L: 333
+      lockbox_testable: true
+    - id: "lineage:Prostate"
+      definition: "OncotreeLineage == Prostate vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 14
+      ref_A: 993
+      n_L: 5
+      ref_L: 333
+      lockbox_testable: true
+    - id: "lineage:Skin"
+      definition: "OncotreeLineage == Skin vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 51
+      ref_A: 956
+      n_L: 17
+      ref_L: 321
+      lockbox_testable: true
+    - id: "lineage:Soft Tissue"
+      definition: "OncotreeLineage == Soft Tissue vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 38
+      ref_A: 969
+      n_L: 12
+      ref_L: 326
+      lockbox_testable: true
+    - id: "lineage:Uterus"
+      definition: "OncotreeLineage == Uterus vs all other lines (one-vs-rest)"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 28
+      ref_A: 979
+      n_L: 10
+      ref_L: 328
+      lockbox_testable: true
+    - id: "melanoma"
+      definition: "OncotreePrimaryDisease contains 'Melanoma' (any site) vs all other lines"
+      type: "lineage (H3a)"
+      covariates: [library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      n_A: 50
+      ref_A: 957
+      n_L: 19
+      ref_L: 319
+      lockbox_testable: true
+    - id: "hotspot:KRAS"
+      definition: "hotspot matrix KRAS >= 1"
+      type: "mutation (hotspot) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "KRAS and its in-complex Ensembl-116 paralogs"
+      n_A: 154
+      ref_A: 853
+      n_L: 52
+      ref_L: 286
+      lockbox_testable: true
+    - id: "hotspot:NRAS"
+      definition: "hotspot matrix NRAS >= 1"
+      type: "mutation (hotspot) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "NRAS and its in-complex Ensembl-116 paralogs"
+      n_A: 48
+      ref_A: 959
+      n_L: 16
+      ref_L: 322
+      lockbox_testable: true
+    - id: "hotspot:BRAF"
+      definition: "hotspot matrix BRAF >= 1"
+      type: "mutation (hotspot) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "BRAF and its in-complex Ensembl-116 paralogs"
+      n_A: 66
+      ref_A: 941
+      n_L: 22
+      ref_L: 316
+      lockbox_testable: true
+    - id: "hotspot:PIK3CA"
+      definition: "hotspot matrix PIK3CA >= 1"
+      type: "mutation (hotspot) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "PIK3CA and its in-complex Ensembl-116 paralogs"
+      n_A: 100
+      ref_A: 907
+      n_L: 33
+      ref_L: 305
+      lockbox_testable: true
+    - id: "TP53_altered"
+      definition: "1 = TP53 hotspot or LoF; 0 = no damaging/hotspot/hom-del; NaN = ambiguous single hit or unknown"
+      type: "mutation (TP53 status; 1 = altered, 0 = WT) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "TP53 and its in-complex Ensembl-116 paralogs"
+      n_A: 668
+      ref_A: 319
+      n_L: 219
+      ref_L: 109
+      lockbox_testable: true
+    - id: "MSI_H"
+      definition: "MSIScore > 20"
+      type: "genome state (hypermutation) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      removed_members: "none (no single context gene)"
+      n_A: 59
+      ref_A: 948
+      n_L: 20
+      ref_L: 318
+      lockbox_testable: true
+    - id: "WGD"
+      definition: "OmicsGlobalSignatures WGD (default DNA profile)"
+      type: "genome state (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, TP53_altered, NNMD, CasActivity]
+      removed_members: "none (no context gene)"
+      n_A: 553
+      ref_A: 227
+      n_L: 178
+      ref_L: 74
+      lockbox_testable: true
+    - id: "9p21_loss"
+      definition: "9p21 loss = MTAP hom-del (PC9; segment reported)"
+      type: "copy number (hom-del) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered, NNMD, CasActivity]
+      removed_members: "MTAP, CDKN2A, CDKN2B, their in-complex paralogs and every member within +/-10 Mb of MTAP"
+      n_A: 148
+      ref_A: 803
+      n_L: 49
+      ref_L: 271
+      lockbox_testable: true
+    - id: "MYC_amp"
+      definition: "MYC r >= 2"
+      type: "copy number (amp) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered, NNMD, CasActivity]
+      removed_members: "MYC, its in-complex paralogs and every member within +/-10 Mb of MYC"
+      n_A: 174
+      ref_A: 736
+      n_L: 47
+      ref_L: 251
+      lockbox_testable: true
+    - id: "MYCN_amp"
+      definition: "MYCN r >= 2"
+      type: "copy number (amp) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered, NNMD, CasActivity]
+      removed_members: "MYCN, its in-complex paralogs and every member within +/-10 Mb of MYCN"
+      n_A: 28
+      ref_A: 882
+      n_L: 8
+      ref_L: 290
+      lockbox_testable: true
+    - id: "LoY"
+      definition: "male lines with chrY_expr_sum < 16.544 (KDE antimode); female/unknown NaN"
+      type: "chromosome loss (male lines only; female NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered, NNMD, CasActivity]
+      removed_members: "every chrY gene and every X-linked member that is an Ensembl-116 paralog of a chrY gene (gametologs)"
+      n_A: 216
+      ref_A: 311
+      n_L: 74
+      ref_L: 93
+      lockbox_testable: true
+    - id: "sex_female"
+      definition: "Model.csv Sex: Female 1, Male 0, Unknown NaN"
+      type: "sex (1 = female, 0 = male) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      removed_members: "every chrY gene and every X-linked member that is an Ensembl-116 paralog of a chrY gene (gametologs)"
+      n_A: 408
+      ref_A: 556
+      n_L: 138
+      ref_L: 178
+      lockbox_testable: true
+    - id: "NRF2_active"
+      definition: "LoF KEAP1 or LoF CUL3 or NFE2L2 hotspot; MSI-H lines 1 only via hotspot, else NaN"
+      type: "mutation (pathway) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "KEAP1, CUL3, NFE2L2 and their in-complex paralogs"
+      n_A: 31
+      ref_A: 878
+      n_L: 10
+      ref_L: 290
+      lockbox_testable: true
+    - id: "LoF:ARID1A"
+      definition: "LoF(ARID1A); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "ARID1A, its in-complex paralogs, and every member within +/-10 Mb of ARID1A if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 37
+      ref_A: 858
+      n_L: 12
+      ref_L: 285
+      lockbox_testable: true
+    - id: "LoF:SMARCA4"
+      definition: "LoF(SMARCA4); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "SMARCA4, its in-complex paralogs, and every member within +/-10 Mb of SMARCA4 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 30
+      ref_A: 871
+      n_L: 10
+      ref_L: 291
+      lockbox_testable: true
+    - id: "LoF:STAG2"
+      definition: "LoF(STAG2); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "STAG2, its in-complex paralogs, and every member within +/-10 Mb of STAG2 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 16
+      ref_A: 888
+      n_L: 5
+      ref_L: 296
+      lockbox_testable: true
+    - id: "LoF:PTEN"
+      definition: "LoF(PTEN); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "PTEN, its in-complex paralogs, and every member within +/-10 Mb of PTEN if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 88
+      ref_A: 816
+      n_L: 29
+      ref_L: 273
+      lockbox_testable: true
+    - id: "LoF:RB1"
+      definition: "LoF(RB1); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "RB1, its in-complex paralogs, and every member within +/-10 Mb of RB1 if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 49
+      ref_A: 850
+      n_L: 17
+      ref_L: 283
+      lockbox_testable: true
+    - id: "LoF:KMT2D"
+      definition: "LoF(KMT2D); MSI-H lines NaN"
+      type: "mutation (LoF; MSI-H lines NaN) (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
+      removed_members: "KMT2D, its in-complex paralogs, and every member within +/-10 Mb of KMT2D if hom-del accounts for >= 50% of the context's positive A lines"
+      n_A: 12
+      ref_A: 882
+      n_L: 4
+      ref_L: 293
+      lockbox_testable: false
+    - id: "fusion:EWSR1::FLI1|ERG"
+      definition: "unordered EWSR1::FLI1, EWSR1::ERG (OmicsFusionFiltered default RNA profile; no RNA -> NaN)"
+      type: "fusion (H3b)"
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, NNMD, CasActivity]
+      removed_members: "EWSR1, FLI1, ERG and their in-complex paralogs"
+      n_A: 15
+      ref_A: 943
+      n_L: 4
+      ref_L: 314
+      lockbox_testable: false
+complex_set_hash: FZ-C
+units: >
+  Frozen sub-modules (FZ-C: top-down re-clustering at gamma = 0.5 inside each coarse cluster, size 3-60,
+  cohesion mean score >= z0 + 1) of frozen coarse complexes that have >= 2 sub-modules. Hash over all such
+  sub-module IDs; only the stage-wise eligible subset is tested.
+score: submodule_vs_sibling
+score_rule: >
+  For sub-module s of parent P: S_s and S_sib = mean member effect (clipped to [-3, 3]) of s and of the sibling
+  complement P minus s (members of P not in s, incl. members in no sub-module), after the context's removals
+  applied to both. Y_s = S_s - (a_s + b_s S_sib), with (a_s, b_s) fitted by OLS across all A models
+  (complete-case); the same A-fitted (a_s, b_s) are applied unchanged to L models for confirmation.
+covariates: [lineage_FE, library, ScreenType3DO, ModelType, NNMD, CasActivity]
+covariate_rule: >
+  Each context's H3a/H3b covariate list plus NNMD (ScreenNNMD) and CasActivity as primary covariates (round-2
+  biology item 7: part-whole scale confounding). CasActivity is missing in 119 of 1,007 A models; complete-case
+  per test, sensitivity without CasActivity reported.
+statistic: >
+  HC3 OLS t of the context coefficient with Satterthwaite df, two-sided, complete-case per test (n reported). A
+  (context, unit) test is evaluable if >= 12 context and >= 12 reference A models remain after complete-case and
+  >= 2 members remain after removals; non-evaluable tests are listed and excluded from m. Screening hits
+  (stage-wise-adjusted q < 0.1) are re-tested by exact PatientID-blocked Freedman-Lane permutation (10,000
+  permutations; GPD tail when p_perm < 1e-4), within-lineage for non-lineage contexts and unrestricted across
+  lineages for lineage contexts; permutation p-values re-enter and the stage-wise procedure is re-run (DESIGN
+  2.5).
+fdr_family:
+  method: stagewise_bb
+  parent_directions: [H3a, H3b]
+  q: 0.05
+fdr_rule: >
+  Stage-wise inside complexes that pass (DESIGN 2.5): for context c, only sub-modules of parents P that were
+  discovered for c in the parent direction (H3a for lineage contexts, H3b for driver contexts; discovery in A
+  after permutation re-entry; lockbox not required) and that have >= 2 sub-modules are tested. Each such (c, P)
+  is a family; within it, BH over P's sub-modules at q R_x / m_x, where m_x and R_x are the number of tests and
+  of rejections of the parent direction x (Benjamini-Bogomolov with the parent rejections as the selection
+  step). Discovery = rejection after permutation re-entry. run_association has no stagewise_bb implementation
+  yet and refuses this method until one is added and tested.
+family_m:
+  formula: "m_H2 = sum over (context c, parent P) discovered in H3a or H3b with >= 2 sub-modules of the number of evaluable sub-modules of P; level per family q R_x / m_x"
+  value: "set by the committed H3a and H3b discovery runs (formula fixed here)"
+kill_rule:
+  controls: [PC21, PC22]
+  rule: >
+    Kill rule (DESIGN 2.6), from the controls run: the direction is dropped if < 50% of its evaluable
+    complex-level controls are recovered. The run and the lockbox read still happen (to report the null and keep
+    the lockbox read order), but a killed direction is labelled 'killed by controls' and contributes no claims.
+    With 0 evaluable controls the rule is n/a and the direction is labelled exploratory; with 1-2 evaluable
+    controls the rule applies as written and the paper states the thin control coverage.
+lockbox:
+  confirmation_rule: >
+    Discovered hit confirmed iff same sign and one-sided p < 0.05 in L (HC3, Satterthwaite df, same residualised
+    score with A-fitted coefficients, removals and covariates; exact PatientID-blocked Freedman-Lane
+    permutation, within-lineage for non-lineage contexts, when fewer than 20 context models are in L), for
+    contexts with >= 5 context and >= 5 reference models in L. Other contexts take the rare-context route:
+    leave-one-lineage-out (LOSO) same sign, DEMETER2 on A models same sign and leave-one-model-out same sign,
+    labelled 'not lockbox-testable'. L effects with 95% CIs are reported for every discovered hit, confirmed or
+    not (winner's-curse guard).
+  target_list: results/part2/lockbox_targets/H2_submodule_divergence.json
+multiverse:
+  scores: [raw difference S_s - S_sib, eigengene, within_line_rank, pan_essential_referenced]
+  covariate_sensitivity: [without CasActivity (full n), doubling_time, GrowthPattern]
+  robustness: [LOSO same sign p < 0.05, leave-top-2-out same sign p < 0.05, breadth within s]
+  use: "reported per hit, never selected"
+calibration:
+  negative_controls: >
+    Random member splits of the same parents (size of s preserved, seed 4800) residualised the same way, and the
+    H3 pseudo-contexts, run through the same stage-wise machinery; reported.
+  seed: 4800
+seeds:
+  permutation: 4300
+  random_splits: 4800
+run_after: [H3a_lineage_atlas discovery run committed, H3b_driver_family discovery run committed]
+success_criterion: >
+  Strongest-finding rule (DESIGN 2.5): stage-wise discovery AND lockbox-confirmed (or the labelled rare-context
+  route) AND LOSO-robust (same sign, p < 0.05) AND not a locus cluster; ranked by the A statistic x tier.
+  Direction: H2 is supported if >= 1 such hit exists and the kill rule (PC21, PC22) does not fire.
+stopping_rule: >
+  One discovery run in A after the H3a and H3b discovery runs are committed; one permutation pass; one lockbox
+  read (crispr) for the members of discovered sub-modules and their parents; then closed. If no (context,
+  parent) pair is eligible, H2 is reported as 'not testable' (m = 0) and closed with a zero-target ledger line;
+  no unrestricted sub-module screen is run.
+frozen_inputs:
+  - results/part2/contexts/checksums.json
+  - results/part2/lockbox/manifest.json
+  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - FZ-X   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
+pending:
+  - "complex_set_hash"
+  - "frozen_inputs[2]"
+  - "frozen_inputs[3]"
+status: open

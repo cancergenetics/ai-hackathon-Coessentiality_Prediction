@@ -1,0 +1,302 @@
+# H3a lineage/subtype atlas (DESIGN v3.1 2.6). Drafted at FZ-R; only `pending` fields may change before the
+# first run (filled at FZ-C / FZ-X; part2.registry.fill_only_changes).
+id: H3a_lineage_atlas
+direction: H3a
+hypothesis: >
+  Complex-level dependency (S_C) of frozen coarse complexes differs between each cancer lineage and all other
+  lines (one-vs-rest), and between melanoma (any site) and all other lines. Foundation atlas (Fig 3);
+  OXPHOS/mitochondrial confounder analyses are a supplement.
+sign: two-sided
+context_family:
+  name: "H3a: OncotreeLineage one-vs-rest (lineages with >= 12 models in A) + melanoma"
+  inclusion_rule: >
+    Every OncotreeLineage with >= 12 models in A (results/part2/lockbox/context_counts.tsv, FZ-LB) as a
+    one-vs-rest context, plus melanoma (OncotreePrimaryDisease contains 'Melanoma', any site). Reference = all
+    other A models. 22 lineages + melanoma = 23 families; all 23 have >= 5 context and >= 5 reference L models.
+  contexts:
+    - id: "lineage:Biliary Tract"
+      definition: "OncotreeLineage == Biliary Tract vs all other lines (one-vs-rest)"
+      n_A: 27
+      ref_A: 980
+      n_L: 9
+      ref_L: 329
+      lockbox_testable: true
+    - id: "lineage:Bladder/Urinary Tract"
+      definition: "OncotreeLineage == Bladder/Urinary Tract vs all other lines (one-vs-rest)"
+      n_A: 25
+      ref_A: 982
+      n_L: 9
+      ref_L: 329
+      lockbox_testable: true
+    - id: "lineage:Bone"
+      definition: "OncotreeLineage == Bone vs all other lines (one-vs-rest)"
+      n_A: 44
+      ref_A: 963
+      n_L: 15
+      ref_L: 323
+      lockbox_testable: true
+    - id: "lineage:Bowel"
+      definition: "OncotreeLineage == Bowel vs all other lines (one-vs-rest)"
+      n_A: 64
+      ref_A: 943
+      n_L: 21
+      ref_L: 317
+      lockbox_testable: true
+    - id: "lineage:Breast"
+      definition: "OncotreeLineage == Breast vs all other lines (one-vs-rest)"
+      n_A: 50
+      ref_A: 957
+      n_L: 17
+      ref_L: 321
+      lockbox_testable: true
+    - id: "lineage:CNS/Brain"
+      definition: "OncotreeLineage == CNS/Brain vs all other lines (one-vs-rest)"
+      n_A: 99
+      ref_A: 908
+      n_L: 33
+      ref_L: 305
+      lockbox_testable: true
+    - id: "lineage:Cervix"
+      definition: "OncotreeLineage == Cervix vs all other lines (one-vs-rest)"
+      n_A: 13
+      ref_A: 994
+      n_L: 5
+      ref_L: 333
+      lockbox_testable: true
+    - id: "lineage:Esophagus/Stomach"
+      definition: "OncotreeLineage == Esophagus/Stomach vs all other lines (one-vs-rest)"
+      n_A: 72
+      ref_A: 935
+      n_L: 24
+      ref_L: 314
+      lockbox_testable: true
+    - id: "lineage:Head and Neck"
+      definition: "OncotreeLineage == Head and Neck vs all other lines (one-vs-rest)"
+      n_A: 58
+      ref_A: 949
+      n_L: 19
+      ref_L: 319
+      lockbox_testable: true
+    - id: "lineage:Kidney"
+      definition: "OncotreeLineage == Kidney vs all other lines (one-vs-rest)"
+      n_A: 26
+      ref_A: 981
+      n_L: 9
+      ref_L: 329
+      lockbox_testable: true
+    - id: "lineage:Liver"
+      definition: "OncotreeLineage == Liver vs all other lines (one-vs-rest)"
+      n_A: 19
+      ref_A: 988
+      n_L: 6
+      ref_L: 332
+      lockbox_testable: true
+    - id: "lineage:Lung"
+      definition: "OncotreeLineage == Lung vs all other lines (one-vs-rest)"
+      n_A: 93
+      ref_A: 914
+      n_L: 31
+      ref_L: 307
+      lockbox_testable: true
+    - id: "lineage:Lymphoid"
+      definition: "OncotreeLineage == Lymphoid vs all other lines (one-vs-rest)"
+      n_A: 73
+      ref_A: 934
+      n_L: 24
+      ref_L: 314
+      lockbox_testable: true
+    - id: "lineage:Myeloid"
+      definition: "OncotreeLineage == Myeloid vs all other lines (one-vs-rest)"
+      n_A: 33
+      ref_A: 974
+      n_L: 11
+      ref_L: 327
+      lockbox_testable: true
+    - id: "lineage:Ovary/Fallopian Tube"
+      definition: "OncotreeLineage == Ovary/Fallopian Tube vs all other lines (one-vs-rest)"
+      n_A: 46
+      ref_A: 961
+      n_L: 16
+      ref_L: 322
+      lockbox_testable: true
+    - id: "lineage:Pancreas"
+      definition: "OncotreeLineage == Pancreas vs all other lines (one-vs-rest)"
+      n_A: 53
+      ref_A: 954
+      n_L: 18
+      ref_L: 320
+      lockbox_testable: true
+    - id: "lineage:Peripheral Nervous System"
+      definition: "OncotreeLineage == Peripheral Nervous System vs all other lines (one-vs-rest)"
+      n_A: 35
+      ref_A: 972
+      n_L: 12
+      ref_L: 326
+      lockbox_testable: true
+    - id: "lineage:Pleura"
+      definition: "OncotreeLineage == Pleura vs all other lines (one-vs-rest)"
+      n_A: 16
+      ref_A: 991
+      n_L: 5
+      ref_L: 333
+      lockbox_testable: true
+    - id: "lineage:Prostate"
+      definition: "OncotreeLineage == Prostate vs all other lines (one-vs-rest)"
+      n_A: 14
+      ref_A: 993
+      n_L: 5
+      ref_L: 333
+      lockbox_testable: true
+    - id: "lineage:Skin"
+      definition: "OncotreeLineage == Skin vs all other lines (one-vs-rest)"
+      n_A: 51
+      ref_A: 956
+      n_L: 17
+      ref_L: 321
+      lockbox_testable: true
+    - id: "lineage:Soft Tissue"
+      definition: "OncotreeLineage == Soft Tissue vs all other lines (one-vs-rest)"
+      n_A: 38
+      ref_A: 969
+      n_L: 12
+      ref_L: 326
+      lockbox_testable: true
+    - id: "lineage:Uterus"
+      definition: "OncotreeLineage == Uterus vs all other lines (one-vs-rest)"
+      n_A: 28
+      ref_A: 979
+      n_L: 10
+      ref_L: 328
+      lockbox_testable: true
+    - id: "melanoma"
+      definition: "OncotreePrimaryDisease contains 'Melanoma' (any site) vs all other lines"
+      n_A: 50
+      ref_A: 957
+      n_L: 19
+      ref_L: 319
+      lockbox_testable: true
+  excluded:
+    - id: "lineage:Adrenal Gland"
+      n_A: 1
+      reason: "n_A < 12 (exploratory/descriptive size, DESIGN 2.2); reported descriptively only"
+    - id: "lineage:Ampulla of Vater"
+      n_A: 7
+      reason: "n_A < 12 (exploratory/descriptive size, DESIGN 2.2); reported descriptively only"
+    - id: "lineage:Eye"
+      n_A: 7
+      reason: "n_A < 12 (exploratory/descriptive size, DESIGN 2.2); reported descriptively only"
+    - id: "lineage:Fibroblast"
+      n_A: 1
+      reason: "n_A < 12 (exploratory/descriptive size, DESIGN 2.2); reported descriptively only"
+    - id: "lineage:Other"
+      n_A: 1
+      reason: "n_A < 12 (exploratory/descriptive size, DESIGN 2.2); reported descriptively only"
+    - id: "lineage:Testis"
+      n_A: 4
+      reason: "n_A < 12 (exploratory/descriptive size, DESIGN 2.2); reported descriptively only"
+    - id: "lineage:Thyroid"
+      n_A: 8
+      reason: "n_A < 12 (exploratory/descriptive size, DESIGN 2.2); reported descriptively only"
+    - id: "lineage:Vulva/Vagina"
+      n_A: 1
+      reason: "n_A < 12 (exploratory/descriptive size, DESIGN 2.2); reported descriptively only"
+complex_set_hash: FZ-C
+units: >
+  All frozen coarse clusters of the zavg_BEF map (FZ-C), all tiers (T1, T2, T3-neg, T3-nc); locus clusters are
+  tested (kept in m) but excluded from biological claims. complex_set_hash = part2.registry.set_hash of their
+  IDs ('FZ-C' complex-set hash placeholder, filled by the PI at FZ-X).
+score: S_C_mean_winsor3
+score_rule: >
+  S_C(m) = mean over the fixed members of C (after the context-specific removals) of CRISPRGeneEffect, each
+  value clipped to [-3, 3] Chronos units before averaging (DESIGN 2.4 'winsorised +/-3'; raw units keep the H1
+  +/-0.1 margin interpretable); members with NaN in model m are skipped; S_C(m) is NaN if fewer than 50% of the
+  remaining members are observed in m. No member is removed for lineage contexts.
+covariates: [library, ScreenType3DO, ModelType]
+covariate_rule: >
+  lineage_FE is excluded for every H3a context (each context is a function of OncotreeLineage /
+  OncotreePrimaryDisease; DESIGN 2.2 covariate rule). library = Library* multi-hot of CRISPRConfounders;
+  ScreenType3DO; ModelType (Model.csv; dropped by the caller if identical to ScreenType3DO in the analysed rows,
+  recorded).
+statistic: >
+  HC3 OLS t of the context coefficient with Satterthwaite df, two-sided, complete-case per test (n reported). A
+  (context, unit) test is evaluable if >= 12 context and >= 12 reference A models remain after complete-case and
+  >= 2 members remain after removals; non-evaluable tests are listed and excluded from m. Screening hits
+  (BB-adjusted q < 0.1) are re-tested by exact PatientID-blocked Freedman-Lane permutation (10,000 permutations;
+  GPD tail when p_perm < 1e-4), within-lineage for non-lineage contexts and unrestricted across lineages for
+  lineage contexts; permutation p-values re-enter and BB is re-run (DESIGN 2.5).
+fdr_family:
+  method: benjamini_bogomolov
+  families: contexts
+  q: 0.05
+fdr_rule: >
+  Benjamini-Bogomolov over this direction only (one error budget per direction): families = contexts (primary
+  role only); family p = Simes over its units; families selected by BH at q = 0.05 over the M families; within
+  each of the R selected families, BH at q R / M. Discovery = rejection after permutation re-entry.
+family_m:
+  formula: "M = 23 context families; m = sum over contexts of evaluable (context, coarse complex) tests = 23 x n_coarse minus non-evaluable tests"
+  n_families: 23
+  n_units: FZ-C
+  value: FZ-X
+kill_rule:
+  controls: [PC17, PC20]
+  rule: >
+    Kill rule (DESIGN 2.6), from the controls run: the direction is dropped if < 50% of its evaluable
+    complex-level controls are recovered. The run and the lockbox read still happen (to report the null and keep
+    the lockbox read order), but a killed direction is labelled 'killed by controls' and contributes no claims.
+    With 0 evaluable controls the rule is n/a and the direction is labelled exploratory; with 1-2 evaluable
+    controls the rule applies as written and the paper states the thin control coverage.
+lockbox:
+  testable_contexts: 23
+  not_testable_contexts: 0
+  confirmation_rule: >
+    Discovered hit confirmed iff same sign and one-sided p < 0.05 in L (HC3, Satterthwaite df, same score,
+    removals and covariates; exact PatientID-blocked Freedman-Lane permutation, within-lineage for non-lineage
+    contexts, when fewer than 20 context models are in L), for contexts with >= 5 context and >= 5 reference
+    models in L. Other contexts take the rare-context route: leave-one-lineage-out (LOSO) same sign, DEMETER2 on
+    A models same sign and leave-one-model-out same sign, labelled 'not lockbox-testable'. L effects with 95%
+    CIs are reported for every discovered hit, confirmed or not (winner's-curse guard).
+  target_list: results/part2/lockbox_targets/H3a_lineage_atlas.json
+multiverse:
+  scores: [eigengene, within_line_rank, expression_masked, pan_essential_referenced]
+  covariate_sensitivity: [NNMD, doubling_time, CasActivity, GrowthPattern]
+  robustness: [leave-one-OncotreePrimaryDisease-out same sign p < 0.05, leave-top-2-out same sign p < 0.05, breadth]
+  other: [DEMETER2 on A models same sign]
+  use: "reported per hit, never selected (DESIGN 2.4)"
+calibration:
+  negative_controls: >
+    Pseudo-contexts: 100 per direction, each matched to a real context in size and lineage composition
+    (lineage-stratified, PatientID-blocked random relabelling of A models; for lineage contexts, random A model
+    sets of the same size), run through the same machinery; random gene sets matched for size, essentiality and
+    coherence, and dispersed never-expressed sets, scored per context. Reported: fraction of pseudo-context
+    tests with p < 0.05 (expected 0.05) and BB rejections (expected ~0). Pre-declared response: if that fraction
+    exceeds 0.075, every real test with p < 0.01 (not only q < 0.1) is re-tested by permutation and BB is
+    re-run.
+  seed: 4600
+seeds:
+  permutation: 4000
+  pseudo_contexts: 4600
+success_criterion: >
+  Strongest-finding rule (DESIGN 2.5): discovery q < 0.05 AND lockbox-confirmed (or the labelled rare-context
+  route) AND LOSO-robust (same sign, p < 0.05) AND not a locus cluster; ranked by the A statistic x tier. Per
+  hit: confirmed as defined under lockbox. Direction: H3a is supported if >= 1 strongest finding exists and the
+  kill rule does not fire; otherwise it is reported as null (or killed). The confirmation rate (confirmed /
+  discovered) is reported with L effects for all hits.
+stopping_rule: >
+  Exactly one discovery run in A (one run_association call with all primary contexts and all units; trial-ledger
+  line), one permutation pass, then one lockbox read (crispr) whose committed target list holds the members of
+  every discovered unit, after which status is set to closed. If nothing is discovered the entry is closed with
+  a zero-target ledger line. No re-run with other scores, covariates, contexts or units; anything else is a new
+  entry labelled exploratory. Sensitivity contexts and multiverse scores are run only for discovered hits,
+  restricted to the hit's units, and are reported, never selected.
+frozen_inputs:
+  - results/part2/contexts/checksums.json
+  - results/part2/lockbox/manifest.json
+  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - FZ-X   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
+pending:
+  - "complex_set_hash"
+  - "family_m.n_units"
+  - "family_m.value"
+  - "frozen_inputs[2]"
+  - "frozen_inputs[3]"
+status: open

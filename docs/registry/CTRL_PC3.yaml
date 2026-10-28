@@ -1,0 +1,82 @@
+# Pre-registered control PC3 (DESIGN v3.1 2.7). Drafted at FZ-R; only the fields listed in `pending`
+# may change before the first run (filled at FZ-C / FZ-X; check with part2.registry.fill_only_changes).
+id: CTRL_PC3
+direction: controls
+hypothesis: |
+  Knockout of TP53, CDKN1A or USP28 gives a growth gain (positive gene effect) in TP53 wild-type lines relative
+  to TP53-altered lines (gene level only).
+sign: "+"
+context_family:
+  name: "PC3 context"
+  contexts:
+    - id: TP53_altered
+      definition: "1 = TP53 hotspot or LoF; 0 = no damaging/hotspot/hom-del; NaN = ambiguous single hit or unknown"
+      reference: "TP53 WT (no damaging mutation, hotspot or hom-del)"
+      n_A: 668
+      ref_A: 319
+      n_L: 219
+      ref_L: 109
+      size_class_A: confirmatory
+      lockbox_testable: true
+control:
+  design_id: PC3
+  level: "G"
+  design_sign: "-"
+  sign_mapping: "DESIGN: - (growth gain: knockout raises fitness) in TP53 WT. On TP53_altered (altered = 1) the altered lines therefore have the lower effect, so the registered sign is '+' (alternative = less)."
+  targets: [TP53, CDKN1A, USP28]
+  gene_units:
+    - "TP53 (7157)"
+    - "CDKN1A (1026)"
+    - "USP28 (57646)"
+  complex_unit: "none (gene level only; DESIGN 2.6 'gene-level only')"
+  removed_members: "not applicable (gene level only)"
+complex_set_hash: e12cb4ec587d03da
+score: gene
+covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+covariate_rule: "DESIGN 2.5 covariate set for this context type; no covariate is a function of the context (DESIGN 2.2)"
+statistic: >
+  HC3 OLS t with Satterthwaite df, one test per unit (gene units and the complex unit), one-sided at
+  alpha = 0.05 in A (alternative = less for '+', greater for '-'); complete-case per test, n reported.
+  No multiplicity correction: fixed denominator of 23 control entries (DESIGN 2.7).
+fdr_family:
+  method: none
+  q: 0.05
+family_m:
+  formula: "number of gene units + 1 if the complex unit is evaluable (one one-sided test each)"
+  value: 3
+kill_rule:
+  direction: none
+  counted: false
+  rule: "gene-level only control (DESIGN 2.6): reported, never counted toward any direction"
+lockbox:
+  testable: true
+  n_L: 219
+  confirmation_rule: >
+    Reported, not part of the kill rule. Same sign and one-sided p < 0.05 in L at the same level and
+    readout (HC3, Satterthwaite df; exact PatientID-blocked within-lineage Freedman-Lane
+    permutation, 10,000 permutations, when fewer than 20 context models are in L).
+    Requires >= 5 context and >= 5 reference models in L.
+  rare_route: >
+    If not lockbox-testable: leave-one-lineage-out (LOSO) same sign, DEMETER2 on A models same sign,
+    and leave-one-model-out same sign; labelled 'not lockbox-testable'.
+  target_list: results/part2/lockbox_targets/CTRL_PC3.json
+multiverse:
+  scores: [eigengene, within_line_rank, expression_masked, pan_essential_referenced]
+  covariate_sensitivity: [NNMD, doubling_time, CasActivity, GrowthPattern]
+  robustness: [leave-one-lineage-out (LOSO) same sign p < 0.05, leave-top-2-out same sign p < 0.05, breadth]
+  use: "reported per control; never selected; the kill rule uses the primary readout only"
+seeds:
+  permutation: 4402
+success_criterion: "recovered: expected sign with one-sided HC3 p < 0.05 in A at the complex level (gene level for this gene-only control); lockbox confirmation reported separately"
+stopping_rule: >
+  Runs once, in the single controls script after FZ-C and FZ-X, together with every other control
+  entry; no re-run and no change of readout, covariates or context after results are seen. The kill-rule
+  tally uses A results only and is committed before any direction's discovery run. Then one lockbox read
+  (crispr) for this entry, after which status is set to closed.
+frozen_inputs:
+  - results/part2/contexts/checksums.json
+  - results/part2/lockbox/manifest.json
+  - FZ-X   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
+pending:
+  - "frozen_inputs[2]"
+status: open

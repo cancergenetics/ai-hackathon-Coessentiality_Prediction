@@ -205,6 +205,8 @@ def run_association(analysis_id: str, Y: pd.DataFrame, contexts: pd.DataFrame, c
     entry, blob = registry.load_entry(proj.registry_dir, analysis_id, root=proj.root)
     if entry["status"] == "closed":
         raise RegistryError(f"{analysis_id} is closed")
+    if entry["fdr_family"]["method"] not in ("benjamini_bogomolov", "bh", "none"):   # e.g. stagewise_bb (H2)
+        raise RegistryError(f"fdr method {entry['fdr_family']['method']!r} is registered but not implemented here")
     # frozen inputs: the lockbox manifest is always required (A must be frozen)
     manifests = list(dict.fromkeys(["results/part2/lockbox/manifest.json"] + list(entry["frozen_inputs"])))
     in_hashes = check_frozen(proj, inputs, manifests)

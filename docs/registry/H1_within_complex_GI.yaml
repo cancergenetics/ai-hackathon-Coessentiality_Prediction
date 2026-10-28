@@ -1,0 +1,167 @@
+# H1 within-complex genetic interactions (DESIGN v3.1 2.6). Drafted at FZ-R. The event list is enumerated at
+# FZ-X by the rule below; only `pending` fields may change before the first run (part2.registry.fill_only_changes).
+id: H1_within_complex_GI
+direction: H1
+hypothesis: >
+  Loss of a gene g that is a member of, or attached to, a frozen coarse complex C rewires dependency on the rest
+  of C: paralog compensation (in-complex paralogs of g become more essential), residual sensitisation
+  (non-paralog members' dependency grows in its baseline direction), collapse (non-paralog members' dependency
+  shrinks toward 0), or no change (neutral by TOST). Estimand: beta = effect of loss(g) on S_{C minus g}, with
+  member-resolved profiles. Headline mechanistic panel (Fig 4).
+sign: two-sided
+context_family:
+  name: "H1 loss events (complex C, lost gene g), enumerated at FZ-X"
+  contexts: FZ-X
+  context_id_format: "H1loss:<SYMBOL> (one 0/1/NaN column per lost gene, added to the FZ-X context table)"
+  event_id_format: "<frozen coarse complex ID>|<SYMBOL of g>"
+  expected_events: "about 10-20 (round-2 PI and biology estimates)"
+  enumeration_rule: |
+    Executed once at FZ-X from labels, the frozen map, Ensembl 116 and coordinates only (no dependency data).
+    1. loss(g, m) = 1 if (a) LoF(g) by DESIGN 2.2 (primary: MSI-H lines NaN) and g passes the pre-registered LoF
+       functional check (results/part2/contexts/lof_functional_check.tsv; genes not in that table get the same
+       check at FZ-X), or (b) hom-del(g) (a < 0.5 and log1p TPM < 1 where measured), or (c) silencing: log1p
+       TPM(g, m) < 1 while g is normally expressed in m's lineage (median log1p TPM of g >= 3 over RNA-profiled
+       U models of m's OncotreeLineage; lineages with < 5 such models use the median over U) and m has no
+       hom-del of g.
+    2. loss(g, m) = 0 (reference) if m has no damaging mutation of g, no hom-del of g and log1p TPM(g, m) >= 1
+       where measured; NaN otherwise (single damaging hit without copy loss, MSI-H line whose only evidence is a
+       mutation, missing omics).
+    3. Candidate genes: >= 12 loss and >= 12 reference models in A.
+    4. Link: g is a member of frozen coarse complex C, or attached to C by the FZ-C attachment rule (>= 50% of
+       C's members with score >= z0 to g, size-matched null FDR < 0.01). Each (C, g) is one event; several links
+       give several events. Events in locus clusters are enumerated and flagged (no claims).
+    5. Components: P = members of C (minus g) that are paralogs of g (paralog_definition); N = members of C
+       minus g minus P, and for CN-type events minus members within +/-10 Mb of g. The N axis is evaluable if
+       |N| >= 2, the P axis if |P| >= 1; an event is enumerated if at least one axis is evaluable.
+    6. Event type: LoF-type if >= 50% of A loss models are LoF calls, else CN-type if >= 50% are hom-del, else
+       silencing-type (ties go to CN-type).
+    7. Lockbox-testable if >= 5 loss and >= 5 reference models in L (labels only).
+    8. The event list (IDs, components, type, n_A, n_L, testability) is committed in the FZ-X manifest;
+       contexts, units and m of this entry are filled from it.
+paralog_definition:
+  source: datasets/Paralogs/ensembl116_human_paralogues.tsv
+  rule: "(g, h) are paralogs if listed with homology type within_species_paralog or other_paralog (gene_split excluded) and min(%id target, %id query) >= 20"
+  justification: >
+    20% amino-acid identity is the conventional floor for sequence paralogs in DepMap paralog-buffering work
+    (e.g. De Kegel & Ryan 2019; citation to be checked under F6). Taking the minimum of the two directional
+    identities excludes domain-only matches of a short protein to a long one. other_paralog must be kept: the
+    canonical in-complex pairs ARID1A/ARID1B (49-51% identity), SMARCA4/SMARCA2 (75-78%) and VPS4B/VPS4A
+    (80-81%) are typed other_paralog in Ensembl 116, while STAG2/STAG1 (71%) is within_species_paralog (checked
+    on the paralog table only). Paralogy is used only within C, so large gene families do not inflate P.
+  sensitivity: [min identity >= 40%, within_species_paralog only]
+complex_set_hash: FZ-X
+units: >
+  Event components '<event ID>|N' (aligned non-paralog score, every event with an evaluable N axis) and '<event
+  ID>|P' (paralog score, events with |P| >= 1); hash = part2.registry.set_hash of these IDs.
+score: member_resolved
+score_rule: |
+  All member values are CRISPRGeneEffect clipped to [-3, 3]; means skip NaN members (NaN if < 50% observed).
+  y_P(m) = mean over P; beta_P = loss(g) coefficient on y_P (raw scale; beta_P < 0 = paralogs more dependent).
+  Baseline b_j of member j in N = median effect of j over reference (loss = 0) A models; members with |b_j| <
+     0.1 have no baseline direction, are left out of the aligned score and reported; N' = the rest.
+  Aligned score y_N(m) = mean over j in N' of -sign(b_j) * effect_j(m), so that kappa_N = loss(g) coefficient on
+     y_N is > 0 when dependency magnitude grows in its baseline direction and < 0 when it shrinks toward 0.
+  Also reported: beta_all = coefficient on S_{C minus g} (DESIGN estimand, all members but g), beta_Nraw on the
+     raw mean over N, and the member-resolved profile (beta_j with 95% CI for every member).
+covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+covariate_rule: >
+  LoF-type events: lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore; CN-type events:
+  lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered; silencing-type events: the base set
+  (lineage_FE, library, ScreenType3DO, ModelType). Each event's list is written into its context item at FZ-X;
+  any covariate that is a function of loss(g) is dropped (e.g. TP53_altered when g = TP53).
+statistic: |
+  HC3 OLS with Satterthwaite df, complete-case per test, A models.
+  Counted tests (two-sided): kappa_N for every event with an evaluable N axis and beta_P for every event with
+     |P| >= 1.
+  Class conditions (not counted): the P-vs-N contrast (coefficient on y_P - mean over N of effect, one-sided p <
+     0.05), TOST (two one-sided tests at alpha = 0.05, i.e. 90% CI inside [-0.1, 0.1] Chronos; the margin is
+     also reported in residual-SD units), member breadth, matched null.
+  Screening candidates (BH q < 0.1) are re-tested by exact PatientID-blocked within-lineage Freedman-Lane
+     permutation (10,000; GPD tail); permutation p re-enter and BH is re-run.
+classes: |
+  Two axes per event; an event can carry one paralog-axis and one complex-wide-axis class.
+  Paralog axis (|P| >= 1): PARALOG COMPENSATION if beta_P < 0 with BH q < 0.05 AND beta_P below the 2.5%
+     quantile of its matched null AND the P-vs-N contrast < 0 (one-sided p < 0.05); NEUTRAL if the 90% CI of
+     beta_P lies in [-0.1, 0.1]; otherwise INCONCLUSIVE (a significant beta_P > 0 is reported as 'paralog
+     relief', exploratory).
+  Complex-wide axis (|N'| >= 2): RESIDUAL SENSITISATION if kappa_N > 0 with BH q < 0.05 AND above the 97.5% null
+     quantile AND >= 50% of N' members have aligned member coefficient > 0; COLLAPSE if kappa_N < 0 with BH q <
+     0.05 AND below the 2.5% null quantile AND >= 50% of N' members have aligned member coefficient < 0
+     (labelled exploratory unless lockbox-confirmed; round-2 biology item 10); NEUTRAL if the 90% CI of kappa_N
+     lies in [-0.1, 0.1]; otherwise INCONCLUSIVE.
+matched_null: |
+  Per event and axis, K = 1000 random member sets of size |P| or |N'| drawn from members of other frozen coarse
+     complexes (excluding C, complexes containing g or a paralog of g, and for CN-type events genes within +/-10
+     Mb of g), each set from a single complex of size >= the set size (else from the union of two complexes),
+     accepted if mean A essentiality (mean effect over all A models) is within +/-0.1 and coherence (mean
+     pairwise zavg_BEF on A) within +/-1.0 z of the event component.
+  The null statistic is computed exactly like the observed one (same context column and covariates; N axis
+     aligned with each random member's own baseline).
+  Seed 7000 + event index (order of the FZ-X event list). If < 200 distinct sets are accepted after 100,000
+     attempts, both tolerances are doubled once; if still < 200, the axis cannot be called (INCONCLUSIVE, 'null
+     unavailable').
+fdr_family:
+  method: bh
+  q: 0.05
+fdr_rule: >
+  BH at q = 0.05 pooled over every counted H1 test (all events, both axes). The class conditions (contrast,
+  breadth, matched null, TOST) are applied after BH and cannot rescue a non-rejected test.
+family_m:
+  formula: "m_H1 = (number of events with an evaluable N axis) + (number of events with |P| >= 1)"
+  value: FZ-X
+kill_rule:
+  controls: [PC6, PC7, PC8, PC12, PC15]
+  rule: >
+    Kill rule (DESIGN 2.6), from the controls run: the direction is dropped if < 50% of its evaluable
+    complex-level controls are recovered. The run and the lockbox read still happen (to report the null and keep
+    the lockbox read order), but a killed direction is labelled 'killed by controls' and contributes no claims.
+    With 0 evaluable controls the rule is n/a and the direction is labelled exploratory; with 1-2 evaluable
+    controls the rule applies as written and the paper states the thin control coverage.
+lockbox:
+  confirmation_rule: >
+    Every non-neutral class call is confirmed iff its defining statistic (beta_P for compensation, kappa_N for
+    sensitisation / collapse) has the same sign with one-sided p < 0.05 in L (same members, alignment from A
+    baselines, covariates; exact within-lineage Freedman-Lane permutation when fewer than 20 loss models are in
+    L), for events with >= 5 loss and >= 5 reference L models; other events take the rare-context route (LOSO +
+    DEMETER2 on A models + leave-one-model-out, same sign), labelled. Neutral calls are not confirmed; their L
+    90% CI is reported. L effects are reported for every event.
+  target_list: results/part2/lockbox_targets/H1_within_complex_GI.json
+multiverse:
+  scores: [eigengene of the N component, within_line_rank, expression_masked, pan_essential_referenced]
+  covariate_sensitivity: [NNMD, doubling_time, CasActivity, GrowthPattern]
+  robustness: [LOSO same sign p < 0.05, leave-top-2-out same sign p < 0.05, breadth]
+  other: [paralog definition sensitivity (min identity >= 40%; within_species_paralog only), loss definition without silencing, LoF incl. MSI-H lines]
+  use: "reported per event, never selected"
+annotations: >
+  Reported, not filters: attenuation of g's own dependency in its loss lines (round-2 biology item 4 is not
+  adopted as a filter because selecting events on an outcome would be a forking path); survivorship caveat (loss
+  of a non-redundant essential subunit is observed only where tolerated); whether the most shifted member is a
+  paralog of g.
+implementation_note: >
+  run_association tests every registered context against every unit. H1 needs each loss column paired only with
+  its own event components and BH pooled over all events; this pairing (or per-event calls with BH applied over
+  the pooled p-values) must be implemented and tested before FZ-X. The entry stays pending until then.
+seeds:
+  permutation: 4200
+  matched_null: 7000
+success_criterion: >
+  Per event: class by the rules above; non-neutral classes lockbox-confirmed (or the labelled rare-context
+  route), LOSO-robust and not in a locus cluster to enter the strongest findings. Direction: H1 is supported if
+  >= 1 non-neutral class call meets that bar and the kill rule does not fire. The full panel (all events with
+  classes, including neutral and inconclusive) is reported regardless; the null version of Fig 4 is pre-written.
+stopping_rule: >
+  Events fixed at FZ-X (none added or removed after results). One discovery run on A covering all events, one
+  permutation pass, one lockbox read (crispr) for the members of every event, then closed. A killed direction
+  still runs and reads (reported, no claims).
+frozen_inputs:
+  - results/part2/contexts/checksums.json
+  - results/part2/lockbox/manifest.json
+  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - FZ-X   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
+pending:
+  - "context_family.contexts"
+  - "complex_set_hash"
+  - "family_m.value"
+  - "frozen_inputs[2]"
+  - "frozen_inputs[3]"
+status: open
