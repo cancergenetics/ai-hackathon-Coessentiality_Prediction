@@ -14,16 +14,20 @@
  },
  "code": {
   "scripts/39_freeze_fzx.py": "a51e8b3efe880eb1512014b883f5d5fb5bbb29ddc0ad1e64cb6b456a66dad229",
-  "src/part2/fzx.py": "2504c09f615fa02e1372ff29fc9a1740959faa02cd4651b6bb256a5ab3012f97",
+  "src/part2/fzx.py": "74f1c3513e86987d2c3f1f74b32283a7035917eea4f3429664e3b581d7f73e02",
   "src/part2/h1.py": "5bd55e4b10f350556c10d9e5a7a9e1950070b028c3bc038079d88943b6115fd0",
   "src/part2/cscore.py": "3893b2148089e3f128c29702f6fc743db13c95dd01c90fd86683aab46a3e7fa6",
-  "scripts/31_score_blocks.py": "941ae97542e445c5359381dfa77610151ab47eccaa3c6ede1eb8eff0d0eb16ec"
+  "scripts/31_score_blocks.py": "941ae97542e445c5359381dfa77610151ab47eccaa3c6ede1eb8eff0d0eb16ec",
+  "scripts/40_amend_A1.py": "3d05dd6483d7edba45eb77aecb873901b5de1638745324362e2b92a597e720c0",
+  "scripts/39_freeze_fzx.py (after A1: refuses to overwrite an amended freeze)": "f636d4104684aae9603abdf5d25f481058b2396de6d28a60afb11ea8f5dee79d",
+  "src/part2/registry.py": "e99f9e92277dd7d321ac3c2675a31fe1536c9d5ec9e1a6c5d922f02aa45db516"
  },
  "complex_set_hashes": {
   "zavg_coarse": "53f9dbf46370d237",
   "gls_coarse": "14b6c53a01146a61",
   "h2_submodules": "141a70b7133ed8a4",
-  "h1_components": "533ed754285791ff"
+  "h1_components": "4a5dcc9d02bc4b23",
+  "h1s_components": "d6264047856ff8e9"
  },
  "membership_sha256": {
   "zavg (FZ-C membership.tsv)": "fec552d4398de8556d799ff09ebc88575fe75eeba53383638c11303be3c812cd",
@@ -43,7 +47,7 @@
   "results/part2/fzx/h2_submodules.tsv": "8460d9921db3573fe6c2a32f0f415f00300f82bff608e2e7196f296cd038db04",
   "results/part2/fzx/h3a_contexts.tsv": "203b80573ec1b7a5308426511a9b5a3fdbaf6cef3234a7d6f3d67f4baec7cd5d",
   "results/part2/fzx/h3b_contexts.tsv": "e2bdfc60109c75a881208b04ec721cb32667b157968f6102cbc166b5eb55527c",
-  "results/part2/fzx/lockbox_testable.tsv": "c9411e34f149c1f121d5bb9aabe4f1d0a2c9278b07847a4c1050d065abd818b2",
+  "results/part2/fzx/lockbox_testable.tsv": "4f6e713c661ba0f0296baa105607177e4bd0f3e621a17b8cd5f890c1b1bff6a6",
   "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2",
   "results/part2/fzx/units_gls_coarse.txt": "00d92e7c679a8760713c6192344bbb79487971cc5b6845db583b479c0033a5d0",
   "results/part2/fzx/units_h1_components.txt": "6ad48d0cae2349877fd50478e73bd4b25322b026b1087e01ea0b86d41dd37997",
@@ -56,7 +60,10 @@
   "results/part2/construction/gls_map/clusters.tsv": "f79160a8e5456e9c24805462d1a18250f56ae56cf246b79491b9da1acac8e4ba",
   "results/part2/construction/gls_map/membership.tsv": "760e065e39107c97c16735e6dc77f5bca4f73567f7d73d68d67c9ba44bf17dd3",
   "results/part2/construction/tiers/zavg_tiers.tsv": "a861760975bfcc937c31606cf20035b69529a79f318089b9b3ef3f99e885e599",
-  "results/part2/construction/tiers/gls_tiers.tsv": "2224a9c22de8f124b7881de603244338b6cfbe093f5868a8c2d64b54a5cfdb41"
+  "results/part2/construction/tiers/gls_tiers.tsv": "2224a9c22de8f124b7881de603244338b6cfbe093f5868a8c2d64b54a5cfdb41",
+  "results/part2/fzx/h1_event_split_A1.tsv": "acd8c964ed6f0a3ccd7bd3be3d594c42b60a09f2bcc4a5b3a2ccfd6c8ef8995e",
+  "results/part2/fzx/units_h1_components_A1.txt": "9d62f0d3dd0e8abcfec1f50549d1e20a2adfb53a8308fa73668dd076971cb605",
+  "results/part2/fzx/units_h1s_components.txt": "4fa1aac184b1a51304ac30b74f89f87f6510ad01a3a7801e4500929d802e2b1f"
  },
  "registry": {
   "BENCH_complex_vs_gene": {
@@ -328,8 +335,8 @@
     "frozen_inputs[2]",
     "frozen_inputs[3]"
    ],
-   "fill_only_changes": [],
-   "sha256": "7f721e2e48ff00d76d0347d624958453e4c56215ab8103591206de3b1ed06f58"
+   "amendment": "A1",
+   "sha256": "0ab26d544bb21fad3c8ff80345db14b6d36ea714cef5ae956658c5ec05b3fee5"
   },
   "H2_submodule_divergence": {
    "filled": [
@@ -361,6 +368,11 @@
    ],
    "fill_only_changes": [],
    "sha256": "7db6af5f8f4fec81719d20030b6ea106ee6f581e99c57c1bd77cee1f454e6355"
+  },
+  "H1S_silencing_GI": {
+   "filled": [],
+   "amendment": "A1",
+   "sha256": "b7ea36a7c87d23f42aafb17f26716c0a56f6433cb5b3d3869d35d4309e9e02be"
   }
  },
  "summary": {
@@ -393,10 +405,11 @@
     "tests": 7340
    },
    "H1": {
-    "m": 366,
-    "n_events": 341,
-    "n_N_axis": 341,
-    "n_P_axis": 25
+    "m": 27,
+    "n_events": 23,
+    "n_N_axis": 23,
+    "n_P_axis": 4,
+    "complex_set_hash": "4a5dcc9d02bc4b23"
    },
    "H2": "set by the committed H3a and H3b discovery runs (stage-wise)",
    "BRIDGE_L_gls": {
@@ -428,6 +441,14 @@
     "CTRL_PC7": 1,
     "CTRL_PC8": 1,
     "CTRL_PC9": 3
+   },
+   "H1S": {
+    "m": 339,
+    "n_events": 318,
+    "n_N_axis": 318,
+    "n_P_axis": 21,
+    "complex_set_hash": "d6264047856ff8e9",
+    "standing": "exploratory"
    }
   },
   "h1": {
@@ -575,9 +596,13 @@
     "testable": 1,
     "total": 1
    },
+   "H1S_silencing_GI": {
+    "testable": 253,
+    "total": 318
+   },
    "H1_within_complex_GI": {
-    "testable": 274,
-    "total": 341
+    "testable": 21,
+    "total": 23
    },
    "H2_submodule_divergence": {
     "testable": 41,
@@ -600,5 +625,36 @@
   "annotation": 7.9,
   "evaluability": 15.4,
   "h1": 22.7
- }
+ },
+ "amendments": [
+  {
+   "id": "A1",
+   "timestamp_utc": "2026-10-28T22:54:50Z",
+   "amends_commit": "408593e43c067e0a213e2dfadabb5c48b68bfbb2",
+   "record": "docs/registry/AMENDMENTS.md",
+   "decision": "H1 keeps LoF / CN events; silencing events moved to the exploratory entry H1S_silencing_GI",
+   "H1_at_fzx": {
+    "m": 366,
+    "n_events": 341,
+    "n_N_axis": 341,
+    "n_P_axis": 25
+   },
+   "H1_after": {
+    "m": 27,
+    "n_events": 23,
+    "n_N_axis": 23,
+    "n_P_axis": 4,
+    "complex_set_hash": "4a5dcc9d02bc4b23"
+   },
+   "H1S": {
+    "m": 339,
+    "n_events": 318,
+    "n_N_axis": 318,
+    "n_P_axis": 21,
+    "complex_set_hash": "d6264047856ff8e9",
+    "standing": "exploratory"
+   },
+   "inputs_read": "FZ-X event list (counts and types) only; no dependency values, association statistics or lockbox outcomes"
+  }
+ ]
 }

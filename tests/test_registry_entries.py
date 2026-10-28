@@ -33,7 +33,8 @@ ZAVG_UNITS = (FZX / "units_zavg_coarse.txt").read_text().split()
 ZAVG_ALL_UNITS = set(pd.read_csv(FZX / "zavg_engine_membership.tsv", sep="\t").unit_id)
 
 PCS = [f"PC{i}" for i in range(1, 19)] + ["PC19a", "PC19b", "PC20", "PC21", "PC22"]
-DIRECTION_IDS = ["H3a_lineage_atlas", "H3b_driver_family", "H1_within_complex_GI", "H2_submodule_divergence",
+DIRECTION_IDS = ["H3a_lineage_atlas", "H3b_driver_family", "H1_within_complex_GI", "H1S_silencing_GI",
+                 "H2_submodule_divergence",
                  "BENCH_complex_vs_gene", "BRIDGE-L_confirmation_rate"]
 # DESIGN §2.6 control -> direction map (kill rule); 'none' = gene-level only
 KILL_MAP = {"H3a": ["PC17", "PC20"],
@@ -104,7 +105,7 @@ def test_contexts_exist_and_counts_match_fzlb(entries):
         for c in all_ctx(e):
             cid = c["id"]
             if cid.startswith("H1loss:"):                          # FZ-X loss columns (not in the FZ-LB table)
-                assert k == "H1_within_complex_GI" and cid in H1CTX.index, (k, cid)
+                assert k in ("H1_within_complex_GI", "H1S_silencing_GI") and cid in H1CTX.index, (k, cid)
                 r = H1CTX.loc[cid]
             else:
                 assert cid in SUMMARY.index and cid in COUNTS.index, (k, cid)
@@ -217,20 +218,43 @@ def test_h3b_family(entries):
             assert c["id"] not in inc
 
 
-def test_h1_entry(entries):
-    e = entries["H1_within_complex_GI"]
+@pytest.mark.parametrize("eid,types,units_file", [
+    ("H1_within_complex_GI", {"LoF", "CN"}, "units_h1_components_A1.txt"),
+    ("H1S_silencing_GI", {"silencing"}, "units_h1s_components.txt")])
+def test_h1_and_h1s_event_split(entries, eid, types, units_file):
+    """FZ-X event list split by amendment A1: H1 = LoF / CN events, H1S = silencing events; contexts, events,
+    hash and m of each entry come from the frozen lists."""
+    e = entries[eid]
     cf = e["context_family"]
-    assert "enumeration_rule" in cf
-    # FZ-X: one context per lost gene, exactly the frozen H1 context table, events as in h1_events.tsv
-    assert [c["id"] for c in cf["contexts"]] == list(H1CTX.index)
+    want = [c for c in H1CTX.index if H1CTX.loc[c, "type"] in types]
+    assert [c["id"] for c in cf["contexts"]] == want
     ev = pd.read_csv(FZX / "h1_events.tsv", sep="\t")
-    assert sorted(x for c in cf["contexts"] for x in c["events"]) == sorted(ev.event)
+    assert sorted(x for c in cf["contexts"] for x in c["events"]) == sorted(ev.event[ev.type.isin(types)])
     for c in cf["contexts"]:
         r = H1CTX.loc[c["id"]]
         assert c["type"] == r.type and c["covariates"] == r.covariates.split(";"), c["id"]
         assert c["lockbox_testable"] == bool(c["n_L"] >= 5 and c["ref_L"] >= 5), c["id"]
-    units = (FZX / "units_h1_components.txt").read_text().split()
+    units = (FZX / units_file).read_text().split()
     assert e["complex_set_hash"] == registry.set_hash(units) and e["family_m"]["value"] == len(units)
+    assert [a["id"] for a in e["amendments"]] == ["A1"]
+
+
+def test_h1s_is_exploratory_copy_of_h1(entries):
+    h, s = entries["H1_within_complex_GI"], entries["H1S_silencing_GI"]
+    assert s["standing"] == "exploratory" and s["headline"] is False and "standing" not in h
+    assert s["direction"] == "H1" and s["status"] == "open"
+    for k in ("score", "score_rule", "covariates", "covariate_rule", "statistic", "classes", "matched_null",
+              "fdr_family", "fdr_rule", "paralog_definition", "units", "seeds", "multiverse", "frozen_inputs"):
+        assert s[k] == h[k], k
+    assert s["family_m"]["formula"] == h["family_m"]["formula"]
+    assert "never enter any kill tally or main claim" in s["kill_rule"]["rule"]
+    assert "not enter the kill rule" in s["success_criterion"] and "exploratory" in s["hypothesis"].lower()
+
+
+def test_h1_entry(entries):
+    e = entries["H1_within_complex_GI"]
+    cf = e["context_family"]
+    assert "enumeration_rule" in cf
     rule = cf["enumeration_rule"]
     for needle in (">= 12 loss", "functional check", "hom-del", "silencing", "attached", "Lockbox-testable"):
         assert needle in rule, needle

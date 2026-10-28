@@ -182,7 +182,8 @@ def test_unit_sets_hashes_and_m(man, entries):
     z = (FZX / "units_zavg_coarse.txt").read_text().split()
     g = (FZX / "units_gls_coarse.txt").read_text().split()
     sub = list(pd.read_csv(FZX / "h2_submodules.tsv", sep="\t").unit)
-    h1u = (FZX / "units_h1_components.txt").read_text().split()
+    h1u = (FZX / "units_h1_components_A1.txt").read_text().split()
+    h1s = (FZX / "units_h1s_components.txt").read_text().split()
     cl = pd.read_csv(ROOT / "results/part2/construction/zavg_map/clusters.tsv", sep="\t")
     assert z == sorted(cl.cluster_id[cl.level == 1]) and len(z) == 367
     em = FrozenMap.from_membership(pd.read_csv(FZX / "zavg_engine_membership.tsv", sep="\t"))
@@ -192,7 +193,12 @@ def test_unit_sets_hashes_and_m(man, entries):
         assert entries[k]["complex_set_hash"] == registry.set_hash(z) == man["complex_set_hashes"]["zavg_coarse"], k
     assert entries["BRIDGE-L_confirmation_rate"]["complex_set_hash"] == registry.set_hash(g)
     assert entries["H2_submodule_divergence"]["complex_set_hash"] == registry.set_hash(sub)
-    assert entries["H1_within_complex_GI"]["complex_set_hash"] == registry.set_hash(h1u)
+    assert entries["H1_within_complex_GI"]["complex_set_hash"] == registry.set_hash(h1u) == \
+        man["complex_set_hashes"]["h1_components"]
+    assert entries["H1S_silencing_GI"]["complex_set_hash"] == registry.set_hash(h1s) == \
+        man["complex_set_hashes"]["h1s_components"]
+    assert entries["H1_within_complex_GI"]["family_m"]["value"] == len(h1u) == man["summary"]["m"]["H1"]["m"]
+    assert entries["H1S_silencing_GI"]["family_m"]["value"] == len(h1s) == man["summary"]["m"]["H1S"]["m"]
     ev = pd.read_csv(FZX / "evaluability_tests.tsv.gz", sep="\t")
     for k in ("H3a_lineage_atlas", "H3b_driver_family"):
         e = ev[ev.entry == k]
@@ -220,8 +226,16 @@ def test_h1_event_list(man, entries):
         assert r.covariates.split(";") == h1.COVARIATES[r.type]
     units = sorted([f"{r.event}|N" for r in ev.itertuples() if r.n_N >= 2] +
                    [f"{r.event}|P" for r in ev.itertuples() if r.n_P >= 1])
-    assert units == (FZX / "units_h1_components.txt").read_text().split()
-    assert entries["H1_within_complex_GI"]["family_m"]["value"] == len(units)
+    assert units == (FZX / "units_h1_components.txt").read_text().split()       # the FZ-X list (366)
+    # amendment A1: LoF / CN events -> H1, silencing events -> H1S; together exactly the FZ-X list
+    split = pd.read_csv(FZX / "h1_event_split_A1.tsv", sep="\t")
+    assert list(split.event) == list(ev.event)
+    assert (split.entry == np.where(ev.type.isin(["LoF", "CN"]), "H1_within_complex_GI", "H1S_silencing_GI")).all()
+    u1 = (FZX / "units_h1_components_A1.txt").read_text().split()
+    u2 = (FZX / "units_h1s_components.txt").read_text().split()
+    assert sorted(u1 + u2) == units and not set(u1) & set(u2)
+    assert entries["H1_within_complex_GI"]["family_m"]["value"] + entries["H1S_silencing_GI"]["family_m"]["value"] \
+        == len(units)
     assert man["summary"]["h1"]["n_events"] == len(ev)
     assert sorted(ctx.context) == sorted(f"H1loss:{g}" for g in set(ev.gene))
     # events link only to coarse units; attachments only through non-locus level-1 attachments
@@ -238,8 +252,9 @@ def test_lockbox_testable_list(entries):
     assert set(lb.entry) == set(entries)
     for r in lb.itertuples(index=False):
         assert str(r.lockbox_testable) == str(int(r.n_L) >= 5 and int(r.ref_L) >= 5), (r.entry, r.context)
-    h1n = lb[lb.entry == "H1_within_complex_GI"]
-    assert len(h1n) == len(pd.read_csv(FZX / "h1_events.tsv", sep="\t"))
+    split = pd.read_csv(FZX / "h1_event_split_A1.tsv", sep="\t")
+    for k in ("H1_within_complex_GI", "H1S_silencing_GI"):
+        assert sorted(lb.event[lb.entry == k]) == sorted(split.event[split.entry == k]), k
 
 
 def _committed_pending_version(eid: str):
@@ -255,18 +270,74 @@ def _committed_pending_version(eid: str):
     return None
 
 
-def test_fzx_fill_changed_only_placeholders(entries):
+def _show(commit: str, rel: str):
+    t = subprocess.run(["git", "-C", str(ROOT), "show", f"{commit}:{rel}"], capture_output=True, text=True)
+    return t.stdout if t.returncode == 0 else None
+
+
+def _fzx_commit(man):
+    return man["amendments"][0]["amends_commit"]
+
+
+def test_fzx_fill_changed_only_placeholders(entries, man):
+    """FZ-R draft -> FZ-X commit: fill-only for every entry (placeholders and `pending` only)."""
     n = 0
-    for k, e in entries.items():
+    c = _fzx_commit(man)
+    for k in entries:
         old_txt = _committed_pending_version(k)
-        if old_txt is None:
+        fzx_txt = _show(c, f"docs/registry/{k}.yaml")
+        if old_txt is None or fzx_txt is None:
             continue
-        old = registry.load_yaml(old_txt)
-        bad = [p for p in registry.fill_only_changes(old, e) if p != "status"]   # status closes after confirmation
+        bad = registry.fill_only_changes(registry.load_yaml(old_txt), registry.load_yaml(fzx_txt))
         assert bad == [], (k, bad)
         n += 1
     if n == 0:
-        pytest.skip("no git history with the FZ-R drafts")
+        pytest.skip("no history with the FZ-R drafts")
+
+
+def test_amendment_A1_is_the_only_non_fill_change(entries, man):
+    """FZ-X commit -> now: A1 is the only change; H1 and H1S differ from the FZ-X H1 entry only in A1's declared
+    paths (all of which changed); every other entry is identical to its FZ-X version (status may close later)."""
+    c = _fzx_commit(man)
+    h1_fzx_txt = _show(c, "docs/registry/H1_within_complex_GI.yaml")
+    if h1_fzx_txt is None:
+        pytest.skip("no history with the FZ-X commit")
+    h1_fzx = registry.load_yaml(h1_fzx_txt)
+    assert "amendments" not in h1_fzx and len(man["amendments"]) == 1 and man["amendments"][0]["id"] == "A1"
+    for k, e in entries.items():
+        am = e.get("amendments", [])
+        if k in ("H1_within_complex_GI", "H1S_silencing_GI"):
+            assert [a["id"] for a in am] == ["A1"] and am[0]["amends_commit"] == c, k
+            assert registry.amendment_changes(h1_fzx, e) == [], k
+            declared = am[0]["changed_paths"]
+            assert registry.changed_top_paths(h1_fzx, e, declared) == set(declared), k
+        else:
+            assert am == [], k
+            old = registry.load_yaml(_show(c, f"docs/registry/{k}.yaml"))
+            assert [p for p in registry.amendment_changes(old, e) if p != "status"] == [], k
+    assert set(entries["H1_within_complex_GI"]["amendments"][0]["changed_paths"]) == {
+        "context_family.contexts", "complex_set_hash", "family_m.value"}
+    txt = (REG / "AMENDMENTS.md").read_text()
+    assert "## A1" in txt and c in txt and man["amendments"][0]["timestamp_utc"] in txt
+
+
+def test_amendment_machinery_toy():
+    base = {"id": "X", "a": 1, "b": {"c": [1, 2]}, "status": "open"}
+    new = copy.deepcopy(base)
+    new["a"] = 2
+    new["b"]["c"] = [1, 3]
+    assert registry.amendment_changes(base, new) == ["a", "b.c[1]"]                 # undeclared -> reported
+    new["amendments"] = [dict(id="A9", timestamp_utc="2026-01-01T00:00:00Z", amends_commit="0" * 40,
+                              reason="r", changed_paths=["a"])]
+    assert registry.amendment_changes(base, new) == ["b.c[1]"]
+    new["amendments"][0]["changed_paths"] = ["a", "b.c"]
+    assert registry.amendment_changes(base, new) == []
+    assert registry.amendment_changes(new, new) == []
+    assert registry.fill_only_changes(base, new) != []                               # fills stay strict
+    bad = {"amendments": [dict(id="A9", timestamp_utc="yesterday", amends_commit="abc", reason="", changed_paths=[])]}
+    errs = registry._validate_amendments(bad)
+    assert any("timestamp_utc" in x for x in errs) and any("amends_commit" in x for x in errs)
+    assert any("reason" in x for x in errs) and any("changed_paths" in x for x in errs)
 
 
 # ------------------------------------------------------------------------------------------------ 3. scripts/31 guard

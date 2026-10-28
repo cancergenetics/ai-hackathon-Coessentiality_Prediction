@@ -8,7 +8,7 @@ One file per registered analysis: `docs/registry/<id>.yaml`. An entry must be **
 
 ## Registered entries (FZ-R draft)
 
-29 entries, all `open`, validated by `tests/test_registry_entries.py`:
+29 FZ-R entries plus `H1S_silencing_GI` (amendment A1), all `open`, validated by `tests/test_registry_entries.py`:
 - `CTRL_PC1` … `CTRL_PC22` (with `CTRL_PC19a`, `CTRL_PC19b`): the 23 pre-registered controls of DESIGN §2.7, one per file, each with its kill-rule direction (§2.6).
 - `H3a_lineage_atlas`, `H3b_driver_family`, `H1_within_complex_GI`, `H2_submodule_divergence`: the four directions in registry order.
 - `BENCH_complex_vs_gene` (direction `benchmark`) and `BRIDGE-L_confirmation_rate` (direction `bridge`): their lockbox reads are allowed only after every confirmatory entry has a ledger line.
@@ -29,6 +29,25 @@ come from the frozen lists in `results/part2/fzx/`, described in its README:
 this from the commit history.
 
 Placeholder-free entries can now be run, in registry order.
+
+## Amendments
+
+A documented change to a filled, committed entry is recorded in two places:
+- in `docs/registry/AMENDMENTS.md`;
+- as an `amendments` list in the entry, each item with `id`, `timestamp_utc`, `amends_commit` (40 hex),
+  `reason` and `changed_paths`.
+
+`registry.amendment_changes(committed, new)` must be `[]`: only declared paths may change. `fill_only_changes` is
+not loosened.
+
+Optional fields `standing` (`confirmatory` | `exploratory`) and `headline` (bool) mark entries that are never
+headlined. An exploratory entry must carry `headline: false`. These fields are separate from the lifecycle
+`status` (`open` / `closed`), which the lockbox read order relies on.
+
+A1 split `H1_within_complex_GI` into two entries:
+- `H1_within_complex_GI`: the LoF and hom-del events;
+- `H1S_silencing_GI`: the silencing events, an exploratory entry. Its direction is `H1`, so it is read before
+  benchmark and bridge.
 
 ## Freeze placeholders and `pending`
 

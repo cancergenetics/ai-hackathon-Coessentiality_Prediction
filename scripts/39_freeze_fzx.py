@@ -273,6 +273,10 @@ def main():
     a = ap.parse_args()
     t0 = time.time()
     timings = {}
+    if MANIFEST.exists() and json.loads(MANIFEST.read_text()).get("amendments"):
+        raise SystemExit("FZ-X has been amended (docs/registry/AMENDMENTS.md); re-running would overwrite the amended "
+                         "lists and entries. To reproduce FZ-X, run this script on a checkout of the FZ-X commit; "
+                         "amendments are re-applied by their own scripts (e.g. scripts/40_amend_A1.py).")
     fzc = verify_fzc()
     ctx = verify_context_table()
     A = assoc.a_models()

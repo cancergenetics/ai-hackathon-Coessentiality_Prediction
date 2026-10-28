@@ -113,6 +113,29 @@ anticipated panel. Examples are ARID1A (P = ARID1B), SMARCA4, STAG2, KMT2D (P = 
 NF1, STK11, SMAD4, FOCAD hom-del and MAP2K4 hom-del (P = MAP2K7). The rule was applied as registered, without
 judgement.
 
+### Amendment A1 (2026-10-28T22:54:50Z; PI decision, before any H1 run)
+
+A1 splits the FZ-X event list into two entries:
+
+| Entry | Events | m | complex_set_hash | Standing |
+|---|---|---|---|---|
+| `H1_within_complex_GI` | 23 (20 LoF, 3 CN; 4 with a paralog axis) | 27 | `4a5dcc9d02bc4b23` | headline |
+| `H1S_silencing_GI` | 318 silencing | 339 | `d6264047856ff8e9` | exploratory, never headlined |
+
+H1S has its own BH family. Its lockbox confirmations are reported, but they never enter the kill rule or the main
+claims.
+
+The decision used event counts and types only. The rationale and a confirmation are in
+`docs/registry/AMENDMENTS.md`.
+
+`scripts/40_amend_A1.py` applies the amendment from the FZ-X commit's files. It writes:
+- `h1_event_split_A1.tsv`;
+- `units_h1_components_A1.txt` and `units_h1s_components.txt`;
+- a re-assigned `lockbox_testable.tsv`;
+- an updated `FZX_manifest.json` (`amendments`, `files`, `summary.m`, `complex_set_hashes`).
+
+The original FZ-X lists are unchanged. `scripts/39_freeze_fzx.py` now refuses to overwrite an amended freeze.
+
 ### Lockbox-testable
 
 | Entry | Testable / total |
@@ -122,7 +145,8 @@ judgement.
 | H2 | 41 / 43 |
 | BENCH | 41 / 41 |
 | BRIDGE-L | 41 / 43 |
-| H1 | 274 / 341 events |
+| H1 (after A1) | 21 / 23 events |
+| H1S (after A1) | 253 / 318 events |
 
 **Controls:** 20 of 23 are testable. PC15 and PC22 (n_L = 4) and PC16 (n_L = 3) are not.
 

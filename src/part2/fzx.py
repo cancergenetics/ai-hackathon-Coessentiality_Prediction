@@ -375,3 +375,51 @@ def fill_text(text: str, fills: dict) -> str:
     if missing:
         raise ValueError(f"placeholders not found for {sorted(missing)}")
     return "\n".join(out)
+
+
+# ------------------------------------------------------------------------------------------------ amendments (text)
+def _block_end(lines, i, indent):
+    j = i + 1
+    while j < len(lines):
+        l = lines[j]
+        if l.strip() and (len(l) - len(l.lstrip(" "))) <= indent:
+            break
+        j += 1
+    return j
+
+
+def replace_top(text: str, key: str, new_lines: list) -> str:
+    """Replace the top-level field `key` (its line and indented continuation) by new_lines."""
+    lines = text.split("\n")
+    i = next((k for k, l in enumerate(lines) if l.startswith(f"{key}:")), None)
+    if i is None:
+        raise ValueError(f"no top-level field {key}")
+    return "\n".join(lines[:i] + list(new_lines) + lines[_block_end(lines, i, 0):])
+
+
+def replace_sub(text: str, top: str, key: str, new_lines: list) -> str:
+    """Replace `top.key` (two-space indented field and its continuation) by new_lines."""
+    lines = text.split("\n")
+    i = next((k for k, l in enumerate(lines) if l.startswith(f"{top}:")), None)
+    if i is None:
+        raise ValueError(f"no top-level field {top}")
+    end = _block_end(lines, i, 0)
+    s = next((k for k in range(i + 1, end) if lines[k].startswith(f"  {key}:")), None)
+    if s is None:
+        raise ValueError(f"no field {top}.{key}")
+    return "\n".join(lines[:s] + list(new_lines) + lines[_block_end(lines, s, 2):])
+
+
+def insert_before_top(text: str, key: str, new_lines: list) -> str:
+    lines = text.split("\n")
+    i = next(k for k, l in enumerate(lines) if l.startswith(f"{key}:"))
+    return "\n".join(lines[:i] + list(new_lines) + lines[i:])
+
+
+def folded(key: str, text: str, indent: int = 0, width: int = 116) -> list:
+    """`key: >` block scalar lines (ASCII), wrapped at `width`."""
+    import textwrap
+    pad = " " * (indent + 2)
+    if not text.isascii():
+        raise ValueError("non-ASCII registry text")
+    return [" " * indent + f"{key}: >"] + textwrap.wrap(text, width=width, initial_indent=pad, subsequent_indent=pad)
