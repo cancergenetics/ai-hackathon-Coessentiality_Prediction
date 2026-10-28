@@ -1,0 +1,6 @@
+  [C: load train + fit rules] 7.7 s
+  [C: clusters] 0.7 s
+  [C: ITT (primary) metrics + bootstraps] 830.3 s
+  [C: mapped-only] 144.4 s
+total 988.0 s
+.venv/bin/python scripts/21_evaluate_test.py --mode dryrun --parts C  851.39s user 132.64s system 99% cpu 16:31.82 total

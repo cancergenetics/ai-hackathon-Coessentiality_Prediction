@@ -1,0 +1,240 @@
+{
+ "runtime_s": {
+  "A: IFT look-1 reproduction": 9.1,
+  "B: fit rules on dev pairs": 3.0,
+  "B: clusters": 0.0,
+  "B: ITT (primary) metrics + bootstraps": 50.7,
+  "B: mapped-only": 7.9,
+  "C: load train + fit rules": 7.7,
+  "C: clusters": 0.7,
+  "C: ITT (primary) metrics + bootstraps": 830.3,
+  "C: mapped-only": 144.4
+ },
+ "part1": {
+  "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/external/part1_locked",
+  "commit": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
+  "expected": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
+  "matches": true,
+  "modified": [],
+  "clean": true
+ },
+ "matrix": {
+  "source": "datasets/DepMAP/CRISPRGeneEffect.csv",
+  "file_sha256": "1e0c492944a7297c0eda179081a1e81a1cfe41a97628facd7eddbdda1a7504ee",
+  "shape": [
+   1361,
+   18434
+  ],
+  "npy_sha256": "8a894d2449074934de71cf0e0b44e8d81ec2d70bc756b2d038367c34c9ad27f3",
+  "npy_sha256_matches_manifest": true,
+  "load_s": 3.15
+ },
+ "A": {
+  "ap_ht": {
+   "zavg_BEF": {
+    "ours": 0.3451385809973316,
+    "part1": 0.3451385809973316
+   },
+   "B": {
+    "ours": 0.3173975833374439,
+    "part1": 0.317397583337444
+   },
+   "gls_signed": {
+    "ours": 0.24231831099192286,
+    "part1": 0.24231831099192286
+   },
+   "spearman_signed": {
+    "ours": 0.14627253968622173,
+    "part1": 0.14627253968622173
+   },
+   "pearson_signed": {
+    "ours": 0.13406386393730904,
+    "part1": 0.13406386393730904
+   },
+   "spec_k20_tinf_std": {
+    "ours": 0.2667794724575678,
+    "part1": 0.2667794724575677
+   }
+  },
+  "max_abs_diff_point_metrics": 1.4620887611727085e-08,
+  "max_abs_diff_bootstrap": 8.881784197001252e-16
+ },
+ "I_batch_invariance": {
+  "zavg_BEF": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  },
+  "B": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  },
+  "gls_signed": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  },
+  "spearman_signed": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  },
+  "pearson_signed": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  },
+  "spec_k20_tinf_std": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  }
+ },
+ "B": {
+  "ap": {
+   "zavg_BEF": 0.33203342003997377,
+   "B": 0.30536260658245573,
+   "gls_signed": 0.23317972073949214,
+   "spearman_signed": 0.1408391754828307,
+   "pearson_signed": 0.12910148250384304,
+   "spec_k20_tinf_std": 0.2566972265769908
+  },
+  "auroc": {
+   "zavg_BEF": 0.7537276683528752,
+   "B": 0.6664457729771625,
+   "gls_signed": 0.7137927332991778,
+   "spearman_signed": 0.7250517520974897,
+   "pearson_signed": 0.7208164903143657,
+   "spec_k20_tinf_std": 0.731667612529563
+  },
+  "macro_cluster_ap": {
+   "zavg_BEF": 0.3550341780768188,
+   "B": 0.2880621524519883,
+   "gls_signed": 0.35899319104744504,
+   "spearman_signed": 0.23069165863930094,
+   "pearson_signed": 0.22692273208519442,
+   "spec_k20_tinf_std": 0.3115909614743582
+  },
+  "verdict": {
+   "zavg_BEF": {
+    "role": "primary",
+    "status": "confirmatory",
+    "clearly_beats": true
+   },
+   "B": {
+    "role": "secondary",
+    "status": "confirmatory",
+    "clearly_beats": false
+   }
+  }
+ },
+ "C": {
+  "ap": {
+   "zavg_BEF": 0.38925899486123383,
+   "B": 0.36599210774463536,
+   "gls_signed": 0.24543408152506238,
+   "spearman_signed": 0.2138407807888509,
+   "pearson_signed": 0.19507273034588238,
+   "spec_k20_tinf_std": 0.29535405305035495
+  },
+  "auroc": {
+   "zavg_BEF": 0.7889849473091382,
+   "B": 0.7284566046879873,
+   "gls_signed": 0.7455805961480851,
+   "spearman_signed": 0.7577305405391159,
+   "pearson_signed": 0.7526998449224087,
+   "spec_k20_tinf_std": 0.7666338857365148
+  },
+  "macro_cluster_ap": {
+   "zavg_BEF": 0.2978123506893966,
+   "B": 0.25712056683857,
+   "gls_signed": 0.29058758977026244,
+   "spearman_signed": 0.19172577852304518,
+   "pearson_signed": 0.19389036396196102,
+   "spec_k20_tinf_std": 0.26962583672824675
+  },
+  "delta_ap_ci": {
+   "zavg_BEF|ap - gls_signed|ap": {
+    "diff": 0.14382491333617142,
+    "ci_low": 0.07845169627619933,
+    "ci_high": 0.21745897641614415,
+    "rel_gain": 0.5860022065496426,
+    "rel_ci_low": 0.30296989359431586,
+    "rel_ci_high": 0.8970537360405757,
+    "p_two_sided": 0.0
+   },
+   "zavg_BEF|ap - spearman_signed|ap": {
+    "diff": 0.17541821407238287,
+    "ci_low": 0.1111109975776339,
+    "ci_high": 0.24465557676472588,
+    "rel_gain": 0.8203216123008503,
+    "rel_ci_low": 0.5019914312561901,
+    "rel_ci_high": 1.1824916053139436,
+    "p_two_sided": 0.0
+   },
+   "zavg_BEF|ap - pearson_signed|ap": {
+    "diff": 0.19418626451535145,
+    "ci_low": 0.12558168857522425,
+    "ci_high": 0.2689956177290963,
+    "rel_gain": 0.9954557162912567,
+    "rel_ci_low": 0.6001138673346675,
+    "rel_ci_high": 1.460151053468703,
+    "p_two_sided": 0.0
+   },
+   "zavg_BEF|ap_no_largest_component - gls_signed|ap_no_largest_component": {
+    "diff": 0.15801814180250073,
+    "ci_low": 0.06578245856490215,
+    "ci_high": 0.24875471509218236,
+    "rel_gain": 0.6112359208982872,
+    "rel_ci_low": 0.2428281479763752,
+    "rel_ci_high": 0.9594164082593244,
+    "p_two_sided": 0.0
+   },
+   "zavg_BEF|ap_no_largest_component - spearman_signed|ap_no_largest_component": {
+    "diff": 0.17664339201982698,
+    "ci_low": 0.10369443827461869,
+    "ci_high": 0.2519649140942611,
+    "rel_gain": 0.7363298599674206,
+    "rel_ci_low": 0.43173460000575065,
+    "rel_ci_high": 1.1269495848695685,
+    "p_two_sided": 0.0
+   },
+   "zavg_BEF|ap_no_largest_component - pearson_signed|ap_no_largest_component": {
+    "diff": 0.19585498326893827,
+    "ci_low": 0.11798234938097706,
+    "ci_high": 0.28028476645385336,
+    "rel_gain": 0.8874846003485513,
+    "rel_ci_low": 0.5079012442993298,
+    "rel_ci_high": 1.3682839509499765,
+    "p_two_sided": 0.0
+   }
+  },
+  "cluster_stats": {
+   "n_proteins": 1151,
+   "n_components": 239,
+   "n_clusters": 245,
+   "n_singleton_clusters": 7,
+   "max_cluster_size": 30,
+   "components_split": 1,
+   "split_component_sizes": [
+    144
+   ],
+   "n_positive_edges": 3314,
+   "cross_community_positive_edges": 121,
+   "frac_positive_edges_cross_community": 0.036511768255884126,
+   "n_clusters_with_within_pos": 238,
+   "kish_neff_clusters": 25.768548731571325,
+   "largest_component": 15,
+   "largest_component_size": 144,
+   "largest_component_pos_pairs": 848
+  }
+ },
+ "note": "merged from per-part runs (--parts AI, B, C) of scripts/21_evaluate_test.py --mode dryrun on 2026-10-28; scoring runtimes in scoring_log.txt"
+}

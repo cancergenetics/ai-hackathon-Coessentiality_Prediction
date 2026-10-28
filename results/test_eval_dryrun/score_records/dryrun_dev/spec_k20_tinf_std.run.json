@@ -1,0 +1,62 @@
+{
+ "tool": "src/testeval/posthoc.py (Part 1 LayerEngine, locked clone)",
+ "method": "spec_k20_tinf_std",
+ "config": {
+  "kind": "spectral",
+  "k": 20,
+  "tau": "inf",
+  "shrink": "ridge",
+  "center": "gene",
+  "standardize": true,
+  "matrix": "CRISPRGeneEffect"
+ },
+ "role": "post hoc reference (Part 1 review B1), secondary, not a candidate",
+ "part1": {
+  "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/external/part1_locked",
+  "commit": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
+  "expected": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
+  "matches": true,
+  "modified": [],
+  "clean": true
+ },
+ "inputs": {
+  "pairs": {
+   "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/ids/dryrun_dev.tsv",
+   "sha256": "d23a23294c8c8c2e8f2b849970a86c89407205004999b06f66ce7994e2aac978"
+  },
+  "matrix": {
+   "source": "datasets/DepMAP/CRISPRGeneEffect.csv",
+   "file_sha256": "1e0c492944a7297c0eda179081a1e81a1cfe41a97628facd7eddbdda1a7504ee",
+   "shape": [
+    1361,
+    18434
+   ],
+   "npy_sha256": "8a894d2449074934de71cf0e0b44e8d81ec2d70bc756b2d038367c34c9ad27f3",
+   "npy_sha256_matches_manifest": true,
+   "load_s": 2.89
+  }
+ },
+ "output": {
+  "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/scores/dryrun_dev/spec_k20_tinf_std.tsv",
+  "sha256": "adec6ed63f0f1416d1b9b622b5a337cb2a4f7b44fee05d329021214cc68b56b2"
+ },
+ "null": {
+  "null_mean": 0.0006477507997468799,
+  "null_sd": 0.03525165810759762,
+  "null_n": 200000,
+  "manifest_null_mean": 0.0006477507997468799,
+  "manifest_null_sd": 0.03525165810759762,
+  "rel_diff_mean": 0.0,
+  "rel_diff_sd": 0.0
+ },
+ "counts": {
+  "n_pairs": 344055,
+  "n_mapped": 322528,
+  "n_unmapped": 21527,
+  "unmapped_floor": -1.5134670777506583
+ },
+ "unmapped_rule": "score = min(mapped scores in this file) - 1, mapped = 0 (Part 1 DESIGN \u00a73.10)",
+ "runtime": {
+  "total_s": 7.72
+ }
+}

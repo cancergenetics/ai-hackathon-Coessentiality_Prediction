@@ -1,0 +1,73 @@
+[14:43:32] dryrun_dev zavg_BEF (--method zavg:B,E,F)
+  "n_mapped": 322528,
+ "runtime_s": 102.76
+real 105.01
+[14:45:17] dryrun_dev B (--method single)
+  "n_mapped": 322528,
+ "runtime_s": 22.37
+real 24.81
+[14:45:42] dryrun_dev gls_signed (--method gls)
+  "n_mapped": 322528,
+ "runtime_s": 12.5
+real 14.71
+[14:45:57] dryrun_dev spearman_signed (--method spearman)
+  "n_mapped": 322528,
+ "runtime_s": 5.7
+real 7.78
+[14:46:05] dryrun_dev pearson_signed (--method pearson)
+  "n_mapped": 322528,
+ "runtime_s": 5.51
+real 7.73
+[14:46:12] dryrun_dev spec_k20_tinf_std (post hoc reference)
+ "runtime_s": 7.72
+real 10.17
+[14:46:23] dryrun_ift zavg_BEF (--method zavg:B,E,F)
+  "n_mapped": 41633,
+ "runtime_s": 102.07
+real 104.16
+[14:48:07] dryrun_ift B (--method single)
+  "n_mapped": 41633,
+ "runtime_s": 21.8
+real 24.34
+[14:48:31] dryrun_ift gls_signed (--method gls)
+  "n_mapped": 41633,
+ "runtime_s": 7.15
+real 9.66
+[14:48:41] dryrun_ift spearman_signed (--method spearman)
+  "n_mapped": 41633,
+ "runtime_s": 4.04
+real 6.20
+[14:48:47] dryrun_ift pearson_signed (--method pearson)
+  "n_mapped": 41633,
+ "runtime_s": 3.98
+real 6.17
+[14:48:53] dryrun_ift spec_k20_tinf_std (post hoc reference)
+ "runtime_s": 6.38
+real 8.95
+[14:49:02] done: dryrun
+scripts/20_score_test_pairs.sh dryrun  298.88s user 38.23s system 101% cpu 5:33.26 total
+[14:49:05] train zavg_BEF (--method zavg:B,E,F)
+  "n_mapped": 596597,
+ "runtime_s": 103.79
+real 106.01
+[14:50:51] train B (--method single)
+  "n_mapped": 596597,
+ "runtime_s": 23.29
+real 25.28
+[14:51:16] train gls_signed (--method gls)
+  "n_mapped": 596597,
+ "runtime_s": 16.78
+real 18.52
+[14:51:35] train spearman_signed (--method spearman)
+  "n_mapped": 596597,
+ "runtime_s": 7.51
+real 9.48
+[14:51:44] train pearson_signed (--method pearson)
+  "n_mapped": 596597,
+ "runtime_s": 7.42
+real 9.42
+[14:51:53] train spec_k20_tinf_std (post hoc reference)
+ "runtime_s": 9.51
+real 11.64
+[14:52:05] done: train
+scripts/20_score_test_pairs.sh train  162.71s user 23.18s system 101% cpu 3:03.00 total
