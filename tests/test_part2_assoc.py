@@ -225,6 +225,12 @@ def test_read_lockbox_rules(proj):
     with pytest.raises(FirewallError, match="before all confirmatory"):
         assoc.read_lockbox("bench_toy", tb, proj=proj)
     assoc.read_lockbox("H1_toy", write_targets(proj, "H1_toy"), proj=proj)
+    with pytest.raises(FirewallError, match="closed"):           # ledger lines exist but entries are still open
+        assoc.read_lockbox("bench_toy", tb, proj=proj)
+    from part2 import confirm
+    confirm.close_entry(proj, "H3b_toy")
+    confirm.close_entry(proj, "H1_toy")
+    assert confirm.is_closed(proj, "H1_toy")
     assert len(assoc.read_lockbox("bench_toy", tb, proj=proj)) == len(L_MODELS)
 
 

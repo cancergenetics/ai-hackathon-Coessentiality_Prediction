@@ -142,7 +142,9 @@ def perm_pvalue(t_obs: float, t_null: np.ndarray, alternative: str = "two-sided"
     except Exception:  # noqa: BLE001
         return float(p_emp)
     if not np.isfinite(p) or p <= 0:
-        return float(1.0 / (B + 1) * 1e-3)
+        # observed statistic beyond the support of a bounded (shape < 0) GPD fit: fall back to the exponential tail
+        # (shape 0, scale = mean excess), which is heavier and never 0 (no arbitrary floor)
+        p = n_exc / B * float(np.exp(-(T - u) / max(float(np.mean(exc)), 1e-12)))
     return float(min(p, p_emp))
 
 
