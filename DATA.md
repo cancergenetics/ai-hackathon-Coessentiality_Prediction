@@ -25,6 +25,7 @@ Checksums: SHA-256 via `shasum -a 256`, computed 2026-10-28 (re-check: `scripts/
 | BioPlex/BioPlex_293T_Network_10K_Dec_2019.tsv | BioPlex 3.0 (Huttlin et al. 2021, Cell), bioplex.hms.harvard.edu, user 2026-10-28 | Dec 2019 release | 5a98def087fc77c7bf07aac79e2553fd64ea1a27a7d0c4617870476f3f120833 | BioPlex terms (free for research; unverified) |
 | BioPlex/BioPlex_HCT116_Network_5.5K_Dec_2019.tsv | as above | Dec 2019 release | b37be6de6fe15e948151ab9480cfcb88a6795780cf7a4059b386b07f3c1e760d | as above |
 | Paralogs/ensembl116_human_paralogues.tsv | Ensembl BioMart human paralogues, user 2026-10-28 | Ensembl 116 | 003adc6bb6e0f1ad3500aee537a4df99b6d63fafc32ef024835c76f4c9570700 | Ensembl: no restrictions |
+| Paralogs/ensembl116_gene_coordinates.tsv | Ensembl BioMart human genes (gene ID, name, NCBI gene ID, chromosome, start, end), user 2026-10-28 | Ensembl 116 | a80896b35cfdfc0bbb5755b05ac1d123d326a8eba87add554bb3ee2fdd57a1c8 | Ensembl: no restrictions |
 
 DepMap and HGNC checksums are identical to those recorded in Part 1 (`external/part1_locked/DATA.md`).
 
