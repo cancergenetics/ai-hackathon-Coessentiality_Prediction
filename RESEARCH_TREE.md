@@ -2,7 +2,7 @@
 
 Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · [!] key finding
 
-## Status summary (2026-10-28 ~22:30, M3 done: Part 1 test evaluation complete; FZ-C maps frozen)
+## Status summary (2026-10-28 ~22:30, M3: Part 1 test evaluation complete; FZ-C maps frozen; map variability and FZ-X in progress)
 Part 1 is complete. One confirmatory look: zavg_BEF ITT AP 0.333 [0.256, 0.410], against GLS 0.212, Spearman 0.204 and Pearson 0.197 (ΔAP vs GLS +0.121 [+0.079, +0.159]). An independent agent reproduced it. For Part 2, the lockbox (FZ-LB) and the complex maps (FZ-C, 27fa9b2) are frozen on construction set A. zavg map: 367 complexes covering 3,642 genes. GLS map: 379 complexes covering 2,862 genes. The pre-registered bridge endpoint is **null** (Δ BioPlex precision −0.025 [−0.075, 0.031]). The deficit comes from locus-flagged clusters; excluding them gives +0.003. An independent review accepted FZ-C with notes: byte-identical rebuild, bridge reproduced exactly, no firewall breach found.
 
 The association engine is merged and tested on synthetic data. An H3a FDR failure was traced to a non-registered GPD-tail rule plus 1,000 permutations; it is fixed to the registry rule (10,000 permutations, GPD only below 1e-4). BB error rate is 0.046 over 1,000 simulations; pooled FDP 0.068 is reported and not claimed (D6). Next: map-to-map variability (needed before Fig 2 / G2); FZ-X (registry fills, H1 events, lockbox-testable list); controls; H3a → H3b → H1 → H2 on A; lockbox confirmations; BENCH/BRIDGE-L.
