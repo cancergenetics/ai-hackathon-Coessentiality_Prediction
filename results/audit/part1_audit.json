@@ -1,0 +1,1039 @@
+{
+ "generated_utc": "2026-10-28T14:40:31Z",
+ "hard_rule": "no score/metric/prediction computed on test pairs; test lists used for set membership only",
+ "check1_timeline": {
+  "test_files": {
+   "test_positive": {
+    "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/datasets/huMAP/Test_positive_pairs.txt",
+    "birth_utc": "2026-10-28T13:55:21Z",
+    "mtime_utc": "2026-10-28T13:55:21Z",
+    "birth_epoch": 1793195721.2969952,
+    "size": 46396,
+    "sha256": "c4e3e68edcfc088516b3334dbfae248fb8f276c6475c13dc621abc8b4bba2d96"
+   },
+   "test_negative": {
+    "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/datasets/huMAP/Test_negative_pairs.txt",
+    "birth_utc": "2026-10-28T13:55:59Z",
+    "mtime_utc": "2026-10-28T13:56:05Z",
+    "birth_epoch": 1793195759.8094819,
+    "size": 8368416,
+    "sha256": "c4a3e5468da0790690ee910af1822dcaaa301dea1afaad45816e34f5e40ae9de"
+   },
+   "sha256_match_expected": [
+    true,
+    true
+   ]
+  },
+  "part1_n_commits": 60,
+  "part1_branches": [
+   "master"
+  ],
+  "part1_first_commit": "2026-10-27T12:16:25Z",
+  "part1_last_commit": "2026-10-28T12:55:43Z",
+  "clone_head": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
+  "clone_history_equals_part1": true,
+  "commits_after_test_birth": 0,
+  "gap_last_commit_to_test_birth_minutes": 59.6,
+  "part1_files_walked": 46298,
+  "part1_files_mtime_after_last_commit_excl_DS_Store": [],
+  "part1_files_mtime_after_test_birth_excl_DS_Store": [],
+  "part1_ds_store_after_test_birth": [
+   [
+    ".DS_Store",
+    "2026-10-28T14:03:52Z"
+   ]
+  ],
+  "part1_newest_non_finder_file": {
+   "path": "mvp/.pytest_cache/v/cache/nodeids",
+   "mtime_utc": "2026-10-28T12:55:35Z"
+  },
+  "part1_git_internals_modified_after_last_commit": [],
+  "part1_datasets_HuMAP_files": {
+   "Train_negative_pairs.txt": {
+    "birth_utc": "2026-10-23T11:56:35Z",
+    "mtime_utc": "2026-10-23T11:56:41Z",
+    "sha256": "c37e27dfe12ddfcecc34e084719a4f8b2aaf47e106455e3da46d7199aed836f3"
+   },
+   "Train_positive_pairs.txt": {
+    "birth_utc": "2026-10-23T11:13:18Z",
+    "mtime_utc": "2026-10-23T11:13:18Z",
+    "sha256": "77276dbac8ca108cac4a9c196b0d26bfac3912b616d9647b44adacdc88092fc9"
+   }
+  },
+  "commits": [
+   {
+    "hash": "c7f95ee",
+    "committer_date": "2026-10-28T12:55:43Z",
+    "author_date": "2026-10-28T12:55:43Z",
+    "subject": "All protein-pair scores: manifest, checks script, predictions README section"
+   },
+   {
+    "hash": "0287470",
+    "committer_date": "2026-10-28T12:41:42Z",
+    "author_date": "2026-10-28T12:41:42Z",
+    "subject": "mvp: score all protein-gene pairs (predict_all_pairs.py, z_block); ignore outputs/"
+   },
+   {
+    "hash": "7b2358e",
+    "committer_date": "2026-10-28T12:14:28Z",
+    "author_date": "2026-10-28T12:14:28Z",
+    "subject": "Release README: how to run the research tests"
+   },
+   {
+    "hash": "8f75842",
+    "committer_date": "2026-10-28T12:12:56Z",
+    "author_date": "2026-10-28T12:12:56Z",
+    "subject": "test_predict: skip when datasets/cache are absent (public release)"
+   },
+   {
+    "hash": "5c10cc3",
+    "committer_date": "2026-10-28T12:10:33Z",
+    "author_date": "2026-10-28T12:10:33Z",
+    "subject": "Track release placeholder READMEs (anchor datasets/ ignore rule)"
+   },
+   {
+    "hash": "645ee8b",
+    "committer_date": "2026-10-28T12:10:16Z",
+    "author_date": "2026-10-28T12:10:16Z",
+    "subject": "Release tooling: mvp/ standalone implementation, genome-wide predictions, release assets, scripts/make_release.py"
+   },
+   {
+    "hash": "ac11f6a",
+    "committer_date": "2026-10-28T11:50:20Z",
+    "author_date": "2026-10-28T11:50:20Z",
+    "subject": "Reference 6: DepMap 26Q3 has no dataset DOI"
+   },
+   {
+    "hash": "40915de",
+    "committer_date": "2026-10-28T11:45:52Z",
+    "author_date": "2026-10-28T11:45:52Z",
+    "subject": "Manuscript: repository URL (cancergenetics/ai-hackathon-Coessentiality), no licence statement; build finds pandoc"
+   },
+   {
+    "hash": "009846a",
+    "committer_date": "2026-10-27T22:19:22Z",
+    "author_date": "2026-10-27T22:19:22Z",
+    "subject": "Manuscript round-2 revision; tree M6"
+   },
+   {
+    "hash": "6694348",
+    "committer_date": "2026-10-27T22:09:02Z",
+    "author_date": "2026-10-27T22:09:02Z",
+    "subject": "Manuscript revision after review round 1: framing, inline captions, S1-S3 Texts, figure renumbering, build fixes"
+   },
+   {
+    "hash": "c2acfba",
+    "committer_date": "2026-10-27T22:08:11Z",
+    "author_date": "2026-10-27T22:08:11Z",
+    "subject": "Revision round 1: post-hoc IFT reference (look 2-posthoc, PC-removed Pearson), bootstrap coverage simulation, trial counts, README"
+   },
+   {
+    "hash": "65a5698",
+    "committer_date": "2026-10-27T21:52:47Z",
+    "author_date": "2026-10-27T21:52:47Z",
+    "subject": "Revision round 1 (dev): OR/chromosome controls for zavg_BEF, PC-removed Pearson reference rows, raw-CSV runtimes; final_eval --posthoc-reference mode"
+   },
+   {
+    "hash": "3dd8b32",
+    "committer_date": "2026-10-27T21:41:02Z",
+    "author_date": "2026-10-27T21:41:02Z",
+    "subject": "Add software, bootstrap, DepMap and hu.MAP web references to verified list"
+   },
+   {
+    "hash": "a88a929",
+    "committer_date": "2026-10-27T21:32:37Z",
+    "author_date": "2026-10-27T21:32:37Z",
+    "subject": "Ignore release/ (standalone public MVP repo built separately)"
+   },
+   {
+    "hash": "0a678aa",
+    "committer_date": "2026-10-27T21:26:02Z",
+    "author_date": "2026-10-27T21:26:02Z",
+    "subject": "Manuscript figures Fig1-Fig5 (TIFF/PDF/PNG), captions, source data; IFT look '1-figure' PR-curve export"
+   },
+   {
+    "hash": "c920ff1",
+    "committer_date": "2026-10-27T21:23:45Z",
+    "author_date": "2026-10-27T21:23:45Z",
+    "subject": "Add S1 Text: methods that did not work"
+   },
+   {
+    "hash": "f90806c",
+    "committer_date": "2026-10-27T21:16:52Z",
+    "author_date": "2026-10-27T21:16:52Z",
+    "subject": "final_eval: --export-curves (HT PR curves re-plot of an existing look; logged as '<N>-figure', curve AP asserted == stored HT-AP)"
+   },
+   {
+    "hash": "23b8fb7",
+    "committer_date": "2026-10-27T21:15:42Z",
+    "author_date": "2026-10-27T21:15:42Z",
+    "subject": "Add verified reference list (Vancouver, PLOS) with provenance notes"
+   },
+   {
+    "hash": "5341f12",
+    "committer_date": "2026-10-27T17:53:47Z",
+    "author_date": "2026-10-27T17:53:47Z",
+    "subject": "M5: REPORT.md, final retro, pruned LESSONS, final tree status"
+   },
+   {
+    "hash": "b914a8e",
+    "committer_date": "2026-10-27T17:46:44Z",
+    "author_date": "2026-10-27T17:46:44Z",
+    "subject": "verify: independent re-derivation of IFT look #1 (look 1-verify): counts, HT-AP, macro, strata, own bootstrap reproduced"
+   },
+   {
+    "hash": "8abe43c",
+    "committer_date": "2026-10-27T17:41:09Z",
+    "author_date": "2026-10-27T17:41:09Z",
+    "subject": "Add report tables script and tables.md (T1-T7) from committed results"
+   },
+   {
+    "hash": "8267142",
+    "committer_date": "2026-10-27T17:36:12Z",
+    "author_date": "2026-10-27T17:36:12Z",
+    "subject": "IFT look #1: primary zavg_BEF confirmed vs Pearson/Spearman/GLS"
+   },
+   {
+    "hash": "ff0dd52",
+    "committer_date": "2026-10-27T17:35:01Z",
+    "author_date": "2026-10-27T17:35:01Z",
+    "subject": "final_eval: DESIGN v3.1 \u00a73.7 verdict; frozen IFT candidates zavg_BEF, B"
+   },
+   {
+    "hash": "6352c2b",
+    "committer_date": "2026-10-27T16:41:29Z",
+    "author_date": "2026-10-27T16:41:29Z",
+    "subject": "Tree: zavg_BEF verified"
+   },
+   {
+    "hash": "460fd36",
+    "committer_date": "2026-10-27T16:41:07Z",
+    "author_date": "2026-10-27T16:41:07Z",
+    "subject": "verify: independent re-implementation of zavg_BEF (E Laplacian eigenmap, null moments, HT-AP, predictor check, controls, E robustness)"
+   },
+   {
+    "hash": "4afb858",
+    "committer_date": "2026-10-27T16:19:16Z",
+    "author_date": "2026-10-27T16:19:16Z",
+    "subject": "Tree: Phase B v2 / D3 decision, predictor"
+   },
+   {
+    "hash": "e242a7c",
+    "committer_date": "2026-10-27T16:18:33Z",
+    "author_date": "2026-10-27T16:18:33Z",
+    "subject": "Phase B v2: frozen-layer combination round (z-averages, LR, LGBM; 5 seeds), nested selection, OOF bootstrap, controls, runtimes, D3 decision"
+   },
+   {
+    "hash": "e724ac9",
+    "committer_date": "2026-10-27T16:16:18Z",
+    "author_date": "2026-10-27T16:16:18Z",
+    "subject": "results/predict: runtime table and run records on union of train pair IDs (no metrics)"
+   },
+   {
+    "hash": "3c54722",
+    "committer_date": "2026-10-27T16:07:58Z",
+    "author_date": "2026-10-27T16:07:58Z",
+    "subject": "predict: chunk baseline row dot products (memory)"
+   },
+   {
+    "hash": "162431b",
+    "committer_date": "2026-10-27T16:05:12Z",
+    "author_date": "2026-10-27T16:05:12Z",
+    "subject": "predict: bound GLS whitening cache (peak RSS)"
+   },
+   {
+    "hash": "b8fdf0f",
+    "committer_date": "2026-10-27T15:55:38Z",
+    "author_date": "2026-10-27T15:55:38Z",
+    "subject": "predict_pairs: standalone label-free scorer for UniProt pair files (B/E/H/F layers, GLS/Pearson/Spearman, zavg, model plug-in), tests"
+   },
+   {
+    "hash": "e884f44",
+    "committer_date": "2026-10-27T15:42:57Z",
+    "author_date": "2026-10-27T15:42:57Z",
+    "subject": "Phase C negative result, D3 candidate-selection rule, trials log"
+   },
+   {
+    "hash": "26623ab",
+    "committer_date": "2026-10-27T15:41:59Z",
+    "author_date": "2026-10-27T15:41:59Z",
+    "subject": "Phase C results: metric-learning ladder (L1/L2/L3) on dev cluster CV, seed repeats, shuffle controls, README"
+   },
+   {
+    "hash": "8c2c4bc",
+    "committer_date": "2026-10-27T15:30:29Z",
+    "author_date": "2026-10-27T15:30:29Z",
+    "subject": "Tree: A7 graph-family results"
+   },
+   {
+    "hash": "ea7c7f5",
+    "committer_date": "2026-10-27T15:30:02Z",
+    "author_date": "2026-10-27T15:30:02Z",
+    "subject": "Phase A A7: graph/diffusion/embedding screen (69 layers), nested check, OOF bootstrap vs current best and GLS, runtimes"
+   },
+   {
+    "hash": "c79e37f",
+    "committer_date": "2026-10-27T15:10:45Z",
+    "author_date": "2026-10-27T15:10:45Z",
+    "subject": "layers_graph: eigsh dimension adapts for d > 512 (d <= 512 unchanged)"
+   },
+   {
+    "hash": "47cd366",
+    "committer_date": "2026-10-27T14:39:12Z",
+    "author_date": "2026-10-27T14:39:12Z",
+    "subject": "Phase C: Gram-matrix training, calibration warm-up, per-level learning rates; dev-CV driver script"
+   },
+   {
+    "hash": "952b265",
+    "committer_date": "2026-10-27T14:22:50Z",
+    "author_date": "2026-10-27T14:22:50Z",
+    "subject": "Phase C: supervised metric learning (diag / low-rank residual metric, genome-wide second order on learned embedding), toy tests"
+   },
+   {
+    "hash": "3bd38a6",
+    "committer_date": "2026-10-27T14:18:41Z",
+    "author_date": "2026-10-27T14:18:41Z",
+    "subject": "Phase A A7: kNN-graph / diffusion / spectral-embedding label-free layers (src/layers_graph.py) + tests"
+   },
+   {
+    "hash": "615fa19",
+    "committer_date": "2026-10-27T14:14:28Z",
+    "author_date": "2026-10-27T14:14:28Z",
+    "subject": "M3a milestone: retro, pruned LESSONS, status summary"
+   },
+   {
+    "hash": "4608eba",
+    "committer_date": "2026-10-27T14:13:18Z",
+    "author_date": "2026-10-27T14:13:18Z",
+    "subject": "Tree: verification of Phase A best, Phase B v1, repro fix"
+   },
+   {
+    "hash": "f5adcec",
+    "committer_date": "2026-10-27T14:12:27Z",
+    "author_date": "2026-10-27T14:12:27Z",
+    "subject": "Fix hash-seed dependence of cluster assignment; commit canonical assignment"
+   },
+   {
+    "hash": "a2f8622",
+    "committer_date": "2026-10-27T14:12:21Z",
+    "author_date": "2026-10-27T14:12:21Z",
+    "subject": "Verify: independent re-implementation of Phase-A best layer (reproduced; gain concentrated in top-10 clusters)"
+   },
+   {
+    "hash": "b3480c2",
+    "committer_date": "2026-10-27T14:09:32Z",
+    "author_date": "2026-10-27T14:09:32Z",
+    "subject": "Phase B first pass (provisional layers): dev-CV results, controls, split comparison, README"
+   },
+   {
+    "hash": "f1989fa",
+    "committer_date": "2026-10-27T14:06:11Z",
+    "author_date": "2026-10-27T14:06:11Z",
+    "subject": "Tree: Phase A key finding (pending verification)"
+   },
+   {
+    "hash": "7bd4c4b",
+    "committer_date": "2026-10-27T14:05:05Z",
+    "author_date": "2026-10-27T14:05:05Z",
+    "subject": "Phase A: layer screen (148 layers), screen_v2 cache manifest, A6 z-avg ensemble, dev comparison + controls"
+   },
+   {
+    "hash": "006b3ec",
+    "committer_date": "2026-10-27T13:58:05Z",
+    "author_date": "2026-10-27T13:58:05Z",
+    "subject": "Phase B: repeated label-shuffle control with direction diagnostic"
+   },
+   {
+    "hash": "609e633",
+    "committer_date": "2026-10-27T13:57:38Z",
+    "author_date": "2026-10-27T13:57:38Z",
+    "subject": "Phase B: optional monotone switch (for label-shuffle control)"
+   },
+   {
+    "hash": "eb57ff5",
+    "committer_date": "2026-10-27T13:46:07Z",
+    "author_date": "2026-10-27T13:46:07Z",
+    "subject": "Phase B: dev-CV runner for supervised scorers, controls, split comparison"
+   },
+   {
+    "hash": "68908d0",
+    "committer_date": "2026-10-27T13:44:25Z",
+    "author_date": "2026-10-27T13:44:25Z",
+    "subject": "Phase B: label-free gene features, supervised pair scorers (monotone LightGBM, L2 logistic), tests"
+   },
+   {
+    "hash": "34be32c",
+    "committer_date": "2026-10-27T13:43:46Z",
+    "author_date": "2026-10-27T13:43:46Z",
+    "subject": "Phase A: layers_ext (row-z of second-order cosine, exact genome-wide row moments)"
+   },
+   {
+    "hash": "6b2f6e3",
+    "committer_date": "2026-10-27T13:33:56Z",
+    "author_date": "2026-10-27T13:33:56Z",
+    "subject": "Phase A screening layer cache manifest (128 layers x 596,597 pairs; null z-moments, runtimes)"
+   },
+   {
+    "hash": "d94db6f",
+    "committer_date": "2026-10-27T13:29:37Z",
+    "author_date": "2026-10-27T13:29:37Z",
+    "subject": "DESIGN v3.1: move CI gate to dev OOF after IFT power check; tree update"
+   },
+   {
+    "hash": "47dd58b",
+    "committer_date": "2026-10-27T13:28:56Z",
+    "author_date": "2026-10-27T13:28:56Z",
+    "subject": "Baselines on v2 dev CV (HT-weighted AP) and IFT power simulation"
+   },
+   {
+    "hash": "1155d55",
+    "committer_date": "2026-10-27T13:19:45Z",
+    "author_date": "2026-10-27T13:19:45Z",
+    "subject": "v2 evaluation infra: clusters, stratified IFT, cluster CV, HT-weighted AP, cluster bootstrap, evaluate/final_eval"
+   },
+   {
+    "hash": "920b8c0",
+    "committer_date": "2026-10-27T13:19:40Z",
+    "author_date": "2026-10-27T13:19:40Z",
+    "subject": "Phase A: label-free similarity layers (spectral filter family, row-z, mutual rank, sparse second-order, genome-wide null)"
+   },
+   {
+    "hash": "049c00f",
+    "committer_date": "2026-10-27T13:05:05Z",
+    "author_date": "2026-10-27T13:05:05Z",
+    "subject": "DESIGN v3 after review round 2"
+   },
+   {
+    "hash": "b4c7937",
+    "committer_date": "2026-10-27T12:59:28Z",
+    "author_date": "2026-10-27T12:59:28Z",
+    "subject": "Literature review, DESIGN v2 after review round 1, research record updates"
+   },
+   {
+    "hash": "9bc81a2",
+    "committer_date": "2026-10-27T12:58:57Z",
+    "author_date": "2026-10-27T12:58:57Z",
+    "subject": "M1 infra: ID mapping, DepMap caches, metrics, splits, baselines + tests"
+   },
+   {
+    "hash": "3ee70a9",
+    "committer_date": "2026-10-27T12:16:25Z",
+    "author_date": "2026-10-27T12:16:25Z",
+    "subject": "M0: project setup, PROMPT, DATA, profile script, env requirements"
+   }
+  ]
+ },
+ "check2_references": {
+  "n_revisions_searched": 60,
+  "strict_pattern": "Test_positive|Test_negative|Test_pairs|(huMAP|HuMAP|humap)/Test|c4e3e68edcfc|c4a3e5468da0|Test_positive_pairs\\.txt|Test_negative_pairs\\.txt",
+  "strict_hits_history": [
+   {
+    "path": "REPORT.md",
+    "text": "./.env/bin/python scripts/predict_pairs.py --pairs Test_pairs.txt --method zavg:B,E,F --out scores.tsv",
+    "in_n_commits": 19,
+    "innocent_test_function_name": false
+   },
+   {
+    "path": "tests/test_baselines.py",
+    "text": "def test_negative_control_shuffled():",
+    "in_n_commits": 59,
+    "innocent_test_function_name": true
+   },
+   {
+    "path": "tests/test_metrics.py",
+    "text": "def test_negative_control_shuffled_labels():",
+    "in_n_commits": 59,
+    "innocent_test_function_name": true
+   }
+  ],
+  "strict_hits_history_real": [
+   {
+    "path": "REPORT.md",
+    "text": "./.env/bin/python scripts/predict_pairs.py --pairs Test_pairs.txt --method zavg:B,E,F --out scores.tsv",
+    "in_n_commits": 19,
+    "innocent_test_function_name": false
+   }
+  ],
+  "broad_pattern": "[Tt]est[_ ](pos|neg)",
+  "broad_hit_files_history": 480,
+  "broad_categories": {
+   "other": 1,
+   "results_json: internal CV fold counts (test_pos/test_neg keys)": 470,
+   "code: fold-count variables / test function names": 9
+  },
+  "broad_files_outside_expected_dirs": [
+   "LITERATURE.md"
+  ],
+  "working_tree_text_files_scanned": 1414,
+  "working_tree_strict_hits": [
+   {
+    "path": "REPORT.md",
+    "line": 164,
+    "text": "./.env/bin/python scripts/predict_pairs.py --pairs Test_pairs.txt --method zavg:B,E,F --out scores.tsv",
+    "innocent_test_function_name": false
+   },
+   {
+    "path": "tests/test_metrics.py",
+    "line": 82,
+    "text": "def test_negative_control_shuffled_labels():",
+    "innocent_test_function_name": true
+   },
+   {
+    "path": "tests/test_baselines.py",
+    "line": 100,
+    "text": "def test_negative_control_shuffled():",
+    "innocent_test_function_name": true
+   },
+   {
+    "path": "release/ai-hackathon-Coessentiality/REPORT.md",
+    "line": 164,
+    "text": "./.env/bin/python scripts/predict_pairs.py --pairs Test_pairs.txt --method zavg:B,E,F --out scores.tsv",
+    "innocent_test_function_name": false
+   },
+   {
+    "path": "release/ai-hackathon-Coessentiality/tests/test_metrics.py",
+    "line": 82,
+    "text": "def test_negative_control_shuffled_labels():",
+    "innocent_test_function_name": true
+   },
+   {
+    "path": "release/ai-hackathon-Coessentiality/tests/test_baselines.py",
+    "line": 100,
+    "text": "def test_negative_control_shuffled():",
+    "innocent_test_function_name": true
+   }
+  ],
+  "working_tree_strict_hits_real": [
+   {
+    "path": "REPORT.md",
+    "line": 164,
+    "text": "./.env/bin/python scripts/predict_pairs.py --pairs Test_pairs.txt --method zavg:B,E,F --out scores.tsv",
+    "innocent_test_function_name": false
+   },
+   {
+    "path": "release/ai-hackathon-Coessentiality/REPORT.md",
+    "line": 164,
+    "text": "./.env/bin/python scripts/predict_pairs.py --pairs Test_pairs.txt --method zavg:B,E,F --out scores.tsv",
+    "innocent_test_function_name": false
+   }
+  ],
+  "files_in_part1_identical_to_test_files": []
+ },
+ "check4_overlap_descriptives": {
+  "test_pos": {
+   "lines": 3312,
+   "unique_unordered": 3312,
+   "duplicate_extra_lines": 0,
+   "self_pairs": 0
+  },
+  "test_neg": {
+   "lines": 597426,
+   "unique_unordered": 597426,
+   "duplicate_extra_lines": 0,
+   "self_pairs": 0
+  },
+  "part1_train_pos": {
+   "lines": 3314,
+   "unique_unordered": 3314,
+   "duplicate_extra_lines": 0,
+   "self_pairs": 0
+  },
+  "part1_train_neg": {
+   "lines": 631465,
+   "unique_unordered": 631465,
+   "duplicate_extra_lines": 0,
+   "self_pairs": 0
+  },
+  "test_pos_and_neg_both": 0,
+  "test_pos_in_train_pos": 0,
+  "test_pos_in_train_neg": 0,
+  "test_neg_in_train_pos": 0,
+  "test_neg_in_train_neg": 0,
+  "train_pos_and_neg_both": 0,
+  "test_pos_only": 3312,
+  "test_pos_not_in_train_pos": 3312,
+  "test_neg_only": 597426,
+  "labels_agree_test_pos_in_train_pos": 0,
+  "labels_disagree_test_pos_in_train_neg": 0,
+  "labels_disagree_test_neg_in_train_pos": 0,
+  "labels_agree_test_neg_in_train_neg": 0,
+  "test_prevalence": 0.00551,
+  "train_prevalence": 0.00522,
+  "test_proteins": 1121,
+  "test_pos_proteins": 1115,
+  "test_proteins_in_train_proteins": 329,
+  "test_proteins_not_in_train": 792,
+  "test_proteins_in_train_pos_proteins": 322,
+  "train_proteins": 1151,
+  "train_pos_proteins": 1144,
+  "test_pos_pairs_C1_both_proteins_in_train_pos": 265,
+  "test_pos_pairs_C2_one": 738,
+  "test_pos_pairs_C3_none": 2309,
+  "depmap_mapping": {
+   "test_proteins_mapped": 1087,
+   "test_proteins": 1121,
+   "test_proteins_status": {
+    "mapped": 1087,
+    "not_in_depmap": 29,
+    "ambiguous": 2,
+    "not_in_hgnc": 3
+   },
+   "train_proteins_mapped": 1114,
+   "train_proteins": 1151,
+   "test_pos_scorable": 3159,
+   "test_pos": 3312,
+   "test_neg_scorable": 563648,
+   "test_neg": 597426,
+   "train_pos_scorable": 3191,
+   "train_neg_scorable": 593406,
+   "mapping_agrees_with_part1_uniprot_map_csv": {
+    "n": 1151,
+    "agree": 1151
+   }
+  }
+ },
+ "part1_train_file_hashes_match_DATA_md": {
+  "Train_positive_pairs.txt": true,
+  "Train_negative_pairs.txt": true
+ },
+ "new_project_inputs_match_part1_DATA_md": {
+  "CRISPRGeneEffect.csv": true,
+  "hgnc_complete_set.txt": true
+ },
+ "check3_content_leakage": {
+  "label_artefact_checks": {
+   "pairs_pkl": {
+    "rows": 634779,
+    "equals_train_pos_union_neg": true,
+    "pos_rows": 3314,
+    "test_only_pos_in_pkl": 0,
+    "test_only_neg_in_pkl": 0,
+    "test_pos_in_pkl_as_pos": 0,
+    "test_pos_in_pkl_as_neg": 0,
+    "test_neg_in_pkl_as_pos": 0,
+    "test_neg_in_pkl_as_neg": 0
+   },
+   "protein_level_files": {
+    "data_cache/splits/protein_assignment.csv": {
+     "n": 1151,
+     "test_only_proteins_present": 0,
+     "train_proteins_covered": 1151
+    },
+    "results/splits/protein_assignment.csv": {
+     "n": 1151,
+     "test_only_proteins_present": 0,
+     "train_proteins_covered": 1151
+    },
+    "data_cache/uniprot_map.csv": {
+     "n": 1151,
+     "test_only_proteins_present": 0,
+     "train_proteins_covered": 1151
+    }
+   },
+   "pair_universe_npz_gene_space": {
+    "data_cache/layers/graph_v1.pairs.npz": {
+     "n_pairs": 596597,
+     "equals_pairs_pkl_gene_pairs": true,
+     "test_only_pos_gene_pair_present": 0,
+     "test_only_neg_gene_pair_present": 0
+    },
+    "data_cache/layers/graph_v2.pairs.npz": {
+     "n_pairs": 596597,
+     "equals_pairs_pkl_gene_pairs": true,
+     "test_only_pos_gene_pair_present": 0,
+     "test_only_neg_gene_pair_present": 0
+    },
+    "data_cache/layers/screen_v1.pairs.npz": {
+     "n_pairs": 596597,
+     "equals_pairs_pkl_gene_pairs": true,
+     "test_only_pos_gene_pair_present": 0,
+     "test_only_neg_gene_pair_present": 0
+    },
+    "data_cache/layers/screen_v2.pairs.npz": {
+     "n_pairs": 596597,
+     "equals_pairs_pkl_gene_pairs": true,
+     "test_only_pos_gene_pair_present": 0,
+     "test_only_neg_gene_pair_present": 0
+    }
+   },
+   "test_only_pos_with_scorable_gene_pair": 3159,
+   "test_only_neg_with_scorable_gene_pair": 562563
+  },
+  "text_scan": {
+   "n_test_only_pos_pairs": 3312,
+   "n_test_only_neg_pairs": 597426,
+   "working_tree_and_history_text_units_scanned": 2176,
+   "historic_blobs_scanned": 762,
+   "units_containing_any_uniprot_accession": 59,
+   "units_with_test_only_pair_on_one_line": {
+    "WT:datasets/HGNC/hgnc_complete_set.txt": {
+     "pos": true
+    },
+    "WT:release/ai-hackathon-Coessentiality/results/predictions/genome_wide_top_pairs.tsv.gz": {
+     "pos": true,
+     "neg": true
+    },
+    "WT:results/predictions/genome_wide_top_pairs.tsv.gz": {
+     "pos": true,
+     "neg": true
+    },
+    "WT:outputs/all_pairs/genes.tsv": {
+     "pos": true
+    },
+    "GIT:results/predictions/genome_wide_top_pairs.tsv.gz": {
+     "pos": true,
+     "neg": true
+    }
+   },
+   "parquet_files_seen": [
+    {
+     "path": "outputs/all_pairs/top_pairs.parquet",
+     "columns": [
+      "symbol_a",
+      "symbol_b",
+      "entrez_a",
+      "entrez_b",
+      "uniprot_a",
+      "uniprot_b",
+      "zavg_BEF",
+      "z_B",
+      "z_E",
+      "z_F",
+      "rank",
+      "low_coverage_any"
+     ],
+     "rows": 667677
+    }
+   ]
+  },
+  "scoring_code": {
+   "mvp/src/coessential/method.py": {
+    "imports": [
+     "__future__",
+     "dataclasses",
+     "math",
+     "numpy",
+     "scipy.sparse",
+     "scipy.sparse.linalg"
+    ],
+    "label_file_token_lines": [],
+    "src_data_functions_used": null,
+    "docstring_declares_label_free": true
+   },
+   "mvp/scripts/predict_all_pairs.py": {
+    "imports": [
+     "coessential.all_pairs",
+     "pathlib",
+     "sys"
+    ],
+    "label_file_token_lines": [],
+    "src_data_functions_used": null,
+    "docstring_declares_label_free": false
+   },
+   "scripts/predict_pairs.py": {
+    "imports": [
+     "argparse",
+     "json",
+     "logging",
+     "pathlib",
+     "src",
+     "sys"
+    ],
+    "label_file_token_lines": [
+     [
+      3,
+      "Input: two tab-separated UniProt columns, no header (like datasets/HuMAP/Train_*_pairs.txt)."
+     ]
+    ],
+    "src_data_functions_used": null,
+    "docstring_declares_label_free": true
+   },
+   "src/predict.py": {
+    "imports": [
+     "__future__",
+     "dataclasses",
+     "hashlib",
+     "io",
+     "json",
+     "logging",
+     "numpy",
+     "pandas",
+     "pathlib",
+     "pickle",
+     "platform",
+     "resource",
+     "scipy",
+     "src",
+     "src.config",
+     "src.layers",
+     "src.layers_ext",
+     "src.layers_graph",
+     "subprocess",
+     "time"
+    ],
+    "label_file_token_lines": [
+     [
+      37,
+      "Nothing here reads pair labels, the HuMAP pair table or which genes are labelled."
+     ],
+     [
+      186,
+      "comps = [_code(t) for t in method[5:].split(\",\") if t.strip()]"
+     ],
+     [
+      248,
+      "def read_pairs(path) -> pd.DataFrame:"
+     ],
+     [
+      255,
+      "f = line.rstrip(\"\\r\\n\").split(\"\\t\")"
+     ],
+     [
+      500,
+      "pairs = read_pairs(pairs_path)"
+     ]
+    ],
+    "src_data_functions_used": [
+     "CACHE",
+     "build_matrix_cache",
+     "build_uniprot_map",
+     "load_matrix"
+    ],
+    "docstring_declares_label_free": true
+   },
+   "mvp/src/coessential/all_pairs.py": {
+    "imports": [
+     "__future__",
+     "argparse",
+     "coessential",
+     "coessential.method",
+     "hashlib",
+     "json",
+     "logging",
+     "numpy",
+     "pandas",
+     "pathlib",
+     "platform",
+     "resource",
+     "subprocess",
+     "time"
+    ],
+    "label_file_token_lines": [],
+    "src_data_functions_used": null,
+    "docstring_declares_label_free": true
+   },
+   "mvp/src/coessential/data.py": {
+    "imports": [
+     "__future__",
+     "logging",
+     "numpy",
+     "pandas",
+     "pathlib",
+     "re"
+    ],
+    "label_file_token_lines": [
+     [
+      10,
+      "1. HGNC rows with ``status == \"Approved\"``; ``uniprot_ids`` split on ``|`` (one row per UniProt accession)."
+     ],
+     [
+      58,
+      "m[\"uniprot\"] = m.uniprot_ids.str.split(\"|\")"
+     ],
+     [
+      98,
+      "def read_pairs(path) -> pd.DataFrame:"
+     ],
+     [
+      105,
+      "f = line.rstrip(\"\\r\\n\").split(\"\\t\")"
+     ]
+    ],
+    "src_data_functions_used": null,
+    "docstring_declares_label_free": false
+   },
+   "src.data functions used by predict.py": {
+    "load_matrix": {
+     "refs_label_files": false
+    },
+    "build_matrix_cache": {
+     "refs_label_files": false
+    },
+    "build_uniprot_map": {
+     "refs_label_files": false
+    }
+   },
+   "src_config_label_file_constants": [
+    "POS_FILE = DATA / \"HuMAP\" / \"Train_positive_pairs.txt\"   # prompt names it Train_positive_pairs_pairs.txt; on disk it is this",
+    "NEG_FILE = DATA / \"HuMAP\" / \"Train_negative_pairs.txt\"",
+    "# Scorable universe (all scorable HuMAP train pairs, commit 9bc81a2; asserted against data in tests/evaluate)."
+   ],
+   "results_predict_run_records": {
+    "union_gls.run.json": {
+     "label_free": "scores use only CRISPRGeneEffect + HGNC ID mapping; no pair label is read",
+     "input": null
+    },
+    "union_gls_components.run.json": {
+     "label_free": "scores use only CRISPRGeneEffect + HGNC ID mapping; no pair label is read",
+     "input": null
+    },
+    "union_single.run.json": {
+     "label_free": "scores use only CRISPRGeneEffect + HGNC ID mapping; no pair label is read",
+     "input": null
+    },
+    "union_zavg_B_E.run.json": {
+     "label_free": "scores use only CRISPRGeneEffect + HGNC ID mapping; no pair label is read",
+     "input": null
+    },
+    "union_zavg_B_E_F.run.json": {
+     "label_free": "scores use only CRISPRGeneEffect + HGNC ID mapping; no pair label is read",
+     "input": null
+    }
+   },
+   "ift_looks": [
+    {
+     "look": 0,
+     "what": "R1 reviewers computed label-free AP variants on ALL scorable pairs before IFT existed (DESIGN/RESEARCH_TREE D1",
+     "status": null
+    },
+    {
+     "look": 1,
+     "what": "single pre-registered IFT look: D3 fixed sequence zavg_BEF then B, DESIGN v3.1 \u00a73.7",
+     "status": "started"
+    },
+    {
+     "look": 1,
+     "what": "single pre-registered IFT look: D3 fixed sequence zavg_BEF then B, DESIGN v3.1 \u00a73.7",
+     "status": "done"
+    },
+    {
+     "look": "1-verify",
+     "what": "independent re-derivation of look 1 (same candidates, no selection)",
+     "status": null
+    },
+    {
+     "look": "1-figure",
+     "what": "PR curves for manuscript figure from look 1 candidates/baselines; no selection",
+     "status": null
+    },
+    {
+     "look": "2-posthoc",
+     "what": "post-hoc reference baseline (PC-removed Pearson) requested in manuscript review; not a candidate, no selection",
+     "status": null
+    }
+   ],
+   "n_trial_records": 1690
+  }
+ },
+ "check5_hyperparameter_selection": {
+  "trials_started_by_universe_scheme": {
+   "dev|cluster": 813,
+   "dev|component": 3,
+   "dev|gene": 11,
+   "dev|random": 12,
+   "dev|None": 6
+  },
+  "ift_result_files": [
+   "look01_2026-10-27.json",
+   "look01_2026-10-27_curves.json"
+  ],
+  "design_docs": {
+   "DESIGN.md": true,
+   "RESEARCH_TREE.md": true,
+   "DATA.md": true,
+   "PROMPT.md": true
+  },
+  "data_md_withheld_statement": [
+   "- HuMAP Test pairs are withheld by design and are never accessed."
+  ],
+  "prompt_statement": [
+   "The huMAP Test Positive PPIs and Test Negative PPIs are intentionally withheld and are not available in the project directory. Do not attempt to locate, download, reconstruct, infer, or otherwise access these test datasets."
+  ]
+ },
+ "check6_other_channels": {
+  "doc_mentions": [
+   {
+    "file": "LITERATURE.md",
+    "line": 10,
+    "text": "- Per project rules, I did not look for hu.MAP test-pair files. Only the hu.MAP 3.0 paper's Methods text was read."
+   },
+   {
+    "file": "LITERATURE.md",
+    "line": 183,
+    "text": "- **Proteins are not stated to be disjoint.** A protein in two complexes can probably appear in both splits (unverified). The test set is therefore mostly C3/C2 pairs relative to our training proteins"
+   },
+   {
+    "file": "LITERATURE.md",
+    "line": 191,
+    "text": "1. The withheld test set consists of *other complexes*. Our primary validation should split by **connected component of the train-positive graph**, which approximates a complex-level split. There are "
+   },
+   {
+    "file": "LITERATURE.md",
+    "line": 201,
+    "text": "- **Findings:** all 7 PPI predictors performed significantly and often much worse on C2 and C3. In random cross-validation more than 99% of test pairs were C1. The cause is the different representatio"
+   },
+   {
+    "file": "DESIGN.md",
+    "line": 4,
+    "text": "Fixed by PROMPT.md: task, data sources, AUPRC objective, baselines (Pearson, Spearman, GLS), leakage-aware evaluation, withheld test."
+   },
+   {
+    "file": "DESIGN.md",
+    "line": 7,
+    "text": "Input: unordered UniProt pair. Output: score (higher = co-complex). Allowed inputs: DepMap CRISPR files + metadata, HGNC, hu.MAP *train* labels. Target: AUPRC on the withheld hu.MAP test pairs, built "
+   },
+   {
+    "file": "REPORT.md",
+    "line": 28,
+    "text": "- **Withheld hu.MAP test set:** not accessed. Score it with the frozen method using `scripts/predict_pairs.py` (\u00a77)."
+   },
+   {
+    "file": "REPORT.md",
+    "line": 158,
+    "text": "- **Ceiling from unmapped proteins.** About 3.7% of train positives involve proteins without a DepMap profile (Ig segments, mtDNA genes, multi-copy histones/haemoglobins); they get the minimum score. "
+   },
+   {
+    "file": "REPORT.md",
+    "line": 162,
+    "text": "## 7. Scoring the withheld test set"
+   },
+   {
+    "file": "DATA.md",
+    "line": 21,
+    "text": "- HuMAP Test pairs are withheld by design and are never accessed."
+   },
+   {
+    "file": "docs/AGENTS.md",
+    "line": 27,
+    "text": "- **Withheld data.** The hu.MAP test set was withheld from the agents by design and never accessed. All development used hu.MAP train pairs."
+   },
+   {
+    "file": "docs/AGENTS.md",
+    "line": 44,
+    "text": "- Will run the independent evaluation on the withheld hu.MAP test set."
+   }
+  ],
+  "literature_mentions": [
+   {
+    "file": "LITERATURE.md",
+    "line": 10,
+    "text": "- Per project rules, I did not look for hu.MAP test-pair files. Only the hu.MAP 3.0 paper's Methods text was read."
+   },
+   {
+    "file": "LITERATURE.md",
+    "line": 183,
+    "text": "- **Proteins are not stated to be disjoint.** A protein in two complexes can probably appear in both splits (unverified). The test set is therefore mostly C3/C2 pairs relative to our training proteins"
+   },
+   {
+    "file": "LITERATURE.md",
+    "line": 191,
+    "text": "1. The withheld test set consists of *other complexes*. Our primary validation should split by **connected component of the train-positive graph**, which approximates a complex-level split. There are "
+   },
+   {
+    "file": "LITERATURE.md",
+    "line": 201,
+    "text": "- **Findings:** all 7 PPI predictors performed significantly and often much worse on C2 and C3. In random cross-validation more than 99% of test pairs were C1. The cause is the different representatio"
+   }
+  ]
+ }
+}
