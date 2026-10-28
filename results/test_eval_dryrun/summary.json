@@ -1,15 +1,4 @@
 {
- "runtime_s": {
-  "A: IFT look-1 reproduction": 9.1,
-  "B: fit rules on dev pairs": 3.0,
-  "B: clusters": 0.0,
-  "B: ITT (primary) metrics + bootstraps": 50.7,
-  "B: mapped-only": 7.9,
-  "C: load train + fit rules": 7.7,
-  "C: clusters": 0.7,
-  "C: ITT (primary) metrics + bootstraps": 830.3,
-  "C: mapped-only": 144.4
- },
  "part1": {
   "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/external/part1_locked",
   "commit": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
@@ -17,6 +6,24 @@
   "matches": true,
   "modified": [],
   "clean": true
+ },
+ "dryrun_inputs_are_train_pairs": {
+  "dev_positive_pairs.txt": {
+   "n": 2398,
+   "all_in_train_same_label": true
+  },
+  "dev_negative_pairs.txt": {
+   "n": 341657,
+   "all_in_train_same_label": true
+  },
+  "ift_positive_pairs.txt": {
+   "n": 856,
+   "all_in_train_same_label": true
+  },
+  "ift_negative_pairs.txt": {
+   "n": 43138,
+   "all_in_train_same_label": true
+  }
  },
  "matrix": {
   "source": "datasets/DepMAP/CRISPRGeneEffect.csv",
@@ -27,7 +34,7 @@
   ],
   "npy_sha256": "8a894d2449074934de71cf0e0b44e8d81ec2d70bc756b2d038367c34c9ad27f3",
   "npy_sha256_matches_manifest": true,
-  "load_s": 3.15
+  "load_s": 7.59
  },
  "A": {
   "ap_ht": {
@@ -59,44 +66,6 @@
   "max_abs_diff_point_metrics": 1.4620887611727085e-08,
   "max_abs_diff_bootstrap": 8.881784197001252e-16
  },
- "I_batch_invariance": {
-  "zavg_BEF": {
-   "n_pairs": 43994,
-   "n_matched": 43994,
-   "mapped_flags_equal": true,
-   "max_abs_diff_mapped": 0.0
-  },
-  "B": {
-   "n_pairs": 43994,
-   "n_matched": 43994,
-   "mapped_flags_equal": true,
-   "max_abs_diff_mapped": 0.0
-  },
-  "gls_signed": {
-   "n_pairs": 43994,
-   "n_matched": 43994,
-   "mapped_flags_equal": true,
-   "max_abs_diff_mapped": 0.0
-  },
-  "spearman_signed": {
-   "n_pairs": 43994,
-   "n_matched": 43994,
-   "mapped_flags_equal": true,
-   "max_abs_diff_mapped": 0.0
-  },
-  "pearson_signed": {
-   "n_pairs": 43994,
-   "n_matched": 43994,
-   "mapped_flags_equal": true,
-   "max_abs_diff_mapped": 0.0
-  },
-  "spec_k20_tinf_std": {
-   "n_pairs": 43994,
-   "n_matched": 43994,
-   "mapped_flags_equal": true,
-   "max_abs_diff_mapped": 0.0
-  }
- },
  "B": {
   "ap": {
    "zavg_BEF": 0.33203342003997377,
@@ -123,15 +92,22 @@
    "spec_k20_tinf_std": 0.3115909614743582
   },
   "verdict": {
-   "zavg_BEF": {
-    "role": "primary",
-    "status": "confirmatory",
-    "clearly_beats": true
+   "confirmatory_set": "mapped_only (S1)",
+   "locked_verdict_S1": {
+    "zavg_BEF": true,
+    "B": false
    },
-   "B": {
-    "role": "secondary",
-    "status": "confirmatory",
-    "clearly_beats": false
+   "locked_verdict_ITT": {
+    "zavg_BEF": true,
+    "B": false
+   },
+   "ci_excludes_0_vs_all_ITT": {
+    "zavg_BEF": true,
+    "B": true
+   },
+   "ci_excludes_0_vs_all_S1": {
+    "zavg_BEF": true,
+    "B": true
    }
   }
  },
@@ -234,7 +210,76 @@
    "largest_component": 15,
    "largest_component_size": 144,
    "largest_component_pos_pairs": 848
+  },
+  "verdict": {
+   "confirmatory_set": "mapped_only (S1)",
+   "locked_verdict_S1": {
+    "zavg_BEF": true,
+    "B": false
+   },
+   "locked_verdict_ITT": {
+    "zavg_BEF": true,
+    "B": false
+   },
+   "ci_excludes_0_vs_all_ITT": {
+    "zavg_BEF": true,
+    "B": true
+   },
+   "ci_excludes_0_vs_all_S1": {
+    "zavg_BEF": true,
+    "B": true
+   }
   }
  },
- "note": "merged from per-part runs (--parts AI, B, C) of scripts/21_evaluate_test.py --mode dryrun on 2026-10-28; scoring runtimes in scoring_log.txt"
+ "I_batch_invariance": {
+  "zavg_BEF": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  },
+  "B": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  },
+  "gls_signed": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  },
+  "spearman_signed": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  },
+  "pearson_signed": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  },
+  "spec_k20_tinf_std": {
+   "n_pairs": 43994,
+   "n_matched": 43994,
+   "mapped_flags_equal": true,
+   "max_abs_diff_mapped": 0.0
+  }
+ },
+ "runtime_s": {
+  "A: IFT look-1 reproduction": 28.6,
+  "B: fit rules on dev pairs": 7.4,
+  "B: clusters": 0.1,
+  "B: ITT (primary) metrics + bootstraps": 214.9,
+  "B: mapped-only (S1)": 41.1,
+  "B: stratum C3": 7.9,
+  "C: load train + fit rules": 7.6,
+  "C: clusters": 0.6,
+  "C: ITT (primary) metrics + bootstraps": 1016.5,
+  "C: mapped-only (S1)": 492.3,
+  "C: stratum C1": 191.1
+ }
 }

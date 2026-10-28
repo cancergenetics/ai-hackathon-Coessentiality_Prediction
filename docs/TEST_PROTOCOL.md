@@ -1,30 +1,61 @@
 # TEST_PROTOCOL.md: pre-registered evaluation of the locked Part 1 method on the withheld hu.MAP test pairs
 
-**Version 1.0 (draft for PI freeze), 2026-10-28.**
+**DRAFT v1.1** (2026-10-28; revised after design review round 1, see `docs/reviews/round1_protocol_response.md`).
 
-**How it is frozen.** The protocol is frozen by committing this file together with `src/testeval/`, `scripts/19_*`, `scripts/20*`, `scripts/21_*`, `tests/test_testeval.py` and `results/test_eval/fitted_rules.json`.
+**Freezing.** At the freeze the PI replaces the line above with `**FROZEN v1.1** (date)`. The pre-freeze status word (the one in the line above) must then occur nowhere in this file. The PI then runs `scripts/22_freeze_protocol.py` and commits this file together with `docs/TEST_PROTOCOL.FROZEN`. Agents never make the freeze commit.
 
-**The single look.** `scripts/21_evaluate_test.py --mode test` refuses to run unless:
-- this file and the fitted rules are committed, and
-- `src/` and `scripts/` are clean.
+**The frozen marker.** `docs/TEST_PROTOCOL.FROZEN` lists the SHA-256 of:
+- this file;
+- `results/test_eval/fitted_rules.json`;
+- every harness file (`src/testeval/*.py`, `scripts/19_*`, `scripts/20_*`, `scripts/20b_*`, `scripts/21_*`, `scripts/22_*`, `tests/test_testeval.py`);
+- the venv package list (`pip freeze`);
+- the two test files, which must equal the DATA.md values.
 
-It then records the commit hash of this file (`git log -1 -- docs/TEST_PROTOCOL.md`), HEAD and the SHA-256 of this file in `results/test_eval/test_results.json` and in `results/test_eval/looks.jsonl`.
+**What every test-touching entry point checks.** `scripts/19_make_pair_files.py --set test`, `scripts/20_score_test_pairs.sh test` and `scripts/21_evaluate_test.py --mode test` call `require_frozen()`. It verifies:
+- the marker is committed;
+- every listed hash equals the current file;
+- the header reads FROZEN and the file contains no pre-freeze status word;
+- `src/`, `scripts/`, `tests/`, this file, the marker and the fitted rules are committed and unmodified.
 
-**What may not change.** Nothing in this document may be changed after the look. Any deviation is reported as a deviation (§8.3).
+**What may not change.** Nothing in this document changes after the freeze. Any later change is a deviation (§8.3).
 
 ---
 
-## 0. Transition from development to test, and what has been seen
+## 0. Transition from development to test: everything seen or computed on the test files before the freeze
 
-| item | status at freeze |
+| # | who / when | what was seen or computed | consequence |
+|---|---|---|---|
+| T0 | PI, 2026-10-28 (M0) | line counts (3,312 / 597,426) and the first 3 lines of each file (format check) | none |
+| T1 | Part 1 audit agent, commit 7d1fbdd (`docs/part1_audit.md` §4, `scripts/verify/audit_part1.py`) | **descriptive counts without scores** (see the next table) | these counts were known before this protocol was written (v1.0 in 7a842f2). R4, R5 and S2 were therefore set with them available. The choices follow Part 1 DESIGN §3.10 and are kept (§3.1). S2 is redundant (overlap 0) and is kept only as an automatic check |
+| **D1** | Part 1 audit agent, intermediate run (RESEARCH_TREE D1) | counted, per test file, how many test pairs occur in Part 1's label-free genome-wide top-pair table (zavg_BEF ≥ 3) | this is **equivalent to precision and recall of rule (a) z ≥ 3 on the test set**. The counts were deleted from all outputs and the PI never saw them; z ≥ 3 is Part 1's release cutoff and predates the incident. Rule (a) is therefore **non-blind**. It is reported for completeness only, labelled "non-blind (D1)", is secondary, and enters no verdict (§5.4) |
+| T2 | harness author (this protocol), 2026-10-28 | an octal dump of the first ~200 bytes (6 lines) of the positive file, to check delimiter and line endings | none |
+| T3 | everyone | genome-wide label-free scores for all gene pairs exist (Part 1 `outputs/all_pairs`, `results/predictions/genome_wide_top_pairs.tsv.gz`) and therefore cover the test pairs; no one has joined them with test labels except in D1 | stated as a limit of the single-look guarantee (§8.4) |
+
+**Counts from T1 (no scores).** "Train-positive proteins" are the proteins of the train positive file.
+
+| quantity | value |
+|---|---|
+| unique test pairs, pos / neg | 3,312 / 597,426 |
+| duplicates, self pairs, pairs in both files | 0 / 0 / 0 |
+| test pairs also in a train file | 0 |
+| test proteins | 1,121 |
+| of which also in train | 329 |
+| of which in train-positive proteins | 322 |
+| test positives in C1 / C2 / C3 (both / one / no protein in train-positive proteins) | 265 / 738 / 2,309 |
+| test proteins mapped to DepMap | 1,087 / 1,121 |
+| scorable pairs (both proteins mapped, distinct genes), pos | 3,159 / 3,312 (95.4%) |
+| scorable pairs, neg | 563,648 / 597,426 (94.3%) |
+
+**Other facts at the freeze**
+
+| item | status |
 |---|---|
 | Part 1 lock | commit `c7f95ee007576be9311c0a5f08c6ac63ca23a009` (2026-10-28 12:55:43 UTC), cloned read-only to `external/part1_locked/` |
-| Test files | `datasets/huMAP/Test_positive_pairs.txt` (SHA-256 `c4e3e68e…2d96`), `Test_negative_pairs.txt` (`c4a3e546…e9de`); they arrived 13:55 UTC, about 1 h after the Part 1 lock (DATA.md) |
-| Test content seen before freeze | the PI read the line counts (3,312 / 597,426) and the first 3 lines of each file. The harness author printed the first ~200 bytes (6 lines) of the positive file as an octal dump to check the delimiter and line endings. **Not computed:** scores, predictions, metrics, de-duplication or overlap counts, protein lists, mapping rates. |
-| Development data used here | hu.MAP **train** pairs (Part 1 folder, read-only), Part 1's dev/IFT split (`data_cache/splits/protein_assignment.csv`, SHA-256 checked against Part 1's committed hash), DepMap 26Q3 CRISPRGeneEffect, HGNC |
-| Part 1 never accessed test labels | verified separately in `docs/part1_audit.md` (pending; recommended before the look, §9) |
+| Test files | SHA-256 in DATA.md (`c4e3e68e…`, `c4a3e546…`); created 13:55 UTC, 59.6 min after the Part 1 lock |
+| Part 1 never accessed test labels | **audit complete: PASS** (`docs/part1_audit.md`): timeline, code and document references, content leakage, hyper-parameter selection |
+| Development data used by this protocol | hu.MAP **train** pairs (Part 1 folder, read-only); Part 1's dev/IFT split (hash-checked); DepMap 26Q3 CRISPRGeneEffect; HGNC |
 
-Everything below was fixed from Part 1's documents and code and from development data only.
+Apart from T0–T3 and D1, everything below was fixed from Part 1's documents and code and from development data only.
 
 ## 1. Locked method and inputs
 
@@ -65,6 +96,7 @@ All methods are scored on exactly the same pairs (§3).
 - It asserts that the frozen config equals manifest column 64 (screen_v1) and that the null moments equal the manifest's (observed difference 0).
 - The dry run reproduces its IFT HT-AP (0.26678) to 1e-16.
 - It enters no verdict.
+- **Fixed reporting language.** Whatever its test AP, it is reported as "a post hoc PC-removed Pearson reference, not a candidate". If it exceeds zavg_BEF, the text reports that fact with its CI and does not state or imply that a better method exists.
 
 ## 3. Pair set
 
@@ -74,26 +106,24 @@ These rules are fixed a priori and applied to every method identically (`src/tes
 
 | rule | decision | justification |
 |---|---|---|
-| R1 unordered pair, de-duplication | canonical `(a, b)` with `a < b` on the UniProt accession string (Part 1 `data.load_pairs` rule); a pair listed several times (same or reversed orientation, within or across lines of a file) counts once | the task is an unordered pair (Part 1 DESIGN §1); duplicates would give a pair extra weight in AP |
-| R2 self pairs (`a == b`) | **excluded** from every analysis; counted | not a pair of two proteins; outside the predictor's domain (Part 1's loader rejects them; the predictor marks them unmapped) |
-| R3 pair in both the positive and the negative file | **excluded** from every analysis; counted | label undefined; any assignment would be arbitrary |
-| R4 pair also in a train file (either label) | **kept** in the primary analysis; flagged; dropped in sensitivity set S2 | the test files as delivered define the test population. All scored methods are label-free, so train labels cannot leak into their scores; only the train-fitted thresholds and calibrators could profit |
-| R5 unmapped pair (a protein without a unique DepMap gene, both proteins on the same gene, or an undefined score) | **kept** in the primary analysis at the locked predictor's floor score: min(mapped scores in the scored file) − 1 (Part 1 DESIGN §3.10). This is intention-to-score (ITT): every labelled pair is scored. The mapped-only analysis is secondary (S1) | the method's real-world coverage is part of its performance. All unmapped pairs form one tied block at the bottom for every method, so the rule treats all methods identically. Part 1 reported this variant on the IFT (0.332 vs 0.345 mapped-only) |
+| R1 unordered pair, de-duplication | canonical `(a, b)` with `a < b` on the UniProt accession string (Part 1 `data.load_pairs` rule); a pair listed several times counts once | the task is an unordered pair (Part 1 DESIGN §1). T1 found no duplicates; the rule is kept as a check |
+| R2 self pairs (`a == b`) | **excluded**; counted | not a pair of two proteins; Part 1's loader rejects them. T1 found none |
+| R3 pair in both the positive and the negative file | **excluded**; counted | label undefined. T1 found none |
+| R4 pair also in a train file | **kept** in the primary analysis; flagged | the delivered test files define the population, and all scored methods are label-free. T1 found 0 such pairs |
+| R5 unmapped pair (a protein without a unique DepMap gene, both proteins on one gene, or an undefined score) | **kept** in the primary analysis at the locked predictor's floor, min(mapped scores in the scored file) − 1 (Part 1 DESIGN §3.10). This is intention-to-score (ITT). The mapped-only set S1 is Part 1's own evaluation universe | coverage is part of real-world performance. All unmapped pairs form one tied bottom block for every method, so the rule treats all methods identically. Part 1 reported both variants on the IFT (0.332 ITT vs 0.345 mapped). T1 showed 4.6% of positives and 5.7% of negatives are unscorable; the rule was not changed in response |
 
-### 3.2 Scoring input
+### 3.2 Scoring input and analysis sets
 
-One ID-only file per set: the unique canonical non-self pairs of positives ∪ negatives, sorted, no labels (`scripts/19_make_pair_files.py`). Positives and negatives therefore share one floor.
+**Scoring input.** One ID-only file per set: the unique canonical non-self pairs of positives ∪ negatives, sorted, no labels (`scripts/19_make_pair_files.py`). Positives and negatives therefore share one floor.
 
-**Primary pair set (ITT).** All canonical pairs remaining after R2 and R3.
+| set | definition | role |
+|---|---|---|
+| **ITT** | all canonical pairs remaining after R2 and R3 | **primary metric (§4)**; locked verdict also reported (§7) |
+| **S1 mapped-only** | pairs mapped under every method. Clusters are rebuilt from S1's own positives, exactly as Part 1 built them on scorable pairs | **set of the confirmatory locked verdict (§7.1)**, because it is Part 1's evaluation universe |
+| S2 no train overlap | drop pairs that occur in a train file | automatic check only: analysed iff any overlap exists (T1: 0, so S2 = ITT and is reported as such) |
+| **C1 / C2 / C3** | pairs with both / one / neither protein among train-positive proteins (audit definition); negatives assigned by the same rule | secondary strata (generalisation to new proteins). They replace the v1.0 set "S3, both proteins unseen in any train pair", which C3 approximates (7 proteins differ) |
 
-**Pre-specified secondary sets.** Every metric is reported for every method on each:
-- **S1 mapped-only:** pairs mapped under every method. This is Part 1's IFT definition ("scorable").
-- **S2 no train overlap:** drop pairs that occur in either train file.
-- **S3 unseen proteins:** pairs whose two proteins both occur in no train pair. This is protein-disjoint, as in Part 1's development evaluation.
-
-**Counts reported.** Lines, unique pairs, duplicates, reversed duplicates, self pairs, conflicts, overlap with train by label, proteins also in train, and unmapped pairs by reason and by label.
-
-**Expected prevalence.** 3,312 / 600,738 = 0.551% before de-duplication, against 0.522% for train.
+**Expected composition (T1).** Prevalence 0.551% (train 0.522%). Positives split C1 / C2 / C3 = 265 / 738 / 2,309, so the test is mostly protein-new, more so than Part 1's IFT.
 
 ## 4. Primary metric: AUPRC (average precision) at natural prevalence
 
@@ -121,7 +151,7 @@ $\text{AP} = \sum_n (R_n - R_{n-1}) P_n$
 
 ## 5. Secondary metrics
 
-All are computed on the ITT set and on S1–S3, for every method.
+All are computed on the ITT set and on S1, for every method. AP and ΔAP (with cluster-bootstrap CIs) are computed for C1/C2/C3.
 
 ### 5.1 Ranking metrics
 - **AUROC:** weighted, ties count ½; equals sklearn `roc_auc_score`.
@@ -131,8 +161,8 @@ All are computed on the ITT set and on S1–S3, for every method.
 ### 5.2 Cluster-structured metrics
 
 **Test clusters** are defined exactly as in Part 1 §3.1, applied to the test positives (Part 1 `src.clusters.build_clusters`, imported unchanged):
-- universe: all proteins of the ITT pair set, including unmapped ones;
-- graph: the ITT positive pairs;
+- universe: all proteins of the analysed set: the ITT set (including unmapped proteins) for ITT, C1–C3 and S2; the scorable proteins of S1 for S1, as Part 1 did;
+- graph: that set's positive pairs;
 - clusters: connected components;
 - every component with more than 40 proteins is split by `networkx.community.louvain_communities(seed=0)` (resolution 1, integer node labels sorted by accession), run under `PYTHONHASHSEED=0`, which the script enforces;
 - proteins without a positive pair are singleton clusters;
@@ -158,7 +188,7 @@ These rules are fixed from development data only and stored in `results/test_eva
 |---|---|---|---|
 | **(b) F1-max on train** | t = the score threshold that maximises F1 over **all hu.MAP train pairs** at their natural prevalence (unweighted; unmapped train pairs at the train file's floor); ties go to the highest such t | every method | **primary operating point** |
 | (c) top-k | K = round(π_train × N), with π_train = 3,314 / 634,779 = 0.522% and N = number of pairs in the analysed set; t = the K-th ranked score (whole tie block) | every method | secondary: an equal prediction budget for all methods; it uses only the count N of the test set, never its labels |
-| (a) z ≥ 3 | t = 3.0 on the zavg_BEF score | zavg_BEF only | secondary: the cutoff of Part 1's released genome-wide `top_pairs.parquet` (results/predictions/README.md). It is not label-tuned, so it shows what a user of the released table gets |
+| (a) z ≥ 3 | t = 3.0 on the zavg_BEF score | zavg_BEF only | secondary, **non-blind (incident D1, §0)**: the cutoff of Part 1's released genome-wide `top_pairs.parquet`. It is reported only with the label "non-blind (D1)", never as headline P/R/F1, and enters no verdict |
 
 **Fitted thresholds** (from `fitted_rules.json`). Each threshold is followed by the train-set F1, which is in-sample.
 
@@ -177,7 +207,7 @@ For zavg_BEF, rule (a) on train gives P 0.285 and R 0.496.
 - It is the only operating point that is defined for every method on an equal footing from labels already used in development.
 - All scores are label-free functions of the same DepMap matrix, and train and test prevalences are close (0.52% vs 0.55%).
 - Rule (c) compares methods at a fixed budget, without any threshold transfer.
-- Part 1 pre-specified no label-tuned threshold. Its only fixed cutoff is z ≥ 3, and Part 1 reported precision at recall levels (kept in §5.1).
+- Part 1 pre-specified no label-tuned threshold. Its only fixed cutoff is z ≥ 3, which is non-blind after D1. Part 1 reported precision at recall levels, which are kept in §5.1.
 
 ### 5.5 Calibration
 
@@ -210,15 +240,16 @@ This is Part 1's scheme (`src/metrics.cluster_bootstrap`), re-expressed as a wei
 - **Resamples and seed:** **B = 2,000**, seed `SEEDS[0] = 0`.
 - **Paired:** all methods and statistics share the same replicates.
 - **Intervals:** 95% percentile. Two-sided p-value = 2 · min(P(Δ ≤ 0), P(Δ ≥ 0)) (Part 1 rule).
-- **Statistics bootstrapped:**
-  - per method: AP, AUROC, AP without the largest component, F1 / precision / recall at rule (b), and isotonic Brier;
-  - paired Δ:
-    - zavg_BEF − each baseline (AP, AUROC, AP without the largest component);
-    - B − each baseline (AP);
+- **Statistics bootstrapped (ITT and S1):**
+  - per method: AP, AUROC, AP without the largest component, macro per-cluster AP, F1 / precision / recall at rule (b), and isotonic Brier;
+  - **macro AP in a replicate:** a cluster drawn m_c times counts m_c times; its per-cluster AP uses the replicate pair weights. At multiplicity 1 this equals Part 1's value, which is tested;
+  - paired Δ and ratios:
+    - zavg_BEF − each baseline: AP and AUROC;
+    - zavg_BEF and B − each baseline: AP, macro AP, AP without the largest component. The ratios of the last two are the descriptive non-degradation CIs (§7.2);
     - B − zavg_BEF (AP);
     - PC-removed Pearson − zavg_BEF (AP).
+- **Strata C1–C3:** AP and ΔAP only.
 - **Fixed during resampling:** thresholds and calibrators are fitted on train and not refitted, so their sampling error is not propagated (stated as a limitation).
-- **Macro per-cluster AP** is reported as a point estimate, as in Part 1's non-inferiority checks.
 
 ### 6.2 Secondary bootstraps (AP and ΔAP only)
 - **Protein (node) bootstrap:** proteins are resampled; pair weight m_a · m_b; B = 2,000, seed 0.
@@ -227,84 +258,161 @@ This is Part 1's scheme (`src/metrics.cluster_bootstrap`), re-expressed as a wei
 ### 6.3 Monte-Carlo stability
 The cluster bootstrap of ΔAP (zavg_BEF − each baseline) is repeated with seeds 1–4 (B = 2,000 each). The verdict uses seed 0 only. The other seeds show how much the CI endpoints depend on the seed.
 
-## 7. Comparison criterion and multiplicity
+## 7. Decision rule, additional statistic and multiplicity
 
-This is the test-set version of Part 1's "clearly beats" (DESIGN v3.1 §3.7, `final_eval.decide`). Candidate c clearly beats baseline b iff all of the following hold on the **ITT set**:
-1. **Significance:** the 95% paired cluster-bootstrap CI of ΔAP = AP_c − AP_b has lower bound > 0 (seed 0, B = 2,000).
-2. **Effect size:** relative gain AP_c / AP_b − 1 ≥ 0.10 (point estimate).
-3. **Non-inferiority:** macro per-cluster AP_c ≥ 0.95 × macro AP_b **and** AP-without-largest-component_c ≥ 0.95 × that of b.
+### 7.1 Locked decision rule (Part 1, unchanged)
+
+The decision is Part 1's locked IFT "clearly beats" rule, as Part 1 defined and coded it (DESIGN v3.1 §3.7, IFT parts). It is computed by Part 1's own function `external/part1_locked/scripts/final_eval.py::decide`, called unchanged.
+
+For candidate c and baseline b:
+
+| criterion | Part 1 name | condition |
+|---|---|---|
+| (ii) effect size | `gate_ii_ift` | relative AP gain AP_c / AP_b − 1 ≥ 0.10 (point estimate) |
+| (iii) non-inferiority | — | macro per-cluster AP_c ≥ 0.95 × that of b, **and** AP-without-largest-component_c ≥ 0.95 × that of b |
 
 **Combination rules**
-- **Intersection–union:** c clearly beats the baselines iff (1)–(3) hold against **each** of GLS, Spearman and Pearson. The joint claim "beats all three" is then a test at one-sided level 2.5% with no multiplicity adjustment.
-- **Fixed sequence:** zavg_BEF (primary) first, which is confirmatory. B is confirmatory only if zavg_BEF clearly beats all three baselines; otherwise its result is exploratory. zavg_BEF stays the final method whatever the outcome.
-- **Holm-adjusted p-values** of the three primary ΔAP comparisons are reported as information.
-- **Descriptive only:** everything else (secondary metrics, S1–S3, the reference, other bootstraps) has unadjusted 95% CIs.
+- c clearly beats the baselines iff both criteria hold against **each** of GLS, Spearman and Pearson (intersection–union).
+- **Fixed sequence:** zavg_BEF first, which is confirmatory. B is confirmatory only if zavg_BEF passes, otherwise exploratory.
+- Bootstrap CIs are information only, as in Part 1.
+- Part 1's dev parts (i) and (ii-dev) were met before the lock and are cited by reference (Part 1 `results/phaseB_v2/`).
 
-**Why criterion (1) is added relative to Part 1's IFT gate.**
-- Part 1 dropped the CI requirement on the IFT only because of power: n_eff ≈ 7.7 clusters, pass probability ≤ 0.22 at a 20% true gain.
-- The test set is hu.MAP's other half of the complexes, so its size is expected to be similar to the full train set.
-- On the full train set at natural prevalence (dry run C, §10: 3,314 positives, 245 clusters, Kish n_eff = 25.8 clusters weighted by within-cluster positives, against 7.8 on the IFT), the ΔAP(zavg_BEF − GLS) cluster-bootstrap CI was [+0.078, +0.217], about half the IFT width. A test set of similar size therefore has adequate power at Part 1's observed effect sizes (+0.10 to +0.19). The test effect will probably be smaller than this in-sample value, which is why criterion (1) can still fail.
-- Criteria (2) and (3) are Part 1's IFT gate unchanged.
+**Pair set**
+- **Confirmatory verdict:** computed on **S1 (mapped-only)**. That is Part 1's evaluation universe (scorable pairs; Part 1 DESIGN §3.10), with clusters and the largest component rebuilt on S1's positives.
+- **Also reported:** the same rule on ITT.
+- **Plain AP:** `ap_ht` in Part 1's suite equals plain AP, because all weights are 1.
 
-**Secondary verdict.** The same verdict computed on S1 (mapped-only), reported as secondary.
+**One unavoidable adaptation.** Part 1's "largest component" was the train giant component; on the test it is the largest component of the test positives (§5.2).
+
+**zavg_BEF stays the final method whatever the outcome.**
+
+### 7.2 Additional pre-specified statistic (reported regardless; not part of the decision)
+
+For each candidate vs baseline, on ITT and on S1:
+- **CI-excludes-0:** whether the 95% paired cluster-bootstrap CI of ΔAP (seed 0, B = 2,000) has lower bound > 0.
+- **Joint statement:** "zavg_BEF CI-excludes-0 against all three baselines" (intersection–union, one-sided level 2.5%).
+- **Borderline flag:** set if |CI lower bound| ≤ 0.011, the largest seed-to-seed change of the CI endpoints in dry run B. Seed 0 stays decisive.
+- **Non-degradation ratios:** bootstrap 95% CIs of the ratios macro-AP_c / macro-AP_b and AP-without-largest_c / AP-without-largest_b, descriptive. The point-estimate gate of §7.1 can be decided by a small margin; it passed by about 3% (macro) in dry run C.
+- **Holm-adjusted p-values** of the three zavg_BEF ΔAP comparisons.
+
+**Why this statistic exists.**
+- Part 1 dropped the CI requirement on the IFT only because of power (n_eff ≈ 7.7 clusters).
+- The test is about the size of the train set. In dry run C (all train pairs; 245 clusters; Kish n_eff 25.8), ΔAP(zavg_BEF − GLS) was +0.144 with 95% CI [+0.078, +0.217].
+- The CI statistic is therefore informative here, but by PI decision it does not change the locked rule.
+
+**Multiplicity.** The decision is one intersection–union family plus a fixed sequence, so no adjustment is needed. Everything else (§5, S2, C1–C3, the reference, the secondary bootstraps, the ITT verdict) is descriptive, with unadjusted 95% CIs.
+
+### 7.3 Pre-written readings of the possible outcomes
+
+| outcome | reading |
+|---|---|
+| Locked rule passes **and** the CI excludes 0 against all baselines | "The final method, locked before the test files existed, outperforms Pearson, Spearman and GLS on held-out hu.MAP complexes (AP …, ΔAP vs GLS … [CI])." |
+| Locked rule passes, CI includes 0 against at least one baseline | "The pre-registered decision rule was met; the improvement over <baseline> is not statistically resolved at 95% (ΔAP … [CI])." No claim of significance against that baseline |
+| Locked rule fails | "On held-out complexes the final method did not meet the pre-registered criterion against <baseline> (failed: <criterion>)." The test numbers are reported in full. The method is not changed. Part 2 still uses zavg_BEF (locked), and its value is then argued only from Part 2's own label-free comparisons |
+
+In every case:
+- the C1–C3 strata are reported, showing whether gains hold on protein-new pairs;
+- rule (a) is reported as non-blind.
+
+**Firewall.** No Part 2 parameter or claim may cite or be tuned on test-look results, except the final reporting of this evaluation.
 
 ## 8. Execution
 
-### 8.1 Before the freeze (development data only; already run)
+### 8.1 Before the freeze (development data only; already run by agents)
 ```bash
 scripts/20_score_test_pairs.sh train                        # locked predictor on all train pairs, ~3 min
 .venv/bin/python scripts/21_evaluate_test.py --mode fit     # -> results/test_eval/fitted_rules.json, ~6 s
 scripts/20_score_test_pairs.sh dryrun                       # Part 1 dev + IFT pairs, ~5.5 min
 .venv/bin/python scripts/21_evaluate_test.py --mode dryrun  # -> results/test_eval_dryrun/
-.venv/bin/python -m pytest tests/test_testeval.py -q        # 29 tests, ~10 s
+.venv/bin/python -m pytest tests/test_testeval.py -q
 ```
 
-### 8.2 The look (once, after the freeze commit)
+### 8.2 Freeze and the look (PI only, in this order)
 ```bash
-git add docs/TEST_PROTOCOL.md src/testeval scripts tests results/test_eval/fitted_rules.json results/test_eval/score_records/train results/test_eval_dryrun
-git commit -m "Freeze test protocol v1.0"                                       # = protocol commit
-scripts/20_score_test_pairs.sh test                         # label-free scoring of the test pairs (~3 min); refuses unless frozen
-.venv/bin/python scripts/21_evaluate_test.py --mode test    # THE single look (~20-25 min; dry run C: 17 min for 635k pairs)
+# (1) freeze: edit the header line to "**FROZEN v1.1** (date)", then
+.venv/bin/python scripts/22_freeze_protocol.py              # writes docs/TEST_PROTOCOL.FROZEN (refuses on the pre-freeze status word or a test-file hash mismatch)
+git add docs/TEST_PROTOCOL.md docs/TEST_PROTOCOL.FROZEN && git commit -m "Freeze test protocol v1.1"
+#     -> report the commit hash and the marker SHA-256 to the user in chat (notarisation)
+# (2) label-free scoring of the test pairs (refuses unless frozen), ~3 min
+scripts/20_score_test_pairs.sh test
+# (3) look intent: no label is read; writes an 'intent' record to the git-tracked results/test_eval/looks.jsonl
+.venv/bin/python scripts/21_evaluate_test.py --mode test --intent
+git add results/test_eval/looks.jsonl results/test_eval/score_records/test && git commit -m "Test look intent"
+# (4) THE look (refuses without a committed intent, or if any earlier look exists on disk or in git history), ~30-35 min
+.venv/bin/python scripts/21_evaluate_test.py --mode test --run
 git add results/test_eval && git commit -m "Test look: results (unchanged)"
+#     -> report the results commit hash and the SHA-256 of test_results.json to the user in chat
 ```
 
 **Outputs**
-- `data_cache/test_eval/scores/test/<method>.tsv` (gitignored);
-- `results/test_eval/score_records/test/<method>.run.json`;
-- `results/test_eval/looks.jsonl`: a `started` record written **before** any test label is read, and a `done` record;
-- `results/test_eval/test_results.json`, which holds:
-  - the protocol commit, HEAD and the SHA-256 of this file;
-  - the SHA-256 of `fitted_rules.json`;
-  - the Part 1 lock state;
-  - the SHA-256 of the input files and of every score TSV;
-  - the audit counts and all results;
-  - runtimes;
+- `results/test_eval/looks.jsonl` (git-tracked): `intent`, then `started` (written **before** any label is read), then `done`.
+- `results/test_eval/test_results.json`: protocol and marker commits, marker SHA-256, the SHA-256 of `fitted_rules.json`, the Part 1 lock state, the input and score-TSV SHA-256s, audit counts, all results, the verdict summary and runtimes.
 - `results/test_eval/figures/reliability_test_itt.png`.
+- Score TSVs: `data_cache/test_eval/scores/test/` (gitignored); their SHA-256 are recorded.
 
-### 8.3 Single look and deviations
+### 8.3 Single look, re-runs and deviations
 
-**Single look**
-- `--mode test` refuses to run if any test look is already logged.
-- A re-run is possible only with `--relook-reason "..."`, and only for a crash or I/O failure. It is logged. If a completed (`done`) look exists, its result is marked `confirmatory: false`.
-- A changed protocol commit after a logged look is refused.
-- Results are committed as produced.
+**Refusals**
+- `--run` refuses if a `started` or `done` record exists in the ledger on disk **or in any commit of its git history**, or if `test_results.json` exists on disk or in git history.
+- This also closes the partial-look gap, where a crash happens after results are written but before `done`.
 
-**Fixes after the look**
-- A bug found after the look in harness code that does not change any definition here is fixed in a new commit. The look-1 numbers and the corrected numbers are both reported, as a deviation in `results/test_eval/DEVIATIONS.md`.
-- A Part 1 bug is reported, not fixed (D0).
+**Re-runs**
+- A re-run needs `--relook-reason`. It is logged and **automatically `confirmatory: false`**. The first look's results are reported as the confirmatory ones, if they exist.
+- If the first run crashed before writing any results, the re-run is still marked non-confirmatory, and the crash is reported.
 
-**Independent verification.** An agent that did not write the harness re-derives AP, AUROC and ΔAP from the score TSVs and the label files without importing `testeval` (Part 1 practice).
+**Fixes after the look.** A bug found after the look in harness code that does not change any definition here is fixed in a new commit. The original and corrected numbers are both reported, in `results/test_eval/DEVIATIONS.md`. A Part 1 bug is reported, not fixed (D0).
 
-## 9. Decisions for the PI before freezing
+**Independent verification (pre-registered)**
+- **Verifier A** is an agent that did not write the harness. It receives only this frozen protocol, the label files and the score TSVs, and implements independently, without importing `testeval`:
+  - R1–R5 and the floor rule;
+  - the test clusters (Part 1 `build_clusters` may be imported);
+  - AP, AUROC, macro AP and AP without the largest component;
+  - the seed-0 cluster bootstrap;
+  - the §7.1 verdict and the §7.2 statistic.
+- Verifier A reports **before** opening `test_results.json`.
+- **Tolerances:** point metrics 1e-9; bootstrap CI endpoints equal; the verdict identical.
+- **Verifier B** re-scores a 1% random sample of the test pairs (seed 0) from the raw CSV through the locked predictor, in a separate file, and checks the scores are identical (batch invariance, §10.I).
 
-1. **CI requirement (§7.1)** in the confirmatory criterion: keep (recommended, given dry-run C power), or revert to Part 1's IFT gate (§7.2 and §7.3 only).
-2. **R2 / R4:**
-   - R2: self pairs excluded (recommended) or kept at the floor.
-   - R4: train-overlap pairs kept in the primary analysis with S2 as sensitivity (recommended), or excluded from the primary.
-3. **Primary operating point:** rule (b) F1-max on train (recommended) vs rule (c) top-k.
-4. **Fitted rules:** freeze `results/test_eval/fitted_rules.json` (train-only fit, already produced) in the same commit (recommended), so that no fitting happens at look time.
-5. **Part 1 audit:** finish `docs/part1_audit.md` (no test access during Part 1) before the look, so that the audit cannot be influenced by test results.
-6. **Disclosure:** the harness author printed the first 6 lines of the positive test file (format check, §0). Record this in the freeze note.
+### 8.4 What the single-look guarantee is (and is not)
+
+**The guarantee is procedural, not technical.**
+- The test labels are plain files that any process with file access can read.
+- Genome-wide label-free scores covering all test pairs already exist (T3), so test AP could be computed without this harness.
+- Incident D1 shows this risk is real.
+
+**Mitigations**
+1. Every agent brief forbids reading test files and computing test metrics.
+2. The freeze marker hashes the harness, the protocol, the rules and the test files.
+3. The look ledger is git-tracked, and the intent is committed before labels are read.
+4. Refusal on any earlier look on disk or in git history; any re-run is automatically non-confirmatory.
+5. The protocol, intent and results hashes are reported to the user in chat, outside the agents' reach.
+6. A recursive grep test limits references to the test files to the entry points (plus the completed audit script).
+7. `--mode dryrun` refuses inputs that are not train pairs.
+8. All prior contact is disclosed in §0.
+9. **Recommended, user action:** move the two test files out of the project (escrow) until the freeze commit has been reported. The look re-checks their SHA-256 against DATA.md.
+
+## 9. Choices fixed in v1.1 (no open options) and changelog
+
+**Fixed choices**
+- **Pair rules:** R2 excludes self pairs; R4 keeps train-overlap pairs (none exist).
+- **Primary operating point:** rule (b), F1-max on train.
+- **Rule (a) z ≥ 3:** non-blind, secondary.
+- **Fitted rules:** `fitted_rules.json` is frozen in the marker; no fitting happens at look time.
+- **Decision:** the Part 1 locked rule on S1, plus the CI statistic, both reported regardless.
+
+**v1.0 → v1.1 (design review round 1; the item-by-item table is in `docs/reviews/round1_protocol_response.md`)**
+
+| area | change |
+|---|---|
+| freeze | marker file with hashes and a header check; `require_frozen` re-verifies every hash and a clean `tests/` |
+| look | two steps, intent then run; git-tracked ledger; refusal on prior looks found in git history; re-runs automatically non-confirmatory |
+| §0 | lists T1 (audit counts) and D1; audit marked PASS; rule (a) non-blind |
+| §7 | the decision is Part 1's locked rule (Part 1's own `decide`) on S1; the CI-excludes-0 criterion becomes an additional statistic, with a borderline flag and non-degradation CIs; outcome readings written in advance |
+| strata | S3 replaced by the audit strata C1–C3; S2 reduced to an automatic check |
+| bootstrap | macro AP added |
+| verification | verifier specification and tolerances |
+| §8.4 | honest statement of the procedural guarantee |
+| post hoc reference | reporting language fixed |
 
 ## 10. Dry run on development data (`results/test_eval_dryrun/`, no test data)
 
@@ -352,7 +460,11 @@ The IFT pairs were re-derived from the train files and Part 1's hash-checked ass
 
 **Bootstrap sensitivity.** CI endpoints vary by ≤ 0.011 across seeds 1–4. The protein-bootstrap CI is narrower ([+0.046, +0.162] vs GLS) and the pair-bootstrap CI narrower still ([+0.075, +0.124]), as expected.
 
-**Verdict.** zavg_BEF "clearly beats" all three baselines under §7. B fails against GLS on macro-AP non-inferiority (0.288 < 0.95 × 0.359), as in Part 1.
+**Verdict**
+- **Locked rule (§7.1), S1 and ITT:** zavg_BEF passes against all three baselines. B fails against GLS on macro-AP non-inferiority (S1 0.297 < 0.95 × 0.369), as in Part 1 look 1.
+- **CI statistic (§7.2):** the CI excludes 0 against all baselines for both candidates; no comparison is borderline.
+- **Non-degradation ratio, zavg_BEF / GLS macro AP:** 0.99 [0.84, 1.31], wide on the IFT.
+- **Strata:** all IFT pairs are C3 relative to the dev positives (protein-disjoint split), so the C3 AP equals the ITT AP.
 
 **Rule (b) on the IFT**
 
@@ -393,16 +505,19 @@ Platt is clearly worse than isotonic: its single-slope logistic misfits the uppe
 
 **ΔAP(zavg_BEF − GLS).** +0.144 [+0.078, +0.217].
 
-**Macro AP.** zavg_BEF 0.298 vs GLS 0.291 (non-inferiority passes with little margin).
+**Macro AP.** zavg_BEF 0.298 vs GLS 0.291. Ratio 1.03 [0.96, 1.15]. The locked rule passes for zavg_BEF; B fails against GLS on macro AP.
 
 **Runtime** (8-core laptop)
 
 | step | time |
 |---|---|
 | scoring 635k pairs, all 6 methods | 183 s |
-| evaluation, ITT with all bootstraps | 830 s |
-| mapped-only | 144 s |
-| total | ~17 min |
+| evaluation, ITT with all bootstraps, including macro AP | 1,017 s |
+| S1 (rebuilt clusters, full cluster bootstrap) | 492 s |
+| stratum C1 | 191 s |
+| total, about 28 min of compute | ≈ 1,700 s |
+
+The look on ~600k test pairs is expected to take about 30–35 min, including C1–C3.
 
 ### I. Batch invariance
 
@@ -410,7 +525,7 @@ Every IFT pair has the same score (max |Δ| = 0) and the same mapped flag whethe
 
 ### Tests
 
-`tests/test_testeval.py` has 29 tests, all passing. They cover:
+`tests/test_testeval.py` has 31 tests, all passing. They cover:
 - hand-computed AP, AUROC and F1;
 - tie blocks;
 - equality with sklearn and with Part 1;
@@ -421,5 +536,8 @@ Every IFT pair has the same score (max |Δ| = 0) and the same mapped flag whethe
 - a positive control (perfect scorer → AP 1);
 - negative controls (random scores and label shuffle → AP ≈ prevalence);
 - the pair rules R1–R4;
-- the full look on toy files, including refusal of a second look;
+- the full two-step look on toy files: refusal without an intent, refusal without a committed intent, refusal of a second look even after the ledger is wiped, and an automatically non-confirmatory re-run;
+- the freeze gate: a draft header and changed hashes are refused, and the current repository is refused;
+- the locked verdict through Part 1's `decide`;
+- the bootstrap macro AP equals Part 1's value;
 - guards that the test files are referenced only by the entry points and that the imported `src` is the locked clone.

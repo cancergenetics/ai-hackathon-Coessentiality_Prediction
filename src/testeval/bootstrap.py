@@ -17,16 +17,29 @@ import numpy as np
 from testeval.part1 import metrics as p1m
 
 
+class ClusterResampler:
+    """Iterable of per-pair weights; ``.m`` holds the current cluster multiplicities (None before the first
+    replicate) and ``.uniq`` the cluster ids, so cluster-level statistics (macro AP) can use them."""
+
+    def __init__(self, ca, cb, n_boot: int, seed: int):
+        ca, cb = np.asarray(ca), np.asarray(cb)
+        self.uniq, inv = np.unique(np.r_[ca, cb], return_inverse=True)
+        self.ia, self.ib = inv[:len(ca)], inv[len(ca):]
+        self.same = self.ia == self.ib
+        self.n_boot, self.seed, self.m = n_boot, seed, None
+
+    def __iter__(self):
+        C = len(self.uniq)
+        rng = np.random.default_rng(self.seed)
+        for _ in range(self.n_boot):
+            m = np.bincount(rng.integers(0, C, C), minlength=C).astype(np.float64)
+            self.m = m
+            yield np.where(self.same, m[self.ia], m[self.ia] * m[self.ib])
+        self.m = None
+
+
 def cluster_weights(ca, cb, n_boot: int, seed: int):
-    ca, cb = np.asarray(ca), np.asarray(cb)
-    uniq, inv = np.unique(np.r_[ca, cb], return_inverse=True)
-    ia, ib = inv[:len(ca)], inv[len(ca):]
-    same = ia == ib
-    C = len(uniq)
-    rng = np.random.default_rng(seed)
-    for _ in range(n_boot):
-        m = np.bincount(rng.integers(0, C, C), minlength=C).astype(np.float64)
-        yield np.where(same, m[ia], m[ia] * m[ib])
+    return iter(ClusterResampler(ca, cb, n_boot, seed))
 
 
 def protein_weights(pa, pb, n_boot: int, seed: int):
@@ -47,6 +60,9 @@ def pair_weights(y, n_boot: int, seed: int):
 def _flat(fns: dict, w) -> dict:
     out = {}
     for name, f in fns.items():
+        if name.startswith("*"):          # function returning already-flat 'method|statistic' keys
+            out.update(f(w))
+            continue
         for k, v in f(w).items():
             out[f"{name}|{k}"] = v
     return out

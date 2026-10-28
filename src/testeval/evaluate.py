@@ -19,6 +19,7 @@ from testeval import bootstrap as B
 from testeval import calibration as C
 from testeval import pairs as P
 from testeval.metrics import Ranked, auroc, top_cluster_ids
+from testeval import part1
 from testeval.part1 import SEEDS, clusters as p1c, data as p1d, metrics as p1m, universe as p1u
 
 PRIMARY = "zavg_BEF"
@@ -31,6 +32,7 @@ PREDICTOR_ARG = {"zavg_BEF": "zavg:B,E,F", "B": "single", "gls_signed": "gls", "
 Z_RULE = {PRIMARY: 3.0}            # Part 1 release cutoff (results/predictions/README.md: top_pairs = zavg_BEF >= 3)
 MARGIN, NI_RATIO = 0.10, 0.95      # Part 1 DESIGN §3.7 (ii) relative gain >= 10 %, (iii) non-inferiority >= 0.95 x
 NI_METRICS = ("macro_cluster_ap", "ap_no_largest_component")
+MC_SPREAD = 0.011                  # dry run B: max seed-to-seed change of the dAP CI endpoints -> 'borderline' band
 N_BOOT = 2000
 BOOT_SEED = SEEDS[0]               # primary bootstrap seed; SEEDS[1:] = Monte-Carlo stability check
 N_TOP = 10
@@ -221,37 +223,72 @@ def comparisons(primary_only=False):
         return d
     d += [(f"{SECONDARY}|ap", f"{b}|ap") for b in BASELINES]
     d += [(f"{SECONDARY}|ap", f"{PRIMARY}|ap"), (f"{REFERENCE}|ap", f"{PRIMARY}|ap")]
-    d += [(f"{PRIMARY}|{k}", f"{b}|{k}") for b in BASELINES for k in ("auroc", "ap_no_largest_component")]
+    d += [(f"{PRIMARY}|auroc", f"{b}|auroc") for b in BASELINES]
+    d += [(f"{c}|{k}", f"{b}|{k}") for c in (PRIMARY, SECONDARY) for b in BASELINES
+          for k in ("macro_cluster_ap", "ap_no_largest_component")]
     return d
 
 
-def bootstraps(es: EvalSet, cl: dict, rules: dict | None, n_boot=N_BOOT, seed=BOOT_SEED, full=True,
+def _macro_fn(y, scores: dict, ca, cb, res: B.ClusterResampler):
+    """Bootstrap version of Part 1 ``macro_cluster_ap`` (unweighted mean over clusters whose touching pairs hold >= 1
+    positive and >= 1 negative of per-cluster AP with the pair weights). A cluster drawn m_c times counts m_c times;
+    with all multiplicities 1 it equals Part 1's value (tested)."""
+    groups = p1m._groups_touching(np.asarray(ca), np.asarray(cb))
+    cl = []
+    for c, ix in groups.items():
+        if y[ix].any() and (~y[ix]).any():
+            k = int(np.searchsorted(res.uniq, c))
+            cl.append((k, ix, {m: Ranked(y[ix], s[ix]) for m, s in scores.items()}))
+
+    def f(w):
+        m = res.m if res.m is not None else np.ones(len(res.uniq))
+        num = {k: 0.0 for k in scores}
+        den = {k: 0.0 for k in scores}
+        for k, ix, rk in cl:
+            mc = m[k]
+            if mc == 0:
+                continue
+            wi = w[ix]
+            for name, r in rk.items():
+                a = r.ap(wi)
+                if np.isfinite(a):
+                    num[name] += mc * a
+                    den[name] += mc
+        return {f"{n}|macro_cluster_ap": (num[n] / den[n] if den[n] > 0 else np.nan) for n in scores}
+    return f
+
+
+def bootstraps(es: EvalSet, cl: dict, rules: dict | None, n_boot=N_BOOT, seed=BOOT_SEED, level="all",
                mc_seeds=()) -> dict:
-    """Primary: paired cluster bootstrap (all statistics; AP only when full=False, i.e. for the secondary analysis
-    sets). full=True adds the protein-level and pair-level bootstraps (AP).
-    mc_seeds: extra cluster-bootstrap seeds (AP of primary and baselines only) for Monte-Carlo stability."""
+    """level 'all' (primary ITT set): paired cluster bootstrap of every statistic (AP, AUROC, AP without the largest
+    component, macro per-cluster AP, F1/P/R at rule b, isotonic Brier) + protein-level and pair-level bootstraps (AP)
+    + Monte-Carlo seeds. 'cluster' (mapped-only, the locked-verdict set): the cluster bootstrap of every statistic.
+    'ap' (strata): cluster bootstrap of AP and paired dAP only."""
     y, w = es.y, es.w
     keep_nl = (cl["comp_a"] != cl["largest"]) & (cl["comp_b"] != cl["largest"])
     present = [m for m in METHODS if m in es.scores]
     out, rt = {}, {}
-    fns = {}
-    for m in present:
-        thr = rules["methods"][m]["f1max"]["threshold"] if rules else None
-        cal_p = None
-        if rules:
-            rm = rules["methods"][m]
-            cal_p = C.apply(rm["isotonic"], C.floor_to_fit(es.scores[m], es.mapped[m], rm["fit_floor"]))
-        fns[m] = _method_fn(y, es.scores[m], w, thr, keep_nl, cal_p)
+    res = B.ClusterResampler(cl["ca"], cl["cb"], n_boot, seed)
     diffs = [d for d in comparisons() if d[0].split("|")[0] in present and d[1].split("|")[0] in present]
-    if not full:                     # secondary analysis sets: AP and paired ΔAP only
+    if level == "ap":
         fns = {m: _ap_fn(y, es.scores[m]) for m in present}
         diffs = [d for d in diffs if d[0].endswith("|ap") and d[1].endswith("|ap")]
+    else:
+        fns = {}
+        for m in present:
+            thr = rules["methods"][m]["f1max"]["threshold"] if rules else None
+            cal_p = None
+            if rules:
+                rm = rules["methods"][m]
+                cal_p = C.apply(rm["isotonic"], C.floor_to_fit(es.scores[m], es.mapped[m], rm["fit_floor"]))
+            fns[m] = _method_fn(y, es.scores[m], w, thr, keep_nl, cal_p)
+        fns["*macro"] = _macro_fn(y, {m: es.scores[m] for m in present}, cl["ca"], cl["cb"], res)
     t0 = time.perf_counter()
-    out["cluster"] = B.run(B.cluster_weights(cl["ca"], cl["cb"], n_boot, seed), w, fns, diffs)
+    out["cluster"] = B.run(res, w, fns, diffs)
     out["cluster"].update(scheme="paired cluster bootstrap (Part 1 src/metrics.cluster_bootstrap scheme)", seed=seed,
-                          n_units=int(len(np.unique(np.r_[cl["ca"], cl["cb"]]))))
+                          n_units=int(len(res.uniq)))
     rt["cluster"] = round(time.perf_counter() - t0, 1)
-    if full:
+    if level == "all":
         ap_fns = {m: _ap_fn(y, es.scores[m]) for m in present}
         apd = [d for d in diffs if d[0].endswith("|ap") and d[1].endswith("|ap")]
         t0 = time.perf_counter()
@@ -274,51 +311,61 @@ def bootstraps(es: EvalSet, cl: dict, rules: dict | None, n_boot=N_BOOT, seed=BO
     return out
 
 
-def verdict(pm: dict, boot: dict) -> dict:
-    """docs/TEST_PROTOCOL.md §7: per candidate c (fixed sequence zavg_BEF, then B) and baseline b:
-    (1) 95% paired cluster-bootstrap CI of dAP excludes 0 (lower bound > 0); (2) relative AP gain >= 10% (point);
-    (3) non-inferiority: macro per-cluster AP and AP without the largest component >= 0.95 x baseline.
-    c clearly beats the baselines iff all three hold vs every baseline (intersection-union)."""
-    pairs, cands = {}, {}
-    primary_ok = None
-    for i, c in enumerate((PRIMARY, SECONDARY)):
+def locked_verdict(pm: dict, boot: dict) -> dict:
+    """Part 1's locked IFT decision rule, computed by Part 1's own ``scripts/final_eval.decide`` (DESIGN v3.1 §3.7, IFT
+    parts): per candidate c (fixed sequence zavg_BEF, then B) and baseline b, relative AP gain >= 10% (point
+    estimate) and non-inferiority (macro per-cluster AP and AP without the largest component >= 0.95 x baseline);
+    intersection-union over the three baselines; bootstrap CIs are information only. Inputs: Part 1 metric_suite
+    values (ap_ht = AP with this set's design weights) and the paired cluster bootstrap in Part 1's format."""
+    fe = part1.final_eval()
+    cands = [c for c in (PRIMARY, SECONDARY) if c in pm]
+    per = {m: pm[m]["part1_metric_suite"] for m in (*cands, *BASELINES)}
+    diff = {}
+    for c in cands:
+        for b in BASELINES:
+            d = boot["cluster"]["diff"][f"{c}|ap - {b}|ap"]
+            diff[f"{c}-{b}"] = {k: d[k] for k in ("diff", "ci_low", "ci_high", "rel_gain", "rel_ci_low", "rel_ci_high",
+                                                  "p_two_sided")}
+    out = fe.decide(per, dict(diff=diff), cands, list(BASELINES))
+    out["source"] = "external/part1_locked/scripts/final_eval.py::decide (called unchanged)"
+    return out
+
+
+def ci_statistic(pm: dict, boot: dict) -> dict:
+    """Additional pre-specified statistic (TEST_PROTOCOL §7.2), reported regardless of the locked verdict: for each
+    candidate vs baseline, whether the 95% paired cluster-bootstrap CI of dAP excludes 0, 'borderline' if the lower
+    bound lies within MC_SPREAD of 0, and the descriptive bootstrap CIs of the non-degradation ratios."""
+    out = {}
+    cd = boot["cluster"]["diff"]
+    for c in (PRIMARY, SECONDARY):
         if c not in pm:
             continue
         for b in BASELINES:
-            d = boot["cluster"]["diff"][f"{c}|ap - {b}|ap"]
-            rel = pm[c]["ap"] / pm[b]["ap"] - 1
-            ni = {}
+            d = cd[f"{c}|ap - {b}|ap"]
+            ratios = {}
             for k in NI_METRICS:
-                cv, bv = pm[c][k], pm[b][k]
-                ok = cv is not None and bv is not None and np.isfinite(cv) and np.isfinite(bv)
-                ni[k] = dict(candidate=cv, baseline=bv, threshold=NI_RATIO * bv if ok else None,
-                             passed=bool(ok and cv >= NI_RATIO * bv))
-            crit = dict(ci_excludes_0=bool(d["ci_low"] > 0), rel_gain_ge_10pct=bool(rel >= MARGIN),
-                        non_inferiority=bool(all(v["passed"] for v in ni.values())))
-            pairs[f"{c} vs {b}"] = dict(ap_candidate=pm[c]["ap"], ap_baseline=pm[b]["ap"], diff=d["diff"],
-                                       ci_low=d["ci_low"], ci_high=d["ci_high"], p_two_sided=d["p_two_sided"],
-                                       rel_gain=rel, ni=ni, criteria=crit, passes=bool(all(crit.values())))
-        beats = all(pairs[f"{c} vs {b}"]["passes"] for b in BASELINES)
-        if i == 0:
-            primary_ok, status = beats, "confirmatory"
-        else:
-            status = "confirmatory" if primary_ok else "exploratory"
-        cands[c] = dict(role="primary" if i == 0 else "secondary", status=status, clearly_beats=bool(beats))
-    pv = {k: v["p_two_sided"] for k, v in pairs.items() if k.startswith(PRIMARY)}
-    return dict(rule=verdict.__doc__.strip(), pairs=pairs, candidates=cands,
-                holm_adjusted_p_primary_info=B.holm(pv) if pv else {})
+                r = cd.get(f"{c}|{k} - {b}|{k}")
+                if r:
+                    ratios[k] = dict(ratio=1 + r["rel_gain"], ci_low=1 + r["rel_ci_low"], ci_high=1 + r["rel_ci_high"])
+            out[f"{c} vs {b}"] = dict(diff=d["diff"], ci_low=d["ci_low"], ci_high=d["ci_high"],
+                                     p_two_sided=d["p_two_sided"], ci_excludes_0=bool(d["ci_low"] > 0),
+                                     borderline=bool(abs(d["ci_low"]) <= MC_SPREAD), non_degradation_ratio_ci=ratios)
+    pv = {k: v["p_two_sided"] for k, v in out.items() if k.startswith(PRIMARY)}
+    joint = {c: all(out[f"{c} vs {b}"]["ci_excludes_0"] for b in BASELINES) for c in (PRIMARY, SECONDARY) if c in pm}
+    return dict(pairs=out, ci_excludes_0_vs_all_baselines=joint, holm_adjusted_p_primary=B.holm(pv) if pv else {})
 
 
-def evaluate(es: EvalSet, rules: dict | None, cl: dict, ess=None, n_boot=N_BOOT, full=True, mc_seeds=()) -> dict:
+def evaluate(es: EvalSet, rules: dict | None, cl: dict, ess=None, n_boot=N_BOOT, level="all", mc_seeds=()) -> dict:
     t0 = time.perf_counter()
     pm = point_metrics(es, cl, ess, rules)
     t1 = time.perf_counter()
-    bs = bootstraps(es, cl, rules, n_boot=n_boot, full=full, mc_seeds=mc_seeds)
+    bs = bootstraps(es, cl, rules, n_boot=n_boot, level=level, mc_seeds=mc_seeds)
     t2 = time.perf_counter()
     res = dict(set=es.name, n_pos=int(es.y.sum()), n_neg=int((~es.y).sum()),
                prevalence_design=weighted_prevalence(es.y, es.w), prevalence_unweighted=float(es.y.mean()),
                n_unmapped_any=int((~es.mapped_all).sum()), cluster_stats=cl["stats"], metrics=pm, bootstrap=bs)
     if all(m in pm for m in (PRIMARY, *BASELINES)):
-        res["verdict"] = verdict(pm, bs)
+        res["locked_verdict"] = locked_verdict(pm, bs)
+        res["ci_statistic"] = ci_statistic(pm, bs)
     res["runtime_s"] = dict(point_metrics=round(t1 - t0, 1), bootstraps=round(t2 - t1, 1))
     return res

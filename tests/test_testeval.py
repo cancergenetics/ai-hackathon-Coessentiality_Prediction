@@ -194,7 +194,8 @@ def test_bootstrap_ci_coverage_sanity():
     rng = np.random.default_rng(123)
 
     def draw(n_cl, rng):
-        size = rng.integers(2, 9, n_cl)
+        # skewed sizes like the hu.MAP train clusters (most 2-6 proteins, a few up to 30)
+        size = np.minimum(2 + rng.geometric(0.25, n_cl), 30)
         cl = np.repeat(np.arange(n_cl), size * (size - 1) // 2)
         eff = rng.normal(0, 0.8, n_cl)[cl]
         y = rng.random(len(cl)) < 0.3
@@ -327,8 +328,13 @@ def test_pipeline_end_to_end_toy(tmp_path, monkeypatch):
     assert "rule_a_z3" not in pm["gls_signed"]["decision_rules"]
     assert res["bootstrap"]["cluster"]["n_boot"] == 50
     assert "zavg_BEF|ap - gls_signed|ap" in res["bootstrap"]["cluster"]["diff"]
-    v = res["verdict"]
-    assert v["candidates"]["zavg_BEF"]["status"] == "confirmatory"
+    v = res["locked_verdict"]
+    assert v["candidates"]["zavg_BEF"]["status"] == "confirmatory" and "source" in v
+    assert set(res["ci_statistic"]["pairs"]) >= {"zavg_BEF vs gls_signed", "B vs pearson_signed"}
+    # bootstrap macro AP at multiplicity 1 equals Part 1's macro_cluster_ap
+    for m in E.METHODS:
+        assert res["bootstrap"]["cluster"]["stat"][f"{m}|macro_cluster_ap"]["point"] == pytest.approx(
+            pm[m]["macro_cluster_ap"], abs=1e-12)
     # mapped-only subset drops the unmapped pairs
     sub = es.subset(es.mapped_all, "m")
     assert len(sub.table) == int(es.mapped_all.sum())
@@ -342,41 +348,86 @@ def test_cluster_construction_requires_hashseed(tmp_path, monkeypatch):
         E.annotate_clusters(es)
 
 
-def test_verdict_logic_fixed_sequence():
-    def pm(ap, macro, nl):
-        return dict(ap=ap, macro_cluster_ap=macro, ap_no_largest_component=nl)
-    metrics = {"zavg_BEF": pm(0.40, 0.30, 0.40), "B": pm(0.36, 0.20, 0.38),
-               "gls_signed": pm(0.30, 0.31, 0.30), "spearman_signed": pm(0.20, 0.25, 0.2),
-               "pearson_signed": pm(0.19, 0.24, 0.2)}
+def _pm(ap, macro, nl):
+    return dict(ap=ap, macro_cluster_ap=macro, ap_no_largest_component=nl,
+                part1_metric_suite=dict(ap_ht=ap, macro_cluster_ap=macro, ap_ht_no_largest_component=nl))
+
+
+def test_locked_verdict_is_part1_rule_and_ci_statistic_is_separate():
+    metrics = {"zavg_BEF": _pm(0.40, 0.30, 0.40), "B": _pm(0.36, 0.20, 0.38),
+               "gls_signed": _pm(0.30, 0.31, 0.30), "spearman_signed": _pm(0.20, 0.25, 0.2),
+               "pearson_signed": _pm(0.19, 0.24, 0.2)}
     diff = {}
     for c in ("zavg_BEF", "B"):
         for b in E.BASELINES:
-            diff[f"{c}|ap - {b}|ap"] = dict(diff=0.1, ci_low=0.01, ci_high=0.2, p_two_sided=0.01)
-    v = E.verdict(metrics, dict(cluster=dict(diff=diff)))
-    assert v["pairs"]["zavg_BEF vs gls_signed"]["passes"]                   # macro 0.30 >= 0.95 * 0.31
-    assert v["candidates"]["zavg_BEF"]["clearly_beats"]
-    assert not v["pairs"]["B vs gls_signed"]["passes"]                      # macro 0.20 < 0.2945
-    assert v["candidates"]["B"]["status"] == "confirmatory" and not v["candidates"]["B"]["clearly_beats"]
-    diff["zavg_BEF|ap - gls_signed|ap"]["ci_low"] = -0.01                   # CI includes 0 -> primary fails
-    v = E.verdict(metrics, dict(cluster=dict(diff=diff)))
-    assert not v["candidates"]["zavg_BEF"]["clearly_beats"]
+            a1, a0 = metrics[c]["ap"], metrics[b]["ap"]
+            diff[f"{c}|ap - {b}|ap"] = dict(diff=a1 - a0, ci_low=-0.01, ci_high=0.2, rel_gain=a1 / a0 - 1,
+                                            rel_ci_low=-0.05, rel_ci_high=0.9, p_two_sided=0.08)
+    boot = dict(cluster=dict(diff=diff))
+    v = E.locked_verdict(metrics, boot)
+    # Part 1 rule: point gain >= 10% and NI; the CI (here including 0) is information only
+    assert v["pairs"]["zavg_BEF-gls_signed"]["passes"]                      # macro 0.30 >= 0.95 * 0.31
+    assert v["candidates"]["zavg_BEF"]["clearly_beats_ift"]
+    assert not v["pairs"]["B-gls_signed"]["passes"]                         # macro 0.20 < 0.2945
+    assert v["candidates"]["B"]["status"] == "confirmatory" and not v["candidates"]["B"]["clearly_beats_ift"]
+    ci = E.ci_statistic(metrics, boot)
+    assert not ci["ci_excludes_0_vs_all_baselines"]["zavg_BEF"]
+    assert ci["pairs"]["zavg_BEF vs gls_signed"]["borderline"]              # |ci_low| = 0.01 <= 0.011
+    metrics["zavg_BEF"] = _pm(0.32, 0.30, 0.40)                             # rel gain vs GLS 6.7% -> primary fails
+    for b in E.BASELINES:
+        diff[f"zavg_BEF|ap - {b}|ap"]["rel_gain"] = 0.32 / metrics[b]["ap"] - 1
+    v = E.locked_verdict(metrics, boot)
+    assert not v["candidates"]["zavg_BEF"]["clearly_beats_ift"]
     assert v["candidates"]["B"]["status"] == "exploratory"
 
 
 # ------------------------------------------------------------------------------------------- process guards
 def test_only_entry_points_touch_test_files():
-    """Test-file names appear only in testeval/paths.py; test_files() is called only by the two entry points."""
+    """Test-file names appear only in testeval/paths.py (and the already-run Part 1 audit script, which reads them for
+    set membership only); test_files() is called only by the entry points and the freeze gate. Recursive scan."""
     hits, calls = [], []
-    for p in list((ROOT / "src").rglob("*.py")) + list((ROOT / "scripts").glob("*")) + list((ROOT / "tests").glob("*.py")):
-        if p.is_dir() or p.name == "test_testeval.py":
+    files = [p for d in ("src", "scripts", "tests") for p in (ROOT / d).rglob("*")
+             if p.is_file() and p.suffix in (".py", ".sh", "") and "__pycache__" not in p.parts]
+    for p in files:
+        if p.name == "test_testeval.py":
             continue
         txt = p.read_text(errors="ignore")
         if re.search(r"Test_(positive|negative)", txt):
             hits.append(p.name)
         if "test_files(" in txt:
             calls.append(p.name)
-    assert hits == ["paths.py"]
-    assert sorted(set(calls) - {"paths.py"}) == ["19_make_pair_files.py", "21_evaluate_test.py"]
+    assert sorted(hits) == ["audit_part1.py", "paths.py", "protocol.py"]          # protocol.py: DATA.md hash parse
+    assert sorted(set(calls) - {"paths.py"}) == ["19_make_pair_files.py", "21_evaluate_test.py", "protocol.py"]
+
+
+def test_freeze_gate_rejects_drafts_and_hash_changes():
+    from testeval import protocol as PR
+    with pytest.raises(SystemExit):
+        PR.check_protocol_text("# TEST_PROTOCOL\n**DRAFT v1.1**\n")
+    with pytest.raises(SystemExit):
+        PR.check_protocol_text("# TEST_PROTOCOL\n**FROZEN v1.1**\nthis was a draft once\n")
+    with pytest.raises(SystemExit):
+        PR.check_protocol_text("# TEST_PROTOCOL\n**Version 1.1**\n")
+    PR.check_protocol_text("# TEST_PROTOCOL\n**FROZEN v1.1**\nbody\n")
+    m = dict(files={"a": "1", "b": "2"}, test_files={"t": "x"}, pip_freeze_sha256="p", part1_locked_commit="c")
+    assert PR.verify_marker(m, m) == []
+    errs = PR.verify_marker(m, dict(m, files={"a": "1", "b": "3"}))
+    assert len(errs) == 1 and "b" in errs[0]
+    assert PR.verify_marker(m, dict(m, files={"a": "1"}))                   # a listed file disappeared
+    assert PR.verify_marker(m, dict(m, pip_freeze_sha256="q"))
+    h = PR.data_md_test_hashes()                                            # DATA.md parse (no test file read)
+    assert h["Test_positive_pairs.txt"].startswith("c4e3e68e") and h["Test_negative_pairs.txt"].startswith("c4a3e546")
+    hf = [str(p.relative_to(ROOT)) for p in PR.harness_files()]
+    assert "scripts/21_evaluate_test.py" in hf and "tests/test_testeval.py" in hf and "src/testeval/protocol.py" in hf
+
+
+def test_current_protocol_is_not_frozen_yet():
+    """The PI freezes; until then the gate must refuse (the draft must never pass)."""
+    from testeval import protocol as PR
+    if PR.MARKER.exists():
+        pytest.skip("frozen marker present")
+    with pytest.raises(SystemExit):
+        PR.require_frozen()
 
 
 def test_part1_imports_are_the_locked_clone():
@@ -414,23 +465,45 @@ def test_mode_test_end_to_end_on_toy(tmp_path, monkeypatch):
     monkeypatch.setattr(paths, "LOOKS", res / "looks.jsonl")
     monkeypatch.setattr(paths, "PROJECT", tmp_path)
     monkeypatch.setattr(paths, "test_files", lambda: (tep, ten))
-    frozen = dict(head="h" * 40, protocol_last_commit="p" * 40, protocol_sha256="s" * 64, dirty=[])
+    frozen = dict(head="h" * 40, protocol_last_commit="p" * 40, protocol_sha256="s" * 64, marker_commit="m" * 40,
+                  marker_sha256="k" * 64, dirty=[])
     monkeypatch.setattr(mod, "require_frozen", lambda: frozen)
-    monkeypatch.setattr(mod, "git_state", lambda paths=None: dict(dirty=[]))
+    monkeypatch.setattr(mod, "git_state", lambda paths_=None: dict(dirty=[]))
+    committed = {"n": 0}
+    monkeypatch.setattr(mod, "history_commits", lambda p: ["c"] * committed["n"])
+
+    def evidence(looks, results):
+        ran = [r for r in mod.read_jsonl(looks) if r.get("status") in ("started", "done")]
+        return dict(ledger_run_records=len(ran), results_on_disk=results.exists(), any=bool(ran or results.exists()))
+    monkeypatch.setattr(mod, "prior_look_evidence", evidence)
     monkeypatch.setattr(mod, "load_matrix", lambda: (np.zeros((5, 1), np.float32), pd.Index(["AAA (1)"]), {}))
     fit = E.load_set("toy train", trp, trn, trs)
     res.mkdir()
     (res / "fitted_rules.json").write_text(json.dumps(E.fit_rules(fit), default=float))
     monkeypatch.setattr(E, "evaluate", lambda *a, **k: _orig_evaluate(*a, **dict(k, n_boot=40)))   # speed only
+    with pytest.raises(SystemExit):
+        mod.mode_test()                                                     # no intent yet
+    mod.mode_intent()
+    with pytest.raises(SystemExit):
+        mod.mode_test()                                                     # intent not committed
+    committed["n"] = 1
     mod.mode_test()
     looks = [json.loads(l) for l in (res / "looks.jsonl").read_text().splitlines()]
-    assert [r["status"] for r in looks] == ["started", "done"]
+    assert [r["status"] for r in looks] == ["intent", "started", "done"]
     out = json.loads((res / "test_results.json").read_text())
     assert out["protocol"]["commit"] == "p" * 40 and out["confirmatory"] is True
-    assert "verdict" in out["results"]["itt"] and "mapped_only" in out["results"]
+    r = out["results"]
+    assert "locked_verdict" in r["mapped_only"] and "ci_statistic" in r["itt"]
+    assert "excl_train_overlap" in r and "stratum_C1" in r                  # toy test reuses train proteins
     assert (res / "figures" / "reliability_test_itt.png").exists()
     with pytest.raises(SystemExit):
         mod.mode_test()                                                     # single look
+    (res / "looks.jsonl").write_text("")                                    # ledger wiped: results file still blocks
+    (res / "looks.jsonl").write_text(json.dumps(looks[0]) + "\n")
+    with pytest.raises(SystemExit):
+        mod.mode_test()
+    mod.mode_test(relook_reason="toy relook")                               # allowed, but non-confirmatory
+    assert json.loads((res / "test_results.json").read_text())["confirmatory"] is False
 
 
 _orig_evaluate = E.evaluate

@@ -2,10 +2,13 @@
 
   --mode fit     fit decision rules + calibrators on ALL hu.MAP train pairs (scores from
                  scripts/20_score_test_pairs.sh train) -> results/test_eval/fitted_rules.json (no test file is read)
-  --mode test    THE SINGLE TEST LOOK. Refuses unless docs/TEST_PROTOCOL.md and fitted_rules.json are committed and
-                 src/, scripts/ are clean, and no earlier look is logged in results/test_eval/looks.jsonl. Logs the
-                 look BEFORE reading labels, writes results/test_eval/test_results.json (+ figures) with the
-                 protocol commit hash, then logs completion.
+  --mode test --intent   step 1: refuses unless the protocol is frozen (docs/TEST_PROTOCOL.FROZEN committed, every
+                 hash equal, clean tree); writes a look-intent record to the git-tracked results/test_eval/looks.jsonl,
+                 which the PI commits.
+  --mode test --run      step 2, THE SINGLE TEST LOOK: also requires the committed intent; refuses if any earlier look
+                 exists on disk or in git history (unless --relook-reason: then automatically non-confirmatory);
+                 logs 'started' BEFORE reading labels, writes results/test_eval/test_results.json (+ figures) with the
+                 protocol / marker commit hashes, then logs 'done'.
   --mode dryrun  development data only (Part 1 dev / IFT split of the train pairs):
                  A  reproduction of Part 1's IFT look 1 with Part 1's definitions (HT-AP etc.),
                  B  the full protocol pipeline on the IFT (rules fitted on Part 1 dev pairs),
@@ -30,7 +33,8 @@ import pandas as pd  # noqa: E402
 from testeval import evaluate as E  # noqa: E402
 from testeval import paths  # noqa: E402
 from testeval import part1  # noqa: E402
-from testeval.protocol import append_jsonl, git_state, read_jsonl, require_frozen, sha256_file  # noqa: E402
+from testeval.protocol import (append_jsonl, git_state, history_commits, prior_look_evidence,  # noqa: E402
+                               read_jsonl, require_frozen, sha256_file)
 
 T = {}
 
@@ -131,33 +135,59 @@ def subset_ess(es, ess, keep):
 
 
 def run_protocol(es, rules, ess, mc_seeds, label, n_boot=E.N_BOOT):
-    """Primary (ITT) + secondary analysis sets, identical for dry run and test."""
+    """Primary (ITT) + secondary analysis sets, identical for dry run and test (TEST_PROTOCOL §3.2):
+    itt (primary metric), mapped_only (S1 = Part 1's evaluation universe; carries the confirmatory locked verdict),
+    excl_train_overlap (S2, only if any pair overlaps train), strata C1 / C2 / C3."""
     out = {}
     t0 = time.perf_counter()
     cl = E.annotate_clusters(es)
     tick(f"{label}: clusters", t0)
+
+    def sub_cl(k):
+        return dict(cl, ca=cl["ca"][k], cb=cl["cb"][k], comp_a=cl["comp_a"][k], comp_b=cl["comp_b"][k])
+
     t0 = time.perf_counter()
-    out["itt"] = E.evaluate(es, rules, cl, None, n_boot=n_boot, mc_seeds=mc_seeds)
+    out["itt"] = E.evaluate(es, rules, cl, None, n_boot=n_boot, level="all", mc_seeds=mc_seeds)
     tick(f"{label}: ITT (primary) metrics + bootstraps", t0)
     keep = es.mapped_all
-    sub = es.subset(keep, es.name + " mapped-only")
-    clm = dict(cl, ca=cl["ca"][keep], cb=cl["cb"][keep], comp_a=cl["comp_a"][keep], comp_b=cl["comp_b"][keep])
     t0 = time.perf_counter()
-    out["mapped_only"] = E.evaluate(sub, rules, clm, subset_ess(es, ess, keep), n_boot=n_boot, full=False)
-    tick(f"{label}: mapped-only", t0)
+    s1 = es.subset(keep, es.name + " mapped-only")
+    cl1 = E.annotate_clusters(s1)                 # Part 1 universe: clusters of the scorable pairs only
+    out["mapped_only"] = E.evaluate(s1, rules, cl1, subset_ess(es, ess, keep), n_boot=n_boot, level="cluster")
+    tick(f"{label}: mapped-only (S1)", t0)
     t = es.table
     if "in_train_pos" in t:
-        for name, k in (("excl_train_overlap", ~(t.in_train_pos.values | t.in_train_neg.values)),
-                        ("both_proteins_unseen_in_train", ~(t.a_in_train.values | t.b_in_train.values))):
-            if k.all() or not (es.y & k).any():
-                out[name] = dict(note="identical to ITT" if k.all() else "no positives", n=int(k.sum()))
-                continue
-            s2 = es.subset(k, f"{es.name} {name}")
-            cl2 = dict(cl, ca=cl["ca"][k], cb=cl["cb"][k], comp_a=cl["comp_a"][k], comp_b=cl["comp_b"][k])
+        ov = t.in_train_pos.values | t.in_train_neg.values
+        k = ~ov
+        if ov.any() and not ((es.y & k).any() and (~es.y & k).any()):
+            out["excl_train_overlap"] = dict(note="S2 has no positives or no negatives", n_overlap=int(ov.sum()))
+        elif ov.any():
             t0 = time.perf_counter()
-            out[name] = E.evaluate(s2, rules, cl2, None, n_boot=n_boot, full=False)
-            tick(f"{label}: {name}", t0)
+            out["excl_train_overlap"] = E.evaluate(es.subset(k, f"{es.name} S2"), rules, sub_cl(k), None,
+                                                   n_boot=n_boot, level="ap")
+            tick(f"{label}: S2", t0)
+        else:
+            out["excl_train_overlap"] = dict(note="no analysed pair occurs in a train file: S2 = ITT", n_overlap=0)
+        for c in ("C1", "C2", "C3"):
+            k = t.c_stratum.values == c
+            if not (es.y & k).any() or not (~es.y & k).any():
+                out[f"stratum_{c}"] = dict(note="no positives or no negatives", n=int(k.sum()))
+                continue
+            t0 = time.perf_counter()
+            out[f"stratum_{c}"] = E.evaluate(es.subset(k, f"{es.name} {c}"), rules, sub_cl(k), None, n_boot=n_boot,
+                                             level="ap")
+            tick(f"{label}: stratum {c}", t0)
     return out, cl
+
+
+def verdict_summary(res: dict) -> dict:
+    lv = res["mapped_only"].get("locked_verdict", {})
+    return dict(confirmatory_set="mapped_only (S1)",
+                locked_verdict_S1={c: v["clearly_beats_ift"] for c, v in lv.get("candidates", {}).items()},
+                locked_verdict_ITT={c: v["clearly_beats_ift"] for c, v in
+                                    res["itt"].get("locked_verdict", {}).get("candidates", {}).items()},
+                ci_excludes_0_vs_all_ITT=res["itt"].get("ci_statistic", {}).get("ci_excludes_0_vs_all_baselines"),
+                ci_excludes_0_vs_all_S1=res["mapped_only"].get("ci_statistic", {}).get("ci_excludes_0_vs_all_baselines"))
 
 
 # --------------------------------------------------------------------------------------------------- modes
@@ -175,25 +205,49 @@ def mode_fit():
                       for m, r in rules["methods"].items()}, indent=1))
 
 
-def mode_test(relook_reason=None):
+def _test_gate():
     st = require_frozen()
-    g = git_state(paths=(str(paths.FITTED_RULES.relative_to(paths.PROJECT)),))
-    if g["dirty"]:
-        raise SystemExit("fitted_rules.json is not committed / modified")
-    looks = [r for r in read_jsonl(paths.LOOKS) if r.get("look") == "test"]
-    done = [r for r in looks if r.get("status") == "done"]
-    if looks and not relook_reason:
-        raise SystemExit(f"a test look is already logged ({len(looks)} records): single look only; a re-run needs "
-                         "--relook-reason (logged; non-confirmatory if a completed look exists, TEST_PROTOCOL §8.3)")
-    if any(r.get("protocol_commit") != st["protocol_last_commit"] for r in looks):
-        raise SystemExit("the protocol changed since the first logged look: not allowed (TEST_PROTOCOL §8.3)")
+    part1.assert_locked()
+    return st
+
+
+def mode_intent():
+    """Step 1 of the look: write the look-intent record (no label is read). The PI commits it before --run."""
+    st = _test_gate()
+    ev = prior_look_evidence(paths.LOOKS, paths.RESULTS / "test_results.json")
+    if any(r.get("status") == "intent" for r in read_jsonl(paths.LOOKS)) and not ev["any"]:
+        raise SystemExit("an intent is already recorded: commit it and run --run")
+    rec = dict(look="test", status="intent", marker_commit=st["marker_commit"], marker_sha256=st["marker_sha256"],
+               protocol_commit=st["protocol_last_commit"], head=st["head"], prior_look_evidence=ev,
+               note="commit this record, then run: scripts/21_evaluate_test.py --mode test --run")
+    append_jsonl(paths.LOOKS, rec)
+    print(json.dumps(rec, indent=1))
+    print("NEXT: git add results/test_eval/looks.jsonl && git commit -m 'Test look intent' ; then --run")
+
+
+def mode_test(relook_reason=None):
+    """Step 2: the look. Requires the frozen state and a COMMITTED intent record (looks.jsonl clean in git)."""
+    st = _test_gate()
+    rc = git_state(paths_=(str(paths.LOOKS.relative_to(paths.PROJECT)),))
+    if rc["dirty"] or not history_commits(paths.LOOKS):
+        raise SystemExit("results/test_eval/looks.jsonl must be committed (with the intent record) before --run")
+    recs = read_jsonl(paths.LOOKS)
+    intents = [r for r in recs if r.get("status") == "intent" and r.get("marker_sha256") == st["marker_sha256"]]
+    if not intents:
+        raise SystemExit("no committed look-intent record for the current frozen marker: run --intent first")
+    ev = prior_look_evidence(paths.LOOKS, paths.RESULTS / "test_results.json")
+    if ev["any"] and not relook_reason:
+        raise SystemExit(f"a look already happened ({ev}): single look only; a re-run needs --relook-reason and is "
+                         "automatically non-confirmatory (TEST_PROTOCOL §8.3)")
+    confirmatory = not ev["any"]
     p1 = part1.assert_locked()
     rules = json.loads(paths.FITTED_RULES.read_text())
     rules_sha = sha256_file(paths.FITTED_RULES)
     sd = paths.SCORES / "test"
-    head = dict(look="test", status="started", protocol_commit=st["protocol_last_commit"], head=st["head"],
-                protocol_sha256=st["protocol_sha256"], fitted_rules_sha256=rules_sha, relook_reason=relook_reason,
-                confirmatory=not done, n_prior_records=len(looks))
+    head = dict(look="test", status="started", intent_time=intents[-1].get("time"), marker_commit=st["marker_commit"],
+                marker_sha256=st["marker_sha256"], protocol_commit=st["protocol_last_commit"], head=st["head"],
+                fitted_rules_sha256=rules_sha, relook_reason=relook_reason, confirmatory=confirmatory,
+                prior_look_evidence=ev)
     append_jsonl(paths.LOOKS, head)                          # logged BEFORE any label is read
     t0 = time.perf_counter()
     pos, neg = paths.test_files()
@@ -204,16 +258,18 @@ def mode_test(relook_reason=None):
     tick("load test pairs + scores", t0)
     res, cl = run_protocol(es, rules, ess, E.SEEDS[1:], "test")
     out = dict(protocol=dict(path="docs/TEST_PROTOCOL.md", commit=st["protocol_last_commit"], head=st["head"],
-                             sha256=st["protocol_sha256"]),
+                             sha256=st["protocol_sha256"], marker_commit=st["marker_commit"],
+                             marker_sha256=st["marker_sha256"]),
                fitted_rules=dict(path=str(paths.FITTED_RULES.relative_to(paths.PROJECT)), sha256=rules_sha),
                part1=p1, inputs=dict(test_pos=sha256_file(pos), test_neg=sha256_file(neg), scores=score_inputs(sd),
                                      matrix=msrc),
-               audit=es.audit, confirmatory=not done, relook_reason=relook_reason, prior_look_records=looks,
-               results=res, runtime_s=T)
+               audit=es.audit, confirmatory=confirmatory, relook_reason=relook_reason, prior_look_evidence=ev,
+               summary=verdict_summary(res), results=res, runtime_s=T)
     dump(out, paths.RESULTS / "test_results.json")
     figures(res["itt"], paths.RESULTS / "figures", "test_itt")
     append_jsonl(paths.LOOKS, dict(head, status="done", result="results/test_eval/test_results.json",
-                                   verdict=res["itt"].get("verdict", {}).get("candidates")))
+                                   summary=verdict_summary(res)))
+    print("NEXT: commit results/test_eval unchanged and report the commit hash to the user")
 
 
 def compare(ours: dict, ref: dict, keys=None) -> dict:
@@ -230,8 +286,9 @@ def mode_dryrun(n_boot, parts="ABCI"):
     out_dir = paths.DRYRUN
     d = paths.CACHE / "dryrun"
     assign = p1_assignment()
+    summary = dict(part1=part1.assert_locked(), dryrun_inputs_are_train_pairs=_check_dryrun_inputs(d))
     X, genes, msrc = load_matrix()
-    summary = dict(part1=part1.assert_locked(), matrix=msrc)
+    summary["matrix"] = msrc
 
     # ---------------------------------------------------------------- A: reproduction of Part 1 IFT look 1
     t0 = time.perf_counter()
@@ -249,6 +306,23 @@ def mode_dryrun(n_boot, parts="ABCI"):
         summary["I_batch_invariance"] = _part_i()
     summary["runtime_s"] = T
     dump(summary, out_dir / f"summary{'' if parts == 'ABCI' else '_' + parts}.json")
+
+
+def _check_dryrun_inputs(d: Path) -> dict:
+    """Refuse to run the dry run on anything but train pairs: every dev / IFT label line must be a train pair with
+    the same label (so a copied test file cannot be evaluated through --mode dryrun)."""
+    from testeval import pairs as P
+    tp = set(P.key(*P.canonical(P.read_pair_file(paths.TRAIN_POS))[["a", "b"]].values.T))
+    tn = set(P.key(*P.canonical(P.read_pair_file(paths.TRAIN_NEG))[["a", "b"]].values.T))
+    out = {}
+    for f, ref in (("dev_positive_pairs.txt", tp), ("dev_negative_pairs.txt", tn), ("ift_positive_pairs.txt", tp),
+                   ("ift_negative_pairs.txt", tn)):
+        k = P.key(*P.canonical(P.read_pair_file(d / f))[["a", "b"]].values.T)
+        bad = int(sum(1 for x in k if x not in ref))
+        if bad:
+            raise SystemExit(f"dry run input {f} has {bad} pairs that are not train pairs with that label: refused")
+        out[f] = dict(n=int(len(k)), all_in_train_same_label=True)
+    return out
 
 
 def _part_i() -> dict:
@@ -349,7 +423,7 @@ def _part_b(assign, d, wfn_ift, ess_ift, n_boot, out_dir, summary):
               fitted_rules=rules_dev, audit=ift2.audit, results=resB), out_dir / "B_ift_protocol.json")
     figures(resB["itt"], out_dir / "figures", "dryrun_B_ift_itt")
     summary["B"] = {k: {m: resB["itt"]["metrics"][m][k] for m in E.METHODS} for k in ("ap", "auroc", "macro_cluster_ap")}
-    summary["B"]["verdict"] = resB["itt"].get("verdict", {}).get("candidates")
+    summary["B"]["verdict"] = verdict_summary(resB)
 
 
 
@@ -371,12 +445,15 @@ def _part_c(X, genes, n_boot, out_dir, summary):
     summary["C"]["delta_ap_ci"] = {k: v for k, v in resC["itt"]["bootstrap"]["cluster"]["diff"].items()
                                    if k.startswith(E.PRIMARY + "|ap")}
     summary["C"]["cluster_stats"] = resC["itt"]["cluster_stats"]
+    summary["C"]["verdict"] = verdict_summary(resC)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", required=True, choices=["fit", "test", "dryrun"])
     ap.add_argument("--relook-reason", default=None, help="only for a logged, non-confirmatory re-run")
+    ap.add_argument("--intent", action="store_true", help="--mode test step 1: write the look-intent record")
+    ap.add_argument("--run", action="store_true", help="--mode test step 2: the look (needs a committed intent)")
     ap.add_argument("--n-boot", type=int, default=E.N_BOOT)
     ap.add_argument("--parts", default="ABCI", help="dry run parts to run (A, B, C, I)")
     a = ap.parse_args()
@@ -386,7 +463,9 @@ def main():
     elif a.mode == "test":
         if a.n_boot != E.N_BOOT:
             raise SystemExit("the test look uses the pre-registered B = 2000")
-        mode_test(a.relook_reason)
+        if a.intent == a.run:
+            raise SystemExit("--mode test needs exactly one of --intent / --run")
+        mode_intent() if a.intent else mode_test(a.relook_reason)
     else:
         mode_dryrun(a.n_boot, a.parts)
     print(f"total {round(time.perf_counter() - t0, 1)} s")

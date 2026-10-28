@@ -38,3 +38,18 @@ def assert_locked() -> dict:
     if not st["matches"] or not st["clean"]:
         raise RuntimeError(f"Part 1 clone is not the clean locked commit: {st}")
     return st
+
+
+_FINAL_EVAL = None
+
+
+def final_eval():
+    """Part 1's scripts/final_eval.py as a module (for its locked verdict function ``decide`` and constants)."""
+    global _FINAL_EVAL
+    if _FINAL_EVAL is None:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("part1_final_eval", PART1 / "scripts" / "final_eval.py")
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        _FINAL_EVAL = mod
+    return _FINAL_EVAL

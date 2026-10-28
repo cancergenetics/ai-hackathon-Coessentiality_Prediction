@@ -1,0 +1,13 @@
+  [A: IFT look-1 reproduction] 28.6 s
+  [B: fit rules on dev pairs] 7.4 s
+  [B: clusters] 0.1 s
+  [B: ITT (primary) metrics + bootstraps] 214.9 s
+  [B: mapped-only (S1)] 41.1 s
+  [B: stratum C3] 7.9 s
+  [C: load train + fit rules] 7.6 s
+  [C: clusters] 0.6 s
+  [C: ITT (primary) metrics + bootstraps] 1016.5 s
+  [C: mapped-only (S1)] 492.3 s
+  [C: stratum C1] 191.1 s
+total 2023.4 s
+.venv/bin/python scripts/21_evaluate_test.py --mode dryrun  1666.06s user 328.04s system 63% cpu 52:32.11 total

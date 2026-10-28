@@ -12,7 +12,7 @@ The protocol is in `docs/TEST_PROTOCOL.md`; §10 there summarises these results.
 scripts/20_score_test_pairs.sh dryrun                               # 333 s: dev (344,055 pairs) + IFT (43,994) x 6 methods
 scripts/20_score_test_pairs.sh train                                # 183 s: all train pairs (634,779) x 6 methods
 .venv/bin/python scripts/21_evaluate_test.py --mode fit             # 6 s  -> ../test_eval/fitted_rules.json
-.venv/bin/python scripts/21_evaluate_test.py --mode dryrun          # parts A, B, C, I (run here as --parts AI / B / C)
+.venv/bin/python scripts/21_evaluate_test.py --mode dryrun          # parts A, B, C, I in one run (log: dryrun_log.txt)
 ```
 
 ## Files
@@ -22,7 +22,7 @@ scripts/20_score_test_pairs.sh train                                # 183 s: all
 | `scoring_log.txt`, `score_records/` | the predictor's run records: clone commit, input SHA-256s, null-moment checks (difference 0), mapping counts, runtimes |
 | `A_ift_reproduction.json` | **A.** Part 1's IFT look 1 recomputed with Part 1's definitions from freshly scored IFT pairs. Each field is compared with `look01_2026-10-27.json` and the `2-posthoc` look |
 | `B_ift_protocol.json` | **B.** The full protocol pipeline (ITT plus mapped-only, rules, calibration, bootstraps, verdict) with the IFT as the evaluation set and Part 1 dev pairs as the fit set; HT design weights |
-| `C_train_as_test.json`, `C_log.txt` | **C.** The exact test-mode code path (weights 1, clusters rebuilt from the file's positives) on all train pairs. It is in-sample, so it checks mechanics, runtime and the expected CI width |
+| `C_train_as_test.json`, `dryrun_log.txt` | **C.** The exact test-mode code path (weights 1, clusters rebuilt from the file's positives) on all train pairs. It is in-sample, so it checks mechanics, runtime and the expected CI width |
 | `summary.json` | headline numbers, the batch-invariance check (**I**) and runtimes per step |
 | `figures/` | reliability diagrams (isotonic and Platt, 16 log-spaced bins) |
 
@@ -53,7 +53,8 @@ ITT, cluster bootstrap with B = 2,000:
 | zavg_BEF vs Spearman | +0.191 [+0.094, +0.302] |
 | zavg_BEF vs Pearson | +0.203 [+0.098, +0.324] |
 
-- **Verdict:** zavg_BEF clearly beats all three baselines. B fails against GLS on macro-AP non-inferiority.
+- **Locked Part 1 rule (S1 and ITT):** zavg_BEF passes. B fails against GLS on macro-AP non-inferiority.
+- **CI statistic:** the CI excludes 0 against all baselines.
 
 ### C. All train pairs
 
@@ -68,20 +69,13 @@ ITT, cluster bootstrap with B = 2,000:
 
 Scores are identical (difference 0) whether a pair is scored in the IFT file or in the all-train file.
 
-## Runtime (8-core arm64 laptop)
+## Runtime (8-core arm64 laptop, v1.1 harness, internal timers; total 2,023 s)
 
 | step | time |
 |---|---|
-| A | 9 s |
-| B | 66 s |
-| C, all ITT bootstraps on 635k pairs | 830 s |
-| C, mapped-only | 144 s |
-
-The C split of the ITT bootstraps:
-
-| bootstrap | time |
-|---|---|
-| cluster, all statistics | 252 s |
-| protein | 112 s |
-| pair | 119 s |
-| Monte-Carlo seeds 1–4 | 330 s |
+| A | 29 s |
+| B, ITT | 215 s |
+| B, S1 | 41 s |
+| C, ITT (all bootstraps including macro AP) | 1,017 s |
+| C, S1 | 492 s |
+| C, stratum C1 | 191 s |

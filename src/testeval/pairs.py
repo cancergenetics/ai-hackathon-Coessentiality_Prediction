@@ -7,8 +7,9 @@ Rules (fixed a priori, applied identically to every method):
      rejects them); counted.
   R3 label conflict (canonical pair in both the positive and the negative file): excluded from every analysis
      (label undefined); counted.
-  R4 pairs also present in a train file: kept in the primary analysis; flagged (in_train_pos / in_train_neg) for the
-     pre-specified sensitivity analysis that drops them.
+  R4 pairs also present in a train file: kept in the primary analysis; flagged (in_train_pos / in_train_neg); the
+     sensitivity set S2 that drops them is analysed only if any exist (docs/part1_audit.md found 0).
+  Strata C1 / C2 / C3: both / one / neither protein among the proteins of the train POSITIVE file (audit definition).
   R5 unmapped pairs (a protein without a unique DepMap gene, both proteins on the same gene, or an undefined score):
      kept in the primary analysis at the locked predictor's floor score (min of mapped scores in the scored file - 1;
      intention-to-score); the mapped-only analysis is secondary.
@@ -77,13 +78,18 @@ def labelled_table(pos_path, neg_path, train_paths: tuple | None = None) -> tupl
         t["in_train_pos"] = np.fromiter((x in tp for x in k), bool, len(k))
         t["in_train_neg"] = np.fromiter((x in tn for x in k), bool, len(k))
         an = t.analysed.values
-        tr_prot = set()
-        for p in train_paths:
+        tr_prot, tr_pos_prot = set(), set()
+        for i, p in enumerate(train_paths):
             r = read_pair_file(p)
             tr_prot |= set(r.x) | set(r.y)
+            if i == 0:                                          # train_paths[0] = the train POSITIVE file
+                tr_pos_prot = set(r.x) | set(r.y)
         prots = pd.unique(t.loc[an, ["a", "b"]].values.ravel())
         t["a_in_train"] = t.a.isin(tr_prot).values
         t["b_in_train"] = t.b.isin(tr_prot).values
+        # audit strata (docs/part1_audit.md §4): number of the pair's proteins among train-POSITIVE proteins
+        n_tp = t.a.isin(tr_pos_prot).values.astype(int) + t.b.isin(tr_pos_prot).values.astype(int)
+        t["c_stratum"] = np.array(["C3", "C2", "C1"], dtype=object)[n_tp]
         y = t.label.values == 1
         audit.update(
             train_overlap=dict(
@@ -91,6 +97,9 @@ def labelled_table(pos_path, neg_path, train_paths: tuple | None = None) -> tupl
                 neg_in_train_pos=int((an & ~y & t.in_train_pos).sum()), neg_in_train_neg=int((an & ~y & t.in_train_neg).sum())),
             proteins_analysed=int(len(prots)),
             proteins_also_in_train=int(len(set(prots) & tr_prot)),
+            proteins_also_in_train_positives=int(len(set(prots) & tr_pos_prot)),
+            c_strata={c: dict(pos=int((an & y & (t.c_stratum == c)).sum()), neg=int((an & ~y & (t.c_stratum == c)).sum()))
+                      for c in ("C1", "C2", "C3")},
             pairs_both_proteins_unseen_in_train=dict(
                 pos=int((an & y & ~t.a_in_train & ~t.b_in_train).sum()),
                 neg=int((an & ~y & ~t.a_in_train & ~t.b_in_train).sum())))
