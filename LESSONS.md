@@ -11,3 +11,4 @@
 10. Draw the data-flow order (who is built on which split, who reads the lockbox when) before hardening code; review structure before harness. (round3_final B2/B3; round1_ai_failure MUST-7)
 11. Reviews: independent roles, MUST/SHOULD/COULD, require label-free runs (tests, gate calls, scratch-repo simulations) and apply the real freeze edit as a test on the final artifact. (round2_ai_failure M-B1; round1_ai_failure)
 12. Commit compact summaries + hashes, not repeated multi-thousand-line generated JSON; one source for version labels. (958cfda 12k-line diff; round3_final version label drift)
+13. Wait on background jobs by PID (kill -0), never pgrep -f on a pattern that appears in the waiter's own command line. (M3: two watcher loops matched themselves.)

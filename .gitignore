@@ -13,3 +13,4 @@ __pycache__/
 *.pkl
 manuscript/*.built.md
 manuscript/~$*
+.claude/
