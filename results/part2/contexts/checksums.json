@@ -1,0 +1,42 @@
+{
+ "code_commit": "10b5f901fc097d5c6490171b5bca7efe1b699279",
+ "content_sha256": {
+  "cn_amp.parquet": "6862781c5b15378fe313be76531111237490a554f8aca5a0fbf142ce6c9ef56c",
+  "cn_highamp.parquet": "612a74506f78090b6c957ed898546e496cc65b2c7844af42f6f9cd115aa5ce09",
+  "cn_homdel.parquet": "aea18c352eec6a21cab6cff2c9afdec7ca531168f917d32dcc1948a90a6cf381",
+  "cn_loss.parquet": "20cc126232641e35c38752ab7aa1b98c23d68e80206ad44403aef3dafb1b6a12",
+  "cn_partial.parquet": "2c7d4ce0abfc411f16e8e28c5af8567a63dd3da919f77dd077788b58fb0d7316",
+  "context_table.parquet": "13ba18a69ee7ebe7b07f85622eee8c0bb3fa620503be28160b62c8496f354a7d",
+  "lof_matrix.parquet": "ee969df566a356a8b486cbe69232490e1148d3d0b1d7e1a07b070389f6ac2bbd",
+  "segment_matrix.parquet": "9e74c5a8297bd375ae1a846fe4d419ccc147c889611332bfd50ceed1d0889180"
+ },
+ "files": {
+  "data_cache/part2/contexts/cn_amp.parquet": "3aec988431b9f9383c216eeadd5defe55dd636bd9e7c55c97cbd8d2c8dfbb9d4",
+  "data_cache/part2/contexts/cn_highamp.parquet": "237c7443896f92b8da730b67a5047900bceef33a2a4dc41bd1f67675fab37707",
+  "data_cache/part2/contexts/cn_homdel.parquet": "cdfbe51b3226d0ec4f5818ab244134d419d16f03b4d8ac213d435e3152745cb8",
+  "data_cache/part2/contexts/cn_loss.parquet": "acfc9f532f44e2216d41088460d4cb5b87daa2152c02473186a478024116a6f8",
+  "data_cache/part2/contexts/cn_partial.parquet": "2acd67e56b844f04d890c5d277469a6a523c63e42b618554ec91224784b72828",
+  "data_cache/part2/contexts/context_table.parquet": "ba73a37195a2822db83d4ef7736dd94f6844f8637603e6ab7fe2216c99c3cbbd",
+  "data_cache/part2/contexts/lof_matrix.parquet": "397fd5ba5ffc4c929f172bf0d27600846ff56713841802308ff4e53169416041",
+  "data_cache/part2/contexts/segment_matrix.parquet": "d055ee58123fe504a8625cefd29a57cc659f3b6bad69c4d8141c58f747864828",
+  "data_cache/part2/contexts/segments.tsv": "9dc718cd75667adbdcdc5c0b283c5fdd4d821c4c50d18c16581b0e2801924e1b",
+  "results/part2/contexts/context_summary.tsv": "468b4012ccd82ae269a19b447459ff8866ebafe18316d55e59849dde686e8d18",
+  "results/part2/contexts/lof_functional_check.tsv": "44af49956c7081136b4c84bab9611733051d7440fb532d900e2b8b491c084ecb",
+  "results/part2/contexts/segments_ge8.tsv": "848e79cfef25effa41c6219bc550cc68bd5b7535141551425444798e9d0b6ce9"
+ },
+ "inputs": {
+  "datasets/DepMAP/Model.csv": "65eb1895800e71a963a3ab56e5d08c8d006cb0d9e7aa68f7e34a3810a2a3cbc7",
+  "datasets/DepMAP/OmicsCNGeneWGS.csv": "31cace66f202adaace306d975b5661c8b77ea82f07d2ed34045eec9c7958fcd6",
+  "datasets/DepMAP/OmicsExpressionTPMLogp1HumanProteinCodingGenes.csv": "252d1fedc7014953b19ffe5d68151b4df973c8078b12c9e5ccd97e292548d177",
+  "datasets/DepMAP/OmicsFusionFiltered.csv": "985ac6383a95c39f36856c583f32c7990c9f5464d982a2dd84a9dc07fcbc979b",
+  "datasets/DepMAP/OmicsGlobalSignatures.csv": "51d242e99176e82238df3c90a62b848b40a459a4a4981a2b0a923ed46ad8fb93",
+  "datasets/DepMAP/OmicsProfiles.csv": "4241e537f0b23139c0e525b4d78fb53ee65c5507771a33e2cd5debd78f7179ea",
+  "datasets/DepMAP/OmicsSomaticMutationsMatrixDamaging.csv": "736b7a82b4d1f234dc597a409d104186c282f01b0caa56365c27ff987ae49e20",
+  "datasets/DepMAP/OmicsSomaticMutationsMatrixHotspot.csv": "0cbdacdce2355d2dd600d3741a36ae093dbe77d7bee44bde97411b1e96973058",
+  "datasets/HGNC/hgnc_complete_set.txt": "0f2d3f035e0e6583c055a1d9e008f275376a4b66f72af380dfc2ac730272c247",
+  "datasets/Paralogs/ensembl116_gene_coordinates.tsv": "a80896b35cfdfc0bbb5755b05ac1d123d326a8eba87add554bb3ee2fdd57a1c8",
+  "datasets/Proteomics/protein_quant_current_normalized.xlsx": "a0ec29ad609d309d884852c268e3382ea6b38bca171af2cf59e4f38a518d21ff"
+ },
+ "n_U": 1345,
+ "universe_hash": "b86d0729ef6a9391"
+}

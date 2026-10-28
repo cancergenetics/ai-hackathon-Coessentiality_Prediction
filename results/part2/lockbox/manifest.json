@@ -1,0 +1,56 @@
+{
+ "freeze": "FZ-LB",
+ "design": "DESIGN.md v3.1 \u00a72.1",
+ "seed": 3000,
+ "frac_L": 0.25,
+ "algorithm": "iterative stratification (Sechidis et al. 2011) on PatientID blocks; see src/part2/lockbox.py",
+ "genotype_labels": {
+  "MSI-H": "MSI_H",
+  "LoF ARID1A": "LoF:ARID1A",
+  "LoF SMARCA4": "LoF:SMARCA4",
+  "LoF STAG2": "LoF:STAG2",
+  "LoF SMARCB1": "LoF:SMARCB1",
+  "LoF PTEN": "LoF:PTEN",
+  "LoF RB1": "LoF:RB1",
+  "LoF KMT2D": "LoF:KMT2D",
+  "LoF CREBBP": "LoF:CREBBP",
+  "LoF EP300": "LoF:EP300",
+  "NRF2-active": "NRF2_active",
+  "KMT2A-r": "fusion:KMT2A-r",
+  "9p21/MTAP hom-del": "9p21_loss",
+  "VPS4B loss": "VPS4B_loss",
+  "KRAS hotspot": "hotspot:KRAS",
+  "NRAS hotspot": "hotspot:NRAS",
+  "BRAF hotspot": "hotspot:BRAF",
+  "PIK3CA hotspot": "hotspot:PIK3CA"
+ },
+ "n_U": 1345,
+ "n_L": 338,
+ "n_A": 1007,
+ "n_patients_straddling": 0,
+ "universe_hash": "b86d0729ef6a9391",
+ "files": {
+  "lockbox_models.txt": "7a31084311fd1029fc2baaeaa2fb6d02f395c5b7db3a85fd74fcbae88fbc0f22",
+  "A_models.txt": "3946c9a7704b41ca3004591b18d7e29cdb2d9f99d3e44a4b2501affe664d09c6",
+  "strata.tsv": "fd36d9bf3cba7c85d3e2597b0509339e6ad22b6795aabc7f158fdfcb41b54236",
+  "context_counts.tsv": "1c7ffee626c13a96b06a30b8fea9812f8b252674e37dfcfb49ca1fc5711e80bb"
+ },
+ "inputs": {
+  "context_table": "data_cache/part2/contexts/context_table.parquet",
+  "context_table_sha256": "ba73a37195a2822db83d4ef7736dd94f6844f8637603e6ab7fe2216c99c3cbbd",
+  "context_content_sha256": "13ba18a69ee7ebe7b07f85622eee8c0bb3fa620503be28160b62c8496f354a7d",
+  "model_csv_sha256": "65eb1895800e71a963a3ab56e5d08c8d006cb0d9e7aa68f7e34a3810a2a3cbc7"
+ },
+ "balance": {
+  "max_abs_dev_L_genotype": 0,
+  "max_abs_dev_L_lineage": 1,
+  "genotypes_with_nL_lt5": [
+   "LoF SMARCB1",
+   "LoF KMT2D",
+   "LoF CREBBP",
+   "LoF EP300",
+   "KMT2A-r"
+  ]
+ },
+ "runtime_s": 0.62
+}

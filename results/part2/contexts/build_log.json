@@ -1,0 +1,206 @@
+{
+ "n_models": {
+  "U": 1345,
+  "damaging": 1345,
+  "hotspot": 1345,
+  "cn_wgs": 1208,
+  "expression": 1276,
+  "signatures_dna": 1345
+ },
+ "cn_ploidy_same_profile": {
+  "n": 1208,
+  "same": 1208
+ },
+ "sex_chromosome_rule": {
+  "n_x_nonpar_genes": 743,
+  "n_y_genes": 13
+ },
+ "cn_scale_check": {
+  "n_housekeeping_genes(RPL/RPS)": 73,
+  "median_r_allgenes_WGD": 1.0357849895954132,
+  "median_r_allgenes_nonWGD": 1.0251250267028809,
+  "median_r_housekeeping_WGD": 1.0359200239181519,
+  "median_r_housekeeping_nonWGD": 1.0409200191497803,
+  "median_abs_CN_housekeeping_over_ploidy": 1.037540078163147,
+  "n_models_with_CN": 1208,
+  "n_models_with_CN_and_Ploidy_NaN": 299,
+  "fraction_of_cells_clipped_at_10": 0.00014091472224278905
+ },
+ "lof_male_x_rule_genes": 686,
+ "tp53": {
+  "altered": 887,
+  "wt": 428,
+  "ambiguous_damaging_hit": 15,
+  "unknown_other": 15
+ },
+ "fusion_counts_U": {
+  "EWSR1::FLI1": 16,
+  "EWSR1::ERG": 3,
+  "EWSR1::FLI1|ERG": 19,
+  "SS18::SSX": 5,
+  "KMT2A-r": 13,
+  "PAX3|7::FOXO1": 7,
+  "BCR::ABL1": 12
+ },
+ "loy": {
+  "threshold": 16.544014275219595,
+  "low_mode": 1.080024670785849,
+  "high_mode": 37.50631129456312,
+  "density_at_threshold": 0.006144069562205854,
+  "bandwidth_factor": 0.2702266055678224,
+  "n_male": 694,
+  "n_chrY_genes": 43,
+  "chrY_genes": [
+   "AMELY",
+   "BPY2",
+   "BPY2B",
+   "BPY2C",
+   "CDY1",
+   "CDY1B",
+   "CDY2A",
+   "CDY2B",
+   "DAZ1",
+   "DAZ2",
+   "DAZ3",
+   "DAZ4",
+   "DDX3Y",
+   "EIF1AY",
+   "HSFY1",
+   "HSFY2",
+   "KDM5D",
+   "NLGN4Y",
+   "PCDH11Y",
+   "RBMY1A1",
+   "RBMY1B",
+   "RBMY1D",
+   "RBMY1E",
+   "RBMY1F",
+   "RBMY1J",
+   "RPS4Y1",
+   "RPS4Y2",
+   "SRY",
+   "TBL1Y",
+   "TGIF2LY",
+   "TMSB4Y",
+   "TSPY1",
+   "TSPY10",
+   "TSPY2",
+   "TSPY3",
+   "TSPY4",
+   "TSPY8",
+   "TSPY9",
+   "USP9Y",
+   "UTY",
+   "VCY",
+   "VCY1B",
+   "ZFY"
+  ],
+  "female_p99": 5.043466091156006,
+  "female_max": 7.236700534820557,
+  "n_male_below": 290,
+  "n_male_above": 404,
+  "n_female_above": 0,
+  "agreement_with_DDX3Y_lt_1_in_males": 0.9740634005763689
+ },
+ "segment_of": {
+  "MTAP homdel": [
+   {
+    "segment": "9p21.3 homdel MTAP",
+    "n_genes": 1,
+    "n_events": 197,
+    "first_gene": "MTAP",
+    "last_gene": "MTAP"
+   }
+  ],
+  "CDKN2A homdel": [
+   {
+    "segment": "9p21.3 homdel CDKN2A-CDKN2B",
+    "n_genes": 2,
+    "n_events": 359,
+    "first_gene": "CDKN2A",
+    "last_gene": "CDKN2B"
+   }
+  ],
+  "FOCAD homdel": [
+   {
+    "segment": "9p21.3 homdel FOCAD",
+    "n_genes": 1,
+    "n_events": 43,
+    "first_gene": "FOCAD",
+    "last_gene": "FOCAD"
+   }
+  ],
+  "VPS4B loss": [
+   {
+    "segment": "18q21.33 loss KDSR-SERPINB13",
+    "n_genes": 5,
+    "n_events": 346,
+    "first_gene": "KDSR",
+    "last_gene": "SERPINB13"
+   }
+  ],
+  "MYC amp": [
+   {
+    "segment": "8q24.21 amp MYC",
+    "n_genes": 1,
+    "n_events": 221,
+    "first_gene": "MYC",
+    "last_gene": "MYC"
+   }
+  ],
+  "MYCN amp": [
+   {
+    "segment": "2p24.3 amp MYCN",
+    "n_genes": 1,
+    "n_events": 36,
+    "first_gene": "MYCN",
+    "last_gene": "MYCN"
+   }
+  ]
+ },
+ "segments": {
+  "homdel": {
+   "n_segments": 1103,
+   "n_ge8": 95,
+   "n_ge8_multigene": 17,
+   "median_genes_per_segment": 1.0
+  },
+  "loss": {
+   "n_segments": 16267,
+   "n_ge8": 16182,
+   "n_ge8_multigene": 1159,
+   "median_genes_per_segment": 1.0
+  },
+  "amp": {
+   "n_segments": 14157,
+   "n_ge8": 8459,
+   "n_ge8_multigene": 1036,
+   "median_genes_per_segment": 1.0
+  },
+  "highamp": {
+   "n_segments": 5325,
+   "n_ge8": 937,
+   "n_ge8_multigene": 265,
+   "median_genes_per_segment": 1.0
+  }
+ },
+ "lof_functional_check": {
+  "n_genes": 225,
+  "n_pass": 118,
+  "named_fail": [
+   "CREBBP",
+   "MSH6",
+   "MLH3",
+   "PMS1",
+   "PMS2",
+   "VPS4B",
+   "EPCAM",
+   "MSH2",
+   "CUL3",
+   "MLH1"
+  ]
+ },
+ "runtime_s": 86.5,
+ "build_s": 70.5,
+ "code_commit": "10b5f901fc097d5c6490171b5bca7efe1b699279"
+}
