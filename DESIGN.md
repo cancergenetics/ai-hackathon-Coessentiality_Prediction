@@ -1,6 +1,6 @@
-# DESIGN.md — v3 (2026-10-28, after review round 2)
+# DESIGN.md — v3.1 (2026-10-28, after review round 3 — final)
 
-History: v1 → v2 after round 1 (6 reviewers), v2 → v3 after round 2 (5 reviewers); responses in §9 and docs/reviews/round{1,2}_response.md. Fixed by PROMPT.md: (Part 1) a single locked evaluation of `zavg_BEF` + Part 1 baselines on the withheld hu.MAP test pairs, AUPRC primary; (Part 2) data-driven complexes from the locked co-complex scores and complex-level, cancer-context-specific dependencies; no STRING / hu.MAP / curated complexes in construction or validation; submission-ready manuscript.
+History: v1 → v2 after round 1 (6 reviewers), v2 → v3 after round 2 (5 reviewers), v3.1 after round 3 (final; docs/reviews/round3_final.md: B1 bridge CI by protein bootstrap with size standardisation, B2 genotype-only lockbox strata, B3 lockbox read order); responses in §9 and docs/reviews/round{1,2}_response.md. Fixed by PROMPT.md: (Part 1) a single locked evaluation of `zavg_BEF` + Part 1 baselines on the withheld hu.MAP test pairs, AUPRC primary; (Part 2) data-driven complexes from the locked co-complex scores and complex-level, cancer-context-specific dependencies; no STRING / hu.MAP / curated complexes in construction or validation; submission-ready manuscript.
 
 **Paper thesis (pre-registered):** a label-free co-complex predictor, validated on withheld complexes, yields a curation-free complex map that agrees better with orthogonal physical evidence than the GLS-module standard; complex-level analysis of cancer contexts reveals driver- and lineage-linked complex dependencies and how loss of a subunit rewires dependency on the rest of its complex (paralog compensation, residual sensitisation, collapse) and on sub-modules.
 
@@ -14,7 +14,7 @@ History: v1 → v2 after round 1 (6 reviewers), v2 → v3 after round 2 (5 revie
   - FZ-C complex map on A + tiers + member/attachment rules.
   - FZ-X context table + family enumeration (m per family) + lockbox-testable list + H1 event list.
   - FZ-R registry entries (`docs/registry/*.yaml`, machine-readable) committed before first run; a lockbox target list committed before each lockbox read.
-- F5 All associations via `run_association(analysis_id, ...)` (refuses unregistered IDs/unfrozen inputs; appends to `results/part2/trials.jsonl`: commit, input hashes, n tests, summary counts — no top hits). Exploration uses an A-only effect matrix. Lockbox outcome data (CRISPR, DEMETER2 of L models) are only read via `read_lockbox(analysis_id)` with a ledger; grep test that nothing else touches L outcomes. One lockbox read per closed registry entry.
+- F5 All associations via `run_association(analysis_id, ...)` (refuses unregistered IDs/unfrozen inputs; appends to `results/part2/trials.jsonl`: commit, input hashes, n tests, summary counts — no top hits). Exploration uses an A-only effect matrix. Lockbox outcome data (CRISPR, DEMETER2 of L models) are only read via `read_lockbox(analysis_id)` with a ledger; grep test that nothing else touches L outcomes. One lockbox read per closed registry entry. Order: all registered confirmations (controls, H3a, H3b, H1, H2) first; the complex-vs-gene benchmark and the bridge's lockbox-based secondary endpoint only after every confirmation is closed.
 - F6 Every headline number re-derived by an agent that did not produce it, from raw files. References and biological claims checked by an agent that did not write them.
 
 ## 1. Part 1 — independent test evaluation
@@ -24,7 +24,7 @@ Fully specified in docs/TEST_PROTOCOL.md: single look after freeze; primary AP o
 
 ### 2.1 Model sets
 - U = CRISPRGeneEffect models minus engineered/drug-adapted (Model.csv EngineeredModel).
-- Lockbox L (FZ-LB): 25% of U, seed 3000, PatientID-blocked, multilabel-stratified by OncotreeLineage × the rare registered contexts (MSI-H; LoF of ARID1A, SMARCA4, STAG2, KEAP1/NRF2-active, SMARCB1; KMT2A-r; MTAP/9p21 deletion; the H1 event genes listed at FZ-X), so each has ≥5 L models where n_U permits. A = U \ L.
+- Lockbox L (FZ-LB): 25% of U, seed 3000, PatientID-blocked, multilabel-stratified by OncotreeLineage × a genotype list fixed now (MSI-H; LoF of ARID1A, SMARCA4, STAG2, SMARCB1, PTEN, RB1, KMT2D, CREBBP, EP300; NRF2-active; KMT2A-r; 9p21/MTAP hom-del; VPS4B loss; KRAS, NRAS, BRAF, PIK3CA hotspots), so each has ≥5 L models where n_U permits. Stratification uses model labels only (no outcomes); H1 events enumerated later at FZ-X inherit whatever L counts result. A = U \ L.
 - Seeds: clustering SEEDS=[0,1,2,3,4]; bootstraps 1000–1019; split-half 2000–2003; permutation 4000+; PYTHONHASHSEED=0.
 
 ### 2.2 Context table (FZ-X; complete-case per test, n reported, no imputation)
@@ -45,7 +45,7 @@ Fully specified in docs/TEST_PROTOCOL.md: single look after freeze; primary AP o
 - Selection of (z0, k) ∈ {4,5,6} × {10,20}: split-half recovery (R=4 PatientID-blocked halves of A; clusters of size 5–30 recovered at Jaccard ≥ 0.5) weighted by coverage of selective genes; ties → smaller graph. Validated on toy data (no dyads, no arm-block reward, null → nothing).
 - Locus flag: ≥50% of members within 10 Mb (Ensembl coordinates) or on one arm → "locus cluster", excluded from biological claims.
 - Tiers (fixed at FZ-C): T1 within-cluster BioPlex edges (Entrez-mapped, 293T ∪ HCT116; ≥2 edges) above a node-restricted, degree-preserving null, BH over clusters q<0.05; T2 (not T1) proteomic co-abundance (A models only) above a size-matched null, BH q<0.05; T3-neg (tested, not supported) and T3-nc (insufficient BioPlex/proteomic coverage). "Complex" for T1/T2; "co-dependency module" otherwise.
-- Bridge (primary methods endpoint, pre-registered): within-cluster BioPlex edge precision (fraction of within-cluster pairs that are BioPlex edges, among pairs with both proteins BioPlex-observed) for zavg vs GLS maps at matched gene coverage; paired difference with CI over the 20 bootstrap maps; claim "better" iff the 95% CI excludes 0. Secondary: proteomic co-abundance; stability by size bin; genome-wide pair-level AP against BioPlex for zavg vs GLS vs Pearson; H3 lockbox confirmation rate in matched size bins. Fail paragraph pre-written.
+- Bridge (primary methods endpoint, pre-registered): size-standardised within-cluster BioPlex edge precision (fraction of within-cluster pairs that are BioPlex edges, among pairs with both proteins BioPlex-observed; computed within cluster-size bins {3–4, 5–8, 9–16, 17–60} and averaged with the bin weights of the pooled zavg+GLS cluster-size distribution) for the frozen zavg vs GLS maps at matched gene coverage; CI for the paired difference by protein-node bootstrap (B=2000, seed 5000, clusters fixed, pairs re-weighted by node multiplicity); claim "better" iff the 95% CI excludes 0. Map-to-map variability over the 20 bootstrap maps reported descriptively. Secondary: proteomic co-abundance; stability by size bin; genome-wide pair-level AP against BioPlex for zavg vs GLS vs Pearson; H3 lockbox confirmation rate in matched size bins. Fail paragraph pre-written.
 - Sensitivity only (COULD): Infomap/MCL agreement (ARI), BioPlex-integrated map.
 
 ### 2.4 Complex scores

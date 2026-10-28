@@ -4,7 +4,7 @@ Refuses unless docs/TEST_PROTOCOL.md contains no 'draft' string and its header r
 test files hash to the DATA.md values (hash only; the files are not parsed). The marker lists the SHA-256 of the
 protocol, results/test_eval/fitted_rules.json, every harness file (src/testeval/*.py, scripts/19-22*,
 tests/test_testeval.py) and the venv package list (pip freeze). Then:
-    git add docs/TEST_PROTOCOL.md docs/TEST_PROTOCOL.FROZEN && git commit -m "Freeze test protocol v1.1"
+    git add docs/TEST_PROTOCOL.md docs/TEST_PROTOCOL.FROZEN && git commit -m "Freeze test protocol v1.2"
 and report the commit hash and the marker SHA-256 to the user in chat (notarisation outside the repository).
 """
 import json

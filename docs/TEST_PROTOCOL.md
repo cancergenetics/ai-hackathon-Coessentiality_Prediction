@@ -2,7 +2,7 @@
 
 **DRAFT v1.2** (2026-10-28; revised after design review rounds 1 and 2, see `docs/reviews/round1_protocol_response.md` and §9).
 
-**Freezing.** At the freeze the PI replaces the line above with `**FROZEN v1.1** (date)`. The pre-freeze status word (the one in the line above) must then occur nowhere in this file. The PI then runs `scripts/22_freeze_protocol.py` and commits this file together with `docs/TEST_PROTOCOL.FROZEN`. Agents never make the freeze commit.
+**Freezing.** At the freeze the PI replaces the line above with `**FROZEN v1.2** (date)`. The pre-freeze status word (the one in the line above) must then occur nowhere in this file. The PI then runs `scripts/22_freeze_protocol.py` and commits this file together with `docs/TEST_PROTOCOL.FROZEN`. Agents never make the freeze commit.
 
 **The frozen marker.** `docs/TEST_PROTOCOL.FROZEN` lists the SHA-256 of:
 - this file;
@@ -333,7 +333,7 @@ scripts/20_score_test_pairs.sh dryrun                       # Part 1 dev + IFT p
 
 ### 8.2 Freeze and the look (PI only, in this order)
 ```bash
-# (1) freeze: edit the header line to "**FROZEN v1.1** (date)", then
+# (1) freeze: edit the header line to "**FROZEN v1.2** (date)", then
 .venv/bin/python scripts/22_freeze_protocol.py              # writes docs/TEST_PROTOCOL.FROZEN (refuses on the pre-freeze status word or a test-file hash mismatch)
 git add docs/TEST_PROTOCOL.md docs/TEST_PROTOCOL.FROZEN && git commit -m "Freeze test protocol v1.2"
 #     -> report the commit hash and the marker SHA-256 to the user in chat (notarisation)
