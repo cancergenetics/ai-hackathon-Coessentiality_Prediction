@@ -77,6 +77,22 @@ class Annotation:
         return out
 
 
+def load_annotation(gene_keys, min_identity: float = 20.0) -> Annotation:
+    """Annotation for DepMap gene keys from Ensembl 116 (paralogues, coordinates via Entrez) and HGNC arms."""
+    from part2 import paths
+    from part2.locus import entrez_positions, parse_location
+    keys = list(gene_keys)
+    sym = [symbol(k) for k in keys]
+    ent = pd.to_numeric(pd.Series([str(k).split("(")[-1].rstrip(")") for k in keys]), errors="coerce")
+    pos = entrez_positions().reindex(ent.fillna(-1).astype(np.int64).values)
+    par = Annotation.paralogs_from_table(pd.read_csv(paths.PARALOGS, sep="\t", dtype=str), min_identity)
+    h = pd.read_csv(paths.HGNC_FILE, sep="\t", dtype=str, usecols=["symbol", "location"]).dropna()
+    arm = {s: parse_location(l)[0] for s, l in zip(h.symbol, h.location)}
+    return Annotation(paralogs=par, chrom=dict(zip(sym, pos.chrom.fillna("").values)),
+                      pos=dict(zip(sym, pos.pos.fillna(-1).astype(np.int64).values)),
+                      arm={s: arm.get(s, "") for s in sym})
+
+
 # ------------------------------------------------------------------------------------------------ removals
 @dataclass(frozen=True)
 class Removal:
@@ -125,7 +141,7 @@ def removal_for_context(cid: str, homdel_share: float | None = None) -> Removal:
         return Removal(genes=(g,), cn_genes=(g,))
     if cid in ("NRF2_active", "LoF:KEAP1"):
         return Removal(genes=("KEAP1", "CUL3", "NFE2L2"))
-    if cid in ("TP53_altered",):
+    if cid in ("TP53_altered", "LoF:TP53", "hotspot:TP53"):        # registry: no +/-10 Mb clause for TP53
         return Removal(genes=("TP53",))
     if cid == "PIK3CA_hotspot_noPTENLoF":
         return Removal(genes=("PIK3CA",))

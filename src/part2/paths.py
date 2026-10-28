@@ -12,6 +12,7 @@ MODEL_CSV = DEPMAP / "Model.csv"
 CONFOUNDERS_CSV = DEPMAP / "CRISPRConfounders.csv"
 HGNC_FILE = DATASETS / "HGNC" / "hgnc_complete_set.txt"
 GENE_COORDS = DATASETS / "Paralogs" / "ensembl116_gene_coordinates.tsv"   # Ensembl 116 BioMart (chr, start, end)
+PARALOGS = DATASETS / "Paralogs" / "ensembl116_human_paralogues.tsv"      # Ensembl 116 paralogues (H1 definition)
 
 PART1 = PROJECT / "external" / "part1_locked"              # locked clone (read-only), commit LOCKED_COMMIT
 PART1_MVP_SRC = PART1 / "mvp" / "src"                      # package `coessential`

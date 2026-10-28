@@ -83,6 +83,21 @@ def assemble(names, table: pd.DataFrame) -> pd.DataFrame:
     return pd.concat(parts, axis=1)
 
 
+def source_table(context_table: pd.DataFrame, models) -> pd.DataFrame:
+    """Covariate source table over `models`: Model.csv (OncotreeLineage, OncotreePrimaryDisease, PatientID,
+    ModelType), CRISPRConfounders (Library*, ScreenType3DO, ScreenNNMD, CasActivity, ScreenDoublingTime,
+    GrowthPattern*) and the frozen context table (MSIScore, log_burden, Ploidy, WGD, TP53_altered, ...). Labels and
+    screen metadata only."""
+    from part2 import data
+    m = data.load_models().reindex(models)[["OncotreeLineage", "OncotreePrimaryDisease", "PatientID", "ModelType"]]
+    cf = data.load_confounders().reindex(models)
+    cf = cf[[c for c in cf.columns if c.startswith(("Library", "GrowthPattern")) or
+             c in ("ScreenType3DO", "ScreenNNMD", "CasActivity", "ScreenDoublingTime")]]
+    ct = context_table.reindex(models)
+    ct = ct[[c for c in ct.columns if c not in m.columns and c not in cf.columns]]
+    return pd.concat([m, cf, ct], axis=1)
+
+
 def per_context(entry: dict, contexts, table: pd.DataFrame) -> tuple[dict, dict]:
     """{context: covariate DataFrame} and {context: dropped names} for run_association."""
     out, dropped = {}, {}
