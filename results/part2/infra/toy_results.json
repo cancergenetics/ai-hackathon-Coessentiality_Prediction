@@ -1,0 +1,891 @@
+{
+ "settings": {
+  "config": {
+   "k": 10,
+   "tau": 0.1,
+   "q": 0.25,
+   "d": 64,
+   "max_nan": 0.1,
+   "standardize": true,
+   "center": "gene",
+   "n_null": 200000,
+   "seed": 0,
+   "block": 1024
+  },
+  "n_boot": 8,
+  "frac": 0.8,
+  "boot_seeds": "1000..1007",
+  "z0": 5.0,
+  "k": 10,
+  "leiden_seeds": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "split_half_R": 2
+ },
+ "scenarios": {
+  "planted": {
+   "n_S": 1204,
+   "never_in_S": 4,
+   "edges_per_run": [
+    1664,
+    1540,
+    1585,
+    1428,
+    1564,
+    1521,
+    1514,
+    1505
+   ],
+   "jaccard_grid11": {
+    "n_level1": 12,
+    "n_level2": 0,
+    "n_locus": 0,
+    "n_nonlocus": 12,
+    "sizes": [
+     5,
+     6,
+     7,
+     8,
+     10,
+     12,
+     15,
+     15,
+     20,
+     25,
+     25,
+     30
+    ],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 0,
+     "reclustered": 0,
+     "overlap_dropped": 0,
+     "persistent_level1_candidates": 12,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 12,
+     "n_level2": 0
+    },
+    "ARI_level1": 0.8749007823602709,
+    "F1_level1": [
+     0.0,
+     0.75,
+     0.0,
+     0.0,
+     0.833,
+     1.0,
+     0.941,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.769
+    ],
+    "F1_any_level": [
+     0.0,
+     0.75,
+     0.0,
+     0.0,
+     0.833,
+     1.0,
+     0.941,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.769
+    ],
+    "F1_submodules_any_level": [
+     1.0,
+     1.0
+    ],
+    "planted_sizes": [
+     3,
+     3,
+     4,
+     4,
+     5,
+     6,
+     9,
+     10,
+     12,
+     15,
+     20,
+     25,
+     30,
+     40
+    ],
+    "frac_clustered_genes_planted": 0.9775280898876404
+   },
+   "jaccard_grid13": {
+    "n_level1": 14,
+    "n_level2": 0,
+    "n_locus": 1,
+    "n_nonlocus": 13,
+    "sizes": [
+     4,
+     4,
+     5,
+     6,
+     7,
+     8,
+     10,
+     12,
+     15,
+     15,
+     20,
+     25,
+     25,
+     30
+    ],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 0,
+     "reclustered": 0,
+     "overlap_dropped": 0,
+     "persistent_level1_candidates": 14,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 14,
+     "n_level2": 0
+    },
+    "ARI_level1": 0.8779555940416658,
+    "F1_level1": [
+     0.857,
+     0.75,
+     0.0,
+     1.0,
+     0.833,
+     1.0,
+     0.941,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.769
+    ],
+    "F1_any_level": [
+     0.857,
+     0.75,
+     0.0,
+     1.0,
+     0.833,
+     1.0,
+     0.941,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.769
+    ],
+    "F1_submodules_any_level": [
+     1.0,
+     1.0
+    ],
+    "planted_sizes": [
+     3,
+     3,
+     4,
+     4,
+     5,
+     6,
+     9,
+     10,
+     12,
+     15,
+     20,
+     25,
+     30,
+     40
+    ],
+    "frac_clustered_genes_planted": 0.9731182795698925
+   },
+   "containment_grid11": {
+    "n_level1": 13,
+    "n_level2": 5,
+    "n_locus": 1,
+    "n_nonlocus": 17,
+    "sizes": [
+     4,
+     4,
+     4,
+     5,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     12,
+     12,
+     15,
+     15,
+     20,
+     25,
+     25,
+     30
+    ],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 0,
+     "reclustered": 0,
+     "overlap_dropped": 5,
+     "persistent_level1_candidates": 18,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 13,
+     "n_level2": 5
+    },
+    "ARI_level1": 0.8718944418893951,
+    "F1_level1": [
+     0.5,
+     0.5,
+     0.5,
+     1.0,
+     0.588,
+     1.0,
+     0.941,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.769
+    ],
+    "F1_any_level": [
+     0.857,
+     0.75,
+     0.889,
+     1.0,
+     0.833,
+     1.0,
+     0.941,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.769
+    ],
+    "F1_submodules_any_level": [
+     1.0,
+     1.0
+    ],
+    "planted_sizes": [
+     3,
+     3,
+     4,
+     4,
+     5,
+     6,
+     9,
+     10,
+     12,
+     15,
+     20,
+     25,
+     30,
+     40
+    ],
+    "frac_clustered_genes_planted": 0.9444444444444444
+   },
+   "containment_grid13": {
+    "n_level1": 13,
+    "n_level2": 5,
+    "n_locus": 1,
+    "n_nonlocus": 17,
+    "sizes": [
+     4,
+     4,
+     4,
+     5,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     12,
+     12,
+     15,
+     15,
+     20,
+     25,
+     25,
+     30
+    ],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 0,
+     "reclustered": 0,
+     "overlap_dropped": 5,
+     "persistent_level1_candidates": 18,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 13,
+     "n_level2": 5
+    },
+    "ARI_level1": 0.8718944418893951,
+    "F1_level1": [
+     0.5,
+     0.5,
+     0.5,
+     1.0,
+     0.588,
+     1.0,
+     0.941,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.769
+    ],
+    "F1_any_level": [
+     0.857,
+     0.75,
+     0.889,
+     1.0,
+     0.833,
+     1.0,
+     0.941,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.769
+    ],
+    "F1_submodules_any_level": [
+     1.0,
+     1.0
+    ],
+    "planted_sizes": [
+     3,
+     3,
+     4,
+     4,
+     5,
+     6,
+     9,
+     10,
+     12,
+     15,
+     20,
+     25,
+     30,
+     40
+    ],
+    "frac_clustered_genes_planted": 0.9444444444444444
+   },
+   "selection_grid": [
+    {
+     "z0": 4.0,
+     "k": 10,
+     "stat": 0.14574353448275862,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.14574353448275862,
+     "ARI_level1_full_pipeline": 0.8738796058468472
+    },
+    {
+     "z0": 4.0,
+     "k": 20,
+     "stat": 0.1371228448275862,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.1371228448275862,
+     "ARI_level1_full_pipeline": 0.870465135382514
+    },
+    {
+     "z0": 5.0,
+     "k": 10,
+     "stat": 0.15732758620689655,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.15732758620689655,
+     "ARI_level1_full_pipeline": 0.8749007823602709
+    },
+    {
+     "z0": 5.0,
+     "k": 20,
+     "stat": 0.1575969827586207,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.1575969827586207,
+     "ARI_level1_full_pipeline": 0.8749007823602709
+    },
+    {
+     "z0": 6.0,
+     "k": 10,
+     "stat": 0.16163793103448276,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.16163793103448276,
+     "ARI_level1_full_pipeline": 0.8779555940416658
+    },
+    {
+     "z0": 6.0,
+     "k": 20,
+     "stat": 0.16702586206896552,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.16702586206896552,
+     "ARI_level1_full_pipeline": 0.8779555940416658
+    }
+   ],
+   "selected": {
+    "z0": 6.0,
+    "k": 20,
+    "stat": 0.16702586206896552
+   },
+   "dyad_map_criterion": 0.0,
+   "truth_map_criterion": 0.10883620689655173,
+   "stability_by_size": {
+    "[3, 5)": {
+     "count_observed": 0.0,
+     "mean_observed": null,
+     "count_rewired": 13.0,
+     "mean_rewired": 0.8364194139194139
+    },
+    "[5, 10)": {
+     "count_observed": 4.0,
+     "mean_observed": 0.8723710317460318,
+     "count_rewired": 0.0,
+     "mean_rewired": null
+    },
+    "[10, 20)": {
+     "count_observed": 4.0,
+     "mean_observed": 0.9891098484848485,
+     "count_rewired": 0.0,
+     "mean_rewired": null
+    },
+    "[20, 61)": {
+     "count_observed": 4.0,
+     "mean_observed": 1.0,
+     "count_rewired": 0.0,
+     "mean_rewired": null
+    }
+   }
+  },
+  "null": {
+   "n_S": 1204,
+   "never_in_S": 4,
+   "edges_per_run": [
+    1025,
+    946,
+    1004,
+    800,
+    876,
+    866,
+    1016,
+    1009
+   ],
+   "jaccard_grid11": {
+    "n_level1": 0,
+    "n_level2": 0,
+    "n_locus": 0,
+    "n_nonlocus": 0,
+    "sizes": [],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 0,
+     "reclustered": 0,
+     "overlap_dropped": 0,
+     "persistent_level1_candidates": 0,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 0,
+     "n_level2": 0
+    }
+   },
+   "jaccard_grid13": {
+    "n_level1": 0,
+    "n_level2": 0,
+    "n_locus": 0,
+    "n_nonlocus": 0,
+    "sizes": [],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 0,
+     "reclustered": 0,
+     "overlap_dropped": 0,
+     "persistent_level1_candidates": 0,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 0,
+     "n_level2": 0
+    }
+   },
+   "containment_grid11": {
+    "n_level1": 1,
+    "n_level2": 0,
+    "n_locus": 0,
+    "n_nonlocus": 1,
+    "sizes": [
+     3
+    ],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 0,
+     "reclustered": 0,
+     "overlap_dropped": 0,
+     "persistent_level1_candidates": 1,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 1,
+     "n_level2": 0
+    }
+   },
+   "containment_grid13": {
+    "n_level1": 1,
+    "n_level2": 0,
+    "n_locus": 0,
+    "n_nonlocus": 1,
+    "sizes": [
+     3
+    ],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 0,
+     "reclustered": 0,
+     "overlap_dropped": 0,
+     "persistent_level1_candidates": 1,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 1,
+     "n_level2": 0
+    }
+   },
+   "selection_grid": [
+    {
+     "z0": 4.0,
+     "k": 10,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.0
+    },
+    {
+     "z0": 4.0,
+     "k": 20,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.0
+    },
+    {
+     "z0": 5.0,
+     "k": 10,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.0
+    },
+    {
+     "z0": 5.0,
+     "k": 20,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.0
+    },
+    {
+     "z0": 6.0,
+     "k": 10,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.0
+    },
+    {
+     "z0": 6.0,
+     "k": 20,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.0
+    }
+   ],
+   "selected": {
+    "z0": 6.0,
+    "k": 10,
+    "stat": 0.0
+   },
+   "stability_by_size": {
+    "[3, 5)": {
+     "count_observed": 0.0,
+     "mean_observed": null,
+     "count_rewired": 0.0,
+     "mean_rewired": null
+    },
+    "[5, 10)": {
+     "count_observed": 0.0,
+     "mean_observed": null,
+     "count_rewired": 0.0,
+     "mean_rewired": null
+    },
+    "[10, 20)": {
+     "count_observed": 0.0,
+     "mean_observed": null,
+     "count_rewired": 0.0,
+     "mean_rewired": null
+    },
+    "[20, 61)": {
+     "count_observed": 0.0,
+     "mean_observed": null,
+     "count_rewired": 0.0,
+     "mean_rewired": null
+    }
+   }
+  },
+  "armblock": {
+   "n_S": 1204,
+   "never_in_S": 4,
+   "edges_per_run": [
+    1565,
+    1360,
+    1496,
+    1319,
+    1390,
+    1402,
+    1386,
+    1520
+   ],
+   "jaccard_grid11": {
+    "n_level1": 6,
+    "n_level2": 0,
+    "n_locus": 6,
+    "n_nonlocus": 0,
+    "sizes": [
+     14,
+     22,
+     24,
+     25,
+     25,
+     26
+    ],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 2,
+     "reclustered": 2,
+     "overlap_dropped": 0,
+     "persistent_level1_candidates": 8,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 6,
+     "n_level2": 0
+    }
+   },
+   "jaccard_grid13": {
+    "n_level1": 6,
+    "n_level2": 0,
+    "n_locus": 6,
+    "n_nonlocus": 0,
+    "sizes": [
+     14,
+     22,
+     24,
+     25,
+     25,
+     26
+    ],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 2,
+     "reclustered": 2,
+     "overlap_dropped": 0,
+     "persistent_level1_candidates": 8,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 6,
+     "n_level2": 0
+    }
+   },
+   "containment_grid11": {
+    "n_level1": 7,
+    "n_level2": 2,
+    "n_locus": 8,
+    "n_nonlocus": 1,
+    "sizes": [
+     4,
+     5,
+     8,
+     14,
+     22,
+     24,
+     25,
+     25,
+     26
+    ],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 2,
+     "reclustered": 2,
+     "overlap_dropped": 2,
+     "persistent_level1_candidates": 11,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 7,
+     "n_level2": 2
+    }
+   },
+   "containment_grid13": {
+    "n_level1": 7,
+    "n_level2": 2,
+    "n_locus": 8,
+    "n_nonlocus": 1,
+    "sizes": [
+     4,
+     5,
+     8,
+     14,
+     22,
+     24,
+     25,
+     25,
+     26
+    ],
+    "counts": {
+     "oversize": 0,
+     "cohesion_fail": 2,
+     "reclustered": 2,
+     "overlap_dropped": 2,
+     "persistent_level1_candidates": 11,
+     "level2": {
+      "oversize": 0,
+      "cohesion_fail": 0,
+      "reclustered": 0,
+      "overlap_dropped": 0
+     },
+     "n_level1": 7,
+     "n_level2": 2
+    }
+   },
+   "selection_grid": [
+    {
+     "z0": 4.0,
+     "k": 10,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.17812499999999998
+    },
+    {
+     "z0": 4.0,
+     "k": 20,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.19375
+    },
+    {
+     "z0": 5.0,
+     "k": 10,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.17734375
+    },
+    {
+     "z0": 5.0,
+     "k": 20,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.16588541666666667
+    },
+    {
+     "z0": 6.0,
+     "k": 10,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.11406250000000001
+    },
+    {
+     "z0": 6.0,
+     "k": 20,
+     "stat": 0.0,
+     "rewired_stat": 0.0,
+     "stat_locus_included": 0.11458333333333334
+    }
+   ],
+   "selected": {
+    "z0": 6.0,
+    "k": 10,
+    "stat": 0.0
+   },
+   "stability_by_size": {
+    "[3, 5)": {
+     "count_observed": 0.0,
+     "mean_observed": null,
+     "count_rewired": 2.0,
+     "mean_rewired": 0.8991666666666667
+    },
+    "[5, 10)": {
+     "count_observed": 0.0,
+     "mean_observed": null,
+     "count_rewired": 0.0,
+     "mean_rewired": null
+    },
+    "[10, 20)": {
+     "count_observed": 1.0,
+     "mean_observed": 1.0,
+     "count_rewired": 0.0,
+     "mean_rewired": null
+    },
+    "[20, 61)": {
+     "count_observed": 5.0,
+     "mean_observed": 0.9556162988589296,
+     "count_rewired": 0.0,
+     "mean_rewired": null
+    }
+   }
+  }
+ },
+ "runtime_s": 1262.3
+}
