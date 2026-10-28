@@ -180,3 +180,20 @@ def test_lockbox_test_and_zero_target_close(proj):
     assert led[-1]["analysis_id"] == "H3b_z" and led[-1]["n_genes"] == 0
     with pytest.raises(RegistryError, match="closed"):
         assoc.run_association("H3b_z", *data()[:2], inputs=INP, proj=proj)
+
+
+def test_pseudo_context_calibration_and_raw_p_screen(proj):
+    rng = np.random.default_rng(5)
+    n = len(A_MODELS)
+    lin = pd.Series(np.repeat(list("abc"), 100), index=A_MODELS)
+    ctx = pd.Series((rng.random(n) < np.where(lin == "a", 0.4, 0.1)).astype(float), index=A_MODELS)
+    Y = pd.DataFrame(rng.normal(size=(n, 30)), index=A_MODELS, columns=[f"U{i}" for i in range(30)])
+    cal = robust.pseudo_context_calibration(Y, ctx, None, n=40, seed=4600, strata=lin)
+    assert 0.02 < cal["frac_p_lt_005"] < 0.08 and not cal["response_fires"]
+    Y2 = Y + (lin == "a").values[:, None] * 1.0                 # lineage structure the model does not adjust for
+    assert robust.pseudo_context_calibration(Y2, ctx, None, n=20, seed=1, strata=lin)["response_fires"]
+    # pre-declared response: raw p < 0.01 tests are permutation re-tested even when q >= 0.1
+    add(proj, "H3b_cal", units=list(Y.columns), contexts=("c1",))
+    res = assoc.run_association("H3b_cal", Y2, pd.DataFrame({"c1": ctx}), None, inputs=INP, proj=proj, n_perm=1000,
+                                perm_screen_p=0.01)
+    assert res.p_perm.notna().sum() == int(((res.p < 0.01) | (res.q_adj < 0.1)).sum()) > 0

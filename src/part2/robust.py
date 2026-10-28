@@ -132,3 +132,24 @@ def pseudo_contexts(ctx: pd.Series, n: int, seed: int, strata: pd.Series | None 
                 got += len(mem)
         out[f"pseudo{k}"] = lab.reindex(ctx.index)
     return pd.DataFrame(out)
+
+
+def pseudo_context_calibration(Y: pd.DataFrame, ctx: pd.Series, cov: pd.DataFrame | None, n: int = 100,
+                               seed: int = 4600, strata: pd.Series | None = None, blocks: pd.Series | None = None,
+                               alternative: str = "two-sided", threshold: float = 0.075) -> dict:
+    """Negative-control calibration (registry `calibration`): n pseudo-contexts matched to `ctx` (size per lineage
+    stratum, PatientID blocks), each tested against every unit of Y with the same HC3 machinery. Returns the fraction
+    of pseudo tests with p < 0.05 (expected 0.05) and whether the pre-declared response fires (fraction > threshold:
+    re-test every real p < 0.01 by permutation, i.e. run_association(..., perm_screen_p=0.01))."""
+    from part2.assoc import _design
+    from part2.h1 import fit_columns
+    pcs = pseudo_contexts(ctx, n, seed, strata=strata, blocks=blocks)
+    ps = []
+    for k in pcs:
+        X, _, ok = _design(pcs[k].reindex(Y.index), None if cov is None else cov.reindex(Y.index))
+        ps.append(fit_columns(X, Y.values[ok], alternative).p.values)
+    ps = np.concatenate(ps)
+    ps = ps[np.isfinite(ps)]
+    frac = float(np.mean(ps < 0.05)) if len(ps) else np.nan
+    return dict(n_pseudo=n, n_tests=int(len(ps)), frac_p_lt_005=frac, frac_p_lt_001=float(np.mean(ps < 0.01)),
+                response_fires=bool(frac > threshold))

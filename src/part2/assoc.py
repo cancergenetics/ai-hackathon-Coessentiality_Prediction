@@ -299,7 +299,8 @@ def parent_selection_from(results: dict, parent_of: dict, q: float, min_children
 
 def run_association(analysis_id: str, Y, contexts: pd.DataFrame, covariates=None, *, inputs=(),
                     proj: Project | None = None, blocks: pd.Series | None = None, strata: pd.Series | None = None,
-                    n_perm: int = 0, perm_screen_q: float = 0.1, perm_seed: int = 4000, min_context_n: int = 1,
+                    n_perm: int = 0, perm_screen_q: float = 0.1, perm_screen_p: float | None = None,
+                    perm_seed: int = 4000, min_context_n: int = 1,
                     min_ref_n: int = 1, pairs=None, lineage_contexts=None, parent_selection: dict | None = None,
                     tag: str = "discovery", save: bool = True, release_hits: bool = False) -> pd.DataFrame:
     """Gated association run (DESIGN §2.5, F5).
@@ -433,7 +434,10 @@ def run_association(analysis_id: str, Y, contexts: pd.DataFrame, covariates=None
     res["p_perm"] = np.nan
     n_sel_perm = None
     if n_perm > 0 and len(res) and ff["method"] != "none":
-        hits = res.index[res.q_adj.fillna(1) < perm_screen_q]
+        scr = res.q_adj.fillna(1) < perm_screen_q
+        if perm_screen_p is not None:                 # pre-declared calibration response: also raw p < 0.01
+            scr |= res.evaluable & (res.p.fillna(1) < perm_screen_p)
+        hits = res.index[scr]
         for i in hits:
             r = res.loc[i]
             idx, Zc = designs[r.context]
