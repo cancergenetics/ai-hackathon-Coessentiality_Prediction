@@ -204,7 +204,7 @@ Full table: `summary/zavg_top_T1_complexes.tsv`.
 4. **Coverage matching removes 115 of 367 zavg clusters**, because the zavg map clusters 27% more genes than GLS at
    the same edge count. Without matching the result is unchanged.
 5. **Not done:**
-   - map-to-map variability over the 20 single-subsample maps (DESIGN: descriptive);
+   - map-to-map variability over the 20 single-subsample maps: now done (section below);
    - a rewired chance baseline for map stability (infra issue 2: uninformative for small clusters);
    - Infomap/MCL (COULD);
    - the H3 lockbox confirmation-rate secondary endpoint (after the confirmations, per F5).
@@ -213,3 +213,72 @@ Full table: `summary/zavg_top_T1_complexes.tsv`.
 7. **The toy hub-gene merges** (DECISIONS D1) suggest that some large zavg level-1 clusters may merge two complexes
    via shared or hub genes. Two candidates are Z0011 and Z0014. Reading them as CPC + condensin I + cytokinesis and as Mediator kinase
    module + SAGA is post hoc interpretation from gene symbols, not validated here. The sub-modules resolve some of these.
+
+## Map-to-map variability over the 20 bootstrap subsamples (`variability/`, DESIGN §2.3, descriptive)
+
+Script `scripts/39_map_variability.py` (added after the FZ-C freeze; frozen maps and producer code untouched; A model
+set only; no validation data, external complex resource or lockbox model is read).
+
+- **Bootstrap map b** = the frozen consensus + persistence + nesting pipeline (`construct.build_map`, same
+  `ClusterConfig`, z0 = 6, k = 10, 5 Leiden seeds, cohesion on the full-A block) applied to the single graph of
+  PatientID-blocked subsample b (seeds 1000–1019, cached blocks reused). So a bootstrap map has no across-subsample
+  consensus; it shows how much one 80% subsample varies. GLS: per-subsample graph edge-matched to the zavg graph of the
+  same subsample, as in the frozen build.
+- **Pipeline check** (`variability/verify_frozen_rebuild.json`): rebuilding the zavg map from all 20 graphs with this
+  code gives the 367 frozen level-1 clusters exactly (identical member sets).
+- Level 1 only. Complexes are counted in size bins 3–4 / 5–8 / 9–16 / 17–60.
+- **(a)** For each frozen level-1 complex, best-match Jaccard against each bootstrap level-1 partition (uncovered genes
+  unassigned). Per-complex values: `*_per_complex_jaccard.tsv`.
+- **Chance reference.** For every frozen complex, 100 random gene sets of the same size drawn uniformly from S (6,022
+  genes; a second pool, the genes in the frozen map's complexes, gives the same numbers) scored the same way
+  (seed 7000). "Stable" can be read against its 95th percentile. This baseline is dispersed random sets; it does not
+  represent a set of co-clustered but unrelated genes (hubs), so it is a floor, not a null for the clustering.
+- **(b, c)** Pairwise ARI/NMI over the 190 pairs of bootstrap maps on genes covered by both maps (`ari_both`). The
+  sensitivity counts genes covered by either map, uncovered genes as singletons (`*_either_singletons`).
+
+Best-match Jaccard, pooled over complex x bootstrap map (median, IQR, fraction ≥ 0.5) against random size-matched
+sets from S (median, fraction ≥ 0.5, 95th percentile):
+
+**zavg_BEF** (frozen level-1 complexes: 367, genes 3,642)
+
+| Size bin | Complexes | Median | IQR | Fraction ≥ 0.5 | Random median | Random ≥ 0.5 | Random P95 | Complexes with median > random P95 |
+|---|---|---|---|---|---|---|---|---|
+| 3-4 | 85 | 0.50 | 0.16–0.75 | 0.52 | 0.08 | 0.000 | 0.17 | 0.88 |
+| 5-8 | 85 | 0.60 | 0.33–0.75 | 0.64 | 0.08 | 0.000 | 0.12 | 0.96 |
+| 9-16 | 149 | 0.75 | 0.56–0.88 | 0.83 | 0.06 | 0.000 | 0.08 | 1.00 |
+| 17-60 | 48 | 0.82 | 0.68–0.91 | 0.93 | 0.05 | 0.000 | 0.07 | 1.00 |
+| all | 367 | 0.69 | 0.44–0.84 | 0.73 | 0.06 | 0.000 | 0.12 | 0.96 |
+
+**GLS** (frozen level-1 complexes: 379, genes 2,862)
+
+| Size bin | Complexes | Median | IQR | Fraction ≥ 0.5 | Random median | Random ≥ 0.5 | Random P95 | Complexes with median > random P95 |
+|---|---|---|---|---|---|---|---|---|
+| 3-4 | 152 | 0.60 | 0.27–0.80 | 0.65 | 0.14 | 0.000 | 0.20 | 0.97 |
+| 5-8 | 121 | 0.67 | 0.46–0.80 | 0.75 | 0.10 | 0.000 | 0.14 | 0.98 |
+| 9-16 | 78 | 0.70 | 0.50–0.83 | 0.78 | 0.07 | 0.000 | 0.09 | 1.00 |
+| 17-60 | 28 | 0.73 | 0.48–0.86 | 0.74 | 0.04 | 0.000 | 0.06 | 1.00 |
+| all | 379 | 0.67 | 0.43–0.80 | 0.71 | 0.10 | 0.000 | 0.17 | 0.98 |
+
+Pairwise agreement of the 20 bootstrap maps (median over 190 pairs, IQR in brackets) and agreement of each bootstrap map with the frozen map:
+
+| | ARI (both covered) | NMI (both covered) | ARI (either, singletons) | NMI (either, singletons) | ARI vs frozen | NMI vs frozen | Level-1 clusters per bootstrap map | Genes covered |
+|---|---|---|---|---|---|---|---|---|
+| zavg_BEF | 0.754 (0.745–0.764) | 0.935 (0.933–0.937) | 0.626 (0.618–0.635) | 0.899 (0.898–0.901) | 0.843 (0.839–0.849) | 0.964 (0.962–0.965) | 348 (344–352) | 3912 (3877–3928) |
+| GLS | 0.747 (0.735–0.763) | 0.939 (0.937–0.940) | 0.529 (0.518–0.543) | 0.899 (0.897–0.900) | 0.868 (0.854–0.873) | 0.970 (0.968–0.971) | 538 (531–558) | 3476 (3440–3504) |
+
+Reading (descriptive only; nothing here enters a decision):
+- A single 80% subsample recovers the typical frozen complex (zavg pooled median Jaccard 0.69, 73% of complex-by-map
+  values ≥ 0.5), far above the size-matched random reference (median 0.06, none ≥ 0.5). Recovery rises with size and is
+  weakest for 3–4-gene complexes, where the spread is widest.
+- The frozen maps are partly built from these subsamples, so agreement with the frozen map is not independent of them.
+  The pairwise ARI between bootstrap maps is the cleaner measure of subsample-to-subsample variability.
+- The single-graph GLS maps have many more level-1 clusters than the frozen GLS map (median 538 against 379): the
+  across-subsample consensus is what prunes them. For zavg the numbers are close (348 against 367).
+- The README stability table above (mean best-match Jaccard against stage-1 runs) is a different quantity.
+
+Runtime: bootstrap maps, 20 subsamples x 2 methods on 4 processes, 325 s wall (62–68 s per subsample,
+no score runs needed: the cached blocks were reused); peak RSS 1.97 GB per worker.
+Analysis 32 s, peak 0.63 GB. Frozen-map rebuild check 150 s,
+peak 1.6 GB. Reproduce: `PYTHONHASHSEED=0 .venv/bin/python scripts/39_map_variability.py --stage all --n-proc 4`
+(`--stage verify` for the rebuild check). Files: `variability/variability.json`, `*_per_complex_jaccard.tsv`,
+`*_pairwise_ari_nmi.tsv`, `*_bootstrap_vs_frozen.tsv`, `*_bootstrap_level1_labels.tsv.gz`, `maps_runtime.json`.
