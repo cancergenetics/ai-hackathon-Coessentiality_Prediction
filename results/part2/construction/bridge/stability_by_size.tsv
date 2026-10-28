@@ -1,0 +1,9 @@
+method	bin	n	mean_stability	median_stability
+zavg_BEF	3-4	85	0.4898	0.5054
+zavg_BEF	5-8	85	0.5675	0.5820
+zavg_BEF	9-16	149	0.6532	0.6534
+zavg_BEF	17-60	48	0.7748	0.7671
+gls	3-4	152	0.3636	0.3034
+gls	5-8	121	0.4836	0.4511
+gls	9-16	78	0.6069	0.6093
+gls	17-60	28	0.7323	0.7708

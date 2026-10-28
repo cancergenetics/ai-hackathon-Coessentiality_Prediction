@@ -57,6 +57,11 @@ class ClusterConfig:
     cohesion_delta: float | None = 1.0    # sub-modules: mean all-pairs score >= z0 + delta (None: no rule)
     cohesion_delta_level1: float | None = 0.0   # coarse clusters: mean all-pairs score >= z0 + delta (DESIGN v3.1)
     max_depth: int = 4                    # recursion limit for re-clustering oversize / non-cohesive candidates
+    placement: str = "greedy"             # 'greedy' (coarse-first, trim, drop if < trim_keep remains) |
+                                          # 'nested' (FZ-C decision D2: persistence-first; containment = nesting;
+                                          #  partial overlap > overlap_conflict resolved to the more persistent)
+    nest_contain: float = 0.8             # 'nested': |a & b| / |b| >= this -> b nested in a
+    overlap_conflict: float = 0.5         # 'nested': partial overlap > this fraction of the candidate -> dropped
 
 
 def ensure_hashseed():
@@ -322,12 +327,164 @@ def best_jaccard_sets(a, b) -> float:
     return inter / (len(a) + len(b) - inter)
 
 
+def _persist_key(d):
+    """'nested' placement order: most persistent first (adjacent gamma steps, then support), then larger, then
+    coarser, then lowest member index (deterministic)."""
+    return (-d["n_adjacent"], -d["support"], -len(d["members"]), d["j_start"], int(d["members"][0]))
+
+
+def _place_nested(cands, levels, n, cfg, ref_scores, z0, counts, delta1, delta2, within=None):
+    """FZ-C decision D2 (results/part2/construction/DECISIONS.md). Candidates (persistent chains) are visited most
+    persistent first. Against the clusters already accepted (one partition per level):
+      * duplicate (Jaccard >= jaccard_recur with an accepted cluster)             -> dropped ('duplicate');
+      * nested child (>= nest_contain of it inside one accepted level-1 cluster)   -> sub-module candidate of that
+        cluster (restricted to the parent), placed at level 2 after level 1 is complete;
+      * parent (it holds >= nest_contain of one or more accepted level-1 clusters)  -> becomes the level-1 cluster
+        (members = candidate U those clusters), the contained clusters become its level-2 sub-modules, provided
+        the merged parent passes size and level-1 cohesion (else the candidate is dropped, 'parent_rule_fail');
+      * partial overlap with other accepted clusters: if the overlapping genes are > overlap_conflict of the
+        candidate it is dropped ('overlap_conflict', resolved to the more persistent cluster), otherwise they are
+        trimmed from it.
+    Rule violators (size > max_size, cohesion < z0 + delta) are re-clustered on the same frequencies as before.
+    Returns (level-1 dicts, {level-1 index: [level-2 candidate dicts]})."""
+    acc, kids = [], {}
+    owner = np.full(n, -1)                       # level-1 index owning each gene
+    queue = sorted(cands, key=_persist_key)
+    while queue:
+        d = queue.pop(0)
+        m = np.asarray(d["members"])
+        if within is not None:
+            m = np.intersect1d(m, within)
+        if len(m) < cfg.min_size:
+            counts["overlap_dropped"] += 1
+            continue
+        own = owner[m]
+        placed = np.unique(own[own >= 0])
+        dup = parent_of = None
+        children, partial = [], []
+        for a in placed.tolist():
+            am = acc[a]["members"]
+            inter = int((own == a).sum())
+            if inter / (len(m) + len(am) - inter) >= cfg.jaccard_recur:
+                dup = a
+                break
+            if inter / len(m) >= cfg.nest_contain:
+                parent_of = a
+            elif inter / len(am) >= cfg.nest_contain:
+                children.append(a)
+            else:
+                partial.append(a)
+        if dup is not None:
+            counts["duplicate"] += 1
+            continue
+        if parent_of is not None:
+            kids.setdefault(parent_of, []).append(dict(d, members=np.intersect1d(m, acc[parent_of]["members"])))
+            counts["nested_child"] += 1
+            continue
+        pmask = np.isin(own, partial) if partial else np.zeros(len(m), bool)
+        if pmask.sum() > cfg.overlap_conflict * len(m):
+            counts["overlap_conflict"] += 1
+            continue
+        free = m[~pmask]
+        if partial:
+            counts["trimmed"] += 1
+        if children:
+            merged = np.union1d(free, np.concatenate([acc[a]["members"] for a in children]))
+            coh = cohesion(merged, ref_scores)
+            if len(merged) > cfg.max_size or (delta1 is not None and ref_scores is not None and coh < z0 + delta1):
+                counts["parent_rule_fail"] += 1
+                continue
+            # the merged parent replaces its children at level 1; they (and their own kids) become its sub-modules
+            new_kids = []
+            for a in children:
+                new_kids.append(dict(acc[a], members=acc[a]["members"]))
+                new_kids.extend(kids.pop(a, []))
+                acc[a] = None
+                owner[owner == a] = -1
+            idx = len(acc)
+            acc.append(dict(d, members=merged, size=len(merged), cohesion=coh, trimmed=len(m) - len(free)))
+            owner[merged] = idx
+            kids[idx] = new_kids
+            counts["parent_absorbed"] += len(children)
+            continue
+        if len(free) < cfg.min_size:
+            counts["overlap_dropped"] += 1
+            continue
+        coh = cohesion(free, ref_scores)
+        too_big = len(free) > cfg.max_size
+        not_coh = delta1 is not None and ref_scores is not None and coh < z0 + delta1
+        if too_big or not_coh:
+            counts["oversize" if too_big else "cohesion_fail"] += 1
+            dd = d.get("depth", 0)
+            if dd < cfg.max_depth and d["j"] + 1 < len(levels):
+                sub = persistent(levels, n, free, range(d["j"] + 1, len(levels)), cfg)
+                sub = [s for s in sub if best_jaccard_sets(s["members"], free) < cfg.jaccard_recur or len(s["members"]) < len(free)]
+                counts["reclustered"] += 1
+                queue = sorted(queue + [dict(s, depth=dd + 1) for s in sub], key=_persist_key)
+            continue
+        idx = len(acc)
+        acc.append(dict(d, members=free, size=len(free), cohesion=coh, trimmed=len(m) - len(free)))
+        owner[free] = idx
+    out, out_kids = [], {}
+    for i, a in enumerate(acc):
+        if a is None:
+            continue
+        out_kids[len(out)] = kids.get(i, [])
+        out.append(a)
+    return out, out_kids
+
+
+def _build_map_nested(graphs, cfg, ref_scores, z0, levels, sublevels):
+    n = graphs[0].n
+    counts = dict(oversize=0, cohesion_fail=0, reclustered=0, overlap_dropped=0, duplicate=0, nested_child=0,
+                  overlap_conflict=0, trimmed=0, parent_rule_fail=0, parent_absorbed=0)
+    top = persistent(levels, n, None, range(len(levels)), cfg)
+    counts["persistent_level1_candidates"] = len(top)
+    l1, nested = _place_nested(top, levels, n, cfg, ref_scores, z0, counts, cfg.cohesion_delta_level1, None)
+    # deterministic level-1 order: coarse first as before
+    order = sorted(range(len(l1)), key=lambda i: (l1[i]["j_start"], -len(l1[i]["members"]), int(l1[i]["members"][0])))
+    cm = ClusterMap(counts=counts)
+    for new_id, i in enumerate(order):
+        cm.clusters.append(dict(l1[i], id=new_id, level=1, parent=-1))
+    if sublevels:
+        nid = len(l1)
+        sc = dict(oversize=0, cohesion_fail=0, reclustered=0, overlap_dropped=0, duplicate=0, nested_child=0,
+                  overlap_conflict=0, trimmed=0, parent_rule_fail=0, parent_absorbed=0, from_nesting=0,
+                  from_reclustering=0)
+        for new_id, i in enumerate(order):
+            p = l1[i]
+            pm = p["members"]
+            if len(pm) < 2 * cfg.min_size:
+                continue
+            cands = [dict(c, origin="nesting") for c in nested.get(i, [])]
+            if p["j"] + 1 < len(levels):
+                cands += [dict(c, origin="reclustering")
+                          for c in persistent(levels, n, pm, range(p["j"] + 1, len(levels)), cfg)]
+            cands = [c for c in cands if len(c["members"]) < len(pm)
+                     and best_jaccard_sets(np.intersect1d(c["members"], pm), pm) < cfg.jaccard_recur]
+            # level 2: one partition per parent; no deeper nesting (depth = max), sub-module cohesion z0 + delta2
+            sub, _ = _place_nested([dict(c, depth=cfg.max_depth) for c in cands], levels, n, cfg, ref_scores, z0,
+                                   sc, cfg.cohesion_delta, None, within=pm)
+            for d in sub:
+                sc["from_" + d.get("origin", "reclustering")] += 1
+                cm.clusters.append(dict(d, id=nid, level=2, parent=new_id))
+                nid += 1
+        counts["level2"] = sc
+    counts["n_level1"] = len(cm.level(1))
+    counts["n_level2"] = len(cm.level(2))
+    return cm
+
+
 def build_map(graphs: list[Graph], cfg: ClusterConfig = ClusterConfig(), ref_scores: np.ndarray | None = None,
               z0: float = 0.0, levels: list[Level] | None = None, sublevels: bool = True) -> ClusterMap:
     """Full consensus + persistence + top-down nesting. ref_scores: S x S reference block (full construction set)
     for the cohesion rule; z0: the graph threshold (cohesion >= z0 + cohesion_delta)."""
     n = graphs[0].n
     levels = build_levels(graphs, cfg) if levels is None else levels
+    if cfg.placement == "nested":
+        return _build_map_nested(graphs, cfg, ref_scores, z0, levels, sublevels)
+    if cfg.placement != "greedy":
+        raise ValueError(cfg.placement)
     counts = dict(oversize=0, cohesion_fail=0, reclustered=0, overlap_dropped=0)
     top = persistent(levels, n, None, range(len(levels)), cfg)
     counts["persistent_level1_candidates"] = len(top)

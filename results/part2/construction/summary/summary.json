@@ -1,0 +1,265 @@
+{
+ "zavg": {
+  "n_level1": 367,
+  "n_level2": 132,
+  "n_parents_with_submodules": 74,
+  "genes_level1": 3642,
+  "genes_S": 6022,
+  "coverage_by_class": {
+   "pan": {
+    "in_S": 965,
+    "clustered": 594,
+    "frac": 0.616
+   },
+   "selective": {
+    "in_S": 2269,
+    "clustered": 1722,
+    "frac": 0.759
+   },
+   "other": {
+    "in_S": 2788,
+    "clustered": 1326,
+    "frac": 0.476
+   }
+  },
+  "size_level1": {
+   "min": 3.0,
+   "q25": 5.0,
+   "median": 9.0,
+   "q75": 13.0,
+   "max": 29.0
+  },
+  "size_level2": {
+   "min": 3.0,
+   "q25": 4.0,
+   "median": 6.0,
+   "q75": 9.0,
+   "max": 16.0
+  },
+  "size_bins_level1": {
+   "3-4": 85,
+   "5-8": 85,
+   "9-16": 149,
+   "17-60": 48
+  },
+  "locus_rate_level1": 0.283,
+  "locus_rate_level2": 0.235,
+  "tiers": {
+   "level1": {
+    "T1": 159,
+    "T3-neg": 124,
+    "T2": 74,
+    "T3-nc": 10
+   },
+   "level2": {
+    "T1": 59,
+    "T3-neg": 42,
+    "T2": 28,
+    "T3-nc": 3
+   }
+  },
+  "tiers_nonlocus_level1": {
+   "T1": 155,
+   "T2": 60,
+   "T3-neg": 47,
+   "T3-nc": 1
+  },
+  "top_T1_nonlocus": [
+   {
+    "cluster_id": "Z0001",
+    "size": 29,
+    "members": "ABCB7;CIAO1;CIAO2B;CIAO3;CIAPIN1;FDX2;FXN;GFER;GLRX3;HSCB;IREB2;LTO1;LYRM4;MMS19;NCOA4;NDOR1;NFS1;NUBP1;NUBP2;SLC25A28;SLC25A37;SOD2;STARD7;STOML2;TAX1BP1;TIMM10;TIMM22;TIMM29;TIMM9",
+    "POSTHOC_hgnc_gene_group": "Cytosolic iron-sulfur assembly components"
+   },
+   {
+    "cluster_id": "Z0002",
+    "size": 27,
+    "members": "AARS2;EARS2;FARS2;GATB;HARS2;HSD17B10;LARS2;MARS2;MRPL39;MRPL43;MRPS6;NARS2;PARS2;POLG;POLG2;POLRMT;PRORP;QRSL1;RARS2;SARS2;SLC25A26;SSBP1;TARS2;TFB2M;TWNK;VARS2;YARS2",
+    "POSTHOC_hgnc_gene_group": "Aminoacyl tRNA synthetases, Class II"
+   },
+   {
+    "cluster_id": "Z0003",
+    "size": 27,
+    "members": "BCS1L;COA5;COA6;COA7;COX10;COX11;COX15;COX16;COX19;COX4I1;COX5A;COX5B;COX6B1;COX6C;COX7B;COX7C;CYC1;CYCS;FASTKD5;HCCS;PET100;SCO1;SCO2;UQCRB;UQCRC1;UQCRC2;UQCRFS1",
+    "POSTHOC_hgnc_gene_group": "Mitochondrial respiratory chain complex assembly factors"
+   },
+   {
+    "cluster_id": "Z0004",
+    "size": 27,
+    "members": "C5orf34;CCDC77;CEP120;CEP135;CEP152;CEP295;CEP44;CPAP;HYLS1;MIIP;PCM1;PCNT;PLK4;POC1A;POC1B;POC5;PPP1R35;RTTN;SASS6;SPICE1;STIL;TBC1D31;TEDC1;TEDC2;TUBD1;TUBE1;WRAP73",
+    "POSTHOC_hgnc_gene_group": "WD repeat domain containing"
+   },
+   {
+    "cluster_id": "Z0008",
+    "size": 26,
+    "members": "BUB1;BUB1B;BUB3;CDC20;CKAP5;CLTC;DLGAP5;DSN1;GAK;GTSE1;KIF15;KNL1;KNTC1;MAD1L1;MAD2L1;MAD2L1BP;MIS12;MKI67;MYBL2;NSL1;PMF1;TACC3;TRIP13;TTK;ZWILCH;ZWINT",
+    "POSTHOC_hgnc_gene_group": "MIS12 kinetochore complex"
+   },
+   {
+    "cluster_id": "Z0009",
+    "size": 25,
+    "members": "ACO2;BOLA3;DLD;DLST;FDX1;FH;GCSH;GLRX5;IBA57;IDH3A;ISCA1;ISCA2;KGD4;LIAS;LIPT1;LIPT2;NFU1;OGDH;SDHA;SDHB;SDHC;SDHD;SLC25A19;SLC25A3;TPK1",
+    "POSTHOC_hgnc_gene_group": "Mitochondrial iron-sulfur assembly components"
+   },
+   {
+    "cluster_id": "Z0010",
+    "size": 25,
+    "members": "CNIH1;EDEM3;GOSR2;MON2;PREB;RAB1A;RAB1B;SAR1A;SCFD1;SEC23B;SEC23IP;SEC24A;SURF4;TM9SF3;TMED10;TMED2;TMED9;TRAPPC1;TRAPPC11;TRAPPC13;TRAPPC2L;TRAPPC3;TRAPPC4;TRAPPC5;TRAPPC8",
+    "POSTHOC_hgnc_gene_group": "Trafficking protein particle complex subunits"
+   },
+   {
+    "cluster_id": "Z0012",
+    "size": 24,
+    "members": "NDUFA1;NDUFA10;NDUFA11;NDUFA2;NDUFA6;NDUFA8;NDUFB10;NDUFB11;NDUFB2;NDUFB3;NDUFB4;NDUFB6;NDUFB7;NDUFB8;NDUFB9;NDUFC1;NDUFC2;NDUFS1;NDUFS2;NDUFS5;NDUFS7;NDUFS8;NDUFV2;TIMMDC1",
+    "POSTHOC_hgnc_gene_group": "NADH:ubiquinone oxidoreductase supernumerary subunits"
+   },
+   {
+    "cluster_id": "Z0011",
+    "size": 24,
+    "members": "ANLN;ARF6;AURKB;BIRC5;CDCA8;CEP55;CIT;ECT2;ESPL1;INCENP;KIF14;KIF20A;KIF23;KIFBP;NAA50;NCAPD2;NCAPG;NCAPH;PDCD6IP;PRC1;RACGAP1;SMC2;SMC4;TOP2A",
+    "POSTHOC_hgnc_gene_group": "Condensin I subunits"
+   },
+   {
+    "cluster_id": "Z0014",
+    "size": 23,
+    "members": "BTAF1;CCNC;DRAP1;KAT2A;KDM5C;MED12;MED13;MED13L;MED15;MED16;MED19;MED23;MED24;SGF29;SUPT20H;SUPT7L;TADA1;TADA2B;TADA3;TAF5L;TAF6L;ZMYND8;ZNF592",
+    "POSTHOC_hgnc_gene_group": "Mediator complex"
+   }
+  ],
+  "attachments": {
+   "pairs": 2563,
+   "genes": 2000,
+   "pairs_not_locus": 712,
+   "genes_not_locus": 532
+  }
+ },
+ "gls": {
+  "n_level1": 379,
+  "n_level2": 108,
+  "n_parents_with_submodules": 65,
+  "genes_level1": 2862,
+  "genes_S": 6022,
+  "coverage_by_class": {
+   "pan": {
+    "in_S": 965,
+    "clustered": 410,
+    "frac": 0.425
+   },
+   "selective": {
+    "in_S": 2269,
+    "clustered": 1494,
+    "frac": 0.658
+   },
+   "other": {
+    "in_S": 2788,
+    "clustered": 958,
+    "frac": 0.344
+   }
+  },
+  "size_level1": {
+   "min": 3.0,
+   "q25": 4.0,
+   "median": 5.0,
+   "q75": 9.0,
+   "max": 37.0
+  },
+  "size_level2": {
+   "min": 3.0,
+   "q25": 4.0,
+   "median": 5.0,
+   "q75": 7.0,
+   "max": 15.0
+  },
+  "size_bins_level1": {
+   "3-4": 152,
+   "5-8": 121,
+   "9-16": 78,
+   "17-60": 28
+  },
+  "locus_rate_level1": 0.222,
+  "locus_rate_level2": 0.25,
+  "tiers": {
+   "level1": {
+    "T1": 159,
+    "T3-neg": 131,
+    "T2": 81,
+    "T3-nc": 8
+   },
+   "level2": {
+    "T1": 42,
+    "T3-neg": 38,
+    "T2": 24,
+    "T3-nc": 4
+   }
+  },
+  "tiers_nonlocus_level1": {
+   "T1": 151,
+   "T2": 69,
+   "T3-neg": 69,
+   "T3-nc": 6
+  },
+  "top_T1_nonlocus": [
+   {
+    "cluster_id": "G0004",
+    "size": 32,
+    "members": "ACAD9;ECSIT;NDUFA1;NDUFA10;NDUFA11;NDUFA2;NDUFA3;NDUFA6;NDUFA8;NDUFA9;NDUFAF1;NDUFAF7;NDUFB10;NDUFB11;NDUFB2;NDUFB3;NDUFB4;NDUFB5;NDUFB6;NDUFB7;NDUFB8;NDUFB9;NDUFC1;NDUFC2;NDUFS1;NDUFS2;NDUFS5;NDUFS7;NDUFS8;NDUFV1;NDUFV2;TIMMDC1",
+    "POSTHOC_hgnc_gene_group": "NADH:ubiquinone oxidoreductase supernumerary subunits"
+   },
+   {
+    "cluster_id": "G0006",
+    "size": 29,
+    "members": "BCS1L;COA5;COA6;COA7;COX10;COX11;COX15;COX16;COX18;COX19;COX4I1;COX5A;COX5B;COX6B1;COX6C;COX7B;COX7C;COX8A;CYC1;CYCS;FASTKD5;HCCS;PET100;SCO1;SCO2;UQCRB;UQCRC1;UQCRC2;UQCRFS1",
+    "POSTHOC_hgnc_gene_group": "Mitochondrial respiratory chain complex assembly factors"
+   },
+   {
+    "cluster_id": "G0008",
+    "size": 25,
+    "members": "AGPAT5;CHCHD3;CLPB;CRLS1;DNAJC11;HAX1;HTRA2;MFN2;MTCH2;MTX2;PGS1;PTPMT1;ROMO1;SAMM50;TAFAZZIN;TAMM41;TIMCC;TIMM13;TIMM44;TIMM8A;TMEM11;TOMM70;TTC1;VPS13D;YME1L1",
+    "POSTHOC_hgnc_gene_group": "MicroRNA protein coding host genes"
+   },
+   {
+    "cluster_id": "G0010",
+    "size": 22,
+    "members": "AFDN;ARHGAP29;CDC42;CDH1;CDH2;CRB3;CTNNA1;CTNND1;F11R;HNF1B;MECOM;MYRF;PAK4;PARD3;PARD6B;PAX8;PRKCI;RASSF8;SOX17;TAX1BP3;TJP1;TP53BP2",
+    "POSTHOC_hgnc_gene_group": "PDZ domain containing"
+   },
+   {
+    "cluster_id": "G0012",
+    "size": 22,
+    "members": "ATL2;BNIP1;C19orf25;FITM2;GOLT1B;IER3IP1;NAPG;NBAS;OSBPL9;RAB18;RAB3GAP1;RAB3GAP2;RINT1;SCFD2;SCYL1;STX18;TBC1D20;TMEM167A;USE1;YIPF5;YIPF6;ZW10",
+    "POSTHOC_hgnc_gene_group": "NRZ tethering complex"
+   },
+   {
+    "cluster_id": "G0013",
+    "size": 22,
+    "members": "CCDC77;CEP120;CEP135;CEP152;CEP295;CEP44;CPAP;MIIP;PLK4;POC1A;POC1B;POC5;RTTN;SASS6;SPICE1;STIL;TBC1D31;TEDC1;TEDC2;TUBD1;TUBE1;WRAP73",
+    "POSTHOC_hgnc_gene_group": "WD repeat domain containing"
+   },
+   {
+    "cluster_id": "G0014",
+    "size": 22,
+    "members": "CCNC;KAT2A;MED1;MED10;MED12;MED13;MED13L;MED15;MED16;MED19;MED23;MED24;SGF29;SUPT20H;SUPT7L;TADA1;TADA2B;TADA3;TAF5L;TAF6L;ZMYND8;ZNF592",
+    "POSTHOC_hgnc_gene_group": "Mediator complex"
+   },
+   {
+    "cluster_id": "G0299",
+    "size": 22,
+    "members": "AARS2;EARS2;FARS2;GATB;HARS2;HSD17B10;LARS2;MARS2;MRPS6;NARS2;POLG;POLG2;POLRMT;QRSL1;RARS2;SARS2;SSBP1;TARS2;TFB2M;TWNK;VARS2;YARS2",
+    "POSTHOC_hgnc_gene_group": "Aminoacyl tRNA synthetases, Class II"
+   },
+   {
+    "cluster_id": "G0015",
+    "size": 21,
+    "members": "ARL8B;FLCN;FNIP1;LAMTOR1;LAMTOR2;LAMTOR3;LAMTOR4;MIOS;RRAGA;RRAGC;SEH1L;SNAPIN;SPG21;TBC1D5;VPS16;VPS18;VPS33A;VPS39;VPS41;WDR24;WDR59",
+    "POSTHOC_hgnc_gene_group": "HOPS complex"
+   },
+   {
+    "cluster_id": "G0341",
+    "size": 21,
+    "members": "BCAR1;BCAR3;CRK;CRKL;DOCK5;ELMO2;FERMT2;ILK;ITGAV;ITGB5;MYO10;PTK2;PXN;RAPGEF1;RAPH1;RHOG;RSU1;SRC;TLN1;TNS3;VCL",
+    "POSTHOC_hgnc_gene_group": "SH2 domain containing"
+   }
+  ]
+ },
+ "note": "POSTHOC_hgnc_gene_group: HGNC gene_group of the most frequent group among members (post hoc annotation; not used for construction, selection, tiers or the bridge)"
+}

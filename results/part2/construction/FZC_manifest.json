@@ -1,0 +1,33 @@
+{
+ "freeze": "FZ-C",
+ "created": "2026-10-28T21:41:06",
+ "note": "zavg_BEF and GLS maps on A, committed before any BioPlex / proteomics read",
+ "sha256": {
+  "results/part2/construction/DECISIONS.md": "2c955e0902cc5a6806013f9ab0d78c4509425679b5f944a6105453865d20bb30",
+  "results/part2/construction/gls_map/MANIFEST.sha256": "b83bf019a1d153932bf7648c7b685915ae249138278b8183401d90fe90a2659c",
+  "results/part2/construction/gls_map/clusters.tsv": "f79160a8e5456e9c24805462d1a18250f56ae56cf246b79491b9da1acac8e4ba",
+  "results/part2/construction/gls_map/membership.tsv": "760e065e39107c97c16735e6dc77f5bca4f73567f7d73d68d67c9ba44bf17dd3",
+  "results/part2/construction/gls_map/parameters.json": "83de48f9d2778d8b1f013490aeb0f92edc39cf08b73b92e4940a706b5c84b431",
+  "results/part2/construction/gls_map/runtime.json": "44028ae5d4e3dc02a1a779ad0a5fb4dc433cdab0472bf97131327adcb0bdb26c",
+  "results/part2/construction/selection/selection.json": "e3384db9c407d68e7a7f0c2e050e39b5ff00e18a8b35c9071abb86fbdf60085c",
+  "results/part2/construction/selection/split_half_per_split.tsv": "447f744324240bf716c8322372273e61f075350106b0b7264fd6c478afb19f21",
+  "results/part2/construction/zavg_map/MANIFEST.sha256": "8afbb899ef171f0bb11cf92e4f83de4c273f41ee822457c942cf53ea344ef7ef",
+  "results/part2/construction/zavg_map/attachments.tsv": "cd9b988bb2246ca57f6a9c724710a131c0b06bb66eea527033c8ea74b753ac18",
+  "results/part2/construction/zavg_map/clusters.tsv": "7623ce58bc224416ab301e44ba2f761337a2e24c2a31cdd6392048698e8c0056",
+  "results/part2/construction/zavg_map/membership.tsv": "fec552d4398de8556d799ff09ebc88575fe75eeba53383638c11303be3c812cd",
+  "results/part2/construction/zavg_map/parameters.json": "2c9f2b1c087b2fe5a38c4ef012f565b18acc506c9e1b9397d06f44adb288fc1c",
+  "results/part2/construction/zavg_map/runtime.json": "6623d4a23a7ffadea9a4a361d99e526595bc3aab7eac5ef839f8aafd9fff616d",
+  "results/part2/lockbox/A_models.txt": "3946c9a7704b41ca3004591b18d7e29cdb2d9f99d3e44a4b2501affe664d09c6",
+  "scripts/31_score_blocks.py": "dd1cb9f82bcbbb9d88beb5cad1a1a62095fc4c5d20cfa7fe22bcd7c117761d11",
+  "scripts/36_build_maps.py": "1476a689a809ac94368f717fac7d57039049e2bacbe9378a8ca4dc4aee088664",
+  "src/part2/attach.py": "b4ff8e8f0ad684cb6eb5474c8b92b688358a43020d065da380614090167d1856",
+  "src/part2/consensus.py": "16c1275fcddcf1538b78554e3b5eee9795c0fe8c6bc90d7f22fa27c2ffe9af3e",
+  "src/part2/construct.py": "17a1f2513428a3eff1a985e4d630df5dc99874ed139339dd7d4b35dfb3756349",
+  "src/part2/genefilter.py": "253b9344f2c986ee39b2a0f7607de4734644e71b970f468b7218d87fc7099d12",
+  "src/part2/graph.py": "254bbc9aa02c68c947a271f787403b01100a5c7dda7142ea0cafc9daaaee334a",
+  "src/part2/locus.py": "1773e0556c19e43ad8514c0a5b212aa250a8ee5474c8ea77f49251dde0936e6e",
+  "src/part2/runsets.py": "611131661b2f8971643199d910651fed1b1e140f5fc5f93d9833d700b0fa7a36",
+  "src/part2/scores.py": "4218eb94d9232aab1c5d57845ce1a3b79a4f9290bf4477a7c8a3e9e8d6f46757",
+  "src/part2/selection.py": "1dc2bb62bf8598473cba2d95ab82cc71b48f19270a8362fdf5dbffaa0eebe9af"
+ }
+}

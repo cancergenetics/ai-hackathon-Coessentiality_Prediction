@@ -1,0 +1,9 @@
+{
+ "graphs_s": 17.1,
+ "stage1_s": 194.9,
+ "persistence_nesting_s": 33.2,
+ "attachment_s": 0.6,
+ "total_s": 250.3,
+ "peak_rss_gb_process": 1.25,
+ "n_proc": 3
+}

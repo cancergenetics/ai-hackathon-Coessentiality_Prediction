@@ -1,0 +1,338 @@
+{
+ "method": "gls",
+ "z0": 6.0,
+ "k": 10,
+ "weight_cap": 3.0,
+ "cluster_config": {
+  "gammas": [
+   0.05,
+   0.07071067811865477,
+   0.10000000000000003,
+   0.14142135623730953,
+   0.20000000000000007,
+   0.2828427124746191,
+   0.4000000000000002,
+   0.5656854249492383,
+   0.8000000000000004,
+   1.1313708498984767,
+   1.6000000000000012
+  ],
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "gamma2": 0.5,
+  "stage2_seed": 0,
+  "n_iterations": 2,
+  "jaccard_recur": 0.75,
+  "support_min": 0.6,
+  "support_mode": "containment",
+  "min_adjacent": 3,
+  "min_size": 3,
+  "max_size": 60,
+  "trim_keep": 0.8,
+  "cohesion_delta": 1.0,
+  "cohesion_delta_level1": 0.0,
+  "max_depth": 4,
+  "placement": "nested",
+  "nest_contain": 0.8,
+  "overlap_conflict": 0.5
+ },
+ "split_half_config": {
+  "size_lo": 5,
+  "size_hi": 30,
+  "jaccard": 0.5,
+  "exclude_locus": true
+ },
+ "selection": {
+  "z0": 6.0,
+  "k": 10,
+  "stat": 0.3427721463199648
+ },
+ "gls_matching": "same S and k as zavg; per run: top mutual-top-k GLS pairs up to the zavg edge count of the same model set; weights quantile-matched; cohesion on the GLS A block rank-mapped onto the zavg A block (D4)",
+ "S": {
+  "n": 6022,
+  "hash": "8c264ca513f8",
+  "rule": "effect < -0.5 in >= 1% of A, non-NaN >= 95% of A, not Part 1 low-coverage"
+ },
+ "A": {
+  "n_models": 1007,
+  "model_set_hash": "bd28f78d612bef9f"
+ },
+ "runs": [
+  {
+   "run": "boot1000",
+   "model_set_hash": "7103f69b72121dd9",
+   "n_models": 806,
+   "target_edges": 14197,
+   "edges": 14197,
+   "gls_threshold": 3.441274404525757,
+   "attainable": true
+  },
+  {
+   "run": "boot1001",
+   "model_set_hash": "2aa7db5ef46df2a1",
+   "n_models": 806,
+   "target_edges": 14314,
+   "edges": 14314,
+   "gls_threshold": 3.431947946548462,
+   "attainable": true
+  },
+  {
+   "run": "boot1002",
+   "model_set_hash": "607cb1ba562d392b",
+   "n_models": 806,
+   "target_edges": 14107,
+   "edges": 14107,
+   "gls_threshold": 3.4427316188812256,
+   "attainable": true
+  },
+  {
+   "run": "boot1003",
+   "model_set_hash": "a2561dbfd4a58830",
+   "n_models": 806,
+   "target_edges": 14391,
+   "edges": 14391,
+   "gls_threshold": 3.437309980392456,
+   "attainable": true
+  },
+  {
+   "run": "boot1004",
+   "model_set_hash": "55316d5713756049",
+   "n_models": 806,
+   "target_edges": 14152,
+   "edges": 14152,
+   "gls_threshold": 3.440715789794922,
+   "attainable": true
+  },
+  {
+   "run": "boot1005",
+   "model_set_hash": "9fe3dcf674523b9d",
+   "n_models": 806,
+   "target_edges": 14286,
+   "edges": 14286,
+   "gls_threshold": 3.4336605072021484,
+   "attainable": true
+  },
+  {
+   "run": "boot1006",
+   "model_set_hash": "d207f0f130345e34",
+   "n_models": 806,
+   "target_edges": 14125,
+   "edges": 14125,
+   "gls_threshold": 3.449154853820801,
+   "attainable": true
+  },
+  {
+   "run": "boot1007",
+   "model_set_hash": "01cc398c9984d1c4",
+   "n_models": 806,
+   "target_edges": 14152,
+   "edges": 14152,
+   "gls_threshold": 3.4353435039520264,
+   "attainable": true
+  },
+  {
+   "run": "boot1008",
+   "model_set_hash": "095f7d213857f763",
+   "n_models": 806,
+   "target_edges": 14047,
+   "edges": 14047,
+   "gls_threshold": 3.4504995346069336,
+   "attainable": true
+  },
+  {
+   "run": "boot1009",
+   "model_set_hash": "ce9da77da3293ebb",
+   "n_models": 806,
+   "target_edges": 14270,
+   "edges": 14270,
+   "gls_threshold": 3.433180809020996,
+   "attainable": true
+  },
+  {
+   "run": "boot1010",
+   "model_set_hash": "036cdfffaec9fb76",
+   "n_models": 806,
+   "target_edges": 14230,
+   "edges": 14230,
+   "gls_threshold": 3.4415557384490967,
+   "attainable": true
+  },
+  {
+   "run": "boot1011",
+   "model_set_hash": "3a3927f0511a6110",
+   "n_models": 806,
+   "target_edges": 14136,
+   "edges": 14136,
+   "gls_threshold": 3.437069892883301,
+   "attainable": true
+  },
+  {
+   "run": "boot1012",
+   "model_set_hash": "f2e20ba564a2f24c",
+   "n_models": 806,
+   "target_edges": 14204,
+   "edges": 14204,
+   "gls_threshold": 3.4432268142700195,
+   "attainable": true
+  },
+  {
+   "run": "boot1013",
+   "model_set_hash": "6ebd82720c214a77",
+   "n_models": 806,
+   "target_edges": 14149,
+   "edges": 14149,
+   "gls_threshold": 3.4463388919830322,
+   "attainable": true
+  },
+  {
+   "run": "boot1014",
+   "model_set_hash": "699d3bf767bc166d",
+   "n_models": 806,
+   "target_edges": 14402,
+   "edges": 14402,
+   "gls_threshold": 3.4291372299194336,
+   "attainable": true
+  },
+  {
+   "run": "boot1015",
+   "model_set_hash": "c812ad96ce7e2762",
+   "n_models": 806,
+   "target_edges": 14303,
+   "edges": 14303,
+   "gls_threshold": 3.4316022396087646,
+   "attainable": true
+  },
+  {
+   "run": "boot1016",
+   "model_set_hash": "93dc0240e1720792",
+   "n_models": 806,
+   "target_edges": 14082,
+   "edges": 14082,
+   "gls_threshold": 3.4455618858337402,
+   "attainable": true
+  },
+  {
+   "run": "boot1017",
+   "model_set_hash": "45749b863ae9ec95",
+   "n_models": 806,
+   "target_edges": 14166,
+   "edges": 14166,
+   "gls_threshold": 3.4464919567108154,
+   "attainable": true
+  },
+  {
+   "run": "boot1018",
+   "model_set_hash": "792f514288253b11",
+   "n_models": 806,
+   "target_edges": 13966,
+   "edges": 13966,
+   "gls_threshold": 3.4559497833251953,
+   "attainable": true
+  },
+  {
+   "run": "boot1019",
+   "model_set_hash": "2364d7cd04c16f09",
+   "n_models": 806,
+   "target_edges": 14292,
+   "edges": 14292,
+   "gls_threshold": 3.4463443756103516,
+   "attainable": true
+  }
+ ],
+ "reference_block": {
+  "run": "A",
+  "model_set_hash": "bd28f78d612bef9f",
+  "null_moments": {
+   "B": {
+    "mean": 0.0018271919811941565,
+    "sd": 0.9949431032131707
+   },
+   "E": {
+    "mean": 0.00010775539427142376,
+    "sd": 0.04603197713434127
+   },
+   "F": {
+    "mean": 0.00046709243185029544,
+    "sd": 0.031153804804912828
+   }
+  },
+  "gls_A_model_set_hash": "bd28f78d612bef9f"
+ },
+ "attachment": null,
+ "counts": {
+  "oversize": 0,
+  "cohesion_fail": 9,
+  "reclustered": 9,
+  "overlap_dropped": 2,
+  "duplicate": 7,
+  "nested_child": 74,
+  "overlap_conflict": 2,
+  "trimmed": 6,
+  "parent_rule_fail": 11,
+  "parent_absorbed": 37,
+  "persistent_level1_candidates": 507,
+  "level2": {
+   "oversize": 0,
+   "cohesion_fail": 0,
+   "reclustered": 0,
+   "overlap_dropped": 0,
+   "duplicate": 107,
+   "nested_child": 0,
+   "overlap_conflict": 0,
+   "trimmed": 0,
+   "parent_rule_fail": 0,
+   "parent_absorbed": 1,
+   "from_nesting": 100,
+   "from_reclustering": 8
+  },
+  "n_level1": 379,
+  "n_level2": 108
+ },
+ "seeds": {
+  "leiden": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "bootstraps": [
+   1000,
+   1001,
+   1002,
+   1003,
+   1004,
+   1005,
+   1006,
+   1007,
+   1008,
+   1009,
+   1010,
+   1011,
+   1012,
+   1013,
+   1014,
+   1015,
+   1016,
+   1017,
+   1018,
+   1019
+  ],
+  "split_half": [
+   2000,
+   2001,
+   2002,
+   2003
+  ],
+  "rewire": 4000
+ },
+ "code_commit": {
+  "commit": "f0f940e5688057f1d0e65c1363ebc8a000aaa143",
+  "dirty_part2": []
+ }
+}

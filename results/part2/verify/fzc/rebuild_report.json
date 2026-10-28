@@ -1,0 +1,71 @@
+{
+ "wall_s": 443.8,
+ "n_proc": 3,
+ "results": {
+  "zavg_BEF": {
+   "n_level1": 367,
+   "n_level2": 132,
+   "genes_level1": 3642,
+   "locus_level1": 104,
+   "runtime": {
+    "graphs_s": 14.6,
+    "stage1_s": 154.4,
+    "persistence_nesting_s": 33.3,
+    "attachment_s": 0.6,
+    "total_s": 207.5,
+    "peak_rss_gb_process": 1.61,
+    "n_proc": 3
+   }
+  },
+  "gls": {
+   "n_level1": 379,
+   "n_level2": 108,
+   "genes_level1": 2862,
+   "locus_level1": 84,
+   "runtime": {
+    "graphs_s": 16.5,
+    "stage1_s": 156.8,
+    "persistence_nesting_s": 56.9,
+    "attachment_s": 0.0,
+    "total_s": 234.9,
+    "peak_rss_gb_process": 2.73,
+    "n_proc": 3
+   }
+  }
+ },
+ "compare": {
+  "zavg_map": {
+   "attachments.tsv": {
+    "identical": true
+   },
+   "clusters.tsv": {
+    "identical": true
+   },
+   "membership.tsv": {
+    "identical": true
+   },
+   "parameters.json": {
+    "identical": false,
+    "identical_except_code_commit": true
+   },
+   "runtime.json": {
+    "identical": false
+   }
+  },
+  "gls_map": {
+   "clusters.tsv": {
+    "identical": true
+   },
+   "membership.tsv": {
+    "identical": true
+   },
+   "parameters.json": {
+    "identical": false,
+    "identical_except_code_commit": true
+   },
+   "runtime.json": {
+    "identical": false
+   }
+  }
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "zavg": {
+  "n": 499,
+  "agree": 499,
+  "discordant": [],
+  "window_share_maxabsdiff": 0.0,
+  "arm_share_maxabsdiff": 0.0
+ },
+ "gls": {
+  "n": 487,
+  "agree": 487,
+  "discordant": [],
+  "window_share_maxabsdiff": 0.0,
+  "arm_share_maxabsdiff": 0.0
+ },
+ "picked": {
+  "T1": [
+   "Z0021",
+   "Z0061",
+   "Z0109",
+   "Z0276",
+   "Z0289"
+  ],
+  "locus": [
+   "Z0005",
+   "Z0017.1",
+   "Z0199",
+   "Z0225",
+   "Z0233"
+  ]
+ }
+}

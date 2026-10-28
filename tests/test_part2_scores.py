@@ -68,6 +68,34 @@ def test_zavg_block_matches_pair_api_on_toy():
     assert (TI[:, 0] >= 0).all() and (TI != s[:, None]).all()      # all-gene top-K excludes self
 
 
+def test_zavg_rect_equals_full_block_and_leaves_SxS_unchanged():
+    """Attachment rectangle (non-S x S) equals the all-gene block restricted to (non-S, S); S x S block and top-K
+    are identical with and without rect."""
+    X = _toy_X(2)
+    cfg = Config(k=3, d=16, q=5.0, n_null=5000)
+    G = X.shape[1]
+    S = np.zeros(G, bool)
+    S[::3] = True
+    gidx = np.arange(G)
+    B0, (TI0, TV0), _, _ = scores.zavg_block(X, gidx, S, K_all=7, config=cfg)
+    B1, (TI1, TV1), _, info = scores.zavg_block(X, gidx, S, K_all=7, config=cfg, rect=True)
+    assert np.array_equal(B0, B1, equal_nan=True) and np.array_equal(TI0, TI1)
+    Rv, rpos = info["_rect"]
+    Bfull = scores.zavg_block(X, gidx, np.ones(G, bool), K_all=0, config=cfg)[0]
+    assert np.array_equal(rpos, np.flatnonzero(~S))
+    assert np.array_equal(Rv, Bfull[np.ix_(~S, S)], equal_nan=True)
+
+
+def test_pearson_block_matches_part1_pearson_pairs():
+    X = _toy_X(3, nan_genes=(1, 2, 7)).astype(np.float64)
+    S = np.zeros(X.shape[1], bool)
+    S[:40] = True
+    B = scores.pearson_block(X, np.arange(X.shape[1]), S)[0]
+    ia, ib = np.triu_indices(40, 1)
+    ref = p1_baselines.pearson_pairs(X, ia, ib)["signed"]
+    assert np.nanmax(np.abs(B[ia, ib] - ref)) < 1e-5
+
+
 def test_gls_block_matches_part1_gls_pairs_with_nan_patterns():
     X = _toy_X(1, nan_genes=(3, 4, 5, 50, 51)).astype(np.float64)
     X[:, 200:] = np.nan_to_num(X[:, 200:])

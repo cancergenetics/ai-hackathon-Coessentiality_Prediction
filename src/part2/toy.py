@@ -8,7 +8,10 @@ Lines x genes gene-effect matrix with
   * never-essential genes (60%) carrying chromosome-arm block noise (CN-like), weaker arm noise on all genes,
   * lineage structure of rank n_lineages (gene loadings on lineage indicators) and a library batch (rank 1).
 Scenarios: 'planted' (all of the above), 'null' (no complexes, hubs or shared factors), 'armblock' (no complexes;
-strong arm-block noise on a set of dependency-bearing genes -> co-dependency that is pure locus artefact).
+strong arm-block noise on a set of dependency-bearing genes -> co-dependency that is pure locus artefact),
+'hier' (FZ-C decision D2: 'planted' plus three cohesive parents of 3 x 8-gene sub-modules with a dominant parent
+factor, and two pairs of 10-gene complexes sharing 3 subunits; the extra truth is appended to complexes /
+submodules; the 'planted' truth sets are identical, later random draws differ).
 Everything is a deterministic function of (scenario, seed, sizes).
 """
 from __future__ import annotations
@@ -69,7 +72,7 @@ def simulate(scenario: str = "planted", n_lines: int = 300, n_genes: int = 3000,
 
     complexes, subs = [], []
     pos = 0
-    if scenario == "planted":
+    if scenario in ("planted", "hier"):
         need = sum(sizes)
         pool = list(rest[: need + 10])
         for si, sz in enumerate(sizes):
@@ -105,6 +108,30 @@ def simulate(scenario: str = "planted", n_lines: int = 300, n_genes: int = 3000,
                 cm = complexes[ci]
                 X[:, h] += 0.3 * (X[:, cm].mean(1) - X[:, cm].mean())
         cls[hubs] = "hub"
+        if scenario == "hier":
+            extra = rest[need + 10:]
+            q = 0
+            for _ in range(3):                              # cohesive parents with 3 sub-modules each
+                members = np.array(extra[q:q + 24])
+                q += 24
+                fp = selective_factor()
+                for i in range(3):
+                    part = members[8 * i: 8 * i + 8]
+                    fs = 0.4 * selective_factor()
+                    X[:, part] += -0.3 + np.outer(fp, rng.uniform(0.75, 1.0, 8)) + np.outer(fs, rng.uniform(0.6, 0.9, 8))
+                    subs.append(np.sort(part))
+                cls[members] = "complex"
+                complexes.append(np.sort(members))
+            for _ in range(2):                              # overlapping complexes: 10 + 10 sharing 3 subunits
+                members = np.array(extra[q:q + 17])
+                q += 17
+                a, b = members[:10], members[7:]
+                fa, fb = selective_factor(), selective_factor()
+                X[:, members[:7]] += -0.3 + np.outer(fa, rng.uniform(0.6, 1.0, 7))
+                X[:, members[10:]] += -0.3 + np.outer(fb, rng.uniform(0.6, 1.0, 7))
+                X[:, members[7:10]] += -0.3 + np.outer(0.7 * fa + 0.7 * fb, rng.uniform(0.8, 1.0, 3))
+                cls[members] = "complex"
+                complexes.extend([np.sort(a), np.sort(b)])
         sel_rest = np.array([g for g in rest if cls[g] == "selective"])
     else:
         sel_rest = rest
@@ -118,7 +145,7 @@ def simulate(scenario: str = "planted", n_lines: int = 300, n_genes: int = 3000,
             g = sel_rest[arm_id[sel_rest] == a]
             X[:, g] += np.outer(arm_factor[:, a], rng.uniform(0.6, 0.9, len(g)))
             cls[g] = "armdep"
-    elif scenario not in ("planted", "null"):
+    elif scenario not in ("planted", "null", "hier"):
         raise ValueError(scenario)
     return Toy(X.astype(np.float32), complexes, subs, arm, band, cls.astype(str), lineage,
                info=dict(scenario=scenario, seed=seed, n_lines=L, n_genes=G))

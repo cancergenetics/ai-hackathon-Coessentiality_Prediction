@@ -1,0 +1,174 @@
+{
+ "zavg_BEF": {
+  "grid": [
+   {
+    "z0": 4.0,
+    "k": 10,
+    "stat": 0.34067871308946673,
+    "stat_sd": 0.009527923097897075,
+    "stat_locus_included": 0.3839797267518731,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 15883.375,
+    "mean_clusters_half": 640.75,
+    "mean_eval_clusters": 351.375,
+    "mean_recovered_clusters": 110.75
+   },
+   {
+    "z0": 4.0,
+    "k": 20,
+    "stat": 0.20377919788453064,
+    "stat_sd": 0.012780367115891495,
+    "stat_locus_included": 0.2362274129572499,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 34765.0,
+    "mean_clusters_half": 464.625,
+    "mean_eval_clusters": 240.375,
+    "mean_recovered_clusters": 49.375
+   },
+   {
+    "z0": 5.0,
+    "k": 10,
+    "stat": 0.3380894667254297,
+    "stat_sd": 0.019315511990915545,
+    "stat_locus_included": 0.38012340237990305,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 14222.125,
+    "mean_clusters_half": 552.5,
+    "mean_eval_clusters": 318.625,
+    "mean_recovered_clusters": 112.5
+   },
+   {
+    "z0": 5.0,
+    "k": 20,
+    "stat": 0.21622961657117676,
+    "stat_sd": 0.020281255604310787,
+    "stat_locus_included": 0.24724548259145,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 29936.375,
+    "mean_clusters_half": 401.0,
+    "mean_eval_clusters": 224.125,
+    "mean_recovered_clusters": 53.875
+   },
+   {
+    "z0": 6.0,
+    "k": 10,
+    "stat": 0.3427721463199648,
+    "stat_sd": 0.004706921411038752,
+    "stat_locus_included": 0.38078448655795505,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 13010.25,
+    "mean_clusters_half": 490.875,
+    "mean_eval_clusters": 289.25,
+    "mean_recovered_clusters": 117.25
+   },
+   {
+    "z0": 6.0,
+    "k": 20,
+    "stat": 0.2559497576024681,
+    "stat_sd": 0.018898157577274123,
+    "stat_locus_included": 0.28129131776112826,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 25652.75,
+    "mean_clusters_half": 375.25,
+    "mean_eval_clusters": 215.25,
+    "mean_recovered_clusters": 70.25
+   }
+  ],
+  "selected": {
+   "z0": 6.0,
+   "k": 10,
+   "stat": 0.3427721463199648
+  }
+ },
+ "gls": {
+  "grid": [
+   {
+    "z0": 4.0,
+    "k": 10,
+    "stat": 0.31456588805641256,
+    "stat_sd": 0.01288172087628644,
+    "stat_locus_included": 0.3269061260467166,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 15883.375,
+    "mean_clusters_half": 925.5,
+    "mean_eval_clusters": 363.5,
+    "mean_recovered_clusters": 126.25
+   },
+   {
+    "z0": 4.0,
+    "k": 20,
+    "stat": 0.26382767739092117,
+    "stat_sd": 0.018427124435554842,
+    "stat_locus_included": 0.27644336712208023,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 34765.0,
+    "mean_clusters_half": 667.625,
+    "mean_eval_clusters": 252.25,
+    "mean_recovered_clusters": 97.875
+   },
+   {
+    "z0": 5.0,
+    "k": 10,
+    "stat": 0.2971573380343764,
+    "stat_sd": 0.0074361767414706905,
+    "stat_locus_included": 0.3141251652710445,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 14222.125,
+    "mean_clusters_half": 883.25,
+    "mean_eval_clusters": 291.125,
+    "mean_recovered_clusters": 123.25
+   },
+   {
+    "z0": 5.0,
+    "k": 20,
+    "stat": 0.25319524019391804,
+    "stat_sd": 0.01621341798382202,
+    "stat_locus_included": 0.2623402379903041,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 29936.375,
+    "mean_clusters_half": 658.0,
+    "mean_eval_clusters": 223.875,
+    "mean_recovered_clusters": 95.125
+   },
+   {
+    "z0": 6.0,
+    "k": 10,
+    "stat": 0.26267078007933015,
+    "stat_sd": 0.010780830658790276,
+    "stat_locus_included": 0.2751762891141472,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 13010.25,
+    "mean_clusters_half": 771.0,
+    "mean_eval_clusters": 233.375,
+    "mean_recovered_clusters": 110.875
+   },
+   {
+    "z0": 6.0,
+    "k": 20,
+    "stat": 0.24008373732921992,
+    "stat_sd": 0.007349143299097538,
+    "stat_locus_included": 0.248182018510357,
+    "rewired_stat": 0.0,
+    "mean_edges_half": 25652.75,
+    "mean_clusters_half": 622.0,
+    "mean_eval_clusters": 192.5,
+    "mean_recovered_clusters": 89.75
+   }
+  ],
+  "selected": {
+   "z0": 4.0,
+   "k": 10,
+   "stat": 0.31456588805641256
+  }
+ },
+ "rule": "highest mean split-half statistic (fraction of selective genes in recovered size 5-30 non-locus clusters, Jaccard >= 0.5, both directions, R = 4); ties (1e-12) -> higher z0, then lower k",
+ "primary": {
+  "zavg_BEF": {
+   "z0": 6.0,
+   "k": 10,
+   "stat": 0.3427721463199648
+  },
+  "gls": "matched to the zavg selection (same S, k; per-run edge count); GLS's own split-half preference is reported as a secondary variant only"
+ },
+ "runtime_s": 4115.2
+}

@@ -1,0 +1,18 @@
+2026-10-28 20:19:09,033 score_block pearson n_models=1007 |S|=6022: 2.1 s, peak RSS 2.52 GB
+{
+ "set": "A",
+ "method": "pearson",
+ "n_models": 1007,
+ "n_S": 6022,
+ "model_set_hash": "bd28f78d612bef9f",
+ "S_hash": "8c264ca513f8",
+ "runtime_s": 2.1,
+ "stages_s": {
+  "pearson": 2.08
+ },
+ "peak_rss_gb": 2.52,
+ "null_moments": null,
+ "rect": false,
+ "part1_lock": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
+ "cache": "data_cache/part2/blocks/pearson_bd28f78d612bef9f_S8c264ca513f8.npz"
+}

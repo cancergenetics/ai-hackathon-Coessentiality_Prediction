@@ -1,0 +1,79 @@
+{
+ "map_commits": {
+  "zavg_map": "27fa9b275a83fd76a9a2f35107fc0b4f3aaa9ac4",
+  "gls_map": "27fa9b275a83fd76a9a2f35107fc0b4f3aaa9ac4"
+ },
+ "inputs": {
+  "bioplex": {
+   "files": [
+    "datasets/BioPlex/BioPlex_293T_Network_10K_Dec_2019.tsv",
+    "datasets/BioPlex/BioPlex_HCT116_Network_5.5K_Dec_2019.tsv"
+   ],
+   "sha256": [
+    "5a98def087fc77c7bf07aac79e2553fd64ea1a27a7d0c4617870476f3f120833",
+    "b37be6de6fe15e948151ab9480cfcb88a6795780cf7a4059b386b07f3c1e760d"
+   ],
+   "n_edges_union": 167374,
+   "n_nodes_union": 14543,
+   "S_observed": 5267,
+   "edges_within_S": 35565
+  },
+  "proteomics": {
+   "n_A_models": 239,
+   "n_S_measured": 4687,
+   "min_models_per_protein": 20,
+   "gene_mapping": "Gene_Symbol == genes.tsv symbol"
+  }
+ },
+ "tiers": {
+  "zavg": {
+   "level1": {
+    "n": 367,
+    "T1": 159,
+    "T3-neg": 124,
+    "T2": 74,
+    "T3-nc": 10,
+    "T1_nonlocus": 155,
+    "bioplex_testable": 354,
+    "prot_testable": 332,
+    "expected_false_T1": 8.0
+   },
+   "level2": {
+    "n": 132,
+    "T1": 59,
+    "T3-neg": 42,
+    "T2": 28,
+    "T3-nc": 3,
+    "T1_nonlocus": 57,
+    "bioplex_testable": 126,
+    "prot_testable": 118,
+    "expected_false_T1": 3.0
+   }
+  },
+  "gls": {
+   "level1": {
+    "n": 379,
+    "T1": 159,
+    "T3-neg": 131,
+    "T2": 81,
+    "T3-nc": 8,
+    "T1_nonlocus": 151,
+    "bioplex_testable": 362,
+    "prot_testable": 343,
+    "expected_false_T1": 8.0
+   },
+   "level2": {
+    "n": 108,
+    "T1": 42,
+    "T3-neg": 38,
+    "T2": 24,
+    "T3-nc": 4,
+    "T1_nonlocus": 38,
+    "bioplex_testable": 102,
+    "prot_testable": 92,
+    "expected_false_T1": 2.1
+   }
+  }
+ },
+ "rules": "Validation of the frozen FZ-C maps (DESIGN v3.1 \u00a72.3 tiers + bridge). Validation inputs only: BioPlex 3.0\n(293T and HCT116 networks, Entrez-mapped) and CCLE proteomics restricted to A models. Never a construction or\nselection input: callers must pass ``require_frozen`` (the map manifests are committed in git and unchanged).\n\nT1  within-cluster BioPlex edges among BioPlex-observed members (>= 3 observed, >= 2 edges) above a node-restricted,\n    degree-preserving null: every observed member replaced by a random gene of the same BioPlex-degree bin\n    (log2) and A-essentiality class from the universe (BioPlex nodes in S), 10^4 draws; p = (1 + #null >= obs) /\n    (1 + B); BH over clusters (per level) q < 0.05.\nT2  (not T1) mean pairwise protein co-abundance (pairwise-complete Pearson over A models with proteomics) among\n    measured members (>= 3) above a size-matched null (random measured S genes), 10^4 draws; BH (per level)\n    q < 0.05.\nT3-neg tested (BioPlex >= 3 observed members or >= 3 measured members) but not T1/T2; T3-nc otherwise.\nBridge: size-standardised within-cluster BioPlex precision (pairs with both proteins observed; bins 3-4, 5-8, 9-16,\n    17-60 by cluster size; bin weights = pooled zavg + GLS cluster-size distribution), paired difference with a\n    protein-node bootstrap (B = 2000, seed 5000, clusters fixed, pair weight = product of node multiplicities).\n"
+}
