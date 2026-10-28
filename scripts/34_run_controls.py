@@ -3,11 +3,12 @@
 before any direction's discovery run.
 
 Usage (after every CTRL_* entry is filled and committed):
-    .venv/bin/python scripts/34_run_controls.py --map results/part2/map/membership.tsv \
+    .venv/bin/python scripts/34_run_controls.py --map results/part2/fzx/zavg_engine_membership.tsv \
         --context-table data_cache/part2/contexts/context_table.parquet
 
 Both files must be listed with their SHA-256 in the committed freeze manifests named in the entries'
-frozen_inputs (run_association checks this). Dependency data: A models only, via assoc.load_A_effects.
+frozen_inputs (run_association checks this): the engine-format map in results/part2/fzx/FZX_manifest.json (FZ-X),
+the context table in results/part2/contexts/checksums.json. Dependency data: A models only, via assoc.load_A_effects.
 NOT RUN by the engine author (no dependency data may be touched before FZ-X).
 """
 from __future__ import annotations

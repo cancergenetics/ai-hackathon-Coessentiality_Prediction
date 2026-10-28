@@ -1,0 +1,24 @@
+context	definition	n_A	ref_A	n_L	ref_L	lockbox_testable	n_context_cc	n_ref_cc	n_tests	n_evaluable	n_not_evaluable	in_family	outcome
+lineage:Biliary Tract	OncotreeLineage == Biliary Tract vs all other lines (one-vs-rest)	27	980	9	329	True	27	980	367	367	0	True	in family
+lineage:Bladder/Urinary Tract	OncotreeLineage == Bladder/Urinary Tract vs all other lines (one-vs-rest)	25	982	9	329	True	25	982	367	367	0	True	in family
+lineage:Bone	OncotreeLineage == Bone vs all other lines (one-vs-rest)	44	963	15	323	True	44	963	367	367	0	True	in family
+lineage:Bowel	OncotreeLineage == Bowel vs all other lines (one-vs-rest)	64	943	21	317	True	64	943	367	367	0	True	in family
+lineage:Breast	OncotreeLineage == Breast vs all other lines (one-vs-rest)	50	957	17	321	True	50	957	367	367	0	True	in family
+lineage:CNS/Brain	OncotreeLineage == CNS/Brain vs all other lines (one-vs-rest)	99	908	33	305	True	99	908	367	367	0	True	in family
+lineage:Cervix	OncotreeLineage == Cervix vs all other lines (one-vs-rest)	13	994	5	333	True	13	994	367	367	0	True	in family
+lineage:Esophagus/Stomach	OncotreeLineage == Esophagus/Stomach vs all other lines (one-vs-rest)	72	935	24	314	True	72	935	367	367	0	True	in family
+lineage:Head and Neck	OncotreeLineage == Head and Neck vs all other lines (one-vs-rest)	58	949	19	319	True	58	949	367	367	0	True	in family
+lineage:Kidney	OncotreeLineage == Kidney vs all other lines (one-vs-rest)	26	981	9	329	True	26	981	367	367	0	True	in family
+lineage:Liver	OncotreeLineage == Liver vs all other lines (one-vs-rest)	19	988	6	332	True	19	988	367	367	0	True	in family
+lineage:Lung	OncotreeLineage == Lung vs all other lines (one-vs-rest)	93	914	31	307	True	93	914	367	367	0	True	in family
+lineage:Lymphoid	OncotreeLineage == Lymphoid vs all other lines (one-vs-rest)	73	934	24	314	True	73	934	367	367	0	True	in family
+lineage:Myeloid	OncotreeLineage == Myeloid vs all other lines (one-vs-rest)	33	974	11	327	True	33	974	367	367	0	True	in family
+lineage:Ovary/Fallopian Tube	OncotreeLineage == Ovary/Fallopian Tube vs all other lines (one-vs-rest)	46	961	16	322	True	46	961	367	367	0	True	in family
+lineage:Pancreas	OncotreeLineage == Pancreas vs all other lines (one-vs-rest)	53	954	18	320	True	53	954	367	367	0	True	in family
+lineage:Peripheral Nervous System	OncotreeLineage == Peripheral Nervous System vs all other lines (one-vs-rest)	35	972	12	326	True	35	972	367	367	0	True	in family
+lineage:Pleura	OncotreeLineage == Pleura vs all other lines (one-vs-rest)	16	991	5	333	True	16	991	367	367	0	True	in family
+lineage:Prostate	OncotreeLineage == Prostate vs all other lines (one-vs-rest)	14	993	5	333	True	14	993	367	367	0	True	in family
+lineage:Skin	OncotreeLineage == Skin vs all other lines (one-vs-rest)	51	956	17	321	True	51	956	367	367	0	True	in family
+lineage:Soft Tissue	OncotreeLineage == Soft Tissue vs all other lines (one-vs-rest)	38	969	12	326	True	38	969	367	367	0	True	in family
+lineage:Uterus	OncotreeLineage == Uterus vs all other lines (one-vs-rest)	28	979	10	328	True	28	979	367	367	0	True	in family
+melanoma	OncotreePrimaryDisease contains 'Melanoma' (any site) vs all other lines	50	957	19	319	True	50	957	367	367	0	True	in family

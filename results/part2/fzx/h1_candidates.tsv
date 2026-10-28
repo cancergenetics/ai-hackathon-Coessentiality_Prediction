@@ -1,0 +1,1453 @@
+gene	n_A	ref_A	n_L	ref_L	n_A_LoF	n_A_homdel	n_A_silencing	candidate	events	outcome
+TP53	605	318	195	108	588	4	13	True	Z0158|TP53	event
+STING1	123	817	36	278	0	0	123	True	Z0190|STING1	event
+RAB34	111	752	40	255	0	0	111	True	Z0031|RAB34	event
+RAB25	95	426	41	131	0	0	95	True	Z0309|RAB25	event
+PTEN	94	839	31	281	73	15	6	True	Z0130|PTEN	event
+HMGA2	87	739	29	241	0	0	87	True	Z0024|HMGA2	event
+CDH2	86	589	34	187	1	1	84	True	Z0035|CDH2	event
+RHOD	80	595	24	204	0	0	80	True	Z0288|RHOD	event
+HOXC10	79	603	20	201	0	0	79	True	Z0117|HOXC10	event
+GSDMD	78	860	30	285	0	0	78	True	Z0054|GSDMD	event
+ZSCAN18	78	564	28	193	0	0	78	True	Z0330|ZSCAN18	event
+ALDOC	77	840	19	294	3	0	74	True	Z0031|ALDOC	event
+SMAD4	76	878	26	295	45	23	8	True	Z0304|SMAD4	event
+TRIP6	75	874	23	292	0	0	75	True	Z0046|TRIP6	event
+FKBP10	74	833	25	277	0	0	74	True	Z0118|FKBP10	event
+PDZK1IP1	71	386	23	126	0	0	71	True	Z0007|PDZK1IP1	event
+SLC16A3	70	878	18	300	0	0	70	True	Z0022|SLC16A3	event
+B3GNT5	69	819	30	267	0	0	69	True	Z0260|B3GNT5	event
+CDH1	69	562	27	173	0	3	66	True	Z0035|CDH1	event
+IGFBP6	69	770	18	262	0	0	69	True	Z0169|IGFBP6	event
+MYEOV	67	694	21	238	0	0	67	True	Z0037|MYEOV	event
+TGFBR2	67	843	27	267	11	4	52	True	Z0279|TGFBR2	event
+TNFSF10	66	680	21	213	0	0	66	True	Z0234|TNFSF10	event
+ARHGAP29	65	774	29	253	0	0	65	True	Z0035|ARHGAP29	event
+CRYBG1	65	709	24	233	0	0	65	True	Z0149|CRYBG1	event
+PTPN6	65	657	23	222	0	0	65	True	Z0223|PTPN6	event
+NRP1	63	791	22	264	0	0	63	True	Z0333|NRP1	event
+PSMB8	63	881	18	297	0	0	63	True	Z0207|PSMB8	event
+CD55	62	897	14	307	0	2	60	True	Z0297|CD55	event
+YPEL3	62	898	20	300	0	0	62	True	Z0144|YPEL3	event
+CFB	61	642	18	220	0	0	61	True	Z0211|CFB	event
+GSTM4	60	892	20	295	0	0	60	True	Z0251|GSTM4	event
+RB1	60	886	19	294	42	7	11	True	Z0200|RB1	event
+DMKN	59	696	28	224	0	0	59	True	Z0017|DMKN	event
+AGR2	58	539	28	182	0	1	57	True	Z0092|AGR2	event
+DUSP4	58	759	26	246	0	0	58	True	Z0018|DUSP4	event
+GBP1	58	684	18	226	0	0	58	True	Z0209|GBP1	event
+TSPYL5	57	336	27	92	0	0	57	True	Z0180|TSPYL5	event
+TMT1A	56	678	14	229	0	0	56	True	Z0169|TMT1A	event
+EPAS1	55	850	19	285	0	0	55	True	Z0234|EPAS1	event
+COCH	54	622	21	220	0	0	54	True	Z0172|COCH	event
+EGFR	54	749	24	245	0	0	54	True	Z0051|EGFR	event
+FOSL1	54	824	18	275	0	0	54	True	Z0132|FOSL1	event
+GLUL	54	907	18	303	0	0	54	True	Z0127|GLUL	event
+GPC4	54	586	17	193	0	0	54	True	Z0291|GPC4	event
+RUNX1	54	859	22	286	0	1	53	True	Z0088|RUNX1	event
+AK4	53	906	24	297	0	0	53	True	Z0134|AK4	event
+SYK	53	485	21	149	0	0	53	True	Z0319|SYK	event
+AHR	52	842	22	275	0	1	51	True	Z0282|AHR	event
+GRHL2	52	403	31	121	0	0	52	True	Z0149|GRHL2	event
+ARHGAP23	51	830	22	270	0	0	51	True	Z0108|ARHGAP23	event
+FOXA1	51	563	19	180	0	0	51	True	Z0149|FOXA1	event
+SLC16A5	51	619	19	209	0	0	51	True	Z0005|SLC16A5	event
+SNAI2	51	613	12	200	0	0	51	True	Z0059|SNAI2	event
+KIRREL1	50	741	19	240	0	0	50	True	Z0333|KIRREL1	event
+SOX9	50	750	22	235	0	0	50	True	Z0018|SOX9	event
+EPS8L3	49	197	24	55	0	0	49	True	Z0251|EPS8L3	event
+NEO1	49	885	14	293	0	0	49	True	Z0304|NEO1	event
+APC	48	868	19	293	44	0	4	True	Z0174|APC	event
+CPT1B	48	893	8	310	0	0	48	True	Z0341|CPT1B	event
+ERBB3	48	670	18	223	0	0	48	True	Z0149|ERBB3	event
+BAMBI	47	794	12	269	0	0	47	True	Z0255|BAMBI	event
+FOCAD	46	911	13	307	2	32	12	True	Z0286|FOCAD	event
+KDF1	46	442	27	138	0	0	46	True	Z0241|KDF1	event
+PARP10	46	888	15	300	0	0	46	True	Z0054|PARP10	event
+TNS3	46	865	16	283	0	0	46	True	Z0016|TNS3	event
+ZNF714	46	867	20	280	0	2	44	True	Z0133|ZNF714	event
+MET	45	820	16	267	0	0	45	True	Z0118|MET	event
+SPINT1	45	709	14	233	0	0	45	True	Z0208|SPINT1	event
+MYD88	44	912	14	306	0	0	44	True	Z0311|MYD88	event
+VWA1	44	773	18	256	0	0	44	True	Z0281|VWA1	event
+NES	43	512	12	171	0	0	43	True	Z0309|NES	event
+PBX1	43	738	20	233	0	0	43	True	Z0065|PBX1	event
+STK11	43	913	12	307	29	5	9	True	Z0292|STK11	event
+CPT1A	42	918	10	311	0	0	42	True	Z0037|CPT1A	event
+GCNT3	42	361	10	127	0	0	42	True	Z0137|GCNT3	event
+ZNF91	42	858	14	293	1	2	39	True	Z0133|ZNF91	event
+LPAR1	41	661	24	203	0	0	41	True	Z0072|LPAR1	event
+TBX3	41	638	9	215	0	0	41	True	Z0149|TBX3	event
+TRIM47	41	861	11	295	0	0	41	True	Z0005|TRIM47	event
+CDH11	40	347	14	117	8	0	32	True	Z0160|CDH11	event
+LFNG	40	802	14	265	0	0	40	True	Z0290|LFNG	event
+METRNL	40	895	18	292	0	0	40	True	Z0279|METRNL	event
+NF1	40	893	16	294	36	2	2	True	Z0052|NF1	event
+RUNX2	40	703	17	224	0	0	40	True	Z0343|RUNX2	event
+F2RL1	39	701	14	226	0	0	39	True	Z0241|F2RL1	event
+F3	39	828	20	271	0	0	39	True	Z0173|F3	event
+FAR2	39	745	5	253	0	0	39	True	Z0134|FAR2	event
+GSTM2	39	664	22	224	0	0	39	True	Z0251|GSTM2	event
+MYO10	39	839	16	273	0	0	39	True	Z0016|MYO10	event
+PRR15L	39	329	14	108	0	0	39	True	Z0194|PRR15L	event
+WNT7B	39	562	19	181	0	0	39	True	Z0291|WNT7B	event
+PAWR	38	901	8	308	0	0	38	True	Z0072|PAWR	event
+TFAP2A	38	798	15	263	0	0	38	True	Z0018|TFAP2A	event
+ZNF506	38	798	8	270	0	0	38	True	Z0133|ZNF506	event
+ALDH7A1	37	862	14	288	0	0	37	True	Z0290|ALDH7A1	event
+ARID1A	37	858	12	282	37	0	0	True	Z0109|ARID1A	event
+CTSF	37	783	15	257	0	0	37	True	Z0273|CTSF	event
+FHL2	37	873	16	290	0	0	37	True	Z0333|FHL2	event
+MYO1B	37	861	12	284	0	0	37	True	Z0267|MYO1B	event
+WLS	37	852	10	286	0	0	37	True	Z0291|WLS	event
+CD19	36	101	10	31	0	0	36	True	Z0319|CD19	event
+GPX8	36	812	9	270	0	0	36	True	Z0164|GPX8	event
+PCSK9	36	447	17	131	0	0	36	True	Z0162|PCSK9	event
+SLC12A7	36	829	15	273	0	0	36	True	Z0326|SLC12A7	event
+FGFR1	35	809	7	280	0	0	35	True	Z0067|FGFR1	event
+LRIG1	35	805	14	262	0	0	35	True	Z0304|LRIG1	event
+UNC13D	35	598	9	195	0	0	35	True	Z0005|UNC13D	event
+CYP2R1	34	924	18	300	0	0	34	True	Z0291|CYP2R1	event
+LRFN4	34	915	20	292	0	0	34	True	Z0273|LRFN4	event
+SPI1	34	74	9	29	0	0	34	True	Z0113|SPI1	event
+ANO1	33	408	18	129	0	0	33	True	Z0037|ANO1	event
+APLP1	33	707	6	255	0	1	32	True	Z0017|APLP1	event
+CST6	33	308	13	91	0	0	33	True	Z0273|CST6	event
+PAX5	33	101	7	42	0	0	33	True	Z0319|PAX5	event
+RIN1	33	821	15	272	0	0	33	True	Z0273|RIN1	event
+RIPK4	33	667	11	222	0	2	31	True	Z0035|RIPK4	event
+SLC16A4	33	541	13	183	0	0	33	True	Z0251|SLC16A4	event
+CERCAM	32	891	7	300	0	0	32	True	Z0233|CERCAM	event
+IRF4	32	116	10	39	0	0	32	True	Z0334|IRF4	event
+ATP8B1	31	700	16	223	0	0	31	True	Z0035|ATP8B1	event
+CDKN2C	31	922	10	309	0	10	21	True	Z0200|CDKN2C	event
+ECM1	31	728	10	245	0	0	31	True	Z0310|ECM1	event
+HID1	31	667	11	213	0	0	31	True	Z0005|HID1	event
+MECOM	31	644	7	208	0	0	31	True	Z0165|MECOM	event
+NFE2L3	31	924	5	315	0	0	31	True	Z0194|NFE2L3	event
+SLC27A5	31	917	18	295	0	0	31	True	Z0330|SLC27A5	event
+SMAD7	31	904	16	291	0	0	31	True	Z0334|SMAD7	event
+SMARCA4	31	912	12	305	29	1	1	True	Z0109|SMARCA4	event
+TPM2	31	879	12	288	0	0	31	True	Z0261|TPM2	event
+DUSP6	30	904	13	296	0	0	30	True	Z0084|DUSP6	event
+LAIR1	30	92	7	36	0	0	30	True	Z0212|LAIR1	event
+SV2A	30	518	12	184	0	0	30	True	Z0354|SV2A	event
+EBF1	29	288	6	101	0	0	29	True	Z0319|EBF1	event
+CYB561	28	903	7	299	0	0	28	True	Z0005|CYB561	event
+FGFR2	28	569	17	183	0	0	28	True	Z0176|FGFR2	event
+LIX1L	28	807	12	264	0	0	28	True	Z0322|LIX1L	event
+ISYNA1	27	919	8	308	0	0	27	True	Z0048|ISYNA1	event
+MEIS2	27	873	10	283	0	0	27	True	Z0065|MEIS2	event
+NAV2	27	745	13	238	0	0	27	True	Z0018|NAV2	event
+NFKBIZ	27	904	5	302	0	0	27	True	Z0318|NFKBIZ	event
+PLEKHB1	27	607	7	201	0	0	27	True	Z0168|PLEKHB1	event
+PLEKHG4	27	802	10	265	0	0	27	True	Z0157|PLEKHG4	event
+PROS1	27	754	9	245	0	0	27	True	Z0202|PROS1	event
+SASH3	27	86	6	33	0	1	26	True	Z0319|SASH3	event
+BTK	26	103	9	36	0	0	26	True	Z0319|BTK;Z0321|BTK	event
+CCDC85B	26	934	6	315	0	0	26	True	Z0273|CCDC85B	event
+GNE	26	902	12	300	0	0	26	True	Z0176|GNE	event
+LIMD2	26	817	13	272	0	0	26	True	Z0005|LIMD2	event
+NF2	26	925	6	311	21	1	4	True	Z0333|NF2	event
+PLAA	26	932	8	313	1	21	4	True	Z0041|PLAA	event
+BHLHE41	25	671	11	211	0	0	25	True	Z0134|BHLHE41	event
+CSAD	25	915	5	313	0	0	25	True	Z0169|CSAD	event
+FADS2	25	924	5	312	0	0	25	True	Z0121|FADS2	event
+MUC20	25	431	10	142	0	0	25	True	Z0296|MUC20	event
+PRDX2	25	937	8	313	0	0	25	True	Z0098|PRDX2	event
+RASGRP3	25	402	5	140	0	0	25	True	Z0241|RASGRP3	event
+SPINT2	25	813	8	272	0	0	25	True	Z0291|SPINT2	event
+CCND2	24	343	5	107	0	0	24	True	Z0334|CCND2	event
+DUSP10	24	878	12	288	0	0	24	True	Z0018|DUSP10	event
+ATP2B4	23	923	9	307	0	0	23	True	Z0297|ATP2B4	event
+CD79A	23	160	6	55	0	0	23	True	Z0096|CD79A;Z0319|CD79A;Z0321|CD79A	event
+CEBPD	23	858	8	285	0	0	23	True	Z0210|CEBPD	event
+EPCAM	23	674	7	229	0	1	22	True	Z0307|EPCAM	event
+IGF2BP1	23	456	10	161	0	0	23	True	Z0065|IGF2BP1	event
+LRIG3	23	835	12	272	0	0	23	True	Z0304|LRIG3	event
+MEF2C	23	534	3	186	0	0	23	True	Z0356|MEF2C	event
+PRKCZ	23	801	14	258	0	0	23	True	Z0281|PRKCZ	event
+RASGRP2	23	294	7	107	0	0	23	True	Z0020|RASGRP2	event
+AIFM2	22	878	11	284	0	0	22	True	Z0321|AIFM2	event
+BCL6	22	908	14	294	0	0	22	True	Z0096|BCL6	event
+BHLHE40	22	934	10	309	0	1	21	True	Z0165|BHLHE40	event
+CA8	22	317	5	124	0	0	22	True	Z0210|CA8	event
+CD79B	22	129	5	49	0	0	22	True	Z0319|CD79B	event
+FGFR4	22	759	9	252	0	0	22	True	Z0149|FGFR4	event
+HNF1B	22	247	8	79	0	0	22	True	Z0035|HNF1B	event
+LYL1	22	236	7	70	0	0	22	True	Z0113|LYL1	event
+SALL1	22	274	6	104	0	0	22	True	Z0106|SALL1	event
+SLC29A2	22	820	12	263	0	0	22	True	Z0273|SLC29A2	event
+SYT11	22	450	4	151	0	0	22	True	Z0309|SYT11	event
+AGPAT2	21	941	7	314	0	0	21	True	Z0107|AGPAT2	event
+CYFIP1	21	938	5	315	0	0	21	True	Z0087|CYFIP1	event
+HES1	21	875	15	283	0	0	21	True	Z0279|HES1	event
+IRF8	21	250	5	77	0	0	21	True	Z0113|IRF8	event
+RHBDF2	21	930	11	304	0	0	21	True	Z0005|RHBDF2	event
+SRCAP	21	914	6	311	0	0	21	True	Z0056|SRCAP	event
+STAG2	21	933	5	313	16	0	5	True	Z0278|STAG2	event
+STAT5A	21	670	4	220	0	1	20	True	Z0252|STAT5A	event
+TGIF1	21	940	5	316	0	0	21	True	Z0120|TGIF1	event
+ZBTB38	21	928	3	312	0	0	21	True	Z0334|ZBTB38	event
+ZEB2	21	515	6	173	0	1	20	True	Z0018|ZEB2	event
+BLNK	20	295	6	103	0	0	20	True	Z0319|BLNK;Z0321|BLNK	event
+CCNE2	20	942	5	313	0	0	20	True	Z0069|CCNE2	event
+DNM1	20	778	9	254	0	0	20	True	Z0233|DNM1	event
+FERMT2	20	817	9	273	0	0	20	True	Z0016|FERMT2	event
+HOMER3	20	918	6	308	0	0	20	True	Z0048|HOMER3	event
+KIF18B	20	940	6	313	0	0	20	True	Z0337|KIF18B	event
+LCP1	20	652	2	221	0	0	20	True	Z0096|LCP1	event
+LDLRAP1	20	929	3	313	0	0	20	True	Z0319|LDLRAP1	event
+LYN	20	858	8	283	0	1	19	True	Z0319|LYN	event
+PAX8	20	595	2	202	0	0	20	True	Z0035|PAX8	event
+PREX1	20	578	9	200	0	0	20	True	Z0160|PREX1	event
+SLC7A11	20	926	5	314	0	0	20	True	Z0321|SLC7A11	event
+YAP1	20	853	9	277	1	2	17	True	Z0059|YAP1	event
+ZBTB18	20	920	9	307	0	0	20	True	Z0290|ZBTB18	event
+CAPN5	19	796	5	258	0	0	19	True	Z0350|CAPN5	event
+CEP152	19	913	5	304	0	0	19	True	Z0004|CEP152	event
+ESCO2	19	925	4	312	0	0	19	True	Z0351|ESCO2	event
+FMNL1	19	793	3	267	0	0	19	True	Z0122|FMNL1	event
+GAB1	19	903	6	295	0	0	19	True	Z0051|GAB1	event
+NAPRT	19	937	6	315	0	0	19	True	Z0054|NAPRT	event
+NEDD4L	19	941	9	312	0	0	19	True	Z0067|NEDD4L	event
+NOTCH2	19	922	10	300	0	0	19	True	Z0279|NOTCH2	event
+RASSF8	19	774	9	253	0	0	19	True	Z0134|RASSF8	event
+SMAD3	19	939	7	313	0	1	18	True	Z0279|SMAD3	event
+CARD10	18	794	12	259	0	0	18	True	Z0234|CARD10	event
+DIPK2A	18	938	5	316	0	0	18	True	Z0067|DIPK2A	event
+GATA6	18	645	10	204	0	0	18	True	Z0092|GATA6	event
+GSTP1	18	937	5	315	0	0	18	True	Z0288|GSTP1	event
+IGSF11	18	211	3	77	0	0	18	True	Z0018|IGSF11	event
+KDM6A	18	936	8	310	10	4	4	True	Z0171|KDM6A	event
+KNL1	18	935	4	314	0	0	18	True	Z0008|KNL1	event
+MXRA7	18	914	6	301	0	0	18	True	Z0005|MXRA7	event
+SCARF2	18	502	5	161	0	0	18	True	Z0181|SCARF2	event
+SPC24	18	943	5	315	0	0	18	True	Z0033|SPC24	event
+SPDEF	18	190	4	65	0	0	18	True	Z0149|SPDEF	event
+TFAP2C	18	582	7	195	0	0	18	True	Z0120|TFAP2C	event
+AFDN	17	933	2	311	0	1	16	True	Z0035|AFDN	event
+BATF	17	317	7	98	0	0	17	True	Z0311|BATF	event
+CEMIP2	17	928	2	309	0	0	17	True	Z0089|CEMIP2	event
+CPNE7	17	660	7	219	0	0	17	True	Z0125|CPNE7	event
+EHBP1L1	17	933	7	312	0	0	17	True	Z0071|EHBP1L1	event
+F11R	17	883	4	301	0	0	17	True	Z0035|F11R	event
+ITGB3	17	393	1	135	0	0	17	True	Z0123|ITGB3	event
+LLGL2	17	853	7	288	0	0	17	True	Z0005|LLGL2	event
+MGAT4A	17	724	1	236	0	0	17	True	Z0044|MGAT4A	event
+MTSS1	17	706	4	244	0	0	17	True	Z0120|MTSS1	event
+PEX39	17	922	4	313	0	0	17	True	Z0302|PEX39	event
+QKI	17	900	5	299	0	0	17	True	Z0290|QKI	event
+RHPN1	17	753	6	249	0	0	17	True	Z0054|RHPN1	event
+SMARCB1	17	943	5	316	5	7	5	True	Z0109|SMARCB1	event
+SOX17	17	89	6	29	0	0	17	True	Z0165|SOX17	event
+ACSL4	16	943	6	314	2	2	12	True	Z0121|ACSL4	event
+ATP6V0A1	16	943	5	315	0	1	15	True	Z0259|ATP6V0A1	event
+FERMT1	16	692	13	217	0	0	16	True	Z0092|FERMT1	event
+FOSL2	16	914	6	302	0	0	16	True	Z0165|FOSL2	event
+ID1	16	913	5	307	0	0	16	True	Z0116|ID1	event
+ITGA3	16	899	5	306	0	0	16	True	Z0059|ITGA3	event
+LRP5	16	922	5	307	0	0	16	True	Z0291|LRP5	event
+MAP2K4	16	944	11	308	4	9	3	True	Z0164|MAP2K4	event
+MGA	16	912	0	309	0	0	16	True	Z0093|MGA	event
+PDK2	16	944	11	309	0	0	16	True	Z0036|PDK2	event
+PIK3AP1	16	444	4	144	0	0	16	True	Z0321|PIK3AP1	event
+SOX10	16	64	2	30	0	0	16	True	Z0018|SOX10	event
+VHL	16	944	7	312	15	0	1	True	Z0145|VHL	event
+AGPAT3	15	945	3	318	0	0	15	True	Z0121|AGPAT3	event
+BCR	15	942	4	314	2	5	8	True	Z0088|BCR	event
+CADM4	15	850	8	273	0	0	15	True	Z0038|CADM4	event
+CCND1	15	891	11	289	0	0	15	True	Z0037|CCND1	event
+CIART	15	623	7	206	0	0	15	True	Z0310|CIART	event
+DGKA	15	933	2	316	0	0	15	True	Z0117|DGKA	event
+FLI1	15	368	3	133	0	0	15	True	Z0160|FLI1	event
+GINS4	15	945	3	318	0	0	15	True	Z0021|GINS4	event
+GJB5	15	291	10	88	0	0	15	True	Z0217|GJB5	event
+GTSE1	15	946	2	318	0	0	15	True	Z0008|GTSE1	event
+IKZF3	15	136	4	39	0	0	15	True	Z0050|IKZF3	event
+ISG15	15	936	7	312	0	0	15	True	Z0029|ISG15	event
+JUP	15	894	9	295	0	0	15	True	Z0108|JUP	event
+KIF15	15	933	4	309	0	0	15	True	Z0008|KIF15	event
+LDLRAD3	15	877	7	291	0	0	15	True	Z0290|LDLRAD3	event
+MAP4K4	15	942	2	315	0	0	15	True	Z0333|MAP4K4	event
+MYO6	15	896	4	303	0	0	15	True	Z0170|MYO6	event
+PSD4	15	753	6	251	0	0	15	True	Z0157|PSD4	event
+SLC22A17	15	525	3	174	0	0	15	True	Z0025|SLC22A17	event
+WDR76	15	944	3	317	0	0	15	True	Z0182|WDR76	event
+ZDHHC8	15	942	15	301	0	0	15	True	Z0013|ZDHHC8	event
+ZNF518B	15	684	4	222	0	0	15	True	Z0201|ZNF518B	event
+AMOTL2	14	852	7	282	0	0	14	True	Z0333|AMOTL2	event
+ARHGEF25	14	690	5	234	0	0	14	True	Z0123|ARHGEF25	event
+BAP1	14	947	6	314	12	0	2	True	Z0171|BAP1	event
+BRCA1	14	937	4	313	9	0	5	True	Z0205|BRCA1	event
+CCDC28B	14	932	8	307	0	0	14	True	Z0091|CCDC28B	event
+DIPK1B	14	657	5	214	0	0	14	True	Z0107|DIPK1B	event
+HHEX	14	706	6	232	0	0	14	True	Z0088|HHEX	event
+HYLS1	14	927	3	309	0	0	14	True	Z0004|HYLS1	event
+MKI67	14	922	3	314	0	0	14	True	Z0008|MKI67	event
+PBRM1	14	938	7	309	12	0	2	True	Z0201|PBRM1	event
+WIPF1	14	668	7	213	0	0	14	True	Z0096|WIPF1	event
+ZNF100	14	807	3	281	0	2	12	True	Z0133|ZNF100	event
+ZP3	14	815	10	263	0	0	14	True	Z0177|ZP3	event
+ANPEP	13	381	2	129	0	0	13	True	Z0301|ANPEP	event
+ARHGEF12	13	940	7	310	0	0	13	True	Z0072|ARHGEF12	event
+CACNB3	13	938	0	317	0	0	13	True	Z0155|CACNB3	event
+CPAP	13	923	4	309	0	0	13	True	Z0004|CPAP	event
+DHCR24	13	949	6	315	0	0	13	True	Z0089|DHCR24	event
+DIAPH3	13	942	3	316	2	0	11	True	Z0267|DIAPH3	event
+DOCK2	13	330	4	112	0	0	13	True	Z0096|DOCK2	event
+ESPL1	13	937	6	311	0	0	13	True	Z0011|ESPL1	event
+FAAH	13	635	7	210	0	0	13	True	Z0007|FAAH	event
+HK2	13	948	4	315	0	0	13	True	Z0045|HK2	event
+ID3	13	932	2	310	0	0	13	True	Z0356|ID3	event
+IL6ST	13	946	3	317	0	0	13	True	Z0110|IL6ST	event
+KEAP1	13	946	6	313	11	1	1	True	Z0124|KEAP1	event
+KIF14	13	925	7	308	0	0	13	True	Z0011|KIF14	event
+MAP2K6	13	671	4	239	0	0	13	True	Z0181|MAP2K6	event
+NFATC2	13	449	4	133	0	0	13	True	Z0084|NFATC2	event
+PLAUR	13	923	10	301	0	0	13	True	Z0323|PLAUR	event
+PTPN14	13	819	8	271	0	0	13	True	Z0333|PTPN14	event
+STRN	13	948	2	318	2	0	11	True	Z0240|STRN	event
+SYNE4	13	329	2	106	0	0	13	True	Z0017|SYNE4	event
+TNFAIP3	13	848	4	276	0	0	13	True	Z0318|TNFAIP3	event
+ACAA2	12	941	5	312	0	0	12	True	Z0106|ACAA2	event
+ARHGAP21	12	948	5	314	1	0	11	True	Z0028|ARHGAP21	event
+B4GALNT1	12	704	3	236	0	0	12	True	Z0024|B4GALNT1	event
+CDKN1A	12	940	12	307	0	0	12	True	Z0158|CDKN1A	event
+CEBPA	12	578	4	192	0	0	12	True	Z0113|CEBPA	event
+CEP41	12	932	3	312	0	0	12	True	Z0004|CEP41	event
+CSF3R	12	61	2	27	0	0	12	True	Z0091|CSF3R	event
+CTTN	12	940	3	314	0	0	12	True	Z0037|CTTN	event
+DOCK5	12	824	6	278	0	0	12	True	Z0016|DOCK5	event
+EP300	12	904	4	297	10	0	2	True	Z0186|EP300	event
+IGF1R	12	901	4	291	0	1	11	True	Z0316|IGF1R	event
+JAZF1	12	758	5	258	0	0	12	True	Z0180|JAZF1	event
+KMT2D	12	873	7	285	12	0	0	True	Z0171|KMT2D	event
+MED12	12	939	6	315	8	2	2	True	Z0014|MED12	event
+NT5C3B	12	950	3	317	0	0	12	True	Z0118|NT5C3B	event
+POU2AF1	12	142	1	43	0	0	12	True	Z0096|POU2AF1	event
+RAC3	12	948	4	317	0	0	12	True	Z0022|RAC3	event
+RAD54L	12	948	1	319	0	0	12	True	Z0312|RAD54L	event
+SATB1	12	688	5	224	2	0	10	True	Z0065|SATB1	event
+TEDC2	12	941	4	316	0	0	12	True	Z0004|TEDC2	event
+TMEM35B	12	949	5	316	0	1	11	True	Z0221|TMEM35B	event
+TNS2	12	764	6	254	0	0	12	True	Z0169|TNS2	event
+TRPS1	12	678	4	212	0	0	12	True	Z0149|TRPS1	event
+TRPV2	12	374	3	130	0	0	12	True	Z0154|TRPV2	event
+TUBGCP6	12	938	2	317	0	0	12	True	Z0055|TUBGCP6	event
+ZNF367	12	944	5	315	0	0	12	True	Z0188|ZNF367	event
+LCE3C	351	0	119	0	0	351	0	False		< 12 loss or reference models in A
+CRB3	103	0	43	0	0	0	103	False		< 12 loss or reference models in A
+KRTAP9-6	91	0	25	0	0	91	0	False		< 12 loss or reference models in A
+MT1F	72	0	26	0	0	0	72	False		< 12 loss or reference models in A
+PROCR	64	0	25	0	0	0	64	False		< 12 loss or reference models in A
+GAL	52	0	17	0	0	0	52	False		< 12 loss or reference models in A
+APOC1	43	0	11	0	0	0	43	False		< 12 loss or reference models in A
+CCDC106	28	0	7	0	0	0	28	False		< 12 loss or reference models in A
+SMAD1	26	0	14	0	0	0	26	False		< 12 loss or reference models in A
+NRARP	21	0	11	0	0	1	20	False		< 12 loss or reference models in A
+VTCN1	18	0	4	0	0	0	18	False		< 12 loss or reference models in A
+PWP2	16	0	5	0	0	0	16	False		< 12 loss or reference models in A
+MDK	15	0	12	0	0	0	15	False		< 12 loss or reference models in A
+CD81	14	0	2	0	0	0	14	False		< 12 loss or reference models in A
+AGAP6	13	0	6	0	0	0	13	False		< 12 loss or reference models in A
+PDZK1	12	0	2	0	0	0	12	False		< 12 loss or reference models in A
+ADCY1	11	375	1	115	0	0	11	False		< 12 loss or reference models in A
+ARHGAP9	11	196	0	76	0	0	11	False		< 12 loss or reference models in A
+BICDL2	11	382	5	119	0	0	11	False		< 12 loss or reference models in A
+BMF	11	758	2	253	0	0	11	False		< 12 loss or reference models in A
+CD58	11	948	4	315	3	1	7	False		< 12 loss or reference models in A
+CRTC3	11	948	3	318	0	0	11	False		< 12 loss or reference models in A
+EXO1	11	945	4	314	0	0	11	False		< 12 loss or reference models in A
+FGFR3	11	602	3	209	0	0	11	False		< 12 loss or reference models in A
+GADD45B	11	934	7	311	0	0	11	False		< 12 loss or reference models in A
+GFI1	11	303	4	108	0	0	11	False		< 12 loss or reference models in A
+GNAQ	11	910	2	303	0	0	11	False		< 12 loss or reference models in A
+HSD3B7	11	804	8	266	0	0	11	False		< 12 loss or reference models in A
+ITGA1	11	619	4	201	0	0	11	False		< 12 loss or reference models in A
+MAPK4	11	131	1	43	2	9	0	False		< 12 loss or reference models in A
+P2RX4	11	949	4	316	0	0	11	False		< 12 loss or reference models in A
+PAX3	11	177	1	64	0	0	11	False		< 12 loss or reference models in A
+PIP4K2C	11	950	1	318	0	0	11	False		< 12 loss or reference models in A
+PPP1R1B	11	287	5	85	0	0	11	False		< 12 loss or reference models in A
+SIPA1	11	946	7	314	0	0	11	False		< 12 loss or reference models in A
+SLC22A15	11	544	2	194	0	0	11	False		< 12 loss or reference models in A
+TACC1	11	948	8	313	0	0	11	False		< 12 loss or reference models in A
+VPS35L	11	934	2	312	0	0	11	False		< 12 loss or reference models in A
+WDR62	11	942	1	318	0	0	11	False		< 12 loss or reference models in A
+ANXA9	10	474	2	155	0	0	10	False		< 12 loss or reference models in A
+BLM	10	936	3	312	0	0	10	False		< 12 loss or reference models in A
+CCNF	10	950	2	318	0	0	10	False		< 12 loss or reference models in A
+CFLAR	10	951	3	318	0	0	10	False		< 12 loss or reference models in A
+CUL9	10	941	3	315	0	0	10	False		< 12 loss or reference models in A
+EPOP	10	914	3	306	0	0	10	False		< 12 loss or reference models in A
+GATA3	10	511	5	169	0	0	10	False		< 12 loss or reference models in A
+HERC1	10	934	1	311	0	0	10	False		< 12 loss or reference models in A
+IL1R1	10	596	3	199	0	0	10	False		< 12 loss or reference models in A
+ITGB5	10	901	3	299	0	0	10	False		< 12 loss or reference models in A
+KLHL6	10	107	3	36	0	0	10	False		< 12 loss or reference models in A
+LGR4	10	899	4	298	0	0	10	False		< 12 loss or reference models in A
+LIN28B	10	244	5	82	0	0	10	False		< 12 loss or reference models in A
+MAFF	10	924	4	306	0	0	10	False		< 12 loss or reference models in A
+MAP4K2	10	949	0	320	0	0	10	False		< 12 loss or reference models in A
+MARCKSL1	10	951	1	319	0	0	10	False		< 12 loss or reference models in A
+MMP28	10	374	8	115	0	0	10	False		< 12 loss or reference models in A
+OLFML3	10	380	2	132	0	0	10	False		< 12 loss or reference models in A
+PEX26	10	947	2	317	0	0	10	False		< 12 loss or reference models in A
+PFKP	10	948	3	317	0	0	10	False		< 12 loss or reference models in A
+SLC5A3	10	940	1	316	0	0	10	False		< 12 loss or reference models in A
+TAMALIN	10	335	1	125	0	0	10	False		< 12 loss or reference models in A
+TEAD3	10	883	5	292	0	0	10	False		< 12 loss or reference models in A
+YES1	10	931	2	312	0	0	10	False		< 12 loss or reference models in A
+ACAT2	9	953	2	319	0	0	9	False		< 12 loss or reference models in A
+ASCL1	9	79	2	34	0	0	9	False		< 12 loss or reference models in A
+BRIP1	9	939	5	312	0	0	9	False		< 12 loss or reference models in A
+CCL5	9	0	3	0	0	0	9	False		< 12 loss or reference models in A
+EEIG2	9	904	3	303	0	0	9	False		< 12 loss or reference models in A
+GINS2	9	951	4	317	0	0	9	False		< 12 loss or reference models in A
+H2AC6	9	952	1	320	1	2	6	False		< 12 loss or reference models in A
+H2BC5	9	952	2	317	0	2	7	False		< 12 loss or reference models in A
+IGLL1	9	79	1	26	0	9	0	False		< 12 loss or reference models in A
+KCNK5	9	535	2	173	0	0	9	False		< 12 loss or reference models in A
+LMNA	9	949	3	318	0	0	9	False		< 12 loss or reference models in A
+MCM8	9	948	7	312	0	0	9	False		< 12 loss or reference models in A
+MYT1	9	146	5	42	0	0	9	False		< 12 loss or reference models in A
+PCBD1	9	952	3	318	0	1	8	False		< 12 loss or reference models in A
+PHOX2B	9	26	2	14	0	0	9	False		< 12 loss or reference models in A
+SH3BP4	9	836	5	270	0	0	9	False		< 12 loss or reference models in A
+SLC4A7	9	946	0	317	0	0	9	False		< 12 loss or reference models in A
+TCF7L2	9	903	1	296	0	0	9	False		< 12 loss or reference models in A
+TESMIN	9	796	5	258	0	0	9	False		< 12 loss or reference models in A
+TM7SF2	9	948	0	321	0	0	9	False		< 12 loss or reference models in A
+TONSL	9	933	7	311	0	0	9	False		< 12 loss or reference models in A
+TP63	9	263	5	81	0	1	8	False		< 12 loss or reference models in A
+TRIB1	9	950	3	316	0	0	9	False		< 12 loss or reference models in A
+USP18	9	0	3	0	0	0	9	False		< 12 loss or reference models in A
+AMER1	8	746	4	242	3	5	0	False		< 12 loss or reference models in A
+ARID2	8	936	6	307	8	0	0	False		< 12 loss or reference models in A
+CDC42BPG	8	555	4	176	0	0	8	False		< 12 loss or reference models in A
+CSF2RB	8	85	0	25	0	0	8	False		< 12 loss or reference models in A
+CTNNA1	8	942	1	318	5	1	2	False		< 12 loss or reference models in A
+DDX3X	8	954	3	317	8	0	0	False		< 12 loss or reference models in A
+DIPK1A	8	926	3	310	0	0	8	False		< 12 loss or reference models in A
+DNASE2	8	954	3	315	0	0	8	False		< 12 loss or reference models in A
+DSCC1	8	954	1	320	0	0	8	False		< 12 loss or reference models in A
+ELL3	8	742	2	246	0	0	8	False		< 12 loss or reference models in A
+FOXA2	8	284	2	94	0	0	8	False		< 12 loss or reference models in A
+HDHD5	8	953	2	318	0	0	8	False		< 12 loss or reference models in A
+HNF4A	8	172	4	54	0	0	8	False		< 12 loss or reference models in A
+IER5L	8	814	2	269	0	1	7	False		< 12 loss or reference models in A
+ITGAV	8	936	0	318	2	0	6	False		< 12 loss or reference models in A
+JADE2	8	937	8	308	0	0	8	False		< 12 loss or reference models in A
+KDM5C	8	948	2	318	6	2	0	False		< 12 loss or reference models in A
+LIFR	8	665	2	232	0	0	8	False		< 12 loss or reference models in A
+LRP8	8	954	4	316	0	0	8	False		< 12 loss or reference models in A
+MROH6	8	844	5	287	0	0	8	False		< 12 loss or reference models in A
+ORC1	8	928	2	308	0	0	8	False		< 12 loss or reference models in A
+P3H4	8	925	0	309	0	0	8	False		< 12 loss or reference models in A
+PAK1	8	953	5	316	0	0	8	False		< 12 loss or reference models in A
+PEX6	8	937	3	312	0	0	8	False		< 12 loss or reference models in A
+POLE2	8	951	1	319	0	0	8	False		< 12 loss or reference models in A
+PRPS2	8	953	1	320	0	0	8	False		< 12 loss or reference models in A
+RHOH	8	172	2	65	0	0	8	False		< 12 loss or reference models in A
+SRC	8	897	3	302	0	0	8	False		< 12 loss or reference models in A
+TICRR	8	905	0	302	0	0	8	False		< 12 loss or reference models in A
+TRIP10	8	944	5	315	0	0	8	False		< 12 loss or reference models in A
+ZNF695	8	770	3	250	0	0	8	False		< 12 loss or reference models in A
+ARL4D	7	861	1	287	0	0	7	False		< 12 loss or reference models in A
+ATF7IP	7	942	0	316	7	0	0	False		< 12 loss or reference models in A
+CDC25A	7	943	4	312	0	0	7	False		< 12 loss or reference models in A
+CDC7	7	951	2	317	0	0	7	False		< 12 loss or reference models in A
+CENPI	7	936	5	314	0	0	7	False		< 12 loss or reference models in A
+CHTF18	7	948	1	318	0	0	7	False		< 12 loss or reference models in A
+CNOT6L	7	953	3	317	0	0	7	False		< 12 loss or reference models in A
+DEF8	7	954	2	319	0	0	7	False		< 12 loss or reference models in A
+DGCR6	7	0	3	0	0	0	7	False		< 12 loss or reference models in A
+FANCD2	7	949	2	316	0	0	7	False		< 12 loss or reference models in A
+GAB2	7	793	1	258	1	0	6	False		< 12 loss or reference models in A
+GSDMB	7	844	1	283	0	0	7	False		< 12 loss or reference models in A
+H2BC4	7	919	0	311	0	2	5	False		< 12 loss or reference models in A
+HSPA13	7	954	0	320	0	5	2	False		< 12 loss or reference models in A
+IRS1	7	840	3	267	0	0	7	False		< 12 loss or reference models in A
+IRS2	7	823	1	259	0	0	7	False		< 12 loss or reference models in A
+LRRC45	7	949	1	319	0	0	7	False		< 12 loss or reference models in A
+MITF	7	689	4	223	0	0	7	False		< 12 loss or reference models in A
+MMS22L	7	942	5	311	0	0	7	False		< 12 loss or reference models in A
+MTHFD2	7	952	3	317	0	0	7	False		< 12 loss or reference models in A
+NAXD	7	954	3	318	0	0	7	False		< 12 loss or reference models in A
+PIGN	7	950	1	318	4	1	2	False		< 12 loss or reference models in A
+PITPNM1	7	950	2	316	0	0	7	False		< 12 loss or reference models in A
+PRKCD	7	948	1	320	0	0	7	False		< 12 loss or reference models in A
+RAP2B	7	943	2	314	0	0	7	False		< 12 loss or reference models in A
+RHPN2	7	904	0	301	0	0	7	False		< 12 loss or reference models in A
+SGO2	7	944	2	316	0	0	7	False		< 12 loss or reference models in A
+SKA1	7	953	3	318	0	0	7	False		< 12 loss or reference models in A
+SMAD6	7	753	2	240	0	1	6	False		< 12 loss or reference models in A
+SMIM20	7	0	5	0	0	0	7	False		< 12 loss or reference models in A
+SOX7	7	350	2	108	0	1	6	False		< 12 loss or reference models in A
+SQLE	7	952	4	317	0	0	7	False		< 12 loss or reference models in A
+ST3GAL4	7	952	6	314	0	0	7	False		< 12 loss or reference models in A
+TCF19	7	955	1	319	0	0	7	False		< 12 loss or reference models in A
+TLCD3B	7	228	2	79	0	0	7	False		< 12 loss or reference models in A
+TOP3B	7	953	0	320	1	2	4	False		< 12 loss or reference models in A
+TRAIP	7	953	2	319	0	0	7	False		< 12 loss or reference models in A
+TRAM2	7	952	7	313	0	0	7	False		< 12 loss or reference models in A
+ZNF33B	7	946	0	320	0	0	7	False		< 12 loss or reference models in A
+ABCD1	6	922	3	305	0	0	6	False		< 12 loss or reference models in A
+AJUBA	6	894	5	294	0	0	6	False		< 12 loss or reference models in A
+AMMECR1	6	953	0	320	1	3	2	False		< 12 loss or reference models in A
+AP1G2	6	954	2	319	0	0	6	False		< 12 loss or reference models in A
+ARMH1	6	278	0	100	0	0	6	False		< 12 loss or reference models in A
+BCOR	6	926	0	312	0	1	5	False		< 12 loss or reference models in A
+CDT1	6	954	3	317	0	0	6	False		< 12 loss or reference models in A
+CIP2A	6	954	1	320	0	0	6	False		< 12 loss or reference models in A
+CIT	6	946	2	317	0	0	6	False		< 12 loss or reference models in A
+COMTD1	6	909	3	303	0	0	6	False		< 12 loss or reference models in A
+CYB5R4	6	950	0	320	0	0	6	False		< 12 loss or reference models in A
+E2F1	6	950	1	320	0	0	6	False		< 12 loss or reference models in A
+EFNA5	6	749	1	243	0	0	6	False		< 12 loss or reference models in A
+FAR1	6	941	1	317	0	0	6	False		< 12 loss or reference models in A
+FOXO3	6	956	3	318	0	0	6	False		< 12 loss or reference models in A
+GALNT11	6	909	0	305	0	0	6	False		< 12 loss or reference models in A
+GDPD5	6	838	0	282	0	0	6	False		< 12 loss or reference models in A
+GIGYF1	6	947	3	314	0	0	6	False		< 12 loss or reference models in A
+HAUS5	6	952	0	321	0	0	6	False		< 12 loss or reference models in A
+HSD17B12	6	956	0	321	0	0	6	False		< 12 loss or reference models in A
+IRF2	6	948	0	319	2	2	2	False		< 12 loss or reference models in A
+ISOC2	6	956	0	320	0	0	6	False		< 12 loss or reference models in A
+LGALS3BP	6	933	2	311	0	0	6	False		< 12 loss or reference models in A
+MALT1	6	949	1	320	0	0	6	False		< 12 loss or reference models in A
+MND1	6	954	2	319	0	0	6	False		< 12 loss or reference models in A
+MPHOSPH8	6	953	0	319	1	5	0	False		< 12 loss or reference models in A
+MYBL2	6	952	2	319	0	0	6	False		< 12 loss or reference models in A
+MYCN	6	229	3	79	0	0	6	False		< 12 loss or reference models in A
+NCOR1	6	940	1	314	6	0	0	False		< 12 loss or reference models in A
+NT5C	6	956	0	321	0	0	6	False		< 12 loss or reference models in A
+OIP5	6	955	1	319	0	0	6	False		< 12 loss or reference models in A
+OSBPL7	6	855	1	282	0	0	6	False		< 12 loss or reference models in A
+PHOX2A	6	41	2	16	0	0	6	False		< 12 loss or reference models in A
+PITX2	6	524	1	172	0	0	6	False		< 12 loss or reference models in A
+PXN	6	946	1	316	0	0	6	False		< 12 loss or reference models in A
+RBM23	6	953	0	321	0	0	6	False		< 12 loss or reference models in A
+RELB	6	920	3	305	0	0	6	False		< 12 loss or reference models in A
+SAV1	6	954	1	320	2	1	3	False		< 12 loss or reference models in A
+SGO1	6	949	4	314	0	0	6	False		< 12 loss or reference models in A
+SHCBP1	6	953	3	318	0	0	6	False		< 12 loss or reference models in A
+SKA3	6	950	3	316	0	0	6	False		< 12 loss or reference models in A
+SLC25A46	6	953	6	315	0	0	6	False		< 12 loss or reference models in A
+SLC4A4	6	303	0	99	0	0	6	False		< 12 loss or reference models in A
+SPC25	6	954	2	319	0	0	6	False		< 12 loss or reference models in A
+TAF1A	6	954	2	319	0	0	6	False		< 12 loss or reference models in A
+TEAD1	6	882	3	293	0	0	6	False		< 12 loss or reference models in A
+TEX30	6	955	4	317	0	0	6	False		< 12 loss or reference models in A
+TGFBR1	6	952	5	314	1	0	5	False		< 12 loss or reference models in A
+TJP1	6	869	1	286	0	0	6	False		< 12 loss or reference models in A
+TP53BP2	6	950	1	317	0	0	6	False		< 12 loss or reference models in A
+TRAF3	6	951	1	320	2	2	2	False		< 12 loss or reference models in A
+TRMT61A	6	955	0	321	0	0	6	False		< 12 loss or reference models in A
+TTK	6	946	2	315	0	0	6	False		< 12 loss or reference models in A
+TUBA3C	6	65	1	25	0	6	0	False		< 12 loss or reference models in A
+VOPP1	6	956	2	317	0	0	6	False		< 12 loss or reference models in A
+VTN	6	157	0	61	0	1	5	False		< 12 loss or reference models in A
+XRCC2	6	903	2	299	0	0	6	False		< 12 loss or reference models in A
+ZBTB7B	6	955	3	318	0	0	6	False		< 12 loss or reference models in A
+ADAMTSL4	5	575	0	194	0	0	5	False		< 12 loss or reference models in A
+ANKFY1	5	954	0	319	1	2	2	False		< 12 loss or reference models in A
+ARID1B	5	930	6	303	4	0	1	False		< 12 loss or reference models in A
+BCL2	5	587	5	206	0	0	5	False		< 12 loss or reference models in A
+BMPR1A	5	933	0	317	0	1	4	False		< 12 loss or reference models in A
+CYP51A1	5	951	3	316	0	0	5	False		< 12 loss or reference models in A
+DENND4C	5	951	1	320	4	0	1	False		< 12 loss or reference models in A
+DLGAP5	5	950	2	317	0	0	5	False		< 12 loss or reference models in A
+DPP7	5	954	2	318	0	0	5	False		< 12 loss or reference models in A
+ERBB2	5	948	0	321	0	0	5	False		< 12 loss or reference models in A
+FANCF	5	944	2	311	0	0	5	False		< 12 loss or reference models in A
+FOXO1	5	794	6	258	0	0	5	False		< 12 loss or reference models in A
+GMFG	5	0	0	0	0	0	5	False		< 12 loss or reference models in A
+HOXC6	5	686	0	229	0	0	5	False		< 12 loss or reference models in A
+HYI	5	950	2	317	0	0	5	False		< 12 loss or reference models in A
+IGFN1	5	157	0	61	0	0	5	False		< 12 loss or reference models in A
+IRX5	5	606	0	210	0	0	5	False		< 12 loss or reference models in A
+JUN	5	942	4	310	0	2	3	False		< 12 loss or reference models in A
+KCTD9	5	953	0	321	1	2	2	False		< 12 loss or reference models in A
+KMT2A	5	941	1	311	5	0	0	False		< 12 loss or reference models in A
+LATS2	5	867	2	280	0	1	4	False		< 12 loss or reference models in A
+LRP4	5	638	1	214	0	0	5	False		< 12 loss or reference models in A
+MAFK	5	950	0	319	0	0	5	False		< 12 loss or reference models in A
+MAP2K7	5	948	0	320	3	1	1	False		< 12 loss or reference models in A
+MPP3	5	824	1	282	0	0	5	False		< 12 loss or reference models in A
+NDST1	5	946	1	318	0	0	5	False		< 12 loss or reference models in A
+NFIA	5	782	3	241	0	0	5	False		< 12 loss or reference models in A
+NOTCH1	5	843	2	290	0	0	5	False		< 12 loss or reference models in A
+PAQR8	5	767	1	257	0	0	5	False		< 12 loss or reference models in A
+PIK3R1	5	922	2	308	0	0	5	False		< 12 loss or reference models in A
+PLK4	5	955	2	318	0	0	5	False		< 12 loss or reference models in A
+PSPC1	5	954	1	320	1	4	0	False		< 12 loss or reference models in A
+PTK2	5	922	3	305	0	0	5	False		< 12 loss or reference models in A
+RAD51	5	955	2	319	0	0	5	False		< 12 loss or reference models in A
+RADIL	5	294	3	95	0	0	5	False		< 12 loss or reference models in A
+RASSF7	5	953	2	319	0	0	5	False		< 12 loss or reference models in A
+RTEL1	5	947	3	315	0	0	5	False		< 12 loss or reference models in A
+SLC25A38	5	956	3	318	0	0	5	False		< 12 loss or reference models in A
+SPECC1L	5	954	2	318	0	1	4	False		< 12 loss or reference models in A
+TYRO3	5	927	1	308	0	0	5	False		< 12 loss or reference models in A
+USP22	5	955	1	320	1	3	1	False		< 12 loss or reference models in A
+WDR4	5	957	2	319	0	0	5	False		< 12 loss or reference models in A
+ZMYM2	5	946	1	316	1	3	1	False		< 12 loss or reference models in A
+ACAP3	4	950	1	320	0	0	4	False		< 12 loss or reference models in A
+ARSA	4	957	0	318	0	0	4	False		< 12 loss or reference models in A
+ATP23	4	957	1	319	0	0	4	False		< 12 loss or reference models in A
+ATRN	4	951	0	317	0	0	4	False		< 12 loss or reference models in A
+AXIN1	4	951	6	313	3	0	1	False		< 12 loss or reference models in A
+AXIN2	4	568	1	194	0	0	4	False		< 12 loss or reference models in A
+B3GNT2	4	957	0	321	0	0	4	False		< 12 loss or reference models in A
+BOD1L1	4	951	1	317	0	0	4	False		< 12 loss or reference models in A
+BUB1B	4	954	2	316	0	0	4	False		< 12 loss or reference models in A
+CC2D1B	4	955	1	319	0	0	4	False		< 12 loss or reference models in A
+CCP110	4	955	0	320	0	0	4	False		< 12 loss or reference models in A
+CCS	4	950	0	319	0	0	4	False		< 12 loss or reference models in A
+CD276	4	901	0	303	0	0	4	False		< 12 loss or reference models in A
+CNTNAP1	4	694	2	237	0	0	4	False		< 12 loss or reference models in A
+EVC	4	617	0	210	3	1	0	False		< 12 loss or reference models in A
+EXTL3	4	953	2	319	0	0	4	False		< 12 loss or reference models in A
+FKBP9	4	0	2	0	0	0	4	False		< 12 loss or reference models in A
+GINS1	4	955	0	321	0	0	4	False		< 12 loss or reference models in A
+GPS2	4	954	3	318	4	0	0	False		< 12 loss or reference models in A
+HJURP	4	956	1	319	0	0	4	False		< 12 loss or reference models in A
+HLCS	4	955	0	321	0	0	4	False		< 12 loss or reference models in A
+HSPB7	4	97	0	43	0	0	4	False		< 12 loss or reference models in A
+IMMP2L	4	954	1	320	0	0	4	False		< 12 loss or reference models in A
+INCENP	4	956	1	320	0	0	4	False		< 12 loss or reference models in A
+IPPK	4	958	2	318	0	0	4	False		< 12 loss or reference models in A
+JPH4	4	119	2	38	0	0	4	False		< 12 loss or reference models in A
+KHDC1	4	778	3	259	0	0	4	False		< 12 loss or reference models in A
+KIFBP	4	957	2	319	0	0	4	False		< 12 loss or reference models in A
+LAMA2	4	237	1	75	4	0	0	False		< 12 loss or reference models in A
+LIG4	4	955	1	320	0	0	4	False		< 12 loss or reference models in A
+LIN54	4	952	0	320	0	0	4	False		< 12 loss or reference models in A
+LPIN1	4	955	1	318	0	0	4	False		< 12 loss or reference models in A
+MAB21L1	4	141	3	43	0	0	4	False		< 12 loss or reference models in A
+MBTPS2	4	958	1	319	0	0	4	False		< 12 loss or reference models in A
+MDM4	4	949	2	319	0	0	4	False		< 12 loss or reference models in A
+MMD	4	956	2	318	0	0	4	False		< 12 loss or reference models in A
+MTBP	4	954	1	317	0	0	4	False		< 12 loss or reference models in A
+MYC	4	943	1	312	0	0	4	False		< 12 loss or reference models in A
+MYH9	4	950	1	314	4	0	0	False		< 12 loss or reference models in A
+MZF1	4	934	0	314	0	0	4	False		< 12 loss or reference models in A
+NCAPG	4	952	1	320	0	0	4	False		< 12 loss or reference models in A
+NCOA2	4	954	0	320	0	0	4	False		< 12 loss or reference models in A
+NSMAF	4	955	1	320	1	1	2	False		< 12 loss or reference models in A
+NUBPL	4	0	0	0	0	0	4	False		< 12 loss or reference models in A
+P2RX7	4	297	0	102	0	0	4	False		< 12 loss or reference models in A
+PACSIN3	4	931	2	307	0	0	4	False		< 12 loss or reference models in A
+PARD6B	4	753	5	245	0	0	4	False		< 12 loss or reference models in A
+PDE12	4	958	1	319	0	0	4	False		< 12 loss or reference models in A
+PDP1	4	956	2	319	0	0	4	False		< 12 loss or reference models in A
+PDSS1	4	955	0	321	0	0	4	False		< 12 loss or reference models in A
+PIM2	4	950	8	313	0	0	4	False		< 12 loss or reference models in A
+POLE4	4	957	3	318	0	0	4	False		< 12 loss or reference models in A
+POLR3D	4	0	0	0	0	0	4	False		< 12 loss or reference models in A
+POP1	4	953	3	316	0	0	4	False		< 12 loss or reference models in A
+PSRC1	4	957	1	320	0	0	4	False		< 12 loss or reference models in A
+PTPN7	4	143	3	43	0	0	4	False		< 12 loss or reference models in A
+RAD51B	4	952	0	321	0	1	3	False		< 12 loss or reference models in A
+REC8	4	814	3	280	0	0	4	False		< 12 loss or reference models in A
+RNASEH2B	4	950	0	321	0	3	1	False		< 12 loss or reference models in A
+RNASET2	4	957	2	319	0	0	4	False		< 12 loss or reference models in A
+ROCK2	4	949	1	319	0	1	3	False		< 12 loss or reference models in A
+SAMD14	4	272	0	100	0	0	4	False		< 12 loss or reference models in A
+SERTAD1	4	949	4	314	0	0	4	False		< 12 loss or reference models in A
+SLC39A10	4	954	0	321	0	0	4	False		< 12 loss or reference models in A
+SMCR8	4	954	1	320	0	0	4	False		< 12 loss or reference models in A
+STAT5B	4	947	2	313	0	1	3	False		< 12 loss or reference models in A
+SUPT3H	4	944	0	313	0	0	4	False		< 12 loss or reference models in A
+SUZ12	4	951	1	319	4	0	0	False		< 12 loss or reference models in A
+TMEM11	4	958	1	320	0	4	0	False		< 12 loss or reference models in A
+TP53I13	4	953	1	320	0	0	4	False		< 12 loss or reference models in A
+UBE2C	4	956	1	320	0	0	4	False		< 12 loss or reference models in A
+USP9X	4	948	0	316	4	0	0	False		< 12 loss or reference models in A
+XRN1	4	946	0	317	0	0	4	False		< 12 loss or reference models in A
+ZBTB14	4	955	1	318	0	1	3	False		< 12 loss or reference models in A
+ZNF217	4	953	2	316	0	0	4	False		< 12 loss or reference models in A
+ZNF789	4	957	0	319	0	0	4	False		< 12 loss or reference models in A
+ZRANB1	4	954	1	320	0	1	3	False		< 12 loss or reference models in A
+AGPS	3	952	3	317	0	0	3	False		< 12 loss or reference models in A
+AP1S1	3	0	0	0	0	0	3	False		< 12 loss or reference models in A
+AP3M2	3	957	0	321	0	0	3	False		< 12 loss or reference models in A
+ARMH3	3	956	0	319	1	2	0	False		< 12 loss or reference models in A
+ASNS	3	957	2	317	0	0	3	False		< 12 loss or reference models in A
+AUNIP	3	946	2	317	0	0	3	False		< 12 loss or reference models in A
+AURKB	3	957	1	320	0	0	3	False		< 12 loss or reference models in A
+BANP	3	955	0	321	0	0	3	False		< 12 loss or reference models in A
+BARD1	3	938	1	316	0	0	3	False		< 12 loss or reference models in A
+BRMS1L	3	956	0	318	0	0	3	False		< 12 loss or reference models in A
+BUB1	3	954	1	320	0	0	3	False		< 12 loss or reference models in A
+CABIN1	3	953	0	319	0	3	0	False		< 12 loss or reference models in A
+CCDC88B	3	873	0	295	0	0	3	False		< 12 loss or reference models in A
+CCNE1	3	954	1	320	0	0	3	False		< 12 loss or reference models in A
+CDIN1	3	953	1	318	0	0	3	False		< 12 loss or reference models in A
+CENATAC	3	957	1	318	0	0	3	False		< 12 loss or reference models in A
+CENPA	3	959	1	320	0	0	3	False		< 12 loss or reference models in A
+CENPK	3	958	2	318	0	0	3	False		< 12 loss or reference models in A
+CENPM	3	0	0	0	0	0	3	False		< 12 loss or reference models in A
+CEP295	3	953	3	316	0	0	3	False		< 12 loss or reference models in A
+CFAP97	3	957	0	320	0	0	3	False		< 12 loss or reference models in A
+CHAF1A	3	958	0	320	0	0	3	False		< 12 loss or reference models in A
+CIDEB	3	910	4	301	0	0	3	False		< 12 loss or reference models in A
+CSRNP1	3	934	1	308	0	0	3	False		< 12 loss or reference models in A
+DHCR7	3	959	3	318	0	0	3	False		< 12 loss or reference models in A
+DPH6	3	958	0	320	0	0	3	False		< 12 loss or reference models in A
+DTD2	3	957	2	319	0	0	3	False		< 12 loss or reference models in A
+DYRK1B	3	822	0	274	0	0	3	False		< 12 loss or reference models in A
+EFNA3	3	912	0	289	0	0	3	False		< 12 loss or reference models in A
+EP400	3	932	0	304	3	0	0	False		< 12 loss or reference models in A
+ETAA1	3	951	0	317	0	0	3	False		< 12 loss or reference models in A
+ETV6	3	942	2	309	0	0	3	False		< 12 loss or reference models in A
+FECH	3	959	1	319	0	0	3	False		< 12 loss or reference models in A
+FERMT3	3	527	0	184	0	0	3	False		< 12 loss or reference models in A
+FNIP1	3	951	0	318	0	1	2	False		< 12 loss or reference models in A
+FUT8	3	955	2	319	0	0	3	False		< 12 loss or reference models in A
+GAB4	3	5	0	4	0	3	0	False		< 12 loss or reference models in A
+GDAP2	3	956	1	319	0	0	3	False		< 12 loss or reference models in A
+GJA3	3	285	0	95	0	3	0	False		< 12 loss or reference models in A
+GTPBP8	3	959	0	321	0	0	3	False		< 12 loss or reference models in A
+H1-2	3	958	0	320	0	1	2	False		< 12 loss or reference models in A
+HDAC8	3	958	1	320	3	0	0	False		< 12 loss or reference models in A
+HOXC4	3	585	0	198	0	0	3	False		< 12 loss or reference models in A
+HTATSF1	3	958	0	321	3	0	0	False		< 12 loss or reference models in A
+HTT	3	945	1	316	0	0	3	False		< 12 loss or reference models in A
+INTS2	3	953	1	317	0	0	3	False		< 12 loss or reference models in A
+JAK2	3	887	1	287	2	1	0	False		< 12 loss or reference models in A
+KDM5A	3	941	2	314	0	0	3	False		< 12 loss or reference models in A
+KIF20A	3	956	1	317	0	0	3	False		< 12 loss or reference models in A
+KIF23	3	956	0	320	0	0	3	False		< 12 loss or reference models in A
+KMT2B	3	924	1	303	3	0	0	False		< 12 loss or reference models in A
+LPCAT1	3	956	0	321	0	0	3	False		< 12 loss or reference models in A
+LRRC1	3	928	0	314	0	0	3	False		< 12 loss or reference models in A
+LTB4R	3	819	2	282	0	0	3	False		< 12 loss or reference models in A
+MAN1A2	3	955	0	320	0	0	3	False		< 12 loss or reference models in A
+MAP2K3	3	958	1	320	0	3	0	False		< 12 loss or reference models in A
+MAP2K5	3	954	0	321	0	1	2	False		< 12 loss or reference models in A
+MAP3K1	3	942	0	316	0	0	3	False		< 12 loss or reference models in A
+MAP3K2	3	954	1	318	0	0	3	False		< 12 loss or reference models in A
+MBD2	3	952	0	320	2	0	1	False		< 12 loss or reference models in A
+MCPH1	3	954	0	318	1	1	1	False		< 12 loss or reference models in A
+MGRN1	3	955	0	321	0	2	1	False		< 12 loss or reference models in A
+MIB1	3	954	0	320	0	0	3	False		< 12 loss or reference models in A
+MINDY1	3	918	0	306	0	0	3	False		< 12 loss or reference models in A
+MIS18BP1	3	956	0	319	0	0	3	False		< 12 loss or reference models in A
+MSH2	3	946	0	315	0	1	2	False		< 12 loss or reference models in A
+MSL3	3	956	1	319	1	2	0	False		< 12 loss or reference models in A
+MTMR6	3	952	0	320	0	0	3	False		< 12 loss or reference models in A
+MTR	3	954	1	320	0	0	3	False		< 12 loss or reference models in A
+NCAPG2	3	956	0	321	0	0	3	False		< 12 loss or reference models in A
+NCAPH	3	958	1	320	0	0	3	False		< 12 loss or reference models in A
+NCOR2	3	944	0	315	2	1	0	False		< 12 loss or reference models in A
+NFKB1	3	953	1	320	0	0	3	False		< 12 loss or reference models in A
+NFKB2	3	955	0	317	0	0	3	False		< 12 loss or reference models in A
+PALS1	3	955	0	320	0	0	3	False		< 12 loss or reference models in A
+PARD6G	3	666	2	222	0	3	0	False		< 12 loss or reference models in A
+PCNT	3	949	1	308	0	0	3	False		< 12 loss or reference models in A
+PDE4D	3	786	1	271	0	0	3	False		< 12 loss or reference models in A
+PDE4DIP	3	0	0	0	0	0	3	False		< 12 loss or reference models in A
+PDSS2	3	957	0	321	0	0	3	False		< 12 loss or reference models in A
+PIGA	3	955	0	321	0	0	3	False		< 12 loss or reference models in A
+PIGH	3	0	2	0	0	0	3	False		< 12 loss or reference models in A
+POC1B	3	958	0	318	0	0	3	False		< 12 loss or reference models in A
+PPP2R1A	3	954	0	319	3	0	0	False		< 12 loss or reference models in A
+PSIP1	3	955	2	319	1	0	2	False		< 12 loss or reference models in A
+PUM3	3	952	0	319	0	1	2	False		< 12 loss or reference models in A
+RAB23	3	941	1	316	0	0	3	False		< 12 loss or reference models in A
+RAD51D	3	951	2	315	0	0	3	False		< 12 loss or reference models in A
+RBSN	3	958	2	318	0	0	3	False		< 12 loss or reference models in A
+RFX5	3	954	0	318	0	0	3	False		< 12 loss or reference models in A
+RHOF	3	948	3	315	0	0	3	False		< 12 loss or reference models in A
+RIC1	3	947	1	314	0	1	2	False		< 12 loss or reference models in A
+RIC8A	3	953	2	319	0	2	1	False		< 12 loss or reference models in A
+RICTOR	3	950	0	317	0	0	3	False		< 12 loss or reference models in A
+RNF2	3	958	2	317	0	0	3	False		< 12 loss or reference models in A
+RNPC3	3	952	2	319	0	0	3	False		< 12 loss or reference models in A
+ROCK1	3	946	0	320	0	1	2	False		< 12 loss or reference models in A
+RPS6KA1	3	951	2	317	0	0	3	False		< 12 loss or reference models in A
+SC5D	3	959	1	319	0	0	3	False		< 12 loss or reference models in A
+SCD	3	959	0	320	0	0	3	False		< 12 loss or reference models in A
+SCFD2	3	953	2	316	0	0	3	False		< 12 loss or reference models in A
+SLC25A15	3	958	2	317	0	0	3	False		< 12 loss or reference models in A
+SLC25A36	3	956	1	319	0	0	3	False		< 12 loss or reference models in A
+SLC6A17	3	165	0	62	0	0	3	False		< 12 loss or reference models in A
+SMC2	3	951	1	316	0	0	3	False		< 12 loss or reference models in A
+SSBP4	3	952	0	319	0	0	3	False		< 12 loss or reference models in A
+STIL	3	955	0	320	0	0	3	False		< 12 loss or reference models in A
+SUPT20H	3	956	3	316	3	0	0	False		< 12 loss or reference models in A
+TAF1B	3	956	0	320	0	0	3	False		< 12 loss or reference models in A
+TAPT1	3	956	0	320	0	1	2	False		< 12 loss or reference models in A
+TASOR	3	954	0	319	0	0	3	False		< 12 loss or reference models in A
+TEDC1	3	958	2	319	0	0	3	False		< 12 loss or reference models in A
+TIPE2	3	92	0	32	0	0	3	False		< 12 loss or reference models in A
+TMCO6	3	958	1	320	0	0	3	False		< 12 loss or reference models in A
+TMEM44	3	955	0	320	0	0	3	False		< 12 loss or reference models in A
+TMEM97	3	958	4	317	0	0	3	False		< 12 loss or reference models in A
+TRIP4	3	953	1	319	0	0	3	False		< 12 loss or reference models in A
+TUBG2	3	946	6	305	0	0	3	False		< 12 loss or reference models in A
+UBXN7	3	958	0	321	0	0	3	False		< 12 loss or reference models in A
+WAS	3	169	1	62	0	0	3	False		< 12 loss or reference models in A
+WDHD1	3	959	0	321	0	0	3	False		< 12 loss or reference models in A
+WRN	3	939	0	317	3	0	0	False		< 12 loss or reference models in A
+XRCC3	3	957	0	321	0	0	3	False		< 12 loss or reference models in A
+XRCC4	3	958	0	321	0	0	3	False		< 12 loss or reference models in A
+ZNF730	3	305	2	105	1	2	0	False		< 12 loss or reference models in A
+AEBP2	2	959	2	317	0	0	2	False		< 12 loss or reference models in A
+AGO1	2	949	1	319	0	0	2	False		< 12 loss or reference models in A
+ANKRD11	2	946	1	316	2	0	0	False		< 12 loss or reference models in A
+ANKRD52	2	956	0	321	0	0	2	False		< 12 loss or reference models in A
+ARHGEF11	2	933	0	312	0	0	2	False		< 12 loss or reference models in A
+ARHGEF4	2	526	1	166	0	0	2	False		< 12 loss or reference models in A
+ARID4B	2	942	1	311	0	0	2	False		< 12 loss or reference models in A
+BCAR1	2	905	0	301	0	0	2	False		< 12 loss or reference models in A
+BIRC2	2	955	0	321	0	2	0	False		< 12 loss or reference models in A
+BIRC5	2	958	0	321	0	0	2	False		< 12 loss or reference models in A
+BLOC1S1	2	959	2	319	0	0	2	False		< 12 loss or reference models in A
+BRCA2	2	869	1	288	0	0	2	False		< 12 loss or reference models in A
+BTAF1	2	949	0	319	0	0	2	False		< 12 loss or reference models in A
+C10orf88	2	957	1	320	1	0	1	False		< 12 loss or reference models in A
+C17orf75	2	959	1	317	0	0	2	False		< 12 loss or reference models in A
+C2CD3	2	952	0	315	0	0	2	False		< 12 loss or reference models in A
+C5orf34	2	935	0	317	0	0	2	False		< 12 loss or reference models in A
+C8orf33	2	959	1	320	1	1	0	False		< 12 loss or reference models in A
+CCNA2	2	959	0	321	0	0	2	False		< 12 loss or reference models in A
+CCNJ	2	945	3	310	0	0	2	False		< 12 loss or reference models in A
+CD151	2	960	1	320	0	0	2	False		< 12 loss or reference models in A
+CDC20	2	958	0	320	0	0	2	False		< 12 loss or reference models in A
+CDC6	2	957	0	321	0	0	2	False		< 12 loss or reference models in A
+CDCA3	2	960	0	321	0	0	2	False		< 12 loss or reference models in A
+CDCA5	2	956	1	318	0	0	2	False		< 12 loss or reference models in A
+CDCA8	2	956	0	320	0	0	2	False		< 12 loss or reference models in A
+CDH24	2	893	0	301	0	0	2	False		< 12 loss or reference models in A
+CDKN1B	2	956	0	318	0	0	2	False		< 12 loss or reference models in A
+CEP250	2	950	1	319	0	0	2	False		< 12 loss or reference models in A
+CEP350	2	942	0	319	0	0	2	False		< 12 loss or reference models in A
+CEP55	2	959	0	321	0	0	2	False		< 12 loss or reference models in A
+CFAP410	2	953	0	319	0	0	2	False		< 12 loss or reference models in A
+CHAF1B	2	954	0	320	0	0	2	False		< 12 loss or reference models in A
+CHEK1	2	957	0	319	0	0	2	False		< 12 loss or reference models in A
+CHEK2	2	956	0	318	1	1	0	False		< 12 loss or reference models in A
+CNPY4	2	944	2	318	0	0	2	False		< 12 loss or reference models in A
+COMMD7	2	959	0	321	0	0	2	False		< 12 loss or reference models in A
+CR1L	2	63	0	23	0	2	0	False		< 12 loss or reference models in A
+CRAMP1	2	945	2	313	0	0	2	False		< 12 loss or reference models in A
+CTDNEP1	2	960	0	321	2	0	0	False		< 12 loss or reference models in A
+CTNND1	2	933	1	313	0	0	2	False		< 12 loss or reference models in A
+DCLRE1B	2	958	2	319	0	0	2	False		< 12 loss or reference models in A
+DDI2	2	959	0	320	0	0	2	False		< 12 loss or reference models in A
+DDX51	2	956	0	320	0	0	2	False		< 12 loss or reference models in A
+DGCR8	2	954	0	320	0	0	2	False		< 12 loss or reference models in A
+DICER1	2	953	0	317	0	0	2	False		< 12 loss or reference models in A
+DIP2B	2	953	0	319	2	0	0	False		< 12 loss or reference models in A
+DLG5	2	921	0	309	0	0	2	False		< 12 loss or reference models in A
+DOCK6	2	916	1	299	0	0	2	False		< 12 loss or reference models in A
+DOT1L	2	936	1	313	0	0	2	False		< 12 loss or reference models in A
+EGLN1	2	956	0	321	0	0	2	False		< 12 loss or reference models in A
+EMSY	2	954	1	316	0	0	2	False		< 12 loss or reference models in A
+EPC2	2	958	1	319	0	0	2	False		< 12 loss or reference models in A
+FANCC	2	958	0	320	0	0	2	False		< 12 loss or reference models in A
+FARS2	2	958	0	321	0	0	2	False		< 12 loss or reference models in A
+FBXO42	2	959	0	321	1	1	0	False		< 12 loss or reference models in A
+FBXO5	2	958	0	320	0	0	2	False		< 12 loss or reference models in A
+FHIP2A	2	953	0	320	0	0	2	False		< 12 loss or reference models in A
+FOXM1	2	956	0	320	0	0	2	False		< 12 loss or reference models in A
+FRS2	2	957	1	320	0	0	2	False		< 12 loss or reference models in A
+FXN	2	0	0	0	0	0	2	False		< 12 loss or reference models in A
+GAB3	2	171	0	49	0	0	2	False		< 12 loss or reference models in A
+GEN1	2	957	2	319	0	0	2	False		< 12 loss or reference models in A
+GGCX	2	956	0	319	2	0	0	False		< 12 loss or reference models in A
+GNPNAT1	2	954	1	318	0	0	2	False		< 12 loss or reference models in A
+GTF2E1	2	0	0	0	0	0	2	False		< 12 loss or reference models in A
+GTF3C1	2	947	0	320	2	0	0	False		< 12 loss or reference models in A
+GTF3C4	2	955	1	319	0	0	2	False		< 12 loss or reference models in A
+H1-3	2	154	0	54	0	2	0	False		< 12 loss or reference models in A
+H1-4	2	486	0	174	0	2	0	False		< 12 loss or reference models in A
+H2AC7	2	91	1	32	0	2	0	False		< 12 loss or reference models in A
+H2AC8	2	605	0	204	0	2	0	False		< 12 loss or reference models in A
+H2BC6	2	100	0	35	0	2	0	False		< 12 loss or reference models in A
+H2BC8	2	632	0	201	0	2	0	False		< 12 loss or reference models in A
+H4C5	2	424	1	148	0	2	0	False		< 12 loss or reference models in A
+HAND2	2	181	0	59	0	0	2	False		< 12 loss or reference models in A
+HAPSTR1	2	959	0	320	0	1	1	False		< 12 loss or reference models in A
+HEATR1	2	954	1	318	0	0	2	False		< 12 loss or reference models in A
+HEATR5B	2	950	1	320	0	0	2	False		< 12 loss or reference models in A
+HELQ	2	954	1	319	0	0	2	False		< 12 loss or reference models in A
+HSD17B4	2	957	3	318	0	1	1	False		< 12 loss or reference models in A
+HSD17B7	2	0	1	0	0	0	2	False		< 12 loss or reference models in A
+IKZF1	2	135	1	45	0	0	2	False		< 12 loss or reference models in A
+INTS10	2	960	0	321	2	0	0	False		< 12 loss or reference models in A
+IRS4	2	31	0	8	0	2	0	False		< 12 loss or reference models in A
+JAK1	2	942	2	313	0	0	2	False		< 12 loss or reference models in A
+JUNB	2	959	0	320	0	0	2	False		< 12 loss or reference models in A
+KAT6A	2	959	1	316	0	0	2	False		< 12 loss or reference models in A
+KCNK12	2	46	1	14	0	2	0	False		< 12 loss or reference models in A
+KCNQ5	2	508	0	165	0	0	2	False		< 12 loss or reference models in A
+KIF2C	2	958	1	320	0	0	2	False		< 12 loss or reference models in A
+KIFC1	2	957	1	320	0	0	2	False		< 12 loss or reference models in A
+KMT2C	2	911	3	305	2	0	0	False		< 12 loss or reference models in A
+KTI12	2	959	0	321	0	0	2	False		< 12 loss or reference models in A
+LARS2	2	958	1	320	0	0	2	False		< 12 loss or reference models in A
+LRRFIP2	2	958	1	319	1	1	0	False		< 12 loss or reference models in A
+MANF	2	960	0	320	0	0	2	False		< 12 loss or reference models in A
+MAP3K4	2	951	1	317	2	0	0	False		< 12 loss or reference models in A
+MAPK1	2	960	1	320	0	0	2	False		< 12 loss or reference models in A
+MDC1	2	947	0	319	0	0	2	False		< 12 loss or reference models in A
+METTL14	2	959	0	321	0	0	2	False		< 12 loss or reference models in A
+MGAT2	2	960	0	321	0	0	2	False		< 12 loss or reference models in A
+MIER3	2	949	0	321	0	0	2	False		< 12 loss or reference models in A
+MMGT1	2	959	1	320	0	0	2	False		< 12 loss or reference models in A
+MON2	2	957	0	321	0	0	2	False		< 12 loss or reference models in A
+MYB	2	545	1	171	0	0	2	False		< 12 loss or reference models in A
+MYG1	2	958	0	319	0	0	2	False		< 12 loss or reference models in A
+MYSM1	2	955	4	317	0	1	1	False		< 12 loss or reference models in A
+NAA30	2	960	0	320	0	0	2	False		< 12 loss or reference models in A
+NBAS	2	947	0	318	2	0	0	False		< 12 loss or reference models in A
+NDOR1	2	958	1	319	0	0	2	False		< 12 loss or reference models in A
+NDST2	2	954	1	319	0	0	2	False		< 12 loss or reference models in A
+NFRKB	2	952	1	314	0	0	2	False		< 12 loss or reference models in A
+NMNAT1	2	947	0	317	0	0	2	False		< 12 loss or reference models in A
+NSL1	2	957	0	321	0	0	2	False		< 12 loss or reference models in A
+OTUD6B	2	953	2	318	0	0	2	False		< 12 loss or reference models in A
+P2RY2	2	458	4	145	0	0	2	False		< 12 loss or reference models in A
+P3H1	2	955	0	320	0	0	2	False		< 12 loss or reference models in A
+PACS1	2	954	1	319	0	0	2	False		< 12 loss or reference models in A
+PARD3	2	908	1	308	0	0	2	False		< 12 loss or reference models in A
+PDCD10	2	957	0	320	1	1	0	False		< 12 loss or reference models in A
+PDCL	2	959	0	321	0	1	1	False		< 12 loss or reference models in A
+PDP2	2	952	2	317	0	0	2	False		< 12 loss or reference models in A
+PFAS	2	953	0	319	0	0	2	False		< 12 loss or reference models in A
+PGAP3	2	958	0	318	0	0	2	False		< 12 loss or reference models in A
+PHF10	2	959	0	319	0	1	1	False		< 12 loss or reference models in A
+PHF3	2	943	1	315	0	0	2	False		< 12 loss or reference models in A
+PIGO	2	945	0	319	2	0	0	False		< 12 loss or reference models in A
+POLH	2	941	1	314	0	0	2	False		< 12 loss or reference models in A
+POLR1A	2	954	1	319	0	0	2	False		< 12 loss or reference models in A
+POLR3A	2	956	1	320	0	0	2	False		< 12 loss or reference models in A
+PRC1	2	959	0	320	0	0	2	False		< 12 loss or reference models in A
+PRDM15	2	877	1	294	0	2	0	False		< 12 loss or reference models in A
+PRKAR1A	2	959	0	321	1	1	0	False		< 12 loss or reference models in A
+PRKCE	2	858	1	278	0	0	2	False		< 12 loss or reference models in A
+PSG4	2	0	3	0	0	0	2	False		< 12 loss or reference models in A
+PSMD10	2	960	0	321	0	1	1	False		< 12 loss or reference models in A
+PTAR1	2	958	1	320	0	0	2	False		< 12 loss or reference models in A
+RABL3	2	960	0	319	0	0	2	False		< 12 loss or reference models in A
+RAD18	2	955	1	320	0	0	2	False		< 12 loss or reference models in A
+RAD51C	2	956	0	321	0	0	2	False		< 12 loss or reference models in A
+RANBP10	2	954	0	320	0	0	2	False		< 12 loss or reference models in A
+RAPGEF6	2	943	0	320	1	1	0	False		< 12 loss or reference models in A
+RGMB	2	910	0	303	0	0	2	False		< 12 loss or reference models in A
+RNF14	2	958	0	321	2	0	0	False		< 12 loss or reference models in A
+RNF168	2	958	0	321	0	0	2	False		< 12 loss or reference models in A
+RPS6KA3	2	959	2	316	0	0	2	False		< 12 loss or reference models in A
+RRAGA	2	960	0	320	0	0	2	False		< 12 loss or reference models in A
+RRM2	2	960	0	319	0	0	2	False		< 12 loss or reference models in A
+SBK1	2	402	3	124	0	0	2	False		< 12 loss or reference models in A
+SESN2	2	955	0	320	0	0	2	False		< 12 loss or reference models in A
+SETDB1	2	952	0	316	2	0	0	False		< 12 loss or reference models in A
+SHQ1	2	953	0	318	2	0	0	False		< 12 loss or reference models in A
+SIGMAR1	2	960	0	321	0	0	2	False		< 12 loss or reference models in A
+SLC17A5	2	952	0	321	0	0	2	False		< 12 loss or reference models in A
+SLC25A10	2	959	0	321	0	0	2	False		< 12 loss or reference models in A
+SLC25A22	2	959	1	320	0	0	2	False		< 12 loss or reference models in A
+SLC39A6	2	959	0	321	0	0	2	False		< 12 loss or reference models in A
+SLC7A1	2	960	1	319	1	1	0	False		< 12 loss or reference models in A
+SLC7A5	2	957	0	320	0	0	2	False		< 12 loss or reference models in A
+SMARCAL1	2	958	0	321	0	0	2	False		< 12 loss or reference models in A
+SMARCE1	2	959	2	319	1	0	1	False		< 12 loss or reference models in A
+SMURF2	2	957	0	320	0	0	2	False		< 12 loss or reference models in A
+SOS2	2	950	0	320	0	0	2	False		< 12 loss or reference models in A
+SPAST	2	957	0	320	0	0	2	False		< 12 loss or reference models in A
+SPTAN1	2	947	0	319	2	0	0	False		< 12 loss or reference models in A
+SRFBP1	2	956	1	318	0	0	2	False		< 12 loss or reference models in A
+SS18	2	957	0	321	0	2	0	False		< 12 loss or reference models in A
+ST3GAL6	2	651	1	210	0	0	2	False		< 12 loss or reference models in A
+STAT3	2	957	0	317	0	1	1	False		< 12 loss or reference models in A
+SZT2	2	942	2	311	0	0	2	False		< 12 loss or reference models in A
+TAF8	2	959	0	321	0	0	2	False		< 12 loss or reference models in A
+TAOK1	2	953	0	321	0	0	2	False		< 12 loss or reference models in A
+TAX1BP3	2	960	0	321	1	1	0	False		< 12 loss or reference models in A
+TBC1D5	2	954	1	317	0	0	2	False		< 12 loss or reference models in A
+TCF25	2	958	0	321	0	0	2	False		< 12 loss or reference models in A
+THAP1	2	959	1	320	0	0	2	False		< 12 loss or reference models in A
+TIMM22	2	959	0	321	0	0	2	False		< 12 loss or reference models in A
+TLNRD1	2	957	0	317	0	0	2	False		< 12 loss or reference models in A
+TMEM53	2	957	1	319	0	0	2	False		< 12 loss or reference models in A
+TNFAIP8	2	957	3	317	0	1	1	False		< 12 loss or reference models in A
+TOP2A	2	950	0	314	0	0	2	False		< 12 loss or reference models in A
+TRADD	2	960	0	320	0	1	1	False		< 12 loss or reference models in A
+TRAF2	2	958	1	317	1	0	1	False		< 12 loss or reference models in A
+TRAPPC5	2	0	0	0	0	0	2	False		< 12 loss or reference models in A
+TRIP11	2	949	1	319	0	0	2	False		< 12 loss or reference models in A
+TSC2	2	947	1	316	2	0	0	False		< 12 loss or reference models in A
+TTC14	2	956	2	315	0	0	2	False		< 12 loss or reference models in A
+TUBGCP5	2	951	0	321	0	0	2	False		< 12 loss or reference models in A
+U2AF1L4	2	958	0	320	0	0	2	False		< 12 loss or reference models in A
+UBE2D3	2	958	0	321	2	0	0	False		< 12 loss or reference models in A
+UBE3A	2	953	0	321	2	0	0	False		< 12 loss or reference models in A
+ULK1	2	954	0	318	0	0	2	False		< 12 loss or reference models in A
+UNC119	2	959	2	319	0	0	2	False		< 12 loss or reference models in A
+USP15	2	953	0	319	0	0	2	False		< 12 loss or reference models in A
+WDR33	2	951	0	320	2	0	0	False		< 12 loss or reference models in A
+WSB2	2	958	0	321	0	0	2	False		< 12 loss or reference models in A
+XPR1	2	958	0	320	0	0	2	False		< 12 loss or reference models in A
+XXYLT1	2	959	0	321	0	0	2	False		< 12 loss or reference models in A
+ZACN	2	953	0	321	0	0	2	False		< 12 loss or reference models in A
+ZC3HC1	2	955	0	319	0	0	2	False		< 12 loss or reference models in A
+ZFP36L2	2	938	0	312	0	0	2	False		< 12 loss or reference models in A
+ZFP64	2	956	0	321	0	0	2	False		< 12 loss or reference models in A
+ZNF208	2	109	1	43	0	2	0	False		< 12 loss or reference models in A
+ZNF273	2	939	0	317	0	0	2	False		< 12 loss or reference models in A
+ZNF708	2	844	0	281	0	2	0	False		< 12 loss or reference models in A
+AAGAB	1	959	0	321	0	1	0	False		< 12 loss or reference models in A
+ABCB7	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+ACR	1	10	2	5	0	1	0	False		< 12 loss or reference models in A
+ACTR8	1	960	0	319	0	0	1	False		< 12 loss or reference models in A
+ADAM10	1	955	0	321	0	0	1	False		< 12 loss or reference models in A
+ADAM30	1	4	0	3	0	1	0	False		< 12 loss or reference models in A
+AGK	1	961	2	318	0	0	1	False		< 12 loss or reference models in A
+AGO2	1	958	2	319	0	0	1	False		< 12 loss or reference models in A
+AGPAT5	1	958	1	320	0	1	0	False		< 12 loss or reference models in A
+AHCYL2	1	959	0	318	0	0	1	False		< 12 loss or reference models in A
+ALG1	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+ALKBH5	1	961	0	320	0	1	0	False		< 12 loss or reference models in A
+AMBRA1	1	951	1	319	0	0	1	False		< 12 loss or reference models in A
+ANLN	1	956	0	317	0	0	1	False		< 12 loss or reference models in A
+ARID5A	1	929	1	312	0	0	1	False		< 12 loss or reference models in A
+ARL10	1	744	0	253	0	0	1	False		< 12 loss or reference models in A
+ARL13B	1	950	1	319	0	0	1	False		< 12 loss or reference models in A
+ARMC7	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+ARNT	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+ASCC1	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+ASF1A	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+ATAD2	1	956	0	319	0	0	1	False		< 12 loss or reference models in A
+ATG12	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+ATG2A	1	955	0	318	0	0	1	False		< 12 loss or reference models in A
+ATG4C	1	957	1	320	0	0	1	False		< 12 loss or reference models in A
+ATG7	1	958	0	321	0	1	0	False		< 12 loss or reference models in A
+ATP6V0A2	1	957	0	321	0	0	1	False		< 12 loss or reference models in A
+ATXN7	1	946	1	313	0	0	1	False		< 12 loss or reference models in A
+ATXN7L3B	1	960	1	320	0	0	1	False		< 12 loss or reference models in A
+AVEN	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+B3GALT6	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+B3GAT2	1	414	0	132	0	1	0	False		< 12 loss or reference models in A
+B4GALT1	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+B4GALT5	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+BBS1	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+BCL11B	1	232	1	63	1	0	0	False		< 12 loss or reference models in A
+BCL9L	1	934	1	309	0	0	1	False		< 12 loss or reference models in A
+BORCS7	1	960	1	320	0	0	1	False		< 12 loss or reference models in A
+BORCS8	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+BRD1	1	959	0	316	0	0	1	False		< 12 loss or reference models in A
+BRD7	1	958	1	319	1	0	0	False		< 12 loss or reference models in A
+BRF1	1	956	0	318	0	0	1	False		< 12 loss or reference models in A
+C1GALT1C1	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+C5AR2	1	56	0	30	0	1	0	False		< 12 loss or reference models in A
+CARNMT1	1	959	0	320	0	1	0	False		< 12 loss or reference models in A
+CBFB	1	957	0	321	0	1	0	False		< 12 loss or reference models in A
+CBX3	1	957	0	318	0	1	0	False		< 12 loss or reference models in A
+CBX4	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+CCDC22	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+CCDC32	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+CCDC77	1	959	1	320	0	0	1	False		< 12 loss or reference models in A
+CCNC	1	960	1	320	0	0	1	False		< 12 loss or reference models in A
+CDC50A	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+CDK10	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+CDK8	1	961	0	320	0	1	0	False		< 12 loss or reference models in A
+CDKN2AIP	1	960	0	319	0	1	0	False		< 12 loss or reference models in A
+CDYL	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+CENPH	1	959	1	320	0	0	1	False		< 12 loss or reference models in A
+CENPL	1	960	1	319	0	0	1	False		< 12 loss or reference models in A
+CENPN	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+CENPQ	1	959	1	317	0	0	1	False		< 12 loss or reference models in A
+CENPT	1	956	0	321	0	0	1	False		< 12 loss or reference models in A
+CENPW	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+CEP135	1	928	0	304	0	0	1	False		< 12 loss or reference models in A
+CEP43	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+CEP44	1	955	1	319	0	0	1	False		< 12 loss or reference models in A
+CEP72	1	939	0	316	0	0	1	False		< 12 loss or reference models in A
+CEP89	1	955	0	321	0	0	1	False		< 12 loss or reference models in A
+CEP97	1	944	0	315	0	0	1	False		< 12 loss or reference models in A
+CERT1	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+CHAMP1	1	958	0	320	0	1	0	False		< 12 loss or reference models in A
+CHIC2	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+CHM	1	960	1	319	0	1	0	False		< 12 loss or reference models in A
+CHRM4	1	132	1	40	0	1	0	False		< 12 loss or reference models in A
+CLDN6	1	78	0	30	0	1	0	False		< 12 loss or reference models in A
+CLPB	1	952	1	318	0	0	1	False		< 12 loss or reference models in A
+CNIH2	1	0	0	0	0	0	1	False		< 12 loss or reference models in A
+CNOT4	1	955	0	319	0	0	1	False		< 12 loss or reference models in A
+COG5	1	958	0	319	0	0	1	False		< 12 loss or reference models in A
+COG6	1	956	0	320	0	0	1	False		< 12 loss or reference models in A
+COMMD10	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+COMMD8	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+COQ2	1	956	0	319	0	0	1	False		< 12 loss or reference models in A
+COQ3	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+COQ8B	1	957	0	319	0	0	1	False		< 12 loss or reference models in A
+CORO6	1	454	0	147	0	1	0	False		< 12 loss or reference models in A
+COX10	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+CPD	1	952	0	318	0	0	1	False		< 12 loss or reference models in A
+CPLANE2	1	839	0	277	0	1	0	False		< 12 loss or reference models in A
+CREBBP	1	914	0	302	0	0	1	False		< 12 loss or reference models in A
+CSNK2A2	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+CTC1	1	958	1	318	0	0	1	False		< 12 loss or reference models in A
+CTDP1	1	958	1	318	1	0	0	False		< 12 loss or reference models in A
+CTNNB1	1	957	0	320	0	0	1	False		< 12 loss or reference models in A
+CTNNBIP1	1	956	0	320	0	0	1	False		< 12 loss or reference models in A
+CUL4B	1	955	0	320	0	0	1	False		< 12 loss or reference models in A
+CYLD	1	954	0	321	0	0	1	False		< 12 loss or reference models in A
+DCAF10	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+DHFR	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+DHX35	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+DIS3L	1	957	0	321	0	0	1	False		< 12 loss or reference models in A
+DMAP1	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+DNAAF10	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+DOLPP1	1	958	1	320	0	0	1	False		< 12 loss or reference models in A
+DPF2	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+DRG2	1	957	0	321	0	0	1	False		< 12 loss or reference models in A
+DTNBP1	1	960	1	319	0	0	1	False		< 12 loss or reference models in A
+DUS2	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+DYDC1	1	7	0	3	0	1	0	False		< 12 loss or reference models in A
+E4F1	1	956	1	320	0	0	1	False		< 12 loss or reference models in A
+EDF1	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+EEFSEC	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+EEIG1	1	0	0	0	0	0	1	False		< 12 loss or reference models in A
+EIPR1	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+ELMOD3	1	0	0	0	0	0	1	False		< 12 loss or reference models in A
+ELP1	1	956	0	316	0	0	1	False		< 12 loss or reference models in A
+ENDOV	1	961	1	320	0	0	1	False		< 12 loss or reference models in A
+ERCC2	1	957	0	319	0	0	1	False		< 12 loss or reference models in A
+ERCC4	1	950	0	318	0	0	1	False		< 12 loss or reference models in A
+ESS2	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+FAAP20	1	959	1	320	0	0	1	False		< 12 loss or reference models in A
+FAM168A	1	960	1	320	0	0	1	False		< 12 loss or reference models in A
+FAM3B	1	155	1	52	0	1	0	False		< 12 loss or reference models in A
+FANCA	1	950	1	314	0	0	1	False		< 12 loss or reference models in A
+FANCG	1	950	0	319	0	0	1	False		< 12 loss or reference models in A
+FANCI	1	958	0	318	0	0	1	False		< 12 loss or reference models in A
+FANCM	1	921	0	313	0	1	0	False		< 12 loss or reference models in A
+FASTKD2	1	956	0	321	0	0	1	False		< 12 loss or reference models in A
+FBXW11	1	961	1	320	0	0	1	False		< 12 loss or reference models in A
+FBXW9	1	956	0	320	0	0	1	False		< 12 loss or reference models in A
+FCHO2	1	921	0	308	0	0	1	False		< 12 loss or reference models in A
+FDFT1	1	960	0	320	0	1	0	False		< 12 loss or reference models in A
+FDX1	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+FDXR	1	959	2	319	0	0	1	False		< 12 loss or reference models in A
+FKBPL	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+FLCN	1	950	0	319	0	0	1	False		< 12 loss or reference models in A
+FOXRED1	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+FRMD5	1	706	1	222	0	0	1	False		< 12 loss or reference models in A
+FURIN	1	956	3	317	0	0	1	False		< 12 loss or reference models in A
+FZD5	1	828	0	269	0	0	1	False		< 12 loss or reference models in A
+GALK1	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+GATA1	1	22	2	5	0	1	0	False		< 12 loss or reference models in A
+GATAD2B	1	958	1	320	0	0	1	False		< 12 loss or reference models in A
+GCLM	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+GEMIN4	1	960	0	318	0	0	1	False		< 12 loss or reference models in A
+GEMIN5	1	952	1	320	0	0	1	False		< 12 loss or reference models in A
+GEMIN8	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+GFER	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+GINS3	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+GLCE	1	960	1	318	0	0	1	False		< 12 loss or reference models in A
+GLMN	1	955	0	320	0	0	1	False		< 12 loss or reference models in A
+GNAI3	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+GNB1	1	958	0	319	0	1	0	False		< 12 loss or reference models in A
+GP1BB	1	233	0	75	0	1	0	False		< 12 loss or reference models in A
+GPATCH8	1	951	0	319	0	1	0	False		< 12 loss or reference models in A
+GPC2	1	662	2	214	0	0	1	False		< 12 loss or reference models in A
+GTF3C6	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+H2AC11	1	681	0	230	0	1	0	False		< 12 loss or reference models in A
+H2BC11	1	838	0	286	0	1	0	False		< 12 loss or reference models in A
+H3C4	1	65	1	29	0	1	0	False		< 12 loss or reference models in A
+H4C4	1	98	0	35	0	1	0	False		< 12 loss or reference models in A
+HASPIN	1	920	0	303	0	0	1	False		< 12 loss or reference models in A
+HAUS1	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+HAUS2	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+HAUS7	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+HAUS8	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+HDAC2	1	947	0	314	0	1	0	False		< 12 loss or reference models in A
+HDAC7	1	954	3	313	0	0	1	False		< 12 loss or reference models in A
+HIF1AN	1	958	1	320	0	0	1	False		< 12 loss or reference models in A
+HMBS	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+HNRNPA2B1	1	955	0	321	0	0	1	False		< 12 loss or reference models in A
+HNRNPUL1	1	954	1	319	1	0	0	False		< 12 loss or reference models in A
+HROB	1	924	0	308	0	0	1	False		< 12 loss or reference models in A
+HS2ST1	1	958	1	320	0	0	1	False		< 12 loss or reference models in A
+HSPB9	1	0	0	0	0	1	0	False		< 12 loss or reference models in A
+IGFLR1	1	863	0	295	0	0	1	False		< 12 loss or reference models in A
+IGHMBP2	1	956	0	319	0	0	1	False		< 12 loss or reference models in A
+INAFM1	1	0	0	0	0	1	0	False		< 12 loss or reference models in A
+ING2	1	959	0	320	0	1	0	False		< 12 loss or reference models in A
+ING3	1	957	1	319	0	0	1	False		< 12 loss or reference models in A
+INO80	1	952	0	320	0	0	1	False		< 12 loss or reference models in A
+INTS6	1	958	1	317	0	1	0	False		< 12 loss or reference models in A
+INTS9	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+ITFG2	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+KAT2A	1	958	0	318	0	1	0	False		< 12 loss or reference models in A
+KATNA1	1	958	0	320	0	1	0	False		< 12 loss or reference models in A
+KCTD2	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+KCTD5	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+KIDINS220	1	952	1	317	0	0	1	False		< 12 loss or reference models in A
+KIF2A	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+KIF5A	1	359	1	131	0	0	1	False		< 12 loss or reference models in A
+KLHDC8A	1	106	0	31	0	1	0	False		< 12 loss or reference models in A
+LAGE3	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+LAT	1	681	3	233	0	0	1	False		< 12 loss or reference models in A
+LHX3	1	25	0	5	0	1	0	False		< 12 loss or reference models in A
+LIPT1	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+LMNB1	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+LMO2	1	392	0	111	0	0	1	False		< 12 loss or reference models in A
+LRPAP1	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+MAD2L1	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+MAGI1	1	843	0	280	0	0	1	False		< 12 loss or reference models in A
+MAGIX	1	423	0	137	0	1	0	False		< 12 loss or reference models in A
+MAP3K3	1	952	2	317	0	0	1	False		< 12 loss or reference models in A
+MAPK7	1	957	0	319	0	1	0	False		< 12 loss or reference models in A
+MARK2	1	956	0	319	0	0	1	False		< 12 loss or reference models in A
+MARS2	1	955	1	320	0	0	1	False		< 12 loss or reference models in A
+MAST1	1	615	1	196	0	0	1	False		< 12 loss or reference models in A
+MATR3	1	957	0	319	0	1	0	False		< 12 loss or reference models in A
+MAX	1	956	0	321	0	0	1	False		< 12 loss or reference models in A
+MBNL1	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+MBTD1	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+MCM2	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+MCM3	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+MCM5	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+MCM6	1	958	0	319	0	0	1	False		< 12 loss or reference models in A
+MED1	1	953	0	318	0	0	1	False		< 12 loss or reference models in A
+MED16	1	960	2	319	1	0	0	False		< 12 loss or reference models in A
+MED23	1	955	1	315	0	1	0	False		< 12 loss or reference models in A
+MED28	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+MED9	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+MEIOC	1	292	0	93	0	1	0	False		< 12 loss or reference models in A
+MLLT1	1	958	0	321	0	1	0	False		< 12 loss or reference models in A
+MLLT10	1	954	1	319	0	1	0	False		< 12 loss or reference models in A
+MPC1	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+MPDU1	1	0	0	0	0	1	0	False		< 12 loss or reference models in A
+MPPE1	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+MRE11	1	955	0	316	0	0	1	False		< 12 loss or reference models in A
+MRM3	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+MTG1	1	954	0	320	0	0	1	False		< 12 loss or reference models in A
+MTHFD1L	1	956	1	318	0	0	1	False		< 12 loss or reference models in A
+MTPAP	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+MTX2	1	0	0	0	0	0	1	False		< 12 loss or reference models in A
+MYO9A	1	934	0	312	0	1	0	False		< 12 loss or reference models in A
+NAA35	1	957	1	317	0	0	1	False		< 12 loss or reference models in A
+NAF1	1	960	1	319	0	0	1	False		< 12 loss or reference models in A
+NCAPD2	1	955	0	320	0	0	1	False		< 12 loss or reference models in A
+NCAPD3	1	955	1	319	0	0	1	False		< 12 loss or reference models in A
+NCDN	1	958	0	319	0	0	1	False		< 12 loss or reference models in A
+NDE1	1	961	0	319	0	0	1	False		< 12 loss or reference models in A
+NDUFS7	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+NEDD1	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+NKTR	1	949	1	315	0	0	1	False		< 12 loss or reference models in A
+NLE1	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+NOL12	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+NOPCHAP1	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+NPB	1	661	0	240	0	1	0	False		< 12 loss or reference models in A
+NPC1	1	957	0	320	0	0	1	False		< 12 loss or reference models in A
+NSUN4	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+NUBP1	1	957	0	320	0	0	1	False		< 12 loss or reference models in A
+NUP188	1	956	0	321	0	0	1	False		< 12 loss or reference models in A
+OPA3	1	954	0	317	0	0	1	False		< 12 loss or reference models in A
+ORC4	1	954	0	320	0	0	1	False		< 12 loss or reference models in A
+ORC6	1	960	1	319	0	0	1	False		< 12 loss or reference models in A
+OTULIN	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+PAGR1	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+PAPSS1	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+PAQR4	1	961	1	320	0	0	1	False		< 12 loss or reference models in A
+PATZ1	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+PAXIP1	1	956	1	319	1	0	0	False		< 12 loss or reference models in A
+PCNX1	1	947	0	316	0	0	1	False		< 12 loss or reference models in A
+PCNX3	1	952	1	316	0	0	1	False		< 12 loss or reference models in A
+PDE7A	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+PDLIM7	1	957	0	321	0	0	1	False		< 12 loss or reference models in A
+PDS5B	1	928	0	311	0	0	1	False		< 12 loss or reference models in A
+PEDS1	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+PEX14	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+PEX16	1	957	0	320	0	0	1	False		< 12 loss or reference models in A
+PEX3	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+PEX7	1	956	0	318	0	0	1	False		< 12 loss or reference models in A
+PGP	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+PHC3	1	958	0	319	0	0	1	False		< 12 loss or reference models in A
+PHF12	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+PIAS4	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+PIGF	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+PIGK	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+PIGV	1	960	1	320	0	0	1	False		< 12 loss or reference models in A
+PIK3CA	1	955	0	319	0	0	1	False		< 12 loss or reference models in A
+PIK3CB	1	956	0	315	0	0	1	False		< 12 loss or reference models in A
+PKMYT1	1	956	0	320	0	0	1	False		< 12 loss or reference models in A
+PKN2	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+PLA2G12A	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+PLCB3	1	947	0	318	0	0	1	False		< 12 loss or reference models in A
+PLXNA1	1	940	0	311	0	0	1	False		< 12 loss or reference models in A
+PM20D1	1	18	0	6	0	1	0	False		< 12 loss or reference models in A
+POC1A	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+POLA1	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+POLK	1	960	0	319	0	0	1	False		< 12 loss or reference models in A
+POLR1B	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+POLR1E	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+POLR1G	1	959	0	319	0	0	1	False		< 12 loss or reference models in A
+PORCN	1	951	2	316	0	0	1	False		< 12 loss or reference models in A
+PPAT	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+PPP2R2A	1	952	0	318	0	0	1	False		< 12 loss or reference models in A
+PPP6R2	1	956	0	320	0	1	0	False		< 12 loss or reference models in A
+PRKAB2	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+PRKCI	1	954	0	319	0	0	1	False		< 12 loss or reference models in A
+PRKCSH	1	958	1	319	1	0	0	False		< 12 loss or reference models in A
+PRORP	1	957	0	321	0	0	1	False		< 12 loss or reference models in A
+PSAP	1	960	0	321	0	1	0	False		< 12 loss or reference models in A
+PTBP2	1	955	0	318	0	0	1	False		< 12 loss or reference models in A
+PTPA	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+PTPRF	1	911	1	300	0	0	1	False		< 12 loss or reference models in A
+QRSL1	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+RAB21	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+RAB5C	1	960	0	321	0	1	0	False		< 12 loss or reference models in A
+RAB9A	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+RABIF	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+RASA2	1	950	0	317	0	0	1	False		< 12 loss or reference models in A
+RB1CC1	1	956	0	318	0	0	1	False		< 12 loss or reference models in A
+RBBP5	1	958	1	319	0	0	1	False		< 12 loss or reference models in A
+RC3H2	1	958	0	319	0	0	1	False		< 12 loss or reference models in A
+RCL1	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+RCOR1	1	954	0	321	0	0	1	False		< 12 loss or reference models in A
+RETSAT	1	960	0	320	0	0	1	False		< 12 loss or reference models in A
+REV3L	1	938	0	316	0	0	1	False		< 12 loss or reference models in A
+RFC3	1	960	1	317	0	0	1	False		< 12 loss or reference models in A
+RFC5	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+RIT1	1	0	0	0	0	0	1	False		< 12 loss or reference models in A
+RMI1	1	957	0	318	0	0	1	False		< 12 loss or reference models in A
+RMI2	1	961	0	321	0	1	0	False		< 12 loss or reference models in A
+RNASEH2A	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+RNF146	1	957	0	320	0	0	1	False		< 12 loss or reference models in A
+RNF19A	1	954	0	319	0	0	1	False		< 12 loss or reference models in A
+RPAP2	1	957	0	320	0	0	1	False		< 12 loss or reference models in A
+RPRD2	1	956	0	319	0	0	1	False		< 12 loss or reference models in A
+RRAGC	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+SARS2	1	956	0	321	0	0	1	False		< 12 loss or reference models in A
+SBF1	1	951	0	318	0	1	0	False		< 12 loss or reference models in A
+SCPEP1	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+SCYL2	1	952	0	320	0	0	1	False		< 12 loss or reference models in A
+SEC24A	1	958	1	319	0	0	1	False		< 12 loss or reference models in A
+SELENOH	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+SFR1	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+SHLD2	1	0	0	0	0	0	1	False		< 12 loss or reference models in A
+SHMT1	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+SIK3	1	954	1	317	0	0	1	False		< 12 loss or reference models in A
+SINHCAF	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+SKIC3	1	951	0	317	0	0	1	False		< 12 loss or reference models in A
+SLC25A19	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+SLC25A37	1	957	0	320	0	1	0	False		< 12 loss or reference models in A
+SLC34A3	1	39	0	6	0	1	0	False		< 12 loss or reference models in A
+SLC38A12	1	956	0	318	0	0	1	False		< 12 loss or reference models in A
+SLC60A1	1	470	0	153	0	1	0	False		< 12 loss or reference models in A
+SLC7A6	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+SLX4	1	830	1	278	1	0	0	False		< 12 loss or reference models in A
+SMARCC1	1	954	0	319	0	0	1	False		< 12 loss or reference models in A
+SMG8	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+SNAPC1	1	959	1	319	0	0	1	False		< 12 loss or reference models in A
+SOS1	1	951	1	319	0	0	1	False		< 12 loss or reference models in A
+SOX1	1	64	0	27	0	1	0	False		< 12 loss or reference models in A
+SOX11	1	218	1	81	0	0	1	False		< 12 loss or reference models in A
+SOX8	1	219	0	67	0	1	0	False		< 12 loss or reference models in A
+SPAG4	1	789	0	265	0	0	1	False		< 12 loss or reference models in A
+SPDL1	1	958	0	319	0	0	1	False		< 12 loss or reference models in A
+SPICE1	1	950	0	319	0	0	1	False		< 12 loss or reference models in A
+SPTLC2	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+SSH2	1	949	0	319	0	0	1	False		< 12 loss or reference models in A
+ST3GAL3	1	932	0	313	0	0	1	False		< 12 loss or reference models in A
+STAC3	1	327	0	127	0	0	1	False		< 12 loss or reference models in A
+STIM2	1	957	0	321	0	0	1	False		< 12 loss or reference models in A
+STK40	1	957	0	320	0	0	1	False		< 12 loss or reference models in A
+STRN3	1	959	1	320	0	0	1	False		< 12 loss or reference models in A
+SUCLA2	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+SUCLG1	1	959	0	321	0	1	0	False		< 12 loss or reference models in A
+SUCO	1	957	0	318	0	0	1	False		< 12 loss or reference models in A
+TACC3	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+TAF6L	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+TASOR2	1	954	0	320	0	0	1	False		< 12 loss or reference models in A
+TBC1D31	1	960	0	319	0	0	1	False		< 12 loss or reference models in A
+TBCK	1	947	1	316	0	0	1	False		< 12 loss or reference models in A
+TBX1	1	291	0	97	0	1	0	False		< 12 loss or reference models in A
+TCAP	1	195	0	68	0	1	0	False		< 12 loss or reference models in A
+TCF12	1	952	0	318	0	0	1	False		< 12 loss or reference models in A
+TCOF1	1	959	1	318	0	0	1	False		< 12 loss or reference models in A
+TFAP4	1	957	1	320	0	0	1	False		< 12 loss or reference models in A
+TFDP1	1	957	0	321	0	0	1	False		< 12 loss or reference models in A
+TFDP2	1	958	1	320	0	0	1	False		< 12 loss or reference models in A
+TGS1	1	956	0	321	0	0	1	False		< 12 loss or reference models in A
+THOC5	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+TIMELESS	1	957	0	319	0	0	1	False		< 12 loss or reference models in A
+TMED7	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+TMEM161B	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+TMEM201	1	956	0	320	0	0	1	False		< 12 loss or reference models in A
+TMEM39B	1	961	0	320	0	0	1	False		< 12 loss or reference models in A
+TMEM60	1	961	0	321	0	1	0	False		< 12 loss or reference models in A
+TMEM94	1	941	0	317	0	0	1	False		< 12 loss or reference models in A
+TMOD3	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+TNKS	1	949	1	318	0	0	1	False		< 12 loss or reference models in A
+TOP1MT	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+TOP3A	1	954	0	318	0	0	1	False		< 12 loss or reference models in A
+TOPBP1	1	951	0	320	0	0	1	False		< 12 loss or reference models in A
+TP53BP1	1	936	0	315	0	0	1	False		< 12 loss or reference models in A
+TPK1	1	790	0	269	0	0	1	False		< 12 loss or reference models in A
+TPX2	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+TRDMT1	1	872	0	298	0	1	0	False		< 12 loss or reference models in A
+TRIM46	1	441	1	154	0	0	1	False		< 12 loss or reference models in A
+TRIP12	1	958	0	316	0	0	1	False		< 12 loss or reference models in A
+TRIP13	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+TRMT5	1	957	0	321	0	0	1	False		< 12 loss or reference models in A
+TRPM7	1	956	0	318	0	0	1	False		< 12 loss or reference models in A
+TRUB1	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+TTF2	1	955	0	317	0	0	1	False		< 12 loss or reference models in A
+TUBD1	1	954	0	320	0	0	1	False		< 12 loss or reference models in A
+TXNRD1	1	954	0	318	0	0	1	False		< 12 loss or reference models in A
+UBA5	1	957	0	319	0	0	1	False		< 12 loss or reference models in A
+UBALD1	1	960	0	321	0	1	0	False		< 12 loss or reference models in A
+UBE2J1	1	957	2	319	0	0	1	False		< 12 loss or reference models in A
+UBE2M	1	955	0	317	0	0	1	False		< 12 loss or reference models in A
+UBE2S	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+UBE2T	1	959	0	320	0	0	1	False		< 12 loss or reference models in A
+UBE4B	1	955	0	318	0	0	1	False		< 12 loss or reference models in A
+UBIAD1	1	960	1	319	0	0	1	False		< 12 loss or reference models in A
+UBN1	1	960	1	318	0	1	0	False		< 12 loss or reference models in A
+UBR4	1	945	0	319	0	0	1	False		< 12 loss or reference models in A
+UFSP2	1	960	0	319	0	0	1	False		< 12 loss or reference models in A
+UGCG	1	955	0	320	0	0	1	False		< 12 loss or reference models in A
+UQCC3	1	961	1	320	0	0	1	False		< 12 loss or reference models in A
+URB2	1	954	2	315	0	0	1	False		< 12 loss or reference models in A
+USP10	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+UTP14A	1	958	0	319	0	0	1	False		< 12 loss or reference models in A
+VARS2	1	948	0	319	0	0	1	False		< 12 loss or reference models in A
+VPS18	1	959	0	317	0	0	1	False		< 12 loss or reference models in A
+VPS36	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+VPS4B	1	958	0	320	0	0	1	False		< 12 loss or reference models in A
+WDR44	1	948	0	318	0	0	1	False		< 12 loss or reference models in A
+WDR48	1	958	0	321	0	0	1	False		< 12 loss or reference models in A
+WDR89	1	961	0	321	0	1	0	False		< 12 loss or reference models in A
+XPO7	1	950	1	318	1	0	0	False		< 12 loss or reference models in A
+YBEY	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+YEATS2	1	956	0	321	0	0	1	False		< 12 loss or reference models in A
+YIPF5	1	961	0	321	0	0	1	False		< 12 loss or reference models in A
+ZBED8L	1	952	0	319	0	0	1	False		< 12 loss or reference models in A
+ZBTB2	1	960	0	321	0	0	1	False		< 12 loss or reference models in A
+ZBTB45	1	957	0	321	0	0	1	False		< 12 loss or reference models in A
+ZBTB7A	1	945	0	314	0	0	1	False		< 12 loss or reference models in A
+ZC3H15	1	950	0	318	0	1	0	False		< 12 loss or reference models in A
+ZC3H4	1	954	0	320	0	0	1	False		< 12 loss or reference models in A
+ZER1	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+ZFX	1	955	0	319	0	0	1	False		< 12 loss or reference models in A
+ZNF124	1	943	0	318	0	0	1	False		< 12 loss or reference models in A
+ZNF318	1	947	0	316	0	0	1	False		< 12 loss or reference models in A
+ZNF511	1	959	0	321	0	0	1	False		< 12 loss or reference models in A
+ZNF514	1	947	0	315	0	0	1	False		< 12 loss or reference models in A
+ZNF592	1	956	1	320	0	0	1	False		< 12 loss or reference models in A
+ZNF687	1	946	0	321	0	0	1	False		< 12 loss or reference models in A
+ZNHIT6	1	958	1	320	0	0	1	False		< 12 loss or reference models in A
+ZNRF3	1	894	1	294	0	0	1	False		< 12 loss or reference models in A
+ZWILCH	1	960	0	316	0	0	1	False		< 12 loss or reference models in A
+ZWINT	1	960	1	320	0	0	1	False		< 12 loss or reference models in A

@@ -417,7 +417,7 @@ context_family:
       n_L: 4
       ref_L: 314
       lockbox_testable: false
-complex_set_hash: FZ-C
+complex_set_hash: 14b6c53a01146a61
 units: >
   Frozen coarse clusters of the GLS comparator map (built with the same pipeline on the same S and frozen at
   FZ-C with the zavg map). The zavg outcomes are taken from the closed H3a/H3b entries (no new zavg read).
@@ -440,7 +440,10 @@ estimand: |
   Difference zavg - GLS with 95% CI by bootstrap over discovered hits within map and bin (B = 2000, seed 5200).
 family_m:
   formula: "GLS map: m = sum over the 43 contexts of evaluable (context, GLS coarse cluster) tests (H3a and H3b budgets separate)"
-  value: FZ-X
+  value:
+    H3a: 8717
+    H3b: 7577
+    total: 16294
 lockbox:
   target_list: results/part2/lockbox_targets/BRIDGE-L_confirmation_rate.json
   rule: >
@@ -461,11 +464,6 @@ stopping_rule: >
 frozen_inputs:
   - results/part2/contexts/checksums.json
   - results/part2/lockbox/manifest.json
-  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
-  - FZ-X   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
-pending:
-  - "complex_set_hash"
-  - "family_m.value"
-  - "frozen_inputs[2]"
-  - "frozen_inputs[3]"
+  - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
 status: open

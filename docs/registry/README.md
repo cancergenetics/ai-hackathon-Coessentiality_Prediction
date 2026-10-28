@@ -8,10 +8,51 @@ One file per registered analysis: `docs/registry/<id>.yaml`. An entry must be **
 
 ## Registered entries (FZ-R draft)
 
-29 entries, all `open`, validated by `tests/test_registry_entries.py`:
+29 FZ-R entries plus `H1S_silencing_GI` (amendment A1), all `open`, validated by `tests/test_registry_entries.py`:
 - `CTRL_PC1` … `CTRL_PC22` (with `CTRL_PC19a`, `CTRL_PC19b`): the 23 pre-registered controls of DESIGN §2.7, one per file, each with its kill-rule direction (§2.6).
 - `H3a_lineage_atlas`, `H3b_driver_family`, `H1_within_complex_GI`, `H2_submodule_divergence`: the four directions in registry order.
 - `BENCH_complex_vs_gene` (direction `benchmark`) and `BRIDGE-L_confirmation_rate` (direction `bridge`): their lockbox reads are allowed only after every confirmatory entry has a ledger line.
+
+## FZ-X fill
+
+At FZ-X every placeholder was filled by `scripts/41_freeze_fzx.py`, and every `pending` key was removed. The values
+come from the frozen lists in `results/part2/fzx/`, described in its README:
+- unit sets and complex-set hashes;
+- m per family;
+- control units;
+- the H1 event list.
+
+`frozen_inputs[2]` is `results/part2/construction/FZC_manifest.json` and `frozen_inputs[3]` is
+`results/part2/fzx/FZX_manifest.json`.
+
+`registry.fill_only_changes` against the FZ-R drafts is empty for all 29 entries. `tests/test_part2_fzx.py` re-checks
+this from the commit history.
+
+Placeholder-free entries can now be run, in registry order.
+
+## Amendments
+
+A documented change to a filled, committed entry is recorded in two places:
+- in `docs/registry/AMENDMENTS.md`;
+- as an `amendments` list in the entry, each item with `id`, `timestamp_utc`, `amends_commit` (40 hex),
+  `reason` and `changed_paths`.
+
+`registry.amendment_changes(committed, new)` must be `[]`: only declared paths may change. `fill_only_changes` is
+not loosened.
+
+Optional fields `standing` (`confirmatory` | `exploratory`) and `headline` (bool) mark entries that are never
+headlined. An exploratory entry must carry `headline: false`. These fields are separate from the lifecycle
+`status` (`open` / `closed`), which the lockbox read order relies on.
+
+A1 split `H1_within_complex_GI` into two entries:
+- `H1_within_complex_GI`: the genetic events;
+- `H1S_silencing_GI`: the silencing events, an exploratory entry.
+
+A2 then:
+- fixed the split rule: an event is genetic iff ≥ 50% of its A loss models carry a LoF or hom-del call;
+- moved `Z0109|SMARCB1` from H1S into H1;
+- gave H1S its own direction `H1S`. It is confirmatory for the lockbox read order only, so it is read before
+  benchmark and bridge, and it is never part of the kill rule.
 
 ## Freeze placeholders and `pending`
 
@@ -26,7 +67,7 @@ The git blob SHA of the committed entry is written to every trial line (`results
 | Field | Type | Meaning |
 |---|---|---|
 | `id` | string `[A-Za-z0-9_.-]` | Must equal the file name without `.yaml`. |
-| `direction` | `H3a` \| `H3b` \| `H1` \| `H2` \| `controls` \| `benchmark` \| `bridge` | Registry order is §2.6. The lockbox may be read for `benchmark` and `bridge` only after every `controls`/`H3a`/`H3b`/`H1`/`H2` entry has a ledger line (round-3 B3). |
+| `direction` | `H3a` \| `H3b` \| `H1` \| `H1S` \| `H2` \| `controls` \| `benchmark` \| `bridge` | Registry order is §2.6 (`H1S`, the exploratory silencing companion of H1, was added by A2). The lockbox may be read for `benchmark` and `bridge` only after every `controls`/`H3a`/`H3b`/`H1`/`H1S`/`H2` entry has a ledger line (round-3 B3). |
 | `hypothesis` | string (block scalar allowed) | The claim, in words. |
 | `sign` | `"+"` \| `"-"` \| `two-sided` \| `per-context` | `+` means **more dependent in context**, i.e. a lower (more negative) effect score, tested one-sided with `alternative="less"` on the regression coefficient. `-` means less dependent (`greater`). With `per-context`, every context carries its own `sign`. |
 | `context_family` | mapping: `name`, `contexts` (list of `{id, definition[, sign]}`) | Context IDs are column names of the frozen context table (`data_cache/part2/contexts/context_table.parquet`; summary in `results/part2/contexts/context_summary.tsv`). The definition is restated in words. `run_association` refuses any context column not listed here. |

@@ -1,0 +1,5 @@
+entry	context	unit	n_used	n	n_context	n_ref	evaluable	n_members	n_removed	n_used_prod	n_prod	n_context_prod	n_ref_prod	evaluable_prod	reason	covariates	covariates_dropped_by_rule	_merge
+BRIDGE-L_confirmation_rate	LoY	G0100	7	418	161	257	True	8	0	8	418	161	257	True		lineage_FE;library;ScreenType3DO;ModelType;Ploidy;WGD;TP53_altered		both
+BRIDGE-L_confirmation_rate	sex_female	G0100	7	964	408	556	True	8	0	8	964	408	556	True		lineage_FE;library;ScreenType3DO;ModelType		both
+H3b_driver_family	LoY	Z0104	11	418	161	257	True	12	0	12	418	161	257	True		lineage_FE;library;ScreenType3DO;ModelType;Ploidy;WGD;TP53_altered		both
+H3b_driver_family	sex_female	Z0104	11	964	408	556	True	12	0	12	964	408	556	True		lineage_FE;library;ScreenType3DO;ModelType		both

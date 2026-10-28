@@ -417,7 +417,7 @@ context_family:
       n_L: 4
       ref_L: 314
       lockbox_testable: false
-complex_set_hash: FZ-C
+complex_set_hash: 141a70b7133ed8a4
 units: >
   Frozen sub-modules (FZ-C: top-down re-clustering at gamma = 0.5 inside each coarse cluster, size 3-60,
   cohesion mean score >= z0 + 1) of frozen coarse complexes that have >= 2 sub-modules. Hash over all such
@@ -500,10 +500,6 @@ stopping_rule: >
 frozen_inputs:
   - results/part2/contexts/checksums.json
   - results/part2/lockbox/manifest.json
-  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
-  - FZ-X   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
-pending:
-  - "complex_set_hash"
-  - "frozen_inputs[2]"
-  - "frozen_inputs[3]"
+  - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
 status: open

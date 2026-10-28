@@ -17,8 +17,8 @@ import re
 import subprocess
 from pathlib import Path
 
-DIRECTIONS = ("H3a", "H3b", "H1", "H2", "controls", "benchmark", "bridge")
-CONFIRMATORY = ("controls", "H3a", "H3b", "H1", "H2")       # lockbox order: these before benchmark / bridge
+DIRECTIONS = ("H3a", "H3b", "H1", "H1S", "H2", "controls", "benchmark", "bridge")   # H1S: exploratory (A1/A2)
+CONFIRMATORY = ("controls", "H3a", "H3b", "H1", "H1S", "H2")   # lockbox order: these before benchmark / bridge
 SIGNS = ("+", "-", "two-sided", "per-context")
 SCORES = ("S_C_mean_winsor3", "eigengene", "within_line_rank", "expression_masked", "pan_essential_referenced",
           "gene", "submodule_vs_sibling", "member_resolved")
@@ -27,7 +27,8 @@ FDR_METHODS = ("benjamini_bogomolov", "bh", "stagewise_bb", "none")
 PLACEHOLDERS = ("FZ-C", "FZ-X")                              # value filled at the named freeze point (DESIGN §0 F4)
 OPTIONAL = {                                                 # type-checked when present; other extra keys are free
     "pending": list, "family_m": dict, "multiverse": dict, "lockbox": dict, "kill_rule": dict, "run_after": list,
-    "statistic": str, "control": dict, "calibration": dict, "seeds": dict,
+    "statistic": str, "control": dict, "calibration": dict, "seeds": dict, "amendments": list, "standing": str,
+    "headline": bool,
 }
 REQUIRED = {
     "id": str, "direction": str, "hypothesis": str, "sign": str, "context_family": dict, "complex_set_hash": str,
@@ -298,7 +299,71 @@ def validate(entry: dict, stem: str | None = None) -> list[str]:
         errs.append(f"pending must list exactly the fields holding freeze placeholders: {sorted(ph)}")
     if ph and entry["status"] == "closed":
         errs.append("a closed entry cannot hold freeze placeholders")
+    errs += _validate_amendments(entry)
+    if "standing" in entry and entry["standing"] not in STANDINGS:
+        errs.append(f"standing must be one of {STANDINGS}")
+    if entry.get("standing") == "exploratory" and entry.get("headline") is not False:
+        errs.append("an exploratory entry must carry headline: false")
     return errs
+
+
+# ------------------------------------------------------------------------------------------------ amendments
+STANDINGS = ("confirmatory", "exploratory")
+AMENDMENT_KEYS = {"id": str, "timestamp_utc": str, "amends_commit": str, "reason": str, "changed_paths": list}
+
+
+def _validate_amendments(entry: dict) -> list[str]:
+    am = entry.get("amendments")
+    if am is None:
+        return []
+    errs = []
+    if not isinstance(am, list) or not am:
+        return ["amendments: non-empty list of mappings"]
+    ids = []
+    for i, a in enumerate(am):
+        if not isinstance(a, dict):
+            errs.append(f"amendments[{i}]: mapping")
+            continue
+        for k, t in AMENDMENT_KEYS.items():
+            if not isinstance(a.get(k), t) or not a.get(k):
+                errs.append(f"amendments[{i}].{k}: required {t.__name__}")
+        if isinstance(a.get("timestamp_utc"), str) and not re.match(r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$",
+                                                                     a["timestamp_utc"]):
+            errs.append(f"amendments[{i}].timestamp_utc: YYYY-MM-DDTHH:MM:SSZ")
+        if isinstance(a.get("amends_commit"), str) and not re.match(r"^[0-9a-f]{40}$", a["amends_commit"]):
+            errs.append(f"amendments[{i}].amends_commit: full 40-hex commit")
+        if isinstance(a.get("changed_paths"), list) and not all(isinstance(p, str) and p for p in a["changed_paths"]):
+            errs.append(f"amendments[{i}].changed_paths: list of field paths")
+        ids.append(a.get("id"))
+    if len(set(ids)) != len(ids):
+        errs.append("amendments: ids not unique")
+    return errs
+
+
+def amendment_changes(old: dict, new: dict) -> list[str]:
+    """Paths that differ between `old` (the committed version an amendment applies to) and `new`, and that are NOT
+    declared in the `changed_paths` of an amendment present in `new` but not in `old` (the `amendments` field itself
+    is the record and always allowed). An empty list means every change is a declared, documented amendment.
+    Freeze fills keep going through fill_only_changes; this is the only other sanctioned kind of edit."""
+    old_ids = {a.get("id") for a in old.get("amendments", []) or []}
+    added = [a for a in new.get("amendments", []) or [] if a.get("id") not in old_ids]
+    allowed = ["amendments"] + [str(p) for a in added for p in a.get("changed_paths", [])]
+    lo, ln = dict(_leaves(old)), dict(_leaves(new))
+    bad = []
+    for path in sorted(set(lo) | set(ln)):
+        if path in lo and path in ln and lo[path] == ln[path]:
+            continue
+        if any(path == a or path.startswith(a + ".") or path.startswith(a + "[") for a in allowed):
+            continue
+        bad.append(path)
+    return bad
+
+
+def changed_top_paths(old: dict, new: dict, declared) -> set:
+    """The declared paths that actually changed between old and new (to check that a declaration is not inflated)."""
+    lo, ln = dict(_leaves(old)), dict(_leaves(new))
+    diff = {p for p in set(lo) | set(ln) if not (p in lo and p in ln and lo[p] == ln[p])}
+    return {d for d in declared if any(p == d or p.startswith(d + ".") or p.startswith(d + "[") for p in diff)}
 
 
 def placeholders(x, prefix: str = "") -> list[str]:

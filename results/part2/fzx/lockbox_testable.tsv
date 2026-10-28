@@ -1,0 +1,535 @@
+entry	direction	context	event	role	n_L	ref_L	lockbox_testable	route
+BENCH_complex_vs_gene	benchmark	lineage:Biliary Tract		primary	9	329	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Bladder/Urinary Tract		primary	9	329	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Bone		primary	15	323	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Bowel		primary	21	317	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Breast		primary	17	321	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:CNS/Brain		primary	33	305	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Cervix		primary	5	333	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Esophagus/Stomach		primary	24	314	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Head and Neck		primary	19	319	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Kidney		primary	9	329	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Liver		primary	6	332	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Lung		primary	31	307	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Lymphoid		primary	24	314	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Myeloid		primary	11	327	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Ovary/Fallopian Tube		primary	16	322	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Pancreas		primary	18	320	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Peripheral Nervous System		primary	12	326	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Pleura		primary	5	333	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Prostate		primary	5	333	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Skin		primary	17	321	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Soft Tissue		primary	12	326	True	lockbox
+BENCH_complex_vs_gene	benchmark	lineage:Uterus		primary	10	328	True	lockbox
+BENCH_complex_vs_gene	benchmark	melanoma		primary	19	319	True	lockbox
+BENCH_complex_vs_gene	benchmark	hotspot:KRAS		primary	52	286	True	lockbox
+BENCH_complex_vs_gene	benchmark	hotspot:NRAS		primary	16	322	True	lockbox
+BENCH_complex_vs_gene	benchmark	hotspot:BRAF		primary	22	316	True	lockbox
+BENCH_complex_vs_gene	benchmark	hotspot:PIK3CA		primary	33	305	True	lockbox
+BENCH_complex_vs_gene	benchmark	TP53_altered		primary	219	109	True	lockbox
+BENCH_complex_vs_gene	benchmark	MSI_H		primary	20	318	True	lockbox
+BENCH_complex_vs_gene	benchmark	WGD		primary	178	74	True	lockbox
+BENCH_complex_vs_gene	benchmark	9p21_loss		primary	49	271	True	lockbox
+BENCH_complex_vs_gene	benchmark	MYC_amp		primary	47	251	True	lockbox
+BENCH_complex_vs_gene	benchmark	MYCN_amp		primary	8	290	True	lockbox
+BENCH_complex_vs_gene	benchmark	LoY		primary	74	93	True	lockbox
+BENCH_complex_vs_gene	benchmark	sex_female		primary	138	178	True	lockbox
+BENCH_complex_vs_gene	benchmark	NRF2_active		primary	10	290	True	lockbox
+BENCH_complex_vs_gene	benchmark	LoF:ARID1A		primary	12	285	True	lockbox
+BENCH_complex_vs_gene	benchmark	LoF:SMARCA4		primary	10	291	True	lockbox
+BENCH_complex_vs_gene	benchmark	LoF:STAG2		primary	5	296	True	lockbox
+BENCH_complex_vs_gene	benchmark	LoF:PTEN		primary	29	273	True	lockbox
+BENCH_complex_vs_gene	benchmark	LoF:RB1		primary	17	283	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Biliary Tract		primary	9	329	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Bladder/Urinary Tract		primary	9	329	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Bone		primary	15	323	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Bowel		primary	21	317	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Breast		primary	17	321	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:CNS/Brain		primary	33	305	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Cervix		primary	5	333	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Esophagus/Stomach		primary	24	314	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Head and Neck		primary	19	319	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Kidney		primary	9	329	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Liver		primary	6	332	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Lung		primary	31	307	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Lymphoid		primary	24	314	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Myeloid		primary	11	327	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Ovary/Fallopian Tube		primary	16	322	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Pancreas		primary	18	320	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Peripheral Nervous System		primary	12	326	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Pleura		primary	5	333	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Prostate		primary	5	333	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Skin		primary	17	321	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Soft Tissue		primary	12	326	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	lineage:Uterus		primary	10	328	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	melanoma		primary	19	319	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	hotspot:KRAS		primary	52	286	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	hotspot:NRAS		primary	16	322	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	hotspot:BRAF		primary	22	316	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	hotspot:PIK3CA		primary	33	305	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	TP53_altered		primary	219	109	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	MSI_H		primary	20	318	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	WGD		primary	178	74	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	9p21_loss		primary	49	271	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	MYC_amp		primary	47	251	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	MYCN_amp		primary	8	290	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	LoY		primary	74	93	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	sex_female		primary	138	178	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	NRF2_active		primary	10	290	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	LoF:ARID1A		primary	12	285	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	LoF:SMARCA4		primary	10	291	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	LoF:STAG2		primary	5	296	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	LoF:PTEN		primary	29	273	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	LoF:RB1		primary	17	283	True	lockbox
+BRIDGE-L_confirmation_rate	bridge	LoF:KMT2D		primary	4	293	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+BRIDGE-L_confirmation_rate	bridge	fusion:EWSR1::FLI1|ERG		primary	4	314	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+CTRL_PC1	controls	MSI_H		primary	20	318	True	lockbox
+CTRL_PC10	controls	FOCAD_del_or_MSI_H		primary	30	291	True	lockbox
+CTRL_PC11	controls	NRF2_active		primary	10	290	True	lockbox
+CTRL_PC12	controls	VPS4B_loss		primary	85	132	True	lockbox
+CTRL_PC13	controls	female_or_LoY		primary	212	93	True	lockbox
+CTRL_PC14	controls	LoF:RB1		primary	17	283	True	lockbox
+CTRL_PC15	controls	SMARCB1_LoF_or_SS18SSX		primary	4	294	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+CTRL_PC16	controls	KMT2A_r_vs_nonNPM1c		primary	3	314	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+CTRL_PC17	controls	melanoma		primary	19	319	True	lockbox
+CTRL_PC18	controls	WGD		primary	178	74	True	lockbox
+CTRL_PC19a	controls	PTEN_LoF_noPIK3CAhs		primary	28	253	True	lockbox
+CTRL_PC19b	controls	PIK3CA_hotspot_noPTENLoF		primary	32	277	True	lockbox
+CTRL_PC2	controls	TP53_altered		primary	219	109	True	lockbox
+CTRL_PC20	controls	heme		primary	35	303	True	lockbox
+CTRL_PC21	controls	heme_vs_breast		primary	35	17	True	lockbox
+CTRL_PC22	controls	SMARCB1_LoF_or_SS18SSX		primary	4	294	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+CTRL_PC3	controls	TP53_altered		primary	219	109	True	lockbox
+CTRL_PC4	controls	RAS_hotspot		primary	67	271	True	lockbox
+CTRL_PC5	controls	BRAF_vs_RAS_hotspot		primary	22	67	True	lockbox
+CTRL_PC6	controls	LoF:ARID1A		primary	12	285	True	lockbox
+CTRL_PC7	controls	LoF:SMARCA4		primary	10	291	True	lockbox
+CTRL_PC8	controls	LoF:STAG2		primary	5	296	True	lockbox
+CTRL_PC9	controls	9p21_loss		primary	49	271	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ACAA2	Z0106|ACAA2	primary	5	312	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ACSL4	Z0121|ACSL4	primary	6	314	True	lockbox
+H1S_silencing_GI	H1S	H1loss:AFDN	Z0035|AFDN	primary	2	311	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:AGPAT2	Z0107|AGPAT2	primary	7	314	True	lockbox
+H1S_silencing_GI	H1S	H1loss:AGPAT3	Z0121|AGPAT3	primary	3	318	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:AGR2	Z0092|AGR2	primary	28	182	True	lockbox
+H1S_silencing_GI	H1S	H1loss:AHR	Z0282|AHR	primary	22	275	True	lockbox
+H1S_silencing_GI	H1S	H1loss:AIFM2	Z0321|AIFM2	primary	11	284	True	lockbox
+H1S_silencing_GI	H1S	H1loss:AK4	Z0134|AK4	primary	24	297	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ALDH7A1	Z0290|ALDH7A1	primary	14	288	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ALDOC	Z0031|ALDOC	primary	19	294	True	lockbox
+H1S_silencing_GI	H1S	H1loss:AMOTL2	Z0333|AMOTL2	primary	7	282	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ANO1	Z0037|ANO1	primary	18	129	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ANPEP	Z0301|ANPEP	primary	2	129	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1_within_complex_GI	H1	H1loss:APC	Z0174|APC	primary	19	293	True	lockbox
+H1S_silencing_GI	H1S	H1loss:APLP1	Z0017|APLP1	primary	6	255	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ARHGAP21	Z0028|ARHGAP21	primary	5	314	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ARHGAP23	Z0108|ARHGAP23	primary	22	270	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ARHGAP29	Z0035|ARHGAP29	primary	29	253	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ARHGEF12	Z0072|ARHGEF12	primary	7	310	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ARHGEF25	Z0123|ARHGEF25	primary	5	234	True	lockbox
+H1_within_complex_GI	H1	H1loss:ARID1A	Z0109|ARID1A	primary	12	282	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ATP2B4	Z0297|ATP2B4	primary	9	307	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ATP6V0A1	Z0259|ATP6V0A1	primary	5	315	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ATP8B1	Z0035|ATP8B1	primary	16	223	True	lockbox
+H1S_silencing_GI	H1S	H1loss:B3GNT5	Z0260|B3GNT5	primary	30	267	True	lockbox
+H1S_silencing_GI	H1S	H1loss:B4GALNT1	Z0024|B4GALNT1	primary	3	236	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:BAMBI	Z0255|BAMBI	primary	12	269	True	lockbox
+H1_within_complex_GI	H1	H1loss:BAP1	Z0171|BAP1	primary	6	314	True	lockbox
+H1S_silencing_GI	H1S	H1loss:BATF	Z0311|BATF	primary	7	98	True	lockbox
+H1S_silencing_GI	H1S	H1loss:BCL6	Z0096|BCL6	primary	14	294	True	lockbox
+H1S_silencing_GI	H1S	H1loss:BCR	Z0088|BCR	primary	4	314	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:BHLHE40	Z0165|BHLHE40	primary	10	309	True	lockbox
+H1S_silencing_GI	H1S	H1loss:BHLHE41	Z0134|BHLHE41	primary	11	211	True	lockbox
+H1S_silencing_GI	H1S	H1loss:BLNK	Z0319|BLNK	primary	6	103	True	lockbox
+H1S_silencing_GI	H1S	H1loss:BLNK	Z0321|BLNK	primary	6	103	True	lockbox
+H1_within_complex_GI	H1	H1loss:BRCA1	Z0205|BRCA1	primary	4	313	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:BTK	Z0319|BTK	primary	9	36	True	lockbox
+H1S_silencing_GI	H1S	H1loss:BTK	Z0321|BTK	primary	9	36	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CA8	Z0210|CA8	primary	5	124	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CACNB3	Z0155|CACNB3	primary	0	317	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:CADM4	Z0038|CADM4	primary	8	273	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CAPN5	Z0350|CAPN5	primary	5	258	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CARD10	Z0234|CARD10	primary	12	259	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CCDC28B	Z0091|CCDC28B	primary	8	307	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CCDC85B	Z0273|CCDC85B	primary	6	315	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CCND1	Z0037|CCND1	primary	11	289	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CCND2	Z0334|CCND2	primary	5	107	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CCNE2	Z0069|CCNE2	primary	5	313	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CD19	Z0319|CD19	primary	10	31	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CD55	Z0297|CD55	primary	14	307	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CD79A	Z0096|CD79A	primary	6	55	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CD79A	Z0319|CD79A	primary	6	55	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CD79A	Z0321|CD79A	primary	6	55	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CD79B	Z0319|CD79B	primary	5	49	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CDH1	Z0035|CDH1	primary	27	173	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CDH11	Z0160|CDH11	primary	14	117	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CDH2	Z0035|CDH2	primary	34	187	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CDKN1A	Z0158|CDKN1A	primary	12	307	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CDKN2C	Z0200|CDKN2C	primary	10	309	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CEBPA	Z0113|CEBPA	primary	4	192	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:CEBPD	Z0210|CEBPD	primary	8	285	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CEMIP2	Z0089|CEMIP2	primary	2	309	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:CEP152	Z0004|CEP152	primary	5	304	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CEP41	Z0004|CEP41	primary	3	312	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:CERCAM	Z0233|CERCAM	primary	7	300	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CFB	Z0211|CFB	primary	18	220	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CIART	Z0310|CIART	primary	7	206	True	lockbox
+H1S_silencing_GI	H1S	H1loss:COCH	Z0172|COCH	primary	21	220	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CPAP	Z0004|CPAP	primary	4	309	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:CPNE7	Z0125|CPNE7	primary	7	219	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CPT1A	Z0037|CPT1A	primary	10	311	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CPT1B	Z0341|CPT1B	primary	8	310	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CRYBG1	Z0149|CRYBG1	primary	24	233	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CSAD	Z0169|CSAD	primary	5	313	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CSF3R	Z0091|CSF3R	primary	2	27	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:CST6	Z0273|CST6	primary	13	91	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CTSF	Z0273|CTSF	primary	15	257	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CTTN	Z0037|CTTN	primary	3	314	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:CYB561	Z0005|CYB561	primary	7	299	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CYFIP1	Z0087|CYFIP1	primary	5	315	True	lockbox
+H1S_silencing_GI	H1S	H1loss:CYP2R1	Z0291|CYP2R1	primary	18	300	True	lockbox
+H1S_silencing_GI	H1S	H1loss:DGKA	Z0117|DGKA	primary	2	316	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:DHCR24	Z0089|DHCR24	primary	6	315	True	lockbox
+H1S_silencing_GI	H1S	H1loss:DIAPH3	Z0267|DIAPH3	primary	3	316	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:DIPK1B	Z0107|DIPK1B	primary	5	214	True	lockbox
+H1S_silencing_GI	H1S	H1loss:DIPK2A	Z0067|DIPK2A	primary	5	316	True	lockbox
+H1S_silencing_GI	H1S	H1loss:DMKN	Z0017|DMKN	primary	28	224	True	lockbox
+H1S_silencing_GI	H1S	H1loss:DNM1	Z0233|DNM1	primary	9	254	True	lockbox
+H1S_silencing_GI	H1S	H1loss:DOCK2	Z0096|DOCK2	primary	4	112	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:DOCK5	Z0016|DOCK5	primary	6	278	True	lockbox
+H1S_silencing_GI	H1S	H1loss:DUSP10	Z0018|DUSP10	primary	12	288	True	lockbox
+H1S_silencing_GI	H1S	H1loss:DUSP4	Z0018|DUSP4	primary	26	246	True	lockbox
+H1S_silencing_GI	H1S	H1loss:DUSP6	Z0084|DUSP6	primary	13	296	True	lockbox
+H1S_silencing_GI	H1S	H1loss:EBF1	Z0319|EBF1	primary	6	101	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ECM1	Z0310|ECM1	primary	10	245	True	lockbox
+H1S_silencing_GI	H1S	H1loss:EGFR	Z0051|EGFR	primary	24	245	True	lockbox
+H1S_silencing_GI	H1S	H1loss:EHBP1L1	Z0071|EHBP1L1	primary	7	312	True	lockbox
+H1_within_complex_GI	H1	H1loss:EP300	Z0186|EP300	primary	4	297	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:EPAS1	Z0234|EPAS1	primary	19	285	True	lockbox
+H1S_silencing_GI	H1S	H1loss:EPCAM	Z0307|EPCAM	primary	7	229	True	lockbox
+H1S_silencing_GI	H1S	H1loss:EPS8L3	Z0251|EPS8L3	primary	24	55	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ERBB3	Z0149|ERBB3	primary	18	223	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ESCO2	Z0351|ESCO2	primary	4	312	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:ESPL1	Z0011|ESPL1	primary	6	311	True	lockbox
+H1S_silencing_GI	H1S	H1loss:F11R	Z0035|F11R	primary	4	301	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:F2RL1	Z0241|F2RL1	primary	14	226	True	lockbox
+H1S_silencing_GI	H1S	H1loss:F3	Z0173|F3	primary	20	271	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FAAH	Z0007|FAAH	primary	7	210	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FADS2	Z0121|FADS2	primary	5	312	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FAR2	Z0134|FAR2	primary	5	253	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FERMT1	Z0092|FERMT1	primary	13	217	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FERMT2	Z0016|FERMT2	primary	9	273	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FGFR1	Z0067|FGFR1	primary	7	280	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FGFR2	Z0176|FGFR2	primary	17	183	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FGFR4	Z0149|FGFR4	primary	9	252	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FHL2	Z0333|FHL2	primary	16	290	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FKBP10	Z0118|FKBP10	primary	25	277	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FLI1	Z0160|FLI1	primary	3	133	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:FMNL1	Z0122|FMNL1	primary	3	267	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1_within_complex_GI	H1	H1loss:FOCAD	Z0286|FOCAD	primary	13	307	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FOSL1	Z0132|FOSL1	primary	18	275	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FOSL2	Z0165|FOSL2	primary	6	302	True	lockbox
+H1S_silencing_GI	H1S	H1loss:FOXA1	Z0149|FOXA1	primary	19	180	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GAB1	Z0051|GAB1	primary	6	295	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GATA6	Z0092|GATA6	primary	10	204	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GBP1	Z0209|GBP1	primary	18	226	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GCNT3	Z0137|GCNT3	primary	10	127	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GINS4	Z0021|GINS4	primary	3	318	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:GJB5	Z0217|GJB5	primary	10	88	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GLUL	Z0127|GLUL	primary	18	303	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GNE	Z0176|GNE	primary	12	300	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GPC4	Z0291|GPC4	primary	17	193	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GPX8	Z0164|GPX8	primary	9	270	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GRHL2	Z0149|GRHL2	primary	31	121	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GSDMD	Z0054|GSDMD	primary	30	285	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GSTM2	Z0251|GSTM2	primary	22	224	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GSTM4	Z0251|GSTM4	primary	20	295	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GSTP1	Z0288|GSTP1	primary	5	315	True	lockbox
+H1S_silencing_GI	H1S	H1loss:GTSE1	Z0008|GTSE1	primary	2	318	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:HES1	Z0279|HES1	primary	15	283	True	lockbox
+H1S_silencing_GI	H1S	H1loss:HHEX	Z0088|HHEX	primary	6	232	True	lockbox
+H1S_silencing_GI	H1S	H1loss:HID1	Z0005|HID1	primary	11	213	True	lockbox
+H1S_silencing_GI	H1S	H1loss:HK2	Z0045|HK2	primary	4	315	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:HMGA2	Z0024|HMGA2	primary	29	241	True	lockbox
+H1S_silencing_GI	H1S	H1loss:HNF1B	Z0035|HNF1B	primary	8	79	True	lockbox
+H1S_silencing_GI	H1S	H1loss:HOMER3	Z0048|HOMER3	primary	6	308	True	lockbox
+H1S_silencing_GI	H1S	H1loss:HOXC10	Z0117|HOXC10	primary	20	201	True	lockbox
+H1S_silencing_GI	H1S	H1loss:HYLS1	Z0004|HYLS1	primary	3	309	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:ID1	Z0116|ID1	primary	5	307	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ID3	Z0356|ID3	primary	2	310	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:IGF1R	Z0316|IGF1R	primary	4	291	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:IGF2BP1	Z0065|IGF2BP1	primary	10	161	True	lockbox
+H1S_silencing_GI	H1S	H1loss:IGFBP6	Z0169|IGFBP6	primary	18	262	True	lockbox
+H1S_silencing_GI	H1S	H1loss:IGSF11	Z0018|IGSF11	primary	3	77	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:IKZF3	Z0050|IKZF3	primary	4	39	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:IL6ST	Z0110|IL6ST	primary	3	317	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:IRF4	Z0334|IRF4	primary	10	39	True	lockbox
+H1S_silencing_GI	H1S	H1loss:IRF8	Z0113|IRF8	primary	5	77	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ISG15	Z0029|ISG15	primary	7	312	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ISYNA1	Z0048|ISYNA1	primary	8	308	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ITGA3	Z0059|ITGA3	primary	5	306	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ITGB3	Z0123|ITGB3	primary	1	135	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:JAZF1	Z0180|JAZF1	primary	5	258	True	lockbox
+H1S_silencing_GI	H1S	H1loss:JUP	Z0108|JUP	primary	9	295	True	lockbox
+H1S_silencing_GI	H1S	H1loss:KDF1	Z0241|KDF1	primary	27	138	True	lockbox
+H1_within_complex_GI	H1	H1loss:KDM6A	Z0171|KDM6A	primary	8	310	True	lockbox
+H1_within_complex_GI	H1	H1loss:KEAP1	Z0124|KEAP1	primary	6	313	True	lockbox
+H1S_silencing_GI	H1S	H1loss:KIF14	Z0011|KIF14	primary	7	308	True	lockbox
+H1S_silencing_GI	H1S	H1loss:KIF15	Z0008|KIF15	primary	4	309	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:KIF18B	Z0337|KIF18B	primary	6	313	True	lockbox
+H1S_silencing_GI	H1S	H1loss:KIRREL1	Z0333|KIRREL1	primary	19	240	True	lockbox
+H1_within_complex_GI	H1	H1loss:KMT2D	Z0171|KMT2D	primary	7	285	True	lockbox
+H1S_silencing_GI	H1S	H1loss:KNL1	Z0008|KNL1	primary	4	314	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:LAIR1	Z0212|LAIR1	primary	7	36	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LCP1	Z0096|LCP1	primary	2	221	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:LDLRAD3	Z0290|LDLRAD3	primary	7	291	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LDLRAP1	Z0319|LDLRAP1	primary	3	313	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:LFNG	Z0290|LFNG	primary	14	265	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LIMD2	Z0005|LIMD2	primary	13	272	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LIX1L	Z0322|LIX1L	primary	12	264	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LLGL2	Z0005|LLGL2	primary	7	288	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LPAR1	Z0072|LPAR1	primary	24	203	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LRFN4	Z0273|LRFN4	primary	20	292	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LRIG1	Z0304|LRIG1	primary	14	262	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LRIG3	Z0304|LRIG3	primary	12	272	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LRP5	Z0291|LRP5	primary	5	307	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LYL1	Z0113|LYL1	primary	7	70	True	lockbox
+H1S_silencing_GI	H1S	H1loss:LYN	Z0319|LYN	primary	8	283	True	lockbox
+H1_within_complex_GI	H1	H1loss:MAP2K4	Z0164|MAP2K4	primary	11	308	True	lockbox
+H1S_silencing_GI	H1S	H1loss:MAP2K6	Z0181|MAP2K6	primary	4	239	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:MAP4K4	Z0333|MAP4K4	primary	2	315	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:MECOM	Z0165|MECOM	primary	7	208	True	lockbox
+H1_within_complex_GI	H1	H1loss:MED12	Z0014|MED12	primary	6	315	True	lockbox
+H1S_silencing_GI	H1S	H1loss:MEF2C	Z0356|MEF2C	primary	3	186	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:MEIS2	Z0065|MEIS2	primary	10	283	True	lockbox
+H1S_silencing_GI	H1S	H1loss:MET	Z0118|MET	primary	16	267	True	lockbox
+H1S_silencing_GI	H1S	H1loss:METRNL	Z0279|METRNL	primary	18	292	True	lockbox
+H1S_silencing_GI	H1S	H1loss:MGA	Z0093|MGA	primary	0	309	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:MGAT4A	Z0044|MGAT4A	primary	1	236	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:MKI67	Z0008|MKI67	primary	3	314	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:MTSS1	Z0120|MTSS1	primary	4	244	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:MUC20	Z0296|MUC20	primary	10	142	True	lockbox
+H1S_silencing_GI	H1S	H1loss:MXRA7	Z0005|MXRA7	primary	6	301	True	lockbox
+H1S_silencing_GI	H1S	H1loss:MYD88	Z0311|MYD88	primary	14	306	True	lockbox
+H1S_silencing_GI	H1S	H1loss:MYEOV	Z0037|MYEOV	primary	21	238	True	lockbox
+H1S_silencing_GI	H1S	H1loss:MYO10	Z0016|MYO10	primary	16	273	True	lockbox
+H1S_silencing_GI	H1S	H1loss:MYO1B	Z0267|MYO1B	primary	12	284	True	lockbox
+H1S_silencing_GI	H1S	H1loss:MYO6	Z0170|MYO6	primary	4	303	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:NAPRT	Z0054|NAPRT	primary	6	315	True	lockbox
+H1S_silencing_GI	H1S	H1loss:NAV2	Z0018|NAV2	primary	13	238	True	lockbox
+H1S_silencing_GI	H1S	H1loss:NEDD4L	Z0067|NEDD4L	primary	9	312	True	lockbox
+H1S_silencing_GI	H1S	H1loss:NEO1	Z0304|NEO1	primary	14	293	True	lockbox
+H1S_silencing_GI	H1S	H1loss:NES	Z0309|NES	primary	12	171	True	lockbox
+H1_within_complex_GI	H1	H1loss:NF1	Z0052|NF1	primary	16	294	True	lockbox
+H1_within_complex_GI	H1	H1loss:NF2	Z0333|NF2	primary	6	311	True	lockbox
+H1S_silencing_GI	H1S	H1loss:NFATC2	Z0084|NFATC2	primary	4	133	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:NFE2L3	Z0194|NFE2L3	primary	5	315	True	lockbox
+H1S_silencing_GI	H1S	H1loss:NFKBIZ	Z0318|NFKBIZ	primary	5	302	True	lockbox
+H1S_silencing_GI	H1S	H1loss:NOTCH2	Z0279|NOTCH2	primary	10	300	True	lockbox
+H1S_silencing_GI	H1S	H1loss:NRP1	Z0333|NRP1	primary	22	264	True	lockbox
+H1S_silencing_GI	H1S	H1loss:NT5C3B	Z0118|NT5C3B	primary	3	317	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:PARP10	Z0054|PARP10	primary	15	300	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PAWR	Z0072|PAWR	primary	8	308	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PAX5	Z0319|PAX5	primary	7	42	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PAX8	Z0035|PAX8	primary	2	202	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1_within_complex_GI	H1	H1loss:PBRM1	Z0201|PBRM1	primary	7	309	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PBX1	Z0065|PBX1	primary	20	233	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PCSK9	Z0162|PCSK9	primary	17	131	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PDK2	Z0036|PDK2	primary	11	309	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PDZK1IP1	Z0007|PDZK1IP1	primary	23	126	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PEX39	Z0302|PEX39	primary	4	313	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:PIK3AP1	Z0321|PIK3AP1	primary	4	144	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1_within_complex_GI	H1	H1loss:PLAA	Z0041|PLAA	primary	8	313	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PLAUR	Z0323|PLAUR	primary	10	301	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PLEKHB1	Z0168|PLEKHB1	primary	7	201	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PLEKHG4	Z0157|PLEKHG4	primary	10	265	True	lockbox
+H1S_silencing_GI	H1S	H1loss:POU2AF1	Z0096|POU2AF1	primary	1	43	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:PRDX2	Z0098|PRDX2	primary	8	313	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PREX1	Z0160|PREX1	primary	9	200	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PRKCZ	Z0281|PRKCZ	primary	14	258	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PROS1	Z0202|PROS1	primary	9	245	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PRR15L	Z0194|PRR15L	primary	14	108	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PSD4	Z0157|PSD4	primary	6	251	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PSMB8	Z0207|PSMB8	primary	18	297	True	lockbox
+H1_within_complex_GI	H1	H1loss:PTEN	Z0130|PTEN	primary	31	281	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PTPN14	Z0333|PTPN14	primary	8	271	True	lockbox
+H1S_silencing_GI	H1S	H1loss:PTPN6	Z0223|PTPN6	primary	23	222	True	lockbox
+H1S_silencing_GI	H1S	H1loss:QKI	Z0290|QKI	primary	5	299	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RAB25	Z0309|RAB25	primary	41	131	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RAB34	Z0031|RAB34	primary	40	255	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RAC3	Z0022|RAC3	primary	4	317	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:RAD54L	Z0312|RAD54L	primary	1	319	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:RASGRP2	Z0020|RASGRP2	primary	7	107	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RASGRP3	Z0241|RASGRP3	primary	5	140	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RASSF8	Z0134|RASSF8	primary	9	253	True	lockbox
+H1_within_complex_GI	H1	H1loss:RB1	Z0200|RB1	primary	19	294	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RHBDF2	Z0005|RHBDF2	primary	11	304	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RHOD	Z0288|RHOD	primary	24	204	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RHPN1	Z0054|RHPN1	primary	6	249	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RIN1	Z0273|RIN1	primary	15	272	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RIPK4	Z0035|RIPK4	primary	11	222	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RUNX1	Z0088|RUNX1	primary	22	286	True	lockbox
+H1S_silencing_GI	H1S	H1loss:RUNX2	Z0343|RUNX2	primary	17	224	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SALL1	Z0106|SALL1	primary	6	104	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SASH3	Z0319|SASH3	primary	6	33	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SATB1	Z0065|SATB1	primary	5	224	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SCARF2	Z0181|SCARF2	primary	5	161	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SLC12A7	Z0326|SLC12A7	primary	15	273	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SLC16A3	Z0022|SLC16A3	primary	18	300	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SLC16A4	Z0251|SLC16A4	primary	13	183	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SLC16A5	Z0005|SLC16A5	primary	19	209	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SLC22A17	Z0025|SLC22A17	primary	3	174	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:SLC27A5	Z0330|SLC27A5	primary	18	295	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SLC29A2	Z0273|SLC29A2	primary	12	263	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SLC7A11	Z0321|SLC7A11	primary	5	314	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SMAD3	Z0279|SMAD3	primary	7	313	True	lockbox
+H1_within_complex_GI	H1	H1loss:SMAD4	Z0304|SMAD4	primary	26	295	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SMAD7	Z0334|SMAD7	primary	16	291	True	lockbox
+H1_within_complex_GI	H1	H1loss:SMARCA4	Z0109|SMARCA4	primary	12	305	True	lockbox
+H1_within_complex_GI	H1	H1loss:SMARCB1	Z0109|SMARCB1	primary	5	316	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SNAI2	Z0059|SNAI2	primary	12	200	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SOX10	Z0018|SOX10	primary	2	30	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:SOX17	Z0165|SOX17	primary	6	29	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SOX9	Z0018|SOX9	primary	22	235	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SPC24	Z0033|SPC24	primary	5	315	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SPDEF	Z0149|SPDEF	primary	4	65	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:SPI1	Z0113|SPI1	primary	9	29	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SPINT1	Z0208|SPINT1	primary	14	233	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SPINT2	Z0291|SPINT2	primary	8	272	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SRCAP	Z0056|SRCAP	primary	6	311	True	lockbox
+H1_within_complex_GI	H1	H1loss:STAG2	Z0278|STAG2	primary	5	313	True	lockbox
+H1S_silencing_GI	H1S	H1loss:STAT5A	Z0252|STAT5A	primary	4	220	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:STING1	Z0190|STING1	primary	36	278	True	lockbox
+H1_within_complex_GI	H1	H1loss:STK11	Z0292|STK11	primary	12	307	True	lockbox
+H1S_silencing_GI	H1S	H1loss:STRN	Z0240|STRN	primary	2	318	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:SV2A	Z0354|SV2A	primary	12	184	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SYK	Z0319|SYK	primary	21	149	True	lockbox
+H1S_silencing_GI	H1S	H1loss:SYNE4	Z0017|SYNE4	primary	2	106	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:SYT11	Z0309|SYT11	primary	4	151	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:TBX3	Z0149|TBX3	primary	9	215	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TEDC2	Z0004|TEDC2	primary	4	316	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:TFAP2A	Z0018|TFAP2A	primary	15	263	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TFAP2C	Z0120|TFAP2C	primary	7	195	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TGFBR2	Z0279|TGFBR2	primary	27	267	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TGIF1	Z0120|TGIF1	primary	5	316	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TMEM35B	Z0221|TMEM35B	primary	5	316	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TMT1A	Z0169|TMT1A	primary	14	229	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TNFAIP3	Z0318|TNFAIP3	primary	4	276	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:TNFSF10	Z0234|TNFSF10	primary	21	213	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TNS2	Z0169|TNS2	primary	6	254	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TNS3	Z0016|TNS3	primary	16	283	True	lockbox
+H1_within_complex_GI	H1	H1loss:TP53	Z0158|TP53	primary	195	108	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TPM2	Z0261|TPM2	primary	12	288	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TRIM47	Z0005|TRIM47	primary	11	295	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TRIP6	Z0046|TRIP6	primary	23	292	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TRPS1	Z0149|TRPS1	primary	4	212	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:TRPV2	Z0154|TRPV2	primary	3	130	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:TSPYL5	Z0180|TSPYL5	primary	27	92	True	lockbox
+H1S_silencing_GI	H1S	H1loss:TUBGCP6	Z0055|TUBGCP6	primary	2	317	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:UNC13D	Z0005|UNC13D	primary	9	195	True	lockbox
+H1_within_complex_GI	H1	H1loss:VHL	Z0145|VHL	primary	7	312	True	lockbox
+H1S_silencing_GI	H1S	H1loss:VWA1	Z0281|VWA1	primary	18	256	True	lockbox
+H1S_silencing_GI	H1S	H1loss:WDR76	Z0182|WDR76	primary	3	317	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:WIPF1	Z0096|WIPF1	primary	7	213	True	lockbox
+H1S_silencing_GI	H1S	H1loss:WLS	Z0291|WLS	primary	10	286	True	lockbox
+H1S_silencing_GI	H1S	H1loss:WNT7B	Z0291|WNT7B	primary	19	181	True	lockbox
+H1S_silencing_GI	H1S	H1loss:YAP1	Z0059|YAP1	primary	9	277	True	lockbox
+H1S_silencing_GI	H1S	H1loss:YPEL3	Z0144|YPEL3	primary	20	300	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ZBTB18	Z0290|ZBTB18	primary	9	307	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ZBTB38	Z0334|ZBTB38	primary	3	312	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:ZDHHC8	Z0013|ZDHHC8	primary	15	301	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ZEB2	Z0018|ZEB2	primary	6	173	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ZNF100	Z0133|ZNF100	primary	3	281	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:ZNF367	Z0188|ZNF367	primary	5	315	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ZNF506	Z0133|ZNF506	primary	8	270	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ZNF518B	Z0201|ZNF518B	primary	4	222	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H1S_silencing_GI	H1S	H1loss:ZNF714	Z0133|ZNF714	primary	20	280	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ZNF91	Z0133|ZNF91	primary	14	293	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ZP3	Z0177|ZP3	primary	10	263	True	lockbox
+H1S_silencing_GI	H1S	H1loss:ZSCAN18	Z0330|ZSCAN18	primary	28	193	True	lockbox
+H2_submodule_divergence	H2	lineage:Biliary Tract		primary	9	329	True	lockbox
+H2_submodule_divergence	H2	lineage:Bladder/Urinary Tract		primary	9	329	True	lockbox
+H2_submodule_divergence	H2	lineage:Bone		primary	15	323	True	lockbox
+H2_submodule_divergence	H2	lineage:Bowel		primary	21	317	True	lockbox
+H2_submodule_divergence	H2	lineage:Breast		primary	17	321	True	lockbox
+H2_submodule_divergence	H2	lineage:CNS/Brain		primary	33	305	True	lockbox
+H2_submodule_divergence	H2	lineage:Cervix		primary	5	333	True	lockbox
+H2_submodule_divergence	H2	lineage:Esophagus/Stomach		primary	24	314	True	lockbox
+H2_submodule_divergence	H2	lineage:Head and Neck		primary	19	319	True	lockbox
+H2_submodule_divergence	H2	lineage:Kidney		primary	9	329	True	lockbox
+H2_submodule_divergence	H2	lineage:Liver		primary	6	332	True	lockbox
+H2_submodule_divergence	H2	lineage:Lung		primary	31	307	True	lockbox
+H2_submodule_divergence	H2	lineage:Lymphoid		primary	24	314	True	lockbox
+H2_submodule_divergence	H2	lineage:Myeloid		primary	11	327	True	lockbox
+H2_submodule_divergence	H2	lineage:Ovary/Fallopian Tube		primary	16	322	True	lockbox
+H2_submodule_divergence	H2	lineage:Pancreas		primary	18	320	True	lockbox
+H2_submodule_divergence	H2	lineage:Peripheral Nervous System		primary	12	326	True	lockbox
+H2_submodule_divergence	H2	lineage:Pleura		primary	5	333	True	lockbox
+H2_submodule_divergence	H2	lineage:Prostate		primary	5	333	True	lockbox
+H2_submodule_divergence	H2	lineage:Skin		primary	17	321	True	lockbox
+H2_submodule_divergence	H2	lineage:Soft Tissue		primary	12	326	True	lockbox
+H2_submodule_divergence	H2	lineage:Uterus		primary	10	328	True	lockbox
+H2_submodule_divergence	H2	melanoma		primary	19	319	True	lockbox
+H2_submodule_divergence	H2	hotspot:KRAS		primary	52	286	True	lockbox
+H2_submodule_divergence	H2	hotspot:NRAS		primary	16	322	True	lockbox
+H2_submodule_divergence	H2	hotspot:BRAF		primary	22	316	True	lockbox
+H2_submodule_divergence	H2	hotspot:PIK3CA		primary	33	305	True	lockbox
+H2_submodule_divergence	H2	TP53_altered		primary	219	109	True	lockbox
+H2_submodule_divergence	H2	MSI_H		primary	20	318	True	lockbox
+H2_submodule_divergence	H2	WGD		primary	178	74	True	lockbox
+H2_submodule_divergence	H2	9p21_loss		primary	49	271	True	lockbox
+H2_submodule_divergence	H2	MYC_amp		primary	47	251	True	lockbox
+H2_submodule_divergence	H2	MYCN_amp		primary	8	290	True	lockbox
+H2_submodule_divergence	H2	LoY		primary	74	93	True	lockbox
+H2_submodule_divergence	H2	sex_female		primary	138	178	True	lockbox
+H2_submodule_divergence	H2	NRF2_active		primary	10	290	True	lockbox
+H2_submodule_divergence	H2	LoF:ARID1A		primary	12	285	True	lockbox
+H2_submodule_divergence	H2	LoF:SMARCA4		primary	10	291	True	lockbox
+H2_submodule_divergence	H2	LoF:STAG2		primary	5	296	True	lockbox
+H2_submodule_divergence	H2	LoF:PTEN		primary	29	273	True	lockbox
+H2_submodule_divergence	H2	LoF:RB1		primary	17	283	True	lockbox
+H2_submodule_divergence	H2	LoF:KMT2D		primary	4	293	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H2_submodule_divergence	H2	fusion:EWSR1::FLI1|ERG		primary	4	314	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H3a_lineage_atlas	H3a	lineage:Biliary Tract		primary	9	329	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Bladder/Urinary Tract		primary	9	329	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Bone		primary	15	323	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Bowel		primary	21	317	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Breast		primary	17	321	True	lockbox
+H3a_lineage_atlas	H3a	lineage:CNS/Brain		primary	33	305	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Cervix		primary	5	333	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Esophagus/Stomach		primary	24	314	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Head and Neck		primary	19	319	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Kidney		primary	9	329	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Liver		primary	6	332	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Lung		primary	31	307	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Lymphoid		primary	24	314	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Myeloid		primary	11	327	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Ovary/Fallopian Tube		primary	16	322	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Pancreas		primary	18	320	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Peripheral Nervous System		primary	12	326	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Pleura		primary	5	333	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Prostate		primary	5	333	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Skin		primary	17	321	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Soft Tissue		primary	12	326	True	lockbox
+H3a_lineage_atlas	H3a	lineage:Uterus		primary	10	328	True	lockbox
+H3a_lineage_atlas	H3a	melanoma		primary	19	319	True	lockbox
+H3b_driver_family	H3b	hotspot:KRAS		primary	52	286	True	lockbox
+H3b_driver_family	H3b	hotspot:NRAS		primary	16	322	True	lockbox
+H3b_driver_family	H3b	hotspot:BRAF		primary	22	316	True	lockbox
+H3b_driver_family	H3b	hotspot:PIK3CA		primary	33	305	True	lockbox
+H3b_driver_family	H3b	TP53_altered		primary	219	109	True	lockbox
+H3b_driver_family	H3b	MSI_H		primary	20	318	True	lockbox
+H3b_driver_family	H3b	WGD		primary	178	74	True	lockbox
+H3b_driver_family	H3b	9p21_loss		primary	49	271	True	lockbox
+H3b_driver_family	H3b	MYC_amp		primary	47	251	True	lockbox
+H3b_driver_family	H3b	MYCN_amp		primary	8	290	True	lockbox
+H3b_driver_family	H3b	LoY		primary	74	93	True	lockbox
+H3b_driver_family	H3b	sex_female		primary	138	178	True	lockbox
+H3b_driver_family	H3b	NRF2_active		primary	10	290	True	lockbox
+H3b_driver_family	H3b	LoF:ARID1A		primary	12	285	True	lockbox
+H3b_driver_family	H3b	LoF:SMARCA4		primary	10	291	True	lockbox
+H3b_driver_family	H3b	LoF:STAG2		primary	5	296	True	lockbox
+H3b_driver_family	H3b	LoF:PTEN		primary	29	273	True	lockbox
+H3b_driver_family	H3b	LoF:RB1		primary	17	283	True	lockbox
+H3b_driver_family	H3b	LoF:KMT2D		primary	4	293	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
+H3b_driver_family	H3b	fusion:EWSR1::FLI1|ERG		primary	4	314	False	rare-context route (LOSO + DEMETER2 on A + leave-one-model-out), labelled 'not lockbox-testable'
