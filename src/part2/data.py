@@ -100,6 +100,23 @@ def load_confounders() -> pd.DataFrame:
     return pd.read_csv(paths.CONFOUNDERS_CSV, index_col=0)
 
 
+@lru_cache(maxsize=1)
+def crispr_model_ids() -> tuple[str, ...]:
+    """ModelIDs of CRISPRGeneEffect.csv in CSV row order, reading ONLY the first (ModelID) column: no gene-effect
+    value is parsed. Used by context / lockbox code, which must not touch dependency values."""
+    return tuple(pd.read_csv(paths.GENE_EFFECT_CSV, usecols=[0]).iloc[:, 0].astype(str))
+
+
+def universe_model_ids() -> list[str]:
+    """U (same rule as :func:`universe_models`) from the ModelID column only (no effect values read)."""
+    ids = pd.Index(crispr_model_ids())
+    m = load_models().reindex(ids)
+    if m.index.isna().any() or len(m) != len(ids):
+        raise KeyError("CRISPR models missing from Model.csv")
+    eng = m.EngineeredModel.notna() | m.CulturedResistanceDrug.notna()
+    return list(ids[~eng.values])
+
+
 def universe_models() -> list[str]:
     """U = CRISPRGeneEffect models minus engineered / drug-adapted models (Model.csv EngineeredModel non-empty;
     covers all CulturedResistanceDrug models). DESIGN §2.1: 1,361 - 16 = 1,345."""

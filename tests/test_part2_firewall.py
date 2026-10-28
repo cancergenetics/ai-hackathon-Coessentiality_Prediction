@@ -21,4 +21,9 @@ def test_no_forbidden_inputs():
                 hits.append(f"{f.relative_to(ROOT)}:{line}:{pat}")
     # mentions inside docstrings that describe the firewall itself are allowed only in __init__.py
     hits = [h for h in hits if not h.startswith("src/part2/__init__.py")]
+    # CCLE proteomics is a context input for the pre-registered LoF functional check (DESIGN v3.1 §2.2) and a later
+    # validation input; it may be named only where its path is defined and in the context builder.
+    # (contexts.py reaches it only through paths.CCLE_PROTEOMICS_XLSX)
+    allowed = {("src/part2/paths.py", "Proteomics"), ("src/part2/paths.py", "protein_quant")}
+    hits = [h for h in hits if (h.split(":")[0], h.rsplit(":", 1)[1]) not in allowed]
     assert not hits, hits
