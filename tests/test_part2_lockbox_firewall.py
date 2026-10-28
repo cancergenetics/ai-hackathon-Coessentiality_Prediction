@@ -29,7 +29,9 @@ def rel(p):
 OUTCOME = [r"load_gene_effect", r"GENE_EFFECT_CSV", r"CRISPRGeneEffect\.csv", r"ScreenGeneEffect", r"DEMETER2_CSV",
            r"D2_combined", r"\.subset\(", r"universe_models\("]
 OUTCOME_ALLOWED = {"src/part2/data.py", "src/part2/paths.py", "src/part2/scores.py", "src/part2/genefilter.py",
-                   "src/part2/assoc.py", "src/part2/pipeline.py", "scripts/31_score_blocks.py"}
+                   "src/part2/assoc.py", "src/part2/pipeline.py"}
+# FZ-C: scripts/31 lost its all-model / U options and is no longer on the allowlist; construction model sets come
+# only from src/part2/runsets.py, which reads A through assoc.a_models (manifest-verified).
 LOCKBOX = [r"LOCKBOX_MODELS", r"lockbox_models"]
 LOCKBOX_ALLOWED = {"src/part2/paths.py", "scripts/33_make_lockbox.py", "src/part2/assoc.py"}
 NO_OUTCOME = ["src/part2/contexts.py", "src/part2/lockbox.py", "src/part2/registry.py", "src/part2/stats.py",
@@ -91,3 +93,16 @@ def test_assoc_structure():
     fn = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "load_A_effects")
     body = ast.get_source_segment(text, fn)
     assert "a_models(" in body and "_model_list" not in body and "lockbox_models" not in body
+
+
+def test_construction_runs_use_A_only():
+    s31 = (ROOT / "scripts" / "31_score_blocks.py").read_text()
+    assert "runsets.models(" in s31 and "choices=runsets.run_names()" in s31
+    for bad in ("universe_models", "crispr_model_ids", "load_gene_effect", '"all"', '"U"', "lockbox_models",
+                "LOCKBOX"):
+        assert bad not in s31, bad
+    rs = (ROOT / "src" / "part2" / "runsets.py").read_text()
+    assert "a_models()" in rs
+    for bad in ("universe_models", "universe_model_ids", "crispr_model_ids", "lockbox_models", "LOCKBOX",
+                "load_gene_effect"):
+        assert bad not in rs, bad

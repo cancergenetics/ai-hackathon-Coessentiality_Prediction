@@ -40,7 +40,7 @@ import numpy as np
 from part2 import paths
 
 log = logging.getLogger(__name__)
-METHODS = ("zavg_BEF", "gls")
+METHODS = ("zavg_BEF", "gls", "pearson")
 
 
 def peak_rss_gb() -> float:
@@ -140,7 +140,11 @@ def zavg_rows(m, gidx, rows_wanted=None):
         yield pos[rows[loc]], (Z["B"] + Z["E"] + Z["F"]) / 3.0
 
 
-def zavg_block(X, gidx, S_mask, K_all=50, config=None, nan_non_bg=True):
+def zavg_block(X, gidx, S_mask, K_all=50, config=None, nan_non_bg=True, rect=False):
+    """S x S zavg_BEF block (+ top-K over all protein genes for S rows). rect=True additionally returns, in
+    info['_rect'] = (vals, pos), the (non-S protein genes) x S rectangle used by the attachment rule (DESIGN v3.1
+    §2.3): entry (g, s) is the value Part 1's upper-triangle convention would store, i.e. computed in row min(g, s)
+    (genes.tsv order). The S x S block is unchanged by rect (same rows, same arithmetic)."""
     m, tim = zavg_model(X, config)
     s_pos = np.flatnonzero(S_mask)                          # positions into gidx (ascending)
     ns = len(s_pos)
@@ -149,14 +153,27 @@ def zavg_block(X, gidx, S_mask, K_all=50, config=None, nan_non_bg=True):
     B = np.empty((ns, ns), np.float32)
     TI = np.full((ns, K_all), -1, np.int32)
     TV = np.full((ns, K_all), np.nan, np.float32)
+    if rect:
+        r_pos = np.flatnonzero(~np.asarray(S_mask, bool))  # non-S protein genes (positions into gidx)
+        rloc = np.full(len(gidx), -1)
+        rloc[r_pos] = np.arange(len(r_pos))
+        R_row = np.full((len(r_pos), ns), np.nan, np.float32)   # computed in the non-S row
+        R_col = np.full((ns, len(r_pos)), np.nan, np.float32)   # computed in the S row
     t = time.perf_counter()
-    for ip, za in zavg_rows(m, gidx, s_pos):
+    for ip, za in zavg_rows(m, gidx, None if rect else s_pos):
         z32 = za.astype(np.float32)                          # stored precision (as Part 1's matrix)
-        B[loc_of[ip]] = z32[:, s_pos]
-        if K_all:
-            zz = z32.astype(np.float64)
-            zz[np.arange(len(ip)), ip] = -np.inf
-            TI[loc_of[ip]], TV[loc_of[ip]] = select_topk(zz, K_all)
+        ins = loc_of[ip] >= 0
+        if ins.any():
+            zs = z32[ins]
+            B[loc_of[ip[ins]]] = zs[:, s_pos]
+            if rect:
+                R_col[loc_of[ip[ins]]] = zs[:, r_pos]
+            if K_all:
+                zz = zs.astype(np.float64)
+                zz[np.arange(len(zz)), ip[ins]] = -np.inf
+                TI[loc_of[ip[ins]]], TV[loc_of[ip[ins]]] = select_topk(zz, K_all)
+        if rect and (~ins).any():
+            R_row[rloc[ip[~ins]]] = z32[~ins][:, s_pos]
     tim["block_scan"] = round(time.perf_counter() - t, 2)
     mirror_upper(B)
     non_bg = ~m.bg[gidx[s_pos]]
@@ -166,6 +183,14 @@ def zavg_block(X, gidx, S_mask, K_all=50, config=None, nan_non_bg=True):
     info = dict(null_moments={c: dict(mean=m._moments[c][0], sd=m._moments[c][1]) for c in "BEF"},
                 n_bg=int(m.n_bg), knn_K=int(m.K), n_S_non_bg_nan=int(non_bg.sum()) if nan_non_bg else 0,
                 config={k: getattr(m.cfg, k) for k in m.cfg.__dataclass_fields__})
+    if rect:
+        upper = r_pos[:, None] < s_pos[None, :]             # row gene index < column gene index
+        Rv = np.where(upper, R_row, R_col.T).astype(np.float32)
+        del R_row, R_col
+        if nan_non_bg:
+            Rv[~m.bg[gidx[r_pos]]] = np.nan
+            Rv[:, non_bg] = np.nan
+        info["_rect"] = (Rv, r_pos)
     return B, (TI, TV), tim, info
 
 
@@ -228,11 +253,41 @@ def gls_block(X, gidx, S_mask):
     return B, None, tim, info
 
 
-def block_from_matrix(X, gidx, method: str, S_mask, K_all=50, config=None):
+def pairwise_pearson(Y: np.ndarray) -> np.ndarray:
+    """Pairwise-complete Pearson r between the columns of Y (models x genes, NaN = missing); exact per pair
+    (sums over the models where both genes are observed), equal to Part 1's pearson_signed."""
+    Y = np.asarray(Y, np.float64)
+    M = (~np.isnan(Y)).astype(np.float64)
+    X0 = np.where(M > 0, Y, 0.0)
+    n = M.T @ M
+    Sx = X0.T @ M                                           # sum of x_i over models where i and j observed
+    Sxx = (X0 * X0).T @ M
+    Sxy = X0.T @ X0
+    with np.errstate(invalid="ignore", divide="ignore"):
+        num = n * Sxy - Sx * Sx.T
+        den = np.sqrt((n * Sxx - Sx * Sx) * (n * Sxx.T - Sx.T * Sx.T))
+        r = num / den
+    r[n < 3] = np.nan
+    return r
+
+
+def pearson_block(X, gidx, S_mask):
+    """Pearson (Part 1 baseline pearson_signed, pairwise complete) over S: symmetric float32 block (bridge
+    secondary comparator)."""
+    t = time.perf_counter()
+    s_pos = np.flatnonzero(S_mask)
+    B = pairwise_pearson(np.asarray(X)[:, gidx[s_pos]]).astype(np.float32)
+    mirror_upper(B)
+    return B, None, dict(pearson=round(time.perf_counter() - t, 2)), {}
+
+
+def block_from_matrix(X, gidx, method: str, S_mask, K_all=50, config=None, rect=False):
     if method == "zavg_BEF":
-        return zavg_block(X, gidx, S_mask, K_all, config)
+        return zavg_block(X, gidx, S_mask, K_all, config, rect=rect)
     if method == "gls":
         return gls_block(X, gidx, S_mask)
+    if method == "pearson":
+        return pearson_block(X, gidx, S_mask)
     raise ValueError(f"method must be one of {METHODS}")
 
 
@@ -241,8 +296,9 @@ class Block:
     """S x S score block of one run. ``vals`` float32 symmetric (NaN diagonal); ``s_index`` = genes.tsv indices of
     S (ascending); ``topk_all`` = (idx, val) over all protein genes for S rows (zavg only) or None."""
 
-    def __init__(self, vals, s_index, meta, topk_all=None):
+    def __init__(self, vals, s_index, meta, topk_all=None, rect=None):
         self.vals, self.s_index, self.meta, self.topk_all = vals, np.asarray(s_index), meta, topk_all
+        self.rect = rect      # (vals: non-S genes x S float32, genes.tsv indices of the non-S rows) or None
 
     def topk(self, K: int = 50):
         """Exact top-K within S (local indices into S, values), self excluded."""
@@ -258,11 +314,12 @@ def load_block(path) -> Block:
     d = np.load(path)
     meta = json.loads(path.with_suffix(".json").read_text())
     tk = (d["topk_idx"], d["topk_val"]) if "topk_idx" in d.files else None
-    return Block(d["vals"], d["s_index"], meta, tk)
+    rc = (d["rect_vals"], d["rect_index"]) if "rect_vals" in d.files else None
+    return Block(d["vals"], d["s_index"], meta, tk, rc)
 
 
 def score_block(model_ids, method: str, S_mask, K_all: int = 50, use_cache: bool = True,
-                force: bool = False) -> Block:
+                force: bool = False, rect: bool = False) -> Block:
     """Run the locked scorer (zavg_BEF) or Part 1's GLS on the given DepMap model set and return the S x S block
     over the gene set S (boolean mask over Part 1 genes.tsv). Serial; cached; sidecar records runtime / RSS."""
     from part2 import data
@@ -270,7 +327,9 @@ def score_block(model_ids, method: str, S_mask, K_all: int = 50, use_cache: bool
     S_mask = np.asarray(S_mask, bool)
     out = cache_path(method, model_ids, S_mask)
     if use_cache and out.exists() and not force:
-        return load_block(out)
+        blk = load_block(out)
+        if not rect or blk.rect is not None:
+            return blk
     t0 = time.perf_counter()
     ge = data.load_gene_effect()
     genes = data.protein_genes()
@@ -281,8 +340,11 @@ def score_block(model_ids, method: str, S_mask, K_all: int = 50, use_cache: bool
     X = ge.subset(model_ids)
     t_load = time.perf_counter() - t0
     gidx = genes.depmap_index.values.astype(np.int64)
-    vals, tk, tim, info = block_from_matrix(X, gidx, method, S_mask, K_all)
+    vals, tk, tim, info = block_from_matrix(X, gidx, method, S_mask, K_all, rect=rect)
     del X
+    rc = info.pop("_rect", None)
+    if rc is not None:
+        rc = (rc[0], np.asarray(rc[1], np.int64))          # positions into gidx == genes.tsv index
     s_index = np.flatnonzero(S_mask)
     meta = dict(method=method, model_set_hash=data.model_set_hash(model_ids), n_models=len(model_ids),
                 model_ids=model_ids, S_hash=mask_hash(S_mask), n_S=int(S_mask.sum()), n_genes=len(genes),
@@ -295,11 +357,13 @@ def score_block(model_ids, method: str, S_mask, K_all: int = 50, use_cache: bool
         arrs = dict(vals=vals, s_index=s_index)
         if tk is not None:
             arrs.update(topk_idx=tk[0], topk_val=tk[1])
+        if rc is not None:
+            arrs.update(rect_vals=rc[0], rect_index=rc[1])
         np.savez(out, **arrs)
         out.with_suffix(".json").write_text(json.dumps(meta, indent=1, default=str))
     log.info("score_block %s n_models=%d |S|=%d: %.1f s, peak RSS %.2f GB", method, len(model_ids),
              len(s_index), meta["runtime_s"], peak_rss_gb())
-    return Block(vals, s_index, meta, tk)
+    return Block(vals, s_index, meta, tk, rc)
 
 
 def scores_topk(model_ids, method: str = "zavg_BEF", K: int = 50, S_mask=None, **kw):

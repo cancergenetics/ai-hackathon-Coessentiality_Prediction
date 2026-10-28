@@ -53,6 +53,42 @@ def recovered_coverage(map1: C.ClusterMap, map2: C.ClusterMap, selective: np.nda
     return float((cov & selective).sum() / max(selective.sum(), 1)), n_eval, n_rec
 
 
+def split_half_rows(si: int, g1, g2, ref1, ref2, z0: float, selective, ccfg: C.ClusterConfig = C.ClusterConfig(),
+                    scfg=SplitHalfConfig(), arm=None, band=None, rewire_seed: int | None = 4000, chrom=None,
+                    pos=None) -> list[dict]:
+    """Split-half rows for one split from prebuilt half graphs (g1, g2) and their cohesion reference blocks
+    (ref1, ref2; same scale as z0). Observed + degree-preserving rewired baseline (seeds rewire_seed + 2 si, +1)."""
+    rows = []
+    variants = [("observed", g1, g2)]
+    if rewire_seed is not None:
+        (r1,), (r2,) = rewire_runs([g1], rewire_seed + 2 * si), rewire_runs([g2], rewire_seed + 2 * si + 1)
+        variants.append(("rewired", r1, r2))
+    for name, h1, h2 in variants:
+        m1 = C.build_map([h1], ccfg, ref1 if name == "observed" else None, z0)
+        m2 = C.build_map([h2], ccfg, ref2 if name == "observed" else None, z0)
+        a, ne1, nr1 = recovered_coverage(m1, m2, selective, scfg, arm, band, chrom, pos)
+        b, ne2, nr2 = recovered_coverage(m2, m1, selective, scfg, arm, band, chrom, pos)
+        nl = dataclasses.replace(scfg, exclude_locus=False)
+        a2 = recovered_coverage(m1, m2, selective, nl)[0]
+        b2 = recovered_coverage(m2, m1, selective, nl)[0]
+        rows.append(dict(split=si, variant=name, cov_1to2=a, cov_2to1=b, stat=(a + b) / 2,
+                         stat_locus_included=(a2 + b2) / 2,
+                         n_eval=ne1 + ne2, n_recovered=nr1 + nr2, edges_h1=h1.m, edges_h2=h2.m,
+                         n_clusters_h1=len(m1.clusters), n_clusters_h2=len(m2.clusters),
+                         n_genes_h1=int(sum(len(c["members"]) for c in m1.level(1))),
+                         n_genes_h2=int(sum(len(c["members"]) for c in m2.level(1)))))
+    return rows
+
+
+def summarise_split_half(z0, k, rows) -> dict:
+    df = pd.DataFrame(rows)
+    obs = df[df.variant == "observed"]
+    rew = df[df.variant == "rewired"]
+    return dict(z0=z0, k=k, stat=float(obs.stat.mean()), stat_sd=float(obs.stat.std(ddof=0)),
+                stat_locus_included=float(obs.stat_locus_included.mean()),
+                rewired_stat=float(rew.stat.mean()) if len(rew) else np.nan, per_split=df)
+
+
 def split_half_statistic(half_blocks: list[tuple[np.ndarray, np.ndarray]], z0: float, k: int, selective,
                          ccfg: C.ClusterConfig = C.ClusterConfig(), scfg=SplitHalfConfig(), cap: float = 3.0,
                          arm=None, band=None, rewire_seed: int | None = 4000, chrom=None, pos=None) -> dict:
@@ -60,28 +96,8 @@ def split_half_statistic(half_blocks: list[tuple[np.ndarray, np.ndarray]], z0: f
     rows = []
     for si, (b1, b2) in enumerate(half_blocks):
         g1, g2 = build_graph(b1, k, z0, cap), build_graph(b2, k, z0, cap)
-        variants = [("observed", g1, g2)]
-        if rewire_seed is not None:
-            (r1,), (r2,) = rewire_runs([g1], rewire_seed + 2 * si), rewire_runs([g2], rewire_seed + 2 * si + 1)
-            variants.append(("rewired", r1, r2))
-        for name, h1, h2 in variants:
-            m1 = C.build_map([h1], ccfg, b1 if name == "observed" else None, z0)
-            m2 = C.build_map([h2], ccfg, b2 if name == "observed" else None, z0)
-            a, ne1, nr1 = recovered_coverage(m1, m2, selective, scfg, arm, band, chrom, pos)
-            b, ne2, nr2 = recovered_coverage(m2, m1, selective, scfg, arm, band, chrom, pos)
-            nl = dataclasses.replace(scfg, exclude_locus=False)
-            a2 = recovered_coverage(m1, m2, selective, nl)[0]
-            b2 = recovered_coverage(m2, m1, selective, nl)[0]
-            rows.append(dict(split=si, variant=name, cov_1to2=a, cov_2to1=b, stat=(a + b) / 2,
-                             stat_locus_included=(a2 + b2) / 2,
-                             n_eval=ne1 + ne2, n_recovered=nr1 + nr2, edges_h1=h1.m, edges_h2=h2.m,
-                             n_clusters_h1=len(m1.clusters), n_clusters_h2=len(m2.clusters)))
-    df = pd.DataFrame(rows)
-    obs = df[df.variant == "observed"]
-    rew = df[df.variant == "rewired"]
-    return dict(z0=z0, k=k, stat=float(obs.stat.mean()), stat_sd=float(obs.stat.std(ddof=0)),
-                stat_locus_included=float(obs.stat_locus_included.mean()),
-                rewired_stat=float(rew.stat.mean()) if len(rew) else np.nan, per_split=df)
+        rows += split_half_rows(si, g1, g2, b1, b2, z0, selective, ccfg, scfg, arm, band, rewire_seed, chrom, pos)
+    return summarise_split_half(z0, k, rows)
 
 
 def select_z0k(results: list[dict]) -> dict:
