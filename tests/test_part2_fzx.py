@@ -1,4 +1,4 @@
-"""FZ-X freeze (DESIGN v3.1 §0 F4; scripts/39_freeze_fzx.py, src/part2/fzx.py).
+"""FZ-X freeze (DESIGN v3.1 §0 F4; scripts/41_freeze_fzx.py, 42_amend_A1.py, 43_amend_A2.py, src/part2/fzx.py).
 
 1. Toy checks of the FZ-X helpers: map conversion, evaluability rule, control-unit rules, registry text fill.
 2. The committed freeze: manifest hashes, unit sets / complex-set hashes and m in every registry entry, H1 event list
@@ -182,8 +182,8 @@ def test_unit_sets_hashes_and_m(man, entries):
     z = (FZX / "units_zavg_coarse.txt").read_text().split()
     g = (FZX / "units_gls_coarse.txt").read_text().split()
     sub = list(pd.read_csv(FZX / "h2_submodules.tsv", sep="\t").unit)
-    h1u = (FZX / "units_h1_components_A1.txt").read_text().split()
-    h1s = (FZX / "units_h1s_components.txt").read_text().split()
+    h1u = (FZX / "units_h1_components_A2.txt").read_text().split()           # current (after A1 + A2)
+    h1s = (FZX / "units_h1s_components_A2.txt").read_text().split()
     cl = pd.read_csv(ROOT / "results/part2/construction/zavg_map/clusters.tsv", sep="\t")
     assert z == sorted(cl.cluster_id[cl.level == 1]) and len(z) == 367
     em = FrozenMap.from_membership(pd.read_csv(FZX / "zavg_engine_membership.tsv", sep="\t"))
@@ -234,8 +234,29 @@ def test_h1_event_list(man, entries):
     u1 = (FZX / "units_h1_components_A1.txt").read_text().split()
     u2 = (FZX / "units_h1s_components.txt").read_text().split()
     assert sorted(u1 + u2) == units and not set(u1) & set(u2)
+    # amendment A2: genetic (>= 50% of A loss models with a LoF or hom-del call) -> H1, else -> H1S
+    s2 = pd.read_csv(FZX / "h1_event_split_A2.tsv", sep="\t", keep_default_na=False)
+    assert list(s2.event) == list(ev.event)
+    c = ctx.set_index("gene")
+    share = (c.n_A_LoF + c.n_A_homdel) / c.n_A
+    want = np.where(share.reindex(ev.gene).values >= 0.5, "H1_within_complex_GI", "H1S_silencing_GI")
+    assert (s2.entry.values == want).all()
+    assert (s2.loss_class == np.where(want == "H1_within_complex_GI", "genetic", "silencing")).all()
+    assert set(s2.genetic_sublabel[s2.loss_class == "genetic"]) <= {"LoF-majority", "CN-majority"}
+    assert (s2.genetic_sublabel[s2.loss_class == "silencing"] == "").all()
+    moved = s2[s2.entry != s2.entry_A1]
+    assert list(moved.event) == [m["event"] for m in man["amendments"][1]["moved"]]
+    assert "Z0109|SMARCB1" in set(moved.event)                         # the review's M1 case
+    v1 = (FZX / "units_h1_components_A2.txt").read_text().split()
+    v2 = (FZX / "units_h1s_components_A2.txt").read_text().split()
+    assert sorted(v1 + v2) == units and not set(v1) & set(v2)
     assert entries["H1_within_complex_GI"]["family_m"]["value"] + entries["H1S_silencing_GI"]["family_m"]["value"] \
         == len(units)
+    # the analysis specification of each event (covariates by FZ-X rule-6 type) is unchanged by A1 / A2
+    for k in ("H1_within_complex_GI", "H1S_silencing_GI"):
+        for it in entries[k]["context_family"]["contexts"]:
+            assert it["type"] == c.loc[it["id"].split(":", 1)[1], "type"], it["id"]
+            assert it["loss_class"] == ("genetic" if k == "H1_within_complex_GI" else "silencing"), it["id"]
     assert man["summary"]["h1"]["n_events"] == len(ev)
     assert sorted(ctx.context) == sorted(f"H1loss:{g}" for g in set(ev.gene))
     # events link only to coarse units; attachments only through non-locus level-1 attachments
@@ -252,9 +273,10 @@ def test_lockbox_testable_list(entries):
     assert set(lb.entry) == set(entries)
     for r in lb.itertuples(index=False):
         assert str(r.lockbox_testable) == str(int(r.n_L) >= 5 and int(r.ref_L) >= 5), (r.entry, r.context)
-    split = pd.read_csv(FZX / "h1_event_split_A1.tsv", sep="\t")
+    split = pd.read_csv(FZX / "h1_event_split_A2.tsv", sep="\t")
     for k in ("H1_within_complex_GI", "H1S_silencing_GI"):
         assert sorted(lb.event[lb.entry == k]) == sorted(split.event[split.entry == k]), k
+    assert set(lb.direction[lb.entry == "H1S_silencing_GI"]) == {"H1S"}
 
 
 def _committed_pending_version(eid: str):
@@ -303,11 +325,11 @@ def test_amendment_A1_is_the_only_non_fill_change(entries, man):
     if h1_fzx_txt is None:
         pytest.skip("no history with the FZ-X commit")
     h1_fzx = registry.load_yaml(h1_fzx_txt)
-    assert "amendments" not in h1_fzx and len(man["amendments"]) == 1 and man["amendments"][0]["id"] == "A1"
+    assert "amendments" not in h1_fzx and [a["id"] for a in man["amendments"]] == ["A1", "A2"]
     for k, e in entries.items():
         am = e.get("amendments", [])
         if k in ("H1_within_complex_GI", "H1S_silencing_GI"):
-            assert [a["id"] for a in am] == ["A1"] and am[0]["amends_commit"] == c, k
+            assert [a["id"] for a in am] == ["A1", "A2"] and am[0]["amends_commit"] == c, k
             assert registry.amendment_changes(h1_fzx, e) == [], k
             declared = am[0]["changed_paths"]
             assert registry.changed_top_paths(h1_fzx, e, declared) == set(declared), k
@@ -319,6 +341,64 @@ def test_amendment_A1_is_the_only_non_fill_change(entries, man):
         "context_family.contexts", "complex_set_hash", "family_m.value"}
     txt = (REG / "AMENDMENTS.md").read_text()
     assert "## A1" in txt and c in txt and man["amendments"][0]["timestamp_utc"] in txt
+
+
+def test_amendment_A2_changes_only_declared_paths(entries, man):
+    """A1 commit -> now: H1 and H1S differ only in A2's declared paths (all changed); A2 record in AMENDMENTS.md."""
+    a2 = man["amendments"][1]
+    assert a2["id"] == "A2"
+    c = a2["amends_commit"]
+    for k in ("H1_within_complex_GI", "H1S_silencing_GI"):
+        old_txt = _show(c, f"docs/registry/{k}.yaml")
+        if old_txt is None:
+            pytest.skip("no history with the A1 commit")
+        old, e = registry.load_yaml(old_txt), entries[k]
+        assert [a["id"] for a in old["amendments"]] == ["A1"], k
+        rec = e["amendments"][1]
+        assert rec["id"] == "A2" and rec["amends_commit"] == c and rec["timestamp_utc"] == a2["timestamp_utc"], k
+        assert registry.amendment_changes(old, e) == [], k
+        assert registry.changed_top_paths(old, e, rec["changed_paths"]) == set(rec["changed_paths"]), k
+    assert entries["H1S_silencing_GI"]["direction"] == "H1S"
+    assert "THIS entry only" in entries["H1S_silencing_GI"]["fdr_rule"]
+    for k in ("H1_within_complex_GI", "H1S_silencing_GI"):
+        assert "10-20" not in entries[k]["context_family"]["expected_events"], k
+        assert "pending" not in entries[k]["implementation_note"], k
+    txt = (REG / "AMENDMENTS.md").read_text()
+    assert "## A2" in txt and c in txt and a2["timestamp_utc"] in txt
+
+
+@pytest.mark.skipif(not (ROOT / "datasets" / "Paralogs").exists(), reason="annotation files not available")
+def test_gametologs_and_renamed_paralogs_from_ensembl_ids():
+    """M2 / note a: X-Y gametologs from the Ensembl paralogue file + chromosome of every Ensembl gene (screened or
+    not); renamed DepMap genes keep their paralogs through Entrez -> Ensembl gene ID."""
+    from part2 import cscore, data
+    g = data.protein_genes()
+    a = cscore.load_annotation(list(g.depmap_column))
+    assert a.x_gametolog("RBMX") and {p for p in a.paralogs["RBMX"] if a.chrom.get(p) == "Y"} >= {"RBMY1A1"}
+    for x in ("DDX3X", "KDM6A", "USP9X", "ZFX", "EIF1AX", "RPS4X"):
+        assert a.x_gametolog(x) and a.gametolog(x), x
+    assert not a.x_gametolog("ARID1A") and not a.gametolog("SMARCA4")
+    assert a.is_paralog("TSLIG3A", "TSLIG3B")                        # HGNC FAM98A / FAM98B
+    assert a.is_paralog("TIPE2", "TNFAIP8")                          # HGNC TNFAIP8L2
+    rem = cscore.Removal(chrY=True)
+    assert rem.removed(["RBMX (27316)", "ARID1A (8289)"], a) == ["RBMX (27316)"]
+    # toy: the partner's chromosome is used even when the partner is not a screened gene
+    t = cscore.Annotation(paralogs={"XG": {"YG"}, "YG": {"XG"}}, chrom={"XG": "X", "YG": "Y"})
+    assert t.x_gametolog("XG") and t.gametolog("YG") and not t.x_gametolog("YG")
+
+
+def test_m2_evaluability_rows(man):
+    """M2 changed only n_removed / n_used of the LoY / sex_female rows of units containing RBMX; m is unchanged."""
+    ev = pd.read_csv(FZX / "evaluability_tests.tsv.gz", sep="\t")
+    em = pd.read_csv(FZX / "zavg_engine_membership.tsv", sep="\t")
+    gm = pd.read_csv(FZX / "gls_engine_membership.tsv", sep="\t")
+    with_rbmx = set(em.unit_id[(em.gene == "RBMX (27316)") & (em.level == 1)]) | \
+        set(gm.unit_id[(gm.gene == "RBMX (27316)") & (gm.level == 1)])
+    assert with_rbmx
+    r = ev[ev.unit.isin(with_rbmx) & ev.context.isin(["LoY", "sex_female"])]
+    assert len(r) and (r.n_removed >= 1).all()
+    assert man["summary"]["m"]["H3a"]["m"] == 8441 and man["summary"]["m"]["H3b"]["m"] == 7340
+    assert man["summary"]["m"]["BRIDGE_L_gls"] == {"H3a": 8717, "H3b": 7577, "total": 16294}
 
 
 def test_amendment_machinery_toy():

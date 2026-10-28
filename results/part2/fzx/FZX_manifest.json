@@ -1,8 +1,8 @@
 {
  "freeze": "FZ-X",
  "design": "DESIGN.md v3.1 \u00a70 F4, \u00a72.2, \u00a72.5-2.7",
- "created": "2026-10-28T22:43:00",
- "parent_commit": "8f63b6ec87a93792c7a7f4ad7d4e60df02f7f3be",
+ "created": "2026-10-28T23:35:47Z",
+ "parent_commit": "adb29e08be4ab458b1b95c93452a58aee39139bc",
  "fzc_map_commit": "27fa9b275a83fd76a9a2f35107fc0b4f3aaa9ac4",
  "inputs": {
   "results/part2/construction/FZC_manifest.json": "8070c5c314d00eb115b05d238eab7ee79e7a3ef6ad0d230366d25c7c4fc7777c",
@@ -13,21 +13,25 @@
   "coordinates_ensembl116": "a80896b35cfdfc0bbb5755b05ac1d123d326a8eba87add554bb3ee2fdd57a1c8"
  },
  "code": {
-  "scripts/39_freeze_fzx.py": "a51e8b3efe880eb1512014b883f5d5fb5bbb29ddc0ad1e64cb6b456a66dad229",
+  "scripts/41_freeze_fzx.py": "fd7d9c7bb073c1fb7063ec08fd291dd11fa549762805a50cb1423a4ee352f059",
   "src/part2/fzx.py": "74f1c3513e86987d2c3f1f74b32283a7035917eea4f3429664e3b581d7f73e02",
   "src/part2/h1.py": "5bd55e4b10f350556c10d9e5a7a9e1950070b028c3bc038079d88943b6115fd0",
-  "src/part2/cscore.py": "3893b2148089e3f128c29702f6fc743db13c95dd01c90fd86683aab46a3e7fa6",
+  "src/part2/cscore.py": "2ed768432a13eb7b474858991790cad034cf8ddcda43c5778a673c5d234ffad9",
   "scripts/31_score_blocks.py": "941ae97542e445c5359381dfa77610151ab47eccaa3c6ede1eb8eff0d0eb16ec",
-  "scripts/40_amend_A1.py": "3d05dd6483d7edba45eb77aecb873901b5de1638745324362e2b92a597e720c0",
-  "scripts/39_freeze_fzx.py (after A1: refuses to overwrite an amended freeze)": "f636d4104684aae9603abdf5d25f481058b2396de6d28a60afb11ea8f5dee79d",
-  "src/part2/registry.py": "e99f9e92277dd7d321ac3c2675a31fe1536c9d5ec9e1a6c5d922f02aa45db516"
+  "scripts/42_amend_A1.py": "900791007d46d5b21347ad333e8d3e97a8cd8b3d602d1c1126f3053ba74d5230",
+  "src/part2/registry.py": "abf6c392c88867601cb574a4a2c24e3ce4de817d1d5b51e98da8f0895af15be0",
+  "scripts/43_amend_A2.py": "d47980d15ac63c9e8e431bd7b00c62fe36d6aea6c84347b0cadf5664c334d4d3"
+ },
+ "notes": {
+  "script31": "scripts/31_score_blocks.py differs from the SHA-256 recorded in the FZ-C manifest because FZ-X added the A-only guard (assert_A_only, a no-op for A run sets). Code-only change: no FZ-C map artefact is affected, and the independent FZ-C review confirmed a byte-identical map rebuild.",
+  "created": "UTC; created / parent_commit / runtime_s / timings_s are the only fields that vary between re-runs"
  },
  "complex_set_hashes": {
   "zavg_coarse": "53f9dbf46370d237",
   "gls_coarse": "14b6c53a01146a61",
   "h2_submodules": "141a70b7133ed8a4",
-  "h1_components": "4a5dcc9d02bc4b23",
-  "h1s_components": "d6264047856ff8e9"
+  "h1_components": "686659438f7d781c",
+  "h1s_components": "736ed74bc58bc04a"
  },
  "membership_sha256": {
   "zavg (FZ-C membership.tsv)": "fec552d4398de8556d799ff09ebc88575fe75eeba53383638c11303be3c812cd",
@@ -36,34 +40,37 @@
   "gls engine membership": "e787126a238bc495eeb69a6287306522bc0da94409b3d8c99225ce6ee27a5d91"
  },
  "files": {
+  "data_cache/part2/fzx/h1_loss_table.parquet": "89f6c359882d4b56e0d31ace3e2bfc4af0c8c54299372f35823a3b6b1c63fafc",
+  "results/part2/construction/gls_map/clusters.tsv": "f79160a8e5456e9c24805462d1a18250f56ae56cf246b79491b9da1acac8e4ba",
+  "results/part2/construction/gls_map/membership.tsv": "760e065e39107c97c16735e6dc77f5bca4f73567f7d73d68d67c9ba44bf17dd3",
+  "results/part2/construction/tiers/gls_tiers.tsv": "2224a9c22de8f124b7881de603244338b6cfbe093f5868a8c2d64b54a5cfdb41",
+  "results/part2/construction/tiers/zavg_tiers.tsv": "a861760975bfcc937c31606cf20035b69529a79f318089b9b3ef3f99e885e599",
+  "results/part2/construction/zavg_map/attachments.tsv": "cd9b988bb2246ca57f6a9c724710a131c0b06bb66eea527033c8ea74b753ac18",
+  "results/part2/construction/zavg_map/clusters.tsv": "7623ce58bc224416ab301e44ba2f761337a2e24c2a31cdd6392048698e8c0056",
+  "results/part2/construction/zavg_map/membership.tsv": "fec552d4398de8556d799ff09ebc88575fe75eeba53383638c11303be3c812cd",
   "results/part2/fzx/bridgeL_gls_contexts.tsv": "18b88466f13640fe47bb12cb8c9db2fc7b4d1ec43db1837bc394bc7afdfc0671",
   "results/part2/fzx/control_units.tsv": "39d376ef786f81b09872e182919d7952ec415950332c0ba37ce4a0436aaa51d0",
-  "results/part2/fzx/evaluability_tests.tsv.gz": "c9bebee04f5aaf7e5b89a27b9a47b53249854227df9ef3052a12a9913d20dc30",
+  "results/part2/fzx/evaluability_tests.tsv.gz": "dacba621d710c09461e948ff5eb62f67655e18dfde6e499c5f896a51514f510a",
   "results/part2/fzx/gls_engine_membership.tsv": "e787126a238bc495eeb69a6287306522bc0da94409b3d8c99225ce6ee27a5d91",
   "results/part2/fzx/h1_candidates.tsv": "40b1febf6219ced1f6fe47b87f326d77c7f04fac6519f183fed31d84c55cad33",
   "results/part2/fzx/h1_contexts.tsv": "3186c2438720c522dea8f369e4550edb4a0d3f1e16fda90eafe7a70b1f1c03bb",
+  "results/part2/fzx/h1_event_split_A1.tsv": "acd8c964ed6f0a3ccd7bd3be3d594c42b60a09f2bcc4a5b3a2ccfd6c8ef8995e",
+  "results/part2/fzx/h1_event_split_A2.tsv": "941cc32177a703e2e5683a72ae336bdb9e78fd0e153f9fe776f1974c644f9dca",
   "results/part2/fzx/h1_events.tsv": "e0297989f795a54fc7a15e82d2dd1494a8514a913ec8476cc10acbf23aab5f58",
   "results/part2/fzx/h1_lof_check_extra.tsv": "fd7648c9087953c050a76e187c3509df5926bfdc983a0b11d5c8826bf43cc1b9",
   "results/part2/fzx/h2_submodules.tsv": "8460d9921db3573fe6c2a32f0f415f00300f82bff608e2e7196f296cd038db04",
   "results/part2/fzx/h3a_contexts.tsv": "203b80573ec1b7a5308426511a9b5a3fdbaf6cef3234a7d6f3d67f4baec7cd5d",
   "results/part2/fzx/h3b_contexts.tsv": "e2bdfc60109c75a881208b04ec721cb32667b157968f6102cbc166b5eb55527c",
-  "results/part2/fzx/lockbox_testable.tsv": "4f6e713c661ba0f0296baa105607177e4bd0f3e621a17b8cd5f890c1b1bff6a6",
+  "results/part2/fzx/lockbox_testable.tsv": "6430d8464162c59322e9fb714f85588ceb1484b12e18b51355055d6e5a06ee31",
   "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2",
   "results/part2/fzx/units_gls_coarse.txt": "00d92e7c679a8760713c6192344bbb79487971cc5b6845db583b479c0033a5d0",
   "results/part2/fzx/units_h1_components.txt": "6ad48d0cae2349877fd50478e73bd4b25322b026b1087e01ea0b86d41dd37997",
-  "results/part2/fzx/units_zavg_coarse.txt": "83a94a542e25135ffeb05ebe029c8d1af3fd70c3a7b4d41b4a774af02123abf1",
-  "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a",
-  "data_cache/part2/fzx/h1_loss_table.parquet": "89f6c359882d4b56e0d31ace3e2bfc4af0c8c54299372f35823a3b6b1c63fafc",
-  "results/part2/construction/zavg_map/clusters.tsv": "7623ce58bc224416ab301e44ba2f761337a2e24c2a31cdd6392048698e8c0056",
-  "results/part2/construction/zavg_map/membership.tsv": "fec552d4398de8556d799ff09ebc88575fe75eeba53383638c11303be3c812cd",
-  "results/part2/construction/zavg_map/attachments.tsv": "cd9b988bb2246ca57f6a9c724710a131c0b06bb66eea527033c8ea74b753ac18",
-  "results/part2/construction/gls_map/clusters.tsv": "f79160a8e5456e9c24805462d1a18250f56ae56cf246b79491b9da1acac8e4ba",
-  "results/part2/construction/gls_map/membership.tsv": "760e065e39107c97c16735e6dc77f5bca4f73567f7d73d68d67c9ba44bf17dd3",
-  "results/part2/construction/tiers/zavg_tiers.tsv": "a861760975bfcc937c31606cf20035b69529a79f318089b9b3ef3f99e885e599",
-  "results/part2/construction/tiers/gls_tiers.tsv": "2224a9c22de8f124b7881de603244338b6cfbe093f5868a8c2d64b54a5cfdb41",
-  "results/part2/fzx/h1_event_split_A1.tsv": "acd8c964ed6f0a3ccd7bd3be3d594c42b60a09f2bcc4a5b3a2ccfd6c8ef8995e",
   "results/part2/fzx/units_h1_components_A1.txt": "9d62f0d3dd0e8abcfec1f50549d1e20a2adfb53a8308fa73668dd076971cb605",
-  "results/part2/fzx/units_h1s_components.txt": "4fa1aac184b1a51304ac30b74f89f87f6510ad01a3a7801e4500929d802e2b1f"
+  "results/part2/fzx/units_h1_components_A2.txt": "b6347b3208ced1fb6ef0a71f00326e286902e1dccd3b2b9277992f8b6b5af40a",
+  "results/part2/fzx/units_h1s_components.txt": "4fa1aac184b1a51304ac30b74f89f87f6510ad01a3a7801e4500929d802e2b1f",
+  "results/part2/fzx/units_h1s_components_A2.txt": "e1d20ceb8f3d4bf3146a49542f503d67a0f53ab5f7672c3d4f39ca6bbf88db09",
+  "results/part2/fzx/units_zavg_coarse.txt": "83a94a542e25135ffeb05ebe029c8d1af3fd70c3a7b4d41b4a774af02123abf1",
+  "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a"
  },
  "registry": {
   "BENCH_complex_vs_gene": {
@@ -335,8 +342,8 @@
     "frozen_inputs[2]",
     "frozen_inputs[3]"
    ],
-   "amendment": "A1",
-   "sha256": "0ab26d544bb21fad3c8ff80345db14b6d36ea714cef5ae956658c5ec05b3fee5"
+   "amendment": "A1, A2",
+   "sha256": "38083d9882119ed1f5280240a7303e4aaefa2ac9ef271ee06a2d1944dcc364bd"
   },
   "H2_submodule_divergence": {
    "filled": [
@@ -371,8 +378,8 @@
   },
   "H1S_silencing_GI": {
    "filled": [],
-   "amendment": "A1",
-   "sha256": "b7ea36a7c87d23f42aafb17f26716c0a56f6433cb5b3d3869d35d4309e9e02be"
+   "amendment": "A1, A2",
+   "sha256": "bd22e48a96989acba44b69f9fa0c643f0b961dbd13035a8eaac17c01701dce9d"
   }
  },
  "summary": {
@@ -405,11 +412,15 @@
     "tests": 7340
    },
    "H1": {
-    "m": 27,
-    "n_events": 23,
-    "n_N_axis": 23,
+    "m": 28,
+    "n_events": 24,
+    "n_N_axis": 24,
     "n_P_axis": 4,
-    "complex_set_hash": "4a5dcc9d02bc4b23"
+    "complex_set_hash": "686659438f7d781c",
+    "sublabels": {
+     "LoF-majority": 20,
+     "CN-majority": 4
+    }
    },
    "H2": "set by the committed H3a and H3b discovery runs (stage-wise)",
    "BRIDGE_L_gls": {
@@ -443,12 +454,13 @@
     "CTRL_PC9": 3
    },
    "H1S": {
-    "m": 339,
-    "n_events": 318,
-    "n_N_axis": 318,
+    "m": 338,
+    "n_events": 317,
+    "n_N_axis": 317,
     "n_P_axis": 21,
-    "complex_set_hash": "d6264047856ff8e9",
-    "standing": "exploratory"
+    "complex_set_hash": "736ed74bc58bc04a",
+    "standing": "exploratory",
+    "direction": "H1S"
    }
   },
   "h1": {
@@ -597,12 +609,12 @@
     "total": 1
    },
    "H1S_silencing_GI": {
-    "testable": 253,
-    "total": 318
+    "testable": 252,
+    "total": 317
    },
    "H1_within_complex_GI": {
-    "testable": 21,
-    "total": 23
+    "testable": 22,
+    "total": 24
    },
    "H2_submodule_divergence": {
     "testable": 41,
@@ -618,13 +630,13 @@
    }
   }
  },
- "runtime_s": 23.4,
+ "runtime_s": 27.6,
  "timings_s": {
-  "maps": 0.8,
-  "observed_mask": 2.0,
-  "annotation": 7.9,
-  "evaluability": 15.4,
-  "h1": 22.7
+  "maps": 0.9,
+  "observed_mask": 2.1,
+  "annotation": 11.1,
+  "evaluability": 19.6,
+  "h1": 26.7
  },
  "amendments": [
   {
@@ -632,6 +644,7 @@
    "timestamp_utc": "2026-10-28T22:54:50Z",
    "amends_commit": "408593e43c067e0a213e2dfadabb5c48b68bfbb2",
    "record": "docs/registry/AMENDMENTS.md",
+   "script": "scripts/42_amend_A1.py (numbered 40_amend_A1.py at the A1 commit)",
    "decision": "H1 keeps LoF / CN events; silencing events moved to the exploratory entry H1S_silencing_GI",
    "H1_at_fzx": {
     "m": 366,
@@ -655,6 +668,63 @@
     "standing": "exploratory"
    },
    "inputs_read": "FZ-X event list (counts and types) only; no dependency values, association statistics or lockbox outcomes"
+  },
+  {
+   "id": "A2",
+   "timestamp_utc": "2026-10-28T23:28:31Z",
+   "amends_commit": "84a0c43d773e56bee1c91fdcdff249c574ba0555",
+   "record": "docs/registry/AMENDMENTS.md",
+   "script": "scripts/43_amend_A2.py",
+   "decision": "event is genetic (H1) iff >= 50% of A loss models carry a LoF or hom-del call; else silencing (H1S)",
+   "moved": [
+    {
+     "event": "Z0109|SMARCB1",
+     "gene": "SMARCB1",
+     "fzx_type": "silencing",
+     "genetic_share": 0.7059,
+     "sublabel": "CN-majority",
+     "from_entry": "H1S_silencing_GI",
+     "to_entry": "H1_within_complex_GI"
+    }
+   ],
+   "before": {
+    "H1": {
+     "m": 27,
+     "n_events": 23,
+     "n_N_axis": 23,
+     "n_P_axis": 4,
+     "complex_set_hash": "4a5dcc9d02bc4b23"
+    },
+    "H1S": {
+     "m": 339,
+     "n_events": 318,
+     "n_N_axis": 318,
+     "n_P_axis": 21,
+     "complex_set_hash": "d6264047856ff8e9",
+     "standing": "exploratory"
+    }
+   },
+   "H1_after": {
+    "m": 28,
+    "n_events": 24,
+    "n_N_axis": 24,
+    "n_P_axis": 4,
+    "complex_set_hash": "686659438f7d781c",
+    "sublabels": {
+     "LoF-majority": 20,
+     "CN-majority": 4
+    }
+   },
+   "H1S_after": {
+    "m": 338,
+    "n_events": 317,
+    "n_N_axis": 317,
+    "n_P_axis": 21,
+    "complex_set_hash": "736ed74bc58bc04a",
+    "standing": "exploratory",
+    "direction": "H1S"
+   },
+   "inputs_read": "FZ-X per-gene loss-kind counts (h1_contexts.tsv) and event list only; no dependency values, association statistics or lockbox outcomes"
   }
  ]
 }

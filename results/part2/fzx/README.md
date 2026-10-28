@@ -1,7 +1,13 @@
 # FZ-X freeze (DESIGN v3.1 §0 F4)
 
-Built by `scripts/39_freeze_fzx.py` (helpers in `src/part2/fzx.py`; H1 rules in `src/part2/h1.py`). It runs in
-about 25 s on a laptop. The freeze manifest is `FZX_manifest.json`. Its `files` map lists the SHA-256 of every
+Built by `scripts/41_freeze_fzx.py`, which was numbered `39_freeze_fzx.py` at the FZ-X commit and renamed after
+merging main's `39_map_variability.py` (review note c). Helpers are in `src/part2/fzx.py` and H1 rules in
+`src/part2/h1.py`.
+
+After the base freeze, the script re-applies the registered amendments in order: `42_amend_A1.py`, then
+`43_amend_A2.py`. A single run therefore rebuilds the amended freeze. Two fresh-process runs give byte-identical
+lists, registry entries and H1 loss table. In the manifest, only `created`, `runtime_s` and `timings_s` differ.
+A run takes about 30 s. The freeze manifest is `FZX_manifest.json`. Its `files` map lists the SHA-256 of every
 frozen list below, of the gitignored H1 loss table `data_cache/part2/fzx/h1_loss_table.parquet`, and of the FZ-C map
 and tier files it was built from. `run_association` checks its inputs against this map.
 
@@ -128,13 +134,59 @@ claims.
 The decision used event counts and types only. The rationale and a confirmation are in
 `docs/registry/AMENDMENTS.md`.
 
-`scripts/40_amend_A1.py` applies the amendment from the FZ-X commit's files. It writes:
+`scripts/42_amend_A1.py` (numbered `40_amend_A1.py` at the A1 commit) applies the amendment on top of the base
+freeze. It writes:
 - `h1_event_split_A1.tsv`;
 - `units_h1_components_A1.txt` and `units_h1s_components.txt`;
 - a re-assigned `lockbox_testable.tsv`;
 - an updated `FZX_manifest.json` (`amendments`, `files`, `summary.m`, `complex_set_hashes`).
 
-The original FZ-X lists are unchanged. `scripts/39_freeze_fzx.py` now refuses to overwrite an amended freeze.
+The original FZ-X lists are unchanged.
+
+### Amendment A2 (2026-10-28T23:28:31Z; PI ruling on review M1, before any H1 run)
+
+**Rule.** An event is genetic, and goes to H1, iff ≥ 50% of its A loss models carry a LoF or hom-del call. Otherwise
+it is silencing and goes to H1S. The rule was applied mechanically to all 341 events.
+
+**Moved:** only `Z0109|SMARCB1`, from H1S to H1. Its genetic share is 0.706 (5 LoF, 7 hom-del, 5 silencing), and it
+is CN-majority. It keeps its FZ-X covariate set and components.
+
+| Entry | Events | m | complex_set_hash | Lockbox-testable |
+|---|---|---|---|---|
+| `H1_within_complex_GI` | 24 (20 LoF-majority, 4 CN-majority) | 28 | `686659438f7d781c` | 22 / 24 |
+| `H1S_silencing_GI` | 317 | 338 | `736ed74bc58bc04a` | 252 / 317 |
+
+**Other changes in A2:**
+- H1S now has its own direction label `H1S` and an fdr_rule that names this entry only.
+- The stale texts are replaced.
+- New files: `h1_event_split_A2.tsv`, `units_h1_components_A2.txt` and `units_h1s_components_A2.txt`.
+- The A1 files are kept as the record of A1.
+
+The details are in `docs/registry/AMENDMENTS.md`.
+
+### Review M2 and note a: annotation from Ensembl gene IDs
+
+Paralogs are now mapped by Ensembl gene ID, using DepMap Entrez → ENSG from the coordinates file. Chromosomes cover
+every Ensembl gene, so RBMX is recognised as an X–Y gametolog of RBMY1*. Renamed DepMap genes such as
+TSLIG3A/B/C and TIPE2 keep their paralogs.
+
+Effect on the freeze: four rows of `evaluability_tests.tsv.gz` change. These are LoY and sex_female on `Z0104` (H3b)
+and on `G0100` (BRIDGE-L), where RBMX is now removed. n_removed goes from 0 to 1, and n_used from 12 to 11 and from 8
+to 7. Covariates are unaffected; they do not depend on the annotation.
+
+Unchanged:
+- n and evaluable status;
+- every m (H3a 8,441; H3b 7,340; BRIDGE-L 8,717 + 7,577);
+- every unit set and hash;
+- the control units;
+- the H1 event list and the H1 loss table.
+
+### Script 31
+
+`scripts/31_score_blocks.py` differs from the SHA-256 recorded in the FZ-C manifest. The reason is the A-only guard
+that FZ-X added (`assert_A_only`, a no-op for A run sets). This is a code-only change and no map is affected; the
+independent FZ-C review confirmed a byte-identical rebuild. The note is also recorded in `FZX_manifest.json`
+(`notes.script31`).
 
 ### Lockbox-testable
 
@@ -145,8 +197,8 @@ The original FZ-X lists are unchanged. `scripts/39_freeze_fzx.py` now refuses to
 | H2 | 41 / 43 |
 | BENCH | 41 / 41 |
 | BRIDGE-L | 41 / 43 |
-| H1 (after A1) | 21 / 23 events |
-| H1S (after A1) | 253 / 318 events |
+| H1 (after A2) | 22 / 24 events |
+| H1S (after A2) | 252 / 317 events |
 
 **Controls:** 20 of 23 are testable. PC15 and PC22 (n_L = 4) and PC16 (n_L = 3) are not.
 

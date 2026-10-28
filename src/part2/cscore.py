@@ -58,7 +58,15 @@ class Annotation:
         return bool(aa) and aa == ab
 
     def x_gametolog(self, a: str) -> bool:
+        """X-linked gene with an Ensembl paralogue on chrY. The partner's chromosome comes from the annotation, which
+        load_annotation fills for every Ensembl gene (not only screened ones; FZ-X review M2: RBMX -> RBMY1*)."""
         return self.chrom.get(a) == "X" and any(self.chrom.get(p) == "Y" for p in self.paralogs.get(a, ()))
+
+    def gametolog(self, a: str) -> bool:
+        """X-Y gametolog in either direction: chrX gene with a chrY paralogue, or chrY gene with a chrX paralogue."""
+        ca = self.chrom.get(a)
+        other = {"X": "Y", "Y": "X"}.get(ca)
+        return other is not None and any(self.chrom.get(p) == other for p in self.paralogs.get(a, ()))
 
     @staticmethod
     def paralogs_from_table(df: pd.DataFrame, min_identity: float = 20.0,
@@ -85,12 +93,54 @@ def load_annotation(gene_keys, min_identity: float = 20.0) -> Annotation:
     sym = [symbol(k) for k in keys]
     ent = pd.to_numeric(pd.Series([str(k).split("(")[-1].rstrip(")") for k in keys]), errors="coerce")
     pos = entrez_positions().reindex(ent.fillna(-1).astype(np.int64).values)
-    par = Annotation.paralogs_from_table(pd.read_csv(paths.PARALOGS, sep="\t", dtype=str), min_identity)
-    h = pd.read_csv(paths.HGNC_FILE, sep="\t", dtype=str, usecols=["symbol", "location"]).dropna()
-    arm = {s: parse_location(l)[0] for s, l in zip(h.symbol, h.location)}
-    return Annotation(paralogs=par, chrom=dict(zip(sym, pos.chrom.fillna("").values)),
+    coords = pd.read_csv(paths.GENE_COORDS, sep="\t", dtype=str)
+    par_tab = pd.read_csv(paths.PARALOGS, sep="\t", dtype=str)
+    par, ens_chrom = paralogs_by_ensembl_id(par_tab, coords, dict(zip(sym, ent)), min_identity)
+    chrom = dict(ens_chrom)                       # every Ensembl gene, so unscreened paralogs (e.g. RBMY1A1) count
+    chrom.update(zip(sym, pos.chrom.fillna("").values))
+    h = pd.read_csv(paths.HGNC_FILE, sep="\t", dtype=str, usecols=["entrez_id", "location"]).dropna()
+    arm_e = {str(e): parse_location(l)[0] for e, l in zip(h.entrez_id, h.location)}
+    return Annotation(paralogs=par, chrom=chrom,
                       pos=dict(zip(sym, pos.pos.fillna(-1).astype(np.int64).values)),
-                      arm={s: arm.get(s, "") for s in sym})
+                      arm={s: arm_e.get(str(int(e)) if pd.notna(e) else "", "") for s, e in zip(sym, ent)})
+
+
+def paralogs_by_ensembl_id(par_tab: pd.DataFrame, coords: pd.DataFrame, entrez_of: dict,
+                           min_identity: float = 20.0,
+                           types=("within_species_paralog", "other_paralog")) -> tuple[dict, dict]:
+    """H1 paralog rule applied on Ensembl gene IDs (FZ-X review note a / M2): Ensembl 116 paralogue pairs (homology
+    type in `types`, min(%id t, %id q) >= min_identity) are named by the DepMap symbol of the gene's Entrez ID
+    (Ensembl coordinates file: ENSG -> Entrez) when the gene is a DepMap column, else by its Ensembl gene name.
+    So renamed genes (DepMap TSLIG3A = HGNC/Ensembl FAM98A) keep their paralogs, and unscreened partners keep their
+    chromosome. Returns (symmetric name -> set of names, name -> chromosome for every named Ensembl gene)."""
+    c = coords.copy()
+    c.columns = ["ensg", "name", "entrez", "chrom", "start", "end"]
+    by_entrez = {}
+    for s, e in entrez_of.items():
+        if pd.notna(e):
+            by_entrez.setdefault(str(int(e)), []).append(s)
+    names = {}
+    for g, n, e in zip(c.ensg, c.name, c.entrez):
+        dm = by_entrez.get(str(e)) if isinstance(e, str) and e else None
+        names.setdefault(g, set()).update(dm if dm else ([n] if isinstance(n, str) and n else []))
+    ens_chrom = {}
+    for g, ch in zip(c.ensg, c.chrom):
+        for n in names.get(g, ()):
+            ens_chrom.setdefault(n, ch)
+    col = list(par_tab.columns)
+    ga, na, gb, nb, idt, idq, typ = col[0], col[1], col[2], col[3], col[4], col[5], col[6]
+    d = par_tab[par_tab[typ].isin(types)]
+    d = d[np.minimum(d[idt].astype(float), d[idq].astype(float)) >= min_identity]
+    out: dict = {}
+    for a, an, b, bn in zip(d[ga], d[na], d[gb], d[nb]):
+        A = names.get(a) or ({an} if isinstance(an, str) and an and an != "nan" else set())
+        B = names.get(b) or ({bn} if isinstance(bn, str) and bn and bn != "nan" else set())
+        for x in A:
+            for y in B:
+                if x != y:
+                    out.setdefault(x, set()).add(y)
+                    out.setdefault(y, set()).add(x)
+    return out, ens_chrom
 
 
 # ------------------------------------------------------------------------------------------------ removals

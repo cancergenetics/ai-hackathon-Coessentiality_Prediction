@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = sorted((ROOT / "src" / "part2").glob("*.py"))
-SCRIPTS = sorted((ROOT / "scripts").glob("3*_*.py"))
+SCRIPTS = sorted((ROOT / "scripts").glob("[34]*_*.py"))
 TESTS = sorted(p for p in (ROOT / "tests").glob("test_part2_*.py") if "firewall" not in p.name)
 FILES = SRC + SCRIPTS
 

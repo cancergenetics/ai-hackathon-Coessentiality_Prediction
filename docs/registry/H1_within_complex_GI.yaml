@@ -24,6 +24,9 @@ context_family:
       ref_L: 293
       lockbox_testable: true
       events: ["Z0174|APC"]
+      loss_class: genetic
+      genetic_share: 0.9167
+      genetic_sublabel: LoF-majority
     - id: "H1loss:ARID1A"
       definition: "loss(ARID1A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -35,6 +38,9 @@ context_family:
       ref_L: 282
       lockbox_testable: true
       events: ["Z0109|ARID1A"]
+      loss_class: genetic
+      genetic_share: 1.0
+      genetic_sublabel: LoF-majority
     - id: "H1loss:BAP1"
       definition: "loss(BAP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -46,6 +52,9 @@ context_family:
       ref_L: 314
       lockbox_testable: true
       events: ["Z0171|BAP1"]
+      loss_class: genetic
+      genetic_share: 0.8571
+      genetic_sublabel: LoF-majority
     - id: "H1loss:BRCA1"
       definition: "loss(BRCA1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -57,6 +66,9 @@ context_family:
       ref_L: 313
       lockbox_testable: false
       events: ["Z0205|BRCA1"]
+      loss_class: genetic
+      genetic_share: 0.6429
+      genetic_sublabel: LoF-majority
     - id: "H1loss:EP300"
       definition: "loss(EP300) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -68,6 +80,9 @@ context_family:
       ref_L: 297
       lockbox_testable: false
       events: ["Z0186|EP300"]
+      loss_class: genetic
+      genetic_share: 0.8333
+      genetic_sublabel: LoF-majority
     - id: "H1loss:FOCAD"
       definition: "loss(FOCAD) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; CN-type event"
       sign: two-sided
@@ -79,6 +94,9 @@ context_family:
       ref_L: 307
       lockbox_testable: true
       events: ["Z0286|FOCAD"]
+      loss_class: genetic
+      genetic_share: 0.7391
+      genetic_sublabel: CN-majority
     - id: "H1loss:KDM6A"
       definition: "loss(KDM6A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -90,6 +108,9 @@ context_family:
       ref_L: 310
       lockbox_testable: true
       events: ["Z0171|KDM6A"]
+      loss_class: genetic
+      genetic_share: 0.7778
+      genetic_sublabel: LoF-majority
     - id: "H1loss:KEAP1"
       definition: "loss(KEAP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -101,6 +122,9 @@ context_family:
       ref_L: 313
       lockbox_testable: true
       events: ["Z0124|KEAP1"]
+      loss_class: genetic
+      genetic_share: 0.9231
+      genetic_sublabel: LoF-majority
     - id: "H1loss:KMT2D"
       definition: "loss(KMT2D) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -112,6 +136,9 @@ context_family:
       ref_L: 285
       lockbox_testable: true
       events: ["Z0171|KMT2D"]
+      loss_class: genetic
+      genetic_share: 1.0
+      genetic_sublabel: LoF-majority
     - id: "H1loss:MAP2K4"
       definition: "loss(MAP2K4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; CN-type event"
       sign: two-sided
@@ -123,6 +150,9 @@ context_family:
       ref_L: 308
       lockbox_testable: true
       events: ["Z0164|MAP2K4"]
+      loss_class: genetic
+      genetic_share: 0.8125
+      genetic_sublabel: CN-majority
     - id: "H1loss:MED12"
       definition: "loss(MED12) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -134,6 +164,9 @@ context_family:
       ref_L: 315
       lockbox_testable: true
       events: ["Z0014|MED12"]
+      loss_class: genetic
+      genetic_share: 0.8333
+      genetic_sublabel: LoF-majority
     - id: "H1loss:NF1"
       definition: "loss(NF1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -145,6 +178,9 @@ context_family:
       ref_L: 294
       lockbox_testable: true
       events: ["Z0052|NF1"]
+      loss_class: genetic
+      genetic_share: 0.95
+      genetic_sublabel: LoF-majority
     - id: "H1loss:NF2"
       definition: "loss(NF2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -156,6 +192,9 @@ context_family:
       ref_L: 311
       lockbox_testable: true
       events: ["Z0333|NF2"]
+      loss_class: genetic
+      genetic_share: 0.8462
+      genetic_sublabel: LoF-majority
     - id: "H1loss:PBRM1"
       definition: "loss(PBRM1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -167,6 +206,9 @@ context_family:
       ref_L: 309
       lockbox_testable: true
       events: ["Z0201|PBRM1"]
+      loss_class: genetic
+      genetic_share: 0.8571
+      genetic_sublabel: LoF-majority
     - id: "H1loss:PLAA"
       definition: "loss(PLAA) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; CN-type event"
       sign: two-sided
@@ -178,6 +220,9 @@ context_family:
       ref_L: 313
       lockbox_testable: true
       events: ["Z0041|PLAA"]
+      loss_class: genetic
+      genetic_share: 0.8462
+      genetic_sublabel: CN-majority
     - id: "H1loss:PTEN"
       definition: "loss(PTEN) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -189,6 +234,9 @@ context_family:
       ref_L: 281
       lockbox_testable: true
       events: ["Z0130|PTEN"]
+      loss_class: genetic
+      genetic_share: 0.9362
+      genetic_sublabel: LoF-majority
     - id: "H1loss:RB1"
       definition: "loss(RB1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -200,6 +248,9 @@ context_family:
       ref_L: 294
       lockbox_testable: true
       events: ["Z0200|RB1"]
+      loss_class: genetic
+      genetic_share: 0.8167
+      genetic_sublabel: LoF-majority
     - id: "H1loss:SMAD4"
       definition: "loss(SMAD4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -211,6 +262,9 @@ context_family:
       ref_L: 295
       lockbox_testable: true
       events: ["Z0304|SMAD4"]
+      loss_class: genetic
+      genetic_share: 0.8947
+      genetic_sublabel: LoF-majority
     - id: "H1loss:SMARCA4"
       definition: "loss(SMARCA4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -222,6 +276,23 @@ context_family:
       ref_L: 305
       lockbox_testable: true
       events: ["Z0109|SMARCA4"]
+      loss_class: genetic
+      genetic_share: 0.9677
+      genetic_sublabel: LoF-majority
+    - id: "H1loss:SMARCB1"
+      definition: "loss(SMARCB1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 943
+      n_L: 5
+      ref_L: 316
+      lockbox_testable: true
+      events: ["Z0109|SMARCB1"]
+      loss_class: genetic
+      genetic_share: 0.7059
+      genetic_sublabel: CN-majority
     - id: "H1loss:STAG2"
       definition: "loss(STAG2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -233,6 +304,9 @@ context_family:
       ref_L: 313
       lockbox_testable: true
       events: ["Z0278|STAG2"]
+      loss_class: genetic
+      genetic_share: 0.7619
+      genetic_sublabel: LoF-majority
     - id: "H1loss:STK11"
       definition: "loss(STK11) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -244,6 +318,9 @@ context_family:
       ref_L: 307
       lockbox_testable: true
       events: ["Z0292|STK11"]
+      loss_class: genetic
+      genetic_share: 0.7907
+      genetic_sublabel: LoF-majority
     - id: "H1loss:TP53"
       definition: "loss(TP53) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -255,6 +332,9 @@ context_family:
       ref_L: 108
       lockbox_testable: true
       events: ["Z0158|TP53"]
+      loss_class: genetic
+      genetic_share: 0.9785
+      genetic_sublabel: LoF-majority
     - id: "H1loss:VHL"
       definition: "loss(VHL) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
       sign: two-sided
@@ -266,9 +346,12 @@ context_family:
       ref_L: 312
       lockbox_testable: true
       events: ["Z0145|VHL"]
+      loss_class: genetic
+      genetic_share: 0.9375
+      genetic_sublabel: LoF-majority
   context_id_format: "H1loss:<SYMBOL> (one 0/1/NaN column per lost gene, added to the FZ-X context table)"
   event_id_format: "<frozen coarse complex ID>|<SYMBOL of g>"
-  expected_events: "about 10-20 (round-2 PI and biology estimates)"
+  expected_events: "FZ-X enumeration rule: 341 events; amendments A1/A2 (docs/registry/AMENDMENTS.md): 24 genetic events in H1_within_complex_GI, 317 silencing events in H1S_silencing_GI; this entry: 24"
   enumeration_rule: |
     Executed once at FZ-X from labels, the frozen map, Ensembl 116 and coordinates only (no dependency data).
     1. loss(g, m) = 1 if (a) LoF(g) by DESIGN 2.2 (primary: MSI-H lines NaN) and g passes the pre-registered LoF
@@ -303,7 +386,7 @@ paralog_definition:
     (80-81%) are typed other_paralog in Ensembl 116, while STAG2/STAG1 (71%) is within_species_paralog (checked
     on the paralog table only). Paralogy is used only within C, so large gene families do not inflate P.
   sensitivity: [min identity >= 40%, within_species_paralog only]
-complex_set_hash: 4a5dcc9d02bc4b23
+complex_set_hash: 686659438f7d781c
 units: >
   Event components '<event ID>|N' (aligned non-paralog score, every event with an evaluable N axis) and '<event
   ID>|P' (paralog score, events with |P| >= 1); hash = part2.registry.set_hash of these IDs.
@@ -362,7 +445,7 @@ fdr_rule: >
   breadth, matched null, TOST) are applied after BH and cannot rescue a non-rejected test.
 family_m:
   formula: "m_H1 = (number of events with an evaluable N axis) + (number of events with |P| >= 1)"
-  value: 27
+  value: 28
 kill_rule:
   controls: [PC6, PC7, PC8, PC12, PC15]
   rule: >
@@ -392,9 +475,9 @@ annotations: >
   of a non-redundant essential subunit is observed only where tolerated); whether the most shifted member is a
   paralog of g.
 implementation_note: >
-  run_association tests every registered context against every unit. H1 needs each loss column paired only with
-  its own event components and BH pooled over all events; this pairing (or per-event calls with BH applied over
-  the pooled p-values) must be implemented and tested before FZ-X. The entry stays pending until then.
+  Implemented and tested: h1.assoc_inputs builds the per-context score frames and the (context, unit) pairs, and
+  run_association(pairs=...) tests each loss column only against its own event components, with BH pooled over the
+  counted tests of this entry (tests/test_part2_engine.py, tests/part2_synth_pipeline.py).
 seeds:
   permutation: 4200
   matched_null: 7000
@@ -423,4 +506,16 @@ amendments:
       intended LoF/CN panel would be diluted. Decided from event counts and types only (no dependency values,
       association statistics or lockbox outcomes read). Verbatim rationale: docs/registry/AMENDMENTS.md.
     changed_paths: [context_family.contexts, complex_set_hash, family_m.value]
+  - id: A2
+    timestamp_utc: 2026-10-28T23:28:31Z
+    amends_commit: 84a0c43d773e56bee1c91fdcdff249c574ba0555
+    reason: >
+      PI ruling A2 on FZ-X review M1. DESIGN 2.2 counts hom-del as LoF, and A1 intended genetic loss as the primary
+      panel and silencing as exploratory. An event is genetic (H1) iff >= 50% of its A loss models carry a LoF or
+      hom-del call (combined); otherwise silencing (H1S). Applied mechanically to all FZ-X events; genetic events
+      keep a descriptive LoF-majority / CN-majority sub-label for reporting only; covariates and components stay as
+      frozen at FZ-X. Also: H1S direction label and fdr_rule wording, stale text removed (review note b). Decided
+      from event counts and types only (no dependency values, association statistics or lockbox outcomes read).
+      Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [context_family.contexts, context_family.expected_events, complex_set_hash, family_m.value, implementation_note]
 status: open

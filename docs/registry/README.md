@@ -15,7 +15,7 @@ One file per registered analysis: `docs/registry/<id>.yaml`. An entry must be **
 
 ## FZ-X fill
 
-At FZ-X every placeholder was filled by `scripts/39_freeze_fzx.py`, and every `pending` key was removed. The values
+At FZ-X every placeholder was filled by `scripts/41_freeze_fzx.py`, and every `pending` key was removed. The values
 come from the frozen lists in `results/part2/fzx/`, described in its README:
 - unit sets and complex-set hashes;
 - m per family;
@@ -45,9 +45,14 @@ headlined. An exploratory entry must carry `headline: false`. These fields are s
 `status` (`open` / `closed`), which the lockbox read order relies on.
 
 A1 split `H1_within_complex_GI` into two entries:
-- `H1_within_complex_GI`: the LoF and hom-del events;
-- `H1S_silencing_GI`: the silencing events, an exploratory entry. Its direction is `H1`, so it is read before
-  benchmark and bridge.
+- `H1_within_complex_GI`: the genetic events;
+- `H1S_silencing_GI`: the silencing events, an exploratory entry.
+
+A2 then:
+- fixed the split rule: an event is genetic iff ≥ 50% of its A loss models carry a LoF or hom-del call;
+- moved `Z0109|SMARCB1` from H1S into H1;
+- gave H1S its own direction `H1S`. It is confirmatory for the lockbox read order only, so it is read before
+  benchmark and bridge, and it is never part of the kill rule.
 
 ## Freeze placeholders and `pending`
 
@@ -62,7 +67,7 @@ The git blob SHA of the committed entry is written to every trial line (`results
 | Field | Type | Meaning |
 |---|---|---|
 | `id` | string `[A-Za-z0-9_.-]` | Must equal the file name without `.yaml`. |
-| `direction` | `H3a` \| `H3b` \| `H1` \| `H2` \| `controls` \| `benchmark` \| `bridge` | Registry order is §2.6. The lockbox may be read for `benchmark` and `bridge` only after every `controls`/`H3a`/`H3b`/`H1`/`H2` entry has a ledger line (round-3 B3). |
+| `direction` | `H3a` \| `H3b` \| `H1` \| `H1S` \| `H2` \| `controls` \| `benchmark` \| `bridge` | Registry order is §2.6 (`H1S`, the exploratory silencing companion of H1, was added by A2). The lockbox may be read for `benchmark` and `bridge` only after every `controls`/`H3a`/`H3b`/`H1`/`H1S`/`H2` entry has a ledger line (round-3 B3). |
 | `hypothesis` | string (block scalar allowed) | The claim, in words. |
 | `sign` | `"+"` \| `"-"` \| `two-sided` \| `per-context` | `+` means **more dependent in context**, i.e. a lower (more negative) effect score, tested one-sided with `alternative="less"` on the regression coefficient. `-` means less dependent (`greater`). With `per-context`, every context carries its own `sign`. |
 | `context_family` | mapping: `name`, `contexts` (list of `{id, definition[, sign]}`) | Context IDs are column names of the frozen context table (`data_cache/part2/contexts/context_table.parquet`; summary in `results/part2/contexts/context_summary.tsv`). The definition is restated in words. `run_association` refuses any context column not listed here. |

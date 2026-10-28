@@ -13,7 +13,11 @@ discarded at once. Lockbox models enter only as label counts (L = U minus A over
 Outputs: results/part2/fzx/ (lists + FZX_manifest.json + README.md), data_cache/part2/fzx/h1_loss_table.parquet
 (H1 loss columns over U; gitignored, SHA-256 in the manifest), filled docs/registry/*.yaml.
 
-  PYTHONHASHSEED=0 PART1_DIR=... .venv/bin/python scripts/39_freeze_fzx.py
+  PYTHONHASHSEED=0 PART1_DIR=... .venv/bin/python scripts/41_freeze_fzx.py
+
+After the base freeze, every registered amendment script (scripts/4*_amend_*.py, in number order) is applied on
+top of the fresh outputs (A1: scripts/42_amend_A1.py; A2: scripts/43_amend_A2.py), so a re-run rebuilds the
+amended freeze. --base-only stops after the base FZ-X freeze.
 """
 from __future__ import annotations
 
@@ -121,7 +125,7 @@ def fzr_draft(p: Path) -> str:
         t = subprocess.run(["git", "-C", str(ROOT), "show", f"{c}:{r}"], capture_output=True, text=True)
         if t.returncode == 0 and "\npending:" in t.stdout:
             return t.stdout
-    raise SystemExit(f"no committed FZ-R draft (with pending) of {r}")
+    return None                                   # created by an amendment (e.g. H1S_silencing_GI): not part of FZ-X
 
 
 def omics_sym2e() -> dict:
@@ -270,13 +274,10 @@ def lockbox_rows(entries, h1ctx: pd.DataFrame, h3b_drop: set) -> pd.DataFrame:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-registry", action="store_true", help="compute and write lists only (no registry fill)")
+    ap.add_argument("--base-only", action="store_true", help="do not re-apply the registered amendments")
     a = ap.parse_args()
     t0 = time.time()
     timings = {}
-    if MANIFEST.exists() and json.loads(MANIFEST.read_text()).get("amendments"):
-        raise SystemExit("FZ-X has been amended (docs/registry/AMENDMENTS.md); re-running would overwrite the amended "
-                         "lists and entries. To reproduce FZ-X, run this script on a checkout of the FZ-X commit; "
-                         "amendments are re-applied by their own scripts (e.g. scripts/40_amend_A1.py).")
     fzc = verify_fzc()
     ctx = verify_context_table()
     A = assoc.a_models()
@@ -302,7 +303,7 @@ def main():
     annot = cscore.load_annotation(all_cols)          # as scripts/34_run_controls.py: every gene-effect column
     timings["annotation"] = time.time() - t0
 
-    fzr_text = {p.stem: fzr_draft(p) for p in sorted(paths.REGISTRY_DIR.glob("*.yaml"))}
+    fzr_text = {p.stem: t for p in sorted(paths.REGISTRY_DIR.glob("*.yaml")) if (t := fzr_draft(p)) is not None}
     entries = {k: registry.load_yaml(t) for k, t in fzr_text.items()}   # the committed FZ-R drafts (pending)
     for k, e in entries.items():
         errs = registry.validate(e, k)
@@ -523,17 +524,23 @@ def main():
         files[f"results/part2/construction/{f}"] = sha(CON / f)
     head = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
     man = dict(
-        freeze="FZ-X", design="DESIGN.md v3.1 §0 F4, §2.2, §2.5-2.7", created=time.strftime("%Y-%m-%dT%H:%M:%S"),
-        parent_commit=head, fzc_map_commit="27fa9b275a83fd76a9a2f35107fc0b4f3aaa9ac4",
+        freeze="FZ-X", design="DESIGN.md v3.1 §0 F4, §2.2, §2.5-2.7", created=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        parent_commit=head, fzc_map_commit=fzc_commit(),
         inputs={rel(FZC_MANIFEST): sha(FZC_MANIFEST),
                 "results/part2/contexts/checksums.json": sha(paths.CONTEXT_RESULTS / "checksums.json"),
                 "results/part2/lockbox/manifest.json": sha(paths.LOCKBOX_MANIFEST),
                 "results/part2/contexts/lof_functional_check.tsv": sha(paths.CONTEXT_RESULTS / "lof_functional_check.tsv"),
                 "paralogs_ensembl116": sha(paths.PARALOGS), "coordinates_ensembl116": sha(paths.GENE_COORDS)},
-        code={"scripts/39_freeze_fzx.py": sha(ROOT / "scripts/39_freeze_fzx.py"),
+        code={"scripts/41_freeze_fzx.py": sha(ROOT / "scripts/41_freeze_fzx.py"),
               "src/part2/fzx.py": sha(ROOT / "src/part2/fzx.py"), "src/part2/h1.py": sha(ROOT / "src/part2/h1.py"),
               "src/part2/cscore.py": sha(ROOT / "src/part2/cscore.py"),
               "scripts/31_score_blocks.py": sha(ROOT / "scripts/31_score_blocks.py")},
+        notes=dict(script31=(
+            "scripts/31_score_blocks.py differs from the SHA-256 recorded in the FZ-C manifest because FZ-X added the "
+            "A-only guard (assert_A_only, a no-op for A run sets). Code-only change: no FZ-C map artefact is "
+            "affected, and the independent FZ-C review confirmed a byte-identical map rebuild."),
+            created="UTC; created / parent_commit / runtime_s / timings_s are the only fields that vary between "
+                    "re-runs"),
         complex_set_hashes=hashes,
         membership_sha256={"zavg (FZ-C membership.tsv)": fzc["results/part2/construction/zavg_map/membership.tsv"],
                            "gls (FZ-C membership.tsv)": fzc["results/part2/construction/gls_map/membership.tsv"],
@@ -541,8 +548,27 @@ def main():
                            "gls engine membership": files[rel(OUT / "gls_engine_membership.tsv")]},
         files=files, registry=reg_report, summary=summary,
         runtime_s=round(time.time() - t0, 1), timings_s={k: round(v, 1) for k, v in timings.items()})
+    man["files"] = dict(sorted(man["files"].items()))
     MANIFEST.write_text(json.dumps(man, indent=1, default=lambda x: x.item() if hasattr(x, "item") else str(x)) + "\n")
     print(json.dumps(dict(summary=summary, runtime_s=man["runtime_s"]), indent=1, default=str))
+    if not a.base_only and not a.no_registry:
+        import importlib.util
+        for sp in sorted((ROOT / "scripts").glob("4*_amend_*.py"), key=lambda q: int(q.name.split("_")[0])):
+            spec = importlib.util.spec_from_file_location(sp.stem.replace("-", "_"), sp)
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            print(f"re-applying {sp.name}")
+            mod.apply()
+
+
+def fzc_commit() -> str:
+    """The FZ-C map commit: the commit that added the zavg map manifest."""
+    c = subprocess.run(["git", "-C", str(ROOT), "log", "--diff-filter=A", "--format=%H", "--",
+                        "results/part2/construction/zavg_map/MANIFEST.sha256"], capture_output=True, text=True,
+                       check=True).stdout.split()
+    if len(c) != 1:
+        raise SystemExit(f"cannot identify the FZ-C map commit: {c}")
+    return c[0]
 
 
 if __name__ == "__main__":

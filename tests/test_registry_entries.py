@@ -218,33 +218,39 @@ def test_h3b_family(entries):
             assert c["id"] not in inc
 
 
-@pytest.mark.parametrize("eid,types,units_file", [
-    ("H1_within_complex_GI", {"LoF", "CN"}, "units_h1_components_A1.txt"),
-    ("H1S_silencing_GI", {"silencing"}, "units_h1s_components.txt")])
-def test_h1_and_h1s_event_split(entries, eid, types, units_file):
-    """FZ-X event list split by amendment A1: H1 = LoF / CN events, H1S = silencing events; contexts, events,
-    hash and m of each entry come from the frozen lists."""
+@pytest.mark.parametrize("eid,loss_class,units_file", [
+    ("H1_within_complex_GI", "genetic", "units_h1_components_A2.txt"),
+    ("H1S_silencing_GI", "silencing", "units_h1s_components_A2.txt")])
+def test_h1_and_h1s_event_split(entries, eid, loss_class, units_file):
+    """FZ-X event list split by amendments A1 + A2: H1 = genetic events (>= 50% of A loss models with a LoF or hom-del
+    call), H1S = silencing events; contexts, events, hash and m of each entry come from the frozen lists."""
     e = entries[eid]
     cf = e["context_family"]
-    want = [c for c in H1CTX.index if H1CTX.loc[c, "type"] in types]
+    share = (H1CTX.n_A_LoF + H1CTX.n_A_homdel) / H1CTX.n_A
+    cls = pd.Series(["genetic" if x >= 0.5 else "silencing" for x in share], index=H1CTX.index)
+    want = [c for c in H1CTX.index if cls[c] == loss_class]
     assert [c["id"] for c in cf["contexts"]] == want
     ev = pd.read_csv(FZX / "h1_events.tsv", sep="\t")
-    assert sorted(x for c in cf["contexts"] for x in c["events"]) == sorted(ev.event[ev.type.isin(types)])
+    assert sorted(x for c in cf["contexts"] for x in c["events"]) == \
+        sorted(ev.event[cls.reindex("H1loss:" + ev.gene).values == loss_class])
+    assert all(c["loss_class"] == loss_class for c in cf["contexts"])
     for c in cf["contexts"]:
         r = H1CTX.loc[c["id"]]
         assert c["type"] == r.type and c["covariates"] == r.covariates.split(";"), c["id"]
         assert c["lockbox_testable"] == bool(c["n_L"] >= 5 and c["ref_L"] >= 5), c["id"]
     units = (FZX / units_file).read_text().split()
     assert e["complex_set_hash"] == registry.set_hash(units) and e["family_m"]["value"] == len(units)
-    assert [a["id"] for a in e["amendments"]] == ["A1"]
+    assert [a["id"] for a in e["amendments"]] == ["A1", "A2"]
 
 
 def test_h1s_is_exploratory_copy_of_h1(entries):
     h, s = entries["H1_within_complex_GI"], entries["H1S_silencing_GI"]
     assert s["standing"] == "exploratory" and s["headline"] is False and "standing" not in h
-    assert s["direction"] == "H1" and s["status"] == "open"
+    assert s["direction"] == "H1S" and h["direction"] == "H1" and s["status"] == "open"   # own label (A2)
+    assert "THIS entry only" in s["fdr_rule"]
     for k in ("score", "score_rule", "covariates", "covariate_rule", "statistic", "classes", "matched_null",
-              "fdr_family", "fdr_rule", "paralog_definition", "units", "seeds", "multiverse", "frozen_inputs"):
+              "fdr_family", "paralog_definition", "units", "seeds", "multiverse", "frozen_inputs",
+              "implementation_note"):
         assert s[k] == h[k], k
     assert s["family_m"]["formula"] == h["family_m"]["formula"]
     assert "never enter any kill tally or main claim" in s["kill_rule"]["rule"]

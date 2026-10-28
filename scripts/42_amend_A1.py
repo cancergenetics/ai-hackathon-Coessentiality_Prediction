@@ -6,10 +6,11 @@
 * H1S_silencing_GI (new, standing exploratory, never headlined) holds the silencing-type events with the same
   estimand, score, classes, covariates, TOST / matched-set rules and seeds, its own BH family.
 Both entries carry an `amendments` record; registry.amendment_changes(FZ-X version, new) must be empty and the
-declared paths must all have changed. Inputs: the FZ-X commit's files only (event list, entry text, manifest,
-lockbox-testable list) - event counts and types, no dependency value, statistic or lockbox outcome.
+declared paths must all have changed. Inputs: the freshly built base FZ-X outputs (event list, H1 entry, manifest,
+lockbox-testable list; scripts/41_freeze_fzx.py calls apply() right after the base freeze) - event counts and types,
+no dependency value, statistic or lockbox outcome. Standalone use only on an unamended base freeze.
 
-  .venv/bin/python scripts/40_amend_A1.py --timestamp 2026-10-28T22:54:50Z
+  .venv/bin/python scripts/42_amend_A1.py            # timestamp: the recorded decision time (TIMESTAMP)
 """
 from __future__ import annotations
 
@@ -31,6 +32,7 @@ FZX = ROOT / "results" / "part2" / "fzx"
 REG = ROOT / "docs" / "registry"
 H1, H1S = "H1_within_complex_GI", "H1S_silencing_GI"
 PRIMARY_TYPES = ("LoF", "CN")
+TIMESTAMP = "2026-10-28T22:54:50Z"                      # UTC time of the PI decision record (docs/registry/AMENDMENTS.md)
 REASON = ("PI decision A1. DESIGN v3.1 H1 anticipated a panel of about 10-20 events; the registered silencing clause "
           "(TPM < 1 where the lineage median is >= 3) yields 318 events, mostly lineage-restricted non-expression. "
           "Such events are confounded with lineage composition, a non-expressed gene is trivially non-dependent, and "
@@ -71,10 +73,19 @@ def amendment_block(c: str, ts: str, paths: list, extra: dict | None = None) -> 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--timestamp", required=True, help="UTC time of the PI decision record, YYYY-MM-DDTHH:MM:SSZ")
-    a = ap.parse_args()
+    ap.add_argument("--timestamp", default=TIMESTAMP, help="UTC time of the PI decision record")
+    apply(ap.parse_args().timestamp)
+
+
+def apply(timestamp: str = TIMESTAMP):
+    class _A:
+        pass
+    a = _A()
+    a.timestamp = timestamp
     c = fzx_commit()
-    man0 = json.loads(git("show", f"{c}:results/part2/fzx/FZX_manifest.json"))
+    man0 = json.loads((FZX / "FZX_manifest.json").read_text())
+    if man0.get("amendments"):
+        raise SystemExit("A1 applies to the base FZ-X freeze; run scripts/41_freeze_fzx.py (it re-applies A1)")
     for f in ("results/part2/fzx/h1_events.tsv", "results/part2/fzx/h1_contexts.tsv"):
         if sha(ROOT / f) != man0["files"][f]:
             raise SystemExit(f"{f} differs from the FZ-X manifest")
@@ -91,8 +102,7 @@ def main():
         FZX / "h1_event_split_A1.tsv", sep="\t", index=False)
     (FZX / "units_h1_components_A1.txt").write_text("\n".join(u_p) + "\n")
     (FZX / "units_h1s_components.txt").write_text("\n".join(u_s) + "\n")
-    lb = pd.read_csv(pd.io.common.StringIO(git("show", f"{c}:results/part2/fzx/lockbox_testable.tsv")), sep="\t",
-                     keep_default_na=False)
+    lb = pd.read_csv(FZX / "lockbox_testable.tsv", sep="\t", keep_default_na=False)
     to_s = set(ev_s.event)
     lb.loc[(lb.entry == H1) & lb.event.isin(to_s), "entry"] = H1S
     lb.loc[lb.entry == H1S, "direction"] = "H1"
@@ -100,7 +110,9 @@ def main():
 
     # ---- registry: H1 (amended) and H1S (new), both from the FZ-X version of the H1 entry
     rel = f"docs/registry/{H1}.yaml"
-    t0 = git("show", f"{c}:{rel}")
+    t0 = (ROOT / rel).read_text()
+    if "\namendments:" in t0:
+        raise SystemExit(f"{rel} is already amended")
     e0 = registry.load_yaml(t0)
     items = e0["context_family"]["contexts"]
     genes_p = set(ev_p.gene)
@@ -183,17 +195,17 @@ def main():
                              for d, g in lb.groupby("entry")}
     man["complex_set_hashes"]["h1_components"] = registry.set_hash(u_p)
     man["complex_set_hashes"]["h1s_components"] = registry.set_hash(u_s)
-    man["code"]["scripts/40_amend_A1.py"] = sha(ROOT / "scripts/40_amend_A1.py")
-    man["code"]["scripts/39_freeze_fzx.py (after A1: refuses to overwrite an amended freeze)"] = \
-        sha(ROOT / "scripts/39_freeze_fzx.py")
+    man["code"]["scripts/42_amend_A1.py"] = sha(ROOT / "scripts/42_amend_A1.py")
     man["code"]["src/part2/registry.py"] = sha(ROOT / "src/part2/registry.py")
     man["code"]["src/part2/fzx.py"] = sha(ROOT / "src/part2/fzx.py")
     man["amendments"] = [dict(
         id="A1", timestamp_utc=a.timestamp, amends_commit=c, record="docs/registry/AMENDMENTS.md",
+        script="scripts/42_amend_A1.py (numbered 40_amend_A1.py at the A1 commit)",
         decision="H1 keeps LoF / CN events; silencing events moved to the exploratory entry H1S_silencing_GI",
         H1_at_fzx=h1_fzx, H1_after=s["m"]["H1"], H1S=s["m"]["H1S"],
         inputs_read="FZ-X event list (counts and types) only; no dependency values, association statistics or "
                     "lockbox outcomes")]
+    man["files"] = dict(sorted(man["files"].items()))
     (FZX / "FZX_manifest.json").write_text(json.dumps(man, indent=1) + "\n")
     print(json.dumps(dict(H1=s["m"]["H1"], H1S=s["m"]["H1S"], fzx_commit=c), indent=1))
 

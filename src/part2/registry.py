@@ -17,8 +17,8 @@ import re
 import subprocess
 from pathlib import Path
 
-DIRECTIONS = ("H3a", "H3b", "H1", "H2", "controls", "benchmark", "bridge")
-CONFIRMATORY = ("controls", "H3a", "H3b", "H1", "H2")       # lockbox order: these before benchmark / bridge
+DIRECTIONS = ("H3a", "H3b", "H1", "H1S", "H2", "controls", "benchmark", "bridge")   # H1S: exploratory (A1/A2)
+CONFIRMATORY = ("controls", "H3a", "H3b", "H1", "H1S", "H2")   # lockbox order: these before benchmark / bridge
 SIGNS = ("+", "-", "two-sided", "per-context")
 SCORES = ("S_C_mean_winsor3", "eigengene", "within_line_rank", "expression_masked", "pan_essential_referenced",
           "gene", "submodule_vs_sibling", "member_resolved")

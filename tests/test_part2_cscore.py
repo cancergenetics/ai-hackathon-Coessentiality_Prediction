@@ -56,7 +56,7 @@ def test_removal_rules_match_registry_text():
     n = 0
     for k, e in REG.items():
         cs = e["context_family"]["contexts"]
-        if e["direction"] in ("controls", "H1") or cs == "FZ-X":
+        if e["direction"] in ("controls", "H1", "H1S") or cs == "FZ-X":   # H1 / H1S: component rules (h1.py)
             continue
         for c in cs:
             r = cscore.removal_for_context(c["id"], homdel_share=1.0)
