@@ -13,6 +13,15 @@ Checksums: SHA-256 via `shasum -a 256`, computed 2026-10-28 (re-check: `scripts/
 | HGNC/hgnc_complete_set.txt | HGNC, genenames.org | download date unknown (provided by user) | 0f2d3f035e0e6583c055a1d9e008f275376a4b66f72af380dfc2ac730272c247 | CC0 |
 | huMAP/Test_positive_pairs.txt | hu.MAP 3.0 test split (Fischer et al. 2025), provided by user 2026-10-28 13:55 UTC | hu.MAP 3.0 (user-stated) | c4e3e68edcfc088516b3334dbfae248fb8f276c6475c13dc621abc8b4bba2d96 | CC BY 4.0 per hu.MAP 3.0 paper; licence of these files unverified |
 | huMAP/Test_negative_pairs.txt | as above, 2026-10-28 13:55 UTC | as above | c4a3e5468da0790690ee910af1822dcaaa301dea1afaad45816e34f5e40ae9de | as above |
+| DepMAP/OmicsSomaticMutationsMatrixDamaging.csv | DepMap Portal, provided by user 2026-10-28 | 26Q3 (user-stated) | 736b7a82b4d1f234dc597a409d104186c282f01b0caa56365c27ff987ae49e20 | CC BY 4.0 |
+| DepMAP/OmicsSomaticMutationsMatrixHotspot.csv | DepMap Portal, user 2026-10-28 | 26Q3 (user) | 0cbdacdce2355d2dd600d3741a36ae093dbe77d7bee44bde97411b1e96973058 | CC BY 4.0 |
+| DepMAP/OmicsCNGeneWGS.csv | DepMap Portal, user 2026-10-28 | 26Q3 (user); ploidy-relative linear CN ratio (diploid ≈ 1), not log2 (round-1 reviews) | 31cace66f202adaace306d975b5661c8b77ea82f07d2ed34045eec9c7958fcd6 | CC BY 4.0 |
+| DepMAP/OmicsExpressionTPMLogp1HumanProteinCodingGenes.csv | DepMap Portal, user 2026-10-28 | 26Q3 (user) | 252d1fedc7014953b19ffe5d68151b4df973c8078b12c9e5ccd97e292548d177 | CC BY 4.0 |
+| DepMAP/OmicsProfiles.csv | DepMap Portal, user 2026-10-28 | 26Q3 (user) | 4241e537f0b23139c0e525b4d78fb53ee65c5507771a33e2cd5debd78f7179ea | CC BY 4.0 |
+| DepMAP/OmicsGlobalSignatures.csv | DepMap Portal, user 2026-10-28 | 26Q3 (user) | 51d242e99176e82238df3c90a62b848b40a459a4a4981a2b0a923ed46ad8fb93 | CC BY 4.0 |
+| DepMAP/OmicsFusionFiltered.csv | DepMap Portal, user 2026-10-28 | 26Q3 (user) | 985ac6383a95c39f36856c583f32c7990c9f5464d982a2dd84a9dc07fcbc979b | CC BY 4.0 |
+| DepMAP_RNAi/D2_combined_gene_dep_scores.csv | DepMap Portal "DEMETER2 Data v6" (McFarland et al. 2018), user 2026-10-28 | DEMETER2 v6 (user-stated) | 6bfe7b24ef191debccd502b7dfe61c4b0763caba3e02c6c14e521c8226bb98a7 | CC BY 4.0 |
+| Proteomics/protein_quant_current_normalized.xlsx | CCLE proteomics, Nusinow et al. 2020 (Cell), user 2026-10-28 | as published (xlsx, not csv as requested) | a0ec29ad609d309d884852c268e3382ea6b38bca171af2cf59e4f38a518d21ff | per publisher / DepMap terms (unverified) |
 
 DepMap and HGNC checksums are identical to those recorded in Part 1 (`external/part1_locked/DATA.md`).
 
@@ -23,7 +32,7 @@ DepMap and HGNC checksums are identical to those recorded in Part 1 (`external/p
 | Genome-wide pair scores (`outputs/all_pairs/zavg_BEF.npy`, `z_B/z_E/z_F.npy`, `genes.tsv`) | produced by Part 1 `mvp/scripts/predict_all_pairs.py` from commit 0287470 | 2026-10-28 12:44 UTC | see `external`-side `manifest.json`; recorded by scripts that load them | label-free; read in place from the Part 1 folder (not copied, not modified) |
 
 ## Pending external datasets
-See DATA_REQUEST.md. Rows are added here when the user provides files.
+See DATA_REQUEST.md. Still pending (2026-10-28 15:45): BioPlex 3.0 (item 7), Ensembl paralogs (item 12).
 
 ## Notes / explicit assumptions
 - hu.MAP pairs are UniProt accessions. Mapping as Part 1: UniProt → HGNC (Approved, `uniprot_ids`) → Entrez → DepMap column `SYMBOL (ENTREZ)`.
