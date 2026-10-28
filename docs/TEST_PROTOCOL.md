@@ -1,6 +1,6 @@
 # TEST_PROTOCOL.md: pre-registered evaluation of the locked Part 1 method on the withheld hu.MAP test pairs
 
-**DRAFT v1.1** (2026-10-28; revised after design review round 1, see `docs/reviews/round1_protocol_response.md`).
+**DRAFT v1.2** (2026-10-28; revised after design review rounds 1 and 2, see `docs/reviews/round1_protocol_response.md` and §9).
 
 **Freezing.** At the freeze the PI replaces the line above with `**FROZEN v1.1** (date)`. The pre-freeze status word (the one in the line above) must then occur nowhere in this file. The PI then runs `scripts/22_freeze_protocol.py` and commits this file together with `docs/TEST_PROTOCOL.FROZEN`. Agents never make the freeze commit.
 
@@ -310,6 +310,10 @@ For each candidate vs baseline, on ITT and on S1:
 | Locked rule passes, CI includes 0 against at least one baseline | "The pre-registered decision rule was met; the improvement over <baseline> is not statistically resolved at 95% (ΔAP … [CI])." No claim of significance against that baseline |
 | Locked rule fails | "On held-out complexes the final method did not meet the pre-registered criterion against <baseline> (failed: <criterion>)." The test numbers are reported in full. The method is not changed. Part 2 still uses zavg_BEF (locked), and its value is then argued only from Part 2's own label-free comparisons |
 
+**Which set governs the reading.** The reading is selected by the **S1** locked rule (§7.1) together with the **S1** CI statistic (§7.2).
+- The quoted AP and ΔAP are given for ITT first, then for S1.
+- If the ITT and S1 verdicts (or CI statistics) disagree, S1 governs, and the disagreement is reported explicitly in the text, with both results.
+
 In every case:
 - the C1–C3 strata are reported, showing whether gains hold on protein-new pairs;
 - rule (a) is reported as non-blind.
@@ -331,21 +335,26 @@ scripts/20_score_test_pairs.sh dryrun                       # Part 1 dev + IFT p
 ```bash
 # (1) freeze: edit the header line to "**FROZEN v1.1** (date)", then
 .venv/bin/python scripts/22_freeze_protocol.py              # writes docs/TEST_PROTOCOL.FROZEN (refuses on the pre-freeze status word or a test-file hash mismatch)
-git add docs/TEST_PROTOCOL.md docs/TEST_PROTOCOL.FROZEN && git commit -m "Freeze test protocol v1.1"
+git add docs/TEST_PROTOCOL.md docs/TEST_PROTOCOL.FROZEN && git commit -m "Freeze test protocol v1.2"
 #     -> report the commit hash and the marker SHA-256 to the user in chat (notarisation)
 # (2) label-free scoring of the test pairs (refuses unless frozen), ~3 min
 scripts/20_score_test_pairs.sh test
 # (3) look intent: no label is read; writes an 'intent' record to the git-tracked results/test_eval/looks.jsonl
 .venv/bin/python scripts/21_evaluate_test.py --mode test --intent
 git add results/test_eval/looks.jsonl results/test_eval/score_records/test && git commit -m "Test look intent"
-# (4) THE look (refuses without a committed intent, or if any earlier look exists on disk or in git history), ~30-35 min
+# (4) THE look (refuses without a committed intent, or if any earlier look exists on disk, in any ref or in the reflog);
+#     it commits the 'started' record itself before reading labels and prints that hash -> report it to the user. ~30-35 min
 .venv/bin/python scripts/21_evaluate_test.py --mode test --run
 git add results/test_eval && git commit -m "Test look: results (unchanged)"
 #     -> report the results commit hash and the SHA-256 of test_results.json to the user in chat
 ```
 
+**Timing and environment.** Steps (2)–(4) run **immediately after** the freeze commit, in the same session.
+- No package may be installed, removed or upgraded in `.venv` between the freeze and the end of the look; the marker's `pip freeze` hash enforces this.
+- Part 2 work that needs new packages waits until the look is committed, or uses a separate environment.
+
 **Outputs**
-- `results/test_eval/looks.jsonl` (git-tracked): `intent`, then `started` (written **before** any label is read), then `done`.
+- `results/test_eval/looks.jsonl` (git-tracked): `intent` (committed by the PI), then `started` (committed by `--run` **before** any label is read), then `done`.
 - `results/test_eval/test_results.json`: protocol and marker commits, marker SHA-256, the SHA-256 of `fitted_rules.json`, the Part 1 lock state, the input and score-TSV SHA-256s, audit counts, all results, the verdict summary and runtimes.
 - `results/test_eval/figures/reliability_test_itt.png`.
 - Score TSVs: `data_cache/test_eval/scores/test/` (gitignored); their SHA-256 are recorded.
@@ -353,8 +362,9 @@ git add results/test_eval && git commit -m "Test look: results (unchanged)"
 ### 8.3 Single look, re-runs and deviations
 
 **Refusals**
-- `--run` refuses if a `started` or `done` record exists in the ledger on disk **or in any commit of its git history**, or if `test_results.json` exists on disk or in git history.
-- This also closes the partial-look gap, where a crash happens after results are written but before `done`.
+- `--run` refuses if a `started` or `done` record exists in the ledger on disk, **in any commit reachable from any ref, or in any commit recorded in the reflog** (`git log --all` and `git log --reflog`). It also refuses if `test_results.json` exists on disk or in that history.
+- `--run` **commits the `started` record itself** (git add + commit of `looks.jsonl` only) **before any label is read**. It prints the commit hash, and the PI reports it to the user. If the commit fails, the look stops before reading labels.
+- This closes the partial-look gap (a crash after results are written but before `done`) and the erase-and-re-run gap (reset, deletion, a deleted branch). The latter is tested in a real repository.
 
 **Re-runs**
 - A re-run needs `--relook-reason`. It is logged and **automatically `confirmatory: false`**. The first look's results are reported as the confirmatory ones, if they exist.
@@ -370,7 +380,7 @@ git add results/test_eval && git commit -m "Test look: results (unchanged)"
   - the seed-0 cluster bootstrap;
   - the §7.1 verdict and the §7.2 statistic.
 - Verifier A reports **before** opening `test_results.json`.
-- **Tolerances:** point metrics 1e-9; bootstrap CI endpoints equal; the verdict identical.
+- **Tolerances:** point metrics ≤ 1e-9; bootstrap CI endpoints ≤ 1e-9 (same RNG stream); the verdict identical.
 - **Verifier B** re-scores a 1% random sample of the test pairs (seed 0) from the raw CSV through the locked predictor, in a separate file, and checks the scores are identical (batch invariance, §10.I).
 
 ### 8.4 What the single-look guarantee is (and is not)
@@ -380,16 +390,17 @@ git add results/test_eval && git commit -m "Test look: results (unchanged)"
 - Genome-wide label-free scores covering all test pairs already exist (T3), so test AP could be computed without this harness.
 - Incident D1 shows this risk is real.
 
-**Mitigations**
+**Mitigations.** There is no escrow of the test files (PI decision); they stay in place. The mitigations are:
 1. Every agent brief forbids reading test files and computing test metrics.
-2. The freeze marker hashes the harness, the protocol, the rules and the test files.
-3. The look ledger is git-tracked, and the intent is committed before labels are read.
-4. Refusal on any earlier look on disk or in git history; any re-run is automatically non-confirmatory.
-5. The protocol, intent and results hashes are reported to the user in chat, outside the agents' reach.
-6. A recursive grep test limits references to the test files to the entry points (plus the completed audit script).
-7. `--mode dryrun` refuses inputs that are not train pairs.
+2. The freeze marker hashes the harness, the protocol, the fitted rules, the venv package list and the test files (checked against DATA.md).
+3. The look ledger is git-tracked. The intent is committed before the look, and the `started` record is committed by `--run` before any label is read.
+4. Refusal on any earlier look found on disk, in any ref or in the reflog. Any re-run is automatically non-confirmatory.
+5. The PI reports the freeze commit and marker hash, the intent commit, the `started` commit and the results commit with the SHA-256 of `test_results.json` to the user in chat, outside the agents' reach.
+6. A recursive grep test limits references to the test files to the entry points (plus the completed audit script and grep-guard pattern lists).
+7. The train files are pinned by SHA-256 (Part 1 DATA.md), so `PART1_DIR` can relocate them but never substitute them. `--mode dryrun` refuses inputs that are not pinned-train pairs with the same label.
 8. All prior contact is disclosed in §0.
-9. **Recommended, user action:** move the two test files out of the project (escrow) until the freeze commit has been reported. The look re-checks their SHA-256 against DATA.md.
+
+**Residual limits.** A process that reads the label files directly, or that expires the reflog, is not technically prevented. The guarantee rests on items 1, 5 and 8.
 
 ## 9. Choices fixed in v1.1 (no open options) and changelog
 
@@ -413,6 +424,18 @@ git add results/test_eval && git commit -m "Test look: results (unchanged)"
 | verification | verifier specification and tolerances |
 | §8.4 | honest statement of the procedural guarantee |
 | post hoc reference | reporting language fixed |
+
+**v1.1 → v1.2 (design review round 2)**
+
+| item | change |
+|---|---|
+| M-B1 / P-M1 | §10 wording fixed; a test applies the documented header edit and passes the text check |
+| M-B3 | `--run` commits the `started` record before labels are read; the prior-look scan includes all refs and the reflog; real-git test |
+| M-B2 | escrow dropped (PI decision); guarantee and mitigations restated (§8.4) |
+| P-M2 | S1 governs the §7.3 reading; disagreements with ITT are reported |
+| P-S1 | verifier CI tolerance ≤ 1e-9 |
+| S-B4 | train files pinned by SHA-256 |
+| S-B5 | no `.venv` changes between freeze and look; the look runs immediately after the freeze |
 
 ## 10. Dry run on development data (`results/test_eval_dryrun/`, no test data)
 
@@ -525,7 +548,7 @@ Every IFT pair has the same score (max |Δ| = 0) and the same mapped flag whethe
 
 ### Tests
 
-`tests/test_testeval.py` has 31 tests, all passing. They cover:
+`tests/test_testeval.py` has 34 tests, all passing. They cover:
 - hand-computed AP, AUROC and F1;
 - tie blocks;
 - equality with sklearn and with Part 1;
@@ -537,7 +560,9 @@ Every IFT pair has the same score (max |Δ| = 0) and the same mapped flag whethe
 - negative controls (random scores and label shuffle → AP ≈ prevalence);
 - the pair rules R1–R4;
 - the full two-step look on toy files: refusal without an intent, refusal without a committed intent, refusal of a second look even after the ledger is wiped, and an automatically non-confirmatory re-run;
-- the freeze gate: a draft header and changed hashes are refused, and the current repository is refused;
+- the freeze gate: a pre-freeze header and changed hashes are refused; the documented header edit to FROZEN passes the text check; the current repository is refused;
+- pinned train files: substitutes are refused;
+- in a real git repository, a committed `started` record is still found after `reset --hard`, file deletion or deletion of its branch (reflog scan);
 - the locked verdict through Part 1's `decide`;
 - the bootstrap macro AP equals Part 1's value;
 - guards that the test files are referenced only by the entry points and that the imported `src` is the locked clone.

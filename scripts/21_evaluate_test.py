@@ -33,8 +33,8 @@ import pandas as pd  # noqa: E402
 from testeval import evaluate as E  # noqa: E402
 from testeval import paths  # noqa: E402
 from testeval import part1  # noqa: E402
-from testeval.protocol import (append_jsonl, git_state, history_commits, prior_look_evidence,  # noqa: E402
-                               read_jsonl, require_frozen, sha256_file)
+from testeval.protocol import (append_jsonl, commit_ledger, git_state, history_commits,  # noqa: E402
+                               prior_look_evidence, read_jsonl, require_frozen, sha256_file)
 
 T = {}
 
@@ -192,6 +192,7 @@ def verdict_summary(res: dict) -> dict:
 
 # --------------------------------------------------------------------------------------------------- modes
 def mode_fit():
+    paths.verify_train_files()
     t0 = time.perf_counter()
     sd = paths.SCORES / "train"
     fit = E.load_set("hu.MAP train (all pairs)", paths.TRAIN_POS, paths.TRAIN_NEG, sd)
@@ -240,6 +241,7 @@ def mode_test(relook_reason=None):
         raise SystemExit(f"a look already happened ({ev}): single look only; a re-run needs --relook-reason and is "
                          "automatically non-confirmatory (TEST_PROTOCOL §8.3)")
     confirmatory = not ev["any"]
+    paths.verify_train_files()                               # before the started record: fail without spending the look
     p1 = part1.assert_locked()
     rules = json.loads(paths.FITTED_RULES.read_text())
     rules_sha = sha256_file(paths.FITTED_RULES)
@@ -248,7 +250,9 @@ def mode_test(relook_reason=None):
                 marker_sha256=st["marker_sha256"], protocol_commit=st["protocol_last_commit"], head=st["head"],
                 fitted_rules_sha256=rules_sha, relook_reason=relook_reason, confirmatory=confirmatory,
                 prior_look_evidence=ev)
-    append_jsonl(paths.LOOKS, head)                          # logged BEFORE any label is read
+    append_jsonl(paths.LOOKS, head)                          # logged AND committed BEFORE any label is read
+    started_commit = commit_ledger(paths.LOOKS, "Test look: started record (written before labels are read)")
+    print(f"STARTED record committed: {started_commit}  (PI: report this hash to the user)", flush=True)
     t0 = time.perf_counter()
     pos, neg = paths.test_files()
     es = E.load_set("hu.MAP test", pos, neg, sd, train_paths=(paths.TRAIN_POS, paths.TRAIN_NEG))
@@ -264,6 +268,7 @@ def mode_test(relook_reason=None):
                part1=p1, inputs=dict(test_pos=sha256_file(pos), test_neg=sha256_file(neg), scores=score_inputs(sd),
                                      matrix=msrc),
                audit=es.audit, confirmatory=confirmatory, relook_reason=relook_reason, prior_look_evidence=ev,
+               started_commit=started_commit,
                summary=verdict_summary(res), results=res, runtime_s=T)
     dump(out, paths.RESULTS / "test_results.json")
     figures(res["itt"], paths.RESULTS / "figures", "test_itt")
@@ -312,6 +317,7 @@ def _check_dryrun_inputs(d: Path) -> dict:
     """Refuse to run the dry run on anything but train pairs: every dev / IFT label line must be a train pair with
     the same label (so a copied test file cannot be evaluated through --mode dryrun)."""
     from testeval import pairs as P
+    pinned = paths.verify_train_files()                  # PART1_DIR cannot substitute the reference files
     tp = set(P.key(*P.canonical(P.read_pair_file(paths.TRAIN_POS))[["a", "b"]].values.T))
     tn = set(P.key(*P.canonical(P.read_pair_file(paths.TRAIN_NEG))[["a", "b"]].values.T))
     out = {}
@@ -322,6 +328,7 @@ def _check_dryrun_inputs(d: Path) -> dict:
         if bad:
             raise SystemExit(f"dry run input {f} has {bad} pairs that are not train pairs with that label: refused")
         out[f] = dict(n=int(len(k)), all_in_train_same_label=True)
+    out["train_sha256_pinned"] = pinned
     return out
 
 

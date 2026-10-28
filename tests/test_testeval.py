@@ -396,7 +396,8 @@ def test_only_entry_points_touch_test_files():
             hits.append(p.name)
         if "test_files(" in txt:
             calls.append(p.name)
-    assert sorted(hits) == ["audit_part1.py", "paths.py", "protocol.py"]          # protocol.py: DATA.md hash parse
+    # protocol.py: DATA.md hash parse; test_part2_firewall.py: a forbidden-pattern list of another grep guard
+    assert sorted(hits) == ["audit_part1.py", "paths.py", "protocol.py", "test_part2_firewall.py"]
     assert sorted(set(calls) - {"paths.py"}) == ["19_make_pair_files.py", "21_evaluate_test.py", "protocol.py"]
 
 
@@ -419,6 +420,67 @@ def test_freeze_gate_rejects_drafts_and_hash_changes():
     assert h["Test_positive_pairs.txt"].startswith("c4e3e68e") and h["Test_negative_pairs.txt"].startswith("c4a3e546")
     hf = [str(p.relative_to(ROOT)) for p in PR.harness_files()]
     assert "scripts/21_evaluate_test.py" in hf and "tests/test_testeval.py" in hf and "src/testeval/protocol.py" in hf
+
+
+def test_documented_header_edit_passes_text_check():
+    """The documented freeze (only the header line changed to FROZEN) must pass check_protocol_text, and the
+    unedited protocol must fail it."""
+    from testeval import protocol as PR
+    text = (ROOT / "docs" / "TEST_PROTOCOL.md").read_text()
+    lines = text.splitlines(keepends=True)
+    i = next(k for k, l in enumerate(lines[:6]) if l.startswith("**DRAFT v"))
+    lines[i] = re.sub(r"^\*\*DRAFT (v[0-9.]+)\*\*.*$", r"**FROZEN \1** (2026-10-29)", lines[i].rstrip("\n")) + "\n"
+    PR.check_protocol_text("".join(lines))
+    with pytest.raises(SystemExit):
+        PR.check_protocol_text(text)
+
+
+def test_train_files_pinned(tmp_path):
+    from testeval import paths
+    paths.verify_train_files()                                              # the real Part 1 files pass
+    fake_p, fake_n = tmp_path / "Train_positive_pairs.txt", tmp_path / "Train_negative_pairs.txt"
+    fake_p.write_text("A\tB\n")
+    fake_n.write_text("A\tC\n")
+    with pytest.raises(SystemExit):
+        paths.verify_train_files(fake_p, fake_n)
+
+
+def test_prior_look_detected_in_real_git_after_erasure(tmp_path, monkeypatch):
+    """Real git repo: a committed 'started' record survives (a) reset --hard + file deletion and (b) a deleted branch,
+    because the scan includes the reflog."""
+    import json
+    import subprocess as sp
+    from testeval import protocol as PR
+
+    def git(*a):
+        return sp.run(["git", "-C", str(tmp_path), *a], capture_output=True, text=True, check=True).stdout.strip()
+    git("init", "-q", "-b", "main")
+    git("config", "user.email", "t@example.org")
+    git("config", "user.name", "toy")
+    monkeypatch.setattr(PR, "PROJECT", tmp_path)
+    looks = tmp_path / "results" / "test_eval" / "looks.jsonl"
+    res = looks.parent / "test_results.json"
+    looks.parent.mkdir(parents=True)
+    PR.append_jsonl(looks, dict(look="test", status="intent"))
+    PR.commit_ledger(looks, "intent")
+    assert not PR.prior_look_evidence(looks, res)["any"]
+    # (a) the look commits 'started', then someone resets and deletes everything
+    PR.append_jsonl(looks, dict(look="test", status="started"))
+    h = PR.commit_ledger(looks, "started")
+    res.write_text("{}")
+    git("reset", "-q", "--hard", "HEAD~1")
+    res.unlink()
+    assert [json.loads(l)["status"] for l in looks.read_text().splitlines()] == ["intent"]
+    ev = PR.prior_look_evidence(looks, res)
+    assert ev["any"] and h in ev["ledger_runs_in_history"]
+    # (b) a look committed on a branch that is then deleted
+    git("checkout", "-q", "-b", "side")
+    PR.append_jsonl(looks, dict(look="test", status="started"))
+    h2 = PR.commit_ledger(looks, "started on side")
+    git("checkout", "-q", "main")
+    git("branch", "-q", "-D", "side")
+    assert h2 not in git("log", "--all", "--format=%H")                    # invisible to log --all ...
+    assert h2 in PR.prior_look_evidence(looks, res)["ledger_runs_in_history"]  # ... but found via the reflog
 
 
 def test_current_protocol_is_not_frozen_yet():
@@ -476,6 +538,8 @@ def test_mode_test_end_to_end_on_toy(tmp_path, monkeypatch):
         ran = [r for r in mod.read_jsonl(looks) if r.get("status") in ("started", "done")]
         return dict(ledger_run_records=len(ran), results_on_disk=results.exists(), any=bool(ran or results.exists()))
     monkeypatch.setattr(mod, "prior_look_evidence", evidence)
+    monkeypatch.setattr(mod, "commit_ledger", lambda p, msg: "c" * 40)
+    monkeypatch.setattr(paths, "verify_train_files", lambda *a: {})
     monkeypatch.setattr(mod, "load_matrix", lambda: (np.zeros((5, 1), np.float32), pd.Index(["AAA (1)"]), {}))
     fit = E.load_set("toy train", trp, trn, trs)
     res.mkdir()

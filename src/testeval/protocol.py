@@ -7,8 +7,9 @@ PI commits it. ``require_frozen()`` re-verifies every hash, that the marker and 
 unmodified (src/, scripts/, tests/, docs/TEST_PROTOCOL*, fitted rules), and that the protocol is not a draft.
 
 Look ledger: results/test_eval/looks.jsonl is git-tracked. Two steps: ``--intent`` writes an 'intent' record (the PI
-commits it), ``--run`` requires that committed intent and refuses a second look found on disk or anywhere in git
-history unless --relook-reason is given, in which case the run is automatically non-confirmatory.
+commits it); ``--run`` requires that committed intent, refuses a second look found on disk, in any ref or in the
+reflog (unless --relook-reason: then automatically non-confirmatory), and itself COMMITS the 'started' record before
+any label is read.
 """
 from __future__ import annotations
 
@@ -155,9 +156,24 @@ def read_jsonl(path: Path) -> list:
 
 
 def history_commits(path: Path) -> list[str]:
-    """Commits (any ref) that touched ``path``."""
-    _, out = _git("log", "--all", "--format=%H", "--", rel(path))
-    return [l for l in out.splitlines() if l.strip()]
+    """Commits that touched ``path``, reachable from any ref OR from any reflog entry (so a look committed on a
+    branch that was later deleted, or removed by reset, is still found while the reflog keeps it)."""
+    out = set()
+    for args in (("log", "--all", "--format=%H"), ("log", "--reflog", "--format=%H")):
+        _, o = _git(*args, "--", rel(path))
+        out |= {l for l in o.splitlines() if l.strip()}
+    return sorted(out)
+
+
+def commit_ledger(path: Path, message: str) -> str:
+    """git add + commit of the ledger file only; returns the new commit hash (raises if the commit fails)."""
+    rc, _ = _git("add", "--", rel(path))
+    r = subprocess.run(["git", "-C", str(PROJECT), "commit", "-q", "-m", message, "--", rel(path)],
+                       capture_output=True, text=True)
+    if rc != 0 or r.returncode != 0:
+        raise SystemExit(f"could not commit {rel(path)}: {r.stderr.strip()}")
+    _, h = _git("rev-parse", "HEAD")
+    return h
 
 
 def prior_look_evidence(looks: Path, results: Path) -> dict:

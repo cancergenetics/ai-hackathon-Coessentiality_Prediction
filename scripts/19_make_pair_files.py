@@ -45,6 +45,8 @@ def main():
     a = ap.parse_args()
     ids = paths.CACHE / "ids"
     rec = dict(set=a.set)
+    if a.set in ("train", "dryrun"):
+        paths.verify_train_files()
     if a.set == "train":
         t, audit = P.labelled_table(paths.TRAIN_POS, paths.TRAIN_NEG)
         rec.update(inputs={str(p): sha256_file(p) for p in (paths.TRAIN_POS, paths.TRAIN_NEG)}, audit=audit,
