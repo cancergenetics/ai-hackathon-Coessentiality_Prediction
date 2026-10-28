@@ -1,0 +1,138 @@
+context	kind	n_U	n_nonNaN	n_pos	definition
+MSIScore	continuous	1345	1345		OmicsGlobalSignatures MSIScore (default DNA profile)
+MSI_H	binary	1345	1345	79	MSIScore > 20
+log_burden	continuous	1345	1345		log1p(row sum of OmicsSomaticMutationsMatrixDamaging, default DNA profile)
+Ploidy	continuous	1345	1032		OmicsGlobalSignatures Ploidy (default DNA profile)
+WGD	binary	1345	1032	731	OmicsGlobalSignatures WGD (default DNA profile)
+Ploidy_anyprofile	continuous	1345	1232		SENSITIVITY: Ploidy of the default DNA profile, else of another DNA profile of the model
+WGD_anyprofile	binary	1345	1232	864	SENSITIVITY: WGD of the default DNA profile, else of another DNA profile of the model
+LoF_inclMSI:ARID1A	binary	1345	1256	72	LoF(ARID1A) incl. MSI-H lines
+LoF:ARID1A	binary	1345	1192	49	LoF(ARID1A); MSI-H lines NaN
+LoF_inclMSI:SMARCA4	binary	1345	1274	42	LoF(SMARCA4) incl. MSI-H lines
+LoF:SMARCA4	binary	1345	1202	40	LoF(SMARCA4); MSI-H lines NaN
+LoF_inclMSI:STAG2	binary	1345	1282	24	LoF(STAG2) incl. MSI-H lines
+LoF:STAG2	binary	1345	1205	21	LoF(STAG2); MSI-H lines NaN
+LoF_inclMSI:SMARCB1	binary	1345	1280	16	LoF(SMARCB1) incl. MSI-H lines
+LoF:SMARCB1	binary	1345	1204	16	LoF(SMARCB1); MSI-H lines NaN
+LoF_inclMSI:PTEN	binary	1345	1277	139	LoF(PTEN) incl. MSI-H lines
+LoF:PTEN	binary	1345	1206	117	LoF(PTEN); MSI-H lines NaN
+LoF_inclMSI:RB1	binary	1345	1276	75	LoF(RB1) incl. MSI-H lines
+LoF:RB1	binary	1345	1199	66	LoF(RB1); MSI-H lines NaN
+LoF_inclMSI:KMT2D	binary	1345	1243	25	LoF(KMT2D) incl. MSI-H lines
+LoF:KMT2D	binary	1345	1191	16	LoF(KMT2D); MSI-H lines NaN
+LoF_inclMSI:CREBBP	binary	1345	1272	16	LoF(CREBBP) incl. MSI-H lines
+LoF:CREBBP	binary	1345	1203	12	LoF(CREBBP); MSI-H lines NaN
+LoF_inclMSI:EP300	binary	1345	1256	21	LoF(EP300) incl. MSI-H lines
+LoF:EP300	binary	1345	1192	14	LoF(EP300); MSI-H lines NaN
+LoF_inclMSI:KEAP1	binary	1345	1282	18	LoF(KEAP1) incl. MSI-H lines
+LoF:KEAP1	binary	1345	1205	18	LoF(KEAP1); MSI-H lines NaN
+LoF_inclMSI:CUL3	binary	1345	1282	0	LoF(CUL3) incl. MSI-H lines
+LoF:CUL3	binary	1345	1206	0	LoF(CUL3); MSI-H lines NaN
+LoF_inclMSI:TP53	binary	1345	1291	814	LoF(TP53) incl. MSI-H lines
+LoF:TP53	binary	1345	1222	785	LoF(TP53); MSI-H lines NaN
+LoF_inclMSI:NF1	binary	1345	1273	58	LoF(NF1) incl. MSI-H lines
+LoF:NF1	binary	1345	1198	54	LoF(NF1); MSI-H lines NaN
+LoF_inclMSI:STK11	binary	1345	1284	47	LoF(STK11) incl. MSI-H lines
+LoF:STK11	binary	1345	1207	43	LoF(STK11); MSI-H lines NaN
+LoF_inclMSI:CDKN2A	binary	1345	1253	461	LoF(CDKN2A) incl. MSI-H lines
+LoF:CDKN2A	binary	1345	1180	448	LoF(CDKN2A); MSI-H lines NaN
+LoF_inclMSI:MTAP	binary	1345	1270	197	LoF(MTAP) incl. MSI-H lines
+LoF:MTAP	binary	1345	1194	191	LoF(MTAP); MSI-H lines NaN
+LoF_inclMSI:FOCAD	binary	1345	1274	46	LoF(FOCAD) incl. MSI-H lines
+LoF:FOCAD	binary	1345	1199	41	LoF(FOCAD); MSI-H lines NaN
+LoF_inclMSI:VPS4B	binary	1345	1281	0	LoF(VPS4B) incl. MSI-H lines
+LoF:VPS4B	binary	1345	1206	0	LoF(VPS4B); MSI-H lines NaN
+LoF_inclMSI:MLH1	binary	1345	1280	13	LoF(MLH1) incl. MSI-H lines
+LoF:MLH1	binary	1345	1280	13	LoF(MLH1); MSI-H lines NaN (MMR gene: kept)
+LoF_inclMSI:MSH2	binary	1345	1278	7	LoF(MSH2) incl. MSI-H lines
+LoF:MSH2	binary	1345	1278	7	LoF(MSH2); MSI-H lines NaN (MMR gene: kept)
+LoF_inclMSI:MSH6	binary	1345	1269	13	LoF(MSH6) incl. MSI-H lines
+LoF:MSH6	binary	1345	1269	13	LoF(MSH6); MSI-H lines NaN (MMR gene: kept)
+LoF_inclMSI:PMS2	binary	1345	1283	6	LoF(PMS2) incl. MSI-H lines
+LoF:PMS2	binary	1345	1283	6	LoF(PMS2); MSI-H lines NaN (MMR gene: kept)
+LoF_inclMSI:MLH3	binary	1345	1269	3	LoF(MLH3) incl. MSI-H lines
+LoF:MLH3	binary	1345	1269	3	LoF(MLH3); MSI-H lines NaN (MMR gene: kept)
+LoF_inclMSI:MSH3	binary	1345	1268	9	LoF(MSH3) incl. MSI-H lines
+LoF:MSH3	binary	1345	1268	9	LoF(MSH3); MSI-H lines NaN (MMR gene: kept)
+LoF_inclMSI:PMS1	binary	1345	1278	1	LoF(PMS1) incl. MSI-H lines
+LoF:PMS1	binary	1345	1278	1	LoF(PMS1); MSI-H lines NaN (MMR gene: kept)
+LoF_inclMSI:EPCAM	binary	1345	1255	1	LoF(EPCAM) incl. MSI-H lines
+LoF:EPCAM	binary	1345	1255	1	LoF(EPCAM); MSI-H lines NaN (MMR gene: kept)
+hotspot:KRAS	binary	1345	1345	206	hotspot matrix KRAS >= 1
+hotspot:NRAS	binary	1345	1345	64	hotspot matrix NRAS >= 1
+hotspot:HRAS	binary	1345	1345	14	hotspot matrix HRAS >= 1
+hotspot:BRAF	binary	1345	1345	88	hotspot matrix BRAF >= 1
+hotspot:PIK3CA	binary	1345	1345	133	hotspot matrix PIK3CA >= 1
+hotspot:NFE2L2	binary	1345	1345	23	hotspot matrix NFE2L2 >= 1
+hotspot:TP53	binary	1345	1345	681	hotspot matrix TP53 >= 1
+CN_homdel:MTAP	binary	1345	1271	197	hom-del MTAP (a<0.5 & expr<1 where measured)
+CN_homdel:CDKN2A	binary	1345	1255	339	hom-del CDKN2A (a<0.5 & expr<1 where measured)
+CN_homdel:FOCAD	binary	1345	1277	43	hom-del FOCAD (a<0.5 & expr<1 where measured)
+CN_homdel:VPS4B	binary	1345	1283	0	hom-del VPS4B (a<0.5 & expr<1 where measured)
+CN_homdel:PTEN	binary	1345	1281	17	hom-del PTEN (a<0.5 & expr<1 where measured)
+CN_homdel:RB1	binary	1345	1282	7	hom-del RB1 (a<0.5 & expr<1 where measured)
+CN_homdel:SMARCB1	binary	1345	1281	8	hom-del SMARCB1 (a<0.5 & expr<1 where measured)
+CN_loss:VPS4B	binary	1345	909	340	partial or hom loss VPS4B (a <= Ploidy-0.75 or hom-del)
+CN_amp:MYC	binary	1345	1208	221	amp MYC (r >= 2)
+CN_highamp:MYC	binary	1345	1208	95	high-level amp MYC (r >= 3)
+CN_amp:MYCN	binary	1345	1208	36	amp MYCN (r >= 2)
+CN_highamp:MYCN	binary	1345	1208	33	high-level amp MYCN (r >= 3)
+TP53_altered	binary	1345	1315	887	1 = TP53 hotspot or LoF; 0 = no damaging/hotspot/hom-del; NaN = ambiguous single hit or unknown
+RAS_hotspot	binary	1345	1345	269	KRAS or NRAS hotspot (PC4)
+BRAF_vs_RAS_hotspot	binary	1345	351	85	1 = BRAF hotspot (no RAS hotspot), 0 = KRAS/NRAS hotspot (no BRAF); others NaN (PC5)
+NRF2_active	binary	1345	1209	41	LoF KEAP1 or LoF CUL3 or NFE2L2 hotspot; MSI-H lines 1 only via hotspot, else NaN
+PTEN_LoF_noPIK3CAhs	binary	1345	1115	110	LoF PTEN; lines with PIK3CA hotspot NaN (PC19a)
+PIK3CA_hotspot_noPTENLoF	binary	1345	1228	126	PIK3CA hotspot; lines with PTEN LoF NaN (PC19b)
+9p21_loss	binary	1345	1271	197	9p21 loss = MTAP hom-del (PC9; segment reported)
+FOCAD_del_or_MSI_H	binary	1345	1279	118	FOCAD hom-del or MSI-H (PC10)
+VPS4B_loss	binary	1345	909	340	VPS4B partial or hom loss (PC12)
+MYC_amp	binary	1345	1208	221	MYC r >= 2
+MYCN_amp	binary	1345	1208	36	MYCN r >= 2
+fusion:EWSR1::FLI1	binary	1345	1276	16	unordered EWSR1::FLI1 (OmicsFusionFiltered default RNA profile; no RNA -> NaN)
+fusion:EWSR1::ERG	binary	1345	1276	3	unordered EWSR1::ERG (OmicsFusionFiltered default RNA profile; no RNA -> NaN)
+fusion:EWSR1::FLI1|ERG	binary	1345	1276	19	unordered EWSR1::FLI1, EWSR1::ERG (OmicsFusionFiltered default RNA profile; no RNA -> NaN)
+fusion:SS18::SSX	binary	1345	1276	5	unordered SS18::SSX1, SS18::SSX2, SS18::SSX4 (OmicsFusionFiltered default RNA profile; no RNA -> NaN)
+fusion:KMT2A-r	binary	1345	1276	13	unordered KMT2A::MLLT3, KMT2A::AFF1, KMT2A::MLLT1, KMT2A::MLLT10, KMT2A::AFDN, KMT2A::ELL (OmicsFusionFiltered default RNA profile; no RNA -> NaN)
+fusion:PAX3|7::FOXO1	binary	1345	1276	7	unordered PAX3::FOXO1, PAX7::FOXO1 (OmicsFusionFiltered default RNA profile; no RNA -> NaN)
+fusion:BCR::ABL1	binary	1345	1276	12	unordered BCR::ABL1 (OmicsFusionFiltered default RNA profile; no RNA -> NaN)
+SMARCB1_LoF_or_SS18SSX	binary	1345	1197	21	LoF SMARCB1 or SS18::SSX (PC15/PC22)
+KMT2A_r_vs_nonNPM1c	binary	1345	1274	13	KMT2A-r; reference excludes NPM1-mutant (damaging >= 1) lines (PC16)
+sex_female	binary	1345	1280	546	Model.csv Sex: Female 1, Male 0, Unknown NaN
+chrY_expr_sum	continuous	1345	1276		sum of log1p TPM over 43 chrY (male-specific) protein-coding genes
+LoY	binary	1345	694	290	male lines with chrY_expr_sum < 16.544 (KDE antimode); female/unknown NaN
+female_or_LoY	binary	1345	1240	836	female line or LoY male line (PC13); intact-Y males 0
+OncotreeLineage	categorical	1345	1345		Model.csv OncotreeLineage
+PatientID	categorical	1345	1345		Model.csv PatientID (blocking unit)
+lineage:Adrenal Gland	binary	1345	1345	1	OncotreeLineage == Adrenal Gland
+lineage:Ampulla of Vater	binary	1345	1345	9	OncotreeLineage == Ampulla of Vater
+lineage:Biliary Tract	binary	1345	1345	36	OncotreeLineage == Biliary Tract
+lineage:Bladder/Urinary Tract	binary	1345	1345	34	OncotreeLineage == Bladder/Urinary Tract
+lineage:Bone	binary	1345	1345	59	OncotreeLineage == Bone
+lineage:Bowel	binary	1345	1345	85	OncotreeLineage == Bowel
+lineage:Breast	binary	1345	1345	67	OncotreeLineage == Breast
+lineage:CNS/Brain	binary	1345	1345	132	OncotreeLineage == CNS/Brain
+lineage:Cervix	binary	1345	1345	18	OncotreeLineage == Cervix
+lineage:Esophagus/Stomach	binary	1345	1345	96	OncotreeLineage == Esophagus/Stomach
+lineage:Eye	binary	1345	1345	10	OncotreeLineage == Eye
+lineage:Fibroblast	binary	1345	1345	1	OncotreeLineage == Fibroblast
+lineage:Head and Neck	binary	1345	1345	77	OncotreeLineage == Head and Neck
+lineage:Kidney	binary	1345	1345	35	OncotreeLineage == Kidney
+lineage:Liver	binary	1345	1345	25	OncotreeLineage == Liver
+lineage:Lung	binary	1345	1345	124	OncotreeLineage == Lung
+lineage:Lymphoid	binary	1345	1345	97	OncotreeLineage == Lymphoid
+lineage:Myeloid	binary	1345	1345	44	OncotreeLineage == Myeloid
+lineage:Other	binary	1345	1345	1	OncotreeLineage == Other
+lineage:Ovary/Fallopian Tube	binary	1345	1345	62	OncotreeLineage == Ovary/Fallopian Tube
+lineage:Pancreas	binary	1345	1345	71	OncotreeLineage == Pancreas
+lineage:Peripheral Nervous System	binary	1345	1345	47	OncotreeLineage == Peripheral Nervous System
+lineage:Pleura	binary	1345	1345	21	OncotreeLineage == Pleura
+lineage:Prostate	binary	1345	1345	19	OncotreeLineage == Prostate
+lineage:Skin	binary	1345	1345	68	OncotreeLineage == Skin
+lineage:Soft Tissue	binary	1345	1345	50	OncotreeLineage == Soft Tissue
+lineage:Testis	binary	1345	1345	5	OncotreeLineage == Testis
+lineage:Thyroid	binary	1345	1345	11	OncotreeLineage == Thyroid
+lineage:Uterus	binary	1345	1345	38	OncotreeLineage == Uterus
+lineage:Vulva/Vagina	binary	1345	1345	2	OncotreeLineage == Vulva/Vagina
+heme	binary	1345	1345	141	OncotreeLineage Myeloid or Lymphoid (PC20)
+heme_vs_breast	binary	1345	208	141	1 = Myeloid/Lymphoid, 0 = Breast, others NaN (PC21)
+melanoma	binary	1345	1345	69	OncotreePrimaryDisease contains 'Melanoma' (any site; PC17)

@@ -1,0 +1,49 @@
+stratum	kind	n_U	n_A	n_L	target_L	dev_L
+lineage:Adrenal Gland	lineage	1	1	0	0	0
+lineage:Ampulla of Vater	lineage	9	7	2	2	0
+lineage:Biliary Tract	lineage	36	27	9	9	0
+lineage:Bladder/Urinary Tract	lineage	34	25	9	9	0
+lineage:Bone	lineage	59	44	15	15	0
+lineage:Bowel	lineage	85	64	21	21	0
+lineage:Breast	lineage	67	50	17	17	0
+lineage:CNS/Brain	lineage	132	99	33	33	0
+lineage:Cervix	lineage	18	13	5	5	0
+lineage:Esophagus/Stomach	lineage	96	72	24	24	0
+lineage:Eye	lineage	10	7	3	3	0
+lineage:Fibroblast	lineage	1	1	0	0	0
+lineage:Head and Neck	lineage	77	58	19	19	0
+lineage:Kidney	lineage	35	26	9	9	0
+lineage:Liver	lineage	25	19	6	6	0
+lineage:Lung	lineage	124	93	31	31	0
+lineage:Lymphoid	lineage	97	73	24	24	0
+lineage:Myeloid	lineage	44	33	11	11	0
+lineage:Other	lineage	1	1	0	0	0
+lineage:Ovary/Fallopian Tube	lineage	62	46	16	16	0
+lineage:Pancreas	lineage	71	53	18	18	0
+lineage:Peripheral Nervous System	lineage	47	35	12	12	0
+lineage:Pleura	lineage	21	16	5	5	0
+lineage:Prostate	lineage	19	14	5	5	0
+lineage:Skin	lineage	68	51	17	17	0
+lineage:Soft Tissue	lineage	50	38	12	13	-1
+lineage:Testis	lineage	5	4	1	1	0
+lineage:Thyroid	lineage	11	8	3	3	0
+lineage:Uterus	lineage	38	28	10	10	0
+lineage:Vulva/Vagina	lineage	2	1	1	1	0
+MSI-H	genotype	79	59	20	20	0
+LoF ARID1A	genotype	49	37	12	12	0
+LoF SMARCA4	genotype	40	30	10	10	0
+LoF STAG2	genotype	21	16	5	5	0
+LoF SMARCB1	genotype	16	12	4	4	0
+LoF PTEN	genotype	117	88	29	29	0
+LoF RB1	genotype	66	49	17	17	0
+LoF KMT2D	genotype	16	12	4	4	0
+LoF CREBBP	genotype	12	9	3	3	0
+LoF EP300	genotype	14	10	4	4	0
+NRF2-active	genotype	41	31	10	10	0
+KMT2A-r	genotype	13	10	3	3	0
+9p21/MTAP hom-del	genotype	197	148	49	49	0
+VPS4B loss	genotype	340	255	85	85	0
+KRAS hotspot	genotype	206	154	52	52	0
+NRAS hotspot	genotype	64	48	16	16	0
+BRAF hotspot	genotype	88	66	22	22	0
+PIK3CA hotspot	genotype	133	100	33	33	0
