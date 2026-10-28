@@ -11,7 +11,3714 @@ hypothesis: >
 sign: two-sided
 context_family:
   name: "H1 loss events (complex C, lost gene g), enumerated at FZ-X"
-  contexts: FZ-X
+  contexts:
+    - id: "H1loss:ACAA2"
+      definition: "loss(ACAA2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 941
+      n_L: 5
+      ref_L: 312
+      lockbox_testable: true
+      events: ["Z0106|ACAA2"]
+    - id: "H1loss:ACSL4"
+      definition: "loss(ACSL4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 943
+      n_L: 6
+      ref_L: 314
+      lockbox_testable: true
+      events: ["Z0121|ACSL4"]
+    - id: "H1loss:AFDN"
+      definition: "loss(AFDN) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 933
+      n_L: 2
+      ref_L: 311
+      lockbox_testable: false
+      events: ["Z0035|AFDN"]
+    - id: "H1loss:AGPAT2"
+      definition: "loss(AGPAT2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 21
+      ref_A: 941
+      n_L: 7
+      ref_L: 314
+      lockbox_testable: true
+      events: ["Z0107|AGPAT2"]
+    - id: "H1loss:AGPAT3"
+      definition: "loss(AGPAT3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 945
+      n_L: 3
+      ref_L: 318
+      lockbox_testable: false
+      events: ["Z0121|AGPAT3"]
+    - id: "H1loss:AGR2"
+      definition: "loss(AGR2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 58
+      ref_A: 539
+      n_L: 28
+      ref_L: 182
+      lockbox_testable: true
+      events: ["Z0092|AGR2"]
+    - id: "H1loss:AHR"
+      definition: "loss(AHR) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 52
+      ref_A: 842
+      n_L: 22
+      ref_L: 275
+      lockbox_testable: true
+      events: ["Z0282|AHR"]
+    - id: "H1loss:AIFM2"
+      definition: "loss(AIFM2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 878
+      n_L: 11
+      ref_L: 284
+      lockbox_testable: true
+      events: ["Z0321|AIFM2"]
+    - id: "H1loss:AK4"
+      definition: "loss(AK4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 53
+      ref_A: 906
+      n_L: 24
+      ref_L: 297
+      lockbox_testable: true
+      events: ["Z0134|AK4"]
+    - id: "H1loss:ALDH7A1"
+      definition: "loss(ALDH7A1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 37
+      ref_A: 862
+      n_L: 14
+      ref_L: 288
+      lockbox_testable: true
+      events: ["Z0290|ALDH7A1"]
+    - id: "H1loss:ALDOC"
+      definition: "loss(ALDOC) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 77
+      ref_A: 840
+      n_L: 19
+      ref_L: 294
+      lockbox_testable: true
+      events: ["Z0031|ALDOC"]
+    - id: "H1loss:AMOTL2"
+      definition: "loss(AMOTL2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 852
+      n_L: 7
+      ref_L: 282
+      lockbox_testable: true
+      events: ["Z0333|AMOTL2"]
+    - id: "H1loss:ANO1"
+      definition: "loss(ANO1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 33
+      ref_A: 408
+      n_L: 18
+      ref_L: 129
+      lockbox_testable: true
+      events: ["Z0037|ANO1"]
+    - id: "H1loss:ANPEP"
+      definition: "loss(ANPEP) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 381
+      n_L: 2
+      ref_L: 129
+      lockbox_testable: false
+      events: ["Z0301|ANPEP"]
+    - id: "H1loss:APC"
+      definition: "loss(APC) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 48
+      ref_A: 868
+      n_L: 19
+      ref_L: 293
+      lockbox_testable: true
+      events: ["Z0174|APC"]
+    - id: "H1loss:APLP1"
+      definition: "loss(APLP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 33
+      ref_A: 707
+      n_L: 6
+      ref_L: 255
+      lockbox_testable: true
+      events: ["Z0017|APLP1"]
+    - id: "H1loss:ARHGAP21"
+      definition: "loss(ARHGAP21) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 948
+      n_L: 5
+      ref_L: 314
+      lockbox_testable: true
+      events: ["Z0028|ARHGAP21"]
+    - id: "H1loss:ARHGAP23"
+      definition: "loss(ARHGAP23) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 51
+      ref_A: 830
+      n_L: 22
+      ref_L: 270
+      lockbox_testable: true
+      events: ["Z0108|ARHGAP23"]
+    - id: "H1loss:ARHGAP29"
+      definition: "loss(ARHGAP29) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 65
+      ref_A: 774
+      n_L: 29
+      ref_L: 253
+      lockbox_testable: true
+      events: ["Z0035|ARHGAP29"]
+    - id: "H1loss:ARHGEF12"
+      definition: "loss(ARHGEF12) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 940
+      n_L: 7
+      ref_L: 310
+      lockbox_testable: true
+      events: ["Z0072|ARHGEF12"]
+    - id: "H1loss:ARHGEF25"
+      definition: "loss(ARHGEF25) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 690
+      n_L: 5
+      ref_L: 234
+      lockbox_testable: true
+      events: ["Z0123|ARHGEF25"]
+    - id: "H1loss:ARID1A"
+      definition: "loss(ARID1A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 37
+      ref_A: 858
+      n_L: 12
+      ref_L: 282
+      lockbox_testable: true
+      events: ["Z0109|ARID1A"]
+    - id: "H1loss:ATP2B4"
+      definition: "loss(ATP2B4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 23
+      ref_A: 923
+      n_L: 9
+      ref_L: 307
+      lockbox_testable: true
+      events: ["Z0297|ATP2B4"]
+    - id: "H1loss:ATP6V0A1"
+      definition: "loss(ATP6V0A1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 943
+      n_L: 5
+      ref_L: 315
+      lockbox_testable: true
+      events: ["Z0259|ATP6V0A1"]
+    - id: "H1loss:ATP8B1"
+      definition: "loss(ATP8B1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 31
+      ref_A: 700
+      n_L: 16
+      ref_L: 223
+      lockbox_testable: true
+      events: ["Z0035|ATP8B1"]
+    - id: "H1loss:B3GNT5"
+      definition: "loss(B3GNT5) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 69
+      ref_A: 819
+      n_L: 30
+      ref_L: 267
+      lockbox_testable: true
+      events: ["Z0260|B3GNT5"]
+    - id: "H1loss:B4GALNT1"
+      definition: "loss(B4GALNT1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 704
+      n_L: 3
+      ref_L: 236
+      lockbox_testable: false
+      events: ["Z0024|B4GALNT1"]
+    - id: "H1loss:BAMBI"
+      definition: "loss(BAMBI) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 47
+      ref_A: 794
+      n_L: 12
+      ref_L: 269
+      lockbox_testable: true
+      events: ["Z0255|BAMBI"]
+    - id: "H1loss:BAP1"
+      definition: "loss(BAP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 14
+      ref_A: 947
+      n_L: 6
+      ref_L: 314
+      lockbox_testable: true
+      events: ["Z0171|BAP1"]
+    - id: "H1loss:BATF"
+      definition: "loss(BATF) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 317
+      n_L: 7
+      ref_L: 98
+      lockbox_testable: true
+      events: ["Z0311|BATF"]
+    - id: "H1loss:BCL6"
+      definition: "loss(BCL6) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 908
+      n_L: 14
+      ref_L: 294
+      lockbox_testable: true
+      events: ["Z0096|BCL6"]
+    - id: "H1loss:BCR"
+      definition: "loss(BCR) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 942
+      n_L: 4
+      ref_L: 314
+      lockbox_testable: false
+      events: ["Z0088|BCR"]
+    - id: "H1loss:BHLHE40"
+      definition: "loss(BHLHE40) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 934
+      n_L: 10
+      ref_L: 309
+      lockbox_testable: true
+      events: ["Z0165|BHLHE40"]
+    - id: "H1loss:BHLHE41"
+      definition: "loss(BHLHE41) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 25
+      ref_A: 671
+      n_L: 11
+      ref_L: 211
+      lockbox_testable: true
+      events: ["Z0134|BHLHE41"]
+    - id: "H1loss:BLNK"
+      definition: "loss(BLNK) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 295
+      n_L: 6
+      ref_L: 103
+      lockbox_testable: true
+      events: ["Z0319|BLNK", "Z0321|BLNK"]
+    - id: "H1loss:BRCA1"
+      definition: "loss(BRCA1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 14
+      ref_A: 937
+      n_L: 4
+      ref_L: 313
+      lockbox_testable: false
+      events: ["Z0205|BRCA1"]
+    - id: "H1loss:BTK"
+      definition: "loss(BTK) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 26
+      ref_A: 103
+      n_L: 9
+      ref_L: 36
+      lockbox_testable: true
+      events: ["Z0319|BTK", "Z0321|BTK"]
+    - id: "H1loss:CA8"
+      definition: "loss(CA8) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 317
+      n_L: 5
+      ref_L: 124
+      lockbox_testable: true
+      events: ["Z0210|CA8"]
+    - id: "H1loss:CACNB3"
+      definition: "loss(CACNB3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 938
+      n_L: 0
+      ref_L: 317
+      lockbox_testable: false
+      events: ["Z0155|CACNB3"]
+    - id: "H1loss:CADM4"
+      definition: "loss(CADM4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 850
+      n_L: 8
+      ref_L: 273
+      lockbox_testable: true
+      events: ["Z0038|CADM4"]
+    - id: "H1loss:CAPN5"
+      definition: "loss(CAPN5) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 796
+      n_L: 5
+      ref_L: 258
+      lockbox_testable: true
+      events: ["Z0350|CAPN5"]
+    - id: "H1loss:CARD10"
+      definition: "loss(CARD10) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 794
+      n_L: 12
+      ref_L: 259
+      lockbox_testable: true
+      events: ["Z0234|CARD10"]
+    - id: "H1loss:CCDC28B"
+      definition: "loss(CCDC28B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 932
+      n_L: 8
+      ref_L: 307
+      lockbox_testable: true
+      events: ["Z0091|CCDC28B"]
+    - id: "H1loss:CCDC85B"
+      definition: "loss(CCDC85B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 26
+      ref_A: 934
+      n_L: 6
+      ref_L: 315
+      lockbox_testable: true
+      events: ["Z0273|CCDC85B"]
+    - id: "H1loss:CCND1"
+      definition: "loss(CCND1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 891
+      n_L: 11
+      ref_L: 289
+      lockbox_testable: true
+      events: ["Z0037|CCND1"]
+    - id: "H1loss:CCND2"
+      definition: "loss(CCND2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 24
+      ref_A: 343
+      n_L: 5
+      ref_L: 107
+      lockbox_testable: true
+      events: ["Z0334|CCND2"]
+    - id: "H1loss:CCNE2"
+      definition: "loss(CCNE2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 942
+      n_L: 5
+      ref_L: 313
+      lockbox_testable: true
+      events: ["Z0069|CCNE2"]
+    - id: "H1loss:CD19"
+      definition: "loss(CD19) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 36
+      ref_A: 101
+      n_L: 10
+      ref_L: 31
+      lockbox_testable: true
+      events: ["Z0319|CD19"]
+    - id: "H1loss:CD55"
+      definition: "loss(CD55) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 62
+      ref_A: 897
+      n_L: 14
+      ref_L: 307
+      lockbox_testable: true
+      events: ["Z0297|CD55"]
+    - id: "H1loss:CD79A"
+      definition: "loss(CD79A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 23
+      ref_A: 160
+      n_L: 6
+      ref_L: 55
+      lockbox_testable: true
+      events: ["Z0096|CD79A", "Z0319|CD79A", "Z0321|CD79A"]
+    - id: "H1loss:CD79B"
+      definition: "loss(CD79B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 129
+      n_L: 5
+      ref_L: 49
+      lockbox_testable: true
+      events: ["Z0319|CD79B"]
+    - id: "H1loss:CDH1"
+      definition: "loss(CDH1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 69
+      ref_A: 562
+      n_L: 27
+      ref_L: 173
+      lockbox_testable: true
+      events: ["Z0035|CDH1"]
+    - id: "H1loss:CDH11"
+      definition: "loss(CDH11) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 40
+      ref_A: 347
+      n_L: 14
+      ref_L: 117
+      lockbox_testable: true
+      events: ["Z0160|CDH11"]
+    - id: "H1loss:CDH2"
+      definition: "loss(CDH2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 86
+      ref_A: 589
+      n_L: 34
+      ref_L: 187
+      lockbox_testable: true
+      events: ["Z0035|CDH2"]
+    - id: "H1loss:CDKN1A"
+      definition: "loss(CDKN1A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 940
+      n_L: 12
+      ref_L: 307
+      lockbox_testable: true
+      events: ["Z0158|CDKN1A"]
+    - id: "H1loss:CDKN2C"
+      definition: "loss(CDKN2C) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 31
+      ref_A: 922
+      n_L: 10
+      ref_L: 309
+      lockbox_testable: true
+      events: ["Z0200|CDKN2C"]
+    - id: "H1loss:CEBPA"
+      definition: "loss(CEBPA) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 578
+      n_L: 4
+      ref_L: 192
+      lockbox_testable: false
+      events: ["Z0113|CEBPA"]
+    - id: "H1loss:CEBPD"
+      definition: "loss(CEBPD) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 23
+      ref_A: 858
+      n_L: 8
+      ref_L: 285
+      lockbox_testable: true
+      events: ["Z0210|CEBPD"]
+    - id: "H1loss:CEMIP2"
+      definition: "loss(CEMIP2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 928
+      n_L: 2
+      ref_L: 309
+      lockbox_testable: false
+      events: ["Z0089|CEMIP2"]
+    - id: "H1loss:CEP152"
+      definition: "loss(CEP152) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 913
+      n_L: 5
+      ref_L: 304
+      lockbox_testable: true
+      events: ["Z0004|CEP152"]
+    - id: "H1loss:CEP41"
+      definition: "loss(CEP41) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 932
+      n_L: 3
+      ref_L: 312
+      lockbox_testable: false
+      events: ["Z0004|CEP41"]
+    - id: "H1loss:CERCAM"
+      definition: "loss(CERCAM) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 32
+      ref_A: 891
+      n_L: 7
+      ref_L: 300
+      lockbox_testable: true
+      events: ["Z0233|CERCAM"]
+    - id: "H1loss:CFB"
+      definition: "loss(CFB) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 61
+      ref_A: 642
+      n_L: 18
+      ref_L: 220
+      lockbox_testable: true
+      events: ["Z0211|CFB"]
+    - id: "H1loss:CIART"
+      definition: "loss(CIART) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 623
+      n_L: 7
+      ref_L: 206
+      lockbox_testable: true
+      events: ["Z0310|CIART"]
+    - id: "H1loss:COCH"
+      definition: "loss(COCH) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 54
+      ref_A: 622
+      n_L: 21
+      ref_L: 220
+      lockbox_testable: true
+      events: ["Z0172|COCH"]
+    - id: "H1loss:CPAP"
+      definition: "loss(CPAP) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 923
+      n_L: 4
+      ref_L: 309
+      lockbox_testable: false
+      events: ["Z0004|CPAP"]
+    - id: "H1loss:CPNE7"
+      definition: "loss(CPNE7) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 660
+      n_L: 7
+      ref_L: 219
+      lockbox_testable: true
+      events: ["Z0125|CPNE7"]
+    - id: "H1loss:CPT1A"
+      definition: "loss(CPT1A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 42
+      ref_A: 918
+      n_L: 10
+      ref_L: 311
+      lockbox_testable: true
+      events: ["Z0037|CPT1A"]
+    - id: "H1loss:CPT1B"
+      definition: "loss(CPT1B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 48
+      ref_A: 893
+      n_L: 8
+      ref_L: 310
+      lockbox_testable: true
+      events: ["Z0341|CPT1B"]
+    - id: "H1loss:CRYBG1"
+      definition: "loss(CRYBG1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 65
+      ref_A: 709
+      n_L: 24
+      ref_L: 233
+      lockbox_testable: true
+      events: ["Z0149|CRYBG1"]
+    - id: "H1loss:CSAD"
+      definition: "loss(CSAD) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 25
+      ref_A: 915
+      n_L: 5
+      ref_L: 313
+      lockbox_testable: true
+      events: ["Z0169|CSAD"]
+    - id: "H1loss:CSF3R"
+      definition: "loss(CSF3R) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 61
+      n_L: 2
+      ref_L: 27
+      lockbox_testable: false
+      events: ["Z0091|CSF3R"]
+    - id: "H1loss:CST6"
+      definition: "loss(CST6) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 33
+      ref_A: 308
+      n_L: 13
+      ref_L: 91
+      lockbox_testable: true
+      events: ["Z0273|CST6"]
+    - id: "H1loss:CTSF"
+      definition: "loss(CTSF) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 37
+      ref_A: 783
+      n_L: 15
+      ref_L: 257
+      lockbox_testable: true
+      events: ["Z0273|CTSF"]
+    - id: "H1loss:CTTN"
+      definition: "loss(CTTN) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 940
+      n_L: 3
+      ref_L: 314
+      lockbox_testable: false
+      events: ["Z0037|CTTN"]
+    - id: "H1loss:CYB561"
+      definition: "loss(CYB561) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 28
+      ref_A: 903
+      n_L: 7
+      ref_L: 299
+      lockbox_testable: true
+      events: ["Z0005|CYB561"]
+    - id: "H1loss:CYFIP1"
+      definition: "loss(CYFIP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 21
+      ref_A: 938
+      n_L: 5
+      ref_L: 315
+      lockbox_testable: true
+      events: ["Z0087|CYFIP1"]
+    - id: "H1loss:CYP2R1"
+      definition: "loss(CYP2R1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 34
+      ref_A: 924
+      n_L: 18
+      ref_L: 300
+      lockbox_testable: true
+      events: ["Z0291|CYP2R1"]
+    - id: "H1loss:DGKA"
+      definition: "loss(DGKA) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 933
+      n_L: 2
+      ref_L: 316
+      lockbox_testable: false
+      events: ["Z0117|DGKA"]
+    - id: "H1loss:DHCR24"
+      definition: "loss(DHCR24) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 949
+      n_L: 6
+      ref_L: 315
+      lockbox_testable: true
+      events: ["Z0089|DHCR24"]
+    - id: "H1loss:DIAPH3"
+      definition: "loss(DIAPH3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 942
+      n_L: 3
+      ref_L: 316
+      lockbox_testable: false
+      events: ["Z0267|DIAPH3"]
+    - id: "H1loss:DIPK1B"
+      definition: "loss(DIPK1B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 657
+      n_L: 5
+      ref_L: 214
+      lockbox_testable: true
+      events: ["Z0107|DIPK1B"]
+    - id: "H1loss:DIPK2A"
+      definition: "loss(DIPK2A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 938
+      n_L: 5
+      ref_L: 316
+      lockbox_testable: true
+      events: ["Z0067|DIPK2A"]
+    - id: "H1loss:DMKN"
+      definition: "loss(DMKN) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 59
+      ref_A: 696
+      n_L: 28
+      ref_L: 224
+      lockbox_testable: true
+      events: ["Z0017|DMKN"]
+    - id: "H1loss:DNM1"
+      definition: "loss(DNM1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 778
+      n_L: 9
+      ref_L: 254
+      lockbox_testable: true
+      events: ["Z0233|DNM1"]
+    - id: "H1loss:DOCK2"
+      definition: "loss(DOCK2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 330
+      n_L: 4
+      ref_L: 112
+      lockbox_testable: false
+      events: ["Z0096|DOCK2"]
+    - id: "H1loss:DOCK5"
+      definition: "loss(DOCK5) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 824
+      n_L: 6
+      ref_L: 278
+      lockbox_testable: true
+      events: ["Z0016|DOCK5"]
+    - id: "H1loss:DUSP10"
+      definition: "loss(DUSP10) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 24
+      ref_A: 878
+      n_L: 12
+      ref_L: 288
+      lockbox_testable: true
+      events: ["Z0018|DUSP10"]
+    - id: "H1loss:DUSP4"
+      definition: "loss(DUSP4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 58
+      ref_A: 759
+      n_L: 26
+      ref_L: 246
+      lockbox_testable: true
+      events: ["Z0018|DUSP4"]
+    - id: "H1loss:DUSP6"
+      definition: "loss(DUSP6) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 30
+      ref_A: 904
+      n_L: 13
+      ref_L: 296
+      lockbox_testable: true
+      events: ["Z0084|DUSP6"]
+    - id: "H1loss:EBF1"
+      definition: "loss(EBF1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 29
+      ref_A: 288
+      n_L: 6
+      ref_L: 101
+      lockbox_testable: true
+      events: ["Z0319|EBF1"]
+    - id: "H1loss:ECM1"
+      definition: "loss(ECM1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 31
+      ref_A: 728
+      n_L: 10
+      ref_L: 245
+      lockbox_testable: true
+      events: ["Z0310|ECM1"]
+    - id: "H1loss:EGFR"
+      definition: "loss(EGFR) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 54
+      ref_A: 749
+      n_L: 24
+      ref_L: 245
+      lockbox_testable: true
+      events: ["Z0051|EGFR"]
+    - id: "H1loss:EHBP1L1"
+      definition: "loss(EHBP1L1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 933
+      n_L: 7
+      ref_L: 312
+      lockbox_testable: true
+      events: ["Z0071|EHBP1L1"]
+    - id: "H1loss:EP300"
+      definition: "loss(EP300) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 12
+      ref_A: 904
+      n_L: 4
+      ref_L: 297
+      lockbox_testable: false
+      events: ["Z0186|EP300"]
+    - id: "H1loss:EPAS1"
+      definition: "loss(EPAS1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 55
+      ref_A: 850
+      n_L: 19
+      ref_L: 285
+      lockbox_testable: true
+      events: ["Z0234|EPAS1"]
+    - id: "H1loss:EPCAM"
+      definition: "loss(EPCAM) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 23
+      ref_A: 674
+      n_L: 7
+      ref_L: 229
+      lockbox_testable: true
+      events: ["Z0307|EPCAM"]
+    - id: "H1loss:EPS8L3"
+      definition: "loss(EPS8L3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 49
+      ref_A: 197
+      n_L: 24
+      ref_L: 55
+      lockbox_testable: true
+      events: ["Z0251|EPS8L3"]
+    - id: "H1loss:ERBB3"
+      definition: "loss(ERBB3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 48
+      ref_A: 670
+      n_L: 18
+      ref_L: 223
+      lockbox_testable: true
+      events: ["Z0149|ERBB3"]
+    - id: "H1loss:ESCO2"
+      definition: "loss(ESCO2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 925
+      n_L: 4
+      ref_L: 312
+      lockbox_testable: false
+      events: ["Z0351|ESCO2"]
+    - id: "H1loss:ESPL1"
+      definition: "loss(ESPL1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 937
+      n_L: 6
+      ref_L: 311
+      lockbox_testable: true
+      events: ["Z0011|ESPL1"]
+    - id: "H1loss:F11R"
+      definition: "loss(F11R) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 883
+      n_L: 4
+      ref_L: 301
+      lockbox_testable: false
+      events: ["Z0035|F11R"]
+    - id: "H1loss:F2RL1"
+      definition: "loss(F2RL1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 39
+      ref_A: 701
+      n_L: 14
+      ref_L: 226
+      lockbox_testable: true
+      events: ["Z0241|F2RL1"]
+    - id: "H1loss:F3"
+      definition: "loss(F3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 39
+      ref_A: 828
+      n_L: 20
+      ref_L: 271
+      lockbox_testable: true
+      events: ["Z0173|F3"]
+    - id: "H1loss:FAAH"
+      definition: "loss(FAAH) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 635
+      n_L: 7
+      ref_L: 210
+      lockbox_testable: true
+      events: ["Z0007|FAAH"]
+    - id: "H1loss:FADS2"
+      definition: "loss(FADS2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 25
+      ref_A: 924
+      n_L: 5
+      ref_L: 312
+      lockbox_testable: true
+      events: ["Z0121|FADS2"]
+    - id: "H1loss:FAR2"
+      definition: "loss(FAR2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 39
+      ref_A: 745
+      n_L: 5
+      ref_L: 253
+      lockbox_testable: true
+      events: ["Z0134|FAR2"]
+    - id: "H1loss:FERMT1"
+      definition: "loss(FERMT1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 692
+      n_L: 13
+      ref_L: 217
+      lockbox_testable: true
+      events: ["Z0092|FERMT1"]
+    - id: "H1loss:FERMT2"
+      definition: "loss(FERMT2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 817
+      n_L: 9
+      ref_L: 273
+      lockbox_testable: true
+      events: ["Z0016|FERMT2"]
+    - id: "H1loss:FGFR1"
+      definition: "loss(FGFR1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 35
+      ref_A: 809
+      n_L: 7
+      ref_L: 280
+      lockbox_testable: true
+      events: ["Z0067|FGFR1"]
+    - id: "H1loss:FGFR2"
+      definition: "loss(FGFR2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 28
+      ref_A: 569
+      n_L: 17
+      ref_L: 183
+      lockbox_testable: true
+      events: ["Z0176|FGFR2"]
+    - id: "H1loss:FGFR4"
+      definition: "loss(FGFR4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 759
+      n_L: 9
+      ref_L: 252
+      lockbox_testable: true
+      events: ["Z0149|FGFR4"]
+    - id: "H1loss:FHL2"
+      definition: "loss(FHL2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 37
+      ref_A: 873
+      n_L: 16
+      ref_L: 290
+      lockbox_testable: true
+      events: ["Z0333|FHL2"]
+    - id: "H1loss:FKBP10"
+      definition: "loss(FKBP10) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 74
+      ref_A: 833
+      n_L: 25
+      ref_L: 277
+      lockbox_testable: true
+      events: ["Z0118|FKBP10"]
+    - id: "H1loss:FLI1"
+      definition: "loss(FLI1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 368
+      n_L: 3
+      ref_L: 133
+      lockbox_testable: false
+      events: ["Z0160|FLI1"]
+    - id: "H1loss:FMNL1"
+      definition: "loss(FMNL1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 793
+      n_L: 3
+      ref_L: 267
+      lockbox_testable: false
+      events: ["Z0122|FMNL1"]
+    - id: "H1loss:FOCAD"
+      definition: "loss(FOCAD) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; CN-type event"
+      sign: two-sided
+      type: CN
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      n_A: 46
+      ref_A: 911
+      n_L: 13
+      ref_L: 307
+      lockbox_testable: true
+      events: ["Z0286|FOCAD"]
+    - id: "H1loss:FOSL1"
+      definition: "loss(FOSL1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 54
+      ref_A: 824
+      n_L: 18
+      ref_L: 275
+      lockbox_testable: true
+      events: ["Z0132|FOSL1"]
+    - id: "H1loss:FOSL2"
+      definition: "loss(FOSL2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 914
+      n_L: 6
+      ref_L: 302
+      lockbox_testable: true
+      events: ["Z0165|FOSL2"]
+    - id: "H1loss:FOXA1"
+      definition: "loss(FOXA1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 51
+      ref_A: 563
+      n_L: 19
+      ref_L: 180
+      lockbox_testable: true
+      events: ["Z0149|FOXA1"]
+    - id: "H1loss:GAB1"
+      definition: "loss(GAB1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 903
+      n_L: 6
+      ref_L: 295
+      lockbox_testable: true
+      events: ["Z0051|GAB1"]
+    - id: "H1loss:GATA6"
+      definition: "loss(GATA6) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 645
+      n_L: 10
+      ref_L: 204
+      lockbox_testable: true
+      events: ["Z0092|GATA6"]
+    - id: "H1loss:GBP1"
+      definition: "loss(GBP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 58
+      ref_A: 684
+      n_L: 18
+      ref_L: 226
+      lockbox_testable: true
+      events: ["Z0209|GBP1"]
+    - id: "H1loss:GCNT3"
+      definition: "loss(GCNT3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 42
+      ref_A: 361
+      n_L: 10
+      ref_L: 127
+      lockbox_testable: true
+      events: ["Z0137|GCNT3"]
+    - id: "H1loss:GINS4"
+      definition: "loss(GINS4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 945
+      n_L: 3
+      ref_L: 318
+      lockbox_testable: false
+      events: ["Z0021|GINS4"]
+    - id: "H1loss:GJB5"
+      definition: "loss(GJB5) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 291
+      n_L: 10
+      ref_L: 88
+      lockbox_testable: true
+      events: ["Z0217|GJB5"]
+    - id: "H1loss:GLUL"
+      definition: "loss(GLUL) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 54
+      ref_A: 907
+      n_L: 18
+      ref_L: 303
+      lockbox_testable: true
+      events: ["Z0127|GLUL"]
+    - id: "H1loss:GNE"
+      definition: "loss(GNE) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 26
+      ref_A: 902
+      n_L: 12
+      ref_L: 300
+      lockbox_testable: true
+      events: ["Z0176|GNE"]
+    - id: "H1loss:GPC4"
+      definition: "loss(GPC4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 54
+      ref_A: 586
+      n_L: 17
+      ref_L: 193
+      lockbox_testable: true
+      events: ["Z0291|GPC4"]
+    - id: "H1loss:GPX8"
+      definition: "loss(GPX8) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 36
+      ref_A: 812
+      n_L: 9
+      ref_L: 270
+      lockbox_testable: true
+      events: ["Z0164|GPX8"]
+    - id: "H1loss:GRHL2"
+      definition: "loss(GRHL2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 52
+      ref_A: 403
+      n_L: 31
+      ref_L: 121
+      lockbox_testable: true
+      events: ["Z0149|GRHL2"]
+    - id: "H1loss:GSDMD"
+      definition: "loss(GSDMD) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 78
+      ref_A: 860
+      n_L: 30
+      ref_L: 285
+      lockbox_testable: true
+      events: ["Z0054|GSDMD"]
+    - id: "H1loss:GSTM2"
+      definition: "loss(GSTM2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 39
+      ref_A: 664
+      n_L: 22
+      ref_L: 224
+      lockbox_testable: true
+      events: ["Z0251|GSTM2"]
+    - id: "H1loss:GSTM4"
+      definition: "loss(GSTM4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 60
+      ref_A: 892
+      n_L: 20
+      ref_L: 295
+      lockbox_testable: true
+      events: ["Z0251|GSTM4"]
+    - id: "H1loss:GSTP1"
+      definition: "loss(GSTP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 937
+      n_L: 5
+      ref_L: 315
+      lockbox_testable: true
+      events: ["Z0288|GSTP1"]
+    - id: "H1loss:GTSE1"
+      definition: "loss(GTSE1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 946
+      n_L: 2
+      ref_L: 318
+      lockbox_testable: false
+      events: ["Z0008|GTSE1"]
+    - id: "H1loss:HES1"
+      definition: "loss(HES1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 21
+      ref_A: 875
+      n_L: 15
+      ref_L: 283
+      lockbox_testable: true
+      events: ["Z0279|HES1"]
+    - id: "H1loss:HHEX"
+      definition: "loss(HHEX) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 706
+      n_L: 6
+      ref_L: 232
+      lockbox_testable: true
+      events: ["Z0088|HHEX"]
+    - id: "H1loss:HID1"
+      definition: "loss(HID1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 31
+      ref_A: 667
+      n_L: 11
+      ref_L: 213
+      lockbox_testable: true
+      events: ["Z0005|HID1"]
+    - id: "H1loss:HK2"
+      definition: "loss(HK2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 948
+      n_L: 4
+      ref_L: 315
+      lockbox_testable: false
+      events: ["Z0045|HK2"]
+    - id: "H1loss:HMGA2"
+      definition: "loss(HMGA2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 87
+      ref_A: 739
+      n_L: 29
+      ref_L: 241
+      lockbox_testable: true
+      events: ["Z0024|HMGA2"]
+    - id: "H1loss:HNF1B"
+      definition: "loss(HNF1B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 247
+      n_L: 8
+      ref_L: 79
+      lockbox_testable: true
+      events: ["Z0035|HNF1B"]
+    - id: "H1loss:HOMER3"
+      definition: "loss(HOMER3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 918
+      n_L: 6
+      ref_L: 308
+      lockbox_testable: true
+      events: ["Z0048|HOMER3"]
+    - id: "H1loss:HOXC10"
+      definition: "loss(HOXC10) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 79
+      ref_A: 603
+      n_L: 20
+      ref_L: 201
+      lockbox_testable: true
+      events: ["Z0117|HOXC10"]
+    - id: "H1loss:HYLS1"
+      definition: "loss(HYLS1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 927
+      n_L: 3
+      ref_L: 309
+      lockbox_testable: false
+      events: ["Z0004|HYLS1"]
+    - id: "H1loss:ID1"
+      definition: "loss(ID1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 913
+      n_L: 5
+      ref_L: 307
+      lockbox_testable: true
+      events: ["Z0116|ID1"]
+    - id: "H1loss:ID3"
+      definition: "loss(ID3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 932
+      n_L: 2
+      ref_L: 310
+      lockbox_testable: false
+      events: ["Z0356|ID3"]
+    - id: "H1loss:IGF1R"
+      definition: "loss(IGF1R) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 901
+      n_L: 4
+      ref_L: 291
+      lockbox_testable: false
+      events: ["Z0316|IGF1R"]
+    - id: "H1loss:IGF2BP1"
+      definition: "loss(IGF2BP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 23
+      ref_A: 456
+      n_L: 10
+      ref_L: 161
+      lockbox_testable: true
+      events: ["Z0065|IGF2BP1"]
+    - id: "H1loss:IGFBP6"
+      definition: "loss(IGFBP6) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 69
+      ref_A: 770
+      n_L: 18
+      ref_L: 262
+      lockbox_testable: true
+      events: ["Z0169|IGFBP6"]
+    - id: "H1loss:IGSF11"
+      definition: "loss(IGSF11) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 211
+      n_L: 3
+      ref_L: 77
+      lockbox_testable: false
+      events: ["Z0018|IGSF11"]
+    - id: "H1loss:IKZF3"
+      definition: "loss(IKZF3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 136
+      n_L: 4
+      ref_L: 39
+      lockbox_testable: false
+      events: ["Z0050|IKZF3"]
+    - id: "H1loss:IL6ST"
+      definition: "loss(IL6ST) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 946
+      n_L: 3
+      ref_L: 317
+      lockbox_testable: false
+      events: ["Z0110|IL6ST"]
+    - id: "H1loss:IRF4"
+      definition: "loss(IRF4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 32
+      ref_A: 116
+      n_L: 10
+      ref_L: 39
+      lockbox_testable: true
+      events: ["Z0334|IRF4"]
+    - id: "H1loss:IRF8"
+      definition: "loss(IRF8) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 21
+      ref_A: 250
+      n_L: 5
+      ref_L: 77
+      lockbox_testable: true
+      events: ["Z0113|IRF8"]
+    - id: "H1loss:ISG15"
+      definition: "loss(ISG15) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 936
+      n_L: 7
+      ref_L: 312
+      lockbox_testable: true
+      events: ["Z0029|ISG15"]
+    - id: "H1loss:ISYNA1"
+      definition: "loss(ISYNA1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 27
+      ref_A: 919
+      n_L: 8
+      ref_L: 308
+      lockbox_testable: true
+      events: ["Z0048|ISYNA1"]
+    - id: "H1loss:ITGA3"
+      definition: "loss(ITGA3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 899
+      n_L: 5
+      ref_L: 306
+      lockbox_testable: true
+      events: ["Z0059|ITGA3"]
+    - id: "H1loss:ITGB3"
+      definition: "loss(ITGB3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 393
+      n_L: 1
+      ref_L: 135
+      lockbox_testable: false
+      events: ["Z0123|ITGB3"]
+    - id: "H1loss:JAZF1"
+      definition: "loss(JAZF1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 758
+      n_L: 5
+      ref_L: 258
+      lockbox_testable: true
+      events: ["Z0180|JAZF1"]
+    - id: "H1loss:JUP"
+      definition: "loss(JUP) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 894
+      n_L: 9
+      ref_L: 295
+      lockbox_testable: true
+      events: ["Z0108|JUP"]
+    - id: "H1loss:KDF1"
+      definition: "loss(KDF1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 46
+      ref_A: 442
+      n_L: 27
+      ref_L: 138
+      lockbox_testable: true
+      events: ["Z0241|KDF1"]
+    - id: "H1loss:KDM6A"
+      definition: "loss(KDM6A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 18
+      ref_A: 936
+      n_L: 8
+      ref_L: 310
+      lockbox_testable: true
+      events: ["Z0171|KDM6A"]
+    - id: "H1loss:KEAP1"
+      definition: "loss(KEAP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 13
+      ref_A: 946
+      n_L: 6
+      ref_L: 313
+      lockbox_testable: true
+      events: ["Z0124|KEAP1"]
+    - id: "H1loss:KIF14"
+      definition: "loss(KIF14) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 925
+      n_L: 7
+      ref_L: 308
+      lockbox_testable: true
+      events: ["Z0011|KIF14"]
+    - id: "H1loss:KIF15"
+      definition: "loss(KIF15) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 933
+      n_L: 4
+      ref_L: 309
+      lockbox_testable: false
+      events: ["Z0008|KIF15"]
+    - id: "H1loss:KIF18B"
+      definition: "loss(KIF18B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 940
+      n_L: 6
+      ref_L: 313
+      lockbox_testable: true
+      events: ["Z0337|KIF18B"]
+    - id: "H1loss:KIRREL1"
+      definition: "loss(KIRREL1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 50
+      ref_A: 741
+      n_L: 19
+      ref_L: 240
+      lockbox_testable: true
+      events: ["Z0333|KIRREL1"]
+    - id: "H1loss:KMT2D"
+      definition: "loss(KMT2D) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 12
+      ref_A: 873
+      n_L: 7
+      ref_L: 285
+      lockbox_testable: true
+      events: ["Z0171|KMT2D"]
+    - id: "H1loss:KNL1"
+      definition: "loss(KNL1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 935
+      n_L: 4
+      ref_L: 314
+      lockbox_testable: false
+      events: ["Z0008|KNL1"]
+    - id: "H1loss:LAIR1"
+      definition: "loss(LAIR1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 30
+      ref_A: 92
+      n_L: 7
+      ref_L: 36
+      lockbox_testable: true
+      events: ["Z0212|LAIR1"]
+    - id: "H1loss:LCP1"
+      definition: "loss(LCP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 652
+      n_L: 2
+      ref_L: 221
+      lockbox_testable: false
+      events: ["Z0096|LCP1"]
+    - id: "H1loss:LDLRAD3"
+      definition: "loss(LDLRAD3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 877
+      n_L: 7
+      ref_L: 291
+      lockbox_testable: true
+      events: ["Z0290|LDLRAD3"]
+    - id: "H1loss:LDLRAP1"
+      definition: "loss(LDLRAP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 929
+      n_L: 3
+      ref_L: 313
+      lockbox_testable: false
+      events: ["Z0319|LDLRAP1"]
+    - id: "H1loss:LFNG"
+      definition: "loss(LFNG) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 40
+      ref_A: 802
+      n_L: 14
+      ref_L: 265
+      lockbox_testable: true
+      events: ["Z0290|LFNG"]
+    - id: "H1loss:LIMD2"
+      definition: "loss(LIMD2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 26
+      ref_A: 817
+      n_L: 13
+      ref_L: 272
+      lockbox_testable: true
+      events: ["Z0005|LIMD2"]
+    - id: "H1loss:LIX1L"
+      definition: "loss(LIX1L) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 28
+      ref_A: 807
+      n_L: 12
+      ref_L: 264
+      lockbox_testable: true
+      events: ["Z0322|LIX1L"]
+    - id: "H1loss:LLGL2"
+      definition: "loss(LLGL2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 853
+      n_L: 7
+      ref_L: 288
+      lockbox_testable: true
+      events: ["Z0005|LLGL2"]
+    - id: "H1loss:LPAR1"
+      definition: "loss(LPAR1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 41
+      ref_A: 661
+      n_L: 24
+      ref_L: 203
+      lockbox_testable: true
+      events: ["Z0072|LPAR1"]
+    - id: "H1loss:LRFN4"
+      definition: "loss(LRFN4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 34
+      ref_A: 915
+      n_L: 20
+      ref_L: 292
+      lockbox_testable: true
+      events: ["Z0273|LRFN4"]
+    - id: "H1loss:LRIG1"
+      definition: "loss(LRIG1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 35
+      ref_A: 805
+      n_L: 14
+      ref_L: 262
+      lockbox_testable: true
+      events: ["Z0304|LRIG1"]
+    - id: "H1loss:LRIG3"
+      definition: "loss(LRIG3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 23
+      ref_A: 835
+      n_L: 12
+      ref_L: 272
+      lockbox_testable: true
+      events: ["Z0304|LRIG3"]
+    - id: "H1loss:LRP5"
+      definition: "loss(LRP5) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 922
+      n_L: 5
+      ref_L: 307
+      lockbox_testable: true
+      events: ["Z0291|LRP5"]
+    - id: "H1loss:LYL1"
+      definition: "loss(LYL1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 236
+      n_L: 7
+      ref_L: 70
+      lockbox_testable: true
+      events: ["Z0113|LYL1"]
+    - id: "H1loss:LYN"
+      definition: "loss(LYN) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 858
+      n_L: 8
+      ref_L: 283
+      lockbox_testable: true
+      events: ["Z0319|LYN"]
+    - id: "H1loss:MAP2K4"
+      definition: "loss(MAP2K4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; CN-type event"
+      sign: two-sided
+      type: CN
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      n_A: 16
+      ref_A: 944
+      n_L: 11
+      ref_L: 308
+      lockbox_testable: true
+      events: ["Z0164|MAP2K4"]
+    - id: "H1loss:MAP2K6"
+      definition: "loss(MAP2K6) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 671
+      n_L: 4
+      ref_L: 239
+      lockbox_testable: false
+      events: ["Z0181|MAP2K6"]
+    - id: "H1loss:MAP4K4"
+      definition: "loss(MAP4K4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 942
+      n_L: 2
+      ref_L: 315
+      lockbox_testable: false
+      events: ["Z0333|MAP4K4"]
+    - id: "H1loss:MECOM"
+      definition: "loss(MECOM) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 31
+      ref_A: 644
+      n_L: 7
+      ref_L: 208
+      lockbox_testable: true
+      events: ["Z0165|MECOM"]
+    - id: "H1loss:MED12"
+      definition: "loss(MED12) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 12
+      ref_A: 939
+      n_L: 6
+      ref_L: 315
+      lockbox_testable: true
+      events: ["Z0014|MED12"]
+    - id: "H1loss:MEF2C"
+      definition: "loss(MEF2C) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 23
+      ref_A: 534
+      n_L: 3
+      ref_L: 186
+      lockbox_testable: false
+      events: ["Z0356|MEF2C"]
+    - id: "H1loss:MEIS2"
+      definition: "loss(MEIS2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 27
+      ref_A: 873
+      n_L: 10
+      ref_L: 283
+      lockbox_testable: true
+      events: ["Z0065|MEIS2"]
+    - id: "H1loss:MET"
+      definition: "loss(MET) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 45
+      ref_A: 820
+      n_L: 16
+      ref_L: 267
+      lockbox_testable: true
+      events: ["Z0118|MET"]
+    - id: "H1loss:METRNL"
+      definition: "loss(METRNL) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 40
+      ref_A: 895
+      n_L: 18
+      ref_L: 292
+      lockbox_testable: true
+      events: ["Z0279|METRNL"]
+    - id: "H1loss:MGA"
+      definition: "loss(MGA) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 912
+      n_L: 0
+      ref_L: 309
+      lockbox_testable: false
+      events: ["Z0093|MGA"]
+    - id: "H1loss:MGAT4A"
+      definition: "loss(MGAT4A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 724
+      n_L: 1
+      ref_L: 236
+      lockbox_testable: false
+      events: ["Z0044|MGAT4A"]
+    - id: "H1loss:MKI67"
+      definition: "loss(MKI67) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 922
+      n_L: 3
+      ref_L: 314
+      lockbox_testable: false
+      events: ["Z0008|MKI67"]
+    - id: "H1loss:MTSS1"
+      definition: "loss(MTSS1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 706
+      n_L: 4
+      ref_L: 244
+      lockbox_testable: false
+      events: ["Z0120|MTSS1"]
+    - id: "H1loss:MUC20"
+      definition: "loss(MUC20) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 25
+      ref_A: 431
+      n_L: 10
+      ref_L: 142
+      lockbox_testable: true
+      events: ["Z0296|MUC20"]
+    - id: "H1loss:MXRA7"
+      definition: "loss(MXRA7) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 914
+      n_L: 6
+      ref_L: 301
+      lockbox_testable: true
+      events: ["Z0005|MXRA7"]
+    - id: "H1loss:MYD88"
+      definition: "loss(MYD88) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 44
+      ref_A: 912
+      n_L: 14
+      ref_L: 306
+      lockbox_testable: true
+      events: ["Z0311|MYD88"]
+    - id: "H1loss:MYEOV"
+      definition: "loss(MYEOV) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 67
+      ref_A: 694
+      n_L: 21
+      ref_L: 238
+      lockbox_testable: true
+      events: ["Z0037|MYEOV"]
+    - id: "H1loss:MYO10"
+      definition: "loss(MYO10) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 39
+      ref_A: 839
+      n_L: 16
+      ref_L: 273
+      lockbox_testable: true
+      events: ["Z0016|MYO10"]
+    - id: "H1loss:MYO1B"
+      definition: "loss(MYO1B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 37
+      ref_A: 861
+      n_L: 12
+      ref_L: 284
+      lockbox_testable: true
+      events: ["Z0267|MYO1B"]
+    - id: "H1loss:MYO6"
+      definition: "loss(MYO6) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 896
+      n_L: 4
+      ref_L: 303
+      lockbox_testable: false
+      events: ["Z0170|MYO6"]
+    - id: "H1loss:NAPRT"
+      definition: "loss(NAPRT) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 937
+      n_L: 6
+      ref_L: 315
+      lockbox_testable: true
+      events: ["Z0054|NAPRT"]
+    - id: "H1loss:NAV2"
+      definition: "loss(NAV2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 27
+      ref_A: 745
+      n_L: 13
+      ref_L: 238
+      lockbox_testable: true
+      events: ["Z0018|NAV2"]
+    - id: "H1loss:NEDD4L"
+      definition: "loss(NEDD4L) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 941
+      n_L: 9
+      ref_L: 312
+      lockbox_testable: true
+      events: ["Z0067|NEDD4L"]
+    - id: "H1loss:NEO1"
+      definition: "loss(NEO1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 49
+      ref_A: 885
+      n_L: 14
+      ref_L: 293
+      lockbox_testable: true
+      events: ["Z0304|NEO1"]
+    - id: "H1loss:NES"
+      definition: "loss(NES) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 43
+      ref_A: 512
+      n_L: 12
+      ref_L: 171
+      lockbox_testable: true
+      events: ["Z0309|NES"]
+    - id: "H1loss:NF1"
+      definition: "loss(NF1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 40
+      ref_A: 893
+      n_L: 16
+      ref_L: 294
+      lockbox_testable: true
+      events: ["Z0052|NF1"]
+    - id: "H1loss:NF2"
+      definition: "loss(NF2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 26
+      ref_A: 925
+      n_L: 6
+      ref_L: 311
+      lockbox_testable: true
+      events: ["Z0333|NF2"]
+    - id: "H1loss:NFATC2"
+      definition: "loss(NFATC2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 449
+      n_L: 4
+      ref_L: 133
+      lockbox_testable: false
+      events: ["Z0084|NFATC2"]
+    - id: "H1loss:NFE2L3"
+      definition: "loss(NFE2L3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 31
+      ref_A: 924
+      n_L: 5
+      ref_L: 315
+      lockbox_testable: true
+      events: ["Z0194|NFE2L3"]
+    - id: "H1loss:NFKBIZ"
+      definition: "loss(NFKBIZ) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 27
+      ref_A: 904
+      n_L: 5
+      ref_L: 302
+      lockbox_testable: true
+      events: ["Z0318|NFKBIZ"]
+    - id: "H1loss:NOTCH2"
+      definition: "loss(NOTCH2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 922
+      n_L: 10
+      ref_L: 300
+      lockbox_testable: true
+      events: ["Z0279|NOTCH2"]
+    - id: "H1loss:NRP1"
+      definition: "loss(NRP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 63
+      ref_A: 791
+      n_L: 22
+      ref_L: 264
+      lockbox_testable: true
+      events: ["Z0333|NRP1"]
+    - id: "H1loss:NT5C3B"
+      definition: "loss(NT5C3B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 950
+      n_L: 3
+      ref_L: 317
+      lockbox_testable: false
+      events: ["Z0118|NT5C3B"]
+    - id: "H1loss:PARP10"
+      definition: "loss(PARP10) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 46
+      ref_A: 888
+      n_L: 15
+      ref_L: 300
+      lockbox_testable: true
+      events: ["Z0054|PARP10"]
+    - id: "H1loss:PAWR"
+      definition: "loss(PAWR) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 38
+      ref_A: 901
+      n_L: 8
+      ref_L: 308
+      lockbox_testable: true
+      events: ["Z0072|PAWR"]
+    - id: "H1loss:PAX5"
+      definition: "loss(PAX5) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 33
+      ref_A: 101
+      n_L: 7
+      ref_L: 42
+      lockbox_testable: true
+      events: ["Z0319|PAX5"]
+    - id: "H1loss:PAX8"
+      definition: "loss(PAX8) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 595
+      n_L: 2
+      ref_L: 202
+      lockbox_testable: false
+      events: ["Z0035|PAX8"]
+    - id: "H1loss:PBRM1"
+      definition: "loss(PBRM1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 14
+      ref_A: 938
+      n_L: 7
+      ref_L: 309
+      lockbox_testable: true
+      events: ["Z0201|PBRM1"]
+    - id: "H1loss:PBX1"
+      definition: "loss(PBX1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 43
+      ref_A: 738
+      n_L: 20
+      ref_L: 233
+      lockbox_testable: true
+      events: ["Z0065|PBX1"]
+    - id: "H1loss:PCSK9"
+      definition: "loss(PCSK9) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 36
+      ref_A: 447
+      n_L: 17
+      ref_L: 131
+      lockbox_testable: true
+      events: ["Z0162|PCSK9"]
+    - id: "H1loss:PDK2"
+      definition: "loss(PDK2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 944
+      n_L: 11
+      ref_L: 309
+      lockbox_testable: true
+      events: ["Z0036|PDK2"]
+    - id: "H1loss:PDZK1IP1"
+      definition: "loss(PDZK1IP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 71
+      ref_A: 386
+      n_L: 23
+      ref_L: 126
+      lockbox_testable: true
+      events: ["Z0007|PDZK1IP1"]
+    - id: "H1loss:PEX39"
+      definition: "loss(PEX39) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 922
+      n_L: 4
+      ref_L: 313
+      lockbox_testable: false
+      events: ["Z0302|PEX39"]
+    - id: "H1loss:PIK3AP1"
+      definition: "loss(PIK3AP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 444
+      n_L: 4
+      ref_L: 144
+      lockbox_testable: false
+      events: ["Z0321|PIK3AP1"]
+    - id: "H1loss:PLAA"
+      definition: "loss(PLAA) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; CN-type event"
+      sign: two-sided
+      type: CN
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, Ploidy, WGD, TP53_altered]
+      n_A: 26
+      ref_A: 932
+      n_L: 8
+      ref_L: 313
+      lockbox_testable: true
+      events: ["Z0041|PLAA"]
+    - id: "H1loss:PLAUR"
+      definition: "loss(PLAUR) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 923
+      n_L: 10
+      ref_L: 301
+      lockbox_testable: true
+      events: ["Z0323|PLAUR"]
+    - id: "H1loss:PLEKHB1"
+      definition: "loss(PLEKHB1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 27
+      ref_A: 607
+      n_L: 7
+      ref_L: 201
+      lockbox_testable: true
+      events: ["Z0168|PLEKHB1"]
+    - id: "H1loss:PLEKHG4"
+      definition: "loss(PLEKHG4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 27
+      ref_A: 802
+      n_L: 10
+      ref_L: 265
+      lockbox_testable: true
+      events: ["Z0157|PLEKHG4"]
+    - id: "H1loss:POU2AF1"
+      definition: "loss(POU2AF1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 142
+      n_L: 1
+      ref_L: 43
+      lockbox_testable: false
+      events: ["Z0096|POU2AF1"]
+    - id: "H1loss:PRDX2"
+      definition: "loss(PRDX2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 25
+      ref_A: 937
+      n_L: 8
+      ref_L: 313
+      lockbox_testable: true
+      events: ["Z0098|PRDX2"]
+    - id: "H1loss:PREX1"
+      definition: "loss(PREX1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 578
+      n_L: 9
+      ref_L: 200
+      lockbox_testable: true
+      events: ["Z0160|PREX1"]
+    - id: "H1loss:PRKCZ"
+      definition: "loss(PRKCZ) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 23
+      ref_A: 801
+      n_L: 14
+      ref_L: 258
+      lockbox_testable: true
+      events: ["Z0281|PRKCZ"]
+    - id: "H1loss:PROS1"
+      definition: "loss(PROS1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 27
+      ref_A: 754
+      n_L: 9
+      ref_L: 245
+      lockbox_testable: true
+      events: ["Z0202|PROS1"]
+    - id: "H1loss:PRR15L"
+      definition: "loss(PRR15L) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 39
+      ref_A: 329
+      n_L: 14
+      ref_L: 108
+      lockbox_testable: true
+      events: ["Z0194|PRR15L"]
+    - id: "H1loss:PSD4"
+      definition: "loss(PSD4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 753
+      n_L: 6
+      ref_L: 251
+      lockbox_testable: true
+      events: ["Z0157|PSD4"]
+    - id: "H1loss:PSMB8"
+      definition: "loss(PSMB8) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 63
+      ref_A: 881
+      n_L: 18
+      ref_L: 297
+      lockbox_testable: true
+      events: ["Z0207|PSMB8"]
+    - id: "H1loss:PTEN"
+      definition: "loss(PTEN) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 94
+      ref_A: 839
+      n_L: 31
+      ref_L: 281
+      lockbox_testable: true
+      events: ["Z0130|PTEN"]
+    - id: "H1loss:PTPN14"
+      definition: "loss(PTPN14) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 819
+      n_L: 8
+      ref_L: 271
+      lockbox_testable: true
+      events: ["Z0333|PTPN14"]
+    - id: "H1loss:PTPN6"
+      definition: "loss(PTPN6) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 65
+      ref_A: 657
+      n_L: 23
+      ref_L: 222
+      lockbox_testable: true
+      events: ["Z0223|PTPN6"]
+    - id: "H1loss:QKI"
+      definition: "loss(QKI) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 900
+      n_L: 5
+      ref_L: 299
+      lockbox_testable: true
+      events: ["Z0290|QKI"]
+    - id: "H1loss:RAB25"
+      definition: "loss(RAB25) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 95
+      ref_A: 426
+      n_L: 41
+      ref_L: 131
+      lockbox_testable: true
+      events: ["Z0309|RAB25"]
+    - id: "H1loss:RAB34"
+      definition: "loss(RAB34) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 111
+      ref_A: 752
+      n_L: 40
+      ref_L: 255
+      lockbox_testable: true
+      events: ["Z0031|RAB34"]
+    - id: "H1loss:RAC3"
+      definition: "loss(RAC3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 948
+      n_L: 4
+      ref_L: 317
+      lockbox_testable: false
+      events: ["Z0022|RAC3"]
+    - id: "H1loss:RAD54L"
+      definition: "loss(RAD54L) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 948
+      n_L: 1
+      ref_L: 319
+      lockbox_testable: false
+      events: ["Z0312|RAD54L"]
+    - id: "H1loss:RASGRP2"
+      definition: "loss(RASGRP2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 23
+      ref_A: 294
+      n_L: 7
+      ref_L: 107
+      lockbox_testable: true
+      events: ["Z0020|RASGRP2"]
+    - id: "H1loss:RASGRP3"
+      definition: "loss(RASGRP3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 25
+      ref_A: 402
+      n_L: 5
+      ref_L: 140
+      lockbox_testable: true
+      events: ["Z0241|RASGRP3"]
+    - id: "H1loss:RASSF8"
+      definition: "loss(RASSF8) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 774
+      n_L: 9
+      ref_L: 253
+      lockbox_testable: true
+      events: ["Z0134|RASSF8"]
+    - id: "H1loss:RB1"
+      definition: "loss(RB1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 60
+      ref_A: 886
+      n_L: 19
+      ref_L: 294
+      lockbox_testable: true
+      events: ["Z0200|RB1"]
+    - id: "H1loss:RHBDF2"
+      definition: "loss(RHBDF2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 21
+      ref_A: 930
+      n_L: 11
+      ref_L: 304
+      lockbox_testable: true
+      events: ["Z0005|RHBDF2"]
+    - id: "H1loss:RHOD"
+      definition: "loss(RHOD) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 80
+      ref_A: 595
+      n_L: 24
+      ref_L: 204
+      lockbox_testable: true
+      events: ["Z0288|RHOD"]
+    - id: "H1loss:RHPN1"
+      definition: "loss(RHPN1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 753
+      n_L: 6
+      ref_L: 249
+      lockbox_testable: true
+      events: ["Z0054|RHPN1"]
+    - id: "H1loss:RIN1"
+      definition: "loss(RIN1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 33
+      ref_A: 821
+      n_L: 15
+      ref_L: 272
+      lockbox_testable: true
+      events: ["Z0273|RIN1"]
+    - id: "H1loss:RIPK4"
+      definition: "loss(RIPK4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 33
+      ref_A: 667
+      n_L: 11
+      ref_L: 222
+      lockbox_testable: true
+      events: ["Z0035|RIPK4"]
+    - id: "H1loss:RUNX1"
+      definition: "loss(RUNX1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 54
+      ref_A: 859
+      n_L: 22
+      ref_L: 286
+      lockbox_testable: true
+      events: ["Z0088|RUNX1"]
+    - id: "H1loss:RUNX2"
+      definition: "loss(RUNX2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 40
+      ref_A: 703
+      n_L: 17
+      ref_L: 224
+      lockbox_testable: true
+      events: ["Z0343|RUNX2"]
+    - id: "H1loss:SALL1"
+      definition: "loss(SALL1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 274
+      n_L: 6
+      ref_L: 104
+      lockbox_testable: true
+      events: ["Z0106|SALL1"]
+    - id: "H1loss:SASH3"
+      definition: "loss(SASH3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 27
+      ref_A: 86
+      n_L: 6
+      ref_L: 33
+      lockbox_testable: true
+      events: ["Z0319|SASH3"]
+    - id: "H1loss:SATB1"
+      definition: "loss(SATB1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 688
+      n_L: 5
+      ref_L: 224
+      lockbox_testable: true
+      events: ["Z0065|SATB1"]
+    - id: "H1loss:SCARF2"
+      definition: "loss(SCARF2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 502
+      n_L: 5
+      ref_L: 161
+      lockbox_testable: true
+      events: ["Z0181|SCARF2"]
+    - id: "H1loss:SLC12A7"
+      definition: "loss(SLC12A7) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 36
+      ref_A: 829
+      n_L: 15
+      ref_L: 273
+      lockbox_testable: true
+      events: ["Z0326|SLC12A7"]
+    - id: "H1loss:SLC16A3"
+      definition: "loss(SLC16A3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 70
+      ref_A: 878
+      n_L: 18
+      ref_L: 300
+      lockbox_testable: true
+      events: ["Z0022|SLC16A3"]
+    - id: "H1loss:SLC16A4"
+      definition: "loss(SLC16A4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 33
+      ref_A: 541
+      n_L: 13
+      ref_L: 183
+      lockbox_testable: true
+      events: ["Z0251|SLC16A4"]
+    - id: "H1loss:SLC16A5"
+      definition: "loss(SLC16A5) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 51
+      ref_A: 619
+      n_L: 19
+      ref_L: 209
+      lockbox_testable: true
+      events: ["Z0005|SLC16A5"]
+    - id: "H1loss:SLC22A17"
+      definition: "loss(SLC22A17) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 525
+      n_L: 3
+      ref_L: 174
+      lockbox_testable: false
+      events: ["Z0025|SLC22A17"]
+    - id: "H1loss:SLC27A5"
+      definition: "loss(SLC27A5) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 31
+      ref_A: 917
+      n_L: 18
+      ref_L: 295
+      lockbox_testable: true
+      events: ["Z0330|SLC27A5"]
+    - id: "H1loss:SLC29A2"
+      definition: "loss(SLC29A2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 820
+      n_L: 12
+      ref_L: 263
+      lockbox_testable: true
+      events: ["Z0273|SLC29A2"]
+    - id: "H1loss:SLC7A11"
+      definition: "loss(SLC7A11) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 926
+      n_L: 5
+      ref_L: 314
+      lockbox_testable: true
+      events: ["Z0321|SLC7A11"]
+    - id: "H1loss:SMAD3"
+      definition: "loss(SMAD3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 19
+      ref_A: 939
+      n_L: 7
+      ref_L: 313
+      lockbox_testable: true
+      events: ["Z0279|SMAD3"]
+    - id: "H1loss:SMAD4"
+      definition: "loss(SMAD4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 76
+      ref_A: 878
+      n_L: 26
+      ref_L: 295
+      lockbox_testable: true
+      events: ["Z0304|SMAD4"]
+    - id: "H1loss:SMAD7"
+      definition: "loss(SMAD7) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 31
+      ref_A: 904
+      n_L: 16
+      ref_L: 291
+      lockbox_testable: true
+      events: ["Z0334|SMAD7"]
+    - id: "H1loss:SMARCA4"
+      definition: "loss(SMARCA4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 31
+      ref_A: 912
+      n_L: 12
+      ref_L: 305
+      lockbox_testable: true
+      events: ["Z0109|SMARCA4"]
+    - id: "H1loss:SMARCB1"
+      definition: "loss(SMARCB1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 943
+      n_L: 5
+      ref_L: 316
+      lockbox_testable: true
+      events: ["Z0109|SMARCB1"]
+    - id: "H1loss:SNAI2"
+      definition: "loss(SNAI2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 51
+      ref_A: 613
+      n_L: 12
+      ref_L: 200
+      lockbox_testable: true
+      events: ["Z0059|SNAI2"]
+    - id: "H1loss:SOX10"
+      definition: "loss(SOX10) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 16
+      ref_A: 64
+      n_L: 2
+      ref_L: 30
+      lockbox_testable: false
+      events: ["Z0018|SOX10"]
+    - id: "H1loss:SOX17"
+      definition: "loss(SOX17) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 17
+      ref_A: 89
+      n_L: 6
+      ref_L: 29
+      lockbox_testable: true
+      events: ["Z0165|SOX17"]
+    - id: "H1loss:SOX9"
+      definition: "loss(SOX9) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 50
+      ref_A: 750
+      n_L: 22
+      ref_L: 235
+      lockbox_testable: true
+      events: ["Z0018|SOX9"]
+    - id: "H1loss:SPC24"
+      definition: "loss(SPC24) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 943
+      n_L: 5
+      ref_L: 315
+      lockbox_testable: true
+      events: ["Z0033|SPC24"]
+    - id: "H1loss:SPDEF"
+      definition: "loss(SPDEF) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 190
+      n_L: 4
+      ref_L: 65
+      lockbox_testable: false
+      events: ["Z0149|SPDEF"]
+    - id: "H1loss:SPI1"
+      definition: "loss(SPI1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 34
+      ref_A: 74
+      n_L: 9
+      ref_L: 29
+      lockbox_testable: true
+      events: ["Z0113|SPI1"]
+    - id: "H1loss:SPINT1"
+      definition: "loss(SPINT1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 45
+      ref_A: 709
+      n_L: 14
+      ref_L: 233
+      lockbox_testable: true
+      events: ["Z0208|SPINT1"]
+    - id: "H1loss:SPINT2"
+      definition: "loss(SPINT2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 25
+      ref_A: 813
+      n_L: 8
+      ref_L: 272
+      lockbox_testable: true
+      events: ["Z0291|SPINT2"]
+    - id: "H1loss:SRCAP"
+      definition: "loss(SRCAP) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 21
+      ref_A: 914
+      n_L: 6
+      ref_L: 311
+      lockbox_testable: true
+      events: ["Z0056|SRCAP"]
+    - id: "H1loss:STAG2"
+      definition: "loss(STAG2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 21
+      ref_A: 933
+      n_L: 5
+      ref_L: 313
+      lockbox_testable: true
+      events: ["Z0278|STAG2"]
+    - id: "H1loss:STAT5A"
+      definition: "loss(STAT5A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 21
+      ref_A: 670
+      n_L: 4
+      ref_L: 220
+      lockbox_testable: false
+      events: ["Z0252|STAT5A"]
+    - id: "H1loss:STING1"
+      definition: "loss(STING1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 123
+      ref_A: 817
+      n_L: 36
+      ref_L: 278
+      lockbox_testable: true
+      events: ["Z0190|STING1"]
+    - id: "H1loss:STK11"
+      definition: "loss(STK11) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 43
+      ref_A: 913
+      n_L: 12
+      ref_L: 307
+      lockbox_testable: true
+      events: ["Z0292|STK11"]
+    - id: "H1loss:STRN"
+      definition: "loss(STRN) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 948
+      n_L: 2
+      ref_L: 318
+      lockbox_testable: false
+      events: ["Z0240|STRN"]
+    - id: "H1loss:SV2A"
+      definition: "loss(SV2A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 30
+      ref_A: 518
+      n_L: 12
+      ref_L: 184
+      lockbox_testable: true
+      events: ["Z0354|SV2A"]
+    - id: "H1loss:SYK"
+      definition: "loss(SYK) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 53
+      ref_A: 485
+      n_L: 21
+      ref_L: 149
+      lockbox_testable: true
+      events: ["Z0319|SYK"]
+    - id: "H1loss:SYNE4"
+      definition: "loss(SYNE4) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 329
+      n_L: 2
+      ref_L: 106
+      lockbox_testable: false
+      events: ["Z0017|SYNE4"]
+    - id: "H1loss:SYT11"
+      definition: "loss(SYT11) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 22
+      ref_A: 450
+      n_L: 4
+      ref_L: 151
+      lockbox_testable: false
+      events: ["Z0309|SYT11"]
+    - id: "H1loss:TBX3"
+      definition: "loss(TBX3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 41
+      ref_A: 638
+      n_L: 9
+      ref_L: 215
+      lockbox_testable: true
+      events: ["Z0149|TBX3"]
+    - id: "H1loss:TEDC2"
+      definition: "loss(TEDC2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 941
+      n_L: 4
+      ref_L: 316
+      lockbox_testable: false
+      events: ["Z0004|TEDC2"]
+    - id: "H1loss:TFAP2A"
+      definition: "loss(TFAP2A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 38
+      ref_A: 798
+      n_L: 15
+      ref_L: 263
+      lockbox_testable: true
+      events: ["Z0018|TFAP2A"]
+    - id: "H1loss:TFAP2C"
+      definition: "loss(TFAP2C) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 18
+      ref_A: 582
+      n_L: 7
+      ref_L: 195
+      lockbox_testable: true
+      events: ["Z0120|TFAP2C"]
+    - id: "H1loss:TGFBR2"
+      definition: "loss(TGFBR2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 67
+      ref_A: 843
+      n_L: 27
+      ref_L: 267
+      lockbox_testable: true
+      events: ["Z0279|TGFBR2"]
+    - id: "H1loss:TGIF1"
+      definition: "loss(TGIF1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 21
+      ref_A: 940
+      n_L: 5
+      ref_L: 316
+      lockbox_testable: true
+      events: ["Z0120|TGIF1"]
+    - id: "H1loss:TMEM35B"
+      definition: "loss(TMEM35B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 949
+      n_L: 5
+      ref_L: 316
+      lockbox_testable: true
+      events: ["Z0221|TMEM35B"]
+    - id: "H1loss:TMT1A"
+      definition: "loss(TMT1A) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 56
+      ref_A: 678
+      n_L: 14
+      ref_L: 229
+      lockbox_testable: true
+      events: ["Z0169|TMT1A"]
+    - id: "H1loss:TNFAIP3"
+      definition: "loss(TNFAIP3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 13
+      ref_A: 848
+      n_L: 4
+      ref_L: 276
+      lockbox_testable: false
+      events: ["Z0318|TNFAIP3"]
+    - id: "H1loss:TNFSF10"
+      definition: "loss(TNFSF10) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 66
+      ref_A: 680
+      n_L: 21
+      ref_L: 213
+      lockbox_testable: true
+      events: ["Z0234|TNFSF10"]
+    - id: "H1loss:TNS2"
+      definition: "loss(TNS2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 764
+      n_L: 6
+      ref_L: 254
+      lockbox_testable: true
+      events: ["Z0169|TNS2"]
+    - id: "H1loss:TNS3"
+      definition: "loss(TNS3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 46
+      ref_A: 865
+      n_L: 16
+      ref_L: 283
+      lockbox_testable: true
+      events: ["Z0016|TNS3"]
+    - id: "H1loss:TP53"
+      definition: "loss(TP53) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 605
+      ref_A: 318
+      n_L: 195
+      ref_L: 108
+      lockbox_testable: true
+      events: ["Z0158|TP53"]
+    - id: "H1loss:TPM2"
+      definition: "loss(TPM2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 31
+      ref_A: 879
+      n_L: 12
+      ref_L: 288
+      lockbox_testable: true
+      events: ["Z0261|TPM2"]
+    - id: "H1loss:TRIM47"
+      definition: "loss(TRIM47) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 41
+      ref_A: 861
+      n_L: 11
+      ref_L: 295
+      lockbox_testable: true
+      events: ["Z0005|TRIM47"]
+    - id: "H1loss:TRIP6"
+      definition: "loss(TRIP6) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 75
+      ref_A: 874
+      n_L: 23
+      ref_L: 292
+      lockbox_testable: true
+      events: ["Z0046|TRIP6"]
+    - id: "H1loss:TRPS1"
+      definition: "loss(TRPS1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 678
+      n_L: 4
+      ref_L: 212
+      lockbox_testable: false
+      events: ["Z0149|TRPS1"]
+    - id: "H1loss:TRPV2"
+      definition: "loss(TRPV2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 374
+      n_L: 3
+      ref_L: 130
+      lockbox_testable: false
+      events: ["Z0154|TRPV2"]
+    - id: "H1loss:TSPYL5"
+      definition: "loss(TSPYL5) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 57
+      ref_A: 336
+      n_L: 27
+      ref_L: 92
+      lockbox_testable: true
+      events: ["Z0180|TSPYL5"]
+    - id: "H1loss:TUBGCP6"
+      definition: "loss(TUBGCP6) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 938
+      n_L: 2
+      ref_L: 317
+      lockbox_testable: false
+      events: ["Z0055|TUBGCP6"]
+    - id: "H1loss:UNC13D"
+      definition: "loss(UNC13D) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 35
+      ref_A: 598
+      n_L: 9
+      ref_L: 195
+      lockbox_testable: true
+      events: ["Z0005|UNC13D"]
+    - id: "H1loss:VHL"
+      definition: "loss(VHL) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; LoF-type event"
+      sign: two-sided
+      type: LoF
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
+      n_A: 16
+      ref_A: 944
+      n_L: 7
+      ref_L: 312
+      lockbox_testable: true
+      events: ["Z0145|VHL"]
+    - id: "H1loss:VWA1"
+      definition: "loss(VWA1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 44
+      ref_A: 773
+      n_L: 18
+      ref_L: 256
+      lockbox_testable: true
+      events: ["Z0281|VWA1"]
+    - id: "H1loss:WDR76"
+      definition: "loss(WDR76) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 944
+      n_L: 3
+      ref_L: 317
+      lockbox_testable: false
+      events: ["Z0182|WDR76"]
+    - id: "H1loss:WIPF1"
+      definition: "loss(WIPF1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 668
+      n_L: 7
+      ref_L: 213
+      lockbox_testable: true
+      events: ["Z0096|WIPF1"]
+    - id: "H1loss:WLS"
+      definition: "loss(WLS) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 37
+      ref_A: 852
+      n_L: 10
+      ref_L: 286
+      lockbox_testable: true
+      events: ["Z0291|WLS"]
+    - id: "H1loss:WNT7B"
+      definition: "loss(WNT7B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 39
+      ref_A: 562
+      n_L: 19
+      ref_L: 181
+      lockbox_testable: true
+      events: ["Z0291|WNT7B"]
+    - id: "H1loss:YAP1"
+      definition: "loss(YAP1) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 853
+      n_L: 9
+      ref_L: 277
+      lockbox_testable: true
+      events: ["Z0059|YAP1"]
+    - id: "H1loss:YPEL3"
+      definition: "loss(YPEL3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 62
+      ref_A: 898
+      n_L: 20
+      ref_L: 300
+      lockbox_testable: true
+      events: ["Z0144|YPEL3"]
+    - id: "H1loss:ZBTB18"
+      definition: "loss(ZBTB18) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 20
+      ref_A: 920
+      n_L: 9
+      ref_L: 307
+      lockbox_testable: true
+      events: ["Z0290|ZBTB18"]
+    - id: "H1loss:ZBTB38"
+      definition: "loss(ZBTB38) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 21
+      ref_A: 928
+      n_L: 3
+      ref_L: 312
+      lockbox_testable: false
+      events: ["Z0334|ZBTB38"]
+    - id: "H1loss:ZDHHC8"
+      definition: "loss(ZDHHC8) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 942
+      n_L: 15
+      ref_L: 301
+      lockbox_testable: true
+      events: ["Z0013|ZDHHC8"]
+    - id: "H1loss:ZEB2"
+      definition: "loss(ZEB2) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 21
+      ref_A: 515
+      n_L: 6
+      ref_L: 173
+      lockbox_testable: true
+      events: ["Z0018|ZEB2"]
+    - id: "H1loss:ZNF100"
+      definition: "loss(ZNF100) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 807
+      n_L: 3
+      ref_L: 281
+      lockbox_testable: false
+      events: ["Z0133|ZNF100"]
+    - id: "H1loss:ZNF367"
+      definition: "loss(ZNF367) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 12
+      ref_A: 944
+      n_L: 5
+      ref_L: 315
+      lockbox_testable: true
+      events: ["Z0188|ZNF367"]
+    - id: "H1loss:ZNF506"
+      definition: "loss(ZNF506) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 38
+      ref_A: 798
+      n_L: 8
+      ref_L: 270
+      lockbox_testable: true
+      events: ["Z0133|ZNF506"]
+    - id: "H1loss:ZNF518B"
+      definition: "loss(ZNF518B) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 15
+      ref_A: 684
+      n_L: 4
+      ref_L: 222
+      lockbox_testable: false
+      events: ["Z0201|ZNF518B"]
+    - id: "H1loss:ZNF714"
+      definition: "loss(ZNF714) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 46
+      ref_A: 867
+      n_L: 20
+      ref_L: 280
+      lockbox_testable: true
+      events: ["Z0133|ZNF714"]
+    - id: "H1loss:ZNF91"
+      definition: "loss(ZNF91) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 42
+      ref_A: 858
+      n_L: 14
+      ref_L: 293
+      lockbox_testable: true
+      events: ["Z0133|ZNF91"]
+    - id: "H1loss:ZP3"
+      definition: "loss(ZP3) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 14
+      ref_A: 815
+      n_L: 10
+      ref_L: 263
+      lockbox_testable: true
+      events: ["Z0177|ZP3"]
+    - id: "H1loss:ZSCAN18"
+      definition: "loss(ZSCAN18) = 1 if LoF (functional check passed) / hom-del / silencing by the enumeration rule; 0 = reference (no damaging mutation, no hom-del, expressed); NaN otherwise; silencing-type event"
+      sign: two-sided
+      type: silencing
+      covariates: [lineage_FE, library, ScreenType3DO, ModelType]
+      n_A: 78
+      ref_A: 564
+      n_L: 28
+      ref_L: 193
+      lockbox_testable: true
+      events: ["Z0330|ZSCAN18"]
   context_id_format: "H1loss:<SYMBOL> (one 0/1/NaN column per lost gene, added to the FZ-X context table)"
   event_id_format: "<frozen coarse complex ID>|<SYMBOL of g>"
   expected_events: "about 10-20 (round-2 PI and biology estimates)"
@@ -49,7 +3756,7 @@ paralog_definition:
     (80-81%) are typed other_paralog in Ensembl 116, while STAG2/STAG1 (71%) is within_species_paralog (checked
     on the paralog table only). Paralogy is used only within C, so large gene families do not inflate P.
   sensitivity: [min identity >= 40%, within_species_paralog only]
-complex_set_hash: FZ-X
+complex_set_hash: 533ed754285791ff
 units: >
   Event components '<event ID>|N' (aligned non-paralog score, every event with an evaluable N axis) and '<event
   ID>|P' (paralog score, events with |P| >= 1); hash = part2.registry.set_hash of these IDs.
@@ -108,7 +3815,7 @@ fdr_rule: >
   breadth, matched null, TOST) are applied after BH and cannot rescue a non-rejected test.
 family_m:
   formula: "m_H1 = (number of events with an evaluable N axis) + (number of events with |P| >= 1)"
-  value: FZ-X
+  value: 366
 kill_rule:
   controls: [PC6, PC7, PC8, PC12, PC15]
   rule: >
@@ -156,12 +3863,6 @@ stopping_rule: >
 frozen_inputs:
   - results/part2/contexts/checksums.json
   - results/part2/lockbox/manifest.json
-  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
-  - FZ-X   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
-pending:
-  - "context_family.contexts"
-  - "complex_set_hash"
-  - "family_m.value"
-  - "frozen_inputs[2]"
-  - "frozen_inputs[3]"
+  - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
 status: open

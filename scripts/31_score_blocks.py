@@ -3,7 +3,8 @@
 
 Run sets (src/part2/runsets.py; all are subsets of the construction set A, verified against the FZ-LB manifest):
   A, boot1000..boot1019 (PatientID-blocked 80%), half2000a/b..half2003a/b (PatientID-blocked, lineage-stratified).
-There is deliberately no all-model / U / lockbox option: Part 2 construction sees A only (DESIGN v3.1 §0 F3/F5).
+There is deliberately no all-model / U / lockbox option: Part 2 construction sees A only (DESIGN v3.1 §0 F3/F5);
+``assert_A_only`` re-checks every model ID against the manifest-verified A list before scoring (hard guard).
 (The Part 1 bit-exact reproduction on all models lives in tests/test_part2_scores.py, which calls the scorer directly.)
 Gene set S: dependency-bearing filter computed on A. The A run of zavg_BEF also stores the (non-S genes) x S
 rectangle for the attachment rule (--rect, default on for set A).
@@ -22,7 +23,23 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from part2 import consensus, part1, paths, runsets, scores  # noqa: E402
+from part2 import assoc, consensus, part1, paths, runsets, scores  # noqa: E402
+
+
+class NotAModelsError(SystemExit):
+    pass
+
+
+def assert_A_only(ids) -> list:
+    """Hard guard (FZ-X): refuse to score any model outside the construction set A, read from A_models.txt verified
+    against the committed FZ-LB manifest (assoc.a_models), whatever the run-set code returned."""
+    A = set(assoc.a_models())
+    ids = [str(i) for i in ids]
+    bad = sorted(set(ids) - A)
+    if bad or not ids:
+        raise NotAModelsError(f"31_score_blocks: {len(bad)} model(s) outside the construction set A "
+                              f"(e.g. {bad[:3]}); only A run sets may be scored" if bad else "empty model set")
+    return ids
 
 
 def main():
@@ -34,7 +51,7 @@ def main():
     a = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
     lock = part1.assert_locked()
-    ids = runsets.models(a.set)
+    ids = assert_A_only(runsets.models(a.set))
     S = runsets.S_mask()
     rect = a.set == "A" and a.method == "zavg_BEF"
     blk = scores.score_block(ids, a.method, S, force=a.force, rect=rect)

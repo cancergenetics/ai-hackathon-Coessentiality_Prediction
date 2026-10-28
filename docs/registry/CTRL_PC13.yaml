@@ -26,12 +26,12 @@ control:
   targets: [DDX3X]
   gene_units:
     - "DDX3X (1654)"
-  complex_unit: FZ-C
+  complex_unit: Z0137
   complex_unit_rule: "frozen coarse cluster containing DDX3X; 'not evaluable at complex level' if DDX3X is unclustered (not a member of any frozen coarse cluster) or fewer than 2 members remain after removals. The sub-module containing the target (if any) is reported as a secondary readout, not counted"
   readout_C: "member_resolved (H1 machinery): paralog component = mean (winsor +/-3) of the members of that cluster that are Ensembl-116 paralogs of chrY genes (e.g. DDX3Y) (H1 paralog definition; must contain DDX3X); the non-paralog component and the member-resolved profile are reported, not counted"
   removed_members: "chrY genes excluded; the readout is the component of X-linked gametologs of chrY genes"
   note: "Mapped to H3b by DESIGN 2.6; uses the H1 member-resolved readout because the DESIGN 2.4 paralog-removal rule would otherwise delete DDX3X from S_C (round-2 biology item 2)."
-complex_set_hash: FZ-C
+complex_set_hash: d88b03526724e013
 score: member_resolved
 covariates: [lineage_FE, library, ScreenType3DO, ModelType]
 covariate_rule: "DESIGN 2.5 covariate set for this context type; no covariate is a function of the context (DESIGN 2.2)"
@@ -44,7 +44,7 @@ fdr_family:
   q: 0.05
 family_m:
   formula: "number of gene units + 1 if the complex unit is evaluable (one one-sided test each)"
-  value: FZ-C
+  value: 2
 kill_rule:
   direction: H3b
   counted: true
@@ -80,12 +80,6 @@ stopping_rule: >
 frozen_inputs:
   - results/part2/contexts/checksums.json
   - results/part2/lockbox/manifest.json
-  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
-  - FZ-X   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
-pending:
-  - "complex_set_hash"
-  - "control.complex_unit"
-  - "family_m.value"
-  - "frozen_inputs[2]"
-  - "frozen_inputs[3]"
+  - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
 status: open

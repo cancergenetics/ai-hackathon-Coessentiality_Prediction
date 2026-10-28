@@ -416,7 +416,7 @@ context_family:
     - id: "fusion:SS18::SSX"
       n_A: 5
       reason: "n_A < 12 (DESIGN 2.2 size rule)"
-complex_set_hash: FZ-C
+complex_set_hash: 53f9dbf46370d237
 units: >
   All frozen coarse clusters of the zavg_BEF map (FZ-C), all tiers; locus clusters tested (kept in m) but
   excluded from biological claims. Same unit set (and hash) as H3a_lineage_atlas.
@@ -454,8 +454,8 @@ fdr_rule: >
 family_m:
   formula: "M = 20 primary context families (minus any that fall below 12 A models after complete-case); m = sum over contexts of evaluable (context, coarse complex) tests"
   n_families: 20
-  n_units: FZ-C
-  value: FZ-X
+  n_units: 367
+  value: 7340
 kill_rule:
   controls: [PC1, PC2, PC4, PC5, PC9, PC10, PC11, PC13, PC18, PC19a, PC19b]
   rule: >
@@ -512,12 +512,6 @@ stopping_rule: >
 frozen_inputs:
   - results/part2/contexts/checksums.json
   - results/part2/lockbox/manifest.json
-  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
-  - FZ-X   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
-pending:
-  - "complex_set_hash"
-  - "family_m.n_units"
-  - "family_m.value"
-  - "frozen_inputs[2]"
-  - "frozen_inputs[3]"
+  - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
 status: open

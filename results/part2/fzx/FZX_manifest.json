@@ -1,0 +1,604 @@
+{
+ "freeze": "FZ-X",
+ "design": "DESIGN.md v3.1 \u00a70 F4, \u00a72.2, \u00a72.5-2.7",
+ "created": "2026-10-28T22:43:00",
+ "parent_commit": "8f63b6ec87a93792c7a7f4ad7d4e60df02f7f3be",
+ "fzc_map_commit": "27fa9b275a83fd76a9a2f35107fc0b4f3aaa9ac4",
+ "inputs": {
+  "results/part2/construction/FZC_manifest.json": "8070c5c314d00eb115b05d238eab7ee79e7a3ef6ad0d230366d25c7c4fc7777c",
+  "results/part2/contexts/checksums.json": "69155d48f0cd1aa305c55137db24375cde7e6898e5428f9ebc37252ed21dd514",
+  "results/part2/lockbox/manifest.json": "657ce9a82fbee06bfb9f2abfaa99da4328440eb127ac4b41ffd0dddff7214aab",
+  "results/part2/contexts/lof_functional_check.tsv": "44af49956c7081136b4c84bab9611733051d7440fb532d900e2b8b491c084ecb",
+  "paralogs_ensembl116": "003adc6bb6e0f1ad3500aee537a4df99b6d63fafc32ef024835c76f4c9570700",
+  "coordinates_ensembl116": "a80896b35cfdfc0bbb5755b05ac1d123d326a8eba87add554bb3ee2fdd57a1c8"
+ },
+ "code": {
+  "scripts/39_freeze_fzx.py": "a51e8b3efe880eb1512014b883f5d5fb5bbb29ddc0ad1e64cb6b456a66dad229",
+  "src/part2/fzx.py": "2504c09f615fa02e1372ff29fc9a1740959faa02cd4651b6bb256a5ab3012f97",
+  "src/part2/h1.py": "5bd55e4b10f350556c10d9e5a7a9e1950070b028c3bc038079d88943b6115fd0",
+  "src/part2/cscore.py": "3893b2148089e3f128c29702f6fc743db13c95dd01c90fd86683aab46a3e7fa6",
+  "scripts/31_score_blocks.py": "941ae97542e445c5359381dfa77610151ab47eccaa3c6ede1eb8eff0d0eb16ec"
+ },
+ "complex_set_hashes": {
+  "zavg_coarse": "53f9dbf46370d237",
+  "gls_coarse": "14b6c53a01146a61",
+  "h2_submodules": "141a70b7133ed8a4",
+  "h1_components": "533ed754285791ff"
+ },
+ "membership_sha256": {
+  "zavg (FZ-C membership.tsv)": "fec552d4398de8556d799ff09ebc88575fe75eeba53383638c11303be3c812cd",
+  "gls (FZ-C membership.tsv)": "760e065e39107c97c16735e6dc77f5bca4f73567f7d73d68d67c9ba44bf17dd3",
+  "zavg engine membership": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a",
+  "gls engine membership": "e787126a238bc495eeb69a6287306522bc0da94409b3d8c99225ce6ee27a5d91"
+ },
+ "files": {
+  "results/part2/fzx/bridgeL_gls_contexts.tsv": "18b88466f13640fe47bb12cb8c9db2fc7b4d1ec43db1837bc394bc7afdfc0671",
+  "results/part2/fzx/control_units.tsv": "39d376ef786f81b09872e182919d7952ec415950332c0ba37ce4a0436aaa51d0",
+  "results/part2/fzx/evaluability_tests.tsv.gz": "c9bebee04f5aaf7e5b89a27b9a47b53249854227df9ef3052a12a9913d20dc30",
+  "results/part2/fzx/gls_engine_membership.tsv": "e787126a238bc495eeb69a6287306522bc0da94409b3d8c99225ce6ee27a5d91",
+  "results/part2/fzx/h1_candidates.tsv": "40b1febf6219ced1f6fe47b87f326d77c7f04fac6519f183fed31d84c55cad33",
+  "results/part2/fzx/h1_contexts.tsv": "3186c2438720c522dea8f369e4550edb4a0d3f1e16fda90eafe7a70b1f1c03bb",
+  "results/part2/fzx/h1_events.tsv": "e0297989f795a54fc7a15e82d2dd1494a8514a913ec8476cc10acbf23aab5f58",
+  "results/part2/fzx/h1_lof_check_extra.tsv": "fd7648c9087953c050a76e187c3509df5926bfdc983a0b11d5c8826bf43cc1b9",
+  "results/part2/fzx/h2_submodules.tsv": "8460d9921db3573fe6c2a32f0f415f00300f82bff608e2e7196f296cd038db04",
+  "results/part2/fzx/h3a_contexts.tsv": "203b80573ec1b7a5308426511a9b5a3fdbaf6cef3234a7d6f3d67f4baec7cd5d",
+  "results/part2/fzx/h3b_contexts.tsv": "e2bdfc60109c75a881208b04ec721cb32667b157968f6102cbc166b5eb55527c",
+  "results/part2/fzx/lockbox_testable.tsv": "c9411e34f149c1f121d5bb9aabe4f1d0a2c9278b07847a4c1050d065abd818b2",
+  "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2",
+  "results/part2/fzx/units_gls_coarse.txt": "00d92e7c679a8760713c6192344bbb79487971cc5b6845db583b479c0033a5d0",
+  "results/part2/fzx/units_h1_components.txt": "6ad48d0cae2349877fd50478e73bd4b25322b026b1087e01ea0b86d41dd37997",
+  "results/part2/fzx/units_zavg_coarse.txt": "83a94a542e25135ffeb05ebe029c8d1af3fd70c3a7b4d41b4a774af02123abf1",
+  "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a",
+  "data_cache/part2/fzx/h1_loss_table.parquet": "89f6c359882d4b56e0d31ace3e2bfc4af0c8c54299372f35823a3b6b1c63fafc",
+  "results/part2/construction/zavg_map/clusters.tsv": "7623ce58bc224416ab301e44ba2f761337a2e24c2a31cdd6392048698e8c0056",
+  "results/part2/construction/zavg_map/membership.tsv": "fec552d4398de8556d799ff09ebc88575fe75eeba53383638c11303be3c812cd",
+  "results/part2/construction/zavg_map/attachments.tsv": "cd9b988bb2246ca57f6a9c724710a131c0b06bb66eea527033c8ea74b753ac18",
+  "results/part2/construction/gls_map/clusters.tsv": "f79160a8e5456e9c24805462d1a18250f56ae56cf246b79491b9da1acac8e4ba",
+  "results/part2/construction/gls_map/membership.tsv": "760e065e39107c97c16735e6dc77f5bca4f73567f7d73d68d67c9ba44bf17dd3",
+  "results/part2/construction/tiers/zavg_tiers.tsv": "a861760975bfcc937c31606cf20035b69529a79f318089b9b3ef3f99e885e599",
+  "results/part2/construction/tiers/gls_tiers.tsv": "2224a9c22de8f124b7881de603244338b6cfbe093f5868a8c2d64b54a5cfdb41"
+ },
+ "registry": {
+  "BENCH_complex_vs_gene": {
+   "filled": [
+    "complex_set_hash",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "6af0b5cea2d14f2eb5d3518da643276769a83d5780c437dd78d822f4c2fec34d"
+  },
+  "BRIDGE-L_confirmation_rate": {
+   "filled": [
+    "complex_set_hash",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "200adfa589d0a09f58cacaee0e1b16f04951ab9e25f4197cfadd255796d35157"
+  },
+  "CTRL_PC1": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "a44d97ba839b9bcc35c23d6a4e7e299e7b5db0a531d1094f0d8489c2eb0d14dd"
+  },
+  "CTRL_PC10": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "330dda477ed9245089de2d5de899ddc9f341166f69c64fc05c4e06d3091bddb2"
+  },
+  "CTRL_PC11": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "0bfc09b26554ebd68a08ffc1ac14a27af7d16e49dff3a24e465acc8f98024fb4"
+  },
+  "CTRL_PC12": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "027b76a884169d0c92fb054ff92c8f357c8f35867b58a2fe02eabc8f79b8dc12"
+  },
+  "CTRL_PC13": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "e0dc3033d6b803d96b6996436c740e017f4041f534df03077f4946b4ce01822a"
+  },
+  "CTRL_PC14": {
+   "filled": [
+    "frozen_inputs[2]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "5790ccee1da5f5ba337a21761d1e82ed337b7d7514b044447f764fdb6da1e78c"
+  },
+  "CTRL_PC15": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "a37fed15ed3b223abad8c802602fe63ee44c152f85833d3d74d1a4845724d700"
+  },
+  "CTRL_PC16": {
+   "filled": [
+    "frozen_inputs[2]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "a623d416fda4331e073b63cf00d99f1f1fad52329cd29be786b9ed741f18cbd3"
+  },
+  "CTRL_PC17": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "a48060af8ff647af2810f90c37dd33aa3576f2343a2f7f72a3f28927a8ef6787"
+  },
+  "CTRL_PC18": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "4b4043bb6682a39b9306a8b894aacf0e33cbb64eaa98072dc36962b7f882b7e0"
+  },
+  "CTRL_PC19a": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "3e0035a01c562e2bdb45dcf0f8561c851db87ea0016de69f66c6b3a347ee3003"
+  },
+  "CTRL_PC19b": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "c52ebc8e439ab3670687bf7a98695da0a4366e52bb33e9ff897de25147056f05"
+  },
+  "CTRL_PC2": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "4783425e16280415e43839ceab3846e10dea9aed1b6ad05baadcd66bee4cad2d"
+  },
+  "CTRL_PC20": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "6c3920747d59dbce917a8e2657bf1de4a1acf98a767efecdba0ced6bb7dea12e"
+  },
+  "CTRL_PC21": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "3f39eb01983166f6483fa304b9b445014341b18bc043a8d1544c5f6fc400058a"
+  },
+  "CTRL_PC22": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "d16949e8f5372fd18a25024df0a007883ff0a89d4e8266ee51a79ae4425e0b8a"
+  },
+  "CTRL_PC3": {
+   "filled": [
+    "frozen_inputs[2]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "a945abd9442bea7b37eed4dca387b44fa9575f47b665805a7c2b1fc5709459b1"
+  },
+  "CTRL_PC4": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "0f3919aca2fd4b4056f0d7e8907b36f3e5a616446bc427a07f289f4bf9fb0378"
+  },
+  "CTRL_PC5": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "e1db29d6286867ff774d8156ccf6273386c89c5781c0d075af182afd45d8cde5"
+  },
+  "CTRL_PC6": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "48701009c6adebc83e2cf3448579a0816e3e45709d7516fd632e69663ca42996"
+  },
+  "CTRL_PC7": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "b329f2211bcc153a0eac889707628745d3fa5a683304a2eac09f8e011740ea4b"
+  },
+  "CTRL_PC8": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "3a390b4c1bfb2b9262a3cb7b9775ef92a47217065c80242c81c017afc4939bd7"
+  },
+  "CTRL_PC9": {
+   "filled": [
+    "complex_set_hash",
+    "control.complex_unit",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "c32e13441d8ef02a1e0d0317bea251efb4bf8c610d7182ac01edd19299f3c25a"
+  },
+  "H1_within_complex_GI": {
+   "filled": [
+    "complex_set_hash",
+    "context_family.contexts",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "7f721e2e48ff00d76d0347d624958453e4c56215ab8103591206de3b1ed06f58"
+  },
+  "H2_submodule_divergence": {
+   "filled": [
+    "complex_set_hash",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "fb4bc38c522f4bae4ffa889f4278a526e30749bf4baf9d98de1245ac5fd52003"
+  },
+  "H3a_lineage_atlas": {
+   "filled": [
+    "complex_set_hash",
+    "family_m.n_units",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "fb23ddf5c7f0bf5a395f6578d3bd2b026685ec6fe8dd63851d69646f4acea7fc"
+  },
+  "H3b_driver_family": {
+   "filled": [
+    "complex_set_hash",
+    "family_m.n_units",
+    "family_m.value",
+    "frozen_inputs[2]",
+    "frozen_inputs[3]"
+   ],
+   "fill_only_changes": [],
+   "sha256": "7db6af5f8f4fec81719d20030b6ea106ee6f581e99c57c1bd77cee1f454e6355"
+  }
+ },
+ "summary": {
+  "n_U": 1345,
+  "n_A": 1007,
+  "n_L": 338,
+  "zavg": {
+   "n_coarse": 367,
+   "n_submodules": 132,
+   "n_h2_units": 109,
+   "n_h2_parents": 51,
+   "n_attached_level1_nonlocus": 485,
+   "complex_set_hash": "53f9dbf46370d237",
+   "h2_set_hash": "141a70b7133ed8a4"
+  },
+  "gls": {
+   "n_coarse": 379,
+   "complex_set_hash": "14b6c53a01146a61"
+  },
+  "m": {
+   "H3a": {
+    "M": 23,
+    "m": 8441,
+    "tests": 8441
+   },
+   "H3b": {
+    "M": 20,
+    "m": 7340,
+    "left_family": [],
+    "tests": 7340
+   },
+   "H1": {
+    "m": 366,
+    "n_events": 341,
+    "n_N_axis": 341,
+    "n_P_axis": 25
+   },
+   "H2": "set by the committed H3a and H3b discovery runs (stage-wise)",
+   "BRIDGE_L_gls": {
+    "H3a": 8717,
+    "H3b": 7577,
+    "total": 16294
+   },
+   "controls": {
+    "CTRL_PC1": 2,
+    "CTRL_PC10": 3,
+    "CTRL_PC11": 2,
+    "CTRL_PC12": 2,
+    "CTRL_PC13": 2,
+    "CTRL_PC14": 3,
+    "CTRL_PC15": 2,
+    "CTRL_PC16": 2,
+    "CTRL_PC17": 3,
+    "CTRL_PC18": 1,
+    "CTRL_PC19a": 2,
+    "CTRL_PC19b": 2,
+    "CTRL_PC2": 4,
+    "CTRL_PC20": 2,
+    "CTRL_PC21": 2,
+    "CTRL_PC22": 1,
+    "CTRL_PC3": 3,
+    "CTRL_PC4": 2,
+    "CTRL_PC5": 2,
+    "CTRL_PC6": 2,
+    "CTRL_PC7": 1,
+    "CTRL_PC8": 1,
+    "CTRL_PC9": 3
+   }
+  },
+  "h1": {
+   "n_linked_genes": 4076,
+   "n_candidates": 337,
+   "n_events": 341,
+   "n_event_genes": 337,
+   "by_type": {
+    "LoF": 20,
+    "CN": 3,
+    "silencing": 318
+   },
+   "by_link": {
+    "member": 273,
+    "attached": 68
+   },
+   "n_locus_events": 124,
+   "n_lockbox_testable_events": 274,
+   "n_lof_functional_extra": 893
+  },
+  "controls": {
+   "complex_evaluable": [
+    "PC1",
+    "PC10",
+    "PC11",
+    "PC12",
+    "PC13",
+    "PC15",
+    "PC17",
+    "PC19a",
+    "PC19b",
+    "PC2",
+    "PC20",
+    "PC4",
+    "PC5",
+    "PC6",
+    "PC9"
+   ],
+   "not_evaluable": {
+    "PC18": "KIF18A unclustered at level 1",
+    "PC21": "CDK6/CCND3 unclustered at level 2",
+    "PC22": "BRD9/BICRA unclustered at level 2",
+    "PC7": "SMARCA2 unclustered at level 1",
+    "PC8": "STAG1 unclustered at level 1"
+   }
+  },
+  "lockbox_testable": {
+   "BENCH_complex_vs_gene": {
+    "testable": 41,
+    "total": 41
+   },
+   "BRIDGE-L_confirmation_rate": {
+    "testable": 41,
+    "total": 43
+   },
+   "CTRL_PC1": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC10": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC11": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC12": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC13": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC14": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC15": {
+    "testable": 0,
+    "total": 1
+   },
+   "CTRL_PC16": {
+    "testable": 0,
+    "total": 1
+   },
+   "CTRL_PC17": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC18": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC19a": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC19b": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC2": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC20": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC21": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC22": {
+    "testable": 0,
+    "total": 1
+   },
+   "CTRL_PC3": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC4": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC5": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC6": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC7": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC8": {
+    "testable": 1,
+    "total": 1
+   },
+   "CTRL_PC9": {
+    "testable": 1,
+    "total": 1
+   },
+   "H1_within_complex_GI": {
+    "testable": 274,
+    "total": 341
+   },
+   "H2_submodule_divergence": {
+    "testable": 41,
+    "total": 43
+   },
+   "H3a_lineage_atlas": {
+    "testable": 23,
+    "total": 23
+   },
+   "H3b_driver_family": {
+    "testable": 18,
+    "total": 20
+   }
+  }
+ },
+ "runtime_s": 23.4,
+ "timings_s": {
+  "maps": 0.8,
+  "observed_mask": 2.0,
+  "annotation": 7.9,
+  "evaluability": 15.4,
+  "h1": 22.7
+ }
+}

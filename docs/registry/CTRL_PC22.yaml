@@ -26,11 +26,11 @@ control:
   targets: [BRD9]
   gene_units:
     - "BRD9 (65980)"
-  complex_unit: FZ-C
+  complex_unit: "not evaluable at complex level"
   complex_unit_rule: "frozen sub-module containing BRD9 (else BICRA); evaluable at complex level only if BRD9 (or BICRA) and a cBAF-specific subunit (ARID1A, ARID1B or DPF2) fall in different frozen sub-modules of the same frozen coarse complex; otherwise 'not evaluable at complex level'"
   readout_C: "submodule_vs_sibling: sub-module score (mean of members, winsor +/-3) residualised on its sibling complement (parent minus sub-module) by OLS across A models; the A-fitted coefficients are applied unchanged in L"
   removed_members: "SMARCB1, SS18 and their in-complex paralogs (SS18L1) removed from the sub-module and from its sibling complement"
-complex_set_hash: FZ-C
+complex_set_hash: ee98f9016012a3ca
 score: submodule_vs_sibling
 covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore, NNMD, CasActivity]
 covariate_rule: "NNMD and CasActivity are the H2 primary covariates (complete-case)"
@@ -43,7 +43,7 @@ fdr_family:
   q: 0.05
 family_m:
   formula: "number of gene units + 1 if the complex unit is evaluable (one one-sided test each)"
-  value: FZ-C
+  value: 1
 kill_rule:
   direction: H2
   counted: true
@@ -79,12 +79,6 @@ stopping_rule: >
 frozen_inputs:
   - results/part2/contexts/checksums.json
   - results/part2/lockbox/manifest.json
-  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
-  - FZ-X   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
-pending:
-  - "complex_set_hash"
-  - "control.complex_unit"
-  - "family_m.value"
-  - "frozen_inputs[2]"
-  - "frozen_inputs[3]"
+  - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
 status: open

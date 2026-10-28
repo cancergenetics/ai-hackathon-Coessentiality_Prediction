@@ -1,0 +1,26 @@
+context	definition	n_A	ref_A	n_L	ref_L	lockbox_testable	n_context_cc	n_ref_cc	n_tests	n_evaluable	n_not_evaluable	in_family	outcome
+hotspot:KRAS	hotspot matrix KRAS >= 1	154	853.0	52.0	286.0	True	154.0	853.0	367.0	367.0	0.0	True	in family
+hotspot:NRAS	hotspot matrix NRAS >= 1	48	959.0	16.0	322.0	True	48.0	959.0	367.0	367.0	0.0	True	in family
+hotspot:BRAF	hotspot matrix BRAF >= 1	66	941.0	22.0	316.0	True	66.0	941.0	367.0	367.0	0.0	True	in family
+hotspot:PIK3CA	hotspot matrix PIK3CA >= 1	100	907.0	33.0	305.0	True	100.0	907.0	367.0	367.0	0.0	True	in family
+TP53_altered	1 = TP53 hotspot or LoF; 0 = no damaging/hotspot/hom-del; NaN = ambiguous single hit or unknown	668	319.0	219.0	109.0	True	668.0	319.0	367.0	367.0	0.0	True	in family
+MSI_H	MSIScore > 20	59	948.0	20.0	318.0	True	59.0	948.0	367.0	367.0	0.0	True	in family
+WGD	OmicsGlobalSignatures WGD (default DNA profile)	553	227.0	178.0	74.0	True	544.0	220.0	367.0	367.0	0.0	True	in family
+9p21_loss	9p21 loss = MTAP hom-del (PC9; segment reported)	148	803.0	49.0	271.0	True	108.0	614.0	367.0	367.0	0.0	True	in family
+MYC_amp	MYC r >= 2	174	736.0	47.0	251.0	True	140.0	546.0	367.0	367.0	0.0	True	in family
+MYCN_amp	MYCN r >= 2	28	882.0	8.0	290.0	True	23.0	663.0	367.0	367.0	0.0	True	in family
+LoY	male lines with chrY_expr_sum < 16.544 (KDE antimode); female/unknown NaN	216	311.0	74.0	93.0	True	161.0	257.0	367.0	367.0	0.0	True	in family
+sex_female	Model.csv Sex: Female 1, Male 0, Unknown NaN	408	556.0	138.0	178.0	True	408.0	556.0	367.0	367.0	0.0	True	in family
+NRF2_active	LoF KEAP1 or LoF CUL3 or NFE2L2 hotspot; MSI-H lines 1 only via hotspot, else NaN	31	878.0	10.0	290.0	True	31.0	878.0	367.0	367.0	0.0	True	in family
+LoF:ARID1A	LoF(ARID1A); MSI-H lines NaN	37	858.0	12.0	285.0	True	37.0	858.0	367.0	367.0	0.0	True	in family
+LoF:SMARCA4	LoF(SMARCA4); MSI-H lines NaN	30	871.0	10.0	291.0	True	30.0	871.0	367.0	367.0	0.0	True	in family
+LoF:STAG2	LoF(STAG2); MSI-H lines NaN	16	888.0	5.0	296.0	True	16.0	888.0	367.0	367.0	0.0	True	in family
+LoF:PTEN	LoF(PTEN); MSI-H lines NaN	88	816.0	29.0	273.0	True	88.0	816.0	367.0	367.0	0.0	True	in family
+LoF:RB1	LoF(RB1); MSI-H lines NaN	49	850.0	17.0	283.0	True	49.0	850.0	367.0	367.0	0.0	True	in family
+LoF:KMT2D	LoF(KMT2D); MSI-H lines NaN	12	882.0	4.0	293.0	False	12.0	882.0	367.0	367.0	0.0	True	in family
+fusion:EWSR1::FLI1|ERG	unordered EWSR1::FLI1, EWSR1::ERG (OmicsFusionFiltered default RNA profile; no RNA -> NaN)	15	943.0	4.0	314.0	False	15.0	943.0	367.0	367.0	0.0	True	in family
+LoF:CREBBP		9											excluded at FZ-R: n_A < 12 (DESIGN 2.2 size rule); also fails the LoF functional check
+fusion:KMT2A-r		10											excluded at FZ-R: n_A < 12 (DESIGN 2.2 size rule)
+fusion:BCR::ABL1		11											excluded at FZ-R: n_A < 12 (DESIGN 2.2 size rule)
+fusion:PAX3|7::FOXO1		7											excluded at FZ-R: n_A < 12 (DESIGN 2.2 size rule)
+fusion:SS18::SSX		5											excluded at FZ-R: n_A < 12 (DESIGN 2.2 size rule)

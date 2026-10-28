@@ -200,7 +200,7 @@ context_family:
     - id: "lineage:Vulva/Vagina"
       n_A: 1
       reason: "n_A < 12 (exploratory/descriptive size, DESIGN 2.2); reported descriptively only"
-complex_set_hash: FZ-C
+complex_set_hash: 53f9dbf46370d237
 units: >
   All frozen coarse clusters of the zavg_BEF map (FZ-C), all tiers (T1, T2, T3-neg, T3-nc); locus clusters are
   tested (kept in m) but excluded from biological claims. complex_set_hash = part2.registry.set_hash of their
@@ -235,8 +235,8 @@ fdr_rule: >
 family_m:
   formula: "M = 23 context families; m = sum over contexts of evaluable (context, coarse complex) tests = 23 x n_coarse minus non-evaluable tests"
   n_families: 23
-  n_units: FZ-C
-  value: FZ-X
+  n_units: 367
+  value: 8441
 kill_rule:
   controls: [PC17, PC20]
   rule: >
@@ -291,12 +291,6 @@ stopping_rule: >
 frozen_inputs:
   - results/part2/contexts/checksums.json
   - results/part2/lockbox/manifest.json
-  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
-  - FZ-X   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
-pending:
-  - "complex_set_hash"
-  - "family_m.n_units"
-  - "family_m.value"
-  - "frozen_inputs[2]"
-  - "frozen_inputs[3]"
+  - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
 status: open

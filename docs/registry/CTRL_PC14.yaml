@@ -75,7 +75,5 @@ stopping_rule: >
 frozen_inputs:
   - results/part2/contexts/checksums.json
   - results/part2/lockbox/manifest.json
-  - FZ-X   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
-pending:
-  - "frozen_inputs[2]"
+  - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
 status: open

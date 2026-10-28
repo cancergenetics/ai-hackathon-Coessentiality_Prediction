@@ -13,6 +13,23 @@ One file per registered analysis: `docs/registry/<id>.yaml`. An entry must be **
 - `H3a_lineage_atlas`, `H3b_driver_family`, `H1_within_complex_GI`, `H2_submodule_divergence`: the four directions in registry order.
 - `BENCH_complex_vs_gene` (direction `benchmark`) and `BRIDGE-L_confirmation_rate` (direction `bridge`): their lockbox reads are allowed only after every confirmatory entry has a ledger line.
 
+## FZ-X fill
+
+At FZ-X every placeholder was filled by `scripts/39_freeze_fzx.py`, and every `pending` key was removed. The values
+come from the frozen lists in `results/part2/fzx/`, described in its README:
+- unit sets and complex-set hashes;
+- m per family;
+- control units;
+- the H1 event list.
+
+`frozen_inputs[2]` is `results/part2/construction/FZC_manifest.json` and `frozen_inputs[3]` is
+`results/part2/fzx/FZX_manifest.json`.
+
+`registry.fill_only_changes` against the FZ-R drafts is empty for all 29 entries. `tests/test_part2_fzx.py` re-checks
+this from the commit history.
+
+Placeholder-free entries can now be run, in registry order.
+
 ## Freeze placeholders and `pending`
 
 The entries are drafted before the complex map (FZ-C) and the context/event freeze (FZ-X) exist. A value that can only be known there is written as the placeholder `FZ-C` or `FZ-X`, and the field's dotted path (list items as `[i]`, e.g. `frozen_inputs[2]`, `family_m.value`, `control.complex_unit`, `context_family.contexts`) is listed in `pending`. Validation requires `pending` to list exactly the placeholder fields. `load_entry` (and so `run_association` and `read_lockbox`) refuses an entry that still holds a placeholder; `load_all` accepts it, so a pending entry still counts for the lockbox read order.

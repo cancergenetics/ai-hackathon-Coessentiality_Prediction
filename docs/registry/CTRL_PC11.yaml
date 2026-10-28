@@ -32,11 +32,11 @@ control:
   targets: [NFE2L2]
   gene_units:
     - "NFE2L2 (4780)"
-  complex_unit: FZ-C
+  complex_unit: Z0264
   complex_unit_rule: "frozen coarse cluster containing NFE2L2; 'not evaluable at complex level' if NFE2L2 is unclustered (not a member of any frozen coarse cluster) or fewer than 2 members remain after removals. The sub-module containing the target (if any) is reported as a secondary readout, not counted"
   readout_C: "S_C_mean_winsor3 of that cluster after the removals below (DESIGN 2.4)"
   removed_members: "KEAP1, CUL3 and their in-complex paralogs; NFE2L2 is RETAINED as the target (activating context gene: removing it would delete the readout; pre-declared exception to DESIGN 2.4)"
-complex_set_hash: FZ-C
+complex_set_hash: 54c21d18ba5e0f5a
 score: S_C_mean_winsor3
 covariates: [lineage_FE, library, ScreenType3DO, ModelType, log_burden, MSIScore]
 covariate_rule: "DESIGN 2.5 covariate set for this context type; no covariate is a function of the context (DESIGN 2.2)"
@@ -49,7 +49,7 @@ fdr_family:
   q: 0.05
 family_m:
   formula: "number of gene units + 1 if the complex unit is evaluable (one one-sided test each)"
-  value: FZ-C
+  value: 2
 kill_rule:
   direction: H3b
   counted: true
@@ -86,12 +86,6 @@ stopping_rule: >
 frozen_inputs:
   - results/part2/contexts/checksums.json
   - results/part2/lockbox/manifest.json
-  - FZ-C   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
-  - FZ-X   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
-pending:
-  - "complex_set_hash"
-  - "control.complex_unit"
-  - "family_m.value"
-  - "frozen_inputs[2]"
-  - "frozen_inputs[3]"
+  - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
+  - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
 status: open

@@ -1,11 +1,14 @@
 """The FZ-R registry draft (docs/registry/*.yaml) against DESIGN v3.1 §2.2, §2.5-2.7 and the frozen FZ-LB counts.
 
 Checks: every entry parses and validates; the expected set of entries exists; context IDs are columns of the frozen
-context table summary and their n_A / n_L / lockbox_testable equal results/part2/lockbox/context_counts.tsv; the H3a
-and H3b families follow their inclusion rules; the covariate-of-context rule; the control-to-direction kill map;
-signs; gene-only control hashes; placeholder / pending bookkeeping, refusal of pending entries and fill-only edits.
+context table summary and their n_A / n_L / lockbox_testable equal results/part2/lockbox/context_counts.tsv (H1 loss
+contexts, added at FZ-X: results/part2/fzx/h1_contexts.tsv); the H3a and H3b families follow their inclusion rules;
+the covariate-of-context rule; the control-to-direction kill map; signs; gene-only control hashes; placeholder /
+pending bookkeeping, refusal of pending entries and fill-only edits. After FZ-X every placeholder is filled: the
+filled values are checked against the frozen FZ-X lists (results/part2/fzx/; tests/test_part2_fzx.py re-derives them).
 No dependency data is read."""
 import copy
+import re
 import sys
 from pathlib import Path
 
@@ -21,6 +24,13 @@ from part2.registry import RegistryError  # noqa: E402
 REG = ROOT / "docs" / "registry"
 COUNTS = pd.read_csv(ROOT / "results/part2/lockbox/context_counts.tsv", sep="\t", index_col=0)
 SUMMARY = pd.read_csv(ROOT / "results/part2/contexts/context_summary.tsv", sep="\t", index_col=0)
+FZX = ROOT / "results" / "part2" / "fzx"
+FZX_MANIFEST = "results/part2/fzx/FZX_manifest.json"
+FZC_MANIFEST = "results/part2/construction/FZC_manifest.json"
+H1CTX = pd.read_csv(FZX / "h1_contexts.tsv", sep="\t", index_col=0)
+CTRL_UNITS = pd.read_csv(FZX / "control_units.tsv", sep="\t", index_col="design_id", keep_default_na=False)
+ZAVG_UNITS = (FZX / "units_zavg_coarse.txt").read_text().split()
+ZAVG_ALL_UNITS = set(pd.read_csv(FZX / "zavg_engine_membership.tsv", sep="\t").unit_id)
 
 PCS = [f"PC{i}" for i in range(1, 19)] + ["PC19a", "PC19b", "PC20", "PC21", "PC22"]
 DIRECTION_IDS = ["H3a_lineage_atlas", "H3b_driver_family", "H1_within_complex_GI", "H2_submodule_divergence",
@@ -83,15 +93,22 @@ def test_common_fields(entries):
         assert isinstance(e.get("lockbox"), dict) and str(e["lockbox"].get("target_list", "")).endswith(f"{k}.json"), k
         fi = e["frozen_inputs"]
         assert fi[:2] == ["results/part2/contexts/checksums.json", "results/part2/lockbox/manifest.json"], k
-        assert "FZ-X" in fi, k                                     # every entry waits for the FZ-X freeze
+        assert FZX_MANIFEST in fi, k                               # every entry depends on the FZ-X freeze
+        assert "FZ-X" not in fi and "FZ-C" not in fi, k            # filled at FZ-X
+        gene_only = e["direction"] == "controls" and e["control"]["level"] == "G"
+        assert fi[2:] == ([FZX_MANIFEST] if gene_only else [FZC_MANIFEST, FZX_MANIFEST]), k
 
 
 def test_contexts_exist_and_counts_match_fzlb(entries):
     for k, e in entries.items():
         for c in all_ctx(e):
             cid = c["id"]
-            assert cid in SUMMARY.index and cid in COUNTS.index, (k, cid)
-            r = COUNTS.loc[cid]
+            if cid.startswith("H1loss:"):                          # FZ-X loss columns (not in the FZ-LB table)
+                assert k == "H1_within_complex_GI" and cid in H1CTX.index, (k, cid)
+                r = H1CTX.loc[cid]
+            else:
+                assert cid in SUMMARY.index and cid in COUNTS.index, (k, cid)
+                r = COUNTS.loc[cid]
             assert c["n_A"] == r.n_A and c["n_L"] == r.n_L, (k, cid)
             if "ref_A" in c:
                 assert c["ref_A"] == r.ref_A and c["ref_L"] == r.ref_L, (k, cid)
@@ -139,9 +156,17 @@ def test_controls_kill_map_signs_and_levels(entries):
             assert e["complex_set_hash"] == registry.set_hash(e["control"]["gene_units"]), pc
             assert e["family_m"]["value"] == len(e["control"]["gene_units"]), pc
         else:
-            assert e["control"]["complex_unit"] == "FZ-C" and e["complex_set_hash"] == "FZ-C", pc
             assert "not evaluable at complex level" in e["control"]["complex_unit_rule"], pc
             assert kr["level"] == "C", pc
+            # FZ-X fill: the frozen unit (or the pre-declared 'not evaluable' label), hash and m from control_units.tsv
+            cu = e["control"]["complex_unit"]
+            r = CTRL_UNITS.loc[pc]
+            assert cu == r.unit, pc
+            assert cu == "not evaluable at complex level" or cu in ZAVG_ALL_UNITS, pc
+            units = e["control"]["gene_units"] + ([cu] if cu != "not evaluable at complex level" else [])
+            assert e["complex_set_hash"] == registry.set_hash(units) == r.complex_set_hash, pc
+            ev = str(r.complex_evaluable) == "True"
+            assert e["family_m"]["value"] == len(e["control"]["gene_units"]) + int(ev), pc
         assert len(primary(e)) == 1, pc
     assert {d: sorted(v) for d, v in seen.items()} == {d: sorted(v) for d, v in KILL_MAP.items()}
 
@@ -165,7 +190,8 @@ def test_h3a_family(entries):
     assert e["family_m"]["n_families"] == 23
     assert e["kill_rule"]["controls"] == KILL_MAP["H3a"]
     assert e["fdr_family"] == {"method": "benjamini_bogomolov", "families": "contexts", "q": 0.05}
-    assert e["complex_set_hash"] == "FZ-C" and e["score"] == "S_C_mean_winsor3"
+    assert e["complex_set_hash"] == registry.set_hash(ZAVG_UNITS) and e["score"] == "S_C_mean_winsor3"
+    assert e["family_m"]["n_units"] == len(ZAVG_UNITS) == 367
 
 
 def test_h3b_family(entries):
@@ -194,7 +220,17 @@ def test_h3b_family(entries):
 def test_h1_entry(entries):
     e = entries["H1_within_complex_GI"]
     cf = e["context_family"]
-    assert cf["contexts"] == "FZ-X" and "enumeration_rule" in cf
+    assert "enumeration_rule" in cf
+    # FZ-X: one context per lost gene, exactly the frozen H1 context table, events as in h1_events.tsv
+    assert [c["id"] for c in cf["contexts"]] == list(H1CTX.index)
+    ev = pd.read_csv(FZX / "h1_events.tsv", sep="\t")
+    assert sorted(x for c in cf["contexts"] for x in c["events"]) == sorted(ev.event)
+    for c in cf["contexts"]:
+        r = H1CTX.loc[c["id"]]
+        assert c["type"] == r.type and c["covariates"] == r.covariates.split(";"), c["id"]
+        assert c["lockbox_testable"] == bool(c["n_L"] >= 5 and c["ref_L"] >= 5), c["id"]
+    units = (FZX / "units_h1_components.txt").read_text().split()
+    assert e["complex_set_hash"] == registry.set_hash(units) and e["family_m"]["value"] == len(units)
     rule = cf["enumeration_rule"]
     for needle in (">= 12 loss", "functional check", "hom-del", "silencing", "attached", "Lockbox-testable"):
         assert needle in rule, needle
@@ -204,7 +240,7 @@ def test_h1_entry(entries):
     assert "[-0.1, 0.1]" in e["classes"] and "2.5%" in e["classes"]
     assert e["score"] == "member_resolved" and e["fdr_family"]["method"] == "bh"
     assert e["kill_rule"]["controls"] == KILL_MAP["H1"]
-    assert {"context_family.contexts", "complex_set_hash", "family_m.value"} <= set(e["pending"])
+    assert "pending" not in e and registry.placeholders(e) == []
 
 
 def test_h2_entry(entries):
@@ -237,8 +273,29 @@ def test_every_kill_map_control_is_registered(entries):
 
 
 # ------------------------------------------------------------------ schema extension
+def _pending_version(e: dict, fields: dict) -> dict:
+    """The FZ-R form of a filled entry: the given fields set back to their placeholders, listed in `pending`."""
+    old = copy.deepcopy(e)
+    for path, ph in fields.items():
+        node, keys = old, re.findall(r"[^.\[\]]+|\[\d+\]", path)
+        for kk in keys[:-1]:
+            node = node[int(kk[1:-1])] if kk.startswith("[") else node[kk]
+        last = keys[-1]
+        if last.startswith("["):
+            node[int(last[1:-1])] = ph
+        else:
+            node[last] = ph
+    old["pending"] = sorted(fields)
+    return old
+
+
+H3A_PENDING = {"complex_set_hash": "FZ-C", "family_m.n_units": "FZ-C", "family_m.value": "FZ-X",
+               "frozen_inputs[2]": "FZ-C", "frozen_inputs[3]": "FZ-X"}
+
+
 def _base():
-    return registry.load_yaml((REG / "H3a_lineage_atlas.yaml").read_text())
+    """The H3a entry in its FZ-R (pending) form, rebuilt from the filled file."""
+    return _pending_version(registry.load_yaml((REG / "H3a_lineage_atlas.yaml").read_text()), H3A_PENDING)
 
 
 def test_pending_must_match_placeholders():
@@ -252,7 +309,11 @@ def test_pending_must_match_placeholders():
     e4 = copy.deepcopy(e)
     e4["status"] = "closed"
     assert any("closed" in x for x in registry.validate(e4, e4["id"]))
-    e5 = copy.deepcopy(entries_h1 := registry.load_yaml((REG / "H1_within_complex_GI.yaml").read_text()))
+    entries_h1 = _pending_version(registry.load_yaml((REG / "H1_within_complex_GI.yaml").read_text()),
+                                  {"context_family.contexts": "FZ-X", "complex_set_hash": "FZ-X",
+                                   "family_m.value": "FZ-X", "frozen_inputs[2]": "FZ-C", "frozen_inputs[3]": "FZ-X"})
+    assert registry.validate(entries_h1, entries_h1["id"]) == []
+    e5 = copy.deepcopy(entries_h1)
     del e5["context_family"]["enumeration_rule"]
     assert any("enumeration_rule" in x for x in registry.validate(e5, entries_h1["id"]))
 
@@ -275,7 +336,10 @@ def test_fill_only_changes():
     bad2["context_family"]["contexts"] = bad2["context_family"]["contexts"][:-1]
     assert registry.fill_only_changes(old, bad2)
     # H1: the context list placeholder may be replaced by a list
-    h1 = registry.load_yaml((REG / "H1_within_complex_GI.yaml").read_text())
+    h1 = _pending_version(registry.load_yaml((REG / "H1_within_complex_GI.yaml").read_text()),
+                          {"context_family.contexts": "FZ-X", "complex_set_hash": "FZ-X", "family_m.value": "FZ-X",
+                           "frozen_inputs[2]": "FZ-C", "frozen_inputs[3]": "FZ-X"})
+    assert registry.validate(h1, h1["id"]) == []
     h1n = copy.deepcopy(h1)
     h1n["context_family"]["contexts"] = [{"id": "H1loss:ARID1A", "definition": "toy", "sign": "two-sided"}]
     assert registry.fill_only_changes(h1, h1n) == []
