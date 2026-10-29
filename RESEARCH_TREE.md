@@ -33,6 +33,12 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - Calibration response scope (review 2, M2): the registered response is "if that fraction exceeds 0.075". In the entry, "that fraction" is the pseudo-context p<0.05 rate, so the literal reading applies and the response did not fire. The never-expressed excess (H3a 13.5%, in melanoma/Skin/Lymphoid) is reported as a finding, not as a trigger. Under the broader reading the response would only widen permutation re-testing to p<0.01, which can add discoveries but not remove them. This reading was confirmed after the results were seen, which is disclosed.
   - Reporting: every H3a/H3b discovery carries a "beats all matched sets" flag (H3a 502/1,145; 62 have no sets), and each H2 discovery its rank against its own splits. H2's summary.json "confirmatory/headline" fields are registry defaults; the kill rule makes H2 exploratory (README note).
 - D9 (M4, 2026-10-29): The lockbox dry check (21fe1be) stopped before any L read, because these registered steps had no code: BENCH secondary, BRIDGE-L GLS discovery and multiverse, a lockbox driver with the rare-context route, and lockbox permutation seeds. Rulings: implement them exactly as registered. Amendment A3 registers the seeds and declares BENCH within_line_rank NOT RUN (the registry is internally inconsistent: genome-wide L ranks against a member-only read; the lockbox read is not widened). An independent code review comes before the single read.
+- D10 (M4, 2026-10-29): Lockbox amendments before any read.
+  - A4 (d9a42dd): BENCH secondary A–L random-set correlation NOT RUN (under-specified); BENCH multiverse reports point estimates only; accepted literal readings.
+  - Pre-read code review (2bd58c0): GO-WITH-NOTES.
+  - A5: erratum to A4's G1 reason; the distinct-complex count among g* is reported (A-only); the H1S rare route uses A CRISPR alignment; BRIDGE-L multiverse gets bootstrap CIs; readings recorded (lineage-like controls get an unrestricted PatientID-blocked permutation, which decides PC17; H1 permutations are PatientID-blocked within lineage; breadth over all members kept literal).
+  - Crash policy: each read matrix is persisted to data_cache with its hash committed at once, a resume mode never re-calls the loader, and hand-closing an unconfirmed entry is impossible.
+  - A full dress rehearsal on A with a dummy L loader runs before the single read.
 
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
