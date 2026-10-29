@@ -1,0 +1,270 @@
+{
+ "analysis_id": "H3a_lineage_atlas",
+ "label": "registered calibration run after the discovery run (D8; PI ruling R4)",
+ "registry_blob": "4caaa1f5d0b5dc229f33b7e5c620b32619d35ee2",
+ "matched_random_sets": {
+  "R_per_unit": 10,
+  "seed": "default_rng([4600, unit index])",
+  "status": {
+   "ok": 338,
+   "unavailable": 17,
+   "tolerances doubled": 12
+  },
+  "n_sets": 3500,
+  "pooled": {
+   "n_tests": 80500,
+   "frac_p_lt_005": 0.2814037267080745,
+   "frac_p_lt_001": 0.16673291925465838
+  },
+  "real_pooled": {
+   "n_tests": 8441,
+   "frac_p_lt_005": 0.28077242032934485,
+   "frac_p_lt_001": 0.16088141215495794
+  },
+  "bb": {
+   "rejections": 11861,
+   "families_selected": 21
+  },
+  "per_context": {
+   "lineage:Biliary Tract": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.10628571428571429,
+     "frac_p_lt_001": 0.03942857142857143
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.1335149863760218,
+     "frac_p_lt_001": 0.0326975476839237
+    }
+   },
+   "lineage:Bladder/Urinary Tract": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.20285714285714285,
+     "frac_p_lt_001": 0.09542857142857143
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.2098092643051771,
+     "frac_p_lt_001": 0.09536784741144415
+    }
+   },
+   "lineage:Bone": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.3402857142857143,
+     "frac_p_lt_001": 0.22657142857142856
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.3405994550408719,
+     "frac_p_lt_001": 0.20708446866485014
+    }
+   },
+   "lineage:Bowel": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.3182857142857143,
+     "frac_p_lt_001": 0.18742857142857142
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.33787465940054495,
+     "frac_p_lt_001": 0.18528610354223432
+    }
+   },
+   "lineage:Breast": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.30314285714285716,
+     "frac_p_lt_001": 0.17942857142857144
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.30517711171662126,
+     "frac_p_lt_001": 0.1771117166212534
+    }
+   },
+   "lineage:CNS/Brain": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.37885714285714284,
+     "frac_p_lt_001": 0.26
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.3978201634877384,
+     "frac_p_lt_001": 0.27520435967302453
+    }
+   },
+   "lineage:Cervix": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.13514285714285715,
+     "frac_p_lt_001": 0.046285714285714284
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.17438692098092642,
+     "frac_p_lt_001": 0.0681198910081744
+    }
+   },
+   "lineage:Esophagus/Stomach": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.2322857142857143,
+     "frac_p_lt_001": 0.11257142857142857
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.20708446866485014,
+     "frac_p_lt_001": 0.10899182561307902
+    }
+   },
+   "lineage:Head and Neck": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.44685714285714284,
+     "frac_p_lt_001": 0.32285714285714284
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.45776566757493187,
+     "frac_p_lt_001": 0.30517711171662126
+    }
+   },
+   "lineage:Kidney": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.2402857142857143,
+     "frac_p_lt_001": 0.13657142857142857
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.2561307901907357,
+     "frac_p_lt_001": 0.1335149863760218
+    }
+   },
+   "lineage:Liver": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.15828571428571428,
+     "frac_p_lt_001": 0.074
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.13896457765667575,
+     "frac_p_lt_001": 0.05994550408719346
+    }
+   },
+   "lineage:Lung": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.3242857142857143,
+     "frac_p_lt_001": 0.186
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.30517711171662126,
+     "frac_p_lt_001": 0.16348773841961853
+    }
+   },
+   "lineage:Lymphoid": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.5971428571428572,
+     "frac_p_lt_001": 0.5028571428571429
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.5722070844686649,
+     "frac_p_lt_001": 0.4877384196185286
+    }
+   },
+   "lineage:Myeloid": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.3697142857142857,
+     "frac_p_lt_001": 0.24057142857142857
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.36239782016348776,
+     "frac_p_lt_001": 0.21525885558583105
+    }
+   },
+   "lineage:Ovary/Fallopian Tube": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.1777142857142857,
+     "frac_p_lt_001": 0.08142857142857143
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.16076294277929154,
+     "frac_p_lt_001": 0.07084468664850137
+    }
+   },
+   "lineage:Pancreas": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.33057142857142857,
+     "frac_p_lt_001": 0.202
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.2997275204359673,
+     "frac_p_lt_001": 0.1771117166212534
+    }
+   },
+   "lineage:Peripheral Nervous System": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.3722857142857143,
+     "frac_p_lt_001": 0.24171428571428571
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.3869209809264305,
+     "frac_p_lt_001": 0.23978201634877383
+    }
+   },
+   "lineage:Pleura": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.20742857142857143,
+     "frac_p_lt_001": 0.08114285714285714
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.1907356948228883,
+     "frac_p_lt_001": 0.05722070844686648
+    }
+   },
+   "lineage:Prostate": {
+    "random": {
+     "n_tests": 3500,
+     "frac_p_lt_005": 0.10428571428571429,
+     "frac_p_lt_001": 0.023428571428571427
+    },
+    "real": {
+
+       37.60 real        36.21 user         2.16 sys
+          3733946368  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              429271  page reclaims
+                 250  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  43  voluntary context switches
+               20684  involuntary context switches
+        507437418034  instructions retired
+        129586513565  cycles elapsed
+          2196786344  peak memory footprint
