@@ -32,6 +32,7 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - Pre-declared post hoc sensitivity, before it is computed: H3a/H3b with covariates ScreenNNMD + CasActivity (per model, from CRISPRConfounders.csv; growth pattern excluded as collinear with lineage), all else as registered. Motivation: the review found the lymphoid "scale effect" (ρ −0.24). Report the surviving fraction per lineage; the primary is unchanged.
   - Calibration response scope (review 2, M2): the registered response is "if that fraction exceeds 0.075". In the entry, "that fraction" is the pseudo-context p<0.05 rate, so the literal reading applies and the response did not fire. The never-expressed excess (H3a 13.5%, in melanoma/Skin/Lymphoid) is reported as a finding, not as a trigger. Under the broader reading the response would only widen permutation re-testing to p<0.01, which can add discoveries but not remove them. This reading was confirmed after the results were seen, which is disclosed.
   - Reporting: every H3a/H3b discovery carries a "beats all matched sets" flag (H3a 502/1,145; 62 have no sets), and each H2 discovery its rank against its own splits. H2's summary.json "confirmatory/headline" fields are registry defaults; the kill rule makes H2 exploratory (README note).
+- D9 (M4, 2026-10-29): The lockbox dry check (21fe1be) stopped before any L read, because these registered steps had no code: BENCH secondary, BRIDGE-L GLS discovery and multiverse, a lockbox driver with the rare-context route, and lockbox permutation seeds. Rulings: implement them exactly as registered. Amendment A3 registers the seeds and declares BENCH within_line_rank NOT RUN (the registry is internally inconsistent: genome-wide L ranks against a member-only read; the lockbox read is not widened). An independent code review comes before the single read.
 
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
@@ -78,5 +79,5 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
       (H3a) and 0.045 → 0.044 (H3b). Lymphoid scale ρ −0.240 → −0.228 (not explained by screen quality).
     - [x] Post hoc descriptive complex-specificity counts (not error control; `results/part2/directions/SPECIFICITY.md`):
       β outside the central 95% of matched random sets for H3a 699/1,083, H3b 124/154 and H2 78/109.
-  - [ ] Lockbox confirmations → BENCH / BRIDGE-L
+  - [~] Lockbox confirmations → BENCH / BRIDGE-L (D9: machinery being completed; review before read)
 - [ ] M-final Manuscript + peer review + REPORT.md
