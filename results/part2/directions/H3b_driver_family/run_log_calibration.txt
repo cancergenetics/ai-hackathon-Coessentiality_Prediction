@@ -1,0 +1,272 @@
+{
+ "analysis_id": "H3b_driver_family",
+ "label": "registered calibration run after the discovery run (D8; PI ruling R4)",
+ "registry_blob": "9cf55f21099f108ade10211b3d54ec4e8d0fbaac",
+ "matched_random_sets": {
+  "R_per_unit": 10,
+  "seed": "default_rng([4700, unit index])",
+  "status": {
+   "ok": 338,
+   "unavailable": 16,
+   "tolerances doubled": 13
+  },
+  "n_sets": 3510,
+  "pooled": {
+   "n_tests": 70200,
+   "frac_p_lt_005": 0.115997150997151,
+   "frac_p_lt_001": 0.047122507122507123
+  },
+  "real_pooled": {
+   "n_tests": 7340,
+   "frac_p_lt_005": 0.11989100817438691,
+   "frac_p_lt_001": 0.04659400544959128
+  },
+  "bb": {
+   "rejections": 1278,
+   "families_selected": 12
+  },
+  "per_context": {
+   "hotspot:KRAS": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.1396011396011396,
+     "frac_p_lt_001": 0.05071225071225071
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.14168937329700274,
+     "frac_p_lt_001": 0.04904632152588556
+    }
+   },
+   "hotspot:NRAS": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.11025641025641025,
+     "frac_p_lt_001": 0.03418803418803419
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.10626702997275204,
+     "frac_p_lt_001": 0.03814713896457766
+    }
+   },
+   "hotspot:BRAF": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.11196581196581197,
+     "frac_p_lt_001": 0.04643874643874644
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.11716621253405994,
+     "frac_p_lt_001": 0.051771117166212535
+    }
+   },
+   "hotspot:PIK3CA": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.03247863247863248,
+     "frac_p_lt_001": 0.005413105413105413
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.043596730245231606,
+     "frac_p_lt_001": 0.013623978201634877
+    }
+   },
+   "TP53_altered": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.39287749287749285,
+     "frac_p_lt_001": 0.2512820512820513
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.3814713896457766,
+     "frac_p_lt_001": 0.25885558583106266
+    }
+   },
+   "MSI_H": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.14017094017094017,
+     "frac_p_lt_001": 0.06695156695156695
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.16893732970027248,
+     "frac_p_lt_001": 0.06267029972752043
+    }
+   },
+   "WGD": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.1883190883190883,
+     "frac_p_lt_001": 0.08774928774928775
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.1880108991825613,
+     "frac_p_lt_001": 0.09264305177111716
+    }
+   },
+   "9p21_loss": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.08376068376068375,
+     "frac_p_lt_001": 0.03133903133903134
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.10626702997275204,
+     "frac_p_lt_001": 0.04087193460490463
+    }
+   },
+   "MYC_amp": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.08603988603988603,
+     "frac_p_lt_001": 0.023931623931623933
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.07901907356948229,
+     "frac_p_lt_001": 0.02452316076294278
+    }
+   },
+   "MYCN_amp": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.09145299145299145,
+     "frac_p_lt_001": 0.017378917378917377
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.10354223433242507,
+     "frac_p_lt_001": 0.01634877384196185
+    }
+   },
+   "LoY": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.034757834757834755,
+     "frac_p_lt_001": 0.007407407407407408
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.043596730245231606,
+     "frac_p_lt_001": 0.005449591280653951
+    }
+   },
+   "sex_female": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.04757834757834758,
+     "frac_p_lt_001": 0.008547008547008548
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.05994550408719346,
+     "frac_p_lt_001": 0.010899182561307902
+    }
+   },
+   "NRF2_active": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.08148148148148149,
+     "frac_p_lt_001": 0.023361823361823363
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.08174386920980926,
+     "frac_p_lt_001": 0.013623978201634877
+    }
+   },
+   "LoF:ARID1A": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.07891737891737892,
+     "frac_p_lt_001": 0.021367521367521368
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.07356948228882834,
+     "frac_p_lt_001": 0.01634877384196185
+    }
+   },
+   "LoF:SMARCA4": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.14358974358974358,
+     "frac_p_lt_001": 0.05868945868945869
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.13896457765667575,
+     "frac_p_lt_001": 0.04904632152588556
+    }
+   },
+   "LoF:STAG2": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.04700854700854701,
+     "frac_p_lt_001": 0.008547008547008548
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.05449591280653951,
+     "frac_p_lt_001": 0.010899182561307902
+    }
+   },
+   "LoF:PTEN": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.14472934472934473,
+     "frac_p_lt_001": 0.04586894586894587
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.1307901907356948,
+     "frac_p_lt_001": 0.03814713896457766
+    }
+   },
+   "LoF:RB1": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.14045584045584045,
+     "frac_p_lt_001": 0.0584045584045584
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.1335149863760218,
+     "frac_p_lt_001": 0.051771117166212535
+    }
+   },
+   "LoF:KMT2D": {
+    "random": {
+     "n_tests": 3510,
+     "frac_p_lt_005": 0.05128205128205128,
+     "frac_p_lt_001": 0.007692307692307693
+    },
+    "real": {
+     "n_tests": 367,
+     "frac_p_lt_005": 0.0653950953678474,
+     "frac_p_lt_00
+       88.21 real        87.57 user         3.71 sys
+          4576903168  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              629752  page reclaims
+                 455  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  62  voluntary context switches
+               41647  involuntary context switches
+       1035859228980  instructions retired
+        305976101575  cycles elapsed
+          2685423912  peak memory footprint
