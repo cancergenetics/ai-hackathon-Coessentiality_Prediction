@@ -532,3 +532,16 @@ def test_r6_relook_path_needs_committed_ruling_and_reproduces(runs):
     res = D.check_identical(chk)
     assert res["identical"] and res["n"] > 0 and res["n_confirmed_status_differs"] == 0, res
     assert calls == [] and len(w.proj.ledger.read_text().splitlines()) == n_led
+
+
+def test_r7_affected_selection():
+    """R7: the corrected relook keeps changed fits, defect failures (now fitted) and genuine failures (still NaN)."""
+    D = _script("51_lockbox_confirm.py")
+    nan = float("nan")
+    t = pd.DataFrame(dict(entry=["e"] * 4, hit_index=range(4),
+                          beta_L_committed=[0.1, 0.2, nan, nan], beta_L_relook=[0.1, 0.21, 0.3, nan],
+                          se_L_committed=[0.01, 0.02, nan, nan], se_L_relook=[0.01, 0.02, 0.03, nan],
+                          p_L_committed=[0.01, 0.2, nan, nan], p_L_relook=[0.01, 0.2, 0.04, nan]))
+    out = D._affected(t)
+    assert list(out.hit_index) == [1, 2, 3]
+    assert list(out.affected_cause) == ["changed design span", "failed fit (driver defect)", "failed fit (genuine)"]

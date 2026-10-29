@@ -1136,7 +1136,7 @@ def relook(world: World, ruling: str, mode: str) -> pd.DataFrame:
     (assembled over the L rows read). mode 'check': every committed successful L fit (beta_L finite) is recomputed and
     returned next to the committed values (reproduction check); 'refit': only the lockbox-route fits that failed.
     Seeds, hit order, blocks and strata are those of the single read (lockbox_permutation + hit index)."""
-    if mode not in ("check", "refit"):
+    if mode not in ("check", "refit", "corrected"):
         raise ValueError(mode)
     proj, rows = world.proj, []
     for aid in confirm_order(proj) + [BRIDGE_ID]:
@@ -1153,6 +1153,9 @@ def relook(world: World, ruling: str, mode: str) -> pd.DataFrame:
             raise RuntimeError(f"{aid}: committed confirmation rows differ from the hits")
         if mode == "check":
             sel = [i for i, h in enumerate(eh) if _finite(h["beta_L"])]
+        elif mode == "corrected":                      # R7: every fit; the affected ones are kept below
+            sel = [i for i, h in enumerate(eh) if _finite(h["beta_L"]) or
+                   (bool(spec.hits.lockbox_testable.iloc[i]) and bool(spec.hits.eligible.iloc[i]))]
         else:
             sel = [i for i, h in enumerate(eh) if not _finite(h["beta_L"]) and bool(spec.hits.lockbox_testable.iloc[i])
                    and bool(spec.hits.eligible.iloc[i])]
@@ -1178,7 +1181,32 @@ def relook(world: World, ruling: str, mode: str) -> pd.DataFrame:
                        same_sign_relook=tt["same_sign"])
             rows.append(row)
         world.say(f"R6 relook ({mode}) {aid}: {len(sel)} fits")
-    return pd.DataFrame(rows)
+    out = pd.DataFrame(rows)
+    if mode == "corrected" and len(out):
+        out = _affected(out)
+    return out
+
+
+def _differs(tab: pd.DataFrame, tol: float = 1e-10) -> np.ndarray:
+    bad = np.zeros(len(tab), bool)
+    for k in ("beta_L", "se_L", "p_L"):
+        a = tab[f"{k}_committed"].astype(float).values
+        b = tab[f"{k}_relook"].astype(float).values
+        bad |= (np.abs(a - b) > tol * np.maximum(1.0, np.abs(a))) | (np.isnan(a) != np.isnan(b))
+    return bad
+
+
+def _affected(tab: pd.DataFrame) -> pd.DataFrame:
+    """R7: keep the affected fits -- committed fits the fix changes, and the eligible lockbox-route fits that failed
+    (driver defect if the fixed design fits, genuine if it still cannot be fitted)."""
+    failed = tab.beta_L_committed.astype(float).isna().values
+    changed = _differs(tab) & ~failed
+    still = tab.beta_L_relook.astype(float).isna().values
+    cause = np.where(changed, "changed design span",
+                     np.where(failed & ~still, "failed fit (driver defect)",
+                              np.where(failed & still, "failed fit (genuine)", "")))
+    out = tab.assign(affected_cause=cause)
+    return out[out.affected_cause != ""].reset_index(drop=True)
 
 
 def check_identical(chk: pd.DataFrame, tol: float = 1e-10) -> dict:
@@ -1241,7 +1269,7 @@ def main():
                                                           "persisted matrices; the loader is never called for them")
     g.add_argument("--relook", metavar="RULING", help="PI-ruled non-confirmatory relook through the resume path "
                                                       "(R6); needs --mode and --out")
-    ap.add_argument("--mode", choices=["check", "refit"])
+    ap.add_argument("--mode", choices=["check", "refit", "corrected"])
     ap.add_argument("--out", type=Path)
     a = ap.parse_args()
     t0 = time.time()
@@ -1256,6 +1284,8 @@ def main():
                    peak_rss_bytes=int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
         if a.mode == "check":
             res.update(check_identical(tab))
+        if a.mode == "corrected":
+            res["by_cause"] = tab.groupby(["entry", "affected_cause"]).size().reset_index().values.tolist()
         print(json.dumps(res, indent=1, default=str))
         return
     if a.dry_check:
