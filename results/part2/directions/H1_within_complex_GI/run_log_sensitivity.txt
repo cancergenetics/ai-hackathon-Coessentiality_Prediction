@@ -1,0 +1,22 @@
+           event   unit     gene       type    link  n_A  ref_A  testable  locus  n_P  n_Nprime                                             N_no_baseline  beta_all  beta_Nraw   kappa_N  kappa_N_se  kappa_N_p  kappa_N_q  kappa_N_ci90_lo  kappa_N_ci90_hi  N_tost  N_null_q025  N_null_q975 N_null_status  N_null_sets  N_frac_aligned_pos  N_frac_aligned_neg  collapse_index  N_most_shifted class_complex_wide  class_paralog             covariate_set                                                          covariates  n_complete  n_loss_complete                                                                                note
+0  Z0109|SMARCB1  Z0109  SMARCB1  silencing  member   17    943      True  False    0         6  ARID1B (57492);IER5L (389792);SMARCC2 (6601);SS18 (6760) -0.055930  -0.055930  0.018266    0.035703   0.614815   0.702645        -0.043471         0.080004    True    -0.137244     0.068256            ok          219            0.500000            0.500000       -0.053703  SMARCA4 (6597)            NEUTRAL  not evaluable      primary (registered)                          lineage_FE;library;ScreenType3DO;ModelType         960               17  sensitivity analysis (D7), not a trial; q and discovery flags from the primary run
+1  Z0109|SMARCB1  Z0109  SMARCB1  silencing  member   17    943      True  False    0         6  ARID1B (57492);IER5L (389792);SMARCC2 (6601);SS18 (6760) -0.060386  -0.060386  0.025057    0.036623   0.502464   0.702645        -0.038406         0.088520    True    -0.134631     0.056948            ok          219            0.666667            0.333333       -0.073667  SMARCA4 (6597)            NEUTRAL  not evaluable  CN-covariate sensitivity  lineage_FE;library;ScreenType3DO;ModelType;Ploidy;WGD;TP53_altered         732               15  sensitivity analysis (D7), not a trial; q and discovery flags from the primary run
+wall 4.3 s; peak RSS 3.16 GB
+       16.47 real        14.43 user         1.05 sys
+          3159048192  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              335993  page reclaims
+                 225  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  30  voluntary context switches
+                8428  involuntary context switches
+        217947021858  instructions retired
+         51486215591  cycles elapsed
+          2212154536  peak memory footprint
