@@ -1,0 +1,29 @@
+{
+ "analysis_id": "CTRL_PC6",
+ "ledger": [
+  {
+   "analysis_id": "CTRL_PC6",
+   "direction": "controls",
+   "head": "7529b81e67691af5e5e6872cbe4d93b3b5cc7b31",
+   "n_genes": 11,
+   "registry_blob": "21ceecac79ff514018cdfb6eaba7b3ae7b6bb52f",
+   "source": "crispr",
+   "targets_blob": "b6773c1a17eb5069713350d208bc9a747838d3a3",
+   "targets_file": "results/part2/lockbox_targets/CTRL_PC6.json",
+   "time": "2026-10-29T06:50:19+0000"
+  }
+ ],
+ "lockbox_seed": 6705,
+ "n_confirmed": 2,
+ "n_eligible": 2,
+ "n_eligible_lockbox": 2,
+ "n_eligible_rare": 0,
+ "n_hits": 2,
+ "n_perm": 10000,
+ "n_rare_pass": 0,
+ "n_target_genes": 11,
+ "peak_rss_bytes": 2909454336,
+ "registry_blob": "21ceecac79ff514018cdfb6eaba7b3ae7b6bb52f",
+ "resumed": false,
+ "runtime_s": 2.6
+}

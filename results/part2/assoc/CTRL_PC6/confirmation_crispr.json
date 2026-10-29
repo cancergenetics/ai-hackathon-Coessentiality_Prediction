@@ -1,0 +1,52 @@
+{
+ "analysis_id": "CTRL_PC6",
+ "hits": [
+  {
+   "beta_A": -0.3753040421,
+   "beta_L": -0.2928061794,
+   "ci95_L": [
+    -0.5929326164,
+    0.0073202575
+   ],
+   "confirmed": true,
+   "context": "LoF:ARID1A",
+   "df_L": 15.1830552038,
+   "n_L": 297,
+   "n_context_L": 12,
+   "n_ref_L": 285,
+   "p_L": 0.0062993701,
+   "p_L_hc3": 0.0275751555,
+   "p_L_perm": 0.0062993701,
+   "same_sign": true,
+   "se_L": 0.1409564776,
+   "testable": true,
+   "unit": "ARID1B (57492)"
+  },
+  {
+   "beta_A": -0.3753040421,
+   "beta_L": -0.2928061794,
+   "ci95_L": [
+    -0.5929326164,
+    0.0073202575
+   ],
+   "confirmed": true,
+   "context": "LoF:ARID1A",
+   "df_L": 15.1830552038,
+   "n_L": 297,
+   "n_context_L": 12,
+   "n_ref_L": 285,
+   "p_L": 0.0075992401,
+   "p_L_hc3": 0.0275751555,
+   "p_L_perm": 0.0075992401,
+   "same_sign": true,
+   "se_L": 0.1409564776,
+   "testable": true,
+   "unit": "Z0109"
+  }
+ ],
+ "n_confirmed": 2,
+ "n_hits": 2,
+ "n_testable": 2,
+ "n_tested": 2,
+ "source": "crispr"
+}
