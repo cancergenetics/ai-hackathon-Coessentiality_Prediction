@@ -1,0 +1,1312 @@
+direction	context	unit	beta	t	q_final	tier	locus	primary_call	route	defect_sensitive	discovery_q_lt_q	lockbox_pass	candidate	run	beats_all	control	writer_specific_set	headline_eligible	label_final
+H1	H1loss:ARID1A	Z0109|ARID1A|P	-0.374329	-5.49306	2.47334e-06	T1	False	confirmed	lockbox	False	True	True	True	True				1	PARALOG COMPENSATION
+H1	H1loss:EP300	Z0186|EP300|P	-1.09326	-6.45855	2.47334e-06	T3-neg	False	not lockbox-testable: rare-context route passed	rare-context route (not lockbox-testable)	False	True	True	True	True				1	PARALOG COMPENSATION
+H1	H1loss:FOCAD	Z0286|FOCAD|N	0.139649	5.19908	0.000229458	T2	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	True				1	RESIDUAL SENSITISATION
+H1	H1loss:PTEN	Z0130|PTEN|N	-0.0567466	-2.64795	0.0436756	T1	False	not confirmed	lockbox	False	True	False	False	True				0	DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)
+H1	H1loss:TP53	Z0158|TP53|N	0.056413	4.93359	3.135e-05	T3-neg	False	confirmed	lockbox	False	True	True	False	True				0	DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)
+H3a	lineage:Bladder/Urinary Tract	Z0018	0.0627334	5.91476	0.019314	T1	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Bladder/Urinary Tract	Z0083	-0.115579	-4.06565	0.0401912	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bladder/Urinary Tract	Z0141	0.0801452	4.50787	0.0301434	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bladder/Urinary Tract	Z0223	0.0650845	4.49701	0.0401912	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bladder/Urinary Tract	Z0253	-0.102094	-4.31512	0.0301434	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bladder/Urinary Tract	Z0291	-0.0453393	-4.13236	0.0301434	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0001	-0.11957	-5.29506	0.000142233	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0007	0.0195868	3.24594	0.0236419	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0008	0.0363207	2.81402	0.0388735	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0009	0.0874935	4.875	0.00079163	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0014	0.113413	4.28877	0.00182775	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0017	0.0286638	3.06837	0.025506	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0021	0.0601226	2.93746	0.0310248	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0022	0.0317933	2.9623	0.0388947	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0023	0.0928041	5.78746	0.000152985	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0030	0.170298	4.11683	0.0050239	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0032	-0.0918017	-4.63231	0.00079163	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0033	-0.0607401	-3.55912	0.0170813	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0046	0.0251313	3.26764	0.0236419	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0047	-0.0533211	-3.59323	0.00852541	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0048	0.0297457	3.20865	0.0176449	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0055	-0.0680601	-3.11703	0.0236419	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0056	-0.0719166	-3.28745	0.0170813	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0062	0.0927264	3.97794	0.00131488	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0063	0.0479935	3.8425	0.0187559	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bone	Z0070	-0.0971514	-3.85086	0.00554362	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bone	Z0071	0.0576938	2.99042	0.0332617	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0074	-0.0853756	-3.1328	0.0187559	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0075	0.113618	3.95753	0.00554362	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0077	-0.0643458	-2.8272	0.0443903	T2	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Bone	Z0082	0.239754	4.95054	0.00031765	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0083	-0.132707	-4.52747	0.000364418	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0086	0.0744827	3.01049	0.02923	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0089	0.0609665	4.43087	0.0050239	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0092	0.0350234	3.91788	0.036842	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0095	-0.0816139	-3.35383	0.0156299	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bone	Z0096	0.0292493	3.36393	0.0495109	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0105	-0.0897049	-3.72087	0.00554362	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0107	0.0394369	4.97069	6.8275e-05	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0113	0.0433004	4.35541	0.00669854	T2	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Bone	Z0115	-0.0633927	-3.53447	0.0103349	T1	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Bone	Z0127	0.0536496	4.5795	0.0050239	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0130	0.126262	5.32225	4.79528e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0138	0.0343339	3.045	0.02923	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0147	-0.278969	-7.13865	1.52718e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0149	0.0424195	3.42071	0.0414671	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0157	0.0429361	4.61774	0.00554362	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Bone	Z0159	-0.10546	-3.41959	0.0187559	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0160	-0.267089	-6.12975	5.74553e-07	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0163	-0.139564	-4.29721	0.00223285	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0164	-0.0353373	-2.7439	0.0449196	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Bone	Z0185	-0.103655	-3.39492	0.0170813	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0214	-0.0974842	-2.85153	0.0333791	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0215	0.0484368	3.04577	0.0308611	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0219	-0.171868	-6.1486	1.35788e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0226	-0.112547	-3.92691	0.0050239	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0232	0.131871	3.20782	0.0187559	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0236	0.146496	4.78642	0.000335977	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0242	0.0980775	3.20997	0.0230886	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0244	-0.088617	-4.16633	0.00079163	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0249	0.101566	4.48617	0.00079163	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0254	0.0733087	2.89192	0.0433312	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bone	Z0296	0.0693438	4.26281	0.0050239	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0298	0.0474701	2.87169	0.0443903	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0303	-0.210395	-5.69245	9.44871e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0312	-0.0760737	-2.78849	0.0443903	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0313	-0.0684406	-4.14848	0.00753585	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bone	Z0316	-0.160121	-4.81604	0.0050239	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0328	0.140304	3.89507	0.00945676	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bone	Z0334	0.0410047	4.38629	0.00554362	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bone	Z0335	-0.0813679	-3.76477	0.00753585	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0339	0.0863795	3.07772	0.0236419	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bone	Z0344	0.0938095	3.24613	0.0170813	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bone	Z0351	-0.0964555	-3.13561	0.0288163	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bone	Z0363	-0.0948844	-3.23327	0.0209693	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0014	-0.0642783	-3.23156	0.0137798	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0020	0.0219787	2.85457	0.0387027	T2	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0021	-0.112806	-5.22116	1.26545e-15	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0026	0.0567568	3.87502	0.0100478	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0028	-0.0550131	-3.05956	0.025654	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0030	-0.175495	-4.90268	1.33262e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0060	-0.0457184	-3.10614	0.0237494	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0067	0.0788541	6.76481	0.000263299	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0069	0.0389977	2.78013	0.0473219	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bowel	Z0071	-0.151326	-6.5622	7.69124e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0072	0.0600053	4.18171	0.000551145	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0074	0.080087	3.92284	0.0092749	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0076	-0.113674	-3.80504	0.00730749	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0080	0.1796	7.22158	3.51007e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0082	-0.0830889	-3.89557	0.00602868	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0085	0.0515633	3.21919	0.0235266	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0092	-0.262446	-8.38498	3.01382e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0096	0.0341611	3.89308	0.0200956	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0100	0.0266833	3.39491	0.0137798	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0102	0.0552993	2.79209	0.0387027	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bowel	Z0107	-0.0504709	-3.17511	0.0237494	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Bowel	Z0110	0.0239519	3.04708	0.0324621	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bowel	Z0112	0.0518912	3.57026	0.0125598	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0119	0.0457819	3.7336	0.0092749	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0127	-0.0746839	-3.88151	0.00182541	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0130	-0.0820609	-4.25026	0.00078363	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0134	-0.0628487	-3.71581	0.0107177	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0135	0.0535275	4.24387	0.00730749	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0145	0.134371	7.77706	2.2171e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0147	0.193501	6.92938	2.93104e-07	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0151	0.0664965	4.11252	0.00167736	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0155	0.0327131	2.94848	0.02733	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0156	0.0758843	4.55083	5.99246e-06	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0158	0.0519709	3.64045	0.00873722	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0160	0.0350909	3.43181	0.0267941	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0163	0.0706885	2.7532	0.0454622	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0164	0.0433195	3.30557	0.0156299	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0174	-0.0669944	-2.82739	0.0435973	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bowel	Z0178	0.0489461	3.42899	0.0211004	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0192	0.0652911	3.14232	0.0275822	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bowel	Z0218	0.0570758	3.27644	0.0206109	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0219	0.0745024	2.80383	0.0394861	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bowel	Z0244	0.0639079	3.16079	0.0237494	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0251	0.0332018	3.84713	0.0092749	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0254	-0.0797798	-3.64005	0.0100478	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0255	0.0558781	5.21054	0.00022629	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0260	0.0399877	3.57735	0.0125598	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0267	-0.0829399	-3.05406	0.0244642	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0273	0.0236366	2.87488	0.0394861	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0274	0.0855267	4.88837	5.64106e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0275	0.0469846	2.79626	0.0454622	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bowel	Z0280	0.080135	4.25457	0.00196785	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0283	0.0498599	2.90405	0.0435973	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0290	0.0311972	3.28997	0.0270676	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Bowel	Z0293	-0.0720312	-3.2981	0.0195525	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0303	0.0944554	3.04933	0.0241147	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0304	-0.0950963	-3.78523	0.00189929	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0315	0.0863945	4.18437	0.00423065	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Bowel	Z0319	0.0335036	3.43999	0.0394605	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0351	0.162385	7.25805	3.51007e-06	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Bowel	Z0363	0.107446	3.37368	0.0133971	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Bowel	Z0366	0.103531	3.29291	0.0107177	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0002	-0.0773006	-3.0452	0.0284279	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0003	-0.0787558	-3.48233	0.0157894	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0004	0.0597032	4.41858	0.00602868	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Breast	Z0009	-0.117451	-5.62696	0.000375559	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Breast	Z0028	-0.0629055	-2.96627	0.0441315	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0030	-0.179841	-5.26245	0.000375559	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0032	0.175338	4.73902	0.000415849	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Breast	Z0035	0.0725078	5.34073	0.00423065	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0041	-0.140272	-4.12051	0.00423065	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Breast	Z0042	-0.0541508	-3.00262	0.0401912	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0044	-0.0404915	-3.0357	0.0289751	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0055	-0.0913578	-2.80948	0.0462578	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0058	0.112079	4.79469	0.000419225	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Breast	Z0074	0.137088	4.82124	3.65973e-08	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Breast	Z0082	-0.0995796	-3.91369	0.0212777	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Breast	Z0086	0.110849	4.18602	0.0104847	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0092	0.0582324	4.36166	0.0180168	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0109	-0.0677234	-3.58683	0.0133971	T1	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Breast	Z0112	0.0547814	3.43576	0.0212777	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0115	0.0605102	2.99386	0.0376258	T1	False	not confirmed	lockbox	False	True	False	False	False	False	control unit, other context	False		
+H3a	lineage:Breast	Z0122	0.0283241	3.02649	0.0358226	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Breast	Z0130	-0.0611323	-2.82158	0.0482295	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0132	0.0439504	3.71965	0.0238975	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True	control unit, other context	False		
+H3a	lineage:Breast	Z0137	-0.111492	-5.4727	0.00423065	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True	control unit, other context	False		
+H3a	lineage:Breast	Z0139	-0.0550549	-2.97841	0.0348324	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Breast	Z0146	0.0575648	3.23356	0.0410114	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0149	-0.252393	-4.60749	0.00423065	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Breast	Z0152	0.123648	5.07455	4.06951e-05	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0153	-0.0793251	-3.16707	0.0441315	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0184	0.0877033	3.17238	0.0284279	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0194	0.049691	3.74022	0.00913437	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0200	-0.106163	-3.80009	0.00913437	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Breast	Z0219	0.0875081	2.85928	0.0462578	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0232	-0.131847	-3.37703	0.0284279	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Breast	Z0240	0.0863446	4.09894	0.00156229	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0249	-0.0762739	-3.30232	0.0212777	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0253	0.0885423	4.30592	0.000744992	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Breast	Z0254	-0.0692279	-2.89301	0.0319703	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Breast	Z0258	-0.0888407	-3.76701	0.0157894	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0262	0.0786993	3.47669	0.0157894	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0264	0.115122	5.60226	0.000375559	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Breast	Z0271	0.0881086	3.43065	0.0157894	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Breast	Z0284	0.101575	4.61388	0.00423065	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Breast	Z0291	0.0402567	3.10378	0.0238975	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Breast	Z0295	0.12562	3.98871	0.00143807	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0314	-0.0862563	-3.29395	0.0238975	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0316	0.0980379	6.42175	0.000503221	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Breast	Z0327	0.105659	3.10468	0.0289751	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Breast	Z0329	0.130554	4.91785	4.22794e-06	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Breast	Z0332	-0.0739862	-4.06876	0.00423065	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0333	-0.0447666	-3.20484	0.0212777	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Breast	Z0341	0.0452313	2.91452	0.0482295	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0345	0.115835	3.14136	0.0212777	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Breast	Z0348	-0.0530352	-3.05502	0.0243263	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Breast	Z0353	-0.0908088	-3.62381	0.00423065	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0001	-0.048291	-3.40073	0.00370996	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0003	0.0422729	2.99218	0.0189915	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0009	0.0843185	7.16098	2.07423e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0010	-0.0698097	-4.12018	6.71461e-05	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0012	0.0469064	2.75641	0.025654	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0014	0.108555	5.59838	2.30535e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0019	-0.0471252	-3.7436	0.00324123	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0024	-0.0320573	-2.7603	0.0324778	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0025	0.0245856	4.00918	0.00182687	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0030	0.172281	7.73552	2.13044e-14	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0034	0.0417452	2.58744	0.0413618	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0035	0.0332342	3.63266	0.00426271	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0040	0.144246	4.99283	0.000168045	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0042	-0.0692794	-3.91083	2.30535e-06	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0044	0.0168185	2.53188	0.0477036	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0047	0.0427413	3.20013	0.01221	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0050	0.0299844	4.20755	0.000131992	T2	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0052	0.0544095	3.65628	0.00370996	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0057	0.0399474	3.77306	0.00277181	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0059	0.0571356	5.30042	0.000100012	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0062	-0.124736	-7.69086	1.93424e-07	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0063	0.044125	4.07422	0.00231872	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0064	0.0581503	4.65145	0.000235944	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0065	0.0241383	3.41638	0.0138755	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0067	-0.0619572	-3.4647	0.00725675	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0070	-0.0598692	-3.57693	0.00324123	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0071	0.0908115	6.92256	7.52427e-14	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0074	-0.0921619	-4.65605	0.000105389	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0075	-0.0750342	-4.10061	0.000338036	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0081	0.105863	5.66797	2.18969e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0082	0.166069	4.65915	0.00182687	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0083	-0.0641756	-2.70235	0.0324778	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0086	-0.0527167	-2.5179	0.0473953	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0092	0.0305177	3.71486	0.00524233	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0093	0.0221927	2.56755	0.0473953	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0095	0.0985782	4.47656	2.61261e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0104	0.042786	3.02198	0.0167087	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0110	0.0291714	3.50691	0.00324123	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0112	0.0555826	3.85572	0.00231872	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0114	-0.064437	-4.30113	0.000170507	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0115	-0.0556041	-3.8282	0.00277181	T1	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:CNS/Brain	Z0116	0.0249467	3.2298	0.0104393	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0120	0.0307255	2.9199	0.0227168	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0121	0.035225	3.79697	0.00231872	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0128	0.0475155	3.45954	0.00370996	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0130	0.0611537	3.07713	0.0154222	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0131	-0.0548898	-4.64568	0.00182687	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0134	0.048848	4.75712	0.000315159	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0140	0.0575482	2.95348	0.0187559	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0142	0.0349756	2.7647	0.0246333	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0145	-0.0603107	-3.92117	0.00277181	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0146	-0.0780364	-4.89177	2.86555e-06	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0149	0.0386638	4.2522	0.00231872	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0152	-0.122919	-6.94117	6.81454e-20	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0153	0.0428831	3.13285	0.0132337	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0156	0.0367419	2.7727	0.0267941	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0159	0.0486616	4.02076	0.00277181	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0164	-0.0420888	-4.34282	0.00182687	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0167	-0.0641372	-3.23636	0.0104393	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0184	-0.108222	-5.49772	5.40978e-08	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0188	-0.0574105	-3.08478	0.0129009	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0189	0.0244208	2.59736	0.0346748	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0198	-0.0844999	-3.94029	0.00277181	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0200	0.0856091	4.38132	7.635e-05	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0201	0.0440167	2.66027	0.0346748	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0204	0.0525102	4.41378	0.00231872	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0206	0.0737779	3.46035	0.00472838	T1	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0211	0.0470552	2.71838	0.0285896	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0218	-0.0870379	-4.77806	0.000315159	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0226	-0.0926903	-3.67197	0.00277181	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0227	0.0664477	3.10821	0.0108207	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0229	0.157365	7.16089	6.01212e-07	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0232	0.114127	3.84	0.00182687	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0233	-0.0377859	-3.20935	0.0101818	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0236	0.096318	4.10717	0.00017019	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0239	-0.0684912	-3.06541	0.0129009	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0247	-0.0605841	-3.64433	0.00182687	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0249	0.11966	9.29888	3.66913e-09	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0250	0.0235626	3.62085	0.00324123	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0253	-0.0489043	-3.3343	0.00631576	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0254	0.138349	8.10159	4.98785e-10	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0255	-0.0375213	-3.35945	0.00679288	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0260	0.0407606	4.69714	0.000315159	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0262	-0.0463246	-2.94903	0.0161689	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0263	-0.0950983	-5.66004	1.44175e-05	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0266	0.0343882	2.52031	0.0467609	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0269	0.0579797	3.72935	0.00472838	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0271	-0.0877578	-5.21761	6.33266e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0280	-0.057581	-4.48294	0.00036872	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0284	-0.0859267	-5.01884	2.13044e-14	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0288	0.024384	3.07784	0.0167087	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0291	0.02855	4.3457	5.95384e-09	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0292	-0.0435149	-2.91565	0.0138755	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0295	-0.115426	-5.40021	2.30535e-06	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:CNS/Brain	Z0300	0.104525	5.77789	5.40032e-11	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0308	-0.0876332	-3.75426	0.00231872	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0318	0.0477806	3.90892	0.00231872	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0319	0.030679	3.1942	0.0266531	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0323	0.0641713	2.91752	0.0154222	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0324	0.0981954	7.04952	4.22844e-06	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0327	-0.0758076	-3.29448	0.00814687	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0328	0.175874	8.6708	9.75096e-09	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:CNS/Brain	Z0329	-0.12795	-5.7677	2.75306e-05	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:CNS/Brain	Z0337	-0.0659498	-3.22088	0.00814687	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0339	0.11328	4.38897	0.000353355	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0352	-0.0880475	-3.82085	0.00231872	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:CNS/Brain	Z0358	-0.0555103	-2.68578	0.0346748	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Cervix	Z0037	0.084265	11.6497	5.29427e-21	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Cervix	Z0322	-0.0538567	-5.15898	0.0401912	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Cervix	Z0324	0.127549	5.20016	0.0401912	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Cervix	Z0328	0.200008	6.05371	0.0401912	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Esophagus/Stomach	Z0026	0.0422991	3.07492	0.0482295	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0037	-0.0482625	-2.90446	0.0482295	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0041	-0.0620089	-3.54084	0.0309163	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0051	-0.0705851	-4.99044	4.34623e-05	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0052	-0.0574381	-3.40423	0.02923	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Esophagus/Stomach	Z0060	0.0393354	3.55947	0.0375118	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0070	0.064576	3.67408	0.0160765	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Esophagus/Stomach	Z0071	-0.104689	-4.0757	0.0200956	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0080	0.0771675	3.14269	0.044019	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0092	-0.094285	-3.6705	0.0482295	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0093	-0.0423405	-4.01481	0.00669016	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Esophagus/Stomach	Z0096	0.0232326	3.66079	0.0423065	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Esophagus/Stomach	Z0113	0.0353203	3.97454	0.0301434	T2	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Esophagus/Stomach	Z0136	0.0308978	3.74592	0.0267941	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Esophagus/Stomach	Z0147	0.164195	7.24089	5.61166e-22	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Esophagus/Stomach	Z0163	0.0832925	3.31598	0.0401912	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Esophagus/Stomach	Z0175	-0.043321	-3.0877	0.0450142	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0188	0.0761813	3.50895	0.02923	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0204	-0.0655589	-3.33433	0.0423065	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Esophagus/Stomach	Z0207	0.0524474	3.63884	0.0267941	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0269	-0.0573893	-3.08609	0.044019	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0277	-0.0521255	-3.1991	0.0401912	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0279	-0.0318695	-3.03218	0.0482295	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0313	0.0428501	3.38622	0.0315788	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0315	0.0583907	2.97346	0.0450142	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0321	0.0304371	3.46129	0.0450142	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Esophagus/Stomach	Z0328	-0.101916	-3.03349	0.0482295	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Esophagus/Stomach	Z0337	0.0585046	3.81578	0.0160765	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0339	-0.1011	-3.84308	0.0229664	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Esophagus/Stomach	Z0357	0.0604026	3.07501	0.0450142	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0002	-0.0665371	-3.01321	0.0149549	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0004	-0.0529727	-3.60978	0.00750236	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0007	-0.0407929	-4.82113	0.00160765	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Head and Neck	Z0008	-0.0809844	-5.93131	2.56002e-08	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Head and Neck	Z0009	0.0831463	5.20031	0.00160765	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0016	0.0534564	2.60205	0.0448802	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Head and Neck	Z0018	0.0352932	4.88278	0.00539882	T1	False	not confirmed	lockbox	False	True	False	False	False	True	control unit, other context	False		
+H3a	lineage:Head and Neck	Z0020	-0.0521282	-4.14246	0.00160765	T2	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Head and Neck	Z0028	-0.0804262	-5.45438	0.000109461	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0029	-0.0582798	-4.01656	0.00160765	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0030	0.195575	6.4941	1.65713e-07	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0032	-0.120884	-5.76669	2.07261e-09	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0033	-0.0381601	-2.566	0.0461211	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Head and Neck	Z0035	0.034828	3.26724	0.0251195	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0043	-0.102846	-4.85657	0.000205702	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0044	-0.0361638	-3.11735	0.0159851	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0051	-0.133446	-7.48936	1.66408e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0059	-0.211828	-8.06735	2.56002e-08	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0060	0.039599	3.80039	0.00439591	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0061	0.0497475	4.3294	1.02899e-06	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0062	-0.0579077	-2.88119	0.022661	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Head and Neck	Z0065	0.0247018	3.88667	0.0124401	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0067	-0.0733661	-3.84516	0.00824435	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0073	0.0571698	2.73961	0.0329871	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Head and Neck	Z0074	-0.156256	-6.61594	1.66408e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0077	0.0667481	3.40219	0.00669854	T2	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Head and Neck	Z0078	0.0860161	5.13731	4.97536e-05	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0080	-0.168475	-6.3872	1.74675e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0081	-0.106247	-4.39092	0.00160765	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0084	-0.0552588	-2.59501	0.0346476	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0086	-0.112794	-4.25298	1.92629e-06	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0089	0.0410165	4.49741	0.00160765	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0092	0.066216	6.24312	6.78427e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0093	-0.0313764	-2.80991	0.0285358	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0097	-0.06206	-2.80744	0.0262473	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0098	-0.0473916	-4.20874	0.00160765	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0101	-0.132721	-6.01428	3.96835e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0103	-0.0862627	-3.95396	0.00324123	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Head and Neck	Z0104	0.0448738	2.53413	0.0488036	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0105	-0.104942	-4.27628	0.000743088	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0107	-0.0438349	-3.1233	0.0159851	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0110	0.0201115	2.84199	0.0263882	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0113	0.0413204	4.14702	0.00539882	T2	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Head and Neck	Z0118	0.0194183	2.56348	0.0350385	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0120	-0.0522226	-4.50007	0.00021185	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0125	0.0343647	3.60376	0.00160765	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0127	0.045061	4.70009	1.66408e-06	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0129	-0.0477818	-3.39287	0.0111373	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0130	-0.0491854	-2.86606	0.0220403	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0132	-0.0459248	-3.50049	0.0110526	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False	control unit, other context	False		
+H3a	lineage:Head and Neck	Z0133	-0.0323607	-2.64431	0.0342916	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0134	0.0531236	4.15599	0.00282044	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0139	0.0559766	3.20736	0.0111373	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0140	-0.0576128	-2.74681	0.0338057	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0148	0.0889181	3.54752	0.00582481	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0153	0.108276	7.28259	2.18236e-06	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0158	-0.081558	-6.27815	1.01786e-05	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0160	0.0291444	3.1968	0.0329871	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0161	-0.0406107	-3.74677	0.00324123	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0166	0.0669061	5.1298	0.00160765	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Head and Neck	Z0171	0.0700017	5.27532	0.00019697	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0173	-0.0484595	-3.97307	0.00108625	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0174	-0.0640658	-3.28838	0.00782946	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Head and Neck	Z0177	-0.0351451	-2.92551	0.0205422	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0178	-0.15652	-5.50774	1.52391e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0183	-0.0887768	-4.23062	0.00160765	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0186	0.0978607	3.81896	0.00160765	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Head and Neck	Z0189	-0.0439077	-3.65352	0.00324123	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0193	-0.057561	-3.0699	0.0167087	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0195	-0.021121	-2.53693	0.0479702	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0196	-0.0876939	-4.30675	7.77765e-09	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0198	-0.188616	-6.24066	3.73416e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0201	-0.0594258	-3.61245	0.00282044	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0203	-0.0666328	-4.46772	0.00160765	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0211	-0.0708791	-4.07245	0.00219225	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0215	0.0331837	2.75918	0.0307345	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0217	0.0572318	4.79159	3.38151e-06	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0219	-0.0707207	-2.67104	0.0346476	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0222	-0.0883965	-3.39289	0.00439591	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Head and Neck	Z0224	0.058233	4.24083	0.00160765	T3-nc	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0226	-0.0978941	-4.02531	0.00219225	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0228	-0.111962	-3.48884	0.00631576	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False	control unit, other context	False		
+H3a	lineage:Head and Neck	Z0235	0.0806367	3.94939	0.00324123	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Head and Neck	Z0236	-0.0795372	-2.45389	0.0488036	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0239	-0.0595393	-2.54215	0.0346476	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0240	-0.0762253	-4.08892	0.000421228	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0243	0.0512384	3.8832	0.00219225	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Head and Neck	Z0244	-0.0537128	-2.93033	0.0245378	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0249	0.0516128	2.63558	0.0346476	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0250	-0.0294564	-2.79972	0.029447	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0253	-0.0768704	-4.41467	2.07261e-09	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0257	0.0304911	3.9811	0.00219225	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0258	-0.0559132	-2.62891	0.0346476	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0259	-0.0597001	-3.1481	0.0132395	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0260	-0.0898068	-5.58511	8.56512e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0264	-0.0719538	-2.76381	0.0346476	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Head and Neck	Z0271	-0.0622744	-2.88316	0.0211998	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0272	0.128914	7.17734	1.16611e-05	T3-nc	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0273	-0.0748475	-5.08331	9.07194e-05	T2	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Head and Neck	Z0276	-0.0631224	-3.5754	0.00706062	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Head and Neck	Z0281	0.0633689	6.37175	1.78048e-06	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Head and Neck	Z0284	-0.0545144	-2.72401	0.0324621	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0285	-0.12024	-5.03419	0.000151489	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0288	-0.0338365	-2.60376	0.0463996	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0290	0.0260842	3.59685	0.00706062	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0293	0.0824927	6.59599	1.01786e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0304	0.0759692	4.09231	0.000220456	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0306	0.0590073	3.69921	0.00219225	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0308	-0.0767249	-2.5464	0.0371258	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0314	-0.0668648	-2.84817	0.0220403	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0316	0.0465003	2.79543	0.0346476	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0318	-0.0879437	-5.3455	5.02917e-07	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0320	-0.0577886	-3.8887	0.000421228	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0321	0.0312609	3.67508	0.010175	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0322	-0.0228531	-2.56859	0.0435686	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0324	0.0663053	3.36035	0.00669854	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0328	0.143179	5.44498	2.5395e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Head and Neck	Z0332	-0.0612707	-3.48392	0.00582481	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0334	0.0404451	4.30924	0.00782946	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0338	0.0352132	2.74615	0.0261036	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0342	0.0284907	2.73454	0.0319969	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Head and Neck	Z0343	0.0602882	2.71072	0.0461211	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0352	-0.0738254	-2.67281	0.0338648	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0355	0.0810972	3.74531	0.00494661	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Head and Neck	Z0363	-0.116325	-3.17292	0.0111373	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Head and Neck	Z0367	-0.087938	-3.79707	0.00324123	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Kidney	Z0001	-0.0893276	-3.81225	0.0214353	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Kidney	Z0008	0.0576884	3.49371	0.0214353	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Kidney	Z0010	-0.0821926	-3.26494	0.0401912	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Kidney	Z0014	0.147659	3.46893	0.0267941	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Kidney	Z0015	0.0550473	3.12771	0.0486525	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Kidney	Z0016	-0.130673	-3.70586	0.0226076	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Kidney	Z0018	0.0503947	4.52876	0.0413733	T1	False	not confirmed	lockbox	False	True	False	False	False	True	control unit, other context	False		
+H3a	lineage:Kidney	Z0033	0.126898	5.93454	0.00183219	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Kidney	Z0035	-0.254445	-5.25185	0.0133971	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Kidney	Z0043	0.0995854	3.63532	0.0214353	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Kidney	Z0064	0.0906182	4.88543	0.00313782	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Kidney	Z0068	-0.0837672	-3.38136	0.0374194	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Kidney	Z0077	-0.116206	-3.13686	0.0401912	T2	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Kidney	Z0095	-0.097269	-3.29791	0.0374194	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Kidney	Z0102	-0.151577	-3.43569	0.0374194	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Kidney	Z0109	0.114027	3.76244	0.0214353	T1	False	not confirmed	lockbox	False	True	False	False	False	False	control unit, other context	False		
+H3a	lineage:Kidney	Z0112	-0.0706081	-3.94455	0.0214353	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Kidney	Z0114	0.0817889	3.43191	0.0267941	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Kidney	Z0132	0.0738629	3.7562	0.0301434	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True	control unit, other context	False		
+H3a	lineage:Kidney	Z0138	-0.0584836	-3.139	0.0413733	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Kidney	Z0145	0.134255	5.68228	0.00169782	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Kidney	Z0158	0.117581	3.38451	0.0297066	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Kidney	Z0166	-0.189025	-3.83767	0.0486525	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Kidney	Z0171	-0.0952663	-3.44537	0.028708	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Kidney	Z0185	0.117319	4.19264	0.0133971	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Kidney	Z0215	-0.0667713	-4.29792	0.00296434	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Kidney	Z0222	-0.143224	-3.21872	0.0413733	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Kidney	Z0229	-0.135708	-4.24595	0.0172248	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Kidney	Z0242	0.154073	3.28543	0.0374194	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Kidney	Z0244	0.0794442	3.10826	0.0436362	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Kidney	Z0259	-0.0788734	-3.23856	0.0486525	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Kidney	Z0277	-0.105613	-3.30223	0.02923	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Kidney	Z0316	0.0769723	4.90871	0.0214353	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Kidney	Z0323	-0.143036	-3.63503	0.0214353	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Kidney	Z0344	0.0767854	3.23289	0.0374194	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Kidney	Z0347	0.0571979	3.70392	0.028708	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Kidney	Z0362	-0.119615	-3.56394	0.0274993	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Kidney	Z0364	-0.22396	-3.83783	0.0214353	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Liver	Z0029	0.0714994	4.31465	0.0401912	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Liver	Z0047	0.067949	3.99228	0.0401912	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Liver	Z0365	0.0606126	6.40172	4.18618e-09	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0001	0.0618874	4.38738	0.000108388	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lung	Z0004	0.0486467	5.1852	3.65101e-06	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0015	-0.0496349	-3.23101	0.0288552	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0017	-0.0254854	-3.18586	0.0234449	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0018	0.0337413	5.03025	0.0100478	T1	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Lung	Z0026	0.0340683	3.12311	0.0303885	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0030	-0.0981625	-3.59774	0.0139796	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0035	0.0477063	4.17035	0.0139796	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0042	0.0448049	2.82864	0.0444669	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0056	0.0446716	3.35826	0.0213516	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0074	0.0528104	2.98353	0.0310569	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0082	-0.116748	-6.1364	8.45924e-05	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0083	0.0733288	3.19466	0.0207439	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lung	Z0087	0.0620955	3.59415	0.0139796	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0096	0.0254119	4.37591	0.0123665	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0100	-0.0223924	-3.2572	0.0219225	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0105	0.0582364	3.00587	0.0428706	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0111	-0.0250284	-3.17915	0.0224598	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0117	-0.0267839	-3.28014	0.0207439	T2	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0124	0.0432525	2.87777	0.0494017	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0134	-0.0496911	-3.15149	0.0249837	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0136	0.0250313	2.94155	0.0285569	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0150	0.0696429	3.70174	0.0100478	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0153	-0.0652875	-3.99138	0.00893138	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lung	Z0158	-0.0431414	-3.34442	0.0200956	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0162	-0.0248808	-3.21356	0.0200956	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lung	Z0166	0.0594918	3.72508	0.0139796	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Lung	Z0174	0.0863234	5.00296	2.48087e-08	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0188	0.0482446	3.58553	0.00893138	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0193	0.037528	3.05573	0.0291386	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0199	-0.0374289	-3.64297	0.0133971	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0208	-0.0443246	-4.2327	0.00443732	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0221	0.0213468	2.8535	0.0306219	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0232	-0.0930966	-2.86644	0.0444669	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0236	0.0953913	4.41159	1.21099e-06	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0241	-0.0340608	-3.13559	0.0234449	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0247	0.0536321	3.46185	0.018421	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0253	0.0475431	3.42545	0.0139796	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0256	0.0400712	3.19728	0.0200956	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lung	Z0259	0.0411034	3.60878	0.0139796	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0261	-0.0263535	-3.57161	0.0139796	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0280	0.0467407	3.18992	0.0207439	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lung	Z0294	0.0409119	2.93363	0.0308444	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0310	-0.0454781	-3.62805	0.0200956	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0328	-0.100118	-3.61957	0.0139796	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0330	0.0310894	3.56923	0.0133971	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lung	Z0338	-0.0352253	-3.96674	0.0100478	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lung	Z0367	0.0650489	4.30923	0.000587808	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lymphoid	Z0001	0.0951876	6.58223	1.34972e-06	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0002	0.0946428	5.11461	1.33376e-09	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0004	0.0360778	3.72387	0.00241752	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0006	-0.048603	-3.72001	0.00137406	T1	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0007	0.0148254	2.96517	0.00992376	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lymphoid	Z0009	-0.130487	-8.51524	8.5077e-12	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0011	0.0596853	4.32064	0.000165464	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0012	0.0963766	4.04594	0.000788063	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0013	0.0212867	3.37226	0.00412923	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0014	-0.200246	-8.01115	1.83361e-08	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0016	0.182264	15.7188	2.13688e-16	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0018	0.0484211	5.90014	4.64943e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Lymphoid	Z0020	0.0287392	4.19742	0.00013744	T2	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Lymphoid	Z0022	0.0315456	3.41565	0.00191387	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0023	-0.0818409	-5.0713	0.000128404	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0026	-0.0690245	-3.26914	0.010356	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0029	0.0275286	2.44007	0.0323645	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0030	-0.291063	-13.1532	1.32789e-12	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0032	0.100975	5.36786	8.69633e-15	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0035	0.0481896	6.27885	7.74898e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0036	0.0259813	3.4537	0.00216414	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0037	0.0734916	9.08706	1.55399e-08	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Lymphoid	Z0040	-0.108438	-5.67784	1.4941e-05	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0041	0.0500619	3.2899	0.00388053	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0042	0.0957013	6.25168	5.05567e-20	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0047	0.036221	3.38732	0.00293367	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0049	-0.0496844	-4.13925	0.00111642	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0051	0.0830576	8.5206	1.58414e-08	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0052	0.0380016	2.50275	0.027453	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0057	0.0352203	3.39449	0.00388053	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0058	-0.0893206	-4.99781	0.000104443	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0059	0.104306	10.6965	1.75188e-09	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0061	-0.0578114	-4.06426	0.00137406	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0062	0.0548356	3.43455	0.00267941	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0064	-0.0518237	-4.35124	4.18033e-05	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0065	0.0275311	3.96762	0.00600258	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0066	0.0443673	3.21997	0.00365375	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0067	0.0848246	8.82747	6.12527e-08	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0068	0.0626405	4.4585	5.10857e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0069	0.0439084	3.81882	7.39957e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0072	-0.0381267	-3.49324	0.00216414	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0074	0.125558	6.88464	2.42831e-07	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0078	-0.102441	-5.79457	1.53718e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0079	0.0447637	2.54697	0.0267205	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0082	-0.0630696	-3.77567	0.00164718	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lymphoid	Z0083	0.119961	5.0098	2.7428e-09	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0084	0.0711641	3.63327	0.00137406	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0085	0.0460341	3.24396	0.00532334	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0086	0.0764983	3.36802	0.00320365	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0087	0.0573673	3.94575	0.000788063	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0089	-0.0564978	-3.25286	0.00721381	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0091	0.0258925	3.63342	0.00164718	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0092	0.0315282	4.14067	0.00461656	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0094	0.109065	7.08491	8.25899e-16	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0096	-0.200686	-6.48017	1.02975e-06	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0097	0.0824949	4.99542	7.01929e-07	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0098	0.0332798	5.63828	5.53459e-11	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Lymphoid	Z0099	-0.110872	-6.04585	1.42872e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0101	0.055395	2.82285	0.0138755	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0103	0.0942084	6.66868	1.23671e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0106	-0.0221133	-3.09725	0.00890312	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0107	0.0339451	4.33888	0.00111642	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0109	-0.101003	-4.91502	0.000107349	T1	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Lymphoid	Z0110	-0.133541	-7.75768	2.33246e-08	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0112	-0.0482999	-2.71287	0.0189538	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lymphoid	Z0113	-0.155493	-9.75767	8.80307e-08	T2	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Lymphoid	Z0114	0.0389883	2.48093	0.0323645	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0115	0.0592475	4.71575	9.83923e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Lymphoid	Z0119	0.0616165	7.33571	5.43074e-07	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0121	-0.103549	-6.01991	3.92736e-07	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0122	0.0214174	2.9108	0.0110281	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0126	-0.0361445	-2.30556	0.0453439	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0127	-0.0487945	-3.77284	0.00111642	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0128	-0.0835878	-4.8439	2.71021e-06	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0129	0.0664431	5.48894	1.84725e-07	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0130	-0.0876841	-3.58635	0.00267941	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0141	-0.0717311	-5.1893	2.55419e-06	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0143	0.0702061	4.3185	4.04855e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0146	0.0838698	7.15965	9.9716e-10	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0147	-0.206664	-8.71023	4.6057e-09	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0149	0.0494576	6.91544	4.4038e-08	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0151	-0.0575918	-3.98519	0.000214006	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0152	0.0723607	2.83544	0.0176563	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0153	-0.185654	-8.80603	8.5077e-12	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0154	0.0228606	2.59958	0.026202	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0159	-0.113252	-6.1222	9.77441e-06	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0161	0.0410424	4.87676	5.60322e-05	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0162	0.0275187	3.91588	0.00164718	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0164	0.0423889	4.66936	2.1936e-06	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Lymphoid	Z0172	0.033116	3.34614	0.00344496	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0173	0.034029	3.74538	0.00137406	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0175	-0.0465037	-2.80271	0.013718	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0184	0.139155	8.05934	2.22833e-10	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0186	-0.240902	-8.42738	9.43819e-11	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Lymphoid	Z0189	0.0298959	2.81329	0.0158401	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0190	0.48357	10.7434	1.93465e-14	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0191	0.0592118	3.32538	0.00164718	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0193	0.0521306	3.24407	0.00512505	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0195	0.0387587	4.37931	0.000137802	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0196	0.179139	9.45336	8.36296e-10	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0198	0.185984	6.03805	1.79152e-06	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0200	-0.102248	-4.61014	9.54055e-05	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0202	0.025324	2.34015	0.0457278	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0204	0.0324427	2.67511	0.021902	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0205	0.0658643	3.09202	0.00674175	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0206	-0.0878836	-4.93045	1.62006e-05	T1	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0209	0.0355542	4.04565	0.00111642	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0216	0.0446155	4.1907	4.35372e-05	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0217	-0.0490571	-2.45356	0.0323645	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0218	-0.0538003	-2.55278	0.0275222	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0219	0.145536	6.31842	4.36696e-06	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0220	-0.0526046	-2.61621	0.0204362	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0221	-0.0376384	-3.25435	0.00216414	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0222	0.135667	4.17127	7.72215e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0224	-0.0865895	-5.12605	7.74898e-05	T3-nc	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0225	-0.038332	-2.72635	0.0177858	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0226	0.126404	4.7337	5.0043e-05	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0227	-0.136183	-4.9048	2.92556e-05	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0229	-0.0654804	-3.26964	0.00437455	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0232	-0.0830195	-2.41875	0.0323645	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0236	-0.117719	-3.70057	0.00191387	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0242	-0.143862	-4.38924	0.000212091	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0244	0.0404253	2.68789	0.0188325	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0247	0.0582098	3.86891	0.00137406	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lymphoid	Z0249	-0.227389	-14.135	5.94635e-15	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0250	0.0348044	3.96817	0.00164718	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0251	0.0365901	4.42547	0.000788063	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0253	0.0451553	2.76584	0.0165906	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0254	-0.146863	-10.4128	4.97616e-10	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0258	0.120799	7.2324	1.08922e-07	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0259	-0.0655332	-3.49484	0.00344496	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0260	0.0388237	4.67866	0.00111642	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0262	0.0470832	3.15933	0.00600258	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0263	0.116351	6.287	3.54567e-06	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0264	0.137801	10.6718	1.59417e-20	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Lymphoid	Z0266	-0.074023	-3.80869	0.00137406	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0268	0.0650844	3.9087	0.00137406	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0269	0.0416433	2.74896	0.0229983	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0271	0.131317	8.14941	2.13688e-16	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0273	0.0272491	3.75383	0.00293367	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0276	-0.0848787	-3.14731	0.00960545	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0278	-0.0516703	-2.98165	0.00979661	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0280	-0.103643	-5.86642	3.10753e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0282	0.0385772	3.78416	0.000788063	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0283	-0.120901	-5.4247	1.85393e-06	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0284	0.105424	7.28683	1.37168e-07	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0285	0.0987591	5.92522	4.70634e-08	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0288	0.0231712	2.84985	0.013718	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Lymphoid	Z0289	0.0451475	4.5819	7.74898e-05	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0291	0.0393745	6.16239	1.04464e-06	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0292	-0.125102	-8.21366	6.56075e-08	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0293	-0.035858	-2.53435	0.030415	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0294	0.0611	4.20962	0.000133083	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0295	0.0900377	4.83928	3.0462e-06	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0300	-0.0467275	-2.65246	0.0226777	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0301	-0.0867543	-3.71529	0.00137406	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0304	0.04309	3.31053	0.00365375	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0305	0.0371552	3.28062	0.00365375	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0308	0.0494103	2.36716	0.0418659	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0311	-0.0815896	-4.08784	0.00111642	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0313	0.0293301	2.42221	0.0401912	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0314	0.0588244	2.8375	0.013718	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0315	-0.120337	-5.41265	0.000118655	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Lymphoid	Z0317	0.0520128	3.02841	0.00992376	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0319	-0.239324	-6.74687	5.0043e-05	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0320	0.0509642	3.72734	0.00191387	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0321	-0.19125	-6.56528	2.92583e-07	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0323	-0.0975734	-5.62731	6.45627e-07	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0324	-0.113915	-5.6725	6.03057e-07	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0325	0.0259358	3.14496	0.00555273	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0326	-0.0319967	-2.47357	0.0323645	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0327	0.108888	4.91818	9.9716e-10	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0328	-0.182016	-7.11367	7.016e-07	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0329	0.0962695	3.60077	0.00241752	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0331	0.0993492	5.1413	4.11243e-06	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0332	0.0541591	3.76162	3.02311e-06	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0333	-0.0501148	-4.77754	3.59106e-08	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0334	-0.299768	-6.7502	1.74749e-07	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0336	0.103296	5.56155	1.06653e-08	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0337	0.0606254	3.82809	0.00137406	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0339	-0.182429	-7.94936	7.39433e-09	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0343	-0.234026	-6.91388	3.54567e-06	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0344	-0.0510283	-2.72591	0.0165906	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0345	0.11981	5.16765	3.7823e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0347	-0.0619625	-3.20126	0.00532334	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0348	0.0816837	5.70653	6.04047e-06	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0349	0.0819364	4.9452	5.67987e-05	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0351	0.0561641	2.77942	0.0154582	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0352	0.127474	6.2864	4.09747e-06	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0356	-0.133928	-3.88113	0.00241752	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0357	0.0357211	2.29955	0.0453439	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0360	-0.0728131	-2.31208	0.0459037	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Lymphoid	Z0362	-0.106083	-3.7791	0.00191387	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0363	0.199198	8.65882	8.741e-09	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Lymphoid	Z0365	0.0344253	2.37014	0.0424819	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0366	-0.0674037	-2.86322	0.00890312	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Lymphoid	Z0367	0.0703132	3.58394	0.00216414	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0001	0.144556	8.36572	3.35221e-09	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0009	-0.0734096	-3.45603	0.0133971	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0014	-0.137798	-4.26155	0.00349489	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0016	0.137847	10.4773	1.90614e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0020	0.0367619	4.8306	0.00349489	T2	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Myeloid	Z0024	0.047596	5.14664	0.000486348	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Myeloid	Z0030	-0.232307	-6.01753	0.000210229	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0032	0.0794787	2.99498	0.0364233	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0033	0.0601733	3.42431	0.015727	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0035	0.0593909	4.45397	0.0133971	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0037	0.0859686	6.24631	2.50632e-05	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Myeloid	Z0040	-0.111935	-3.87868	0.00772908	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0041	0.0726761	3.00254	0.0395729	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0042	0.0813453	3.42014	0.0200956	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0050	0.0268076	2.95889	0.0472247	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0055	0.045807	2.83963	0.0425907	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Myeloid	Z0059	0.0739084	6.75027	0.000210229	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0067	0.101455	8.82318	2.50632e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0074	0.0982552	2.98125	0.0341625	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Myeloid	Z0075	0.0629688	2.84803	0.0420181	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0083	0.118986	3.3767	0.015727	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0087	0.0674427	3.62549	0.0106389	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0088	-0.355506	-6.76904	1.08233e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0092	0.0617929	6.22039	0.000639281	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0099	-0.113194	-3.60267	0.0172248	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0101	0.0768056	3.0795	0.0311828	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Myeloid	Z0103	0.0633451	2.84978	0.046798	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Myeloid	Z0108	0.0502332	4.61764	2.50632e-05	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0109	-0.0750585	-3.24358	0.018488	T1	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Myeloid	Z0113	-0.293076	-4.24597	0.013035	T2	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Myeloid	Z0122	0.0326158	3.67143	0.0114832	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Myeloid	Z0130	-0.136525	-3.89218	0.00831542	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0136	0.0472187	4.24964	0.00879183	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Myeloid	Z0140	-0.070112	-2.97337	0.0289095	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0141	-0.0601864	-3.49789	0.0140202	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0142	-0.0834395	-2.81209	0.046805	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0146	0.0948653	3.89445	0.00879183	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0153	-0.139429	-3.50037	0.028708	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0161	0.0340117	3.21278	0.0284992	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0169	0.0279703	2.77431	0.0431036	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0184	0.108799	4.70442	9.65577e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0186	-0.0882778	-2.82494	0.0435877	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False	control unit, other context	False		
+H3a	lineage:Myeloid	Z0188	0.0678404	2.85625	0.0435877	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0190	0.219836	3.85843	0.00879183	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0200	-0.180638	-4.76991	0.000592771	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Myeloid	Z0201	-0.0876292	-2.69062	0.046805	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0203	0.0593747	3.428	0.0155284	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0206	-0.0936879	-3.76691	0.00772908	T1	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Myeloid	Z0217	-0.0721507	-2.59773	0.046805	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0219	0.112388	3.46348	0.00974333	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Myeloid	Z0220	-0.0692441	-2.65122	0.046805	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0232	-0.156921	-3.28664	0.0197016	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0233	0.0564217	3.42503	0.0167463	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Myeloid	Z0241	0.0775141	3.51165	0.0133971	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Myeloid	Z0242	-0.159518	-3.3661	0.0162475	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0249	-0.151254	-6.29373	0.000322642	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0254	-0.189133	-5.84477	0.000167952	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0255	0.0347415	3.79253	0.0133971	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0256	-0.0919138	-4.55777	0.00349489	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0259	-0.0909946	-3.21531	0.0364233	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0262	0.0574612	2.76087	0.0457733	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0263	0.0811635	4.05259	0.00831542	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0271	0.101168	4.52346	0.00103065	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0273	0.0458753	5.64692	0.000210229	T2	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Myeloid	Z0278	-0.126501	-4.78791	0.00349489	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0280	-0.0597725	-2.93287	0.0333791	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0285	0.0818827	3.52686	0.0122807	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Myeloid	Z0291	0.0338434	3.10279	0.0342614	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0292	-0.163439	-6.59596	8.61003e-05	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Myeloid	Z0300	-0.0818904	-2.72514	0.046805	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0305	0.0379933	2.76036	0.047634	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0307	0.0377211	2.65411	0.046805	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0308	0.0929468	2.90323	0.0363017	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0309	0.0514633	5.82796	0.000678842	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Myeloid	Z0310	0.0347893	3.53906	0.0219914	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Myeloid	Z0313	0.0567708	3.15171	0.0431036	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0320	0.0771098	3.8321	0.00831542	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0328	-0.148519	-3.46006	0.0267941	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Myeloid	Z0329	0.166297	3.64611	0.00772908	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0337	0.0663617	3.54355	0.0133971	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Myeloid	Z0343	-0.238534	-6.76499	1.31958e-05	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Ovary/Fallopian Tube	Z0001	-0.0974905	-3.71396	0.0229664	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Ovary/Fallopian Tube	Z0035	-0.140089	-4.81974	0.000970752	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Ovary/Fallopian Tube	Z0104	-0.0838356	-4.62976	0.00447288	T2	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Ovary/Fallopian Tube	Z0137	-0.131836	-7.26728	0.000458993	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Ovary/Fallopian Tube	Z0171	-0.0814969	-4.44118	0.00447288	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Ovary/Fallopian Tube	Z0178	0.0648915	5.23088	0.00447288	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Ovary/Fallopian Tube	Z0316	0.0691757	4.44744	0.0200956	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Ovary/Fallopian Tube	Z0358	0.0789045	3.44203	0.0351673	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0002	0.0769062	3.21561	0.029027	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pancreas	Z0010	0.0434379	2.94542	0.0441123	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0014	-0.0842681	-3.21777	0.0142614	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0016	-0.0627492	-3.34875	0.0264114	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0024	0.0328331	3.74166	0.00893138	T2	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pancreas	Z0026	0.0673685	4.41791	0.00873722	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0041	0.0869797	4.91684	0.000364235	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0044	0.0394822	4.5766	0.000415297	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0053	0.0523585	3.14955	0.0336737	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0054	-0.0325592	-3.361	0.0212777	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0059	-0.113658	-5.27063	0.000764553	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0061	0.066242	5.06383	0.000452113	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0063	-0.125598	-3.84815	0.0150717	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pancreas	Z0073	-0.136724	-4.42489	0.0057416	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0076	-0.114683	-3.42146	0.0142614	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0080	0.0700034	2.877	0.0484122	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0082	-0.104214	-3.18035	0.0350385	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Pancreas	Z0086	-0.0985361	-3.08377	0.0381817	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pancreas	Z0087	-0.0955513	-3.99131	0.00423065	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0094	0.0960203	3.76542	0.00893138	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pancreas	Z0102	0.0685759	2.90446	0.0494017	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Pancreas	Z0132	-0.0621377	-3.87711	0.00893138	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True	control unit, other context	False		
+H3a	lineage:Pancreas	Z0134	-0.144151	-6.18666	0.000535912	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Pancreas	Z0143	-0.13974	-5.64016	0.000344586	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0147	0.110648	4.14254	0.00423065	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pancreas	Z0159	0.0490475	4.07057	0.0110872	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0163	0.0970791	4.35164	0.00423065	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Pancreas	Z0186	0.0827102	3.0029	0.0468898	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	lineage:Pancreas	Z0193	-0.056787	-2.87331	0.0484122	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pancreas	Z0197	0.0999913	3.57398	0.00730749	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0198	-0.0792339	-2.89257	0.0494017	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0222	0.128264	3.29523	0.0158329	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0240	-0.0989126	-4.67466	0.00222533	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0275	0.0629524	2.93992	0.0494017	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pancreas	Z0281	-0.0572	-4.28705	0.00147577	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0283	0.104244	5.6372	3.89767e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0290	0.0378173	3.72008	0.0100478	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0291	-0.164278	-4.3587	8.10044e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0314	0.129006	4.56866	0.000535912	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0316	-0.090186	-4.30948	0.0057416	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0317	0.09104	4.28839	0.000415297	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0328	-0.138186	-2.96431	0.0494017	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pancreas	Z0332	0.110277	4.94465	0.000364235	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0334	0.0511228	4.87258	0.00423065	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pancreas	Z0335	0.0987313	4.01724	0.000701874	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pancreas	Z0339	-0.100188	-3.62688	0.00893138	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Pancreas	Z0353	0.106803	4.85618	0.000364235	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pancreas	Z0357	0.0673689	2.93764	0.0349029	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0001	-0.0786759	-3.469	0.0131237	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0004	-0.105352	-5.34105	4.16627e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0005	-0.0430382	-2.98728	0.0337606	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0011	-0.0717413	-3.25847	0.0117224	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0015	0.0811019	4.31665	0.00376793	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0019	0.0672193	4.67317	0.00165149	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0022	-0.0755387	-3.86498	0.00904302	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Peripheral Nervous System	Z0028	0.0683837	3.40742	0.00982452	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0030	0.152985	3.83285	0.00868999	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0031	0.0564026	3.04277	0.0260061	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Peripheral Nervous System	Z0037	-0.0459417	-3.28523	0.0260061	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0040	0.134149	3.94006	0.0032153	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0041	0.0771579	2.84413	0.0426124	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0050	0.0552915	3.50086	0.0183328	T2	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Peripheral Nervous System	Z0053	-0.0613455	-3.06712	0.019755	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0055	-0.0546244	-2.81418	0.0260061	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0061	-0.0506984	-3.05567	0.0224017	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0062	0.0462136	2.64599	0.0472013	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0063	0.0763133	6.43462	9.79548e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0065	-0.332646	-7.25154	0.000213622	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0066	-0.0553175	-2.91964	0.036069	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0074	-0.0853212	-3.33069	0.0149732	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Peripheral Nervous System	Z0076	0.181537	5.84305	0.000227119	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0081	0.100461	3.27669	0.0151665	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0086	0.113126	4.64788	0.00376793	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0102	0.113317	4.70718	9.0067e-08	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0110	0.0293949	3.01518	0.031134	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0113	0.0554905	5.32287	0.00376793	T2	False	not confirmed	lockbox	False	True	False	False	False	True	control unit, other context	False		
+H3a	lineage:Peripheral Nervous System	Z0115	-0.124073	-4.86257	0.000304683	T1	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Peripheral Nervous System	Z0120	0.170167	7.22186	2.03411e-06	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Peripheral Nervous System	Z0121	0.0482299	4.90912	0.0032153	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0130	0.0840358	3.51844	0.00982452	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0138	0.0545714	3.17142	0.0160765	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0142	-0.0516697	-2.83607	0.031134	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0147	-0.198159	-4.21499	0.0032153	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0149	0.0703565	5.96307	0.00016597	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Peripheral Nervous System	Z0150	-0.134133	-4.52673	0.0032153	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0153	0.077468	3.80936	0.00904302	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0163	-0.160687	-4.41982	0.00446569	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0165	0.051567	4.51759	0.00376793	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0168	-0.034837	-2.95676	0.0313822	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0175	0.0568834	2.853	0.03663	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0177	0.049778	4.32294	0.00376793	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0187	-0.0743272	-3.47833	0.00980274	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0190	-0.171005	-4.86009	0.0032153	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0195	0.0363668	2.86778	0.0387027	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0196	0.1012	2.89022	0.0312598	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0232	0.313729	7.3058	5.15719e-06	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0236	-0.126177	-3.04801	0.0260061	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0238	0.0549481	3.09656	0.0236044	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0249	0.114701	5.85376	8.144e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0254	0.100338	3.41668	0.0149732	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0256	0.0641443	4.59904	0.00119091	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0257	-0.0730317	-2.78103	0.0381817	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Peripheral Nervous System	Z0258	0.0793462	3.31524	0.0187097	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0260	0.0819867	5.14068	0.00141553	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0266	0.0594918	3.10096	0.0236044	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0267	0.122841	5.10514	0.00120328	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Peripheral Nervous System	Z0269	0.0574185	2.73284	0.0472013	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0271	-0.0823133	-2.79471	0.036069	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0277	0.0614583	3.30473	0.0156299	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0283	0.0658549	3.00693	0.0343741	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0286	0.0636901	4.17784	0.0111167	T2	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Peripheral Nervous System	Z0290	-0.0989007	-4.75427	0.000180763	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0292	0.0900189	4.04661	0.00446569	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0293	-0.0631795	-3.02024	0.0291241	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0295	-0.0840933	-2.7283	0.0406814	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0301	-0.118027	-3.83315	0.00904302	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0303	0.113072	2.71613	0.0472013	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0304	-0.0705067	-3.39262	0.00982452	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0311	0.120096	6.41573	8.144e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0314	0.0945398	3.1844	0.0179425	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0315	0.081776	3.55607	0.0104847	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Peripheral Nervous System	Z0316	-0.118949	-4.97765	0.00376793	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0322	0.0537381	4.1304	0.00141553	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0328	0.162734	4.96081	0.00182288	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0334	0.0516278	6.03959	0.000681848	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Peripheral Nervous System	Z0335	-0.103461	-4.04003	0.00376793	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0341	-0.0669002	-3.1201	0.0200956	T3-nc	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0343	0.0766005	4.54954	0.00446569	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Peripheral Nervous System	Z0350	-0.0446012	-3.31724	0.0151665	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0355	-0.116105	-4.108	0.00446569	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0359	0.106736	3.69055	0.00982452	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Peripheral Nervous System	Z0360	0.0613538	2.97342	0.0320444	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0363	-0.112599	-2.99733	0.0260061	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Peripheral Nervous System	Z0367	-0.175326	-5.20675	0.00016597	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pleura	Z0009	0.0985584	6.0445	0.0050086	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pleura	Z0030	0.186548	4.70657	0.0344496	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pleura	Z0043	0.119754	6.18509	0.000313708	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pleura	Z0067	-0.264818	-5.88912	0.0241147	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Pleura	Z0089	0.0581297	6.02517	0.0267941	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Pleura	Z0170	-0.0863367	-4.64459	0.0050086	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pleura	Z0318	0.0804835	3.93366	0.0491226	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pleura	Z0340	0.0814917	4.43483	0.0241147	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Pleura	Z0361	-0.0775501	-3.79366	0.0491226	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Skin	Z0001	-0.0531909	-3.38495	0.0119085	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0006	-0.0316228	-2.92653	0.0336294	T1	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0007	0.0188971	2.89611	0.0472423	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	lineage:Skin	Z0016	-0.104768	-4.2775	0.00096803	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Skin	Z0017	0.0231466	2.96604	0.0409355	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Skin	Z0018	-0.356526	-9.62827	3.75251e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Skin	Z0023	-0.0569482	-2.98074	0.0332014	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0028	0.103517	6.14776	1.20254e-07	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Skin	Z0030	0.107685	3.61914	0.0119085	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0037	-0.0783827	-4.27993	0.00548062	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0042	-0.066174	-2.93058	0.0336294	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0051	0.0894591	4.41806	0.00472838	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Skin	Z0071	0.0933576	5.10391	7.42486e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Skin	Z0075	-0.0936342	-4.24398	0.00548062	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0078	-0.0626046	-3.28166	0.0177314	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0082	-0.141297	-4.1108	0.00472838	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0083	-0.125607	-4.43535	0.00174611	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Skin	Z0084	-0.177463	-4.80786	0.000416391	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Skin	Z0088	0.0384794	5.21682	0.000416391	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0097	0.0720149	3.15865	0.0177314	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Skin	Z0100	0.0274721	3.77566	0.0100478	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0111	0.0406264	4.87608	0.00472838	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0112	-0.0692483	-3.3942	0.0177314	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Skin	Z0113	0.0411459	4.86964	0.0100478	T2	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Skin	Z0116	0.054556	6.62322	3.88409e-05	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0126	0.0840167	5.27703	7.42486e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Skin	Z0134	0.0404332	3.41896	0.0195803	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0135	-0.0526628	-2.9524	0.0363267	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Skin	Z0145	-0.0607042	-3.00477	0.0337606	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0146	-0.0765706	-4.01224	0.00548062	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Skin	Z0153	0.0912854	5.46756	0.000416391	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Skin	Z0157	0.046217	5.39794	0.000637733	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	lineage:Skin	Z0171	0.0570555	3.47283	0.0166308	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0175	0.037704	3.00119	0.0336294	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0177	0.040045	3.16133	0.0195803	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0179	0.028637	3.1498	0.0261243	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0184	-0.0689057	-3.02686	0.0315788	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0189	0.0365944	3.01825	0.0317791	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	lineage:Skin	Z0190	-0.172562	-3.75548	0.00548062	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Skin	Z0193	0.0710208	4.45557	0.000359592	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0197	-0.0464185	-2.77506	0.0437797	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0199	0.0446765	3.88231	0.00548062	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0201	0.0663576	3.25117	0.014354	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Skin	Z0205	-0.0893917	-3.04307	0.032153	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Skin	Z0208	0.0455661	3.33042	0.0177314	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0212	0.028676	2.85911	0.0416527	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0221	-0.0305076	-2.7854	0.0319703	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Skin	Z0222	-0.14751	-4.00347	0.00096803	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0280	-0.0498131	-3.2518	0.0177314	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0284	-0.0937166	-4.28133	0.00472838	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0299	-0.0521454	-3.1935	0.0189792	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0300	0.0669168	2.99801	0.0371579	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Skin	Z0302	0.0373557	3.24653	0.0189792	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Skin	Z0319	0.0316558	4.05968	0.0195525	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Skin	Z0326	0.046081	3.61902	0.0112535	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0343	0.059315	3.25024	0.0338867	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Skin	Z0344	-0.0605273	-3.02615	0.0315788	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Soft Tissue	Z0003	0.0807711	4.05191	0.0334927	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Soft Tissue	Z0080	-0.155878	-5.96995	0.00225282	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Soft Tissue	Z0083	-0.113507	-3.65567	0.0452151	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Soft Tissue	Z0147	-0.162352	-4.4933	0.0200956	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Soft Tissue	Z0153	0.0788128	4.89975	0.00461452	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Soft Tissue	Z0171	0.0703778	3.32201	0.0491226	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Soft Tissue	Z0213	-0.0834984	-3.51009	0.0452151	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Soft Tissue	Z0249	0.0910072	4.72118	0.0109394	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Soft Tissue	Z0336	-0.0863863	-3.54736	0.0334927	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Uterus	Z0120	0.0462285	3.48177	0.0474987	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Uterus	Z0135	0.0670674	3.84525	0.0474987	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Uterus	Z0201	-0.0933109	-3.71755	0.0468898	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	lineage:Uterus	Z0218	0.0904163	3.93213	0.0474987	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Uterus	Z0254	0.0977849	3.78587	0.0474987	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Uterus	Z0287	0.075887	4.07573	0.032153	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Uterus	Z0293	0.0894216	5.19256	0.00426198	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Uterus	Z0316	0.114706	5.8822	0.0200956	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	lineage:Uterus	Z0324	0.087476	3.92756	0.0474987	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	lineage:Uterus	Z0339	0.230409	4.71821	0.00426198	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	lineage:Uterus	Z0359	-0.166438	-4.22028	0.0200956	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0001	-0.0465182	-2.78446	0.0316171	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0005	0.0226353	2.81325	0.0367603	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	melanoma	Z0006	-0.0311662	-2.86965	0.0316171	T1	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0007	0.0257616	3.95002	0.0014354	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3a	melanoma	Z0016	-0.10415	-4.00342	0.00325875	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0017	0.032711	4.02536	0.00243583	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	melanoma	Z0018	-0.402361	-12.2367	7.54711e-08	T1	False	confirmed	lockbox	False	True	True	True	True	True	control readout	False		
+H3a	melanoma	Z0021	0.0558858	2.83941	0.0316171	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0023	-0.0875517	-4.78753	4.88735e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0028	0.116705	8.19346	2.27382e-07	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0030	0.0936654	3.20958	0.0228674	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0037	-0.095333	-5.51228	0.000110531	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	melanoma	Z0042	-0.0772984	-3.60616	0.00412218	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0049	0.0361889	2.75381	0.0397239	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0051	0.112559	8.34808	2.37259e-10	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0058	0.0587408	2.81589	0.0335775	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0059	0.0503591	3.42213	0.025696	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0064	0.0403166	3.09146	0.0197302	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0066	-0.0597989	-2.79866	0.0351673	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0067	0.0531232	3.17223	0.0316171	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0071	0.110072	6.53155	2.02083e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0073	-0.0762788	-2.74694	0.0335775	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0075	-0.1249	-6.17057	5.74962e-06	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0078	-0.0719982	-4.40148	1.59853e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0082	-0.190843	-7.84097	3.26754e-07	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0083	-0.140825	-4.89768	0.000267181	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0084	-0.201519	-5.49939	8.21749e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0088	0.0403178	4.94641	0.000175573	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0090	-0.0513948	-3.35535	0.0104847	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0092	0.0350733	3.82497	0.0316171	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0095	-0.0815529	-2.99305	0.0301434	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0097	0.0942245	4.14956	0.000436399	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0099	-0.0839068	-3.36125	0.015909	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0100	0.0320997	4.421	2.50399e-05	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0103	-0.052609	-2.73893	0.0424241	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0111	0.0479479	5.51507	2.27382e-07	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0112	-0.0836273	-4.13249	0.00325875	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0113	0.03897	4.63133	0.00243583	T2	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3a	melanoma	Z0116	0.0486371	6.15096	2.44415e-05	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0126	0.100714	6.26411	3.85654e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0134	0.0355153	3.02358	0.0368814	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0135	-0.085714	-4.59799	9.55208e-06	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0143	0.0646482	2.82901	0.0316171	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0145	-0.0665441	-3.4107	0.0111167	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0146	-0.0791659	-3.99166	0.000219152	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0149	0.0303718	3.48812	0.030298	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0153	0.089775	5.48864	0.000175573	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0157	0.0350703	3.45541	0.0228674	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True	control unit, other context	False		
+H3a	melanoma	Z0159	0.060039	3.05275	0.0316171	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0166	-0.147674	-4.49192	0.0050239	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False	control unit, other context	False		
+H3a	melanoma	Z0171	0.0692411	3.86835	0.00243583	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0175	0.048889	4.02735	0.00325875	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0177	0.0371513	3.02362	0.025696	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0179	0.0314801	3.44214	0.00588164	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0182	0.0320679	2.80869	0.036842	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0184	-0.0644939	-2.73533	0.0406479	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0189	0.0450452	3.98444	0.00243583	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3a	melanoma	Z0190	-0.21784	-4.88716	0.000581222	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0193	0.0718785	4.31395	0.0014354	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0199	0.0401397	3.01659	0.029346	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0200	0.0850393	2.61972	0.0428412	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0201	0.0912162	4.51527	0.00243583	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0205	-0.109634	-3.46441	0.00893138	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0207	0.0521667	3.29016	0.0193513	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0208	0.0484326	3.3511	0.0177769	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0212	0.0319578	2.93041	0.0304479	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0215	0.0461627	3.43149	0.00893138	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0221	-0.0439565	-4.85658	1.17555e-05	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0222	-0.160484	-4.16208	7.42064e-05	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0224	0.050751	3.13862	0.0228674	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0225	-0.0431166	-3.21538	0.0189581	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0247	-0.0677133	-3.2513	0.0164046	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0284	-0.0576024	-2.93035	0.025696	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0299	-0.054858	-3.29542	0.0176841	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0300	0.0871267	3.92005	0.00412218	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0302	0.0480506	4.7184	0.000436399	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0304	-0.0349872	-2.75104	0.0367179	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0309	0.0271634	2.89454	0.0316171	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0310	0.0298755	3.03859	0.0335775	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0311	0.060726	2.89129	0.0401912	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0315	0.0959434	3.85405	0.000299824	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3a	melanoma	Z0319	0.0306104	3.55447	0.0335775	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0323	0.0894022	2.84502	0.0316171	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0325	0.0316305	3.28831	0.0177769	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0326	0.056142	4.87976	4.88055e-06	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0336	-0.0609177	-3.40813	0.00765547	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0343	0.0534206	2.93801	0.0368016	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0344	-0.0735119	-3.69491	0.00325875	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3a	melanoma	Z0345	-0.0683212	-2.65896	0.0419976	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3a	melanoma	Z0348	0.0448954	3.73979	0.00893138	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3a	melanoma	Z0364	0.107565	2.9994	0.029346	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	9p21_loss	Z0069	0.0648366	5.29142	0.000606206	T1	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	9p21_loss	Z0228	-0.237178	-9.47657	9.33298e-08	T3-neg	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True	control readout	False		
+H3b	LoF:PTEN	Z0285	-0.073288	-3.76649	0.00217706	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	LoF:PTEN	Z0316	0.0963876	8.07412	5.46823e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	LoF:RB1	Z0037	0.110562	9.38353	2.66743e-07	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3b	LoF:RB1	Z0069	-0.201319	-9.30349	4.6156e-08	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	LoF:SMARCA4	Z0367	0.0987159	4.76993	4.98188e-05	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	MSI_H	Z0031	-0.0551312	-3.96825	0.0205294	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3b	MSI_H	Z0038	0.0355293	3.93168	0.0217138	T1	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	MSI_H	Z0044	-0.042566	-4.5117	0.00172535	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3b	MSI_H	Z0104	-0.0757079	-4.37444	0.000223249	T2	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3b	MSI_H	Z0138	-0.044343	-4.31415	0.000125381	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3b	MSI_H	Z0157	-0.152272	-6.19168	1.90636e-05	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control readout	False		
+H3b	MSI_H	Z0177	-0.0642091	-4.19498	0.0188186	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3b	MSI_H	Z0202	-0.049104	-3.37606	0.0217138	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3b	MSI_H	Z0274	-0.0857071	-4.14399	0.000223249	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	MSI_H	Z0286	-0.0949482	-5.06703	0.000223249	T2	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3b	MSI_H	Z0316	0.0861695	5.15932	0.00109979	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	MSI_H	Z0334	0.0847727	4.00598	0.0205294	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	MSI_H	Z0339	0.102387	3.73794	0.0188186	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	MSI_H	Z0364	0.10695	3.52281	0.0241954	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	NRF2_active	Z0099	0.0967128	4.33247	0.00585126	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	NRF2_active	Z0264	-0.208363	-4.7165	0.0102838	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True	control readout	False		
+H3b	TP53_altered	Z0001	-0.0255264	-2.65253	0.0358661	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0002	-0.0399754	-3.31667	0.00403256	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0004	0.0421193	5.42679	4.23781e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3b	TP53_altered	Z0006	0.0223318	3.46407	0.00325707	T1	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0010	-0.0292055	-3.81078	0.000399989	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0017	0.0142698	2.86878	0.0121597	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0018	0.0232678	3.24432	0.00325707	T1	False	not confirmed	lockbox	False	True	False	False	False	False	control unit, other context	False		
+H3b	TP53_altered	Z0021	-0.0432322	-3.97253	0.00325707	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0024	0.0173054	2.45905	0.0412318	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3b	TP53_altered	Z0026	0.0499025	5.1207	1.10276e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0027	-0.023742	-2.73274	0.0254052	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0028	-0.0313989	-3.6439	0.00325707	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0033	-0.0428549	-4.6094	6.36988e-06	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0038	0.0207199	4.4349	7.5884e-05	T1	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3b	TP53_altered	Z0039	-0.0211739	-2.80512	0.0306086	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0041	-0.0526024	-5.9795	1.34588e-07	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0043	-0.0483268	-4.19901	0.000759322	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0053	0.0252555	3.02897	0.0203241	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0054	0.0212543	3.45902	0.00403256	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0062	0.0459603	4.47595	5.17971e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0066	0.0612086	6.31954	9.03526e-16	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0068	0.0329477	3.4535	0.00126941	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0073	-0.0375965	-2.89147	0.0207995	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0075	0.0723798	5.70568	9.30128e-07	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3b	TP53_altered	Z0077	-0.0294566	-2.85944	0.014114	T2	False	not confirmed	lockbox	False	True	False	False	False	False	control unit, other context	False		
+H3b	TP53_altered	Z0078	0.0266482	2.60606	0.0490921	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0084	0.0460329	3.77571	0.00262586	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0096	-0.0211572	-2.72272	0.0349489	T2	False	not confirmed	lockbox	True	True	False	False	False	False		False		
+H3b	TP53_altered	Z0097	-0.047037	-3.44546	0.00325707	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0101	-0.036129	-2.66832	0.0302934	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0103	0.0361231	3.26147	0.022729	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0114	-0.038144	-4.04351	0.00325707	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0115	-0.0375603	-4.04425	0.000759322	T1	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3b	TP53_altered	Z0125	0.0211167	3.56158	0.0047844	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3b	TP53_altered	Z0126	-0.0553257	-5.33601	5.92026e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0130	0.0398084	3.06268	0.0164663	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0134	0.0221899	2.87051	0.0271825	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0136	0.0187957	3.0338	0.013482	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0140	-0.0733527	-5.56371	1.86878e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0143	-0.0419253	-3.35009	0.0047844	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0145	0.0356335	3.21982	0.0203241	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3b	TP53_altered	Z0146	0.0700001	6.90167	7.84307e-07	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0152	0.10572	7.43772	3.3727e-07	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0157	0.0264146	4.08821	9.93542e-05	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3b	TP53_altered	Z0158	-0.100266	-9.96054	2.59737e-54	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0163	0.0566588	3.89474	0.00262586	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0166	0.285103	17.9654	1.5878e-17	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control readout	False		
+H3b	TP53_altered	Z0171	0.0281507	2.95188	0.0185608	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0172	0.0251798	4.03107	0.000353838	T2	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3b	TP53_altered	Z0174	0.043971	3.84006	0.00148568	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0184	0.0808096	6.70652	4.13369e-06	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0185	-0.0587573	-4.12496	0.0012482	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3b	TP53_altered	Z0188	0.0425047	3.44516	0.00910579	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0199	0.0218898	2.98137	0.0164663	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0202	0.0258886	3.45949	0.00325707	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3b	TP53_altered	Z0203	-0.0330638	-3.08299	0.0231614	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0205	0.0522448	3.51251	0.000238363	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0219	-0.0965614	-6.48328	1.2267e-07	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0222	0.157312	7.78364	4.55213e-10	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0224	0.0377879	3.85707	0.00325707	T3-nc	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3b	TP53_altered	Z0226	-0.0777333	-4.40541	2.67072e-07	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0230	0.0240619	3.07026	0.0153237	T3-neg	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3b	TP53_altered	Z0244	-0.0331374	-2.99101	0.00970336	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0247	0.0620427	5.47038	4.23781e-05	T2	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	TP53_altered	Z0248	0.0321619	4.09801	0.000759322	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0253	-0.0585244	-5.66915	2.61121e-13	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3b	TP53_altered	Z0258	-0.0381489	-3.29657	0.00970336	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0264	-0.0303392	-2.54424	0.0404173	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False	control unit, other context	False		
+H3b	TP53_altered	Z0265	-0.0415858	-3.36467	0.00403256	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0270	0.0287626	3.36813	0.00647855	T3-nc	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0275	-0.0275754	-2.74932	0.0464193	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0284	0.0322766	3.05439	0.0147276	T1	False	confirmed	lockbox	True	True	True	False	False	False		False		
+H3b	TP53_altered	Z0285	-0.0415465	-3.65092	0.00564559	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0294	-0.046392	-4.38047	2.39707e-09	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0295	0.0533691	4.09212	1.93778e-05	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3b	TP53_altered	Z0297	0.0292942	3.66056	0.00403256	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0301	0.035416	2.70604	0.0402329	T1	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0303	-0.0621552	-3.5013	0.00325707	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3b	TP53_altered	Z0308	-0.0433927	-3.06783	0.0128309	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0313	0.0291231	3.59779	0.0047844	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0314	-0.0344511	-2.56721	0.0490112	T1	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3b	TP53_altered	Z0330	0.0355414	4.81467	0.000103434	T3-neg	True	confirmed	lockbox	False	True	True	False	False	True		False		
+H3b	TP53_altered	Z0337	0.0545129	4.81593	0.00262586	T2	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3b	TP53_altered	Z0341	0.0360148	4.15564	0.000111041	T3-nc	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3b	TP53_altered	Z0342	0.0390027	5.18823	6.36988e-06	T3-neg	True	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0347	-0.0222919	-2.61969	0.0402329	T3-nc	True	confirmed	lockbox	False	True	True	False	False	False		False		
+H3b	TP53_altered	Z0351	-0.0627257	-4.20664	0.000130352	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0352	-0.0650779	-4.29242	0.00262586	T2	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0355	0.0457674	3.56269	0.00262586	T3-neg	False	confirmed	lockbox	False	True	True	True	True	False		False		
+H3b	TP53_altered	Z0358	0.0634105	4.79591	5.55047e-05	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	TP53_altered	Z0359	-0.0477739	-2.96877	0.0235828	T3-neg	False	not confirmed	lockbox	False	True	False	False	False	False		False		
+H3b	TP53_altered	Z0365	0.0615005	4.9779	1.27184e-06	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	WGD	Z0026	0.0364271	3.21474	0.0461912	T1	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0035	-0.0311191	-3.16647	0.0303993	T1	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0056	0.0492526	3.89983	0.0188186	T1	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0065	0.0180024	2.99307	0.0499418	T2	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0080	-0.0505615	-2.99101	0.0496812	T1	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	False		False		
+H3b	WGD	Z0081	0.0519844	3.19305	0.0461912	T1	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	False		False		
+H3b	WGD	Z0104	0.0724018	6.09145	2.71843e-06	T2	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0141	0.0393971	2.96398	0.0461912	T3-neg	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	False		False		
+H3b	WGD	Z0150	0.0500785	3.10427	0.0493989	T1	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	False		False		
+H3b	WGD	Z0163	0.0636856	3.51807	0.0161303	T2	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0166	0.0658715	3.89053	0.0161303	T3-neg	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True	control unit, other context	False		
+H3b	WGD	Z0187	0.0262084	3.29986	0.0188186	T3-neg	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0206	0.0548436	3.53922	0.0225824	T1	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	False		False		
+H3b	WGD	Z0235	0.0918365	5.27634	0.000302526	T3-neg	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0248	0.0272215	2.92838	0.0490921	T3-nc	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	False		False		
+H3b	WGD	Z0257	0.0215484	3.05473	0.0461912	T3-neg	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0265	0.0599865	4.43541	1.8093e-07	T2	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0276	-0.0383769	-3.07969	0.0461912	T1	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0310	-0.0276426	-4.13814	0.0161303	T3-neg	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0319	0.0322393	3.41525	0.0303993	T2	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0334	-0.0415902	-3.1279	0.0403256	T2	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0341	0.0306832	3.1527	0.0461912	T3-nc	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0342	0.0281017	3.30996	0.0303993	T3-neg	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0354	-0.039452	-3.92708	0.0161303	T3-neg	True	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0362	0.0568179	3.20202	0.0461912	T1	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	WGD	Z0365	0.0435272	3.05441	0.0461912	T3-neg	False	NOT EVALUABLE (driver defect)	lockbox	True	True	False	False	False	True		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0016	0.200764	5.88773	3.61428e-06	T1	False	not lockbox-testable: rare-context route passed	rare-context route (not lockbox-testable)	False	True	True	True	True	True		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0042	0.16153	3.63854	0.0410588	T1	False	not lockbox-testable: rare-context route passed	rare-context route (not lockbox-testable)	False	True	True	True	True	True		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0059	0.0950603	4.13329	0.0161303	T1	False	not lockbox-testable: rare-context route passed	rare-context route (not lockbox-testable)	False	True	True	True	True	True		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0075	0.180878	3.74607	0.0376373	T1	False	not lockbox-testable: rare-context route NOT EVALUABLE (DEMETER2 not available)	lockbox	False	True	False	False	False	False		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0080	0.183676	4.0769	0.021171	T1	False	not lockbox-testable: rare-context route NOT EVALUABLE (DEMETER2 not available)	lockbox	False	True	False	False	False	True		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0087	0.147696	3.74104	0.0161303	T1	False	not lockbox-testable: rare-context route NOT EVALUABLE (DEMETER2 not available)	lockbox	False	True	False	False	False	True		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0160	-0.274285	-6.07922	0.00148954	T3-neg	False	not lockbox-testable: rare-context route passed	rare-context route (not lockbox-testable)	False	True	True	True	True	True		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0276	0.148293	4.15856	0.0161303	T1	False	not lockbox-testable: rare-context route NOT EVALUABLE (DEMETER2 not available)	lockbox	False	True	False	False	False	True		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0298	0.11764	4.14907	0.0161303	T2	False	not lockbox-testable: rare-context route NOT EVALUABLE (DEMETER2 not available)	lockbox	False	True	False	False	False	True		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0333	-0.102993	-3.53943	0.0410588	T3-neg	False	not lockbox-testable: rare-context route NOT EVALUABLE (DEMETER2 not available)	lockbox	False	True	False	False	False	True		False		
+H3b	fusion:EWSR1::FLI1|ERG	Z0343	0.189976	3.7171	0.0161303	T3-neg	False	not lockbox-testable: rare-context route passed	rare-context route (not lockbox-testable)	False	True	True	True	True	False		False		
+H3b	hotspot:BRAF	Z0018	-0.16127	-6.75539	2.93579e-05	T1	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3b	hotspot:BRAF	Z0051	0.0873144	4.28138	0.0282279	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	hotspot:BRAF	Z0084	-0.12977	-4.3061	0.0018756	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	hotspot:BRAF	Z0193	0.0657367	4.15089	0.0282279	T1	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	hotspot:KRAS	Z0016	-0.0747608	-3.864	0.0376373	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	hotspot:KRAS	Z0051	0.0578585	4.64532	0.000436363	T1	False	confirmed	lockbox	False	True	True	True	True	True		True		
+H3b	hotspot:KRAS	Z0088	0.02667	3.59088	0.0376373	T2	False	not confirmed	lockbox	False	True	False	False	False	True		False		
+H3b	hotspot:NRAS	Z0132	-0.175061	-6.81596	5.26567e-06	T3-neg	False	confirmed	lockbox	False	True	True	True	True	True	control unit, other context	True		
+H3b	sex_female	Z0104	-0.0658875	-6.36959	8.27045e-05	T2	True	confirmed	lockbox	False	True	True	False	False	True		False		
