@@ -484,4 +484,4 @@ amendments:
       is reversed for the number of distinct complexes among the g*, which is A-only and is reported. The BENCH
       multiverse stays point estimates only. Record: docs/registry/AMENDMENTS.md.
     changed_paths: [estimand_secondary_not_run, estimand_secondary_not_run_reason]
-status: open
+status: closed
