@@ -1,0 +1,29 @@
+{
+ "analysis_id": "H3b_driver_family",
+ "ledger": [
+  {
+   "analysis_id": "H3b_driver_family",
+   "direction": "H3b",
+   "head": "efdd40be64a61ceb1507859cdd0ccedfbaa8aa34",
+   "n_genes": 1428,
+   "registry_blob": "c0508f864b0e0fd76519788b238d98f2f15f5ce7",
+   "source": "crispr",
+   "targets_blob": "9ed41118ceea66710e8d3b786c018ce8290c3661",
+   "targets_file": "results/part2/lockbox_targets/H3b_driver_family.json",
+   "time": "2026-10-29T06:52:52+0000"
+  }
+ ],
+ "lockbox_seed": 6200,
+ "n_confirmed": 60,
+ "n_eligible": 161,
+ "n_eligible_lockbox": 150,
+ "n_eligible_rare": 11,
+ "n_hits": 161,
+ "n_perm": 10000,
+ "n_rare_pass": 5,
+ "n_target_genes": 1428,
+ "peak_rss_bytes": 3274424320,
+ "registry_blob": "c0508f864b0e0fd76519788b238d98f2f15f5ce7",
+ "resumed": false,
+ "runtime_s": 14.5
+}
