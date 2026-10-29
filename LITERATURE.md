@@ -838,3 +838,23 @@ Common elements apply to every direction:
 - Neither is load-bearing.
 - Exact BioPlex HCT116 interaction count and OpenCell target count: [unverified].
 - Behan 2019 and Pacini 2024 statistical details: [unverified beyond abstract].
+
+## 10. Methods references (added at manuscript drafting; to be verified by the reference checker)
+
+Added by the writer on 2026-10-29 for statistical and resource methods cited in `manuscript/main.md`. These records have **not** been checked against Crossref or Europe PMC. Entries or fields marked **[VERIFY]** are ones the writer is not sure of.
+
+M1. Benjamini Y, Bogomolov M. Selective inference on multiple families of hypotheses. *J R Stat Soc B* 2014;76:297–318. doi:10.1111/rssb.12028
+M2. Simes RJ. An improved Bonferroni procedure for multiple tests of significance. *Biometrika* 1986;73:751–754. doi:10.1093/biomet/73.3.751
+M3. Holm S. A simple sequentially rejective multiple test procedure. *Scand J Stat* 1979;6:65–70. No DOI; JSTOR 4615733 [VERIFY]
+M4. MacKinnon JG, White H. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. *J Econom* 1985;29:305–325. doi:10.1016/0304-4076(85)90158-7
+M5. Long JS, Ervin LH. Using heteroscedasticity consistent standard errors in the linear regression model. *Am Stat* 2000;54:217–224. doi:10.1080/00031305.2000.10474549 [VERIFY]
+M6. Satterthwaite FE. An approximate distribution of estimates of variance components. *Biometrics Bull* 1946;2:110–114. doi:10.2307/3002019
+M7. Bell RM, McCaffrey DF. Bias reduction in standard errors for linear regression with multi-stage samples. *Surv Methodol* 2002;28:169–181. No DOI [VERIFY]
+M8. Knijnenburg TA, Wessels LFA, Reinders MJT, Shmulevich I. Fewer permutations, more accurate P-values. *Bioinformatics* 2009;25:i161–i168. doi:10.1093/bioinformatics/btp211
+M9. Sechidis K, Tsoumakas G, Vlahavas I. On the stratification of multi-label data. In: *ECML PKDD 2011*, LNCS 6913:145–158. doi:10.1007/978-3-642-23808-6_10 [VERIFY]
+M10. Dyer SC, et al. Ensembl 2025. *Nucleic Acids Res* 2025;53:D948–D957. doi:10.1093/nar/gkae1071 [VERIFY: authors, pages, DOI; the release paper matching Ensembl 116 may differ]
+M11. Seal RL, et al. Genenames.org: the HGNC resources in 2023. *Nucleic Acids Res* 2023;51:D1003–D1009. doi:10.1093/nar/gkac888 [VERIFY]
+
+Also cited in the manuscript (Kish effective number of clusters; adjusted Rand index):
+M12. Kish L. *Survey Sampling*. New York: Wiley; 1965. Book, no DOI [VERIFY]
+M13. Hubert L, Arabie P. Comparing partitions. *J Classif* 1985;2:193–218. doi:10.1007/BF01908075
