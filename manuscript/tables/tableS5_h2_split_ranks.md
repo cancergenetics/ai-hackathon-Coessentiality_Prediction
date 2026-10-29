@@ -1,0 +1,117 @@
+# Supplementary Table S5: H2 sub-module divergence (exploratory), rank against own random splits
+
+| context | unit | members | β [95% CI] | t | rank vs 20 splits | locus | tier |
+|---|---|---|---|---|---|---|---|
+| Lymphoid | Z0249.2 | IPMK, IPPK, ITPK1, NAMPT, NMNAT1, PPCDC, PPCS, RFK | -0.290 [-0.334, -0.246] | -13.2 | 1 | False | T2 |
+| Lymphoid | Z0051.2 | GAB1, GRB2, PTPN11, SHC1 | +0.212 [+0.164, +0.260] | +8.8 | 1 | False | T1 |
+| Lymphoid | Z0001.2 | GFER, IREB2, NCOA4, SLC25A28, SLC25A37, STARD7, STOML2, TAX1BP1 +4 | +0.103 [+0.080, +0.126] | +8.8 | 1 | False | T1 |
+| Head and Neck | Z0249.2 | IPMK, IPPK, ITPK1, NAMPT, NMNAT1, PPCDC, PPCS, RFK | +0.180 [+0.136, +0.224] | +8.3 | 1 | False | T2 |
+| CNS/Brain | Z0249.1 | AHCY, GFPT1, GNPNAT1, MPI, PGM3, PMM2, UAP1, UGP2 +1 | +0.101 [+0.074, +0.127] | +7.6 | 1 | False | T2 |
+| Head and Neck | Z0158.1 | ATM, SHLD1, SHLD2, TP53BP1 | -0.098 [-0.126, -0.071] | -7.1 | 1 | False | T3-neg |
+| Head and Neck | Z0127.2 | C2orf69, QARS1, SLC1A5 | +0.129 [+0.091, +0.167] | +6.8 | 1 | False | T3-nc |
+| TP53_altered | Z0068.2 | MIS18BP1, NCAPD3, NCAPG2, NCAPH2 | +0.150 [+0.104, +0.197] | +6.4 | 1 | False | T1 |
+| Skin | Z0051.2 | GAB1, GRB2, PTPN11, SHC1 | +0.227 [+0.154, +0.299] | +6.3 | 1 | False | T1 |
+| Lymphoid | Z0023.2 | PSMB2, PSMC1, PSMC2, PSMC3, PSMC4, PSMC5, PSMC6, PSMD2 | -0.116 [-0.154, -0.079] | -6.2 | 1 | False | T1 |
+| Head and Neck | Z0009.3 | FH, SDHA, SDHB, SDHC, SDHD | +0.156 [+0.103, +0.210] | +5.9 | 1 | False | T1 |
+| hotspot:BRAF | Z0051.2 | GAB1, GRB2, PTPN11, SHC1 | +0.227 [+0.148, +0.307] | +5.7 | 1 | False | T1 |
+| Pleura | Z0009.3 | FH, SDHA, SDHB, SDHC, SDHD | +0.165 [+0.097, +0.233] | +5.1 | 1 | False | T1 |
+| Myeloid | Z0042.2 | BRAT1, CCS, INTS9, SOD1, WDR73 | +0.192 [+0.114, +0.269] | +5.0 | 1 | False | T1 |
+| Bowel | Z0072.2 | GNA13, LPAR1, PDCL, PKN2, RHOA, RIC8A | +0.142 [+0.084, +0.200] | +4.9 | 1 | False | T1 |
+| Lymphoid | Z0036.1 | ANKRD40, CACNA1G, MBTD1, MRPL27, MYCBPAP, NME1, NME2, PDK2 +4 | +0.043 [+0.025, +0.060] | +4.9 | 1 | True | T3-neg |
+| melanoma | Z0028.1 | ACTB, CAP1, CAPZB, CFL1, CORO1C, WDR1 | +0.129 [+0.076, +0.183] | +4.8 | 1 | False | T1 |
+| PNS | Z0019.2 | ARMH3, CERS2, CERT1, KDSR, PI4KB, SPTLC1, SPTLC2, SPTSSA | +0.094 [+0.054, +0.134] | +4.8 | 1 | False | T2 |
+| Kidney | Z0068.2 | MIS18BP1, NCAPD3, NCAPG2, NCAPH2 | -0.238 [-0.343, -0.134] | -4.7 | 1 | False | T1 |
+| CNS/Brain | Z0001.1 | ABCB7, CIAO1, CIAO2B, CIAO3, CIAPIN1, FDX2, FXN, GLRX3 +7 | -0.072 [-0.102, -0.041] | -4.7 | 1 | False | T1 |
+| Pancreas | Z0163.1 | CDAN1, CDIN1, DNAJC9, TTF2 | +0.170 [+0.094, +0.246] | +4.5 | 1 | True | T3-neg |
+| Lymphoid | Z0006.1 | H2AC11, H2AC12, H2AC16, H2AC17, H2AC6, H2AC7, H2AC8, H2BC11 +4 | -0.047 [-0.068, -0.025] | -4.4 | 1 | True | T1 |
+| Bowel | Z0158.2 | CCDC6, FBXO42, PABIR1 | +0.111 [+0.059, +0.163] | +4.3 | 1 | False | T3-neg |
+| Kidney | Z0001.2 | GFER, IREB2, NCOA4, SLC25A28, SLC25A37, STARD7, STOML2, TAX1BP1 +4 | -0.107 [-0.159, -0.055] | -4.2 | 1 | False | T1 |
+| Myeloid | Z0024.2 | ARHGAP9, DDIT3, GLI1, INHBC, INHBE, KIF5A, MBD6, PIP4K2C | +0.053 [+0.026, +0.079] | +4.0 | 1 | True | T2 |
+| Esoph./Stomach | Z0051.2 | GAB1, GRB2, PTPN11, SHC1 | -0.154 [-0.230, -0.078] | -4.0 | 1 | False | T1 |
+| TP53_altered | Z0004.2 | CEP152, CPAP, PCNT, PLK4, RTTN, SASS6, STIL, TEDC1 +3 | +0.049 [+0.025, +0.073] | +4.0 | 1 | False | T1 |
+| Lymphoid | Z0004.1 | C5orf34, CCDC77, CEP120, CEP135, CEP295, CEP44, MIIP, PCM1 +5 | +0.039 [+0.019, +0.058] | +4.0 | 1 | False | T1 |
+| Soft Tissue | Z0249.1 | AHCY, GFPT1, GNPNAT1, MPI, PGM3, PMM2, UAP1, UGP2 +1 | +0.076 [+0.037, +0.116] | +3.9 | 1 | False | T2 |
+| WGD | Z0026.2 | BRIP1, ERCC1, ERCC4, RFWD3, SLX4 | +0.049 [+0.024, +0.073] | +3.9 | 1 | False | T1 |
+| Myeloid | Z0014.1 | BTAF1, CCNC, DRAP1, KDM5C, MED12, MED13L, MED15, MED16 +5 | -0.146 [-0.223, -0.068] | -3.8 | 1 | False | T1 |
+| PNS | Z0004.2 | CEP152, CPAP, PCNT, PLK4, RTTN, SASS6, STIL, TEDC1 +3 | -0.145 [-0.224, -0.067] | -3.8 | 1 | False | T1 |
+| Lymphoid | Z0114.2 | CHAF1B, LSM10, LSM11 | +0.110 [+0.049, +0.171] | +3.6 | 1 | False | T3-neg |
+| Bone | Z0164.1 | CDC20B, GPX8, ITGA1, MCIDAS | -0.059 [-0.092, -0.025] | -3.5 | 1 | True | T3-neg |
+| Pancreas | Z0010.1 | RAB1A, RAB1B, TRAPPC1, TRAPPC11, TRAPPC13, TRAPPC2L, TRAPPC3, TRAPPC4 +2 | +0.071 [+0.030, +0.112] | +3.4 | 1 | False | T1 |
+| Bone | Z0009.3 | FH, SDHA, SDHB, SDHC, SDHD | +0.102 [+0.041, +0.162] | +3.4 | 1 | False | T1 |
+| Skin | Z0006.2 | H2BC10, H2BC14, H3C1, H3C10, H3C11, H3C2, H3C3, H3C4 +4 | -0.036 [-0.058, -0.015] | -3.4 | 1 | True | T3-neg |
+| Kidney | Z0114.2 | CHAF1B, LSM10, LSM11 | +0.131 [+0.048, +0.214] | +3.2 | 1 | False | T3-neg |
+| Pancreas | Z0275.1 | BNIP1, C19orf25, GOLT1B, INPP5K, NAPG, NBAS, RINT1, STX18 +2 | +0.077 [+0.029, +0.125] | +3.2 | 1 | False | T1 |
+| PNS | Z0001.1 | ABCB7, CIAO1, CIAO2B, CIAO3, CIAPIN1, FDX2, FXN, GLRX3 +7 | -0.069 [-0.115, -0.024] | -3.1 | 1 | False | T1 |
+| Head and Neck | Z0059.2 | CD151, ITGA3, ITGB1, SNAI2, SNX17, TP63 | -0.250 [-0.318, -0.181] | -7.3 | 2 | False | T1 |
+| TP53_altered | Z0066.2 | BRAP, HAPSTR1, HUWE1, TRIP12, VCPIP1 | +0.107 [+0.077, +0.136] | +7.1 | 2 | False | T3-neg |
+| Lymphoid | Z0057.2 | BECN1, PIK3C3, PIK3R4, UVRAG | +0.113 [+0.081, +0.145] | +7.0 | 2 | False | T2 |
+| Lymphoid | Z0042.2 | BRAT1, CCS, INTS9, SOD1, WDR73 | +0.185 [+0.131, +0.238] | +6.9 | 2 | False | T1 |
+| melanoma | Z0051.2 | GAB1, GRB2, PTPN11, SHC1 | +0.234 [+0.161, +0.308] | +6.4 | 2 | False | T1 |
+| Lymphoid | Z0009.3 | FH, SDHA, SDHB, SDHC, SDHD | -0.168 [-0.223, -0.114] | -6.1 | 2 | False | T1 |
+| CNS/Brain | Z0052.1 | CAND1, COPS2, COPS3, COPS4, COPS5, COPS6, COPS7A, COPS8 +3 | +0.112 [+0.072, +0.153] | +5.5 | 2 | False | T1 |
+| Myeloid | Z0009.1 | DLD, DLST, FDX1, GCSH, KGD4, LIAS, LIPT1, LIPT2 +3 | -0.128 [-0.176, -0.080] | -5.4 | 2 | False | T1 |
+| hotspot:KRAS | Z0051.2 | GAB1, GRB2, PTPN11, SHC1 | +0.164 [+0.102, +0.225] | +5.3 | 2 | False | T1 |
+| Lymphoid | Z0311.2 | BATF, CHUK, IKBKB, RELA | -0.164 [-0.227, -0.101] | -5.2 | 2 | False | T2 |
+| Lymphoid | Z0079.2 | C1D, EXOSC1, EXOSC10, MPHOSPH6 | +0.097 [+0.058, +0.136] | +5.0 | 2 | False | T1 |
+| Myeloid | Z0001.2 | GFER, IREB2, NCOA4, SLC25A28, SLC25A37, STARD7, STOML2, TAX1BP1 +4 | +0.074 [+0.043, +0.105] | +4.8 | 2 | False | T1 |
+| Lymphoid | Z0026.2 | BRIP1, ERCC1, ERCC4, RFWD3, SLX4 | -0.078 [-0.112, -0.044] | -4.5 | 2 | False | T1 |
+| Skin | Z0028.1 | ACTB, CAP1, CAPZB, CFL1, CORO1C, WDR1 | +0.121 [+0.067, +0.175] | +4.5 | 2 | False | T1 |
+| CNS/Brain | Z0164.2 | JUN, MAP2K4, MAP2K7, MAP3K1 | -0.087 [-0.126, -0.048] | -4.5 | 2 | False | T3-neg |
+| Lymphoid | Z0049.1 | ATXN2, ATXN2L, CNOT4, G3BP2, LSM12, NUFIP2, SRRD, UBAP2L | -0.065 [-0.094, -0.036] | -4.4 | 2 | False | T1 |
+| CNS/Brain | Z0009.4 | ACO2, IDH3A, SLC25A3 | +0.110 [+0.057, +0.163] | +4.1 | 2 | False | T3-neg |
+| Lymphoid | Z0014.2 | KAT2A, MED13, SGF29, SUPT20H, SUPT7L, TADA1, TADA2B, TADA3 +2 | -0.098 [-0.146, -0.051] | -4.1 | 2 | False | T1 |
+| melanoma | Z0064.1 | ACIN1, API5, CHTOP, DDX39B, SARNP, THOC6 | +0.062 [+0.028, +0.096] | +3.7 | 2 | False | T1 |
+| CNS/Brain | Z0042.2 | BRAT1, CCS, INTS9, SOD1, WDR73 | -0.115 [-0.178, -0.053] | -3.6 | 2 | False | T1 |
+| PNS | Z0277.1 | ARCN1, COPA, COPB1, COPB2, COPE, COPG1, COPZ1 | +0.113 [+0.049, +0.177] | +3.6 | 2 | False | T1 |
+| CNS/Brain | Z0019.1 | AASDHPPT, ACACA, ACLY, CHP1, FASN, HLCS, PGRMC2, VKORC1L1 | -0.059 [-0.092, -0.025] | -3.5 | 2 | False | T3-neg |
+| CNS/Brain | Z0057.2 | BECN1, PIK3C3, PIK3R4, UVRAG | +0.071 [+0.031, +0.112] | +3.5 | 2 | False | T2 |
+| Lymphoid | Z0052.1 | CAND1, COPS2, COPS3, COPS4, COPS5, COPS6, COPS7A, COPS8 +3 | +0.059 [+0.024, +0.093] | +3.4 | 2 | False | T1 |
+| melanoma | Z0006.2 | H2BC10, H2BC14, H3C1, H3C10, H3C11, H3C2, H3C3, H3C4 +4 | -0.033 [-0.054, -0.013] | -3.2 | 2 | True | T3-neg |
+| Breast | Z0249.2 | IPMK, IPPK, ITPK1, NAMPT, NMNAT1, PPCDC, PPCS, RFK | -0.084 [-0.136, -0.031] | -3.2 | 2 | False | T2 |
+| Myeloid | Z0249.2 | IPMK, IPPK, ITPK1, NAMPT, NMNAT1, PPCDC, PPCS, RFK | -0.231 [-0.302, -0.160] | -6.6 | 3 | False | T2 |
+| Lymphoid | Z0009.1 | DLD, DLST, FDX1, GCSH, KGD4, LIAS, LIPT1, LIPT2 +3 | -0.117 [-0.157, -0.077] | -5.8 | 3 | False | T1 |
+| Bowel | Z0255.2 | CNEP1R1, CTDNEP1, LMNA, LMNB1, SMPD4, TMPO | +0.094 [+0.060, +0.127] | +5.6 | 3 | False | T2 |
+| CNS/Brain | Z0255.2 | CNEP1R1, CTDNEP1, LMNA, LMNB1, SMPD4, TMPO | -0.098 [-0.138, -0.059] | -4.9 | 3 | False | T2 |
+| melanoma | Z0021.1 | CDC7, CDK8, DBF4, DONSON, GINS1, GINS2, GINS3, GINS4 +3 | +0.098 [+0.057, +0.139] | +4.8 | 3 | False | T1 |
+| Head and Neck | Z0004.1 | C5orf34, CCDC77, CEP120, CEP135, CEP295, CEP44, MIIP, PCM1 +5 | -0.071 [-0.104, -0.038] | -4.3 | 3 | False | T1 |
+| melanoma | Z0005.1 | GALK1, LLGL2, MFSD11, SMIM5, TMEM94, TRIM47, UNC13D, UNK +1 | +0.037 [+0.019, +0.054] | +4.2 | 3 | True | T3-neg |
+| CNS/Brain | Z0059.1 | ARHGEF7, DLG5, EFR3A, GIT2, MARK2, PAK2, TEAD1, YAP1 | +0.064 [+0.032, +0.096] | +4.0 | 3 | False | T1 |
+| Lung | Z0004.1 | C5orf34, CCDC77, CEP120, CEP135, CEP295, CEP44, MIIP, PCM1 +5 | +0.033 [+0.016, +0.049] | +4.0 | 3 | False | T1 |
+| Myeloid | Z0009.2 | BOLA3, GLRX5, IBA57, ISCA1, ISCA2, NFU1 | +0.105 [+0.051, +0.160] | +3.9 | 3 | False | T1 |
+| Bone | Z0249.1 | AHCY, GFPT1, GNPNAT1, MPI, PGM3, PMM2, UAP1, UGP2 +1 | +0.058 [+0.026, +0.089] | +3.7 | 3 | False | T2 |
+| Bone | Z0001.1 | ABCB7, CIAO1, CIAO2B, CIAO3, CIAPIN1, FDX2, FXN, GLRX3 +7 | -0.089 [-0.141, -0.038] | -3.5 | 3 | False | T1 |
+| Lymphoid | Z0068.2 | MIS18BP1, NCAPD3, NCAPG2, NCAPH2 | +0.119 [+0.048, +0.190] | +3.3 | 3 | False | T1 |
+| TP53_altered | Z0158.1 | ATM, SHLD1, SHLD2, TP53BP1 | -0.093 [-0.115, -0.071] | -8.4 | 4 | False | T3-neg |
+| melanoma | Z0042.1 | INTS1, INTS10, INTS12, INTS13, INTS14, INTS15, INTS2, INTS5 +3 | -0.098 [-0.137, -0.060] | -5.1 | 4 | False | T1 |
+| melanoma | Z0049.2 | CNOT1, CNOT10, CNOT11, EIF3K, EIF3L, GGNBP2, GPBP1 | +0.100 [+0.052, +0.148] | +4.2 | 4 | False | T1 |
+| Kidney | Z0277.1 | ARCN1, COPA, COPB1, COPB2, COPE, COPG1, COPZ1 | -0.162 [-0.247, -0.078] | -4.0 | 4 | False | T1 |
+| Bone | Z0127.1 | CS, GLUL, MDH2, MPC2, PDHA1, PDHB, SLC25A1 | +0.064 [+0.029, +0.099] | +3.7 | 4 | False | T2 |
+| Kidney | Z0008.3 | DSN1, MIS12, NSL1, PMF1 | +0.112 [+0.047, +0.177] | +3.5 | 4 | True | T1 |
+| PNS | Z0163.1 | CDAN1, CDIN1, DNAJC9, TTF2 | -0.203 [-0.333, -0.074] | -3.2 | 4 | True | T3-neg |
+| Head and Neck | Z0051.2 | GAB1, GRB2, PTPN11, SHC1 | -0.157 [-0.228, -0.085] | -4.4 | 5 | False | T1 |
+| Myeloid | Z0249.1 | AHCY, GFPT1, GNPNAT1, MPI, PGM3, PMM2, UAP1, UGP2 +1 | +0.086 [+0.042, +0.130] | +4.0 | 5 | False | T2 |
+| Lymphoid | Z0127.1 | CS, GLUL, MDH2, MPC2, PDHA1, PDHB, SLC25A1 | -0.068 [-0.103, -0.032] | -3.8 | 5 | False | T2 |
+| Head and Neck | Z0008.1 | BUB1, BUB1B, BUB3, KNL1, KNTC1, MAD1L1, MAD2L1, MAD2L1BP +5 | -0.058 [-0.091, -0.025] | -3.6 | 5 | False | T1 |
+| Lymphoid | Z0014.1 | BTAF1, CCNC, DRAP1, KDM5C, MED12, MED13L, MED15, MED16 +5 | -0.085 [-0.137, -0.034] | -3.3 | 5 | False | T1 |
+| Skin | Z0042.1 | INTS1, INTS10, INTS12, INTS13, INTS14, INTS15, INTS2, INTS5 +3 | -0.075 [-0.121, -0.029] | -3.3 | 5 | False | T1 |
+| Lymphoid | Z0164.2 | JUN, MAP2K4, MAP2K7, MAP3K1 | +0.066 [+0.039, +0.094] | +4.8 | 6 | False | T3-neg |
+| TP53_altered | Z0313.1 | APEX2, CIP2A, GEN1, LIG1, NBN, PARP1, POLQ, RHNO1 +1 | +0.033 [+0.018, +0.049] | +4.2 | 6 | False | T2 |
+| Pancreas | Z0059.1 | ARHGEF7, DLG5, EFR3A, GIT2, MARK2, PAK2, TEAD1, YAP1 | -0.085 [-0.131, -0.039] | -3.7 | 6 | False | T1 |
+| Lymphoid | Z0009.2 | BOLA3, GLRX5, IBA57, ISCA1, ISCA2, NFU1 | +0.078 [+0.039, +0.117] | +4.0 | 7 | False | T1 |
+| Lymphoid | Z0096.2 | EPS15L1, GAPVD1, ITSN2, SH3GL1 | -0.099 [-0.151, -0.048] | -3.9 | 7 | True | T2 |
+| CNS/Brain | Z0009.1 | DLD, DLST, FDX1, GCSH, KGD4, LIAS, LIPT1, LIPT2 +3 | +0.049 [+0.023, +0.075] | +3.8 | 7 | False | T1 |
+| Kidney | Z0158.1 | ATM, SHLD1, SHLD2, TP53BP1 | +0.125 [+0.050, +0.201] | +3.4 | 7 | False | T3-neg |
+| Head and Neck | Z0008.2 | CKAP5, CLTC, DLGAP5, GAK, GTSE1, KIF15, MYBL2, TACC3 | -0.090 [-0.144, -0.036] | -3.3 | 7 | False | T2 |
+| Lymphoid | Z0011.1 | AURKB, BIRC5, CDCA8, ECT2, ESPL1, INCENP, KIF23, NAA50 +8 | +0.074 [+0.037, +0.110] | +4.0 | 8 | False | T1 |
+| Bowel | Z0021.1 | CDC7, CDK8, DBF4, DONSON, GINS1, GINS2, GINS3, GINS4 +3 | -0.107 [-0.169, -0.046] | -3.5 | 8 | False | T1 |
+| Lymphoid | Z0096.1 | BCL6, CHM, CYB561A3, DOCK2, MEF2B, POU2AF1 | -0.138 [-0.197, -0.079] | -4.6 | 9 | False | T2 |
+| Lymphoid | Z0059.1 | ARHGEF7, DLG5, EFR3A, GIT2, MARK2, PAK2, TEAD1, YAP1 | +0.068 [+0.038, +0.098] | +4.6 | 9 | False | T1 |
+| Lymphoid | Z0072.1 | MYH9, MYL6, MYL6B, ROCK1, ROCK2, TPM3, UNC45A | -0.069 [-0.100, -0.039] | -4.5 | 9 | False | T1 |
+| Bone | Z0163.1 | CDAN1, CDIN1, DNAJC9, TTF2 | -0.141 [-0.223, -0.060] | -3.5 | 9 | True | T3-neg |
+| Lymphoid | Z0110.2 | IKZF1, PTPN1, PTPN2, SBNO2 | -0.123 [-0.182, -0.064] | -4.1 | 10 | False | T3-neg |
+| Lymphoid | Z0059.2 | CD151, ITGA3, ITGB1, SNAI2, SNX17, TP63 | +0.045 [+0.022, +0.069] | +3.8 | 11 | False | T1 |
+| Lymphoid | Z0249.1 | AHCY, GFPT1, GNPNAT1, MPI, PGM3, PMM2, UAP1, UGP2 +1 | +0.056 [+0.024, +0.089] | +3.4 | 14 | False | T2 |
+
+- All 109 stage-wise discoveries. Rank = 1 + number of the discovery's own 20 random member splits (same parent, same size, residualised the same way, seed 4800) whose |t| is at least the real |t|; rank 1 = beats all 20. Under exchangeability rank 1 has probability 1/21.
+- β: coefficient of the context on the sub-module score residualised on its sibling complement (Chronos units). H2 is exploratory (no evaluable control).
+- Sources: results/part2/directions/H2_submodule_divergence/{discoveries.tsv,calibration_D8_tests.tsv.gz}; script scripts/tab_part2_discoveries.py.
