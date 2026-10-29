@@ -1,0 +1,24 @@
+{
+ "analysis_id": "CTRL_PC18",
+ "contexts": [
+  "WGD"
+ ],
+ "genes": [
+  "KIF18A (81930)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.1631518619628996,
+   "context": "WGD",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "KIF18A (81930)"
+  }
+ ],
+ "units": {
+  "KIF18A (81930)": [
+   "KIF18A (81930)"
+  ]
+ }
+}
