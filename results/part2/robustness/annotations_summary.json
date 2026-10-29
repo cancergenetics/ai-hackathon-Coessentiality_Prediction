@@ -1,0 +1,152 @@
+{
+ "beats_all_matched_sets": {
+  "H1": 0,
+  "H3a": 107,
+  "H3b": 34
+ },
+ "control_recovery": {
+  "none": 229,
+  "readout": 7,
+  "same unit, other control context": 18
+ },
+ "locus_flag_true": 0,
+ "loso_partially_testable": {
+  "H1": 0,
+  "H3a": 21,
+  "H3b": 33
+ },
+ "n": 254,
+ "note": "post hoc, descriptive; not filters, not tests",
+ "scale_effect_H3a": {
+  "abs_residual_z_ge_2": 79,
+  "concordant": 142,
+  "concordant_and_abs_residual_z_ge_2": 55,
+  "n": 207,
+  "per_context": {
+   "lineage:Bladder/Urinary Tract": {
+    "abs_residual_z_ge_2": 0,
+    "concordant": 0,
+    "n": 1,
+    "rho": 0.064,
+    "slope": 0.0081
+   },
+   "lineage:Bone": {
+    "abs_residual_z_ge_2": 7,
+    "concordant": 8,
+    "n": 11,
+    "rho": 0.194,
+    "slope": 0.0204
+   },
+   "lineage:Breast": {
+    "abs_residual_z_ge_2": 1,
+    "concordant": 2,
+    "n": 2,
+    "rho": -0.014,
+    "slope": -0.0148
+   },
+   "lineage:CNS/Brain": {
+    "abs_residual_z_ge_2": 6,
+    "concordant": 12,
+    "n": 14,
+    "rho": 0.11,
+    "slope": 0.0212
+   },
+   "lineage:Esophagus/Stomach": {
+    "abs_residual_z_ge_2": 1,
+    "concordant": 2,
+    "n": 5,
+    "rho": 0.046,
+    "slope": 0.0011
+   },
+   "lineage:Head and Neck": {
+    "abs_residual_z_ge_2": 1,
+    "concordant": 1,
+    "n": 1,
+    "rho": 0.202,
+    "slope": 0.0209
+   },
+   "lineage:Kidney": {
+    "abs_residual_z_ge_2": 4,
+    "concordant": 5,
+    "n": 5,
+    "rho": -0.056,
+    "slope": -0.0108
+   },
+   "lineage:Lung": {
+    "abs_residual_z_ge_2": 6,
+    "concordant": 11,
+    "n": 12,
+    "rho": -0.08,
+    "slope": -0.0043
+   },
+   "lineage:Lymphoid": {
+    "abs_residual_z_ge_2": 18,
+    "concordant": 64,
+    "n": 92,
+    "rho": -0.24,
+    "slope": -0.0503
+   },
+   "lineage:Myeloid": {
+    "abs_residual_z_ge_2": 11,
+    "concordant": 11,
+    "n": 21,
+    "rho": -0.135,
+    "slope": -0.0292
+   },
+   "lineage:Ovary/Fallopian Tube": {
+    "abs_residual_z_ge_2": 3,
+    "concordant": 3,
+    "n": 3,
+    "rho": 0.128,
+    "slope": 0.0087
+   },
+   "lineage:Pancreas": {
+    "abs_residual_z_ge_2": 6,
+    "concordant": 7,
+    "n": 17,
+    "rho": -0.06,
+    "slope": -0.005
+   },
+   "lineage:Peripheral Nervous System": {
+    "abs_residual_z_ge_2": 3,
+    "concordant": 4,
+    "n": 5,
+    "rho": 0.008,
+    "slope": 0.0045
+   },
+   "lineage:Pleura": {
+    "abs_residual_z_ge_2": 1,
+    "concordant": 1,
+    "n": 1,
+    "rho": -0.04,
+    "slope": -0.0124
+   },
+   "lineage:Skin": {
+    "abs_residual_z_ge_2": 0,
+    "concordant": 1,
+    "n": 1,
+    "rho": 0.207,
+    "slope": 0.0221
+   },
+   "lineage:Soft Tissue": {
+    "abs_residual_z_ge_2": 5,
+    "concordant": 3,
+    "n": 5,
+    "rho": 0.153,
+    "slope": 0.0138
+   },
+   "melanoma": {
+    "abs_residual_z_ge_2": 6,
+    "concordant": 7,
+    "n": 11,
+    "rho": 0.178,
+    "slope": 0.0235
+   }
+  }
+ },
+ "tier": {
+  "T1": 152,
+  "T2": 65,
+  "T3-neg": 37
+ }
+}

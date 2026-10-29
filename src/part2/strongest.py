@@ -97,3 +97,80 @@ def apply_rule(x: pd.DataFrame) -> pd.DataFrame:
                       ascending=[False, True, False, True, True], kind="mergesort").reset_index(drop=True)
     x["rank"] = np.where(x.strongest, np.cumsum(x.strongest), 0)
     return x
+
+
+# ------------------------------------------------------------------------------------------------ post hoc annotations
+# Descriptive only (PI ruling after the robustness run): computed from committed A-side files, never used as filters.
+
+# Control context -> hit contexts it overlaps by definition (same defining alteration, or a superset / subset of the
+# same lines). Exact equality is handled separately. Written from the registry context definitions.
+CONTROL_CONTEXT_OVERLAP = {
+    "heme": {"lineage:Lymphoid", "lineage:Myeloid"},
+    "FOCAD_del_or_MSI_H": {"MSI_H", "H1loss:FOCAD"},
+    "RAS_hotspot": {"hotspot:KRAS", "hotspot:NRAS"},
+    "BRAF_vs_RAS_hotspot": {"hotspot:BRAF", "hotspot:KRAS", "hotspot:NRAS"},
+    "melanoma": {"lineage:Skin"},
+    "PTEN_LoF_noPIK3CAhs": {"LoF:PTEN", "H1loss:PTEN"},
+    "PIK3CA_hotspot_noPTENLoF": {"hotspot:PIK3CA"},
+    "female_or_LoY": {"LoY", "sex_female"},
+    "LoF:ARID1A": {"H1loss:ARID1A"},
+    "LoF:SMARCA4": {"H1loss:SMARCA4"},
+    "LoF:STAG2": {"H1loss:STAG2"},
+    "LoF:RB1": {"H1loss:RB1"},
+    "VPS4B_loss": {"H1loss:VPS4B"},
+    "SMARCB1_LoF_or_SS18SSX": {"H1loss:SMARCB1", "fusion:SS18::SSX"},
+    "9p21_loss": {"H1loss:CDKN2A", "H1loss:MTAP"},
+    "TP53_altered": {"H1loss:TP53"},
+    "NRF2_active": {"H1loss:KEAP1"},
+}
+
+
+def control_recovery(context: str, unit: str, controls: pd.DataFrame) -> str:
+    """'readout (PCx)' if (context, complex unit) is a pre-registered complex-level control readout, counting the
+    control context's by-definition equivalents (CONTROL_CONTEXT_OVERLAP); 'same unit, other control context (PCx:
+    ctx)' if the unit is a control's complex readout in a non-overlapping context; '' otherwise. controls: rows of
+    controls_summary.tsv with level == 'C' (design_id, context, unit)."""
+    base = unit.split("|")[0]
+    exact, other = [], []
+    for r in controls.itertuples(index=False):
+        if r.unit != base:
+            continue
+        if r.context == context or context in CONTROL_CONTEXT_OVERLAP.get(r.context, set()):
+            exact.append(r.design_id)
+        else:
+            other.append(f"{r.design_id}: {r.context}")
+    if exact:
+        return f"readout ({', '.join(sorted(set(exact)))})"
+    if other:
+        return f"same unit, other control context ({'; '.join(sorted(set(other)))})"
+    return ""
+
+
+def unit_essentiality(gene_ess: pd.Series, members: dict) -> pd.Series:
+    """Unit baseline essentiality as in the calibration matching (calib.matched_random_sets): mean over the unit's
+    members of the gene's mean clipped A effect (calib.clip_essentiality)."""
+    return pd.Series({u: float(np.nanmean(gene_ess.reindex(list(m)).values.astype(float))) if len(m) else np.nan
+                      for u, m in members.items()})
+
+
+def scale_effect(tests: pd.DataFrame, ess: pd.Series) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Per context: OLS of beta on unit essentiality over ALL evaluable tested units (descriptive, not a test).
+    Returns (per-context table: n_units, slope, intercept, spearman_rho, resid_sd; per-test table: context, unit,
+    essentiality, fitted, residual_beta, residual_z, scale_effect_concordant = sign(beta) == sign(fitted))."""
+    from scipy import stats as sst
+    t = tests[_bool(tests.evaluable)][["context", "unit", "beta"]].copy()
+    t["beta"] = t.beta.astype(float)
+    t["essentiality"] = t.unit.map(ess).astype(float)
+    t = t[np.isfinite(t.beta) & np.isfinite(t.essentiality)]
+    ctx_rows, out = [], []
+    for c, g in t.groupby("context", sort=True):
+        x, y = g.essentiality.values, g.beta.values
+        b, a = np.polyfit(x, y, 1)
+        fit = a + b * x
+        res = y - fit
+        sd = float(np.std(res, ddof=2))
+        ctx_rows.append(dict(context=c, n_units=len(g), slope=float(b), intercept=float(a),
+                             spearman_rho=float(sst.spearmanr(x, y)[0]), resid_sd=sd))
+        out.append(g.assign(fitted=fit, residual_beta=res, residual_z=res / sd,
+                            scale_effect_concordant=np.sign(y) == np.sign(fit)))
+    return pd.DataFrame(ctx_rows), pd.concat(out, ignore_index=True)

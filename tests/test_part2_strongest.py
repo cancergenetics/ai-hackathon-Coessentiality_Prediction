@@ -85,3 +85,23 @@ def test_h1_candidates_respect_e2_and_eligibility():
     x = strongest.h1_candidates(disc, calls, ev, head)
     assert x.unit.tolist() == ["Z1|A|P", "Z2|B|P", "Z3|C|N"]                   # ineligible call dropped
     assert x.candidate.tolist() == [True, True, False]                         # E2: not headline-eligible
+
+
+def test_post_hoc_annotations():
+    ctl = pd.DataFrame(dict(design_id=["PC6", "PC20"], context=["LoF:ARID1A", "heme"], unit=["Z1", "Z2"]))
+    assert strongest.control_recovery("H1loss:ARID1A", "Z1|ARID1A|P", ctl) == "readout (PC6)"
+    assert strongest.control_recovery("lineage:Myeloid", "Z2", ctl) == "readout (PC20)"
+    assert strongest.control_recovery("lineage:Bone", "Z2", ctl).startswith("same unit, other control context (PC20")
+    assert strongest.control_recovery("lineage:Bone", "Z9", ctl) == ""
+    ess = strongest.unit_essentiality(pd.Series({"a": -2.0, "b": 0.0, "c": -1.0}), {"U": ["a", "b"], "V": ["c", "x"]})
+    assert ess["U"] == -1.0 and ess["V"] == -1.0
+    rng = np.random.default_rng(5)
+    e = pd.Series(rng.uniform(-2, 0, 200), index=[f"U{i}" for i in range(200)])
+    beta = -0.1 * e + rng.normal(0, 0.01, 200)                     # essential units look less essential
+    beta.iloc[0] = 1.0                                              # one unit far off the line
+    tests = pd.DataFrame(dict(context="lineage:x", unit=e.index, beta=beta.values, evaluable=True))
+    by, per = strongest.scale_effect(tests, e)
+    assert np.isclose(by.slope.iloc[0], -0.1, atol=0.02) and by.spearman_rho.iloc[0] < -0.8
+    p = per.set_index("unit")
+    assert p.loc["U0", "residual_z"] > 5 and p.residual_z.drop("U0").abs().max() < 4
+    assert p.drop("U0").scale_effect_concordant.mean() > 0.9
