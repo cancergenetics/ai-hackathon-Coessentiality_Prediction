@@ -1,0 +1,29 @@
+{
+ "analysis_id": "CTRL_PC19a",
+ "ledger": [
+  {
+   "analysis_id": "CTRL_PC19a",
+   "direction": "controls",
+   "head": "b9ab28bf4f396fa6dcf32fed82fd5fbe933fdc32",
+   "n_genes": 13,
+   "registry_blob": "4015ff83ad797bd8283d1bb4dbc212496d921c04",
+   "source": "crispr",
+   "targets_blob": "6ffb0bb201325cc68c3a53f430cd5962aa1c5d67",
+   "targets_file": "results/part2/lockbox_targets/CTRL_PC19a.json",
+   "time": "2026-10-29T06:51:03+0000"
+  }
+ ],
+ "lockbox_seed": 6718,
+ "n_confirmed": 2,
+ "n_eligible": 2,
+ "n_eligible_lockbox": 2,
+ "n_eligible_rare": 0,
+ "n_hits": 2,
+ "n_perm": 10000,
+ "n_rare_pass": 0,
+ "n_target_genes": 13,
+ "peak_rss_bytes": 3268345856,
+ "registry_blob": "4015ff83ad797bd8283d1bb4dbc212496d921c04",
+ "resumed": false,
+ "runtime_s": 1.4
+}
