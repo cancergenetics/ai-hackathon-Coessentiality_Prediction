@@ -250,9 +250,18 @@ def _show(commit, path):
     return r.stdout if r.returncode == 0 else None
 
 
+def _frozen_entries():
+    """Registry entries as frozen before the read (the post-read close changes only `status`)."""
+    return {k: dict(e, status="open") for k, e in registry.load_all(REG).items()}
+
+
+def _frozen_text(k):
+    return (REG / f"{k}.yaml").read_text().replace("\nstatus: closed\n", "\nstatus: open\n")
+
+
 def test_amendment_A3_seeds_and_bench_not_run():
     A3 = _script("52_amend_A3.py")
-    entries = registry.load_all(REG)
+    entries = _frozen_entries()
     seeds = {k: e.get("seeds", {}).get("lockbox_permutation") for k, e in entries.items()}
     exp = dict(A3.LOCKBOX_SEEDS)
     for k, e in entries.items():
@@ -323,7 +332,7 @@ def test_amendment_A4_rulings():
 # ------------------------------------------------------------------------------------------------ amendment A5
 def test_amendment_A5_rulings():
     A5 = _script("54_amend_A5.py")
-    entries = registry.load_all(REG)
+    entries = _frozen_entries()
     eb, eg, es = (entries[k] for k in ("BENCH_complex_vs_gene", "BRIDGE-L_confirmation_rate", "H1S_silencing_GI"))
     assert len(eb["estimand_secondary_not_run"]) == 1 and "A-L correlation" in eb["estimand_secondary_not_run"][0]
     assert "non-member" in eb["estimand_secondary_not_run_reason"] and "Erratum" in eb["estimand_secondary_not_run_reason"]
@@ -344,7 +353,7 @@ def test_amendment_A5_rulings():
         old = registry.load_yaml(old_txt)
         assert registry.amendment_changes(old, entries[k]) == [], k
         assert registry.changed_top_paths(old, entries[k], rec[0]["changed_paths"]) == set(rec[0]["changed_paths"])
-        assert (REG / f"{k}.yaml").read_text() == A5.plan()[k][0], k
+        assert _frozen_text(k) == A5.plan()[k][0], k
     txt = (REG / "AMENDMENTS.md").read_text()
     a5 = txt[txt.index("## A5"):]
     assert A5.AMENDS in a5 and A5.TIMESTAMP in a5 and "before any lockbox read; no L values read" in a5

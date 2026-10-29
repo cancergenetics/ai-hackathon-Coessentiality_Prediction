@@ -157,7 +157,9 @@ def man():
 
 @pytest.fixture(scope="module")
 def entries():
-    return registry.load_all(REG)
+    # After the single lockbox read every entry is closed (confirm.close_entry: a commit that changes only `status`;
+    # test_closed_after_the_single_read). The registry-content tests below check the entries as frozen before the read.
+    return {k: dict(e, status="open") for k, e in registry.load_all(REG).items()}
 
 
 def test_manifest_hashes(man):
