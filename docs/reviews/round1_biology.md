@@ -1,6 +1,6 @@
 # Round 1 review: biology (contexts, controls, directions, confounders)
 
-**What I ran.** Two label-free scripts: `/private/tmp/claude-502/-Users-metinyazar--claude-spares-spare-gqTg9n/5a84c62a-d8a2-48ad-b26c-5dd43a72db34/scratchpad/ctx_feas.py` and `ctx_feas2.py`. They compute context sizes and file scales only. They read no dependencies, complexes or hu.MAP files, and test no association. Findings:
+**What I ran.** Two label-free scripts: `<SCRATCH>/ctx_feas.py` and `ctx_feas2.py`. They compute context sizes and file scales only. They read no dependencies, complexes or hu.MAP files, and test no association. Findings:
 - `OmicsCNGeneWGS` is **linear** relative CN: median 1.02, 99th percentile 2.33, maximum 252. MTAP rel < 0.25 occurs in 222 lines, whose MTAP log1p TPM median is 0.1 (4.9 otherwise).
 - MSIScore is bimodal. 79 lines have MSIScore > 20.
 - Damaging calls fall disproportionately in MSI lines (MSI = 6% of lines): ARID1A 51/146, KMT2D 52/126, CREBBP 27/67, EP300 30/86. TP53 has 889 damaging calls, so the matrix includes missense variants.

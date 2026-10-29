@@ -31,7 +31,7 @@
  },
  "inputs": {
   "pairs": {
-   "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/ids/dryrun_ift.tsv",
+   "path": "<PROJECT_ROOT>/data_cache/test_eval/ids/dryrun_ift.tsv",
    "sha256": "3e744fb597d645868e3e2e89e740b5ac695d4239112816f7340e1bdb9008f8fb"
   },
   "matrix": {
@@ -51,7 +51,7 @@
   }
  },
  "output": {
-  "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/scores/dryrun_ift/zavg_BEF.tsv",
+  "path": "<PROJECT_ROOT>/data_cache/test_eval/scores/dryrun_ift/zavg_BEF.tsv",
   "sha256": "de9719e209029707ccc114f118057e72f4b0819b9c525616c35f6cf2a7753194",
   "columns": [
    "uniprot_a",

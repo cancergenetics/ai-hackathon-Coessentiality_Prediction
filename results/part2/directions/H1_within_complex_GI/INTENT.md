@@ -9,7 +9,7 @@ blob `ebfbaad407c552982c46586a3277602c76539803`, amendments A1/A2). Any re-run i
 - Commands (stdout/stderr to `run_log.txt` and `run_log_sensitivity.txt` in this folder, wrapped in `/usr/bin/time -l`):
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
 <main repo>/.venv/bin/python scripts/44_run_direction.py --id H1_within_complex_GI
 # after the H1 outputs are committed:
 <main repo>/.venv/bin/python scripts/44_run_direction.py --id H1_within_complex_GI --sensitivity SMARCB1_CN

@@ -67,6 +67,10 @@ PYTHONHASHSEED=0 python -m pytest tests -q
 
 The pipeline order, commands, seeds and runtimes are in `REPORT.md` (§11) and `RESEARCH_TREE.md`. Two steps were single-use by design: the test look (`scripts/21_evaluate_test.py`) and the lockbox read (`scripts/51_lockbox_confirm.py`). Their committed ledgers refuse a second run, so re-running either needs a fresh repository state and would be non-confirmatory. Figures and tables regenerate from committed results alone (`scripts/fig_*.py`, `scripts/tab_*.py`).
 
+## Paths in committed records
+
+Machine-specific absolute paths in committed logs, run records and notes are written as placeholders: `<PROJECT_ROOT>` (this repository), `<PART1_DIR>` (the Part 1 working copy, see `external/README.md`) and `<SCRATCH>` (an agent's temporary folder, not distributed). The exceptions are `results/test_eval/fitted_rules.json` and `results/test_eval/test_results.json`. Their SHA-256 is pinned by the frozen test protocol and the test-look ledger, so they keep the original path of the Part 1 clone.
+
 ## Data sources and attribution
 
 The results are derived from:

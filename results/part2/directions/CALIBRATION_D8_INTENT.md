@@ -9,7 +9,7 @@ the discovery outcomes were seen**. Each pre-declared response is applied mechan
 Commands (one run each, in this order; stdout/stderr to `<ID>/run_log_calibration.txt`, `/usr/bin/time -l`):
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
 <main repo>/.venv/bin/python scripts/46_run_calibrations.py --id H3a_lineage_atlas
 <main repo>/.venv/bin/python scripts/46_run_calibrations.py --id H3b_driver_family
 <main repo>/.venv/bin/python scripts/46_run_calibrations.py --id H2_submodule_divergence

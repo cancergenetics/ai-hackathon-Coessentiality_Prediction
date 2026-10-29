@@ -10,4 +10,4 @@
 2 hier {'V0_jaccard_greedy': (14, 0, 23, 4, 0, 0, 9, 4), 'V1_containment_greedy': (16, 0, 25, 7, 1, 1, 9, 4), 'V2_containment_nested': (16, 0, 25, 7, 1, 1, 9, 4), 'V3_jaccard_nested': (14, 0, 23, 4, 0, 0, 9, 4)}
 2 null {'V0_jaccard_greedy': (None, None, 0, 0, 0, None, None, None), 'V1_containment_greedy': (None, None, 0, 0, 0, None, None, None), 'V2_containment_nested': (None, None, 0, 0, 0, None, None, None), 'V3_jaccard_nested': (None, None, 0, 0, 0, None, None, None)}
 2 armblock {'V0_jaccard_greedy': (None, None, 7, 0, 7, None, None, None), 'V1_containment_greedy': (None, None, 9, 1, 9, None, None, None), 'V2_containment_nested': (None, None, 9, 1, 9, None, None, None), 'V3_jaccard_nested': (None, None, 7, 0, 7, None, None, None)}
-written /Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.claude/worktrees/agent-abed910aca3ac8712/results/part2/construction/toy_decisions.json 2528.7 s
+written <PROJECT_ROOT>/.claude/worktrees/agent-abed910aca3ac8712/results/part2/construction/toy_decisions.json 2528.7 s

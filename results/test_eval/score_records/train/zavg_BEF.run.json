@@ -31,7 +31,7 @@
  },
  "inputs": {
   "pairs": {
-   "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/ids/train.tsv",
+   "path": "<PROJECT_ROOT>/data_cache/test_eval/ids/train.tsv",
    "sha256": "2e45ce24e2a5fde90ba1cfb6a962285b7cdb8088afb902d655fd46199b5f8cfa"
   },
   "matrix": {
@@ -51,7 +51,7 @@
   }
  },
  "output": {
-  "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/scores/train/zavg_BEF.tsv",
+  "path": "<PROJECT_ROOT>/data_cache/test_eval/scores/train/zavg_BEF.tsv",
   "sha256": "be1f1806ea08ca0f4d48385ad49f7e6d19b8fcc88b5ecc1eed81a740bcfe3ced",
   "columns": [
    "uniprot_a",

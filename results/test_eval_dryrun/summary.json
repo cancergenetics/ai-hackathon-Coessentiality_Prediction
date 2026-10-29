@@ -1,6 +1,6 @@
 {
  "part1": {
-  "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/external/part1_locked",
+  "path": "<PROJECT_ROOT>/external/part1_locked",
   "commit": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
   "expected": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
   "matches": true,

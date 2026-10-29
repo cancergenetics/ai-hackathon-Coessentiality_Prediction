@@ -4,7 +4,7 @@ Reviewer role: biostatistics. Objects: DESIGN.md v1 and docs/TEST_PROTOCOL.md v1
 
 ## What I ran
 No hu.MAP test file was opened, and no association between a complex and a context was computed.
-- **Synthetic simulations** (`/private/tmp/claude-502/-Users-metinyazar--claude-spares-spare-gqTg9n/5a84c62a-d8a2-48ad-b26c-5dd43a72db34/scratchpad/sim_stats.py`, seed 0, 63 s):
+- **Synthetic simulations** (`<SCRATCH>/sim_stats.py`, seed 0, 63 s):
   - type-I error of the permutation tests;
   - power of the full-data test vs the split-half rule;
   - power of the complex mean vs the best single gene.

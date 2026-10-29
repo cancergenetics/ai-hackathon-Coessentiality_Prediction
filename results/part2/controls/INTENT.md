@@ -12,7 +12,7 @@ This note is committed before the run. The controls are run exactly once (DESIGN
   `results/part2/controls/run_log.txt`):
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
 <main repo>/.venv/bin/python scripts/34_run_controls.py \
     --map results/part2/fzx/zavg_engine_membership.tsv \
     --context-table data_cache/part2/contexts/context_table.parquet

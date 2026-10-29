@@ -12,8 +12,8 @@ quoted verbatim in `README.md`.
 ## Commands (in order, from the worktree root)
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
-PY=/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.venv/bin/python
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
+PY=<PROJECT_ROOT>/.venv/bin/python
 # (3) reproduction check: every committed successful L fit, recomputed with the fixed builder; same seeds
 caffeinate -i $PY scripts/51_lockbox_confirm.py --relook R6 --mode check --out <scratch>/r6_check.tsv
 # (4) only if the check is identical: the failed fits

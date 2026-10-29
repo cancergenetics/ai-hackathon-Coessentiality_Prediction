@@ -10,7 +10,7 @@ blob `9cf55f21099f108ade10211b3d54ec4e8d0fbaac`). Any re-run is a relook and mus
 - Command (stdout/stderr to `results/part2/directions/H3b_driver_family/run_log.txt`, wrapped in `/usr/bin/time -l`):
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
 <main repo>/.venv/bin/python scripts/44_run_direction.py --id H3b_driver_family
 ```
 

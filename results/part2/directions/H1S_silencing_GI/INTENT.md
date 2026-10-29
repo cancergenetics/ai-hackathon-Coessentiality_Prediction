@@ -11,7 +11,7 @@ never headlined. The discovery runs exactly once; any re-run is a relook and mus
 - Planned start: 2026-10-29, about 00:52 UTC. Command (stdout/stderr to `run_log.txt`, wrapped in `/usr/bin/time -l`):
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
 <main repo>/.venv/bin/python scripts/44_run_direction.py --id H1S_silencing_GI
 ```
 

@@ -79,7 +79,7 @@ unchanged. Test: `tests/test_sensitivity_screen.py`, on synthetic data. It check
 Stdout and stderr go to `<ID>/sensitivity_screen_quality/run_log.txt`, wrapped in `/usr/bin/time -l`.
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
 <main repo>/.venv/bin/python scripts/48_sensitivity_screen.py --id H3a_lineage_atlas
 <main repo>/.venv/bin/python scripts/48_sensitivity_screen.py --id H3b_driver_family
 ```

@@ -337,7 +337,7 @@ are identical.
 ## Reproduce
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
 O=results/part2/verify/lockbox_results_review
 .venv/bin/python scripts/verify/lockbox_results_review.py --out $O          # ~1 min; resume path only
 .venv/bin/python scripts/verify/lockbox_results_review_tables.py --out $O   # ~10 s; committed files only

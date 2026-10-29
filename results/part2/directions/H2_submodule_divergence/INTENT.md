@@ -9,7 +9,7 @@ relook and must be disclosed here. Registry `docs/registry/H2_submodule_divergen
 - Planned start: 2026-10-29, about 01:02 UTC. Command (stdout/stderr to `run_log.txt`, `/usr/bin/time -l`):
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
 <main repo>/.venv/bin/python scripts/44_run_direction.py --id H2_submodule_divergence
 ```
 

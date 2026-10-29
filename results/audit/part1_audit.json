@@ -4,7 +4,7 @@
  "check1_timeline": {
   "test_files": {
    "test_positive": {
-    "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/datasets/huMAP/Test_positive_pairs.txt",
+    "path": "<PROJECT_ROOT>/datasets/huMAP/Test_positive_pairs.txt",
     "birth_utc": "2026-10-28T13:55:21Z",
     "mtime_utc": "2026-10-28T13:55:21Z",
     "birth_epoch": 1793195721.2969952,
@@ -12,7 +12,7 @@
     "sha256": "c4e3e68edcfc088516b3334dbfae248fb8f276c6475c13dc621abc8b4bba2d96"
    },
    "test_negative": {
-    "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/datasets/huMAP/Test_negative_pairs.txt",
+    "path": "<PROJECT_ROOT>/datasets/huMAP/Test_negative_pairs.txt",
     "birth_utc": "2026-10-28T13:55:59Z",
     "mtime_utc": "2026-10-28T13:56:05Z",
     "birth_epoch": 1793195759.8094819,

@@ -30,7 +30,7 @@ import pandas as pd
 sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).resolve().parents[2]
-P1 = Path("/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes")
+P1 = Path(os.environ.get("PART1_DIR", ROOT.parent / "coessentiality_protein complexes"))
 CLONE = ROOT / "external" / "part1_locked"
 TEST_POS = ROOT / "datasets/huMAP/Test_positive_pairs.txt"
 TEST_NEG = ROOT / "datasets/huMAP/Test_negative_pairs.txt"

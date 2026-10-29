@@ -10,6 +10,7 @@ external/part1_locked/scripts/predict_pairs.py run on the full file, and compare
                         sample file), compared on the mapped pairs.
 """
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -19,7 +20,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[3]
 P1 = ROOT / "external" / "part1_locked"
 SC = ROOT / "data_cache" / "test_eval" / "scores" / "test"
-ALLP = Path("/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes/outputs/all_pairs")
+ALLP = Path(os.environ.get("PART1_DIR", ROOT.parent / "coessentiality_protein complexes")) / "outputs" / "all_pairs"
 VER = ROOT / "results" / "test_eval" / "verify"
 stage, work = sys.argv[1], Path(sys.argv[2])
 work.mkdir(parents=True, exist_ok=True)

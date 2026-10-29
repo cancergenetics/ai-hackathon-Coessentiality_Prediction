@@ -20,7 +20,7 @@
  },
  "inputs": {
   "pairs": {
-   "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/ids/test.tsv",
+   "path": "<PROJECT_ROOT>/data_cache/test_eval/ids/test.tsv",
    "sha256": "b110837d4815cb526dfa53d8564d8303f6871525d580788d9fbf21d9f811c51f"
   },
   "matrix": {
@@ -40,7 +40,7 @@
   }
  },
  "output": {
-  "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/scores/test/pearson_signed.tsv",
+  "path": "<PROJECT_ROOT>/data_cache/test_eval/scores/test/pearson_signed.tsv",
   "sha256": "c067f87085dfd8d45309c9428cb6a102443b11f4e18c4041d9617ee84a93ccd5",
   "columns": [
    "uniprot_a",

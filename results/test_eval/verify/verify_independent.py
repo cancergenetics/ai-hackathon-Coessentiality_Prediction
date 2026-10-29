@@ -26,7 +26,7 @@ from src.clusters import build_clusters  # noqa: E402  (Part 1, imported unchang
 OUT = Path(os.environ.get("VERIFY_OUT", ROOT / "results" / "test_eval" / "verify" / "verifier_results.json"))
 POS = ROOT / "datasets" / "huMAP" / "Test_positive_pairs.txt"
 NEG = ROOT / "datasets" / "huMAP" / "Test_negative_pairs.txt"
-TRAIN_POS = Path("/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes/datasets/HuMAP/Train_positive_pairs.txt")
+TRAIN_POS = Path(os.environ.get("PART1_DIR", ROOT.parent / "coessentiality_protein complexes")) / "datasets" / "HuMAP" / "Train_positive_pairs.txt"
 TRAIN_NEG = TRAIN_POS.with_name("Train_negative_pairs.txt")
 SCORES = ROOT / "data_cache" / "test_eval" / "scores" / "test"
 RULES = json.loads((ROOT / "results" / "test_eval" / "fitted_rules.json").read_text())

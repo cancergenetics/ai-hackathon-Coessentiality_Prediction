@@ -12,7 +12,7 @@
  },
  "role": "post hoc reference (Part 1 review B1), secondary, not a candidate",
  "part1": {
-  "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/external/part1_locked",
+  "path": "<PROJECT_ROOT>/external/part1_locked",
   "commit": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
   "expected": "c7f95ee007576be9311c0a5f08c6ac63ca23a009",
   "matches": true,
@@ -21,7 +21,7 @@
  },
  "inputs": {
   "pairs": {
-   "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/ids/test.tsv",
+   "path": "<PROJECT_ROOT>/data_cache/test_eval/ids/test.tsv",
    "sha256": "b110837d4815cb526dfa53d8564d8303f6871525d580788d9fbf21d9f811c51f"
   },
   "matrix": {
@@ -37,7 +37,7 @@
   }
  },
  "output": {
-  "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/scores/test/spec_k20_tinf_std.tsv",
+  "path": "<PROJECT_ROOT>/data_cache/test_eval/scores/test/spec_k20_tinf_std.tsv",
   "sha256": "21da056894fde8b331f48e2c18d59e84535454fbc70b4cf36776d5e87c50850d"
  },
  "null": {

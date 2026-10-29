@@ -1,34 +1,34 @@
 Traceback (most recent call last):
-  File "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.claude/worktrees/agent-a93ab7b0ac18823c3/scripts/44_run_direction.py", line 553, in <module>
+  File "<PROJECT_ROOT>/.claude/worktrees/agent-a93ab7b0ac18823c3/scripts/44_run_direction.py", line 553, in <module>
     main()
-  File "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.claude/worktrees/agent-a93ab7b0ac18823c3/scripts/44_run_direction.py", line 527, in main
+  File "<PROJECT_ROOT>/.claude/worktrees/agent-a93ab7b0ac18823c3/scripts/44_run_direction.py", line 527, in main
     print(json.dumps(dry_check(a.id), indent=1, default=str))
                      ^^^^^^^^^^^^^^^
-  File "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.claude/worktrees/agent-a93ab7b0ac18823c3/scripts/44_run_direction.py", line 486, in dry_check
+  File "<PROJECT_ROOT>/.claude/worktrees/agent-a93ab7b0ac18823c3/scripts/44_run_direction.py", line 486, in dry_check
     r = run_h1(env, aid, events, loss_A, ps, n_perm=N_PERM, K=K_NULL)
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.claude/worktrees/agent-a93ab7b0ac18823c3/scripts/44_run_direction.py", line 322, in run_h1
+  File "<PROJECT_ROOT>/.claude/worktrees/agent-a93ab7b0ac18823c3/scripts/44_run_direction.py", line 322, in run_h1
     cls = h1.classify(events, comps, res, env.E_A, loss_A, cov1, env.fmap, env.annot, ess, pair_scores,
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.claude/worktrees/agent-a93ab7b0ac18823c3/src/part2/h1.py", line 402, in classify
+  File "<PROJECT_ROOT>/.claude/worktrees/agent-a93ab7b0ac18823c3/src/part2/h1.py", line 402, in classify
     nl = matched_null(E_A, fmap, e, "N", c, ctx, cov, annot, essentiality, pair_scores, seed0=seed0, K=K,
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.claude/worktrees/agent-a93ab7b0ac18823c3/src/part2/h1.py", line 347, in matched_null
+  File "<PROJECT_ROOT>/.claude/worktrees/agent-a93ab7b0ac18823c3/src/part2/h1.py", line 347, in matched_null
     return dict(status=status, n_sets=len(sets), q025=float(np.quantile(nb, 0.025)),
                                                             ^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes/.env/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4509, in quantile
+  File "<PART1_DIR>/.env/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4509, in quantile
     return _quantile_unchecked(
            ^^^^^^^^^^^^^^^^^^^^
-  File "/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes/.env/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4523, in _quantile_unchecked
+  File "<PART1_DIR>/.env/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4523, in _quantile_unchecked
     return _ureduce(a,
            ^^^^^^^^^^^
-  File "/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes/.env/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 3893, in _ureduce
+  File "<PART1_DIR>/.env/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 3893, in _ureduce
     r = func(a, **kwargs)
         ^^^^^^^^^^^^^^^^^
-  File "/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes/.env/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4682, in _quantile_ureduce_func
+  File "<PART1_DIR>/.env/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4682, in _quantile_ureduce_func
     result = _quantile(arr,
              ^^^^^^^^^^^^^^
-  File "/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes/.env/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4806, in _quantile
+  File "<PART1_DIR>/.env/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4806, in _quantile
     slices_having_nans = np.isnan(arr[-1, ...])
                                   ~~~^^^^^^^^^
 IndexError: index -1 is out of bounds for axis 0 with size 0

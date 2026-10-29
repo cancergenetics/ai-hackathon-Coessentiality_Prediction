@@ -13,7 +13,7 @@ blob `4caaa1f5d0b5dc229f33b7e5c620b32619d35ee2`). Any re-run is a relook and mus
   `/usr/bin/time -l` for wall time and peak RSS):
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
 <main repo>/.venv/bin/python scripts/44_run_direction.py --id H3a_lineage_atlas
 ```
 

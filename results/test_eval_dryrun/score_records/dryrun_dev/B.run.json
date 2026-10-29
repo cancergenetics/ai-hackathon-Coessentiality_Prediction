@@ -20,7 +20,7 @@
  },
  "inputs": {
   "pairs": {
-   "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/ids/dryrun_dev.tsv",
+   "path": "<PROJECT_ROOT>/data_cache/test_eval/ids/dryrun_dev.tsv",
    "sha256": "d23a23294c8c8c2e8f2b849970a86c89407205004999b06f66ce7994e2aac978"
   },
   "matrix": {
@@ -40,7 +40,7 @@
   }
  },
  "output": {
-  "path": "/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/data_cache/test_eval/scores/dryrun_dev/B.tsv",
+  "path": "<PROJECT_ROOT>/data_cache/test_eval/scores/dryrun_dev/B.tsv",
   "sha256": "b732f836ec6f9a2c2d5a63a8eeacc739170798d53fd5303e5b57280f6e9c572f",
   "columns": [
    "uniprot_a",

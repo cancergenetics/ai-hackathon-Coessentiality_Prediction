@@ -13,8 +13,8 @@ was written at 2026-10-29T06:46:29Z (UTC).
 ## Command (one run; from the worktree root)
 
 ```
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes"; export PYTHONHASHSEED=0
-nohup caffeinate -i /Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.venv/bin/python \
+export PART1_DIR="<PART1_DIR>"; export PYTHONHASHSEED=0
+nohup caffeinate -i <PROJECT_ROOT>/.venv/bin/python \
   scripts/51_lockbox_confirm.py --run > <scratch>/lockbox_run.log 2>&1 &
 # wait by PID (kill -0); never pgrep -f
 ```
@@ -22,7 +22,7 @@ nohup caffeinate -i /Users/metinyazar/Desktop/autoresearch/predicting_protein_co
 If the run fails mid-way, the only allowed continuation is the registered resume mode, which never calls the loader:
 
 ```
-caffeinate -i /Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.venv/bin/python scripts/51_lockbox_confirm.py --run --resume
+caffeinate -i <PROJECT_ROOT>/.venv/bin/python scripts/51_lockbox_confirm.py --run --resume
 ```
 
 If resume cannot complete an entry, the run stops and the failure is reported. Nothing is improvised.

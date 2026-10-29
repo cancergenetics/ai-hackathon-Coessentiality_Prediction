@@ -23,7 +23,7 @@ np.random.seed(SEED)
 
 ROOT = Path(__file__).resolve().parents[1]
 DM = ROOT / "datasets" / "DepMAP"
-P1 = Path("/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes/outputs/all_pairs")
+P1 = Path(os.environ.get("PART1_DIR", ROOT.parent / "coessentiality_protein complexes")) / "outputs" / "all_pairs"
 OUT = ROOT / "results" / "profile"
 OUT.mkdir(parents=True, exist_ok=True)
 

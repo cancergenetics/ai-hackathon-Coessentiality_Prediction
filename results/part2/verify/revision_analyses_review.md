@@ -12,7 +12,7 @@ The notes are about wording and unmatched referee requests, not about numbers.
 
 **Independence caveat (LESSONS rule 4).** I read the README before computing, so my independence is in code and data path, not in blindness.
 My numbers were computed from the committed tables with my own code (scratch only, not committed:
-`/private/tmp/claude-502/-Users-metinyazar-Desktop-autoresearch-predicting-protein-complexes/5a84c62a-d8a2-48ad-b26c-5dd43a72db34/scratchpad/rv_review/`:
+`<SCRATCH>/rv_review/`:
 `r1a.py`, `r1b.py`, `coh.py`, `r2.py`, `r3.py`, `r4.py`, `bb.py`; outputs `*.out`). The tables below list my values first, then the README value.
 What is and is not independent:
 
@@ -150,7 +150,7 @@ None.
 ```
 git merge --ff-only main                                    # base 740f439 -> 11ab5bf (coordinator instruction)
 ln -s <main>/{data_cache,datasets,external} .               # read-only symlinks, untracked, not committed
-export PART1_DIR="/Users/metinyazar/Desktop/autoresearch/coessentiality_protein complexes" PYTHONHASHSEED=0
+export PART1_DIR="<PART1_DIR>" PYTHONHASHSEED=0
 .venv/bin/python scripts/59_rev_scale_effect.py             # 4.6 s wall
 .venv/bin/python scripts/60_rev_demeter2.py                 # 14.0 s
 .venv/bin/python scripts/61_rev_bridge_power.py             # 4.0 s

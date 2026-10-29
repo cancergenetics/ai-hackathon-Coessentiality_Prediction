@@ -1,8 +1,8 @@
-/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.claude/worktrees/agent-abed910aca3ac8712/scripts/37_validate_maps.py:88: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+<PROJECT_ROOT>/.claude/worktrees/agent-abed910aca3ac8712/scripts/37_validate_maps.py:88: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
   nobs = Pm.notna().sum(0)
-/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.claude/worktrees/agent-abed910aca3ac8712/src/part2/validation.py:208: RuntimeWarning: Mean of empty slice
+<PROJECT_ROOT>/.claude/worktrees/agent-abed910aca3ac8712/src/part2/validation.py:208: RuntimeWarning: Mean of empty slice
   null = np.nanmean(R[draw[:, ia], draw[:, ib]], axis=1)
-/Users/metinyazar/Desktop/autoresearch/predicting_protein_complexes/.claude/worktrees/agent-abed910aca3ac8712/src/part2/validation.py:208: RuntimeWarning: Mean of empty slice
+<PROJECT_ROOT>/.claude/worktrees/agent-abed910aca3ac8712/src/part2/validation.py:208: RuntimeWarning: Mean of empty slice
   null = np.nanmean(R[draw[:, ia], draw[:, ib]], axis=1)
 {"zavg": {"level1": {"n": 367, "T1": 159, "T3-neg": 124, "T2": 74, "T3-nc": 10, "T1_nonlocus": 155, "bioplex_testable": 354, "prot_testable": 332, "expected_false_T1": 8.0}, "level2": {"n": 132, "T1": 59, "T3-neg": 42, "T2": 28, "T3-nc": 3, "T1_nonlocus": 57, "bioplex_testable": 126, "prot_testable": 118, "expected_false_T1": 3.0}}, "gls": {"level1": {"n": 379, "T1": 159, "T3-neg": 131, "T2": 81, "T3-nc": 8, "T1_nonlocus": 151, "bioplex_testable": 362, "prot_testable": 343, "expected_false_T1": 8.0}, "level2": {"n": 108, "T1": 42, "T3-neg": 38, "T2": 24, "T3-nc": 4, "T1_nonlocus": 38, "bioplex_testable": 102, "prot_testable": 92, "expected_false_T1": 2.1}}}
 {"primary": {"zavg": 0.15703410190738515, "gls": 0.18223232314166177, "diff": -0.02519822123427662, "ci95": [-0.07452904782490642, 0.030792745030928974], "excludes_0": false}, "decision": "no difference claimed", "ap": {"zavg_BEF": 0.034501623851443265, "gls": 0.021464906192725668, "pearson": 0.02232815916879899}, "timings": {"inputs_s": 1.6, "tiers_s": 14.0, "bridge_s": 4.7, "pair_ap_s": 29.9, "total_s": 52.0, "peak_rss_gb": 2.77}}
