@@ -54,6 +54,12 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - Third registry↔code gap: the registered per-hit robustness checks (LOSO, leave-top-2-out; DESIGN strongest-findings rule) were never computed. They are now being computed on A only, with the rule fixed in advance, against an intent naming the candidates. They run after the lockbox read, which is disclosed.
   - The firewall allowlists the two PI-authorised review scripts (52b61a3).
   - Reference check is running.
+- D16 (M6, 2026-10-29): Strongest findings fixed by the registered rule: 254 = H3a 207 + H3b 45 + H1 2 (ARID1A P, EP300 P); robustness intent fd03b03 → results 01f4c20. Readings: H1 LOSO uses lineage; ranking is tier then |t|. The writer's 261/29 count used two unregistered filters, which are now descriptive columns. Post hoc annotations (dfef529; PI re-run reproduces), all descriptive and none a filter:
+  - beats matched sets: H3a 107/207, H3b 34/45;
+  - control recovery: 7 readouts, 18 sharing a unit;
+  - LOSO partly testable: H3a 21 (Pancreas 17), H3b 33;
+  - scale-effect concordance, the Lymphoid essential-complex shift (ρ −0.24; Myeloid −0.135): 142/207 H3a hits concordant, 79 with |residual z| ≥ 2.
+  Reporting: the paper leads with T1, non-control, residual-z-robust hits (e.g. Ovary CDH1/PAX8, Bone SNAPC, Lung APC/AXIN1, Head and Neck EGFR/GRB2, Pleura EXT1/2, Lymphoid/Myeloid AP2) and labels scale-concordant lymphoid/myeloid hits on essential machinery as a possible lineage-scale artefact.
 
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
