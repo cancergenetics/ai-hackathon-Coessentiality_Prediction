@@ -1,0 +1,64 @@
+{
+ "analysis_id": "CTRL_PC10",
+ "contexts": [
+  "FOCAD_del_or_MSI_H"
+ ],
+ "genes": [
+  "AVEN (57099)",
+  "DIS3L (115752)",
+  "FOCAD (54914)",
+  "HBS1L (10767)",
+  "PELO (53918)",
+  "RNF14 (9604)",
+  "SKIC2 (6499)",
+  "SKIC3 (9652)",
+  "TUT7 (79670)",
+  "VDAC1 (7416)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.20764848411406323,
+   "context": "FOCAD_del_or_MSI_H",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "HBS1L (10767)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.6562317779422528,
+   "context": "FOCAD_del_or_MSI_H",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "PELO (53918)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.11918218709242334,
+   "context": "FOCAD_del_or_MSI_H",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0286"
+  }
+ ],
+ "units": {
+  "HBS1L (10767)": [
+   "HBS1L (10767)"
+  ],
+  "PELO (53918)": [
+   "PELO (53918)"
+  ],
+  "Z0286": [
+   "AVEN (57099)",
+   "DIS3L (115752)",
+   "FOCAD (54914)",
+   "HBS1L (10767)",
+   "PELO (53918)",
+   "RNF14 (9604)",
+   "SKIC2 (6499)",
+   "SKIC3 (9652)",
+   "TUT7 (79670)",
+   "VDAC1 (7416)"
+  ]
+ }
+}
