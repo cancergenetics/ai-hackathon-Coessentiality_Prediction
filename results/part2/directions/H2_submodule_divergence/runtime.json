@@ -1,0 +1,19 @@
+{
+ "command": "PART1_DIR=... PYTHONHASHSEED=0 /usr/bin/time -l .venv/bin/python scripts/44_run_direction.py --id H2_submodule_divergence",
+ "code_commit": "06c8cd1",
+ "intent_commit": "5ea25ca",
+ "pid": 98304,
+ "start_utc": "2026-10-29T00:58:04Z",
+ "end_utc": "2026-10-29T00:59:01Z",
+ "exit_status": 0,
+ "wall_s": 57.11,
+ "user_s": 52.47,
+ "sys_s": 3.58,
+ "peak_rss_bytes": 2905210880,
+ "peak_memory_footprint_bytes": 2206027064,
+ "n_runs": 1,
+ "relook": false,
+ "n_trial_lines": 1,
+ "n_perm": 10000,
+ "note": "Single look, exploratory (0 evaluable kill-rule controls). No re-run. Waited by PID (kill -0)."
+}
