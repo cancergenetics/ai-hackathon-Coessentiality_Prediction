@@ -63,3 +63,32 @@ remain NOT EVALUABLE: a genuine single-model covariate level in L.
 
 The output files are labelled `corrected_refit_noncomfirmatory` (the spelling of the R6 instruction). They never
 overwrite the primary outputs.
+
+## Addendum (R7): the scope is extended to all 560 affected fits
+
+Written at 2026-10-29T10:41:42Z (UTC), before the corrected relook. PI ruling R7 is quoted verbatim in `README.md`. The reproduction
+check (`68f0d3f`) found 510 changed fits, exactly the predicted set.
+
+**Scope.** The corrected relook recomputes all 560 affected fits with the fixed L covariate design:
+- the 510 committed fits whose design span the fix changes;
+- the 50 lockbox-route eligible fits that failed through the defect.
+
+The 3 genuine failures (CTRL_PC21 ×2, H1S Z0035|HNF1B|N) are refitted too, and are expected to stay NOT EVALUABLE.
+
+**How it runs.** Through the R6 access path only: `assoc.resume_lockbox_read(..., relook="R6")`. The loader is never
+called and no ledger line is written. Seeds, hit order, blocks and strata are those of the single read.
+
+```
+caffeinate -i $PY scripts/51_lockbox_confirm.py --relook R6 --mode corrected \
+    --out results/part2/lockbox_confirm/corrected_refit_nonconfirmatory.tsv
+$PY scripts/55_lockbox_r7_report.py      # primary relabel (R7) + primary-vs-corrected comparison; reads committed tables only
+```
+
+**Outputs** (separate files; primary outputs are never overwritten):
+- `corrected_refit_nonconfirmatory.tsv`;
+- `primary_relabelled_R7.tsv.gz` and `rates_primary_R7.tsv`;
+- `comparison_primary_vs_corrected_R7.tsv`, `defect_sensitive_calls_R7.tsv` and `h1_events_primary_vs_corrected_R7.tsv`;
+- `bridge_primary_vs_corrected_R7.json`.
+
+**Defect-sensitive.** An eligible call whose confirmed status differs between the primary result (NOT EVALUABLE for
+the failed fits) and the corrected relook. Such calls cannot support a claim.

@@ -31,3 +31,7 @@ The directory is gitignored. Its SHA-256 is committed to `results/part2/lockbox_
 Access path: `scripts/51_lockbox_confirm.py --relook R6 --mode check|refit`. This calls
 `assoc.resume_lockbox_read(..., relook="R6")`, which requires this note and `CORRECTED_REFIT_INTENT.md`, both
 committed. It never calls the loader and writes no ledger line.
+
+## PI ruling R7 (verbatim)
+
+"R7 (PI, 2026-10-29). The reproduction check (68f0d3f) shows that the covariate-build defect also affected 510 successful fits through a spurious design column. The changes are small (median |Δβ| 2.4e-4, max 0.046) and were predicted from labels before the check ran. Reporting rule: the PRIMARY lockbox result remains the single read as executed (5bc9444), with the defect disclosed. In it, the 50 failed fits caused by the defect are NOT EVALUABLE (driver defect), and the 3 genuine failures (CTRL_PC21 ×2, H1S HNF1B) are NOT EVALUABLE (genuine). The CORRECTED relook covers all 560 affected fits (510 changed + 50 failed) and is a disclosed, NON-CONFIRMATORY sensitivity reported alongside. Any call that differs between primary and corrected is labelled 'defect-sensitive' and cannot support a claim. R6 is amended: the controls count is 11 (not 13), plus PC21 genuine."
