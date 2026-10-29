@@ -72,6 +72,8 @@ BB rejections over the non-member tests (families = contexts):
   It is not "than any essentiality-matched gene set". Coherence, not complex membership, carries most of the excess
   over essentiality alone.
 - Caveat: N-nbr could be matched for only about a quarter of the units, and these are the less coherent ones.
+- Like-for-like on the same 90 / 87 units: real 0.230, N-nbr 0.251, N-ess 0.164 (H3a); real 0.113, N-nbr 0.108,
+  N-ess 0.084 (H3b) (`r1a_rates.tsv`; added after the independent review, 19ad2ae).
 
 ### (b) Selection-aware reference for "beats all matched sets"
 
@@ -105,6 +107,8 @@ BB rejections over the non-member tests (families = contexts):
   unselected reference.
 - Conditional on discovery, the effect-size distributions of real complexes and of other-complex fragments are the
   same: P(real > random) ≈ 0.48 for |t| and ≈ 0.49 for |β|.
+- The two readings are consistent: the excess is within a group (a real unit against its own 10 matched sets), not
+  a marginal effect-size advantage; across discoveries, real complexes are not stronger.
 - Per-context values are in `r1b_per_context.tsv`.
 
 ## R-2 Lineage scale effect with a non-linear trend (referee M2)
@@ -116,7 +120,7 @@ BB rejections over the non-member tests (families = contexts):
 - Corrected lead = T1, not a control readout, |nonlinear residual z| ≥ 2, not `scale_artefact_possible`.
 
 **Results.**
-- The spline raises R² only slightly. Lymphoid goes from 0.068 (linear) to 0.120. Every other context stays ≤ 0.08.
+- The spline raises R² only slightly. Lymphoid goes from 0.068 (linear) to 0.120. Every other context stays ≤ 0.083 (CNS/Brain).
 - 79 of the 207 H3a strongest findings have |nonlinear residual z| ≥ 2, the same number as with the linear fit.
 - 95 are `scale_artefact_possible`, against 56 under D16's Lymphoid/Myeloid-only rule.
 - **Corrected leads: 37**, the same count as D16: 35 are kept, 2 are lost and 2 are new.
@@ -124,6 +128,11 @@ BB rejections over the non-member tests (families = contexts):
   - New: CNS/Brain Z0146 and Breast Z0253.
 - **26 of the 37 corrected leads are scale-concordant.** They are more extreme than the trend in the trend's direction.
   The rule as specified keeps them, because |z| ≥ 2 excludes the artefact flag by construction.
+- The lead set is boundary-sensitive: four of the 37 leads lie within 0.05 of |z_nl| = 2 (Bone Z0001, Breast Z0253,
+  Lung Z0087, Kidney Z0362), so "35 kept, 2 lost, 2 new" is a count identity, not stability.
+- Not done: the referee's M2(c) (exclude scale-concordant leads) is not applied, since the registered-style rule keeps
+  them by construction (disclosed as 26/37); M2(d) (rescale statistics by a per-context inflation factor from the
+  never-expressed sets) was not carried out; the never-expressed rate is reported as a reliability column instead.
 - The flagged Z0190 (Lymphoid, z +5.9) and Z0196, Z0363 and Z0001 stay leads under the non-linear fit. A flexible fit
   does not absorb them.
 - Tables: `r2_trend_by_context.tsv`, `r2_strongest_h3a.tsv`, `r2_leads_corrected.tsv`, `r2_summary.json`.
@@ -178,7 +187,8 @@ Lung Z0001 and Bone Z0001.
 **Same sign but weak in DEMETER2** (one-sided p 0.10–0.14):
 - Lymphoid Z0190 (β_D2 +0.06, p 0.14);
 - melanoma Z0190 (p 0.10);
-- Pleura Z0067 (n_ctx 6, p 0.13).
+- Pleura Z0067 (n_ctx 6, p 0.13);
+- Lung Z0150 (n_ctx 77, p 0.142) (added after the independent review, 19ad2ae).
 
 ## R-4 BRIDGE-L power comparison (referee M3.3)
 
@@ -200,10 +210,13 @@ Observed rates: zavg 0.514 (1,267 hits), GLS 0.578 (1,326 hits). The df sensitiv
 ≤ 0.004 (`r4_bridge_power.tsv`).
 
 **Reading.**
-- Power explains about a third of the BRIDGE-L difference. GLS-map discoveries are expected to confirm slightly more
+- Power explains about a third of the BRIDGE-L difference under the headline version; across the three power
+  versions the share is 26–41% (naive −0.017, EB mean −0.026, EB mean + variance −0.023, against −0.065). GLS-map discoveries are expected to confirm slightly more
   often, because they have larger |β_A| (median 0.081 against 0.066) and similar |z_A| and L counts
   (`r4_by_map_family.tsv`).
-- The remaining −0.042 is about 2.2 SD beyond the power expectation. GLS hits out-confirm their expected rate in every
+- The remaining −0.042 is about 2.2 SD beyond the power expectation. This SD treats hits as independent; hits share
+  units and contexts and the EB prior is estimated, so the z is approximate. The headline model under-predicts the
+  observed level of both maps (zavg by 0.055, GLS by 0.096). GLS hits out-confirm their expected rate in every
   size bin (`r4_by_size_bin.tsv`): observed 0.57–0.59 against expected 0.47–0.50. zavg hits do so less: 0.48–0.57
   against 0.42–0.49.
 - So the BRIDGE-L difference is **not fully explained by power**. This is a descriptive reading of one post hoc

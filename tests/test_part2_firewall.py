@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = sorted(list((ROOT / "src" / "part2").glob("*.py")) + list((ROOT / "scripts").glob("[34]*_*.py")))
+FILES = sorted(list((ROOT / "src" / "part2").glob("*.py")) + list((ROOT / "scripts").glob("[3-6]*_*.py")))
 FORBIDDEN = [r"huMAP", r"HuMAP", r"test_eval", r"Train_positive", r"Train_negative", r"Test_positive",
              r"Test_negative", r"gene_group", r"BioPlex", r"Proteomics", r"protein_quant", r"STRING", r"CORUM",
              r"ComplexPortal", r"testeval"]
