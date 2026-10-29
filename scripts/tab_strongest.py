@@ -41,6 +41,17 @@ REV = os.path.join(ROOT, "results/part2/revision")
 LESS_RELIABLE = ("melanoma", "lineage:Skin", "lineage:Lymphoid")  # named by the never-expressed calibration (D8)
 OUT = os.path.join(ROOT, "manuscript/tables")
 SCALE_LINEAGES = ("lineage:Lymphoid", "lineage:Myeloid")
+# The four H3a leads the main text lists as examples (Results, "The registered strongest findings"); used only to
+# tabulate their never-expressed rate, trend direction and DEMETER2 p (referee round 2, N2). Selects nothing.
+TEXT_LEADS = (("lineage:Ovary/Fallopian Tube", "Z0035"), ("lineage:Bone", "Z0303"),
+              ("lineage:Head and Neck", "Z0051"), ("lineage:Myeloid", "Z0254"))
+
+
+def _lead_info(t: pd.DataFrame, c: str, u: str) -> dict:
+    r = t[(t.context == c) & (t.unit == u)].iloc[0]
+    return {"never_expressed_frac": round(float(r.rev_never_expressed_frac), 4),
+            "concordant_nl": bool(r.rev_concordant_nl), "residual_z_nl": round(float(r.rev_residual_z_nl), 4),
+            "D2_p_dir": round(float(r.rev_D2_p_dir), 6)}
 
 COLS = ["rank", "direction", "context", "unit", "members", "tier", "beta_A", "t_A", "q_final", "route", "beta_L",
         "ci95_L_lo", "ci95_L_hi", "p_L", "n_context_L", "loso_unit", "loso_folds_tested", "loso_folds_skipped",
@@ -127,6 +138,10 @@ def main():
             "rev_lead_D2_evaluable": int(rlead.rev_D2_beta.notna().sum()),
             "rev_lead_D2_same_sign": int(rlead.rev_D2_same_sign.eq(True).sum()),
             "rev_lead_D2_p_dir_lt_005": int((rlead.rev_D2_p_dir < 0.05).sum()),
+            "never_expressed_frac_lead_contexts_not_flagged": [
+                round(float(rlead[~rlead.rev_lineage_less_reliable].rev_never_expressed_frac.min()), 2),
+                round(float(rlead[~rlead.rev_lineage_less_reliable].rev_never_expressed_frac.max()), 2)],
+            "text_highlighted_leads": {f"{c}|{u}": _lead_info(t, c, u) for c, u in TEXT_LEADS},
         },
     }
     with open(os.path.join(OUT, "strongest_derived.json"), "w") as fh:
@@ -163,8 +178,17 @@ def main():
         f"and not rev_scale_artefact_possible. {counts['revision']['rev_lead_concordant_nl']} of them lie beyond "
         "the trend in the trend's own direction (rev_concordant_nl); the rule cannot flag these, so a residual "
         "beyond the trend does not exclude a scale artefact.",
-        f"- rev_lineage_less_reliable: the context is one where never-expressed gene sets reach p < 0.05 far above 5% "
-        f"(melanoma, Skin, Lymphoid); {counts['revision']['rev_lead_less_reliable_lineage']} rev_lead rows.",
+        f"- rev_lineage_less_reliable: the context is one of the three where never-expressed gene sets reach p < 0.05 "
+        f"most often (melanoma, Skin, Lymphoid; 0.27-0.33); {counts['revision']['rev_lead_less_reliable_lineage']} "
+        "rev_lead rows. The flag does not mark the other lineages as reliable: the never-expressed rate of the other "
+        "lead contexts is "
+        f"{counts['revision']['never_expressed_frac_lead_contexts_not_flagged'][0]:.2f}-"
+        f"{counts['revision']['never_expressed_frac_lead_contexts_not_flagged'][1]:.2f} against a nominal 0.05, and "
+        "only Myeloid (0.01) is close to calibrated, so read the numeric rate (rev_never_expressed_frac). Revision "
+        "round 2: the four leads named in the main text (Ovary/Fallopian Tube Z0035, 0.22; Bone Z0303, 0.19; Head "
+        "and Neck Z0051, 0.19; Myeloid Z0254, 0.01) all lie beyond the trend in its own direction "
+        "(rev_concordant_nl), so the trend rule cannot exclude a scale artefact for them; their main independent "
+        "support is the DEMETER2 check (rev_D2_p_dir 0.0003-0.009).",
         "- rev_D2_*: the same complex score and design on DEMETER2 (RNAi) for A models with RNAi data; not affected "
         "by Chronos dynamic range; no FDR.",
         "",

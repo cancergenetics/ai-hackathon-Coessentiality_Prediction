@@ -37,6 +37,10 @@
  },
  "possible_lineage_scale_artefact_positive_beta": 38,
  "revision": {
+  "never_expressed_frac_lead_contexts_not_flagged": [
+   0.01,
+   0.22
+  ],
   "note": "POST HOC, descriptive (revision R-2, R-3; results/part2/revision); select and rank nothing",
   "rev_lead": 37,
   "rev_lead_D2_evaluable": 35,
@@ -48,7 +52,33 @@
    "lineage:Lymphoid": 5,
    "melanoma": 4
   },
-  "rev_scale_artefact_possible": 95
+  "rev_scale_artefact_possible": 95,
+  "text_highlighted_leads": {
+   "lineage:Bone|Z0303": {
+    "D2_p_dir": 0.008863,
+    "concordant_nl": true,
+    "never_expressed_frac": 0.19,
+    "residual_z_nl": -3.7014
+   },
+   "lineage:Head and Neck|Z0051": {
+    "D2_p_dir": 0.00027,
+    "concordant_nl": true,
+    "never_expressed_frac": 0.19,
+    "residual_z_nl": -2.7944
+   },
+   "lineage:Myeloid|Z0254": {
+    "D2_p_dir": 0.000787,
+    "concordant_nl": true,
+    "never_expressed_frac": 0.01,
+    "residual_z_nl": -2.9121
+   },
+   "lineage:Ovary/Fallopian Tube|Z0035": {
+    "D2_p_dir": 0.000412,
+    "concordant_nl": true,
+    "never_expressed_frac": 0.22,
+    "residual_z_nl": -4.3646
+   }
+  }
  },
  "tier": {
   "T1": 152,
