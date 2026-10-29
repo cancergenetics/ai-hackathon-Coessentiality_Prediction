@@ -30,6 +30,6 @@
 - κ_N: loss coefficient on the aligned score of non-paralog members with a baseline direction (N'); > 0 = their dependency grows in its baseline direction (residual sensitisation), < 0 = it shrinks toward 0 (collapse). β_P: loss coefficient on the mean in-complex paralog effect; < 0 = paralogs more essential. Chronos units. 90% CIs (the TOST interval; margin ±0.1).
 - q: BH over the 24 evaluable counted tests (registered m 28; PTEN's q is 0.051 at m = 28).
 - Reported labels apply E2 (post hoc, conservative): a non-neutral class whose 90% CI also lies inside ±0.1 is 'DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)'. MAP2K4 (11 complete-case loss lines) is NOT EVALUABLE (R2).
-- Per-member coefficients (β_j with 95% CI) are a registered report item but are not in the committed run outputs; see Fig. 4 legend.
-- Lockbox: [[LOCKBOX: per-event L confirmation of κ_N / β_P]].
+- Per-member coefficients (β_j with 95% CI), a registered 'also reported' item, were exported after the discovery run by scripts/55_export_member_profiles.py (A only, descriptive): results/part2/directions/H1_within_complex_GI/member_profiles.tsv; drawn in Fig. 4c.
+- Lockbox: per-event L estimates and calls (primary and corrected) are in Supplementary Table S8.
 - Sources: results/part2/directions/H1_within_complex_GI/{classes,discoveries}.tsv, results/part2/fzx/h1_events.tsv; script scripts/tab_part2_discoveries.py.
