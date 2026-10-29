@@ -1,0 +1,54 @@
+entry	context	unit	beta	beta_L	p_L	primary_call	corrected_call	affected_cause	beta_L_relook	p_L_relook
+BRIDGE-L_confirmation_rate	9p21_loss	G0061	0.0669082			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.0389391	0.0484204
+BRIDGE-L_confirmation_rate	9p21_loss	G0221	-0.284373			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.21892	0.000133281
+BRIDGE-L_confirmation_rate	TP53_altered	G0347	0.0329985	0.0285858	0.0490833	confirmed	not confirmed	changed design span	0.0280473	0.0529493
+BRIDGE-L_confirmation_rate	WGD	G0005	-0.0239081			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.0225863	0.0205489
+BRIDGE-L_confirmation_rate	WGD	G0024	0.0492312			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.0256387	0.109953
+BRIDGE-L_confirmation_rate	WGD	G0040	0.0561853			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.0405447	0.0419979
+BRIDGE-L_confirmation_rate	WGD	G0076	0.0306612			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.0201091	0.153159
+BRIDGE-L_confirmation_rate	WGD	G0100	0.0960983			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.0708713	0.010924
+BRIDGE-L_confirmation_rate	WGD	G0272	0.112459			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.122137	0.030053
+BRIDGE-L_confirmation_rate	WGD	G0315	0.0907547			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.0608296	0.0504725
+CTRL_PC10	FOCAD_del_or_MSI_H	HBS1L (10767)	-0.207648			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.185972	0.00069993
+CTRL_PC10	FOCAD_del_or_MSI_H	PELO (53918)	-0.656232			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.905346	1.70038e-06
+CTRL_PC10	FOCAD_del_or_MSI_H	Z0286	-0.119182			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.101361	0.00109989
+CTRL_PC12	VPS4B_loss	VPS4A (27183)	-0.254356			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.275259	9.59081e-05
+CTRL_PC12	VPS4B_loss	Z0115	-0.253399			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.275259	9.59081e-05
+CTRL_PC13	female_or_LoY	DDX3X (1654)	-0.698859			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.680957	8.5666e-24
+CTRL_PC13	female_or_LoY	Z0137	-0.534684			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.52814	8.64812e-26
+CTRL_PC18	WGD	KIF18A (81930)	-0.163152			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	-0.156356	0.132237
+CTRL_PC9	9p21_loss	PRMT5 (10419)	-0.283578			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.203638	0.0063645
+CTRL_PC9	9p21_loss	WDR77 (79084)	-0.467314			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.398335	0.00013499
+CTRL_PC9	9p21_loss	Z0228	-0.237178			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.177216	0.000783714
+H1_within_complex_GI	H1loss:FOCAD	Z0286|FOCAD|N	0.139649			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.129229	0.00049995
+H2_submodule_divergence	WGD	Z0026.2	0.0486463			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.0514668	0.00360892
+H3b_driver_family	9p21_loss	Z0069	0.0648366			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.0374389	0.0440903
+H3b_driver_family	9p21_loss	Z0228	-0.237178			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.177216	0.000783714
+H3b_driver_family	TP53_altered	Z0096	-0.0211572	-0.0214256	0.0506369	not confirmed	confirmed	changed design span	-0.0217073	0.0490353
+H3b_driver_family	TP53_altered	Z0284	0.0322766	0.0293395	0.0484993	confirmed	not confirmed	changed design span	0.0290165	0.0511084
+H3b_driver_family	WGD	Z0026	0.0364271			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	-0.0241281	0.88001
+H3b_driver_family	WGD	Z0035	-0.0311191			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.00698489	0.611813
+H3b_driver_family	WGD	Z0056	0.0492526			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.0235078	0.13972
+H3b_driver_family	WGD	Z0065	0.0180024			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.00838969	0.211409
+H3b_driver_family	WGD	Z0080	-0.0505615			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.0559798	0.0484508
+H3b_driver_family	WGD	Z0081	0.0519844			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.0302827	0.166827
+H3b_driver_family	WGD	Z0104	0.0724018			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.0500874	0.0242793
+H3b_driver_family	WGD	Z0141	0.0393971			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.0291762	0.125961
+H3b_driver_family	WGD	Z0150	0.0500785			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.0500557	0.0624828
+H3b_driver_family	WGD	Z0163	0.0636856			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.020272	0.267477
+H3b_driver_family	WGD	Z0166	0.0658715			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.0447019	0.0703371
+H3b_driver_family	WGD	Z0187	0.0262084			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	-0.00745067	0.703131
+H3b_driver_family	WGD	Z0206	0.0548436			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.0654232	0.0125032
+H3b_driver_family	WGD	Z0235	0.0918365			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.027521	0.187581
+H3b_driver_family	WGD	Z0248	0.0272215			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.0608864	0.000233286
+H3b_driver_family	WGD	Z0257	0.0215484			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	-0.00452159	0.654369
+H3b_driver_family	WGD	Z0265	0.0599865			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	-0.00546727	0.575631
+H3b_driver_family	WGD	Z0276	-0.0383769			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	-0.0412549	0.0629705
+H3b_driver_family	WGD	Z0310	-0.0276426			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	-0.0330022	0.0110405
+H3b_driver_family	WGD	Z0319	0.0322393			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.0303781	0.0321706
+H3b_driver_family	WGD	Z0334	-0.0415902			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	-0.0196162	0.179673
+H3b_driver_family	WGD	Z0341	0.0306832			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.00799521	0.323609
+H3b_driver_family	WGD	Z0342	0.0281017			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.00953901	0.280999
+H3b_driver_family	WGD	Z0354	-0.039452			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	-0.0226836	0.0857604
+H3b_driver_family	WGD	Z0362	0.0568179			NOT EVALUABLE (driver defect)	confirmed	failed fit (driver defect)	0.0700119	0.0275682
+H3b_driver_family	WGD	Z0365	0.0435272			NOT EVALUABLE (driver defect)	not confirmed	failed fit (driver defect)	0.0457802	0.0507104
