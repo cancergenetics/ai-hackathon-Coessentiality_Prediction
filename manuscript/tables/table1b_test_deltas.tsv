@@ -1,13 +1,13 @@
 set	comparison	ΔAP [95% CI]	relative gain	macro-AP ratio [95% CI]	p (two-sided)	Holm p	locked rule passes	CI excludes 0	borderline
-ITT	zavg_BEF − GLS	+0.121 [+0.079, +0.159]	+0.574	1.017 [0.955, 1.161]	0	0	yes	yes	no
+ITT	zavg_BEF − GLS	+0.121 [+0.079, +0.159]	+0.574	1.017 [0.955, 1.161]	< 0.001	< 0.003	yes	yes	no
 ITT	zavg_BEF − Spearman	+0.129 [+0.023, +0.216]	+0.629	1.689 [1.484, 2.018]	0.022	0.022	yes	yes	no
 ITT	zavg_BEF − Pearson	+0.136 [+0.039, +0.220]	+0.693	1.711 [1.521, 2.064]	0.009	0.018	yes	yes	no
-ITT	B − GLS	+0.099 [+0.056, +0.139]	+0.468	0.873 [0.802, 1.028]	0		no	yes	no
+ITT	B − GLS	+0.099 [+0.056, +0.139]	+0.468	0.873 [0.802, 1.028]	< 0.001		no	yes	no
 ITT	B − Spearman	+0.106 [+0.005, +0.194]	+0.520	1.449 [1.259, 1.771]	0.041		yes	yes	yes
 ITT	B − Pearson	+0.114 [+0.019, +0.199]	+0.579	1.468 [1.285, 1.810]	0.025		yes	yes	no
-S1	zavg_BEF − GLS	+0.127 [+0.089, +0.167]	+0.574	1.018 [0.961, 1.173]	0	0	yes	yes	no
+S1	zavg_BEF − GLS	+0.127 [+0.089, +0.167]	+0.574	1.018 [0.961, 1.173]	< 0.001	< 0.003	yes	yes	no
 S1	zavg_BEF − Spearman	+0.135 [+0.024, +0.229]	+0.630	1.676 [1.449, 1.988]	0.024	0.024	yes	yes	no
 S1	zavg_BEF − Pearson	+0.143 [+0.038, +0.233]	+0.694	1.707 [1.502, 2.039]	0.012	0.024	yes	yes	no
-S1	B − GLS	+0.104 [+0.065, +0.147]	+0.468	0.875 [0.809, 1.043]	0		no	yes	no
+S1	B − GLS	+0.104 [+0.065, +0.147]	+0.468	0.875 [0.809, 1.043]	< 0.001		no	yes	no
 S1	B − Spearman	+0.111 [+0.003, +0.204]	+0.520	1.441 [1.235, 1.739]	0.045		yes	yes	yes
 S1	B − Pearson	+0.119 [+0.019, +0.208]	+0.580	1.467 [1.276, 1.796]	0.022		yes	yes	no

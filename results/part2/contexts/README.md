@@ -3,7 +3,7 @@
 These files were built by `scripts/32_build_contexts.py`, using `src/part2/contexts.py`, at code commit 10b5f90.
 - **Inputs:** DepMap Omics (damaging and hotspot mutation matrices, OmicsCNGeneWGS, expression, global signatures, fusions, OmicsProfiles), Model.csv, Ensembl 116 coordinates, HGNC locations, and CCLE proteomics (used only for the LoF functional check).
 - **No dependency value is read.** U (1,345 models) comes from the ModelID column of the CRISPR file only.
-- **Runtime:** 88 s from raw CSVs and 40 s from the parquet cache (laptop, single process).
+- **Runtime:** 86.5 s from raw CSVs (`build_log.json`, `runtime_s`) and about 40 s from the parquet cache (not logged) (laptop, single process). Corrected 2026-10-29: an earlier version said 88 s, which did not match the committed log.
 - **Reproducibility:** two consecutive builds gave byte-identical outputs (`checksums.json`).
 
 ## Committed here

@@ -33,6 +33,11 @@ def write(stem: str, title: str, notes: list[str], df: pd.DataFrame, extra: str 
     (S.TAB_DIR / f"{stem}.md").write_text(txt)
 
 
+def pfmt(p: float, bound: float) -> str:
+    """Bootstrap p; 0 means no replicate on the other side of 0, shown as its bound (revision round 1, minor 17)."""
+    return f"< {bound:.3g}" if p == 0 else f"{p:.3g}"
+
+
 def table1() -> None:
     d = S.load_json(S.TEST_RESULTS)
     rows = []
@@ -63,6 +68,7 @@ def table1() -> None:
     for sname, skey in (("ITT", "itt"), ("S1", "mapped_only")):
         r = d["results"][skey]
         cs = r["ci_statistic"]
+        nb = r["bootstrap"]["cluster"]["n_boot"]
         for cand in ["zavg_BEF", "B"]:
             for b in S.BASELINES:
                 v = r["bootstrap"]["cluster"]["diff"][f"{cand}|ap - {b}|ap"]
@@ -76,8 +82,8 @@ def table1() -> None:
                     "macro-AP ratio [95% CI]": S.fmt_ci(pc["non_degradation_ratio_ci"]["macro_cluster_ap"]["ratio"],
                                                         pc["non_degradation_ratio_ci"]["macro_cluster_ap"]["ci_low"],
                                                         pc["non_degradation_ratio_ci"]["macro_cluster_ap"]["ci_high"]),
-                    "p (two-sided)": f"{v['p_two_sided']:.3g}",
-                    "Holm p": "" if holm is None else f"{holm:.3g}",
+                    "p (two-sided)": pfmt(v["p_two_sided"], 2 / nb),
+                    "Holm p": "" if holm is None else pfmt(holm, len(S.BASELINES) * 2 / nb),
                     "locked rule passes": "yes" if lv["passes"] else "no",
                     "CI excludes 0": "yes" if pc["ci_excludes_0"] else "no",
                     "borderline": "yes" if pc["borderline"] else "no",

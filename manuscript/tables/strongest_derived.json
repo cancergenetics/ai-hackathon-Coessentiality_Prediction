@@ -36,6 +36,20 @@
   "lineage:Myeloid": 4
  },
  "possible_lineage_scale_artefact_positive_beta": 38,
+ "revision": {
+  "note": "POST HOC, descriptive (revision R-2, R-3; results/part2/revision); select and rank nothing",
+  "rev_lead": 37,
+  "rev_lead_D2_evaluable": 35,
+  "rev_lead_D2_p_dir_lt_005": 20,
+  "rev_lead_D2_same_sign": 29,
+  "rev_lead_concordant_nl": 26,
+  "rev_lead_less_reliable_lineage": 9,
+  "rev_lead_less_reliable_per_context": {
+   "lineage:Lymphoid": 5,
+   "melanoma": 4
+  },
+  "rev_scale_artefact_possible": 95
+ },
  "tier": {
   "T1": 152,
   "T2": 65,

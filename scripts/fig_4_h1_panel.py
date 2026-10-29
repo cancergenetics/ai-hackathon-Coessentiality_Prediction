@@ -177,7 +177,7 @@ def main() -> None:
              "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)", "NEUTRAL", "INCONCLUSIVE",
              "INCONCLUSIVE (null unavailable)", "NOT EVALUABLE", "not evaluable"]
     h1s = pd.read_csv(S.ROOT / f"{P.DIR}/{P.H1S}/classes.tsv", sep="\t")
-    for k, (name, cnt) in enumerate((("H1 (24 events)", c.label_final.value_counts()),
+    for k, (name, cnt) in enumerate((("H1, 24 events: complex-wide labels + 2 paralog calls", c.label_final.value_counts()),
                                      ("H1S (317 events, exploratory)", h1s.label_final.value_counts()))):
         ax = fig.add_subplot(gs[2, k])
         S.panel_label(ax, "d" if k == 0 else "e")

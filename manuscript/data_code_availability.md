@@ -6,14 +6,14 @@
 
 | Input | Source | Version | Licence |
 |---|---|---|---|
-| CRISPRGeneEffect, ScreenGeneEffect, CRISPRConfounders, Model, ModelCondition | DepMap portal (depmap.org/portal/data_page) | 26Q3 (user-stated; files carry no version stamp) | CC BY 4.0 |
-| OmicsSomaticMutationsMatrixDamaging / Hotspot, OmicsCNGeneWGS, OmicsExpressionTPMLogp1HumanProteinCodingGenes, OmicsProfiles, OmicsGlobalSignatures, OmicsFusionFiltered | DepMap portal | 26Q3 (user-stated) | CC BY 4.0 |
+| CRISPRGeneEffect, ScreenGeneEffect, CRISPRConfounders, Model, ModelCondition | DepMap portal (depmap.org/portal/data_page) | 26Q3 [DEPMAP_RELEASE_CONFIRMATION: the user must confirm the release; the files carry no version stamp] | CC BY 4.0 |
+| OmicsSomaticMutationsMatrixDamaging / Hotspot, OmicsCNGeneWGS, OmicsExpressionTPMLogp1HumanProteinCodingGenes, OmicsProfiles, OmicsGlobalSignatures, OmicsFusionFiltered | DepMap portal | 26Q3 [DEPMAP_RELEASE_CONFIRMATION] | CC BY 4.0 |
 | DEMETER2 combined gene dependency | DepMap portal, "DEMETER2 Data v6" | v6 | CC BY 4.0 |
-| CCLE proteomics (protein_quant_current_normalized) | Nusinow et al. 2020 | as published | publisher / DepMap terms (unverified) |
-| BioPlex 293T and HCT116 networks | bioplex.hms.harvard.edu (BioPlex 3.0) | Dec 2019 | BioPlex terms (unverified) |
+| CCLE proteomics (protein_quant_current_normalized) | Nusinow et al. 2020 | as published | [LICENCE_CCLE_PROTEOMICS: to be verified by the user] |
+| BioPlex 293T and HCT116 networks | bioplex.hms.harvard.edu (BioPlex 3.0) | Dec 2019 | [LICENCE_BIOPLEX: to be verified by the user] |
 | Human paralogues and gene coordinates | Ensembl BioMart | Ensembl 116 | no restrictions |
-| HGNC complete set | genenames.org | download date unknown | CC0 |
-| hu.MAP 3.0 test positive and negative pairs | hu.MAP 3.0 (Fischer et al. 2025) | hu.MAP 3.0 test split | CC BY 4.0 per paper (file licence unverified) |
+| HGNC complete set | genenames.org | [HGNC_DOWNLOAD_DATE: to be supplied by the user] | CC0 |
+| hu.MAP 3.0 test positive and negative pairs | hu.MAP 3.0 (Fischer et al. 2025) | hu.MAP 3.0 test split | [LICENCE_HUMAP: CC BY 4.0 per paper; file licence to be verified by the user] |
 
 <!-- DATA.md table -->
 
@@ -30,6 +30,7 @@
 - `results/part2/controls/`, `results/part2/directions/`: controls and A-side discoveries, calibrations and sensitivities;
 - `results/part2/lockbox_confirm/`: lockbox confirmations, the R6/R7 records, the corrected relook, BENCH and BRIDGE-L;
 - `results/part2/robustness/`: the registered per-hit robustness checks, the 254 strongest findings and their post hoc annotations;
+- `results/part2/revision/`: post hoc, descriptive revision analyses R-1 to R-4 (referee round 1; A only);
 - `results/part2/verify/`: independent reviews;
 - `results/part2/trials.jsonl`, `results/part2/lockbox_ledger.jsonl`, `results/part2/lockbox_reads.jsonl`: trial and lockbox ledgers.
 
@@ -40,7 +41,7 @@ Manuscript tables and figures are in `manuscript/tables/` and `manuscript/figure
 All code is in the project repository:
 - the Part 2 package `src/part2/`;
 - the numbered pipeline scripts in `scripts/`;
-- figure and table scripts (`scripts/fig_*.py`, `scripts/tab_*.py`);
+- figure and table scripts (`scripts/fig_*.py`, `scripts/tab_*.py`) and the submission-copy script (`scripts/make_submission_copy.py`);
 - independent verification scripts (`scripts/verify/`);
 - tests (`tests/`).
 
@@ -56,4 +57,6 @@ Figures and tables regenerate from committed results alone (`manuscript/suppleme
 
 The test look and the lockbox read were single-use by design, and the ledger refuses a second lockbox read. Re-running them therefore requires a fresh repository state. Any such re-run is non-confirmatory.
 
-**Repository URL and archive identifier:** to be added at submission. No public archive has been created yet.
+**Repository URL and archive identifier:** [REPO_URL]; archive [ARCHIVE_DOI]. **Part 1 repository:** [PART1_REPO_URL] (commit c7f95ee). No public archive has been created yet; the user must supply these before submission.
+
+**Lockbox loader run log:** the run log of the single lockbox read was not committed and is permanently lost; the loader call count (30) is inferred from ledger invariants and file times (Supplementary Note 15).
