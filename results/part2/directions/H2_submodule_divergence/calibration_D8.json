@@ -1,0 +1,40 @@
+{
+ "analysis_id": "H2_submodule_divergence",
+ "label": "registered calibration run after the discovery run (D8; PI ruling R4)",
+ "peak_rss_bytes": 2595127296,
+ "pseudo_contexts_stagewise": {
+  "expected": "~0",
+  "pooled": {
+   "frac_p_lt_001": 0.007042253521126761,
+   "frac_p_lt_005": 0.049798792756539235,
+   "n_tests": 1988
+  },
+  "stagewise_rejections": 6
+ },
+ "random_splits": {
+  "R": 20,
+  "n_tested_pairs": 452,
+  "pooled": {
+   "frac_p_lt_001": 0.23396017699115043,
+   "frac_p_lt_005": 0.3747787610619469,
+   "n_tests": 9040
+  },
+  "real": {
+   "frac_p_lt_001": 0.3163716814159292,
+   "frac_p_lt_005": 0.46017699115044247,
+   "n_discovery": 109,
+   "n_tests": 452
+  },
+  "seed": "default_rng([4800, sub index, context index])",
+  "stagewise_rejections_per_replicate": {
+   "max": 90,
+   "mean": 78.3
+  }
+ },
+ "registry_blob": "484da0f11375db0cd17f7230782be3c082a75bd4",
+ "registry_calibration": {
+  "negative_controls": "Random member splits of the same parents (size of s preserved, seed 4800) residualised the same way, and the H3 pseudo-contexts, run through the same stage-wise machinery; reported.\n",
+  "seed": 4800
+ },
+ "runtime_s": 33.0
+}
