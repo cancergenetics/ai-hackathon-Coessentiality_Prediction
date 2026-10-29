@@ -21,11 +21,12 @@ A comment may add arithmetic for derived numbers: "calc: 3642/2862 - 1" adds tha
 Statuses: matched (with the support kind: key, row, calc, file or text); UNMATCHED (cited source has no value that rounds to the number); NO-SOURCE (number in a
 paragraph segment with no following comment); UNRESOLVED (the comment names no readable numeric source, e.g. only
 "git log"). Numbers that are identifiers (gene symbols, unit IDs, figure/section/table numbers, commits, dates,
-times, versions, citation years) are removed before extraction.
+times, versions, citation years, ordered-list markers) are removed before extraction. A number never starts
+inside a thousands-separated one (in "601/1,145" the denominator is skipped whole, not read as 145).
 
 Usage:  python scripts/check_manuscript_numbers.py [manuscript/main.md] [--out results/verify_manuscript/number_check.tsv]
-        python scripts/check_manuscript_numbers.py manuscript/supplementary.md --start-at "## Supplementary Note 15" \
-            --stop-at "## Supplementary Note 18" --out results/verify_manuscript/number_check_supplement.tsv
+        python scripts/check_manuscript_numbers.py manuscript/supplementary.md \
+            --out results/verify_manuscript/number_check_supplement.tsv   (optionally --start-at/--stop-at a heading)
 Aliases may also be declared in any later comment in the quoted form '"LB" = results/part2/lockbox_confirm'
 (the supplement's convention); the first declaration of a name wins.
 Reads committed files only (no dataset, no lockbox read). Exit status 1 if any number is UNMATCHED.
@@ -51,7 +52,7 @@ SEARCH_DIRS = ("results", "manuscript", "docs", "scripts", "src")
 
 # ----------------------------------------------------------------------------------------------- number parsing
 NUM_RE = re.compile(
-    r"(?<![\w.\-−/])(?P<sign>[+\-−±]?)(?P<int>\d{1,3}(?:,\d{3})+|\d+)(?:\.(?P<dec>\d+))?"
+    r"(?<![\w.\-−/])(?<!\d,)(?P<sign>[+\-−±]?)(?P<int>\d{1,3}(?:,\d{3})+|\d+)(?:\.(?P<dec>\d+))?"
     r"(?:\s*[×x]\s*10(?P<exp>[⁻⁰¹²³⁴⁵⁶⁷⁸⁹]+))?(?P<pct>\s*%)?(?![\w])")
 POW_RE = re.compile(r"(?<![\d×x]\s)(?<![\d×])\b10(?P<exp>[⁻⁰¹²³⁴⁵⁶⁷⁸⁹]+)")
 
@@ -82,6 +83,7 @@ STRIP_PATTERNS = [
     r"\b(?:one|two)-sided\b",
     r"\blevel[- ]\d\b", r"\bdegree-\d\b", r"\bR\d\b",
     r"\b[A-Z]\d?[–\-][A-Z]\d+\b",                                   # A3–A5 style ranges
+    r"(?m:^)[ \t]*\d+[a-z]?\.(?=[ \t])",                             # ordered-list markers "1. ", "11b. "
 ]
 STRIP_RE = re.compile("|".join(f"(?:{p})" for p in STRIP_PATTERNS))
 

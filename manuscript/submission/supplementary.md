@@ -223,6 +223,7 @@ From the repository root, with `PART1_DIR` set and `PYTHONHASHSEED=0`:
 .venv/bin/python scripts/fig_5_lockbox.py
 .venv/bin/python scripts/tab_strongest.py
 .venv/bin/python scripts/check_manuscript_numbers.py manuscript/main.md
+.venv/bin/python scripts/check_manuscript_numbers.py manuscript/supplementary.md --out results/verify_manuscript/number_check_supplement.tsv
 ```
 
 These scripts read committed result files only, never datasets, data caches or persisted lockbox reads. A second run reproduces every figure file byte for byte. The full pipeline (scores, maps, contexts, directions, calibrations and the lockbox read) is in `scripts/` in numbered order, with each step's command in its intent note. Re-running the lockbox read is blocked by the ledger by design.
@@ -328,7 +329,7 @@ Every amendment (A), erratum (E), ruling (R) and decision note (D5–D19) after 
 | A2 | Genetic-loss rule (≥ 50% LoF or hom-del); SMARCB1 moved to H1 | 28 Oct 23:28:31 | Before any H1 run; labels only | SMARCB1 in H1 (neutral) |
 | R1 / E1 | Sign typo in the registered H1 aligned score corrected to the stated semantics | 29 Oct 00:41:42 | **After the H1 run**; the engine had used the stated semantics since 28 Oct 20:09 | None (the run already used it) |
 | R2 | Engine crash on leverage-1 H1S designs fixed; MAP2K4 labelled not evaluable | 29 Oct 00:47 | After the H1 run, before the H1S run | H1 not re-run; synthetic outputs identical by hash |
-| R3 | GPD-extrapolated p kept primary; p_cons = max(p_perm, p_analytic) pre-declared as sensitivity; ranking by \|t\| | 29 Oct 00:59 | After the discovery outcomes, before the sensitivity was computed | Sensitivity reported (Note 13) |
+| R3 | GPD-extrapolated p kept primary; p_cons = max(p_perm, p_analytic) pre-declared as sensitivity; ranking by \|t\| | 29 Oct 00:59 | After the discovery outcomes, before the sensitivity was computed | Sensitivity reported (Supplementary Note 13) |
 | R4 | Registered calibrations (matched sets, never-expressed sets, segment null, H2 splits), absent from the engine, implemented and run once | 29 Oct 01:02–01:06 | **After all discovery runs**, before any L read | Main reading of the context results; responses applied mechanically; none fired |
 | R5 / E2 | "Detectable, within equivalence margin" label when a non-neutral class and TOST-neutral both hold | 29 Oct 01:07 | **After the H1 run and its review**; post hoc, conservative | TP53, PTEN (and four H1S events) not headline, not promotable |
 | D8 | Calibration response scope (literal reading), screen-quality sensitivity pre-declared, "beats all matched sets" reporting flag | 29 Oct 01:35 | After discovery and calibration outcomes; before any L read | Response did not fire; flag defines "complex-specific" |
@@ -513,7 +514,7 @@ GLS-map discoveries have larger A effects (median |β| 0.081 against 0.066) and 
 | A1–A5 | Registry amendments (H1 panel; lockbox seeds and readings) |
 | E1, E2 | Errata: H1 sign typo; "detectable, within equivalence margin" label |
 | R1–R7 | PI rulings; R4 = calibrations implemented after discovery; R6, R7 = handling of the lockbox driver defect |
-| D0–D21 | Decision notes in RESEARCH_TREE.md (D1 = the non-blind z ≥ 3 operating point) |
+| D0–D22 | Decision notes in RESEARCH_TREE.md (D1 = the non-blind z ≥ 3 operating point) |
 | R-1 to R-5 | Revision analyses, rounds 1 (R-1 to R-4) and 2 (R-5) (Supplementary Note 17) |
 | Defect-sensitive | A lockbox call that differs between the read as executed and the corrected relook; carries no claim |
 
