@@ -30,6 +30,8 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - R4: The registered calibrations (matched random sets, never-expressed sets, CN segment null, H2 random splits) were not implemented in the engine. They are built and run after the discovery runs, before any lockbox read, with their responses applied mechanically. This is a disclosed deviation.
   - R5: Post hoc and conservative (E2). When a non-neutral H1 class and TOST-neutral both hold (PTEN collapse, TP53 sensitisation), the label is "detectable, within equivalence margin". These are not headline findings, and lockbox confirmation cannot promote them.
   - Pre-declared post hoc sensitivity, before it is computed: H3a/H3b with covariates ScreenNNMD + CasActivity (per model, from CRISPRConfounders.csv; growth pattern excluded as collinear with lineage), all else as registered. Motivation: the review found the lymphoid "scale effect" (ρ −0.24). Report the surviving fraction per lineage; the primary is unchanged.
+  - Calibration response scope (review 2, M2): the registered response is "if that fraction exceeds 0.075". In the entry, "that fraction" is the pseudo-context p<0.05 rate, so the literal reading applies and the response did not fire. The never-expressed excess (H3a 13.5%, in melanoma/Skin/Lymphoid) is reported as a finding, not as a trigger. Under the broader reading the response would only widen permutation re-testing to p<0.01, which can add discoveries but not remove them. This reading was confirmed after the results were seen, which is disclosed.
+  - Reporting: every H3a/H3b discovery carries a "beats all matched sets" flag (H3a 502/1,145; 62 have no sets), and each H2 discovery its rank against its own splits. H2's summary.json "confirmatory/headline" fields are registry defaults; the kill rule makes H2 exploratory (README note).
 
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
@@ -68,7 +70,7 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
     - [x] H2 (5ea25ca → 1274e40; exploratory): 210 families, m 452, 109 discoveries
     - [!] Registered calibrations (44f30ca, 1e674bd → fd582a6 / 4fb83d7 / 1a2a445; implemented after the discovery runs, D8 R4). No response fired. Matched random sets reach p<0.05 as often as real complexes: H3a 28.1% vs 28.1%, H3b 11.6% vs 12.0%. 502/1,145 H3a discoveries beat all their matched sets. Never-expressed sets: H3a 13.5% (expected 5%), H3b 6.2%. H2 random splits: 78 rejections vs 109 real. CN segment null 6.0% (≤0.075, no response). → Context associations at complex level are mostly NOT complex-specific; complex-specific subsets and the H1 mechanistic panel carry the novelty.
     - [x] GPD sensitivity (7b754f8 → 7e33c6e): lost H3a 32/1,145, H3b 31/161, H1 0/5, H1S 2/31, H2 2/109; agrees with the reviewer
-    - [~] Independent review 2 (H1S, H2, calibrations, errata)
+    - [x] Independent review 2 (bdd083d): ACCEPT-WITH-NOTES. Recomputes are exact; GPD counts match from independent code; E1/E2/R2 are sound. Merged into main 5cd9e02.
     - [~] Screen-quality sensitivity (pre-declared, D8) + post hoc complex-specificity counts
   - [ ] Lockbox confirmations → BENCH / BRIDGE-L
 - [ ] M-final Manuscript + peer review + REPORT.md

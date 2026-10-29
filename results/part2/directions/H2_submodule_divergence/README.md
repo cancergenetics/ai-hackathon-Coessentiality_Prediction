@@ -20,3 +20,10 @@
   roughly 0 expected.
 
 **GPD sensitivity (R3).** 107 of the 109 discoveries are kept.
+
+## Standing (PI note, 2026-10-29)
+`summary.json` copies the registry entry's default fields `standing: confirmatory` and `headline: true`. Its own
+`kill_rule_verdict` field governs instead: with 0 evaluable controls (DESIGN §2.6), H2 is **exploratory and not
+headline**. The committed run output is left unedited. Random member splits of the same parents give 78.3 stage-wise
+rejections on average, against 109 real (results/part2/verify/discovery_review.md, review 2). Each H2 discovery
+is reported with its rank against its own splits.
