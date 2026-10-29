@@ -1,1 +1,2 @@
 {"analysis_id": "CTRL_PC1", "file": "data_cache/part2/lockbox_reads/CTRL_PC1__crispr.parquet", "n_genes": 8, "n_models": 338, "sha256": "8bf453c00b8dfc1ebbb3bc360add4a380d7afb45aadd38b347bcb75ab990108b", "source": "crispr", "time": "2026-10-29T06:50:05+0000"}
+{"analysis_id": "CTRL_PC2", "file": "data_cache/part2/lockbox_reads/CTRL_PC2__crispr.parquet", "n_genes": 9, "n_models": 338, "sha256": "44a698e0e797af6838437450fa7e9cefa7be27eac0495bd21fd2f610f1bc9551", "source": "crispr", "time": "2026-10-29T06:50:08+0000"}
