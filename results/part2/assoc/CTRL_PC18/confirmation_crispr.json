@@ -1,0 +1,31 @@
+{
+ "analysis_id": "CTRL_PC18",
+ "hits": [
+  {
+   "beta_A": -0.163151862,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "WGD",
+   "df_L": null,
+   "n_L": 243,
+   "n_context_L": 173,
+   "n_ref_L": 70,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "KIF18A (81930)"
+  }
+ ],
+ "n_confirmed": 0,
+ "n_hits": 1,
+ "n_testable": 1,
+ "n_tested": 1,
+ "source": "crispr"
+}

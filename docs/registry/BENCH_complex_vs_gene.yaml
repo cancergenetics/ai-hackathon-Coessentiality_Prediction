@@ -431,6 +431,9 @@ multiverse:
   scores: [eigengene, within_line_rank]
   other: [g* chosen by largest |beta| instead of |t|, pair set restricted to T1/T2 complexes]
   use: "reported, never selected"
+  not_run: [within_line_rank]
+  not_run_reason: "needs genome-wide within-line ranks in L; the registered BENCH read covers complex members only (amendment A3(b), PI ruling: the read is not widened; reported as a limitation)"
+  ci: point estimate only
 seeds:
   bootstrap: 5100
   matched_sets: 7100
@@ -447,4 +450,38 @@ frozen_inputs:
   - results/part2/lockbox/manifest.json
   - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
   - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
-status: open
+estimand_secondary_not_run:
+  - "A-L correlation of context effects vs matched random gene sets (seed 7100)"
+estimand_secondary_not_run_reason: "PI rulings A4 (G1) and A5: under-specified (correlation statistic, number of sets, matching tolerances, pair set and summary are not registered); specifying it now would add analyst choices. Erratum (A5): the matched sets are drawn from frozen-complex members, so the comparison would not need L values of non-member genes. Reported as a limitation."
+amendments:
+  - id: A3
+    timestamp_utc: 2026-10-29T02:03:27Z
+    amends_commit: 21fe1be1cdfe9d9b5b68c02c1b5a46b2b5b66a69
+    reason: >
+      PI ruling A3(b) on the lockbox dry check, before any lockbox read; no L values read. The multiverse score
+      within_line_rank needs genome-wide within-line ranks in L, but the registered BENCH read covers complex members
+      only, so the entry is internally inconsistent; the PI chose not to widen the lockbox read and within_line_rank
+      is declared NOT RUN (reported as a limitation). Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [multiverse.not_run, multiverse.not_run_reason]
+  - id: A4
+    timestamp_utc: 2026-10-29T02:42:37Z
+    amends_commit: b349e98868ec8fb5d75b9f0f10e162ade9b6efe2
+    reason: >
+      PI rulings A4 (G1, G2) on results/part2/lockbox_confirm/GAPS.md, before any lockbox read; no L values read. G1:
+      both BENCH secondary components (A-L correlation vs matched random sets; number of distinct complexes among the
+      g*) are NOT RUN: under-specified, specifying them now would add analyst choices, and the random-set comparison
+      needs L values of non-member genes, which would widen the registered member-only BENCH read (same reasoning as
+      A3(b)); reported as limitations. G2: the multiverse reports point estimates only (registry silent; descriptive);
+      the primary estimand keeps its registered CIs. Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [estimand_secondary_not_run, estimand_secondary_not_run_reason, multiverse.ci]
+  - id: A5
+    timestamp_utc: 2026-10-29T03:25:03Z
+    amends_commit: b64109790478261569cdbc74d2eda6c31154cd4c
+    reason: >
+      PI rulings A5 on the pre-read code review, before any lockbox read; no L values read. Erratum to A4 G1's reason:
+      the random-set comparison draws from frozen-complex members (calib.matched_random_sets), so it would not need L
+      values of non-member genes; under-specification remains the reason the A-L random-set correlation is NOT RUN. A4
+      is reversed for the number of distinct complexes among the g*, which is A-only and is reported. The BENCH
+      multiverse stays point estimates only. Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [estimand_secondary_not_run, estimand_secondary_not_run_reason]
+status: closed

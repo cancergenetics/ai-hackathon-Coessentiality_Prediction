@@ -1,0 +1,73 @@
+{
+ "analysis_id": "CTRL_PC9",
+ "hits": [
+  {
+   "beta_A": -0.2835782461,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "9p21_loss",
+   "df_L": null,
+   "n_L": 234,
+   "n_context_L": 35,
+   "n_ref_L": 199,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "PRMT5 (10419)"
+  },
+  {
+   "beta_A": -0.4673137018,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "9p21_loss",
+   "df_L": null,
+   "n_L": 234,
+   "n_context_L": 35,
+   "n_ref_L": 199,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "WDR77 (79084)"
+  },
+  {
+   "beta_A": -0.2371780681,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "9p21_loss",
+   "df_L": null,
+   "n_L": 234,
+   "n_context_L": 35,
+   "n_ref_L": 199,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "Z0228"
+  }
+ ],
+ "n_confirmed": 0,
+ "n_hits": 3,
+ "n_testable": 3,
+ "n_tested": 3,
+ "source": "crispr"
+}

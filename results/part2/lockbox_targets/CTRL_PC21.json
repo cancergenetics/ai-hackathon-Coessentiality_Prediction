@@ -1,0 +1,40 @@
+{
+ "analysis_id": "CTRL_PC21",
+ "contexts": [
+  "heme_vs_breast"
+ ],
+ "genes": [
+  "CCND1 (595)",
+  "CCND3 (896)",
+  "CDK4 (1019)",
+  "CDK6 (1021)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -1.3334652061988068,
+   "context": "heme_vs_breast",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "CCND3 (896) minus CCND1 (595)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -1.2745350560139799,
+   "context": "heme_vs_breast",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "CDK6 (1021) minus CDK4 (1019)"
+  }
+ ],
+ "units": {
+  "CCND3 (896) minus CCND1 (595)": [
+   "CCND3 (896)",
+   "CCND1 (595)"
+  ],
+  "CDK6 (1021) minus CDK4 (1019)": [
+   "CDK6 (1021)",
+   "CDK4 (1019)"
+  ]
+ }
+}

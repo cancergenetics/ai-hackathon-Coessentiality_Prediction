@@ -452,9 +452,11 @@ lockbox:
 multiverse:
   other: [unweighted confirmation rate, matched gene coverage subset, T1/T2 clusters only]
   use: "reported, never selected"
+  ci: bootstrap as primary
 seeds:
   permutation: 4500
   bootstrap: 5200
+  lockbox_permutation: 6600
 run_after: [every controls/H3a/H3b/H1/H2 entry closed with its lockbox ledger line]
 success_criterion: >
   Secondary endpoint: 'supports the bridge' if the size-standardised difference zavg - GLS > 0 with its 95% CI
@@ -466,4 +468,31 @@ frozen_inputs:
   - results/part2/lockbox/manifest.json
   - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
   - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
-status: open
+amendments:
+  - id: A3
+    timestamp_utc: 2026-10-29T02:03:27Z
+    amends_commit: 21fe1be1cdfe9d9b5b68c02c1b5a46b2b5b66a69
+    reason: >
+      PI ruling A3(a) on the lockbox dry check (results/part2/lockbox_confirm/BLOCKED.md), before any lockbox read; no
+      L values read. The lockbox confirmation permutation seed was not registered: lockbox_permutation is the seed of
+      the exact PatientID-blocked Freedman-Lane permutation in L (confirm.confirm_entry: seed + hit index, hits in
+      (context, unit) order). H3a 6100, H3b 6200, H1 6300, H1S 6400, H2 6500, BRIDGE-L 6600, CTRL 6700 + registry
+      index; checked against every registered or documented seed, no collision. Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [seeds.lockbox_permutation]
+  - id: A4
+    timestamp_utc: 2026-10-29T02:42:37Z
+    amends_commit: b349e98868ec8fb5d75b9f0f10e162ade9b6efe2
+    reason: >
+      PI ruling A4 (G2) on results/part2/lockbox_confirm/GAPS.md, before any lockbox read; no L values read. The
+      multiverse reports point estimates only (registry silent; descriptive); the primary estimand keeps its
+      registered CI. Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [multiverse.ci]
+  - id: A5
+    timestamp_utc: 2026-10-29T03:25:03Z
+    amends_commit: b64109790478261569cdbc74d2eda6c31154cd4c
+    reason: >
+      PI ruling A5 on the pre-read code review, before any lockbox read; no L values read. The BRIDGE-L multiverse
+      reports bootstrap CIs (the primary resampling, B 2000, seed 5200; under 1 min), reversing A4 G2 for this entry.
+      Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [multiverse.ci]
+status: closed

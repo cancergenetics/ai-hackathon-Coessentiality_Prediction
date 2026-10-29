@@ -1,0 +1,43 @@
+{
+ "analysis_id": "CTRL_PC15",
+ "contexts": [
+  "SMARCB1_LoF_or_SS18SSX"
+ ],
+ "genes": [
+  "BRD9 (65980)",
+  "CREBBP (1387)",
+  "EP300 (2033)",
+  "SIRT1 (23411)",
+  "SMARCD1 (6602)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.3504797132251235,
+   "context": "SMARCB1_LoF_or_SS18SSX",
+   "eligible": true,
+   "route": "not lockbox-testable",
+   "unit": "BRD9 (65980)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.21875368765390935,
+   "context": "SMARCB1_LoF_or_SS18SSX",
+   "eligible": true,
+   "route": "not lockbox-testable",
+   "unit": "Z0186"
+  }
+ ],
+ "units": {
+  "BRD9 (65980)": [
+   "BRD9 (65980)"
+  ],
+  "Z0186": [
+   "BRD9 (65980)",
+   "CREBBP (1387)",
+   "EP300 (2033)",
+   "SIRT1 (23411)",
+   "SMARCD1 (6602)"
+  ]
+ }
+}

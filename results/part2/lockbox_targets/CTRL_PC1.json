@@ -1,0 +1,49 @@
+{
+ "analysis_id": "CTRL_PC1",
+ "contexts": [
+  "MSI_H"
+ ],
+ "genes": [
+  "ARL10 (285598)",
+  "BPNT1 (10380)",
+  "DVL3 (1857)",
+  "GML (2765)",
+  "HDAC1 (3065)",
+  "PSD4 (23550)",
+  "RTN3 (10313)",
+  "WRN (7486)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.6051636129947833,
+   "context": "MSI_H",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "WRN (7486)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.15227226482703746,
+   "context": "MSI_H",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0157"
+  }
+ ],
+ "units": {
+  "WRN (7486)": [
+   "WRN (7486)"
+  ],
+  "Z0157": [
+   "ARL10 (285598)",
+   "BPNT1 (10380)",
+   "DVL3 (1857)",
+   "GML (2765)",
+   "HDAC1 (3065)",
+   "PSD4 (23550)",
+   "RTN3 (10313)",
+   "WRN (7486)"
+  ]
+ }
+}

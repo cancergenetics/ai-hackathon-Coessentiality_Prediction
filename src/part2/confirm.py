@@ -9,8 +9,12 @@ Order for one registry entry (enforced here and in assoc.read_lockbox):
      are in L) -> confirmed iff same sign and one-sided p < 0.05 and >= 5 context and >= 5 reference L models;
      otherwise 'not lockbox-testable' (rare-context route computed in A by ``rare_route``). L effects with 95% CIs
      are reported for every hit. Results -> results/part2/assoc/<id>/confirmation.json.
-  3. ``close_entry``: status open -> closed, committed (only after the entry's ledger line exists).
+  3. ``close_entry``: status open -> closed, committed (only after the entry's ledger line exists and, for a read
+     with targets, after its confirmation output is committed -- an entry whose read crashed cannot be closed by hand).
 BENCH / BRIDGE-L reads are refused by read_lockbox until every confirmatory entry is closed.
+Review MUST-1/2 (results/part2/verify/lockbox_code_review.md): the target list records each hit's eligibility and
+route; confirm_entry refuses hits that differ from the committed target list; persist=True stores the read matrix
+(assoc.read_lockbox) and resume=True re-uses it (assoc.resume_lockbox_read, never the loader).
 """
 from __future__ import annotations
 
@@ -39,9 +43,31 @@ def target_path(proj, analysis_id: str) -> Path:
     return proj.results_dir / "lockbox_targets" / f"{analysis_id}.json"
 
 
+HIT_FIELDS = ("eligible", "route", "label_final", "headline_eligible", "event", "axis")
+
+
+def _jsonable(v):
+    if isinstance(v, (bool, np.bool_)):
+        return bool(v)
+    if isinstance(v, (np.integer,)):
+        return int(v)
+    if isinstance(v, (float, np.floating)):
+        return None if not np.isfinite(v) else float(v)
+    return None if v is None else str(v)
+
+
+def hit_keys(hits) -> list:
+    """(context, unit, beta_A, alternative) of each hit, in order: the hypothesis identity checked at the read."""
+    if hits is None or not len(hits):
+        return []
+    return [(str(r.context), str(r.unit), float(r.beta), str(r.alternative)) for r in hits.itertuples(index=False)]
+
+
 def write_target_list(proj, analysis_id: str, genes, hits: pd.DataFrame | None = None, units: dict | None = None,
                       contexts=None, commit: bool = True, msg_suffix: str = "") -> Path:
-    """Write (and commit) the target list. Refuses to overwrite an existing list (one list per entry)."""
+    """Write (and commit) the target list. Refuses to overwrite an existing list (one list per entry). Each hit
+    records (context, unit, beta_A, alternative) and, when the hits table carries them, its eligibility, route,
+    E2 label and headline flag (HIT_FIELDS)."""
     p = target_path(proj, analysis_id)
     if p.exists():
         raise RegistryError(f"target list {proj.rel(p)} already exists (one target list per entry)")
@@ -49,8 +75,10 @@ def write_target_list(proj, analysis_id: str, genes, hits: pd.DataFrame | None =
     rec = dict(analysis_id=analysis_id, genes=genes, units={k: list(v) for k, v in (units or {}).items()},
                contexts=sorted(set(contexts or [])))
     if hits is not None and len(hits):
-        rec["hits"] = [dict(context=str(r.context), unit=str(r.unit), beta_A=float(r.beta),
-                            alternative=str(r.alternative)) for r in hits.itertuples(index=False)]
+        extra = [f for f in HIT_FIELDS if f in hits.columns]
+        rec["hits"] = [dict(context=str(r["context"]), unit=str(r["unit"]), beta_A=float(r["beta"]),
+                            alternative=str(r["alternative"]), **{f: _jsonable(r[f]) for f in extra})
+                       for r in hits.to_dict("records")]
     if not genes:
         rec["zero_targets"] = True
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -111,13 +139,30 @@ def rare_route(y_A, ctx_A, cov_A, groups_A, beta_A: float, y_D2_A: pd.Series | N
 
 def confirm_entry(analysis_id: str, hits: pd.DataFrame, score_L, contexts_L: pd.DataFrame, covariates_L,
                   *, proj=None, blocks=None, strata=None, lineage_contexts=(), n_perm: int = 10000,
-                  seed: int = 0, source: str = "crispr", write: bool = True) -> pd.DataFrame:
+                  seed: int = 0, source: str = "crispr", write: bool = True, persist: bool = False,
+                  resume: bool = False) -> pd.DataFrame:
     """Read the lockbox for the committed target list and test every hit.
     hits: columns context, unit, beta (A). score_L(E_L, context, unit) -> Series over L models (same score, removals,
-    A-fitted parameters). contexts_L / covariates_L: L labels (DataFrame or {context: DataFrame})."""
+    A-fitted parameters). contexts_L / covariates_L: L labels (DataFrame or {context: DataFrame}). covariates_L may
+    also be a callable models -> {context: DataFrame}: the L covariate design is then assembled over the rows actually
+    read (R6: the registered analysis fits within L with the registered covariates; an all-model assembly subset to L
+    can leave a single-model lineage as its own group, leverage 1)."""
     proj = proj or assoc.Project()
     tp = target_path(proj, analysis_id)
-    E_L = assoc.read_lockbox(analysis_id, tp, proj=proj, source=source)
+    try:
+        registry.committed_blob(proj.root, tp)
+    except RegistryError as e:
+        raise assoc.FreezeError(f"target list must be committed before a lockbox read: {e}") from e
+    want = [(h["context"], h["unit"], float(h["beta_A"]), h["alternative"])
+            for h in json.loads(tp.read_text()).get("hits", [])]
+    if hit_keys(hits) != want:
+        raise RegistryError(f"{analysis_id}: the hits differ from the committed target list (nothing read)")
+    if resume:
+        E_L = assoc.resume_lockbox_read(analysis_id, proj=proj, source=source)
+    else:
+        E_L = assoc.read_lockbox(analysis_id, tp, proj=proj, source=source, persist=persist)
+    if callable(covariates_L):
+        covariates_L = covariates_L(E_L.index)
     rows = []
     for i, r in enumerate(hits.itertuples(index=False)):
         if E_L.empty:
@@ -140,11 +185,23 @@ def confirm_entry(analysis_id: str, hits: pd.DataFrame, score_L, contexts_L: pd.
     return res
 
 
-def close_entry(proj, analysis_id: str) -> None:
-    """status: open -> closed in a commit that changes nothing else; needs the entry's committed ledger line."""
+def close_entry(proj, analysis_id: str, outputs=None) -> None:
+    """status: open -> closed in a commit that changes nothing else; needs the entry's committed ledger line and, when
+    that read had targets, its committed confirmation output (default results/part2/assoc/<id>/confirmation_crispr.json;
+    the driver names its BENCH / BRIDGE-L outputs). An entry whose read crashed before its output was committed can
+    therefore not be closed by hand (review S6 / MUST-2): it is finished with the resume mode or by a PI ruling."""
     led = [json.loads(l) for l in assoc._committed_text(proj, proj.ledger).splitlines() if l.strip()]
-    if not any(r["analysis_id"] == analysis_id for r in led):
+    mine = [r for r in led if r["analysis_id"] == analysis_id]
+    if not mine:
         raise RegistryError(f"{analysis_id} has no committed lockbox ledger line; read (or zero-target close) first")
+    if any(int(r.get("n_genes", 0)) > 0 for r in mine):
+        outs = outputs or [proj.results_dir / "assoc" / analysis_id / "confirmation_crispr.json"]
+        for o in outs:
+            try:
+                registry.committed_blob(proj.root, o)
+            except RegistryError as e:
+                raise RegistryError(f"{analysis_id}: confirmation output {proj.rel(o)} is not committed; an entry "
+                                    f"read without committed output cannot be closed (resume or PI ruling): {e}") from e
     p = proj.registry_dir / f"{analysis_id}.yaml"
     registry.committed_blob(proj.root, p)
     old = p.read_text()

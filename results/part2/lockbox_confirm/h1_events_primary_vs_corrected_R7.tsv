@@ -1,0 +1,25 @@
+event	axis	class_engine	label_final	eligible	route	beta_A	primary_beta_L	primary_ci95	primary_p_L	primary_call	corrected_beta_L	corrected_ci95	corrected_p_L	corrected_call	affected	defect_sensitive	promotable_primary	rare_route_pass
+Z0174|APC	N	NEUTRAL	NEUTRAL	False	lockbox	0.00312661	-0.00136106	[-0.106187, 0.103465]	0.846215	(not eligible)	-0.0132996	[-0.1214006453, 0.09480142733]	0.859614	(not eligible)	True	False	False	
+Z0109|ARID1A	N	NEUTRAL	NEUTRAL	False	lockbox	-0.0342352	-0.0495436	[-0.155428, 0.0563408]	0.142386	(not eligible)	-0.0495436	[-0.155428, 0.0563408]	0.142386	(not eligible)	False	False	False	
+Z0109|ARID1A	P	PARALOG COMPENSATION	PARALOG COMPENSATION	True	lockbox	-0.374329	-0.294046	[-0.593312, 0.00522094]	0.00619938	confirmed	-0.294046	[-0.593312, 0.00522094]	0.00619938	confirmed	False	False	True	
+Z0171|BAP1	N	NEUTRAL	NEUTRAL	False	lockbox	-0.011889	-0.00481039	[-2.33933, 2.32971]	0.513549	(not eligible)	-0.00488299	[-2.340811452, 2.331045469]	0.514649	(not eligible)	True	False	False	
+Z0205|BRCA1	N	INCONCLUSIVE	INCONCLUSIVE	False	not lockbox-testable	0.035408	0.0194874	[-0.432822, 0.471797]	0.915008	(not eligible)	0.0130999	[-0.4393061796, 0.4655060662]	0.909909	(not eligible)	True	False	False	
+Z0186|EP300	P	PARALOG COMPENSATION	PARALOG COMPENSATION	True	not lockbox-testable	-1.09326	-0.374026	[-1.82003, 1.07198]	0.134687	not lockbox-testable: rare-context route passed	-0.374005	[-1.817429537, 1.069419721]	0.133387	not lockbox-testable: rare-context route passed	True	False	False	True
+Z0286|FOCAD	N	RESIDUAL SENSITISATION	RESIDUAL SENSITISATION	True	lockbox	0.139649		[nan, nan]		NOT EVALUABLE (driver defect)	0.129229	[0.04586448366, 0.2125930405]	0.00049995	confirmed	True	True	False	
+Z0171|KDM6A	N	NEUTRAL	NEUTRAL	False	lockbox	-0.0394462	-0.0426512	[-0.154949, 0.0696471]	0.181782	(not eligible)	-0.0426861	[-0.1548280321, 0.06945592374]	0.181382	(not eligible)	True	False	False	
+Z0124|KEAP1	N	INCONCLUSIVE	INCONCLUSIVE	False	lockbox	0.0342946	-0.0434411	[-0.230361, 0.143479]	0.730227	(not eligible)	-0.0436967	[-0.2303496244, 0.1429562584]	0.730427	(not eligible)	True	False	False	
+Z0171|KMT2D	N	NEUTRAL	NEUTRAL	False	lockbox	0.0178472	-0.0164135	[-0.132077, 0.0992503]	0.650735	(not eligible)	-0.0164135	[-0.132077, 0.0992503]	0.650735	(not eligible)	False	False	False	
+Z0171|KMT2D	P	INCONCLUSIVE	INCONCLUSIVE	False	lockbox	-0.240994	-0.027716	[-0.265898, 0.210466]	0.367363	(not eligible)	-0.027716	[-0.265898, 0.210466]	0.367363	(not eligible)	False	False	False	
+Z0014|MED12	N	INCONCLUSIVE	INCONCLUSIVE	False	lockbox	0.0672558	-0.047068	[-0.197659, 0.103523]	0.866713	(not eligible)	-0.0728338	[-0.2051179117, 0.05945027723]	0.89821	(not eligible)	True	False	False	
+Z0052|NF1	N	NEUTRAL	NEUTRAL	False	lockbox	0.0214881	-0.0298519	[-0.168674, 0.10897]	0.591941	(not eligible)	-0.0257263	[-0.1581408782, 0.1066882323]	0.580542	(not eligible)	True	False	False	
+Z0333|NF2	N	NEUTRAL	NEUTRAL	False	lockbox	0.0311118	0.00564292	[-0.129981, 0.141266]	0.445855	(not eligible)	0.0049764	[-0.1313782674, 0.1413310682]	0.448155	(not eligible)	True	False	False	
+Z0201|PBRM1	N	INCONCLUSIVE (null unavailable)	INCONCLUSIVE (null unavailable)	False	lockbox	-0.041513	0.0188423	[-0.192665, 0.230349]	0.337566	(not eligible)	0.0195246	[-0.1586854129, 0.1977345362]	0.344666	(not eligible)	True	False	False	
+Z0041|PLAA	N	INCONCLUSIVE	INCONCLUSIVE	False	lockbox	0.0143808		[nan, nan]		(not eligible)		[nan, nan]		(not eligible)	False	False	False	
+Z0130|PTEN	N	COLLAPSE	DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)	True	lockbox	-0.0567466	-0.0455753	[-0.134523, 0.0433726]	0.153759	not confirmed	-0.0457654	[-0.134810124, 0.0432793499]	0.153024	not confirmed	True	False	False	
+Z0200|RB1	N	NEUTRAL	NEUTRAL	False	lockbox	0.0398979	-0.0236761	[-0.126888, 0.079536]	0.706129	(not eligible)	-0.0236761	[-0.126888, 0.079536]	0.706129	(not eligible)	False	False	False	
+Z0109|SMARCA4	N	INCONCLUSIVE	INCONCLUSIVE	False	lockbox	-0.0574881	-0.0396411	[-0.218534, 0.139252]	0.29527	(not eligible)	-0.039551	[-0.2183156815, 0.1392136409]	0.29627	(not eligible)	True	False	False	
+Z0109|SMARCB1	N	NEUTRAL	NEUTRAL	False	lockbox	0.0182663	-0.129324	[-0.338271, 0.0796236]	0.926807	(not eligible)	-0.129308	[-0.3383729571, 0.07975763949]	0.926907	(not eligible)	True	False	False	
+Z0278|STAG2	N	NEUTRAL	NEUTRAL	False	lockbox	-0.0218031	-0.0217136	[-0.2219, 0.178472]	0.381362	(not eligible)	-0.0222052	[-0.221719416, 0.1773089253]	0.380262	(not eligible)	True	False	False	
+Z0292|STK11	N	NEUTRAL	NEUTRAL	False	lockbox	-0.0248867	-0.00695641	[-0.0985861, 0.0846733]	0.423858	(not eligible)	-0.0147805	[-0.1102278951, 0.08066698523]	0.412259	(not eligible)	True	False	False	
+Z0158|TP53	N	RESIDUAL SENSITISATION	DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)	True	lockbox	0.056413	0.104001	[0.0635863, 0.144415]	7.15478e-07	confirmed	0.103646	[0.06365011706, 0.1436423894]	6.01166e-07	confirmed	True	False	False	
+Z0145|VHL	N	INCONCLUSIVE	INCONCLUSIVE	False	lockbox	0.107961	-0.339195	[-0.953248, 0.274857]	0.986401	(not eligible)	-0.339129	[-0.9525441108, 0.2742867435]	0.986701	(not eligible)	True	False	False	

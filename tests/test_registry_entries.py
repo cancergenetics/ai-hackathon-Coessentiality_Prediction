@@ -55,7 +55,9 @@ LINEAGE_CONTEXTS = {"melanoma", "heme", "heme_vs_breast"}
 
 @pytest.fixture(scope="module")
 def entries():
-    return registry.load_all(REG)
+    # After the single lockbox read every entry is closed (confirm.close_entry: a commit that changes only `status`;
+    # test_closed_after_the_single_read). The registry-content tests below check the entries as frozen before the read.
+    return {k: dict(e, status="open") for k, e in registry.load_all(REG).items()}
 
 
 def primary(e):
@@ -75,7 +77,18 @@ def covs_of(e, c):
 # ------------------------------------------------------------------ whole registry
 def test_expected_entries(entries):
     assert set(entries) == {f"CTRL_{p}" for p in PCS} | set(DIRECTION_IDS)
-    assert all(e["status"] == "open" for e in entries.values())
+    assert all(e["status"] == "open" for e in entries.values())        # as frozen before the read (see fixture)
+
+
+def test_closed_after_the_single_read():
+    """Every entry is closed iff it has a committed lockbox ledger line; the close commit changed only `status`."""
+    import json
+    raw = registry.load_all(REG)
+    led = ROOT / "results" / "part2" / "lockbox_ledger.jsonl"
+    read = {json.loads(l)["analysis_id"] for l in led.read_text().splitlines() if l.strip()} if led.exists() else set()
+    assert {k for k, e in raw.items() if e["status"] == "closed"} == read
+    for k in read:
+        assert registry.validate(raw[k], k) == [], k
 
 
 def test_files_are_ascii_and_parse_strictly():
@@ -240,7 +253,9 @@ def test_h1_and_h1s_event_split(entries, eid, loss_class, units_file):
         assert c["lockbox_testable"] == bool(c["n_L"] >= 5 and c["ref_L"] >= 5), c["id"]
     units = (FZX / units_file).read_text().split()
     assert e["complex_set_hash"] == registry.set_hash(units) and e["family_m"]["value"] == len(units)
-    assert [a["id"] for a in e["amendments"]] == ["A1", "A2", "E1"]           # E1: score_rule erratum (R1)
+    # E1: score_rule erratum (R1); A3: lockbox permutation seed (pre-read)
+    assert [a["id"] for a in e["amendments"]] == ["A1", "A2", "E1", "A3"] + \
+        (["A4", "A5"] if loss_class == "silencing" else [])
 
 
 def test_h1s_is_exploratory_copy_of_h1(entries):
@@ -251,6 +266,10 @@ def test_h1s_is_exploratory_copy_of_h1(entries):
     for k in ("score", "score_rule", "covariates", "covariate_rule", "statistic", "classes", "matched_null",
               "fdr_family", "paralog_definition", "units", "seeds", "multiverse", "frozen_inputs",
               "implementation_note"):
+        if k == "seeds":                       # A3: each entry has its own lockbox permutation seed (6300 / 6400)
+            assert {**s[k], "lockbox_permutation": 0} == {**h[k], "lockbox_permutation": 0}
+            assert (h[k]["lockbox_permutation"], s[k]["lockbox_permutation"]) == (6300, 6400)
+            continue
         assert s[k] == h[k], k
     assert s["family_m"]["formula"] == h["family_m"]["formula"]
     assert "never enter any kill tally or main claim" in s["kill_rule"]["rule"]
@@ -303,6 +322,11 @@ def test_every_kill_map_control_is_registered(entries):
 
 
 # ------------------------------------------------------------------ schema extension
+def _frozen_yaml(stem: str) -> dict:
+    """An entry as frozen before the lockbox read (the post-read close changes only `status`)."""
+    return dict(registry.load_yaml((REG / f"{stem}.yaml").read_text()), status="open")
+
+
 def _pending_version(e: dict, fields: dict) -> dict:
     """The FZ-R form of a filled entry: the given fields set back to their placeholders, listed in `pending`."""
     old = copy.deepcopy(e)
@@ -325,7 +349,7 @@ H3A_PENDING = {"complex_set_hash": "FZ-C", "family_m.n_units": "FZ-C", "family_m
 
 def _base():
     """The H3a entry in its FZ-R (pending) form, rebuilt from the filled file."""
-    return _pending_version(registry.load_yaml((REG / "H3a_lineage_atlas.yaml").read_text()), H3A_PENDING)
+    return _pending_version(_frozen_yaml("H3a_lineage_atlas"), H3A_PENDING)
 
 
 def test_pending_must_match_placeholders():
@@ -339,7 +363,7 @@ def test_pending_must_match_placeholders():
     e4 = copy.deepcopy(e)
     e4["status"] = "closed"
     assert any("closed" in x for x in registry.validate(e4, e4["id"]))
-    entries_h1 = _pending_version(registry.load_yaml((REG / "H1_within_complex_GI.yaml").read_text()),
+    entries_h1 = _pending_version(_frozen_yaml("H1_within_complex_GI"),
                                   {"context_family.contexts": "FZ-X", "complex_set_hash": "FZ-X",
                                    "family_m.value": "FZ-X", "frozen_inputs[2]": "FZ-C", "frozen_inputs[3]": "FZ-X"})
     assert registry.validate(entries_h1, entries_h1["id"]) == []
@@ -366,7 +390,7 @@ def test_fill_only_changes():
     bad2["context_family"]["contexts"] = bad2["context_family"]["contexts"][:-1]
     assert registry.fill_only_changes(old, bad2)
     # H1: the context list placeholder may be replaced by a list
-    h1 = _pending_version(registry.load_yaml((REG / "H1_within_complex_GI.yaml").read_text()),
+    h1 = _pending_version(_frozen_yaml("H1_within_complex_GI"),
                           {"context_family.contexts": "FZ-X", "complex_set_hash": "FZ-X", "family_m.value": "FZ-X",
                            "frozen_inputs[2]": "FZ-C", "frozen_inputs[3]": "FZ-X"})
     assert registry.validate(h1, h1["id"]) == []

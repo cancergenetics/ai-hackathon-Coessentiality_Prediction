@@ -1,0 +1,2 @@
+context	unit	beta	alternative	level	eligible	lockbox_testable	beta_L	se_L	df_L	n_L	n_context_L	p_L_hc3	p_L	p_L_perm	n_ref_L	testable_L	same_sign	confirmed	ci90_L_lo	ci90_L_hi	ci95_L_lo	ci95_L_hi	loso_same_sign	loso_folds	lomo_same_sign	demeter2_same_sign	rare_route_pass	rare_route_note	route	confirmed_final	promotable	status
+LoF:SMARCA4	SMARCA2 (6595)	-0.509781	less	G	True	True	-0.465945	0.233861	14.0971	301	10	0.0330295	0.00369963	0.00369963	291	True	True	True	-0.877647	-0.0542433	-0.967204	0.0353135							lockbox	True	True	confirmed

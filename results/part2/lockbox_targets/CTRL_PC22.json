@@ -1,0 +1,24 @@
+{
+ "analysis_id": "CTRL_PC22",
+ "contexts": [
+  "SMARCB1_LoF_or_SS18SSX"
+ ],
+ "genes": [
+  "BRD9 (65980)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.3485066537475887,
+   "context": "SMARCB1_LoF_or_SS18SSX",
+   "eligible": true,
+   "route": "not lockbox-testable",
+   "unit": "BRD9 (65980)"
+  }
+ ],
+ "units": {
+  "BRD9 (65980)": [
+   "BRD9 (65980)"
+  ]
+ }
+}

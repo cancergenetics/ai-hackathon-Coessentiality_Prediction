@@ -1,0 +1,2631 @@
+map	source	context	unit	confirmed	size	tier
+zavg	H3a_lineage_atlas	lineage:Bladder/Urinary Tract	Z0018	True	21	T1
+zavg	H3a_lineage_atlas	lineage:Bladder/Urinary Tract	Z0083	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Bladder/Urinary Tract	Z0141	True	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bladder/Urinary Tract	Z0223	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bladder/Urinary Tract	Z0253	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Bladder/Urinary Tract	Z0291	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0001	True	29	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0007	False	26	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0008	False	26	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0009	True	25	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0014	False	23	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0017	False	21	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0021	False	20	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0022	False	19	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0023	True	19	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0030	False	18	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0032	False	18	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0033	False	18	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0046	False	16	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0047	False	16	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0048	False	16	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0055	False	16	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0056	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0062	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0063	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0070	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0071	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0074	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0075	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0077	True	13	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0082	True	13	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0083	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0086	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0089	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0092	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0095	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0096	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0105	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0107	False	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0113	True	11	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0115	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0127	False	10	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0130	True	10	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0138	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0147	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0149	False	9	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0157	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0159	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0160	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0163	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0164	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0185	False	5	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0214	False	4	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0215	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0219	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0226	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0232	True	3	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0236	True	3	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0242	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0244	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0249	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0254	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0296	False	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0298	True	5	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0303	True	5	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0312	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0313	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0316	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0328	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0334	True	10	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0335	False	8	T1
+zavg	H3a_lineage_atlas	lineage:Bone	Z0339	True	5	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0344	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bone	Z0351	True	6	T2
+zavg	H3a_lineage_atlas	lineage:Bone	Z0363	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0014	False	23	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0020	False	20	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0021	True	20	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0026	True	19	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0028	False	18	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0030	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0060	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0067	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0069	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0071	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0072	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0074	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0076	False	13	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0080	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0082	False	13	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0085	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0092	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0096	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0100	False	12	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0102	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0107	True	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0110	True	11	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0112	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0119	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0127	True	10	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0130	True	10	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0134	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0135	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0145	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0147	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0151	False	8	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0155	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0156	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0158	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0160	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0163	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0164	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0174	True	6	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0178	True	6	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0192	True	5	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0218	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0219	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0244	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0251	False	16	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0254	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0255	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0260	False	9	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0267	False	5	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0273	False	21	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0274	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0275	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0280	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0283	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0290	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0293	True	7	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0303	True	5	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0304	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0315	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0319	False	10	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0351	False	6	T2
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0363	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Bowel	Z0366	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0002	False	27	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0003	False	27	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0004	True	27	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0009	True	25	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0028	False	18	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0030	False	18	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0032	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0035	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0041	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0042	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0044	False	16	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0055	False	16	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0058	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0074	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0082	True	13	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0086	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0092	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0109	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0112	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0115	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0122	True	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0130	False	10	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0132	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0137	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0139	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0146	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0149	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0152	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0153	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0184	False	6	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0194	False	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0200	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0219	False	4	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0232	True	3	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0240	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0249	False	18	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0253	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0254	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0258	False	10	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0262	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0264	True	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0271	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0284	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0291	True	8	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0295	False	6	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0314	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0316	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0327	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0329	True	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0332	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0333	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Breast	Z0341	False	4	T3-nc
+zavg	H3a_lineage_atlas	lineage:Breast	Z0345	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Breast	Z0348	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Breast	Z0353	True	5	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0001	False	29	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0003	False	27	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0009	True	25	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0010	False	25	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0012	False	24	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0014	True	23	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0019	False	20	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0024	True	19	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0025	True	19	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0030	True	18	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0034	False	17	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0035	False	17	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0040	True	17	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0042	False	17	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0044	False	16	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0047	False	16	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0050	True	16	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0052	True	16	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0057	True	15	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0059	True	15	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0062	True	15	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0063	True	14	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0064	False	14	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0065	True	14	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0067	True	14	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0070	True	14	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0071	True	14	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0074	True	14	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0075	False	14	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0081	True	13	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0082	True	13	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0083	False	13	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0086	False	12	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0092	True	12	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0093	False	12	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0095	True	12	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0104	False	12	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0110	True	11	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0112	True	11	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0114	True	11	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0115	True	11	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0116	False	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0120	True	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0121	True	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0128	False	10	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0130	True	10	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0131	True	10	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0134	True	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0140	False	9	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0142	False	9	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0145	False	9	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0146	True	9	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0149	True	9	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0152	True	8	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0153	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0156	False	8	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0159	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0164	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0167	False	8	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0184	True	6	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0188	True	5	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0189	False	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0198	False	4	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0200	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0201	False	4	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0204	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0206	False	4	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0211	False	4	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0218	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0226	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0227	False	4	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0229	True	4	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0232	True	3	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0233	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0236	False	3	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0239	False	3	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0247	True	3	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0249	True	18	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0250	False	17	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0253	True	12	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0254	True	12	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0255	True	12	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0260	True	9	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0262	True	8	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0263	True	7	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0266	False	6	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0269	True	4	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0271	True	4	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0280	False	13	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0284	True	11	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0288	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0291	False	8	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0292	False	7	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0295	False	6	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0300	True	5	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0308	True	3	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0318	True	10	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0319	True	10	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0323	True	8	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0324	True	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0327	True	4	T1
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0328	True	4	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0329	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0337	True	7	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0339	True	5	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0352	True	6	T2
+zavg	H3a_lineage_atlas	lineage:CNS/Brain	Z0358	False	4	T2
+zavg	H3a_lineage_atlas	lineage:Cervix	Z0037	False	17	T3-neg
+zavg	H3a_lineage_atlas	lineage:Cervix	Z0322	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Cervix	Z0324	False	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Cervix	Z0328	False	4	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0026	False	19	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0037	False	17	T3-neg
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0041	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0051	False	16	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0052	True	16	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0060	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0070	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0071	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0080	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0092	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0093	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0096	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0113	True	11	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0136	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0147	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0163	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0175	False	6	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0188	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0204	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0207	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0269	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0277	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0279	False	14	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0313	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0315	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0321	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0328	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0337	False	7	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0339	False	5	T2
+zavg	H3a_lineage_atlas	lineage:Esophagus/Stomach	Z0357	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0002	False	27	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0004	False	27	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0007	True	26	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0008	False	26	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0009	True	25	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0016	False	22	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0018	False	21	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0020	True	20	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0028	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0029	False	18	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0030	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0032	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0033	False	18	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0035	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0043	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0044	True	16	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0051	True	16	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0059	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0060	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0061	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0062	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0065	False	14	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0067	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0073	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0074	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0077	True	13	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0078	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0080	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0081	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0084	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0086	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0089	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0092	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0093	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0097	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0098	False	12	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0101	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0103	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0104	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0105	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0107	False	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0110	False	11	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0113	True	11	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0118	False	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0120	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0125	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0127	False	10	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0129	True	10	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0130	False	10	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0132	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0133	False	10	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0134	True	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0139	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0140	False	9	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0148	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0153	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0158	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0160	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0161	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0166	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0171	True	7	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0173	True	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0174	False	6	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0177	False	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0178	True	6	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0183	False	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0186	True	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0189	False	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0193	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0195	True	5	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0196	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0198	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0201	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0203	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0211	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0215	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0217	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0219	False	4	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0222	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0224	True	4	T3-nc
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0226	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0228	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0235	True	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0236	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0239	True	3	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0240	True	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0243	True	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0244	True	3	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0249	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0250	True	17	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0253	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0257	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0258	False	10	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0259	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0260	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0264	True	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0271	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0272	True	3	T3-nc
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0273	True	21	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0276	False	16	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0281	True	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0284	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0285	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0288	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0290	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0293	True	7	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0304	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0306	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0308	False	3	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0314	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0316	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0318	True	10	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0320	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0321	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0322	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0324	True	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0328	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0332	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0334	True	10	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0338	False	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0342	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0343	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0352	False	6	T2
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0355	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0363	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Head and Neck	Z0367	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0001	True	29	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0008	False	26	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0010	True	25	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0014	False	23	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0015	False	22	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0016	True	22	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0018	False	21	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0033	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0035	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0043	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0064	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0068	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0077	True	13	T2
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0095	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0102	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0109	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0112	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0114	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0132	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0138	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0145	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0158	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0166	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0171	True	7	T2
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0185	False	5	T2
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0215	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0222	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0229	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0242	True	3	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0244	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0259	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0277	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0316	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0323	True	8	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0344	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0347	False	3	T3-nc
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0362	True	3	T1
+zavg	H3a_lineage_atlas	lineage:Kidney	Z0364	True	3	T1
+zavg	H3a_lineage_atlas	lineage:Liver	Z0029	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Liver	Z0047	False	16	T1
+zavg	H3a_lineage_atlas	lineage:Liver	Z0365	True	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0001	True	29	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0004	False	27	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0015	False	22	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0017	False	21	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0018	True	21	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0026	True	19	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0030	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Lung	Z0035	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0042	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0056	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0074	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0082	False	13	T2
+zavg	H3a_lineage_atlas	lineage:Lung	Z0083	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0087	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0096	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Lung	Z0100	False	12	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0105	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0111	False	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0117	False	11	T2
+zavg	H3a_lineage_atlas	lineage:Lung	Z0124	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0134	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0136	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0150	True	8	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0153	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0158	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0162	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0166	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0174	True	6	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0188	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0193	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0199	False	4	T3-nc
+zavg	H3a_lineage_atlas	lineage:Lung	Z0208	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0221	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0232	False	3	T2
+zavg	H3a_lineage_atlas	lineage:Lung	Z0236	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0241	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0247	False	3	T2
+zavg	H3a_lineage_atlas	lineage:Lung	Z0253	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0256	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0259	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0261	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0280	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0294	False	7	T1
+zavg	H3a_lineage_atlas	lineage:Lung	Z0310	False	14	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0328	False	4	T2
+zavg	H3a_lineage_atlas	lineage:Lung	Z0330	False	12	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0338	False	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lung	Z0367	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0001	True	29	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0002	True	27	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0004	True	27	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0006	True	27	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0007	False	26	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0009	True	25	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0011	True	24	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0012	True	24	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0013	False	23	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0014	True	23	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0016	True	22	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0018	True	21	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0020	True	20	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0022	False	19	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0023	True	19	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0026	False	19	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0029	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0030	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0032	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0035	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0036	True	17	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0037	True	17	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0040	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0041	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0042	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0047	False	16	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0049	True	16	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0051	True	16	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0052	False	16	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0057	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0058	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0059	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0061	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0062	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0064	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0065	False	14	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0066	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0067	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0068	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0069	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0072	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0074	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0078	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0079	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0082	False	13	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0083	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0084	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0085	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0086	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0087	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0089	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0091	True	12	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0092	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0094	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0096	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0097	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0098	True	12	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0099	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0101	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0103	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0106	True	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0107	True	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0109	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0110	True	11	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0112	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0113	True	11	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0114	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0115	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0119	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0121	True	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0122	True	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0126	True	10	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0127	True	10	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0128	True	10	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0129	False	10	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0130	True	10	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0141	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0143	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0146	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0147	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0149	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0151	False	8	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0152	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0153	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0154	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0159	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0161	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0162	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0164	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0172	False	7	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0173	True	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0175	True	6	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0184	True	6	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0186	True	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0189	False	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0190	True	5	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0191	True	5	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0193	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0195	False	5	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0196	True	5	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0198	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0200	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0202	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0204	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0205	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0206	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0209	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0216	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0217	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0218	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0219	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0220	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0221	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0222	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0224	True	4	T3-nc
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0225	False	4	T3-nc
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0226	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0227	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0229	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0232	False	3	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0236	True	3	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0242	True	3	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0244	True	3	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0247	False	3	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0249	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0250	True	17	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0251	True	16	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0253	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0254	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0258	True	10	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0259	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0260	False	9	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0262	True	8	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0263	True	7	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0264	True	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0266	False	6	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0268	True	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0269	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0271	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0273	False	21	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0276	True	16	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0278	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0280	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0282	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0283	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0284	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0285	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0288	True	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0289	False	8	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0291	True	8	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0292	True	7	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0293	False	7	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0294	True	7	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0295	True	6	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0300	True	5	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0301	True	5	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0304	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0305	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0308	True	3	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0311	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0313	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0314	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0315	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0317	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0319	True	10	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0320	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0321	True	8	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0323	True	8	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0324	True	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0325	False	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0326	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0327	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0328	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0329	True	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0331	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0332	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0333	True	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0334	True	10	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0336	True	8	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0337	True	7	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0339	True	5	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0343	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0344	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0345	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0347	False	3	T3-nc
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0348	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0349	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0351	False	6	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0352	True	6	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0356	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0357	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0360	True	3	T2
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0362	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0363	True	5	T1
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0365	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0366	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Lymphoid	Z0367	True	3	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0001	True	29	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0009	True	25	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0014	True	23	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0016	True	22	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0020	True	20	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0024	True	19	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0030	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0032	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0033	False	18	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0035	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0037	True	17	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0040	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0041	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0042	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0050	False	16	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0055	False	16	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0059	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0067	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0074	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0075	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0083	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0087	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0088	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0092	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0099	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0101	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0103	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0108	False	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0109	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0113	True	11	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0122	True	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0130	False	10	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0136	True	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0140	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0141	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0142	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0146	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0153	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0161	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0169	False	7	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0184	True	6	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0186	False	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0188	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0190	True	5	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0200	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0201	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0203	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0206	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0217	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0219	False	4	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0220	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0232	False	3	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0233	True	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0241	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0242	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0249	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0254	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0255	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0256	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0259	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0262	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0263	True	7	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0271	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0273	True	21	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0278	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0280	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0285	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0291	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0292	True	7	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0300	False	5	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0305	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0307	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0308	True	3	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0309	True	15	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0310	True	14	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0313	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0320	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0328	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0329	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0337	False	7	T2
+zavg	H3a_lineage_atlas	lineage:Myeloid	Z0343	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Ovary/Fallopian Tube	Z0001	False	29	T1
+zavg	H3a_lineage_atlas	lineage:Ovary/Fallopian Tube	Z0035	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Ovary/Fallopian Tube	Z0104	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Ovary/Fallopian Tube	Z0137	True	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Ovary/Fallopian Tube	Z0171	True	7	T2
+zavg	H3a_lineage_atlas	lineage:Ovary/Fallopian Tube	Z0178	False	6	T2
+zavg	H3a_lineage_atlas	lineage:Ovary/Fallopian Tube	Z0316	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Ovary/Fallopian Tube	Z0358	False	4	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0002	False	27	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0010	True	25	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0014	False	23	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0016	True	22	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0024	False	19	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0026	True	19	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0041	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0044	False	16	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0053	True	16	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0054	False	16	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0059	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0061	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0063	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0073	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0076	False	13	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0080	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0082	True	13	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0086	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0087	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0094	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0102	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0132	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0134	True	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0143	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0147	False	9	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0159	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0163	True	8	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0186	True	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0193	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0197	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0198	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0222	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0240	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0275	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0281	False	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0283	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0290	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0291	True	8	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0314	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0316	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0317	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0328	False	4	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0332	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0334	True	10	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0335	False	8	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0339	True	5	T2
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0353	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Pancreas	Z0357	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0001	True	29	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0004	True	27	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0005	True	27	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0011	True	24	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0015	True	22	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0019	True	20	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0022	False	19	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0028	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0030	False	18	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0031	True	18	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0037	True	17	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0040	True	17	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0041	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0050	False	16	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0053	True	16	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0055	True	16	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0061	False	15	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0062	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0063	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0065	True	14	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0066	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0074	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0076	True	13	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0081	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0086	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0102	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0110	True	11	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0113	False	11	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0115	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0120	True	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0121	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0130	True	10	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0138	True	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0142	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0147	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0149	False	9	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0150	True	8	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0153	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0163	False	8	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0165	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0168	False	7	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0175	False	6	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0177	True	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0187	True	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0190	True	5	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0195	False	5	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0196	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0232	True	3	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0236	False	3	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0238	False	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0249	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0254	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0256	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0257	True	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0258	False	10	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0260	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0266	False	6	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0267	False	5	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0269	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0271	True	4	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0277	True	15	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0283	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0286	True	10	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0290	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0292	True	7	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0293	True	7	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0295	False	6	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0301	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0303	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0304	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0311	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0314	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0315	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0316	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0322	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0328	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0334	False	10	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0335	True	8	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0341	True	4	T3-nc
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0343	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0350	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0355	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0359	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0360	False	3	T2
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0363	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Peripheral Nervous System	Z0367	True	3	T1
+zavg	H3a_lineage_atlas	lineage:Pleura	Z0009	False	25	T1
+zavg	H3a_lineage_atlas	lineage:Pleura	Z0030	False	18	T2
+zavg	H3a_lineage_atlas	lineage:Pleura	Z0043	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Pleura	Z0067	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Pleura	Z0089	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Pleura	Z0170	False	7	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pleura	Z0318	False	10	T1
+zavg	H3a_lineage_atlas	lineage:Pleura	Z0340	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Pleura	Z0361	True	3	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0001	False	29	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0006	False	27	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0007	True	26	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0016	True	22	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0017	True	21	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0018	True	21	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0023	False	19	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0028	True	18	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0030	False	18	T2
+zavg	H3a_lineage_atlas	lineage:Skin	Z0037	False	17	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0042	False	17	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0051	True	16	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0071	True	14	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0075	False	14	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0078	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0082	False	13	T2
+zavg	H3a_lineage_atlas	lineage:Skin	Z0083	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0084	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0088	False	12	T2
+zavg	H3a_lineage_atlas	lineage:Skin	Z0097	True	12	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0100	False	12	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0111	False	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0112	True	11	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0113	True	11	T2
+zavg	H3a_lineage_atlas	lineage:Skin	Z0116	False	11	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0126	True	10	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0134	False	9	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0135	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0145	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0146	True	9	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0153	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0157	True	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0171	False	7	T2
+zavg	H3a_lineage_atlas	lineage:Skin	Z0175	False	6	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0177	False	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0179	False	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0184	False	6	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0189	True	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0190	True	5	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0193	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0197	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0199	False	4	T3-nc
+zavg	H3a_lineage_atlas	lineage:Skin	Z0201	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Skin	Z0205	True	4	T2
+zavg	H3a_lineage_atlas	lineage:Skin	Z0208	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0212	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0221	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0222	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0280	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0284	False	11	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0299	False	5	T1
+zavg	H3a_lineage_atlas	lineage:Skin	Z0300	True	5	T2
+zavg	H3a_lineage_atlas	lineage:Skin	Z0302	False	5	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0319	True	10	T2
+zavg	H3a_lineage_atlas	lineage:Skin	Z0326	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0343	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Skin	Z0344	True	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Soft Tissue	Z0003	True	27	T1
+zavg	H3a_lineage_atlas	lineage:Soft Tissue	Z0080	True	13	T1
+zavg	H3a_lineage_atlas	lineage:Soft Tissue	Z0083	False	13	T1
+zavg	H3a_lineage_atlas	lineage:Soft Tissue	Z0147	True	9	T2
+zavg	H3a_lineage_atlas	lineage:Soft Tissue	Z0153	False	8	T3-neg
+zavg	H3a_lineage_atlas	lineage:Soft Tissue	Z0171	False	7	T2
+zavg	H3a_lineage_atlas	lineage:Soft Tissue	Z0213	False	4	T1
+zavg	H3a_lineage_atlas	lineage:Soft Tissue	Z0249	True	18	T2
+zavg	H3a_lineage_atlas	lineage:Soft Tissue	Z0336	True	8	T1
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0120	False	10	T3-neg
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0135	False	9	T1
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0201	False	4	T2
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0218	False	4	T3-neg
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0254	False	12	T1
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0287	False	10	T1
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0293	False	7	T1
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0316	True	12	T2
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0324	True	6	T3-neg
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0339	False	5	T2
+zavg	H3a_lineage_atlas	lineage:Uterus	Z0359	False	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0001	True	29	T1
+zavg	H3a_lineage_atlas	melanoma	Z0005	True	27	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0006	False	27	T1
+zavg	H3a_lineage_atlas	melanoma	Z0007	True	26	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0016	True	22	T1
+zavg	H3a_lineage_atlas	melanoma	Z0017	True	21	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0018	True	21	T1
+zavg	H3a_lineage_atlas	melanoma	Z0021	False	20	T1
+zavg	H3a_lineage_atlas	melanoma	Z0023	True	19	T1
+zavg	H3a_lineage_atlas	melanoma	Z0028	True	18	T1
+zavg	H3a_lineage_atlas	melanoma	Z0030	False	18	T2
+zavg	H3a_lineage_atlas	melanoma	Z0037	True	17	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0042	True	17	T1
+zavg	H3a_lineage_atlas	melanoma	Z0049	False	16	T1
+zavg	H3a_lineage_atlas	melanoma	Z0051	True	16	T1
+zavg	H3a_lineage_atlas	melanoma	Z0058	False	15	T1
+zavg	H3a_lineage_atlas	melanoma	Z0059	False	15	T1
+zavg	H3a_lineage_atlas	melanoma	Z0064	True	14	T1
+zavg	H3a_lineage_atlas	melanoma	Z0066	True	14	T1
+zavg	H3a_lineage_atlas	melanoma	Z0067	False	14	T1
+zavg	H3a_lineage_atlas	melanoma	Z0071	True	14	T1
+zavg	H3a_lineage_atlas	melanoma	Z0073	True	14	T1
+zavg	H3a_lineage_atlas	melanoma	Z0075	False	14	T1
+zavg	H3a_lineage_atlas	melanoma	Z0078	True	13	T1
+zavg	H3a_lineage_atlas	melanoma	Z0082	True	13	T2
+zavg	H3a_lineage_atlas	melanoma	Z0083	True	13	T1
+zavg	H3a_lineage_atlas	melanoma	Z0084	True	13	T1
+zavg	H3a_lineage_atlas	melanoma	Z0088	False	12	T2
+zavg	H3a_lineage_atlas	melanoma	Z0090	True	12	T1
+zavg	H3a_lineage_atlas	melanoma	Z0092	True	12	T2
+zavg	H3a_lineage_atlas	melanoma	Z0095	False	12	T1
+zavg	H3a_lineage_atlas	melanoma	Z0097	True	12	T1
+zavg	H3a_lineage_atlas	melanoma	Z0099	True	12	T1
+zavg	H3a_lineage_atlas	melanoma	Z0100	False	12	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0103	True	12	T1
+zavg	H3a_lineage_atlas	melanoma	Z0111	False	11	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0112	True	11	T1
+zavg	H3a_lineage_atlas	melanoma	Z0113	True	11	T2
+zavg	H3a_lineage_atlas	melanoma	Z0116	False	11	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0126	True	10	T1
+zavg	H3a_lineage_atlas	melanoma	Z0134	False	9	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0135	True	9	T1
+zavg	H3a_lineage_atlas	melanoma	Z0143	False	9	T1
+zavg	H3a_lineage_atlas	melanoma	Z0145	True	9	T1
+zavg	H3a_lineage_atlas	melanoma	Z0146	False	9	T1
+zavg	H3a_lineage_atlas	melanoma	Z0149	False	9	T2
+zavg	H3a_lineage_atlas	melanoma	Z0153	True	8	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0157	False	8	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0159	False	8	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0166	True	8	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0171	False	7	T2
+zavg	H3a_lineage_atlas	melanoma	Z0175	False	6	T1
+zavg	H3a_lineage_atlas	melanoma	Z0177	False	6	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0179	False	6	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0182	False	6	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0184	False	6	T1
+zavg	H3a_lineage_atlas	melanoma	Z0189	True	5	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0190	True	5	T1
+zavg	H3a_lineage_atlas	melanoma	Z0193	False	5	T1
+zavg	H3a_lineage_atlas	melanoma	Z0199	False	4	T3-nc
+zavg	H3a_lineage_atlas	melanoma	Z0200	True	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0201	True	4	T2
+zavg	H3a_lineage_atlas	melanoma	Z0205	True	4	T2
+zavg	H3a_lineage_atlas	melanoma	Z0207	False	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0208	False	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0212	False	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0215	False	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0221	True	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0222	False	4	T1
+zavg	H3a_lineage_atlas	melanoma	Z0224	False	4	T3-nc
+zavg	H3a_lineage_atlas	melanoma	Z0225	False	4	T3-nc
+zavg	H3a_lineage_atlas	melanoma	Z0247	True	3	T2
+zavg	H3a_lineage_atlas	melanoma	Z0284	False	11	T1
+zavg	H3a_lineage_atlas	melanoma	Z0299	True	5	T1
+zavg	H3a_lineage_atlas	melanoma	Z0300	True	5	T2
+zavg	H3a_lineage_atlas	melanoma	Z0302	False	5	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0304	False	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0309	False	15	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0310	False	14	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0311	True	14	T1
+zavg	H3a_lineage_atlas	melanoma	Z0315	True	13	T1
+zavg	H3a_lineage_atlas	melanoma	Z0319	True	10	T2
+zavg	H3a_lineage_atlas	melanoma	Z0323	False	8	T1
+zavg	H3a_lineage_atlas	melanoma	Z0325	False	6	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0326	False	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0336	True	8	T1
+zavg	H3a_lineage_atlas	melanoma	Z0343	False	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0344	True	4	T3-neg
+zavg	H3a_lineage_atlas	melanoma	Z0345	False	4	T1
+zavg	H3a_lineage_atlas	melanoma	Z0348	False	12	T2
+zavg	H3a_lineage_atlas	melanoma	Z0364	False	3	T1
+zavg	H3b_driver_family	9p21_loss	Z0069	False	14	T1
+zavg	H3b_driver_family	9p21_loss	Z0228	False	4	T3-neg
+zavg	H3b_driver_family	LoF:PTEN	Z0285	False	11	T1
+zavg	H3b_driver_family	LoF:PTEN	Z0316	True	12	T2
+zavg	H3b_driver_family	LoF:RB1	Z0037	True	17	T3-neg
+zavg	H3b_driver_family	LoF:RB1	Z0069	True	14	T1
+zavg	H3b_driver_family	LoF:SMARCA4	Z0367	False	3	T1
+zavg	H3b_driver_family	MSI_H	Z0031	True	18	T3-neg
+zavg	H3b_driver_family	MSI_H	Z0038	False	17	T1
+zavg	H3b_driver_family	MSI_H	Z0044	True	16	T3-neg
+zavg	H3b_driver_family	MSI_H	Z0104	True	12	T2
+zavg	H3b_driver_family	MSI_H	Z0138	True	9	T3-neg
+zavg	H3b_driver_family	MSI_H	Z0157	True	8	T3-neg
+zavg	H3b_driver_family	MSI_H	Z0177	True	6	T3-neg
+zavg	H3b_driver_family	MSI_H	Z0202	True	4	T3-neg
+zavg	H3b_driver_family	MSI_H	Z0274	True	18	T1
+zavg	H3b_driver_family	MSI_H	Z0286	True	10	T2
+zavg	H3b_driver_family	MSI_H	Z0316	True	12	T2
+zavg	H3b_driver_family	MSI_H	Z0334	True	10	T2
+zavg	H3b_driver_family	MSI_H	Z0339	True	5	T2
+zavg	H3b_driver_family	MSI_H	Z0364	False	3	T1
+zavg	H3b_driver_family	NRF2_active	Z0099	False	12	T1
+zavg	H3b_driver_family	NRF2_active	Z0264	False	6	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0001	False	29	T1
+zavg	H3b_driver_family	TP53_altered	Z0002	False	27	T1
+zavg	H3b_driver_family	TP53_altered	Z0004	True	27	T1
+zavg	H3b_driver_family	TP53_altered	Z0006	False	27	T1
+zavg	H3b_driver_family	TP53_altered	Z0010	True	25	T1
+zavg	H3b_driver_family	TP53_altered	Z0017	False	21	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0018	False	21	T1
+zavg	H3b_driver_family	TP53_altered	Z0021	False	20	T1
+zavg	H3b_driver_family	TP53_altered	Z0024	True	19	T2
+zavg	H3b_driver_family	TP53_altered	Z0026	True	19	T1
+zavg	H3b_driver_family	TP53_altered	Z0027	False	19	T1
+zavg	H3b_driver_family	TP53_altered	Z0028	False	18	T1
+zavg	H3b_driver_family	TP53_altered	Z0033	False	18	T1
+zavg	H3b_driver_family	TP53_altered	Z0038	True	17	T1
+zavg	H3b_driver_family	TP53_altered	Z0039	False	17	T1
+zavg	H3b_driver_family	TP53_altered	Z0041	True	17	T1
+zavg	H3b_driver_family	TP53_altered	Z0043	False	17	T1
+zavg	H3b_driver_family	TP53_altered	Z0053	False	16	T1
+zavg	H3b_driver_family	TP53_altered	Z0054	False	16	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0062	True	15	T1
+zavg	H3b_driver_family	TP53_altered	Z0066	True	14	T1
+zavg	H3b_driver_family	TP53_altered	Z0068	False	14	T1
+zavg	H3b_driver_family	TP53_altered	Z0073	False	14	T1
+zavg	H3b_driver_family	TP53_altered	Z0075	True	14	T1
+zavg	H3b_driver_family	TP53_altered	Z0077	False	13	T2
+zavg	H3b_driver_family	TP53_altered	Z0078	False	13	T1
+zavg	H3b_driver_family	TP53_altered	Z0084	False	13	T1
+zavg	H3b_driver_family	TP53_altered	Z0096	False	12	T2
+zavg	H3b_driver_family	TP53_altered	Z0097	False	12	T1
+zavg	H3b_driver_family	TP53_altered	Z0101	False	12	T1
+zavg	H3b_driver_family	TP53_altered	Z0103	False	12	T1
+zavg	H3b_driver_family	TP53_altered	Z0114	False	11	T1
+zavg	H3b_driver_family	TP53_altered	Z0115	True	11	T1
+zavg	H3b_driver_family	TP53_altered	Z0125	True	10	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0126	True	10	T1
+zavg	H3b_driver_family	TP53_altered	Z0130	False	10	T1
+zavg	H3b_driver_family	TP53_altered	Z0134	False	9	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0136	False	9	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0140	True	9	T2
+zavg	H3b_driver_family	TP53_altered	Z0143	False	9	T1
+zavg	H3b_driver_family	TP53_altered	Z0145	True	9	T1
+zavg	H3b_driver_family	TP53_altered	Z0146	True	9	T1
+zavg	H3b_driver_family	TP53_altered	Z0152	True	8	T2
+zavg	H3b_driver_family	TP53_altered	Z0157	True	8	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0158	True	8	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0163	False	8	T2
+zavg	H3b_driver_family	TP53_altered	Z0166	True	8	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0171	False	7	T2
+zavg	H3b_driver_family	TP53_altered	Z0172	True	7	T2
+zavg	H3b_driver_family	TP53_altered	Z0174	False	6	T1
+zavg	H3b_driver_family	TP53_altered	Z0184	True	6	T1
+zavg	H3b_driver_family	TP53_altered	Z0185	True	5	T2
+zavg	H3b_driver_family	TP53_altered	Z0188	True	5	T1
+zavg	H3b_driver_family	TP53_altered	Z0199	False	4	T3-nc
+zavg	H3b_driver_family	TP53_altered	Z0202	True	4	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0203	False	4	T1
+zavg	H3b_driver_family	TP53_altered	Z0205	False	4	T2
+zavg	H3b_driver_family	TP53_altered	Z0219	False	4	T2
+zavg	H3b_driver_family	TP53_altered	Z0222	True	4	T1
+zavg	H3b_driver_family	TP53_altered	Z0224	True	4	T3-nc
+zavg	H3b_driver_family	TP53_altered	Z0226	False	4	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0230	True	3	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0244	False	3	T1
+zavg	H3b_driver_family	TP53_altered	Z0247	True	3	T2
+zavg	H3b_driver_family	TP53_altered	Z0248	False	3	T3-nc
+zavg	H3b_driver_family	TP53_altered	Z0253	True	12	T1
+zavg	H3b_driver_family	TP53_altered	Z0258	False	10	T1
+zavg	H3b_driver_family	TP53_altered	Z0264	False	6	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0265	False	6	T2
+zavg	H3b_driver_family	TP53_altered	Z0270	False	4	T3-nc
+zavg	H3b_driver_family	TP53_altered	Z0275	False	17	T1
+zavg	H3b_driver_family	TP53_altered	Z0284	True	11	T1
+zavg	H3b_driver_family	TP53_altered	Z0285	False	11	T1
+zavg	H3b_driver_family	TP53_altered	Z0294	False	7	T1
+zavg	H3b_driver_family	TP53_altered	Z0295	True	6	T1
+zavg	H3b_driver_family	TP53_altered	Z0297	False	5	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0301	False	5	T1
+zavg	H3b_driver_family	TP53_altered	Z0303	True	5	T1
+zavg	H3b_driver_family	TP53_altered	Z0308	False	3	T2
+zavg	H3b_driver_family	TP53_altered	Z0313	False	13	T1
+zavg	H3b_driver_family	TP53_altered	Z0314	True	13	T1
+zavg	H3b_driver_family	TP53_altered	Z0330	True	12	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0337	True	7	T2
+zavg	H3b_driver_family	TP53_altered	Z0341	True	4	T3-nc
+zavg	H3b_driver_family	TP53_altered	Z0342	False	4	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0347	True	3	T3-nc
+zavg	H3b_driver_family	TP53_altered	Z0351	False	6	T2
+zavg	H3b_driver_family	TP53_altered	Z0352	False	6	T2
+zavg	H3b_driver_family	TP53_altered	Z0355	True	4	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0358	False	4	T2
+zavg	H3b_driver_family	TP53_altered	Z0359	False	4	T3-neg
+zavg	H3b_driver_family	TP53_altered	Z0365	True	3	T3-neg
+zavg	H3b_driver_family	WGD	Z0026	False	19	T1
+zavg	H3b_driver_family	WGD	Z0035	False	17	T1
+zavg	H3b_driver_family	WGD	Z0056	False	15	T1
+zavg	H3b_driver_family	WGD	Z0065	False	14	T2
+zavg	H3b_driver_family	WGD	Z0080	False	13	T1
+zavg	H3b_driver_family	WGD	Z0081	False	13	T1
+zavg	H3b_driver_family	WGD	Z0104	False	12	T2
+zavg	H3b_driver_family	WGD	Z0141	False	9	T3-neg
+zavg	H3b_driver_family	WGD	Z0150	False	8	T1
+zavg	H3b_driver_family	WGD	Z0163	False	8	T2
+zavg	H3b_driver_family	WGD	Z0166	False	8	T3-neg
+zavg	H3b_driver_family	WGD	Z0187	False	5	T3-neg
+zavg	H3b_driver_family	WGD	Z0206	False	4	T1
+zavg	H3b_driver_family	WGD	Z0235	False	3	T3-neg
+zavg	H3b_driver_family	WGD	Z0248	False	3	T3-nc
+zavg	H3b_driver_family	WGD	Z0257	False	10	T3-neg
+zavg	H3b_driver_family	WGD	Z0265	False	6	T2
+zavg	H3b_driver_family	WGD	Z0276	False	16	T1
+zavg	H3b_driver_family	WGD	Z0310	False	14	T3-neg
+zavg	H3b_driver_family	WGD	Z0319	False	10	T2
+zavg	H3b_driver_family	WGD	Z0334	False	10	T2
+zavg	H3b_driver_family	WGD	Z0341	False	4	T3-nc
+zavg	H3b_driver_family	WGD	Z0342	False	4	T3-neg
+zavg	H3b_driver_family	WGD	Z0354	False	4	T3-neg
+zavg	H3b_driver_family	WGD	Z0362	False	3	T1
+zavg	H3b_driver_family	WGD	Z0365	False	3	T3-neg
+zavg	H3b_driver_family	hotspot:BRAF	Z0018	True	21	T1
+zavg	H3b_driver_family	hotspot:BRAF	Z0051	True	16	T1
+zavg	H3b_driver_family	hotspot:BRAF	Z0084	False	13	T1
+zavg	H3b_driver_family	hotspot:BRAF	Z0193	False	5	T1
+zavg	H3b_driver_family	hotspot:KRAS	Z0016	True	22	T1
+zavg	H3b_driver_family	hotspot:KRAS	Z0051	True	16	T1
+zavg	H3b_driver_family	hotspot:KRAS	Z0088	False	12	T2
+zavg	H3b_driver_family	hotspot:NRAS	Z0132	True	10	T3-neg
+zavg	H3b_driver_family	sex_female	Z0104	True	12	T2
+gls	BRIDGE-L	9p21_loss	G0061	False	11	T1
+gls	BRIDGE-L	9p21_loss	G0221	False	4	T3-neg
+gls	BRIDGE-L	LoF:ARID1A	G0083	False	9	T1
+gls	BRIDGE-L	LoF:PTEN	G0303	True	11	T2
+gls	BRIDGE-L	LoF:RB1	G0047	False	12	T3-neg
+gls	BRIDGE-L	LoF:RB1	G0061	True	11	T1
+gls	BRIDGE-L	MSI_H	G0009	True	25	T3-neg
+gls	BRIDGE-L	MSI_H	G0060	False	11	T1
+gls	BRIDGE-L	MSI_H	G0063	True	10	T3-neg
+gls	BRIDGE-L	MSI_H	G0093	True	8	T2
+gls	BRIDGE-L	MSI_H	G0100	True	8	T2
+gls	BRIDGE-L	MSI_H	G0171	True	4	T3-neg
+gls	BRIDGE-L	MSI_H	G0241	False	3	T3-neg
+gls	BRIDGE-L	MSI_H	G0303	True	11	T2
+gls	BRIDGE-L	MSI_H	G0311	True	5	T3-neg
+gls	BRIDGE-L	TP53_altered	G0003	True	34	T1
+gls	BRIDGE-L	TP53_altered	G0013	True	22	T1
+gls	BRIDGE-L	TP53_altered	G0016	True	20	T2
+gls	BRIDGE-L	TP53_altered	G0018	True	18	T1
+gls	BRIDGE-L	TP53_altered	G0023	False	17	T3-neg
+gls	BRIDGE-L	TP53_altered	G0039	False	13	T1
+gls	BRIDGE-L	TP53_altered	G0040	True	13	T3-neg
+gls	BRIDGE-L	TP53_altered	G0046	False	12	T2
+gls	BRIDGE-L	TP53_altered	G0049	False	12	T1
+gls	BRIDGE-L	TP53_altered	G0053	False	12	T1
+gls	BRIDGE-L	TP53_altered	G0054	False	12	T1
+gls	BRIDGE-L	TP53_altered	G0056	True	12	T1
+gls	BRIDGE-L	TP53_altered	G0060	True	11	T1
+gls	BRIDGE-L	TP53_altered	G0062	False	11	T1
+gls	BRIDGE-L	TP53_altered	G0069	False	10	T3-neg
+gls	BRIDGE-L	TP53_altered	G0075	False	9	T1
+gls	BRIDGE-L	TP53_altered	G0078	True	9	T2
+gls	BRIDGE-L	TP53_altered	G0081	False	9	T1
+gls	BRIDGE-L	TP53_altered	G0087	True	8	T3-neg
+gls	BRIDGE-L	TP53_altered	G0094	False	8	T3-neg
+gls	BRIDGE-L	TP53_altered	G0096	True	8	T2
+gls	BRIDGE-L	TP53_altered	G0098	True	8	T1
+gls	BRIDGE-L	TP53_altered	G0108	False	7	T3-neg
+gls	BRIDGE-L	TP53_altered	G0113	True	6	T1
+gls	BRIDGE-L	TP53_altered	G0116	False	6	T1
+gls	BRIDGE-L	TP53_altered	G0120	True	6	T1
+gls	BRIDGE-L	TP53_altered	G0122	True	6	T2
+gls	BRIDGE-L	TP53_altered	G0123	True	6	T3-neg
+gls	BRIDGE-L	TP53_altered	G0131	False	6	T1
+gls	BRIDGE-L	TP53_altered	G0140	True	5	T1
+gls	BRIDGE-L	TP53_altered	G0142	True	5	T2
+gls	BRIDGE-L	TP53_altered	G0144	True	5	T2
+gls	BRIDGE-L	TP53_altered	G0146	False	5	T2
+gls	BRIDGE-L	TP53_altered	G0148	True	5	T1
+gls	BRIDGE-L	TP53_altered	G0152	True	5	T1
+gls	BRIDGE-L	TP53_altered	G0154	False	5	T1
+gls	BRIDGE-L	TP53_altered	G0162	True	5	T1
+gls	BRIDGE-L	TP53_altered	G0164	True	4	T3-neg
+gls	BRIDGE-L	TP53_altered	G0165	True	4	T1
+gls	BRIDGE-L	TP53_altered	G0185	True	4	T1
+gls	BRIDGE-L	TP53_altered	G0188	False	4	T3-neg
+gls	BRIDGE-L	TP53_altered	G0198	False	4	T3-neg
+gls	BRIDGE-L	TP53_altered	G0208	False	4	T1
+gls	BRIDGE-L	TP53_altered	G0209	False	4	T2
+gls	BRIDGE-L	TP53_altered	G0211	True	4	T1
+gls	BRIDGE-L	TP53_altered	G0212	True	4	T2
+gls	BRIDGE-L	TP53_altered	G0213	False	4	T1
+gls	BRIDGE-L	TP53_altered	G0220	False	4	T3-neg
+gls	BRIDGE-L	TP53_altered	G0222	False	4	T3-neg
+gls	BRIDGE-L	TP53_altered	G0224	False	4	T1
+gls	BRIDGE-L	TP53_altered	G0227	True	4	T3-neg
+gls	BRIDGE-L	TP53_altered	G0229	False	4	T2
+gls	BRIDGE-L	TP53_altered	G0232	True	3	T3-neg
+gls	BRIDGE-L	TP53_altered	G0233	True	3	T3-neg
+gls	BRIDGE-L	TP53_altered	G0238	True	3	T3-neg
+gls	BRIDGE-L	TP53_altered	G0240	True	3	T3-neg
+gls	BRIDGE-L	TP53_altered	G0246	False	3	T3-neg
+gls	BRIDGE-L	TP53_altered	G0249	False	3	T3-nc
+gls	BRIDGE-L	TP53_altered	G0251	False	3	T3-neg
+gls	BRIDGE-L	TP53_altered	G0255	False	3	T2
+gls	BRIDGE-L	TP53_altered	G0264	False	3	T3-nc
+gls	BRIDGE-L	TP53_altered	G0267	False	3	T1
+gls	BRIDGE-L	TP53_altered	G0270	False	3	T1
+gls	BRIDGE-L	TP53_altered	G0272	True	3	T1
+gls	BRIDGE-L	TP53_altered	G0273	True	3	T3-neg
+gls	BRIDGE-L	TP53_altered	G0275	True	3	T2
+gls	BRIDGE-L	TP53_altered	G0276	True	3	T1
+gls	BRIDGE-L	TP53_altered	G0279	False	20	T3-neg
+gls	BRIDGE-L	TP53_altered	G0281	False	16	T1
+gls	BRIDGE-L	TP53_altered	G0282	True	14	T3-neg
+gls	BRIDGE-L	TP53_altered	G0284	False	8	T1
+gls	BRIDGE-L	TP53_altered	G0288	False	7	T2
+gls	BRIDGE-L	TP53_altered	G0294	True	4	T2
+gls	BRIDGE-L	TP53_altered	G0299	True	22	T1
+gls	BRIDGE-L	TP53_altered	G0301	True	13	T1
+gls	BRIDGE-L	TP53_altered	G0302	True	13	T1
+gls	BRIDGE-L	TP53_altered	G0315	False	4	T2
+gls	BRIDGE-L	TP53_altered	G0316	False	4	T2
+gls	BRIDGE-L	TP53_altered	G0321	True	3	T2
+gls	BRIDGE-L	TP53_altered	G0329	True	8	T3-neg
+gls	BRIDGE-L	TP53_altered	G0334	True	5	T1
+gls	BRIDGE-L	TP53_altered	G0339	True	3	T3-neg
+gls	BRIDGE-L	TP53_altered	G0343	True	12	T1
+gls	BRIDGE-L	TP53_altered	G0347	True	8	T1
+gls	BRIDGE-L	TP53_altered	G0351	True	5	T3-neg
+gls	BRIDGE-L	TP53_altered	G0353	True	4	T1
+gls	BRIDGE-L	TP53_altered	G0355	False	4	T2
+gls	BRIDGE-L	TP53_altered	G0357	True	4	T3-neg
+gls	BRIDGE-L	TP53_altered	G0358	True	3	T3-nc
+gls	BRIDGE-L	TP53_altered	G0361	False	3	T1
+gls	BRIDGE-L	TP53_altered	G0369	True	4	T2
+gls	BRIDGE-L	TP53_altered	G0372	True	5	T3-neg
+gls	BRIDGE-L	TP53_altered	G0373	False	5	T1
+gls	BRIDGE-L	TP53_altered	G0375	False	3	T3-neg
+gls	BRIDGE-L	WGD	G0005	False	31	T3-neg
+gls	BRIDGE-L	WGD	G0024	False	16	T1
+gls	BRIDGE-L	WGD	G0040	False	13	T3-neg
+gls	BRIDGE-L	WGD	G0076	False	9	T3-neg
+gls	BRIDGE-L	WGD	G0100	False	8	T2
+gls	BRIDGE-L	WGD	G0272	False	3	T1
+gls	BRIDGE-L	WGD	G0315	False	4	T2
+gls	BRIDGE-L	hotspot:BRAF	G0039	False	13	T1
+gls	BRIDGE-L	hotspot:BRAF	G0057	True	11	T1
+gls	BRIDGE-L	hotspot:BRAF	G0160	True	5	T3-neg
+gls	BRIDGE-L	hotspot:BRAF	G0293	False	5	T1
+gls	BRIDGE-L	hotspot:BRAF	G0347	True	8	T1
+gls	BRIDGE-L	hotspot:KRAS	G0057	True	11	T1
+gls	BRIDGE-L	hotspot:KRAS	G0236	False	3	T2
+gls	BRIDGE-L	hotspot:KRAS	G0341	True	21	T1
+gls	BRIDGE-L	hotspot:KRAS	G0372	True	5	T3-neg
+gls	BRIDGE-L	hotspot:NRAS	G0057	True	11	T1
+gls	BRIDGE-L	hotspot:NRAS	G0160	True	5	T3-neg
+gls	BRIDGE-L	lineage:Biliary Tract	G0169	False	4	T1
+gls	BRIDGE-L	lineage:Biliary Tract	G0315	True	4	T2
+gls	BRIDGE-L	lineage:Biliary Tract	G0336	False	4	T1
+gls	BRIDGE-L	lineage:Bladder/Urinary Tract	G0164	True	4	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0007	True	25	T2
+gls	BRIDGE-L	lineage:Bone	G0014	False	22	T1
+gls	BRIDGE-L	lineage:Bone	G0019	False	17	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0021	False	17	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0024	False	16	T1
+gls	BRIDGE-L	lineage:Bone	G0030	True	14	T1
+gls	BRIDGE-L	lineage:Bone	G0031	False	14	T1
+gls	BRIDGE-L	lineage:Bone	G0035	False	13	T1
+gls	BRIDGE-L	lineage:Bone	G0044	False	12	T2
+gls	BRIDGE-L	lineage:Bone	G0045	False	12	T1
+gls	BRIDGE-L	lineage:Bone	G0048	False	12	T2
+gls	BRIDGE-L	lineage:Bone	G0050	True	12	T1
+gls	BRIDGE-L	lineage:Bone	G0051	True	12	T2
+gls	BRIDGE-L	lineage:Bone	G0056	True	12	T1
+gls	BRIDGE-L	lineage:Bone	G0057	True	11	T1
+gls	BRIDGE-L	lineage:Bone	G0060	True	11	T1
+gls	BRIDGE-L	lineage:Bone	G0071	True	10	T2
+gls	BRIDGE-L	lineage:Bone	G0073	True	10	T2
+gls	BRIDGE-L	lineage:Bone	G0074	False	9	T1
+gls	BRIDGE-L	lineage:Bone	G0075	True	9	T1
+gls	BRIDGE-L	lineage:Bone	G0083	False	9	T1
+gls	BRIDGE-L	lineage:Bone	G0084	False	8	T1
+gls	BRIDGE-L	lineage:Bone	G0088	False	8	T1
+gls	BRIDGE-L	lineage:Bone	G0099	False	8	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0118	True	6	T1
+gls	BRIDGE-L	lineage:Bone	G0121	False	6	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0125	True	6	T1
+gls	BRIDGE-L	lineage:Bone	G0127	False	6	T2
+gls	BRIDGE-L	lineage:Bone	G0133	False	6	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0136	True	6	T1
+gls	BRIDGE-L	lineage:Bone	G0138	False	5	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0142	False	5	T2
+gls	BRIDGE-L	lineage:Bone	G0154	True	5	T1
+gls	BRIDGE-L	lineage:Bone	G0158	False	5	T2
+gls	BRIDGE-L	lineage:Bone	G0159	False	5	T2
+gls	BRIDGE-L	lineage:Bone	G0162	True	5	T1
+gls	BRIDGE-L	lineage:Bone	G0163	False	4	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0173	True	4	T2
+gls	BRIDGE-L	lineage:Bone	G0179	False	4	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0184	True	4	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0186	True	4	T1
+gls	BRIDGE-L	lineage:Bone	G0188	False	4	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0195	False	4	T1
+gls	BRIDGE-L	lineage:Bone	G0206	False	4	T2
+gls	BRIDGE-L	lineage:Bone	G0209	True	4	T2
+gls	BRIDGE-L	lineage:Bone	G0220	False	4	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0221	False	4	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0226	True	4	T2
+gls	BRIDGE-L	lineage:Bone	G0228	False	4	T1
+gls	BRIDGE-L	lineage:Bone	G0230	False	4	T1
+gls	BRIDGE-L	lineage:Bone	G0231	True	4	T2
+gls	BRIDGE-L	lineage:Bone	G0233	True	3	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0241	True	3	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0242	True	3	T1
+gls	BRIDGE-L	lineage:Bone	G0244	False	3	T3-nc
+gls	BRIDGE-L	lineage:Bone	G0245	False	3	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0252	False	3	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0258	True	3	T2
+gls	BRIDGE-L	lineage:Bone	G0260	False	3	T3-nc
+gls	BRIDGE-L	lineage:Bone	G0265	False	3	T1
+gls	BRIDGE-L	lineage:Bone	G0267	False	3	T1
+gls	BRIDGE-L	lineage:Bone	G0271	False	3	T1
+gls	BRIDGE-L	lineage:Bone	G0276	True	3	T1
+gls	BRIDGE-L	lineage:Bone	G0278	False	3	T2
+gls	BRIDGE-L	lineage:Bone	G0279	False	20	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0284	False	8	T1
+gls	BRIDGE-L	lineage:Bone	G0285	True	8	T1
+gls	BRIDGE-L	lineage:Bone	G0288	True	7	T2
+gls	BRIDGE-L	lineage:Bone	G0294	True	4	T2
+gls	BRIDGE-L	lineage:Bone	G0301	True	13	T1
+gls	BRIDGE-L	lineage:Bone	G0303	True	11	T2
+gls	BRIDGE-L	lineage:Bone	G0304	False	10	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0307	True	8	T2
+gls	BRIDGE-L	lineage:Bone	G0308	True	7	T2
+gls	BRIDGE-L	lineage:Bone	G0310	False	6	T1
+gls	BRIDGE-L	lineage:Bone	G0311	False	5	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0333	True	5	T2
+gls	BRIDGE-L	lineage:Bone	G0345	False	9	T1
+gls	BRIDGE-L	lineage:Bone	G0346	True	8	T1
+gls	BRIDGE-L	lineage:Bone	G0347	False	8	T1
+gls	BRIDGE-L	lineage:Bone	G0353	False	4	T1
+gls	BRIDGE-L	lineage:Bone	G0356	True	4	T2
+gls	BRIDGE-L	lineage:Bone	G0362	False	12	T1
+gls	BRIDGE-L	lineage:Bone	G0364	True	6	T2
+gls	BRIDGE-L	lineage:Bone	G0367	True	5	T3-neg
+gls	BRIDGE-L	lineage:Bone	G0368	False	5	T1
+gls	BRIDGE-L	lineage:Bowel	G0001	False	37	T1
+gls	BRIDGE-L	lineage:Bowel	G0007	True	25	T2
+gls	BRIDGE-L	lineage:Bowel	G0014	False	22	T1
+gls	BRIDGE-L	lineage:Bowel	G0015	True	21	T1
+gls	BRIDGE-L	lineage:Bowel	G0018	True	18	T1
+gls	BRIDGE-L	lineage:Bowel	G0027	True	16	T1
+gls	BRIDGE-L	lineage:Bowel	G0036	True	13	T1
+gls	BRIDGE-L	lineage:Bowel	G0038	True	13	T1
+gls	BRIDGE-L	lineage:Bowel	G0041	False	13	T1
+gls	BRIDGE-L	lineage:Bowel	G0045	False	12	T1
+gls	BRIDGE-L	lineage:Bowel	G0051	False	12	T2
+gls	BRIDGE-L	lineage:Bowel	G0052	True	12	T1
+gls	BRIDGE-L	lineage:Bowel	G0055	True	12	T1
+gls	BRIDGE-L	lineage:Bowel	G0058	False	11	T1
+gls	BRIDGE-L	lineage:Bowel	G0063	False	10	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0066	False	10	T1
+gls	BRIDGE-L	lineage:Bowel	G0067	True	10	T1
+gls	BRIDGE-L	lineage:Bowel	G0072	False	10	T1
+gls	BRIDGE-L	lineage:Bowel	G0073	True	10	T2
+gls	BRIDGE-L	lineage:Bowel	G0074	False	9	T1
+gls	BRIDGE-L	lineage:Bowel	G0084	True	8	T1
+gls	BRIDGE-L	lineage:Bowel	G0095	True	8	T2
+gls	BRIDGE-L	lineage:Bowel	G0097	True	8	T1
+gls	BRIDGE-L	lineage:Bowel	G0108	False	7	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0114	True	6	T1
+gls	BRIDGE-L	lineage:Bowel	G0116	True	6	T1
+gls	BRIDGE-L	lineage:Bowel	G0122	False	6	T2
+gls	BRIDGE-L	lineage:Bowel	G0125	True	6	T1
+gls	BRIDGE-L	lineage:Bowel	G0127	False	6	T2
+gls	BRIDGE-L	lineage:Bowel	G0130	False	6	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0147	False	5	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0149	True	5	T2
+gls	BRIDGE-L	lineage:Bowel	G0154	True	5	T1
+gls	BRIDGE-L	lineage:Bowel	G0157	True	5	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0159	True	5	T2
+gls	BRIDGE-L	lineage:Bowel	G0160	True	5	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0162	True	5	T1
+gls	BRIDGE-L	lineage:Bowel	G0176	False	4	T2
+gls	BRIDGE-L	lineage:Bowel	G0184	False	4	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0191	True	4	T1
+gls	BRIDGE-L	lineage:Bowel	G0195	False	4	T1
+gls	BRIDGE-L	lineage:Bowel	G0208	True	4	T1
+gls	BRIDGE-L	lineage:Bowel	G0209	True	4	T2
+gls	BRIDGE-L	lineage:Bowel	G0212	True	4	T2
+gls	BRIDGE-L	lineage:Bowel	G0214	False	4	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0218	False	4	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0219	False	4	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0233	True	3	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0240	False	3	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0241	False	3	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0247	False	3	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0267	False	3	T1
+gls	BRIDGE-L	lineage:Bowel	G0268	True	3	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0278	True	3	T2
+gls	BRIDGE-L	lineage:Bowel	G0289	True	7	T1
+gls	BRIDGE-L	lineage:Bowel	G0291	True	6	T2
+gls	BRIDGE-L	lineage:Bowel	G0292	True	5	T1
+gls	BRIDGE-L	lineage:Bowel	G0297	True	3	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0300	True	14	T1
+gls	BRIDGE-L	lineage:Bowel	G0308	False	7	T2
+gls	BRIDGE-L	lineage:Bowel	G0310	False	6	T1
+gls	BRIDGE-L	lineage:Bowel	G0312	False	4	T2
+gls	BRIDGE-L	lineage:Bowel	G0314	False	4	T1
+gls	BRIDGE-L	lineage:Bowel	G0316	True	4	T2
+gls	BRIDGE-L	lineage:Bowel	G0318	True	4	T1
+gls	BRIDGE-L	lineage:Bowel	G0325	False	9	T2
+gls	BRIDGE-L	lineage:Bowel	G0326	False	9	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0328	True	8	T2
+gls	BRIDGE-L	lineage:Bowel	G0338	False	3	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0344	False	11	T1
+gls	BRIDGE-L	lineage:Bowel	G0345	False	9	T1
+gls	BRIDGE-L	lineage:Bowel	G0347	False	8	T1
+gls	BRIDGE-L	lineage:Bowel	G0364	False	6	T2
+gls	BRIDGE-L	lineage:Bowel	G0368	True	5	T1
+gls	BRIDGE-L	lineage:Bowel	G0369	False	4	T2
+gls	BRIDGE-L	lineage:Bowel	G0371	False	8	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0372	True	5	T3-neg
+gls	BRIDGE-L	lineage:Bowel	G0378	True	4	T1
+gls	BRIDGE-L	lineage:Breast	G0006	False	29	T1
+gls	BRIDGE-L	lineage:Breast	G0007	True	25	T2
+gls	BRIDGE-L	lineage:Breast	G0010	False	22	T1
+gls	BRIDGE-L	lineage:Breast	G0013	True	22	T1
+gls	BRIDGE-L	lineage:Breast	G0026	True	16	T1
+gls	BRIDGE-L	lineage:Breast	G0028	False	16	T1
+gls	BRIDGE-L	lineage:Breast	G0033	False	14	T1
+gls	BRIDGE-L	lineage:Breast	G0035	False	13	T1
+gls	BRIDGE-L	lineage:Breast	G0036	True	13	T1
+gls	BRIDGE-L	lineage:Breast	G0045	True	12	T1
+gls	BRIDGE-L	lineage:Breast	G0051	True	12	T2
+gls	BRIDGE-L	lineage:Breast	G0052	False	12	T1
+gls	BRIDGE-L	lineage:Breast	G0072	True	10	T1
+gls	BRIDGE-L	lineage:Breast	G0075	False	9	T1
+gls	BRIDGE-L	lineage:Breast	G0078	True	9	T2
+gls	BRIDGE-L	lineage:Breast	G0086	False	8	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0087	False	8	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0098	False	8	T1
+gls	BRIDGE-L	lineage:Breast	G0113	True	6	T1
+gls	BRIDGE-L	lineage:Breast	G0120	False	6	T1
+gls	BRIDGE-L	lineage:Breast	G0136	True	6	T1
+gls	BRIDGE-L	lineage:Breast	G0138	False	5	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0147	True	5	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0153	True	5	T1
+gls	BRIDGE-L	lineage:Breast	G0161	True	5	T1
+gls	BRIDGE-L	lineage:Breast	G0164	False	4	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0166	True	4	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0170	False	4	T1
+gls	BRIDGE-L	lineage:Breast	G0173	True	4	T2
+gls	BRIDGE-L	lineage:Breast	G0196	True	4	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0197	False	4	T2
+gls	BRIDGE-L	lineage:Breast	G0207	False	4	T1
+gls	BRIDGE-L	lineage:Breast	G0209	False	4	T2
+gls	BRIDGE-L	lineage:Breast	G0213	False	4	T1
+gls	BRIDGE-L	lineage:Breast	G0252	True	3	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0253	True	3	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0255	False	3	T2
+gls	BRIDGE-L	lineage:Breast	G0258	False	3	T2
+gls	BRIDGE-L	lineage:Breast	G0268	False	3	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0273	False	3	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0291	True	6	T2
+gls	BRIDGE-L	lineage:Breast	G0297	True	3	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0299	False	22	T1
+gls	BRIDGE-L	lineage:Breast	G0303	True	11	T2
+gls	BRIDGE-L	lineage:Breast	G0318	True	4	T1
+gls	BRIDGE-L	lineage:Breast	G0321	False	3	T2
+gls	BRIDGE-L	lineage:Breast	G0327	True	8	T3-neg
+gls	BRIDGE-L	lineage:Breast	G0331	False	6	T1
+gls	BRIDGE-L	lineage:Breast	G0349	False	6	T1
+gls	BRIDGE-L	lineage:Breast	G0352	False	5	T1
+gls	BRIDGE-L	lineage:Breast	G0353	True	4	T1
+gls	BRIDGE-L	lineage:Breast	G0356	True	4	T2
+gls	BRIDGE-L	lineage:Breast	G0362	True	12	T1
+gls	BRIDGE-L	lineage:Breast	G0368	True	5	T1
+gls	BRIDGE-L	lineage:Breast	G0370	False	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0002	True	35	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0006	False	29	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0007	True	25	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0010	False	22	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0011	True	22	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0014	True	22	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0015	True	21	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0016	True	20	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0022	True	17	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0027	False	16	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0028	True	16	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0030	True	14	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0031	False	14	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0033	False	14	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0040	True	13	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0045	True	12	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0050	True	12	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0051	True	12	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0052	True	12	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0056	True	12	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0061	False	11	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0076	True	9	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0077	True	9	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0078	False	9	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0079	True	9	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0081	False	9	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0086	True	8	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0087	False	8	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0096	False	8	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0098	True	8	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0100	False	8	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0103	False	7	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0106	False	7	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0109	False	7	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0111	True	6	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0113	True	6	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0118	True	6	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0136	True	6	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0138	True	5	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0139	False	5	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0140	False	5	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0148	False	5	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0151	False	5	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0154	True	5	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0156	False	5	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0157	True	5	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0161	False	5	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0163	True	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0164	True	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0166	False	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0169	True	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0171	True	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0172	True	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0173	True	4	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0174	True	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0178	True	4	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0181	False	4	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0183	False	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0185	True	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0186	False	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0187	False	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0191	True	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0194	True	4	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0197	False	4	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0213	True	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0214	True	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0216	False	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0217	True	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0218	True	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0219	True	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0223	False	4	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0224	False	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0231	True	4	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0233	False	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0238	False	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0242	False	3	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0243	False	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0250	True	3	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0255	False	3	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0258	True	3	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0260	True	3	T3-nc
+gls	BRIDGE-L	lineage:CNS/Brain	G0261	False	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0263	False	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0270	True	3	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0271	False	3	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0272	False	3	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0273	True	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0275	True	3	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0278	True	3	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0285	True	8	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0292	False	5	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0294	True	4	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0297	True	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0306	True	8	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0307	True	8	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0308	True	7	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0314	True	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0316	True	4	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0318	True	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0323	True	14	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0325	True	9	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0329	False	8	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0336	True	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0337	True	3	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0338	True	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0343	False	12	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0346	True	8	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0356	True	4	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0358	False	3	T3-nc
+gls	BRIDGE-L	lineage:CNS/Brain	G0362	True	12	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0364	False	6	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0366	False	5	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0367	True	5	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0368	True	5	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0369	True	4	T2
+gls	BRIDGE-L	lineage:CNS/Brain	G0371	False	8	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0372	False	5	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0374	True	4	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0375	True	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0376	True	3	T3-neg
+gls	BRIDGE-L	lineage:CNS/Brain	G0377	False	7	T1
+gls	BRIDGE-L	lineage:CNS/Brain	G0379	True	4	T2
+gls	BRIDGE-L	lineage:Esophagus/Stomach	G0057	False	11	T1
+gls	BRIDGE-L	lineage:Esophagus/Stomach	G0068	False	10	T3-neg
+gls	BRIDGE-L	lineage:Esophagus/Stomach	G0073	True	10	T2
+gls	BRIDGE-L	lineage:Esophagus/Stomach	G0103	True	7	T2
+gls	BRIDGE-L	lineage:Esophagus/Stomach	G0179	False	4	T3-neg
+gls	BRIDGE-L	lineage:Esophagus/Stomach	G0278	False	3	T2
+gls	BRIDGE-L	lineage:Esophagus/Stomach	G0300	False	14	T1
+gls	BRIDGE-L	lineage:Esophagus/Stomach	G0308	False	7	T2
+gls	BRIDGE-L	lineage:Esophagus/Stomach	G0325	False	9	T2
+gls	BRIDGE-L	lineage:Esophagus/Stomach	G0358	True	3	T3-nc
+gls	BRIDGE-L	lineage:Head and Neck	G0001	True	37	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0007	True	25	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0010	False	22	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0012	True	22	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0013	False	22	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0024	False	16	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0027	True	16	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0034	False	14	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0035	False	13	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0039	False	13	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0040	False	13	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0043	True	12	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0044	True	12	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0046	True	12	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0048	False	12	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0049	True	12	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0051	False	12	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0052	False	12	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0053	True	12	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0054	False	12	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0055	True	12	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0056	False	12	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0057	True	11	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0061	True	11	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0062	True	11	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0065	True	10	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0066	False	10	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0071	True	10	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0072	True	10	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0074	True	9	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0076	True	9	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0078	True	9	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0080	True	9	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0081	True	9	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0082	False	9	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0083	True	9	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0084	False	8	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0086	True	8	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0087	False	8	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0091	False	8	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0093	True	8	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0095	True	8	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0097	True	8	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0103	True	7	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0104	True	7	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0105	True	7	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0111	True	6	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0113	True	6	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0116	False	6	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0120	False	6	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0125	False	6	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0128	False	6	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0138	False	5	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0139	True	5	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0144	True	5	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0146	True	5	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0153	True	5	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0160	True	5	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0163	True	4	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0164	True	4	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0166	True	4	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0169	True	4	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0177	True	4	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0180	True	4	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0181	True	4	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0184	False	4	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0187	False	4	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0198	False	4	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0199	False	4	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0206	False	4	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0207	True	4	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0209	False	4	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0211	False	4	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0221	True	4	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0222	True	4	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0223	False	4	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0226	True	4	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0229	False	4	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0231	True	4	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0232	True	3	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0239	False	3	T3-nc
+gls	BRIDGE-L	lineage:Head and Neck	G0243	False	3	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0247	False	3	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0252	True	3	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0257	False	3	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0259	True	3	T3-nc
+gls	BRIDGE-L	lineage:Head and Neck	G0260	True	3	T3-nc
+gls	BRIDGE-L	lineage:Head and Neck	G0266	True	3	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0267	True	3	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0269	False	3	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0278	False	3	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0280	True	18	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0281	False	16	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0282	True	14	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0283	True	9	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0284	True	8	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0289	True	7	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0293	False	5	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0296	True	3	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0297	True	3	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0299	False	22	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0300	False	14	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0303	False	11	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0304	True	10	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0305	False	9	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0306	True	8	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0315	False	4	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0316	True	4	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0318	True	4	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0319	True	4	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0320	True	3	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0321	True	3	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0323	True	14	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0328	True	8	T2
+gls	BRIDGE-L	lineage:Head and Neck	G0332	False	5	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0335	False	5	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0336	True	4	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0344	True	11	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0346	True	8	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0347	True	8	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0348	False	7	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0353	True	4	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0358	True	3	T3-nc
+gls	BRIDGE-L	lineage:Head and Neck	G0360	True	3	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0361	True	3	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0362	False	12	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0365	True	6	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0367	False	5	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0368	True	5	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0371	True	8	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0375	False	3	T3-neg
+gls	BRIDGE-L	lineage:Head and Neck	G0377	True	7	T1
+gls	BRIDGE-L	lineage:Head and Neck	G0379	False	4	T2
+gls	BRIDGE-L	lineage:Kidney	G0009	False	25	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0010	True	22	T1
+gls	BRIDGE-L	lineage:Kidney	G0014	False	22	T1
+gls	BRIDGE-L	lineage:Kidney	G0015	False	21	T1
+gls	BRIDGE-L	lineage:Kidney	G0028	False	16	T1
+gls	BRIDGE-L	lineage:Kidney	G0029	True	15	T1
+gls	BRIDGE-L	lineage:Kidney	G0035	False	13	T1
+gls	BRIDGE-L	lineage:Kidney	G0036	False	13	T1
+gls	BRIDGE-L	lineage:Kidney	G0040	True	13	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0046	True	12	T2
+gls	BRIDGE-L	lineage:Kidney	G0053	True	12	T1
+gls	BRIDGE-L	lineage:Kidney	G0063	False	10	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0088	True	8	T1
+gls	BRIDGE-L	lineage:Kidney	G0115	True	6	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0123	False	6	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0136	True	6	T1
+gls	BRIDGE-L	lineage:Kidney	G0140	True	5	T1
+gls	BRIDGE-L	lineage:Kidney	G0142	False	5	T2
+gls	BRIDGE-L	lineage:Kidney	G0146	False	5	T2
+gls	BRIDGE-L	lineage:Kidney	G0160	True	5	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0185	True	4	T1
+gls	BRIDGE-L	lineage:Kidney	G0190	False	4	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0191	False	4	T1
+gls	BRIDGE-L	lineage:Kidney	G0199	False	4	T1
+gls	BRIDGE-L	lineage:Kidney	G0203	False	4	T1
+gls	BRIDGE-L	lineage:Kidney	G0211	False	4	T1
+gls	BRIDGE-L	lineage:Kidney	G0227	False	4	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0235	False	3	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0244	False	3	T3-nc
+gls	BRIDGE-L	lineage:Kidney	G0250	False	3	T2
+gls	BRIDGE-L	lineage:Kidney	G0265	True	3	T1
+gls	BRIDGE-L	lineage:Kidney	G0267	False	3	T1
+gls	BRIDGE-L	lineage:Kidney	G0269	True	3	T2
+gls	BRIDGE-L	lineage:Kidney	G0272	False	3	T1
+gls	BRIDGE-L	lineage:Kidney	G0277	True	3	T1
+gls	BRIDGE-L	lineage:Kidney	G0288	False	7	T2
+gls	BRIDGE-L	lineage:Kidney	G0292	True	5	T1
+gls	BRIDGE-L	lineage:Kidney	G0303	False	11	T2
+gls	BRIDGE-L	lineage:Kidney	G0309	True	6	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0311	False	5	T3-neg
+gls	BRIDGE-L	lineage:Kidney	G0336	True	4	T1
+gls	BRIDGE-L	lineage:Kidney	G0341	True	21	T1
+gls	BRIDGE-L	lineage:Kidney	G0343	True	12	T1
+gls	BRIDGE-L	lineage:Kidney	G0345	False	9	T1
+gls	BRIDGE-L	lineage:Kidney	G0347	True	8	T1
+gls	BRIDGE-L	lineage:Kidney	G0355	True	4	T2
+gls	BRIDGE-L	lineage:Kidney	G0358	False	3	T3-nc
+gls	BRIDGE-L	lineage:Kidney	G0359	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0003	True	34	T1
+gls	BRIDGE-L	lineage:Lung	G0005	False	31	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0007	True	25	T2
+gls	BRIDGE-L	lineage:Lung	G0008	False	25	T1
+gls	BRIDGE-L	lineage:Lung	G0010	True	22	T1
+gls	BRIDGE-L	lineage:Lung	G0013	False	22	T1
+gls	BRIDGE-L	lineage:Lung	G0018	True	18	T1
+gls	BRIDGE-L	lineage:Lung	G0020	False	17	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0024	True	16	T1
+gls	BRIDGE-L	lineage:Lung	G0031	True	14	T1
+gls	BRIDGE-L	lineage:Lung	G0033	False	14	T1
+gls	BRIDGE-L	lineage:Lung	G0040	True	13	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0042	True	12	T1
+gls	BRIDGE-L	lineage:Lung	G0046	True	12	T2
+gls	BRIDGE-L	lineage:Lung	G0051	False	12	T2
+gls	BRIDGE-L	lineage:Lung	G0070	False	10	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0083	False	9	T1
+gls	BRIDGE-L	lineage:Lung	G0085	False	8	T1
+gls	BRIDGE-L	lineage:Lung	G0086	True	8	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0088	True	8	T1
+gls	BRIDGE-L	lineage:Lung	G0089	True	8	T1
+gls	BRIDGE-L	lineage:Lung	G0101	False	7	T1
+gls	BRIDGE-L	lineage:Lung	G0105	False	7	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0109	True	7	T2
+gls	BRIDGE-L	lineage:Lung	G0113	True	6	T1
+gls	BRIDGE-L	lineage:Lung	G0116	True	6	T1
+gls	BRIDGE-L	lineage:Lung	G0126	False	6	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0127	False	6	T2
+gls	BRIDGE-L	lineage:Lung	G0131	False	6	T1
+gls	BRIDGE-L	lineage:Lung	G0132	False	6	T2
+gls	BRIDGE-L	lineage:Lung	G0136	False	6	T1
+gls	BRIDGE-L	lineage:Lung	G0159	False	5	T2
+gls	BRIDGE-L	lineage:Lung	G0166	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0181	False	4	T2
+gls	BRIDGE-L	lineage:Lung	G0185	False	4	T1
+gls	BRIDGE-L	lineage:Lung	G0186	True	4	T1
+gls	BRIDGE-L	lineage:Lung	G0187	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0188	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0210	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0242	False	3	T1
+gls	BRIDGE-L	lineage:Lung	G0257	False	3	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0274	False	3	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0275	False	3	T2
+gls	BRIDGE-L	lineage:Lung	G0282	False	14	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0287	True	8	T1
+gls	BRIDGE-L	lineage:Lung	G0293	False	5	T1
+gls	BRIDGE-L	lineage:Lung	G0296	False	3	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0309	True	6	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0318	True	4	T1
+gls	BRIDGE-L	lineage:Lung	G0325	True	9	T2
+gls	BRIDGE-L	lineage:Lung	G0332	False	5	T1
+gls	BRIDGE-L	lineage:Lung	G0339	False	3	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0344	True	11	T1
+gls	BRIDGE-L	lineage:Lung	G0347	True	8	T1
+gls	BRIDGE-L	lineage:Lung	G0351	False	5	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0354	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0357	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lung	G0358	False	3	T3-nc
+gls	BRIDGE-L	lineage:Lymphoid	G0001	True	37	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0003	True	34	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0004	True	32	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0007	True	25	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0008	False	25	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0010	True	22	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0013	False	22	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0014	True	22	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0015	True	21	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0017	False	20	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0018	False	18	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0019	True	17	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0022	False	17	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0026	True	16	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0027	True	16	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0028	True	16	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0031	True	14	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0032	True	14	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0033	False	14	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0034	True	14	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0035	True	13	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0036	True	13	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0037	True	13	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0038	True	13	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0039	False	13	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0041	True	13	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0042	False	12	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0043	False	12	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0044	False	12	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0045	True	12	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0047	True	12	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0048	True	12	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0049	True	12	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0050	True	12	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0051	False	12	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0056	True	12	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0057	True	11	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0059	True	11	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0061	True	11	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0062	True	11	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0063	False	10	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0065	True	10	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0067	True	10	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0071	True	10	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0072	True	10	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0073	True	10	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0074	True	9	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0075	True	9	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0076	False	9	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0078	True	9	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0079	True	9	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0080	False	9	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0081	True	9	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0082	True	9	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0084	True	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0085	False	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0086	True	8	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0087	False	8	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0088	True	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0090	True	8	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0092	True	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0094	False	8	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0098	True	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0105	True	7	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0106	True	7	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0107	True	7	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0110	True	6	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0111	True	6	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0113	False	6	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0114	True	6	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0118	False	6	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0120	True	6	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0121	False	6	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0122	False	6	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0127	True	6	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0129	True	6	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0131	True	6	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0132	False	6	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0134	True	6	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0136	True	6	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0139	True	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0141	True	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0143	True	5	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0147	True	5	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0151	False	5	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0153	False	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0154	True	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0157	True	5	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0161	True	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0163	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0164	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0166	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0169	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0170	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0172	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0173	True	4	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0174	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0178	True	4	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0180	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0182	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0183	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0186	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0187	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0193	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0194	True	4	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0197	True	4	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0198	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0199	False	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0200	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0209	True	4	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0210	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0211	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0214	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0216	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0217	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0218	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0219	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0220	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0222	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0223	False	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0224	False	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0228	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0229	True	4	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0231	True	4	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0232	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0236	True	3	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0238	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0241	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0242	True	3	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0243	False	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0246	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0250	True	3	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0253	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0255	True	3	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0257	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0258	False	3	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0260	True	3	T3-nc
+gls	BRIDGE-L	lineage:Lymphoid	G0264	True	3	T3-nc
+gls	BRIDGE-L	lineage:Lymphoid	G0265	True	3	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0267	True	3	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0270	False	3	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0271	False	3	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0272	True	3	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0273	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0275	False	3	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0277	False	3	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0280	True	18	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0283	True	9	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0284	True	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0285	True	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0286	True	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0287	True	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0288	False	7	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0290	False	6	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0291	True	6	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0292	True	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0293	False	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0297	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0299	True	22	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0300	False	14	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0301	True	13	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0304	False	10	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0305	True	9	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0306	False	8	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0307	True	8	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0308	True	7	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0316	True	4	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0317	True	4	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0319	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0321	False	3	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0322	False	17	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0324	True	10	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0325	True	9	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0327	True	8	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0328	True	8	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0330	False	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0332	True	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0334	True	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0336	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0337	True	3	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0338	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0339	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0341	True	21	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0342	False	14	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0344	True	11	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0347	True	8	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0348	True	7	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0350	True	6	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0353	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0356	True	4	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0360	True	3	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0361	False	3	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0362	True	12	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0363	False	7	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0364	False	6	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0367	False	5	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0368	True	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0369	True	4	T2
+gls	BRIDGE-L	lineage:Lymphoid	G0371	False	8	T3-neg
+gls	BRIDGE-L	lineage:Lymphoid	G0373	True	5	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0374	True	4	T1
+gls	BRIDGE-L	lineage:Lymphoid	G0379	True	4	T2
+gls	BRIDGE-L	lineage:Myeloid	G0002	False	35	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0005	True	31	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0007	True	25	T2
+gls	BRIDGE-L	lineage:Myeloid	G0010	True	22	T1
+gls	BRIDGE-L	lineage:Myeloid	G0014	True	22	T1
+gls	BRIDGE-L	lineage:Myeloid	G0016	True	20	T2
+gls	BRIDGE-L	lineage:Myeloid	G0020	True	17	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0022	True	17	T1
+gls	BRIDGE-L	lineage:Myeloid	G0027	True	16	T1
+gls	BRIDGE-L	lineage:Myeloid	G0031	True	14	T1
+gls	BRIDGE-L	lineage:Myeloid	G0032	True	14	T1
+gls	BRIDGE-L	lineage:Myeloid	G0036	True	13	T1
+gls	BRIDGE-L	lineage:Myeloid	G0038	True	13	T1
+gls	BRIDGE-L	lineage:Myeloid	G0042	True	12	T1
+gls	BRIDGE-L	lineage:Myeloid	G0045	True	12	T1
+gls	BRIDGE-L	lineage:Myeloid	G0049	False	12	T1
+gls	BRIDGE-L	lineage:Myeloid	G0050	True	12	T1
+gls	BRIDGE-L	lineage:Myeloid	G0057	False	11	T1
+gls	BRIDGE-L	lineage:Myeloid	G0062	False	11	T1
+gls	BRIDGE-L	lineage:Myeloid	G0071	True	10	T2
+gls	BRIDGE-L	lineage:Myeloid	G0078	True	9	T2
+gls	BRIDGE-L	lineage:Myeloid	G0085	True	8	T1
+gls	BRIDGE-L	lineage:Myeloid	G0086	True	8	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0088	False	8	T1
+gls	BRIDGE-L	lineage:Myeloid	G0089	True	8	T1
+gls	BRIDGE-L	lineage:Myeloid	G0092	False	8	T1
+gls	BRIDGE-L	lineage:Myeloid	G0096	False	8	T2
+gls	BRIDGE-L	lineage:Myeloid	G0098	True	8	T1
+gls	BRIDGE-L	lineage:Myeloid	G0111	True	6	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0120	True	6	T1
+gls	BRIDGE-L	lineage:Myeloid	G0122	True	6	T2
+gls	BRIDGE-L	lineage:Myeloid	G0134	True	6	T1
+gls	BRIDGE-L	lineage:Myeloid	G0136	True	6	T1
+gls	BRIDGE-L	lineage:Myeloid	G0138	False	5	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0160	False	5	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0164	True	4	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0166	True	4	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0169	True	4	T1
+gls	BRIDGE-L	lineage:Myeloid	G0173	False	4	T2
+gls	BRIDGE-L	lineage:Myeloid	G0177	True	4	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0186	True	4	T1
+gls	BRIDGE-L	lineage:Myeloid	G0190	True	4	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0191	True	4	T1
+gls	BRIDGE-L	lineage:Myeloid	G0200	True	4	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0209	False	4	T2
+gls	BRIDGE-L	lineage:Myeloid	G0213	True	4	T1
+gls	BRIDGE-L	lineage:Myeloid	G0218	True	4	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0223	False	4	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0224	True	4	T1
+gls	BRIDGE-L	lineage:Myeloid	G0238	True	3	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0253	True	3	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0260	True	3	T3-nc
+gls	BRIDGE-L	lineage:Myeloid	G0265	False	3	T1
+gls	BRIDGE-L	lineage:Myeloid	G0280	True	18	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0284	True	8	T1
+gls	BRIDGE-L	lineage:Myeloid	G0287	False	8	T1
+gls	BRIDGE-L	lineage:Myeloid	G0288	True	7	T2
+gls	BRIDGE-L	lineage:Myeloid	G0291	False	6	T2
+gls	BRIDGE-L	lineage:Myeloid	G0297	False	3	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0301	False	13	T1
+gls	BRIDGE-L	lineage:Myeloid	G0307	True	8	T2
+gls	BRIDGE-L	lineage:Myeloid	G0308	True	7	T2
+gls	BRIDGE-L	lineage:Myeloid	G0319	True	4	T1
+gls	BRIDGE-L	lineage:Myeloid	G0336	True	4	T1
+gls	BRIDGE-L	lineage:Myeloid	G0338	True	3	T3-neg
+gls	BRIDGE-L	lineage:Myeloid	G0341	True	21	T1
+gls	BRIDGE-L	lineage:Myeloid	G0356	True	4	T2
+gls	BRIDGE-L	lineage:Myeloid	G0362	True	12	T1
+gls	BRIDGE-L	lineage:Myeloid	G0364	False	6	T2
+gls	BRIDGE-L	lineage:Myeloid	G0368	True	5	T1
+gls	BRIDGE-L	lineage:Myeloid	G0369	False	4	T2
+gls	BRIDGE-L	lineage:Myeloid	G0371	True	8	T3-neg
+gls	BRIDGE-L	lineage:Ovary/Fallopian Tube	G0010	True	22	T1
+gls	BRIDGE-L	lineage:Ovary/Fallopian Tube	G0095	False	8	T2
+gls	BRIDGE-L	lineage:Ovary/Fallopian Tube	G0138	False	5	T3-neg
+gls	BRIDGE-L	lineage:Ovary/Fallopian Tube	G0146	True	5	T2
+gls	BRIDGE-L	lineage:Ovary/Fallopian Tube	G0196	True	4	T3-neg
+gls	BRIDGE-L	lineage:Ovary/Fallopian Tube	G0263	True	3	T3-neg
+gls	BRIDGE-L	lineage:Ovary/Fallopian Tube	G0303	False	11	T2
+gls	BRIDGE-L	lineage:Ovary/Fallopian Tube	G0309	False	6	T3-neg
+gls	BRIDGE-L	lineage:Ovary/Fallopian Tube	G0379	False	4	T2
+gls	BRIDGE-L	lineage:Pancreas	G0014	False	22	T1
+gls	BRIDGE-L	lineage:Pancreas	G0016	False	20	T2
+gls	BRIDGE-L	lineage:Pancreas	G0018	True	18	T1
+gls	BRIDGE-L	lineage:Pancreas	G0021	False	17	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0023	False	17	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0030	False	14	T1
+gls	BRIDGE-L	lineage:Pancreas	G0035	False	13	T1
+gls	BRIDGE-L	lineage:Pancreas	G0037	False	13	T1
+gls	BRIDGE-L	lineage:Pancreas	G0042	False	12	T1
+gls	BRIDGE-L	lineage:Pancreas	G0043	False	12	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0048	True	12	T2
+gls	BRIDGE-L	lineage:Pancreas	G0052	False	12	T1
+gls	BRIDGE-L	lineage:Pancreas	G0054	False	12	T1
+gls	BRIDGE-L	lineage:Pancreas	G0057	True	11	T1
+gls	BRIDGE-L	lineage:Pancreas	G0063	False	10	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0073	False	10	T2
+gls	BRIDGE-L	lineage:Pancreas	G0078	False	9	T2
+gls	BRIDGE-L	lineage:Pancreas	G0092	False	8	T1
+gls	BRIDGE-L	lineage:Pancreas	G0097	False	8	T1
+gls	BRIDGE-L	lineage:Pancreas	G0117	False	6	T1
+gls	BRIDGE-L	lineage:Pancreas	G0120	False	6	T1
+gls	BRIDGE-L	lineage:Pancreas	G0123	True	6	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0138	False	5	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0149	False	5	T2
+gls	BRIDGE-L	lineage:Pancreas	G0159	False	5	T2
+gls	BRIDGE-L	lineage:Pancreas	G0160	True	5	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0169	False	4	T1
+gls	BRIDGE-L	lineage:Pancreas	G0204	False	4	T1
+gls	BRIDGE-L	lineage:Pancreas	G0207	False	4	T1
+gls	BRIDGE-L	lineage:Pancreas	G0211	False	4	T1
+gls	BRIDGE-L	lineage:Pancreas	G0231	False	4	T2
+gls	BRIDGE-L	lineage:Pancreas	G0237	False	3	T2
+gls	BRIDGE-L	lineage:Pancreas	G0241	True	3	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0253	True	3	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0291	True	6	T2
+gls	BRIDGE-L	lineage:Pancreas	G0293	False	5	T1
+gls	BRIDGE-L	lineage:Pancreas	G0299	False	22	T1
+gls	BRIDGE-L	lineage:Pancreas	G0303	True	11	T2
+gls	BRIDGE-L	lineage:Pancreas	G0305	True	9	T1
+gls	BRIDGE-L	lineage:Pancreas	G0307	False	8	T2
+gls	BRIDGE-L	lineage:Pancreas	G0315	True	4	T2
+gls	BRIDGE-L	lineage:Pancreas	G0316	False	4	T2
+gls	BRIDGE-L	lineage:Pancreas	G0318	False	4	T1
+gls	BRIDGE-L	lineage:Pancreas	G0321	False	3	T2
+gls	BRIDGE-L	lineage:Pancreas	G0322	False	17	T1
+gls	BRIDGE-L	lineage:Pancreas	G0324	True	10	T2
+gls	BRIDGE-L	lineage:Pancreas	G0330	False	8	T1
+gls	BRIDGE-L	lineage:Pancreas	G0331	False	6	T1
+gls	BRIDGE-L	lineage:Pancreas	G0334	True	5	T1
+gls	BRIDGE-L	lineage:Pancreas	G0336	True	4	T1
+gls	BRIDGE-L	lineage:Pancreas	G0338	False	3	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0339	True	3	T3-neg
+gls	BRIDGE-L	lineage:Pancreas	G0341	True	21	T1
+gls	BRIDGE-L	lineage:Pancreas	G0343	True	12	T1
+gls	BRIDGE-L	lineage:Pancreas	G0349	False	6	T1
+gls	BRIDGE-L	lineage:Pancreas	G0360	True	3	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0002	False	35	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0007	False	25	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0008	True	25	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0009	True	25	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0013	True	22	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0015	True	21	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0019	False	17	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0022	True	17	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0029	True	15	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0030	True	14	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0035	False	13	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0045	True	12	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0046	False	12	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0056	True	12	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0058	True	11	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0062	False	11	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0071	False	10	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0072	False	10	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0073	True	10	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0074	False	9	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0076	True	9	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0078	True	9	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0083	False	9	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0085	False	8	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0086	True	8	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0089	True	8	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0093	False	8	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0094	False	8	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0097	True	8	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0101	True	7	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0104	False	7	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0111	False	6	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0121	False	6	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0128	False	6	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0130	False	6	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0135	True	6	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0136	False	6	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0144	False	5	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0151	False	5	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0154	True	5	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0155	True	5	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0159	True	5	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0162	False	5	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0163	True	4	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0165	False	4	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0170	True	4	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0173	True	4	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0177	True	4	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0183	False	4	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0189	False	4	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0192	False	4	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0200	True	4	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0229	False	4	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0231	True	4	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0241	True	3	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0242	False	3	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0249	False	3	T3-nc
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0257	False	3	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0260	True	3	T3-nc
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0276	False	3	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0278	True	3	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0282	True	14	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0296	False	3	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0298	False	3	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0299	True	22	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0303	True	11	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0305	False	9	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0306	True	8	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0307	True	8	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0308	True	7	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0309	False	6	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0312	False	4	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0320	True	3	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0321	True	3	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0323	True	14	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0324	True	10	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0332	True	5	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0338	True	3	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0340	True	3	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0342	True	14	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0347	False	8	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0356	False	4	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0357	False	4	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0361	False	3	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0363	True	7	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0364	False	6	T2
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0373	False	5	T1
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0375	False	3	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0376	False	3	T3-neg
+gls	BRIDGE-L	lineage:Peripheral Nervous System	G0379	True	4	T2
+gls	BRIDGE-L	lineage:Pleura	G0007	False	25	T2
+gls	BRIDGE-L	lineage:Pleura	G0027	True	16	T1
+gls	BRIDGE-L	lineage:Pleura	G0044	False	12	T2
+gls	BRIDGE-L	lineage:Pleura	G0053	False	12	T1
+gls	BRIDGE-L	lineage:Pleura	G0145	False	5	T3-neg
+gls	BRIDGE-L	lineage:Pleura	G0290	False	6	T1
+gls	BRIDGE-L	lineage:Pleura	G0346	False	8	T1
+gls	BRIDGE-L	lineage:Pleura	G0358	False	3	T3-nc
+gls	BRIDGE-L	lineage:Pleura	G0368	False	5	T1
+gls	BRIDGE-L	lineage:Skin	G0003	False	34	T1
+gls	BRIDGE-L	lineage:Skin	G0007	False	25	T2
+gls	BRIDGE-L	lineage:Skin	G0009	True	25	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0015	True	21	T1
+gls	BRIDGE-L	lineage:Skin	G0020	False	17	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0028	True	16	T1
+gls	BRIDGE-L	lineage:Skin	G0031	True	14	T1
+gls	BRIDGE-L	lineage:Skin	G0033	False	14	T1
+gls	BRIDGE-L	lineage:Skin	G0034	False	14	T1
+gls	BRIDGE-L	lineage:Skin	G0039	True	13	T1
+gls	BRIDGE-L	lineage:Skin	G0040	True	13	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0051	True	12	T2
+gls	BRIDGE-L	lineage:Skin	G0052	True	12	T1
+gls	BRIDGE-L	lineage:Skin	G0057	True	11	T1
+gls	BRIDGE-L	lineage:Skin	G0070	False	10	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0071	True	10	T2
+gls	BRIDGE-L	lineage:Skin	G0076	False	9	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0077	False	9	T1
+gls	BRIDGE-L	lineage:Skin	G0081	True	9	T1
+gls	BRIDGE-L	lineage:Skin	G0084	True	8	T1
+gls	BRIDGE-L	lineage:Skin	G0086	True	8	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0098	False	8	T1
+gls	BRIDGE-L	lineage:Skin	G0120	True	6	T1
+gls	BRIDGE-L	lineage:Skin	G0125	False	6	T1
+gls	BRIDGE-L	lineage:Skin	G0134	True	6	T1
+gls	BRIDGE-L	lineage:Skin	G0139	True	5	T1
+gls	BRIDGE-L	lineage:Skin	G0146	True	5	T2
+gls	BRIDGE-L	lineage:Skin	G0149	False	5	T2
+gls	BRIDGE-L	lineage:Skin	G0150	False	5	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0152	True	5	T1
+gls	BRIDGE-L	lineage:Skin	G0159	True	5	T2
+gls	BRIDGE-L	lineage:Skin	G0165	True	4	T1
+gls	BRIDGE-L	lineage:Skin	G0166	True	4	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0187	False	4	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0191	True	4	T1
+gls	BRIDGE-L	lineage:Skin	G0194	True	4	T2
+gls	BRIDGE-L	lineage:Skin	G0200	True	4	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0201	False	4	T2
+gls	BRIDGE-L	lineage:Skin	G0205	False	4	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0210	True	4	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0211	False	4	T1
+gls	BRIDGE-L	lineage:Skin	G0214	True	4	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0219	False	4	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0221	True	4	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0224	True	4	T1
+gls	BRIDGE-L	lineage:Skin	G0233	True	3	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0240	False	3	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0244	False	3	T3-nc
+gls	BRIDGE-L	lineage:Skin	G0251	False	3	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0255	False	3	T2
+gls	BRIDGE-L	lineage:Skin	G0257	True	3	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0264	False	3	T3-nc
+gls	BRIDGE-L	lineage:Skin	G0272	True	3	T1
+gls	BRIDGE-L	lineage:Skin	G0278	True	3	T2
+gls	BRIDGE-L	lineage:Skin	G0289	True	7	T1
+gls	BRIDGE-L	lineage:Skin	G0292	True	5	T1
+gls	BRIDGE-L	lineage:Skin	G0293	False	5	T1
+gls	BRIDGE-L	lineage:Skin	G0313	True	4	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0329	True	8	T3-neg
+gls	BRIDGE-L	lineage:Skin	G0334	False	5	T1
+gls	BRIDGE-L	lineage:Skin	G0341	True	21	T1
+gls	BRIDGE-L	lineage:Skin	G0347	True	8	T1
+gls	BRIDGE-L	lineage:Skin	G0358	True	3	T3-nc
+gls	BRIDGE-L	lineage:Skin	G0364	True	6	T2
+gls	BRIDGE-L	lineage:Soft Tissue	G0006	True	29	T1
+gls	BRIDGE-L	lineage:Soft Tissue	G0031	False	14	T1
+gls	BRIDGE-L	lineage:Soft Tissue	G0055	False	12	T1
+gls	BRIDGE-L	lineage:Soft Tissue	G0067	False	10	T1
+gls	BRIDGE-L	lineage:Soft Tissue	G0073	True	10	T2
+gls	BRIDGE-L	lineage:Soft Tissue	G0086	False	8	T3-neg
+gls	BRIDGE-L	lineage:Soft Tissue	G0146	False	5	T2
+gls	BRIDGE-L	lineage:Soft Tissue	G0214	True	4	T3-neg
+gls	BRIDGE-L	lineage:Soft Tissue	G0222	True	4	T3-neg
+gls	BRIDGE-L	lineage:Soft Tissue	G0258	False	3	T2
+gls	BRIDGE-L	lineage:Soft Tissue	G0307	True	8	T2
+gls	BRIDGE-L	lineage:Soft Tissue	G0314	True	4	T1
+gls	BRIDGE-L	lineage:Uterus	G0045	False	12	T1
+gls	BRIDGE-L	lineage:Uterus	G0097	False	8	T1
+gls	BRIDGE-L	lineage:Uterus	G0117	False	6	T1
+gls	BRIDGE-L	lineage:Uterus	G0157	True	5	T3-neg
+gls	BRIDGE-L	lineage:Uterus	G0271	False	3	T1
+gls	BRIDGE-L	lineage:Uterus	G0285	False	8	T1
+gls	BRIDGE-L	lineage:Uterus	G0303	True	11	T2
+gls	BRIDGE-L	melanoma	G0003	False	34	T1
+gls	BRIDGE-L	melanoma	G0005	False	31	T3-neg
+gls	BRIDGE-L	melanoma	G0007	False	25	T2
+gls	BRIDGE-L	melanoma	G0009	True	25	T3-neg
+gls	BRIDGE-L	melanoma	G0015	True	21	T1
+gls	BRIDGE-L	melanoma	G0017	False	20	T3-neg
+gls	BRIDGE-L	melanoma	G0020	False	17	T3-neg
+gls	BRIDGE-L	melanoma	G0027	False	16	T1
+gls	BRIDGE-L	melanoma	G0028	True	16	T1
+gls	BRIDGE-L	melanoma	G0031	True	14	T1
+gls	BRIDGE-L	melanoma	G0033	True	14	T1
+gls	BRIDGE-L	melanoma	G0034	True	14	T1
+gls	BRIDGE-L	melanoma	G0038	True	13	T1
+gls	BRIDGE-L	melanoma	G0039	True	13	T1
+gls	BRIDGE-L	melanoma	G0040	True	13	T3-neg
+gls	BRIDGE-L	melanoma	G0051	True	12	T2
+gls	BRIDGE-L	melanoma	G0052	True	12	T1
+gls	BRIDGE-L	melanoma	G0057	True	11	T1
+gls	BRIDGE-L	melanoma	G0064	False	10	T1
+gls	BRIDGE-L	melanoma	G0070	False	10	T3-neg
+gls	BRIDGE-L	melanoma	G0071	True	10	T2
+gls	BRIDGE-L	melanoma	G0075	True	9	T1
+gls	BRIDGE-L	melanoma	G0076	True	9	T3-neg
+gls	BRIDGE-L	melanoma	G0077	False	9	T1
+gls	BRIDGE-L	melanoma	G0080	True	9	T2
+gls	BRIDGE-L	melanoma	G0081	True	9	T1
+gls	BRIDGE-L	melanoma	G0084	True	8	T1
+gls	BRIDGE-L	melanoma	G0086	True	8	T3-neg
+gls	BRIDGE-L	melanoma	G0098	False	8	T1
+gls	BRIDGE-L	melanoma	G0117	True	6	T1
+gls	BRIDGE-L	melanoma	G0120	True	6	T1
+gls	BRIDGE-L	melanoma	G0122	False	6	T2
+gls	BRIDGE-L	melanoma	G0124	False	6	T3-neg
+gls	BRIDGE-L	melanoma	G0125	True	6	T1
+gls	BRIDGE-L	melanoma	G0129	True	6	T1
+gls	BRIDGE-L	melanoma	G0134	True	6	T1
+gls	BRIDGE-L	melanoma	G0139	True	5	T1
+gls	BRIDGE-L	melanoma	G0146	True	5	T2
+gls	BRIDGE-L	melanoma	G0149	False	5	T2
+gls	BRIDGE-L	melanoma	G0150	True	5	T3-neg
+gls	BRIDGE-L	melanoma	G0152	True	5	T1
+gls	BRIDGE-L	melanoma	G0158	True	5	T2
+gls	BRIDGE-L	melanoma	G0159	True	5	T2
+gls	BRIDGE-L	melanoma	G0165	True	4	T1
+gls	BRIDGE-L	melanoma	G0176	True	4	T2
+gls	BRIDGE-L	melanoma	G0179	False	4	T3-neg
+gls	BRIDGE-L	melanoma	G0183	True	4	T3-neg
+gls	BRIDGE-L	melanoma	G0187	False	4	T3-neg
+gls	BRIDGE-L	melanoma	G0191	True	4	T1
+gls	BRIDGE-L	melanoma	G0193	True	4	T3-neg
+gls	BRIDGE-L	melanoma	G0194	True	4	T2
+gls	BRIDGE-L	melanoma	G0195	True	4	T1
+gls	BRIDGE-L	melanoma	G0200	True	4	T3-neg
+gls	BRIDGE-L	melanoma	G0202	False	4	T3-neg
+gls	BRIDGE-L	melanoma	G0210	True	4	T3-neg
+gls	BRIDGE-L	melanoma	G0211	False	4	T1
+gls	BRIDGE-L	melanoma	G0214	True	4	T3-neg
+gls	BRIDGE-L	melanoma	G0219	False	4	T3-neg
+gls	BRIDGE-L	melanoma	G0221	True	4	T3-neg
+gls	BRIDGE-L	melanoma	G0224	True	4	T1
+gls	BRIDGE-L	melanoma	G0227	True	4	T3-neg
+gls	BRIDGE-L	melanoma	G0233	True	3	T3-neg
+gls	BRIDGE-L	melanoma	G0244	False	3	T3-nc
+gls	BRIDGE-L	melanoma	G0251	True	3	T3-neg
+gls	BRIDGE-L	melanoma	G0252	False	3	T3-neg
+gls	BRIDGE-L	melanoma	G0257	True	3	T3-neg
+gls	BRIDGE-L	melanoma	G0263	False	3	T3-neg
+gls	BRIDGE-L	melanoma	G0264	False	3	T3-nc
+gls	BRIDGE-L	melanoma	G0272	True	3	T1
+gls	BRIDGE-L	melanoma	G0274	False	3	T3-neg
+gls	BRIDGE-L	melanoma	G0275	True	3	T2
+gls	BRIDGE-L	melanoma	G0276	True	3	T1
+gls	BRIDGE-L	melanoma	G0278	True	3	T2
+gls	BRIDGE-L	melanoma	G0281	True	16	T1
+gls	BRIDGE-L	melanoma	G0289	True	7	T1
+gls	BRIDGE-L	melanoma	G0292	True	5	T1
+gls	BRIDGE-L	melanoma	G0293	False	5	T1
+gls	BRIDGE-L	melanoma	G0304	True	10	T3-neg
+gls	BRIDGE-L	melanoma	G0313	True	4	T3-neg
+gls	BRIDGE-L	melanoma	G0326	False	9	T3-neg
+gls	BRIDGE-L	melanoma	G0327	False	8	T3-neg
+gls	BRIDGE-L	melanoma	G0329	False	8	T3-neg
+gls	BRIDGE-L	melanoma	G0334	False	5	T1
+gls	BRIDGE-L	melanoma	G0336	False	4	T1
+gls	BRIDGE-L	melanoma	G0341	True	21	T1
+gls	BRIDGE-L	melanoma	G0347	True	8	T1
+gls	BRIDGE-L	melanoma	G0349	True	6	T1
+gls	BRIDGE-L	melanoma	G0353	True	4	T1
+gls	BRIDGE-L	melanoma	G0358	True	3	T3-nc
+gls	BRIDGE-L	melanoma	G0361	True	3	T1
+gls	BRIDGE-L	melanoma	G0364	True	6	T2
+gls	BRIDGE-L	sex_female	G0100	True	8	T2
+gls	BRIDGE-L	sex_female	G0166	True	4	T3-neg

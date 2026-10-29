@@ -1,0 +1,29 @@
+{
+ "analysis_id": "CTRL_PC16",
+ "ledger": [
+  {
+   "analysis_id": "CTRL_PC16",
+   "direction": "controls",
+   "head": "e2b70255d459e16af84d38b4aeafaee6cf197261",
+   "n_genes": 2,
+   "registry_blob": "b4dcf9710bac48e73aa4c769a521cdfa3a752823",
+   "source": "crispr",
+   "targets_blob": "4b05f58af0eb8789bf97f027a0dff63099e13da8",
+   "targets_file": "results/part2/lockbox_targets/CTRL_PC16.json",
+   "time": "2026-10-29T06:50:55+0000"
+  }
+ ],
+ "lockbox_seed": 6715,
+ "n_confirmed": 0,
+ "n_eligible": 2,
+ "n_eligible_lockbox": 0,
+ "n_eligible_rare": 2,
+ "n_hits": 2,
+ "n_perm": 10000,
+ "n_rare_pass": 1,
+ "n_target_genes": 2,
+ "peak_rss_bytes": 3241574400,
+ "registry_blob": "b4dcf9710bac48e73aa4c769a521cdfa3a752823",
+ "resumed": false,
+ "runtime_s": 2.8
+}

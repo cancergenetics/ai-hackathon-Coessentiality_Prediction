@@ -1,0 +1,52 @@
+{
+ "analysis_id": "CTRL_PC5",
+ "hits": [
+  {
+   "beta_A": 0.5202591028,
+   "beta_L": 0.5065475012,
+   "ci95_L": [
+    0.1852153179,
+    0.8278796845
+   ],
+   "confirmed": true,
+   "context": "BRAF_vs_RAS_hotspot",
+   "df_L": 13.0200816377,
+   "n_L": 89,
+   "n_context_L": 22,
+   "n_ref_L": 67,
+   "p_L": 0.0023434691,
+   "p_L_hc3": 0.0023434691,
+   "p_L_perm": null,
+   "same_sign": true,
+   "se_L": 0.1487628341,
+   "testable": true,
+   "unit": "SHOC2 (8036)"
+  },
+  {
+   "beta_A": 0.1046303023,
+   "beta_L": 0.0895848878,
+   "ci95_L": [
+    -0.0216235477,
+    0.2007933233
+   ],
+   "confirmed": false,
+   "context": "BRAF_vs_RAS_hotspot",
+   "df_L": 13.0200816377,
+   "n_L": 89,
+   "n_context_L": 22,
+   "n_ref_L": 67,
+   "p_L": 0.0527101012,
+   "p_L_hc3": 0.0527101012,
+   "p_L_perm": null,
+   "same_sign": true,
+   "se_L": 0.051484672,
+   "testable": true,
+   "unit": "Z0132"
+  }
+ ],
+ "n_confirmed": 1,
+ "n_hits": 2,
+ "n_testable": 2,
+ "n_tested": 2,
+ "source": "crispr"
+}

@@ -1,0 +1,29 @@
+{
+ "analysis_id": "CTRL_PC5",
+ "ledger": [
+  {
+   "analysis_id": "CTRL_PC5",
+   "direction": "controls",
+   "head": "0a6073242232badb4eec1d50806c115689d923da",
+   "n_genes": 10,
+   "registry_blob": "c9b6390816429e14501ca7d93a9eaac0479b48bc",
+   "source": "crispr",
+   "targets_blob": "2501c05a39e20af3e99ef8660c7e91438335a8f1",
+   "targets_file": "results/part2/lockbox_targets/CTRL_PC5.json",
+   "time": "2026-10-29T06:50:16+0000"
+  }
+ ],
+ "lockbox_seed": 6704,
+ "n_confirmed": 1,
+ "n_eligible": 2,
+ "n_eligible_lockbox": 2,
+ "n_eligible_rare": 0,
+ "n_hits": 2,
+ "n_perm": 10000,
+ "n_rare_pass": 0,
+ "n_target_genes": 10,
+ "peak_rss_bytes": 2838495232,
+ "registry_blob": "c9b6390816429e14501ca7d93a9eaac0479b48bc",
+ "resumed": false,
+ "runtime_s": 1.4
+}

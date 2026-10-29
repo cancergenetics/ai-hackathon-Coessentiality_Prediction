@@ -1,0 +1,2 @@
+context	unit	beta	alternative	level	eligible	lockbox_testable	beta_L	se_L	df_L	n_L	n_context_L	p_L_hc3	p_L	p_L_perm	n_ref_L	testable_L	same_sign	confirmed	ci90_L_lo	ci90_L_hi	ci95_L_lo	ci95_L_hi	loso_same_sign	loso_folds	lomo_same_sign	demeter2_same_sign	rare_route_pass	rare_route_note	route	confirmed_final	promotable	status
+WGD	KIF18A (81930)	-0.163152	less	G	True	True				243	173				70	True	False	False											lockbox	False	False	not confirmed

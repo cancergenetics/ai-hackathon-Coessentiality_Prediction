@@ -1,0 +1,52 @@
+{
+ "analysis_id": "CTRL_PC12",
+ "hits": [
+  {
+   "beta_A": -0.2543562391,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "VPS4B_loss",
+   "df_L": null,
+   "n_L": 217,
+   "n_context_L": 85,
+   "n_ref_L": 132,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "VPS4A (27183)"
+  },
+  {
+   "beta_A": -0.2533993017,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "VPS4B_loss",
+   "df_L": null,
+   "n_L": 217,
+   "n_context_L": 85,
+   "n_ref_L": 132,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "Z0115"
+  }
+ ],
+ "n_confirmed": 0,
+ "n_hits": 2,
+ "n_testable": 2,
+ "n_tested": 2,
+ "source": "crispr"
+}

@@ -1,0 +1,51 @@
+{
+ "analysis_id": "CTRL_PC13",
+ "contexts": [
+  "female_or_LoY"
+ ],
+ "genes": [
+  "BPTF (2186)",
+  "DDX3X (1654)",
+  "DKC1 (1736)",
+  "EIF1AX (1964)",
+  "GCNT3 (9245)",
+  "RPS4X (6191)",
+  "SMARCA5 (8467)",
+  "USP9X (8239)",
+  "ZFX (7543)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.6988589320980955,
+   "context": "female_or_LoY",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "DDX3X (1654)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.5346838950762369,
+   "context": "female_or_LoY",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0137"
+  }
+ ],
+ "units": {
+  "DDX3X (1654)": [
+   "DDX3X (1654)"
+  ],
+  "Z0137": [
+   "BPTF (2186)",
+   "DDX3X (1654)",
+   "DKC1 (1736)",
+   "EIF1AX (1964)",
+   "GCNT3 (9245)",
+   "RPS4X (6191)",
+   "SMARCA5 (8467)",
+   "USP9X (8239)",
+   "ZFX (7543)"
+  ]
+ }
+}

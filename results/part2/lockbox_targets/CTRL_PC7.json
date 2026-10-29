@@ -1,0 +1,24 @@
+{
+ "analysis_id": "CTRL_PC7",
+ "contexts": [
+  "LoF:SMARCA4"
+ ],
+ "genes": [
+  "SMARCA2 (6595)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.5097813135544365,
+   "context": "LoF:SMARCA4",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "SMARCA2 (6595)"
+  }
+ ],
+ "units": {
+  "SMARCA2 (6595)": [
+   "SMARCA2 (6595)"
+  ]
+ }
+}

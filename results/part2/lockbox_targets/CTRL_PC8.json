@@ -1,0 +1,24 @@
+{
+ "analysis_id": "CTRL_PC8",
+ "contexts": [
+  "LoF:STAG2"
+ ],
+ "genes": [
+  "STAG1 (10274)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.9035137953217495,
+   "context": "LoF:STAG2",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "STAG1 (10274)"
+  }
+ ],
+ "units": {
+  "STAG1 (10274)": [
+   "STAG1 (10274)"
+  ]
+ }
+}

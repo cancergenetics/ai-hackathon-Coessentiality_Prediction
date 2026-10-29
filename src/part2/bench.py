@@ -9,6 +9,10 @@ in A only. Breadth terciles fixed on the primary pairs' A breadth. CI by Patient
 BRIDGE-L: per map, confirmation rate (confirmed / discovered, lockbox-testable contexts) within size bins
 {3-4, 5-8, 9-16, 17-60}, averaged with the pooled (both maps) discovered-cluster size distribution; difference
 zavg - GLS with a bootstrap over discovered hits within map and bin (B = 2000, seed 5200).
+
+BENCH secondary (al_correlation, effect_rsd, distinct_gstar): A-L correlation of context effects in residual-SD units
+for complex scores vs matched random gene sets; the correlation method, R, pair set and summary are registry rulings
+(no defaults). BRIDGE-L multiverse: bridge_unweighted (confirmed / discovered per map without size-bin weights).
 """
 from __future__ import annotations
 
@@ -39,14 +43,20 @@ def _signed_t(y, ctx, cov, sign) -> float:
 
 
 def bench_delta(pairs: pd.DataFrame, score_L, E_L: pd.DataFrame, contexts_L: pd.DataFrame, covariates_L,
-                blocks_L: pd.Series | None = None, B: int = 2000, seed: int = 5100) -> dict:
+                blocks_L: pd.Series | None = None, B: int = 2000, seed: int = 5100, tercile=None) -> dict:
     """pairs: columns context, unit, beta_A, gstar, breadth (A). Returns per-pair table, mean Delta and per-tercile
-    means with 95% bootstrap CIs."""
+    means with 95% bootstrap CIs. tercile: per-pair labels fixed elsewhere (multiverse: the primary pairs' breadth
+    terciles, review N8); default = terciles of this pair set's breadth (ties broken by pair order, N11)."""
     ys = {(r.context, r.unit): (score_L(E_L, r.context, r.unit), E_L[r.gstar].astype(float).clip(-3, 3))
           for r in pairs.itertuples(index=False)}
     cov_of = (lambda c: covariates_L.get(c)) if isinstance(covariates_L, dict) else (lambda c: covariates_L)
-    terc = pd.qcut(pairs.breadth.rank(method="first"), 3, labels=["low", "mid", "high"]) if len(pairs) >= 3 \
-        else pd.Series(["high"] * len(pairs), index=pairs.index)
+    if tercile is not None:
+        terc = pd.Series(list(tercile), index=pairs.index)
+        if len(terc) != len(pairs):
+            raise ValueError("tercile labels do not match the pairs")
+    else:
+        terc = pd.qcut(pairs.breadth.rank(method="first"), 3, labels=["low", "mid", "high"]) if len(pairs) >= 3 \
+            else pd.Series(["high"] * len(pairs), index=pairs.index)
 
     def deltas(rows_idx):
         out = []
@@ -102,7 +112,7 @@ def bridge_rate(hits: pd.DataFrame, B: int = 2000, seed: int = 5200) -> dict:
         ww = w.reindex(r.index)
         return float((r * ww).sum() / ww.sum()) if len(r) else np.nan
 
-    obs = {m: rate(h[h.map == m]) for m in ("zavg", "gls")}
+    obs = {m: rate(h[h["map"] == m]) for m in ("zavg", "gls")}
     rng = np.random.default_rng(seed)
     diffs = []
     cells = {k: g for k, g in h.groupby(["map", "bin"])}
@@ -111,7 +121,105 @@ def bridge_rate(hits: pd.DataFrame, B: int = 2000, seed: int = 5200) -> dict:
         for (m, b), g in cells.items():
             res.append(g.iloc[rng.integers(len(g), size=len(g))])
         bh = pd.concat(res)
-        diffs.append(rate(bh[bh.map == "zavg"]) - rate(bh[bh.map == "gls"]))
+        diffs.append(rate(bh[bh["map"] == "zavg"]) - rate(bh[bh["map"] == "gls"]))
     ci = np.nanquantile(diffs, [0.025, 0.975]).tolist()
     return dict(rate_zavg=obs["zavg"], rate_gls=obs["gls"], diff=obs["zavg"] - obs["gls"], ci95=ci,
                 supports_bridge=bool(ci[0] > 0), bin_weights=w.to_dict())
+
+
+# ------------------------------------------------------------------------------------------------ BENCH secondary
+def effect_rsd(y: pd.Series, ctx: pd.Series, cov: pd.DataFrame | None) -> float:
+    """Context effect in residual-SD units (BENCH secondary): OLS coefficient of the context column divided by the
+    residual SD sqrt(RSS / (n - p)) of the same design (complete cases, assoc._design: same covariates and FE rules as
+    the HC3 fits). NaN when < 2 context or < 2 reference models remain (robust.fit_one's rule)."""
+    from part2.assoc import _design
+    X, _, ok = _design(ctx.reindex(y.index), None if cov is None else cov.reindex(y.index))
+    yy = y.values[ok].astype(float)
+    m = ~np.isnan(yy)
+    X, yy = X[m], yy[m]
+    n_ctx = int(X[:, 1].sum()) if len(yy) else 0
+    if n_ctx < 2 or len(yy) - n_ctx < 2 or len(yy) <= X.shape[1]:
+        return np.nan
+    b, *_ = np.linalg.lstsq(X, yy, rcond=None)
+    r = yy - X @ b
+    s = np.sqrt(float(r @ r) / (len(yy) - X.shape[1]))
+    return float(b[1] / s) if s > 0 else np.nan
+
+
+def _corr(a, b, method: str) -> float:
+    a, b = np.asarray(a, float), np.asarray(b, float)
+    ok = np.isfinite(a) & np.isfinite(b)
+    if ok.sum() < 3:
+        return np.nan
+    if method == "pearson":
+        return float(np.corrcoef(a[ok], b[ok])[0, 1])
+    if method == "spearman":
+        from scipy.stats import spearmanr
+        return float(spearmanr(a[ok], b[ok]).statistic)
+    raise ValueError(f"correlation {method!r}: registry ruling must be 'pearson' or 'spearman'")
+
+
+def al_correlation(pairs: pd.DataFrame, score_A, score_L, ctx_A: pd.DataFrame, ctx_L: pd.DataFrame, cov_A: dict,
+                   cov_L: dict, sets_A=None, sets_L=None, R: int = 0, method: str | None = None) -> dict:
+    """BENCH secondary: A-L correlation of context effects (residual-SD units) across (C, c) pairs for the complex
+    scores, and for each matched random-set replicate r (sets_A(c, u, r) / sets_L(c, u, r) -> score Series or None
+    when unit u has no r-th set); the correlation method is a registry ruling (no default). Returns the per-pair
+    effects, r_complex, the R replicate correlations and the count of replicates with r_random >= r_complex (the
+    summary statistic built from them is a registry ruling)."""
+    if method is None:
+        raise ValueError("BENCH secondary: the correlation method is not registered (ruling needed)")
+    rows = []
+    for p in pairs.itertuples(index=False):
+        c, u = p.context, p.unit
+        rows.append(dict(context=c, unit=u, eff_A=effect_rsd(score_A(c, u), ctx_A[c], cov_A.get(c)),
+                         eff_L=effect_rsd(score_L(c, u), ctx_L[c], cov_L.get(c))))
+    tab = pd.DataFrame(rows, columns=["context", "unit", "eff_A", "eff_L"])
+    r_c = _corr(tab.eff_A, tab.eff_L, method)
+    r_rand, n_used = [], []
+    for r in range(R):
+        a, b = [], []
+        for p in pairs.itertuples(index=False):
+            ya = sets_A(p.context, p.unit, r)
+            if ya is None:
+                continue
+            a.append(effect_rsd(ya, ctx_A[p.context], cov_A.get(p.context)))
+            b.append(effect_rsd(sets_L(p.context, p.unit, r), ctx_L[p.context], cov_L.get(p.context)))
+        r_rand.append(_corr(a, b, method))
+        n_used.append(len(a))
+    rr = np.array(r_rand, float)
+    return dict(table=tab, r_complex=r_c, n_pairs=int(tab[["eff_A", "eff_L"]].notna().all(axis=1).sum()),
+                r_random=rr.tolist(), n_pairs_random=n_used, R=R, method=method,
+                n_random_ge_complex=int(np.sum(rr[np.isfinite(rr)] >= r_c)) if np.isfinite(r_c) else None,
+                random_quantiles=(np.nanquantile(rr, [0.025, 0.5, 0.975]).tolist() if np.isfinite(rr).any()
+                                  else None))
+
+
+def distinct_gstar(pairs: pd.DataFrame, fmap) -> dict:
+    """BENCH secondary count: distinct g* genes, and distinct frozen coarse complexes containing at least one g*."""
+    g = sorted(set(pairs.gstar.dropna()))
+    cx = sorted({u for x in g for u in fmap.units_of_gene(x, 1)})
+    return dict(n_pairs=int(len(pairs)), n_distinct_gstar=len(g), n_distinct_complexes_of_gstar=len(cx),
+                n_distinct_complexes_in_pairs=int(pairs.unit.nunique()))
+
+
+def _map_rate(df: pd.DataFrame, m: str) -> float:
+    s = df[df["map"] == m]
+    return float(s.confirmed.mean()) if len(s) else np.nan
+
+
+def bridge_unweighted(hits: pd.DataFrame, B: int = 2000, seed: int = 5200) -> dict:
+    """BRIDGE-L multiverse 'unweighted confirmation rate': confirmed / discovered per map (no size-bin weights), same
+    hit set as bridge_rate (lockbox-testable hits in a size bin); difference zavg - GLS, with the bridge_rate
+    resampling (within map and bin, seed) when B > 0."""
+    h = hits.assign(bin=[size_bin(int(s)) for s in hits["size"]]).dropna(subset=["bin"])
+    out = dict(rate_zavg=_map_rate(h, "zavg"), rate_gls=_map_rate(h, "gls"))
+    out["diff"] = out["rate_zavg"] - out["rate_gls"]
+    if B > 0:
+        rng = np.random.default_rng(seed)
+        cells = [g for _, g in h.groupby(["map", "bin"])]
+        diffs = []
+        for _ in range(B):
+            bh = pd.concat([g.iloc[rng.integers(len(g), size=len(g))] for g in cells])
+            diffs.append(_map_rate(bh, "zavg") - _map_rate(bh, "gls"))
+        out["ci95"] = np.nanquantile(diffs, [0.025, 0.975]).tolist()
+    return out

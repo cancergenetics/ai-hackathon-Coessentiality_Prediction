@@ -1,0 +1,25 @@
+event	axis	class_engine	label_final	headline_eligible	eligible	route	beta_A	beta_L	ci95_L_lo	ci95_L_hi	ci90_L_lo	ci90_L_hi	p_L	p_L_perm	n_context_L	n_ref_L	confirmed_final	promotable	rare_route_pass	rare_route_note	status
+Z0174|APC	N	NEUTRAL	NEUTRAL	False	False	lockbox	0.00312661	-0.00136106	-0.106187	0.103465	-0.0876641	0.084942	0.846215	0.846215	19	293	False	False			not eligible (no non-neutral call; L effect reported)
+Z0109|ARID1A	N	NEUTRAL	NEUTRAL	True	False	lockbox	-0.0342352	-0.0495436	-0.155428	0.0563408	-0.136642	0.0375547	0.142386	0.142386	12	282	False	False			not eligible (no non-neutral call; L effect reported)
+Z0109|ARID1A	P	PARALOG COMPENSATION	PARALOG COMPENSATION	True	True	lockbox	-0.374329	-0.294046	-0.593312	0.00522094	-0.540216	-0.0478753	0.00619938	0.00619938	12	282	True	True			confirmed
+Z0171|BAP1	N	NEUTRAL	NEUTRAL	False	False	lockbox	-0.011889	-0.00481039	-2.33933	2.32971	-1.29782	1.2882	0.513549	0.513549	6	314	False	False			not eligible (no non-neutral call; L effect reported)
+Z0205|BRCA1	N	INCONCLUSIVE	INCONCLUSIVE	False	False	not lockbox-testable	0.035408	0.0194874	-0.432822	0.471797	-0.335563	0.374538	0.915008	0.915008	4	313	False	False			not eligible (no non-neutral call; L effect reported)
+Z0186|EP300	P	PARALOG COMPENSATION	PARALOG COMPENSATION	True	True	not lockbox-testable	-1.09326	-0.374026	-1.82003	1.07198	-1.45346	0.705407	0.134687	0.134687	4	297	False	False	True		not lockbox-testable: rare-context route passed
+Z0286|FOCAD	N	RESIDUAL SENSITISATION	RESIDUAL SENSITISATION	True	True	lockbox	0.139649								10	224	False	False			not confirmed
+Z0171|KDM6A	N	NEUTRAL	NEUTRAL	False	False	lockbox	-0.0394462	-0.0426512	-0.154949	0.0696471	-0.133529	0.0482271	0.181782	0.181782	8	310	False	False			not eligible (no non-neutral call; L effect reported)
+Z0124|KEAP1	N	INCONCLUSIVE	INCONCLUSIVE	False	False	lockbox	0.0342946	-0.0434411	-0.230361	0.143479	-0.193022	0.10614	0.730227	0.730227	6	313	False	False			not eligible (no non-neutral call; L effect reported)
+Z0171|KMT2D	N	NEUTRAL	NEUTRAL	False	False	lockbox	0.0178472	-0.0164135	-0.132077	0.0992503	-0.109142	0.0763153	0.650735	0.650735	7	285	False	False			not eligible (no non-neutral call; L effect reported)
+Z0171|KMT2D	P	INCONCLUSIVE	INCONCLUSIVE	False	False	lockbox	-0.240994	-0.027716	-0.265898	0.210466	-0.218669	0.163237	0.367363	0.367363	7	285	False	False			not eligible (no non-neutral call; L effect reported)
+Z0014|MED12	N	INCONCLUSIVE	INCONCLUSIVE	False	False	lockbox	0.0672558	-0.047068	-0.197659	0.103523	-0.166109	0.071973	0.866713	0.866713	6	315	False	False			not eligible (no non-neutral call; L effect reported)
+Z0052|NF1	N	NEUTRAL	NEUTRAL	False	False	lockbox	0.0214881	-0.0298519	-0.168674	0.10897	-0.144608	0.0849048	0.591941	0.591941	16	294	False	False			not eligible (no non-neutral call; L effect reported)
+Z0333|NF2	N	NEUTRAL	NEUTRAL	False	False	lockbox	0.0311118	0.00564292	-0.129981	0.141266	-0.102262	0.113547	0.445855	0.445855	6	311	False	False			not eligible (no non-neutral call; L effect reported)
+Z0201|PBRM1	N	INCONCLUSIVE (null unavailable)	INCONCLUSIVE (null unavailable)	False	False	lockbox	-0.041513	0.0188423	-0.192665	0.230349	-0.151071	0.188756	0.337566	0.337566	7	309	False	False			not eligible (no non-neutral call; L effect reported)
+Z0041|PLAA	N	INCONCLUSIVE	INCONCLUSIVE	False	False	lockbox	0.0143808								6	229	False	False			not eligible (no non-neutral call; L effect reported)
+Z0130|PTEN	N	COLLAPSE	DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)	False	True	lockbox	-0.0567466	-0.0455753	-0.134523	0.0433726	-0.119738	0.0285878	0.153759		31	281	False	False			not confirmed
+Z0200|RB1	N	NEUTRAL	NEUTRAL	False	False	lockbox	0.0398979	-0.0236761	-0.126888	0.079536	-0.1093	0.0619483	0.706129	0.706129	19	294	False	False			not eligible (no non-neutral call; L effect reported)
+Z0109|SMARCA4	N	INCONCLUSIVE	INCONCLUSIVE	False	False	lockbox	-0.0574881	-0.0396411	-0.218534	0.139252	-0.187157	0.107874	0.29527	0.29527	12	305	False	False			not eligible (no non-neutral call; L effect reported)
+Z0109|SMARCB1	N	NEUTRAL	NEUTRAL	False	False	lockbox	0.0182663	-0.129324	-0.338271	0.0796236	-0.291754	0.0331067	0.926807	0.926807	5	316	False	False			not eligible (no non-neutral call; L effect reported)
+Z0278|STAG2	N	NEUTRAL	NEUTRAL	False	False	lockbox	-0.0218031	-0.0217136	-0.2219	0.178472	-0.178307	0.13488	0.381362	0.381362	5	313	False	False			not eligible (no non-neutral call; L effect reported)
+Z0292|STK11	N	NEUTRAL	NEUTRAL	False	False	lockbox	-0.0248867	-0.00695641	-0.0985861	0.0846733	-0.0824055	0.0684927	0.423858	0.423858	12	307	False	False			not eligible (no non-neutral call; L effect reported)
+Z0158|TP53	N	RESIDUAL SENSITISATION	DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)	False	True	lockbox	0.056413	0.104001	0.0635863	0.144415	0.0701722	0.137829	7.15478e-07		195	108	True	False			confirmed (not promotable: E2 label or not headline-eligible)
+Z0145|VHL	N	INCONCLUSIVE	INCONCLUSIVE	False	False	lockbox	0.107961	-0.339195	-0.953248	0.274857	-0.701116	0.0227256	0.986401	0.986401	7	312	False	False			not eligible (no non-neutral call; L effect reported)

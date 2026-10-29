@@ -1,0 +1,29 @@
+{
+ "analysis_id": "CTRL_PC9",
+ "ledger": [
+  {
+   "analysis_id": "CTRL_PC9",
+   "direction": "controls",
+   "head": "6c086b241a54bf93168a28bee9e6ffe712308b76",
+   "n_genes": 4,
+   "registry_blob": "77004a3d646bbb5e8a55a76f5d568038a599ea5e",
+   "source": "crispr",
+   "targets_blob": "0b8406470eaffe98c6ea454735bfac52c5c6f348",
+   "targets_file": "results/part2/lockbox_targets/CTRL_PC9.json",
+   "time": "2026-10-29T06:50:29+0000"
+  }
+ ],
+ "lockbox_seed": 6708,
+ "n_confirmed": 0,
+ "n_eligible": 3,
+ "n_eligible_lockbox": 3,
+ "n_eligible_rare": 0,
+ "n_hits": 3,
+ "n_perm": 10000,
+ "n_rare_pass": 0,
+ "n_target_genes": 4,
+ "peak_rss_bytes": 2930720768,
+ "registry_blob": "77004a3d646bbb5e8a55a76f5d568038a599ea5e",
+ "resumed": false,
+ "runtime_s": 1.5
+}

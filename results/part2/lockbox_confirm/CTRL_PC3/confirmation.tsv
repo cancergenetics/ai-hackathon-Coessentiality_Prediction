@@ -1,0 +1,4 @@
+context	unit	beta	alternative	level	eligible	lockbox_testable	beta_L	se_L	df_L	n_L	n_context_L	p_L_hc3	p_L	p_L_perm	n_ref_L	testable_L	same_sign	confirmed	ci90_L_lo	ci90_L_hi	ci95_L_lo	ci95_L_hi	loso_same_sign	loso_folds	lomo_same_sign	demeter2_same_sign	rare_route_pass	rare_route_note	route	confirmed_final	promotable	status
+TP53_altered	CDKN1A (1026)	-0.230529	less	G	True	True	-0.224762	0.0357335	127.543	328	219	2.32894e-09	2.32894e-09		109	True	True	True	-0.283968	-0.165555	-0.295469	-0.154054							lockbox	True	True	confirmed
+TP53_altered	TP53 (7157)	-0.625638	less	G	True	True	-0.625599	0.0626294	127.543	328	219	5.20334e-18	5.20334e-18		109	True	True	True	-0.729369	-0.521829	-0.749526	-0.501671							lockbox	True	True	confirmed
+TP53_altered	USP28 (57646)	-0.192114	less	G	True	True	-0.196663	0.0292486	127.543	328	219	2.66809e-10	2.66809e-10		109	True	True	True	-0.245125	-0.148201	-0.254538	-0.138788							lockbox	True	True	confirmed

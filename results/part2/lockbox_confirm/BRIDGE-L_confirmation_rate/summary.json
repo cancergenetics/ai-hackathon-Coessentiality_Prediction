@@ -1,0 +1,29 @@
+{
+ "analysis_id": "BRIDGE-L_confirmation_rate",
+ "ledger": [
+  {
+   "analysis_id": "BRIDGE-L_confirmation_rate",
+   "direction": "bridge",
+   "head": "b81ceb42ec9619dd60dd1606f3d829399f1fffb5",
+   "n_genes": 2783,
+   "registry_blob": "6c8b7b726e235fee8be6307814ac305d6864752d",
+   "source": "crispr",
+   "targets_blob": "6256c9eabab1aac01efa1f9758de5d81d5516de9",
+   "targets_file": "results/part2/lockbox_targets/BRIDGE-L_confirmation_rate.json",
+   "time": "2026-10-29T09:23:05+0000"
+  }
+ ],
+ "lockbox_seed": 6600,
+ "n_confirmed": 764,
+ "n_eligible": 1345,
+ "n_eligible_lockbox": 1335,
+ "n_eligible_rare": 10,
+ "n_hits": 1345,
+ "n_perm": 10000,
+ "n_rare_pass": 3,
+ "n_target_genes": 2783,
+ "peak_rss_bytes": 3666116608,
+ "registry_blob": "6c8b7b726e235fee8be6307814ac305d6864752d",
+ "resumed": false,
+ "runtime_s": 98.8
+}

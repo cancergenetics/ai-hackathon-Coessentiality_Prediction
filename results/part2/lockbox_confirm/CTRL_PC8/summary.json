@@ -1,0 +1,29 @@
+{
+ "analysis_id": "CTRL_PC8",
+ "ledger": [
+  {
+   "analysis_id": "CTRL_PC8",
+   "direction": "controls",
+   "head": "84024f59b6b9c8f6cbccaecbf034a6a04ed995aa",
+   "n_genes": 1,
+   "registry_blob": "690f0e8722b958721dce8b34c1b6c168e01e804e",
+   "source": "crispr",
+   "targets_blob": "f8b7f62a7059a173edb2176971dbe4f558bc365a",
+   "targets_file": "results/part2/lockbox_targets/CTRL_PC8.json",
+   "time": "2026-10-29T06:50:26+0000"
+  }
+ ],
+ "lockbox_seed": 6707,
+ "n_confirmed": 1,
+ "n_eligible": 1,
+ "n_eligible_lockbox": 1,
+ "n_eligible_rare": 0,
+ "n_hits": 1,
+ "n_perm": 10000,
+ "n_rare_pass": 0,
+ "n_target_genes": 1,
+ "peak_rss_bytes": 2930720768,
+ "registry_blob": "690f0e8722b958721dce8b34c1b6c168e01e804e",
+ "resumed": false,
+ "runtime_s": 1.9
+}

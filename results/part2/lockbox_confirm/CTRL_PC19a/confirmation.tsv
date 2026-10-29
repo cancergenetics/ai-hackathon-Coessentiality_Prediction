@@ -1,0 +1,3 @@
+context	unit	beta	alternative	level	eligible	lockbox_testable	beta_L	se_L	df_L	n_L	n_context_L	p_L_hc3	p_L	p_L_perm	n_ref_L	testable_L	same_sign	confirmed	ci90_L_lo	ci90_L_hi	ci95_L_lo	ci95_L_hi	loso_same_sign	loso_folds	lomo_same_sign	demeter2_same_sign	rare_route_pass	rare_route_note	route	confirmed_final	promotable	status
+PTEN_LoF_noPIK3CAhs	PIK3CB (5291)	-0.140116	less	G	True	True	-0.136009	0.0662773	40.274	281	28	0.0233485	0.0233485		253	True	True	True	-0.247592	-0.024426	-0.269932	-0.00208607							lockbox	True	True	confirmed
+PTEN_LoF_noPIK3CAhs	Z0077	-0.0416224	less	C	True	True	-0.106037	0.0329975	40.274	281	28	0.00129109	0.00129109		253	True	True	True	-0.161591	-0.0504827	-0.172713	-0.0393603							lockbox	True	True	confirmed

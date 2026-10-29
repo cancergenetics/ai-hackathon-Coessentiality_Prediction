@@ -1,0 +1,29 @@
+{
+ "analysis_id": "H1S_silencing_GI",
+ "ledger": [
+  {
+   "analysis_id": "H1S_silencing_GI",
+   "direction": "H1S",
+   "head": "459f76fb631f439ba3db7ea3b8f3978fe2180859",
+   "n_genes": 1505,
+   "registry_blob": "477ee7aa4e61da21b7ed9763ffc73b5849aa4bf0",
+   "source": "crispr",
+   "targets_blob": "cd1efea85ba04a945988456ecb566eabc2ff6279",
+   "targets_file": "results/part2/lockbox_targets/H1S_silencing_GI.json",
+   "time": "2026-10-29T06:53:43+0000"
+  }
+ ],
+ "lockbox_seed": 6400,
+ "n_confirmed": 9,
+ "n_eligible": 24,
+ "n_eligible_lockbox": 18,
+ "n_eligible_rare": 6,
+ "n_hits": 293,
+ "n_perm": 10000,
+ "n_rare_pass": 6,
+ "n_target_genes": 1505,
+ "peak_rss_bytes": 3350216704,
+ "registry_blob": "477ee7aa4e61da21b7ed9763ffc73b5849aa4bf0",
+ "resumed": false,
+ "runtime_s": 141.4
+}

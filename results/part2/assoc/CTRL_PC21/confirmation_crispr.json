@@ -1,0 +1,52 @@
+{
+ "analysis_id": "CTRL_PC21",
+ "hits": [
+  {
+   "beta_A": -1.3334652062,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "heme_vs_breast",
+   "df_L": null,
+   "n_L": 49,
+   "n_context_L": 33,
+   "n_ref_L": 16,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "CCND3 (896) minus CCND1 (595)"
+  },
+  {
+   "beta_A": -1.274535056,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "heme_vs_breast",
+   "df_L": null,
+   "n_L": 49,
+   "n_context_L": 33,
+   "n_ref_L": 16,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "CDK6 (1021) minus CDK4 (1019)"
+  }
+ ],
+ "n_confirmed": 0,
+ "n_hits": 2,
+ "n_testable": 2,
+ "n_tested": 2,
+ "source": "crispr"
+}

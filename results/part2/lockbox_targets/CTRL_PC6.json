@@ -1,0 +1,55 @@
+{
+ "analysis_id": "CTRL_PC6",
+ "contexts": [
+  "LoF:ARID1A"
+ ],
+ "genes": [
+  "ARID1A (8289)",
+  "ARID1B (57492)",
+  "DPF2 (5977)",
+  "IER5L (389792)",
+  "SMARCA4 (6597)",
+  "SMARCB1 (6598)",
+  "SMARCC1 (6599)",
+  "SMARCC2 (6601)",
+  "SMARCD2 (6603)",
+  "SMARCE1 (6605)",
+  "SS18 (6760)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.3753040420827843,
+   "context": "LoF:ARID1A",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "ARID1B (57492)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.3753040420827843,
+   "context": "LoF:ARID1A",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0109"
+  }
+ ],
+ "units": {
+  "ARID1B (57492)": [
+   "ARID1B (57492)"
+  ],
+  "Z0109": [
+   "ARID1A (8289)",
+   "ARID1B (57492)",
+   "DPF2 (5977)",
+   "IER5L (389792)",
+   "SMARCA4 (6597)",
+   "SMARCB1 (6598)",
+   "SMARCC1 (6599)",
+   "SMARCC2 (6601)",
+   "SMARCD2 (6603)",
+   "SMARCE1 (6605)",
+   "SS18 (6760)"
+  ]
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "analysis_id": "CTRL_PC13",
+ "hits": [
+  {
+   "beta_A": -0.6988589321,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "female_or_LoY",
+   "df_L": null,
+   "n_L": 305,
+   "n_context_L": 212,
+   "n_ref_L": 93,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "DDX3X (1654)"
+  },
+  {
+   "beta_A": -0.5346838951,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "female_or_LoY",
+   "df_L": null,
+   "n_L": 305,
+   "n_context_L": 212,
+   "n_ref_L": 93,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "Z0137"
+  }
+ ],
+ "n_confirmed": 0,
+ "n_hits": 2,
+ "n_testable": 2,
+ "n_tested": 2,
+ "source": "crispr"
+}

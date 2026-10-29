@@ -1,0 +1,73 @@
+{
+ "analysis_id": "CTRL_PC10",
+ "hits": [
+  {
+   "beta_A": -0.2076484841,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "FOCAD_del_or_MSI_H",
+   "df_L": null,
+   "n_L": 235,
+   "n_context_L": 19,
+   "n_ref_L": 216,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "HBS1L (10767)"
+  },
+  {
+   "beta_A": -0.6562317779,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "FOCAD_del_or_MSI_H",
+   "df_L": null,
+   "n_L": 235,
+   "n_context_L": 19,
+   "n_ref_L": 216,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "PELO (53918)"
+  },
+  {
+   "beta_A": -0.1191821871,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "FOCAD_del_or_MSI_H",
+   "df_L": null,
+   "n_L": 235,
+   "n_context_L": 19,
+   "n_ref_L": 216,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": true,
+   "unit": "Z0286"
+  }
+ ],
+ "n_confirmed": 0,
+ "n_hits": 3,
+ "n_testable": 3,
+ "n_tested": 3,
+ "source": "crispr"
+}

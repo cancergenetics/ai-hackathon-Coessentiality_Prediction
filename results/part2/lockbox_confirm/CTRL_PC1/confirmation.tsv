@@ -1,0 +1,3 @@
+context	unit	beta	alternative	level	eligible	lockbox_testable	beta_L	se_L	df_L	n_L	n_context_L	p_L_hc3	p_L	p_L_perm	n_ref_L	testable_L	same_sign	confirmed	ci90_L_lo	ci90_L_hi	ci95_L_lo	ci95_L_hi	loso_same_sign	loso_folds	lomo_same_sign	demeter2_same_sign	rare_route_pass	rare_route_note	route	confirmed_final	promotable	status
+MSI_H	WRN (7486)	-0.605164	less	G	True	True	-0.84612	0.203553	27.9474	338	20	0.000138226	0.000138226		318	True	True	True	-1.19241	-0.499827	-1.26311	-0.429125							lockbox	True	True	confirmed
+MSI_H	Z0157	-0.152272	less	C	True	True	-0.144693	0.0327524	27.9474	338	20	6.81864e-05	6.81864e-05		318	True	True	True	-0.200412	-0.0889731	-0.211789	-0.0775969							lockbox	True	True	confirmed

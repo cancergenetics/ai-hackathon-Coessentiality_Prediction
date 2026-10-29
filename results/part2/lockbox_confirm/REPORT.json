@@ -1,0 +1,805 @@
+{
+ "BENCH_complex_vs_gene": {
+  "B": 2000,
+  "analysis_id": "BENCH_complex_vs_gene",
+  "distinct": {
+   "n_distinct_complexes_in_pairs": 353,
+   "n_distinct_complexes_of_gstar": 353,
+   "n_distinct_gstar": 920,
+   "n_pairs": 1295
+  },
+  "multiverse": {
+   "T1_T2_pairs": {
+    "mean": -0.08375097852172134,
+    "mean_high": 0.22108862430922413,
+    "mean_low": -0.3038633959283011,
+    "mean_mid": -0.17932547842092278,
+    "n_pairs": 949
+   },
+   "eigengene": {
+    "mean": -0.12465669608901415,
+    "mean_high": 0.2197328530267405,
+    "mean_low": -0.46649116517023326,
+    "mean_mid": -0.12721770438349062,
+    "n_pairs": 1295
+   },
+   "gstar_largest_beta": {
+    "mean": -0.07606892962001571,
+    "mean_high": 0.27273992968399813,
+    "mean_low": -0.38075070036622566,
+    "mean_mid": -0.1202984012139166,
+    "n_pairs": 1295
+   },
+   "within_line_rank": "NOT RUN (amendment A3(b))"
+  },
+  "multiverse_ci": "point estimate only",
+  "n_L_models": 338,
+  "peak_rss_bytes": 3350216704,
+  "primary": {
+   "ci95": [
+    -0.15489594365355985,
+    0.03134294350050036
+   ],
+   "ci95_high": [
+    -0.03295186711471449,
+    0.3624797734298852
+   ],
+   "ci95_low": [
+    -0.5145882366148353,
+    -0.20101326906640968
+   ],
+   "ci95_mid": [
+    -0.225676189904529,
+    0.15534927229134843
+   ],
+   "mean": -0.0659717166570546,
+   "mean_high": 0.23999443244352095,
+   "mean_low": -0.3379161353077717,
+   "mean_mid": -0.10007238383649508,
+   "top_tercile_wins": false
+  },
+  "registry_blob": "e07880b9ae8b4ebaacf708c179d7fd7cc0a37ddb",
+  "runtime_s": 8192.7,
+  "secondary": "NOT RUN (amendments A4 G1, A5)",
+  "seed": 5100,
+  "trend_spearman_delta_breadth": {
+   "p": 2.576611371841304e-13,
+   "rho": 0.20137745812571442
+  }
+ },
+ "BRIDGE-L_confirmation_rate": {
+  "B": 2000,
+  "analysis_id": "BRIDGE-L_confirmation_rate",
+  "multiverse": {
+   "T1_T2_clusters": {
+    "bin_weights": {
+     "17-60": 0.14522156967431926,
+     "3-4": 0.201281366791244,
+     "5-8": 0.24879871863320877,
+     "9-16": 0.40469834490122797
+    },
+    "ci95": [
+     -0.1282844507478182,
+     -0.030993322763378624
+    ],
+    "diff": -0.0793021897571029,
+    "n_hits": {
+     "gls": 924,
+     "zavg": 949
+    },
+    "rate_gls": 0.6004214249279267,
+    "rate_zavg": 0.5211192351708238,
+    "supports_bridge": false
+   },
+   "matched_gene_coverage": {
+    "bin_weights": {
+     "17-60": 0.14676840215439857,
+     "3-4": 0.26929982046678635,
+     "5-8": 0.24416517055655296,
+     "9-16": 0.3397666068222621
+    },
+    "ci95": [
+     -0.1297796427127765,
+     -0.0346838150696069
+    ],
+    "coverage_matching": {
+     "genes_after": {
+      "a": 2862,
+      "b": 2862
+     },
+     "genes_before": {
+      "a": 3642,
+      "b": 2862
+     },
+     "trimmed": {
+      "map": "a",
+      "n_clusters_dropped": 115
+     }
+    },
+    "diff": -0.08216540823626561,
+    "n_hits": {
+     "gls": 1335,
+     "zavg": 893
+    },
+    "rate_gls": 0.5742324748066481,
+    "rate_zavg": 0.49206706657038246,
+    "supports_bridge": false
+   },
+   "unweighted": {
+    "ci95": [
+     -0.0992456581782425,
+     -0.023471432909635225
+    ],
+    "diff": -0.06185993377004617,
+    "rate_gls": 0.5722846441947566,
+    "rate_zavg": 0.5104247104247104
+   }
+  },
+  "multiverse_ci": "bootstrap as primary",
+  "n_hits": {
+   "gls": 1335,
+   "zavg": 1295
+  },
+  "peak_rss_bytes": 3666116608,
+  "primary": {
+   "bin_weights": {
+    "17-60": 0.12547528517110265,
+    "3-4": 0.279467680608365,
+    "5-8": 0.25665399239543724,
+    "9-16": 0.33840304182509506
+   },
+   "ci95": [
+    -0.11063048089480923,
+    -0.03263523332406332
+   ],
+   "diff": -0.07217308094926955,
+   "rate_gls": 0.5740838141806822,
+   "rate_zavg": 0.5019107332314127,
+   "supports_bridge": false
+  },
+  "registry_blob": "6c8b7b726e235fee8be6307814ac305d6864752d",
+  "runtime_s": 733.8,
+  "seed": 5200
+ },
+ "CTRL_PC1": {
+  "non_locus": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC10": {
+  "non_locus": {
+   "n_confirmed": 0,
+   "n_eligible": 3,
+   "n_lockbox": 3,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  },
+  "overall": {
+   "n_confirmed": 0,
+   "n_eligible": 3,
+   "n_lockbox": 3,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  }
+ },
+ "CTRL_PC11": {
+  "non_locus": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC12": {
+  "non_locus": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  },
+  "overall": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  }
+ },
+ "CTRL_PC13": {
+  "non_locus": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  },
+  "overall": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  }
+ },
+ "CTRL_PC14": {
+  "non_locus": {
+   "n_confirmed": 2,
+   "n_eligible": 3,
+   "n_lockbox": 3,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.6666666666666666
+  },
+  "overall": {
+   "n_confirmed": 2,
+   "n_eligible": 3,
+   "n_lockbox": 3,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.6666666666666666
+  }
+ },
+ "CTRL_PC15": {
+  "non_locus": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 0,
+   "n_rare": 2,
+   "n_rare_not_evaluable": 1,
+   "n_rare_pass": 1,
+   "rate": null
+  },
+  "overall": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 0,
+   "n_rare": 2,
+   "n_rare_not_evaluable": 1,
+   "n_rare_pass": 1,
+   "rate": null
+  }
+ },
+ "CTRL_PC16": {
+  "non_locus": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 0,
+   "n_rare": 2,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 1,
+   "rate": null
+  },
+  "overall": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 0,
+   "n_rare": 2,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 1,
+   "rate": null
+  }
+ },
+ "CTRL_PC17": {
+  "non_locus": {
+   "n_confirmed": 3,
+   "n_eligible": 3,
+   "n_lockbox": 3,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 3,
+   "n_eligible": 3,
+   "n_lockbox": 3,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC18": {
+  "non_locus": {
+   "n_confirmed": 0,
+   "n_eligible": 1,
+   "n_lockbox": 1,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  },
+  "overall": {
+   "n_confirmed": 0,
+   "n_eligible": 1,
+   "n_lockbox": 1,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  }
+ },
+ "CTRL_PC19a": {
+  "non_locus": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC19b": {
+  "non_locus": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC2": {
+  "non_locus": {
+   "n_confirmed": 4,
+   "n_eligible": 4,
+   "n_lockbox": 4,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 4,
+   "n_eligible": 4,
+   "n_lockbox": 4,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC20": {
+  "non_locus": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC21": {
+  "non_locus": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  },
+  "overall": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  }
+ },
+ "CTRL_PC22": {
+  "non_locus": {
+   "n_confirmed": 0,
+   "n_eligible": 1,
+   "n_lockbox": 0,
+   "n_rare": 1,
+   "n_rare_not_evaluable": 1,
+   "n_rare_pass": 0,
+   "rate": null
+  },
+  "overall": {
+   "n_confirmed": 0,
+   "n_eligible": 1,
+   "n_lockbox": 0,
+   "n_rare": 1,
+   "n_rare_not_evaluable": 1,
+   "n_rare_pass": 0,
+   "rate": null
+  }
+ },
+ "CTRL_PC3": {
+  "non_locus": {
+   "n_confirmed": 3,
+   "n_eligible": 3,
+   "n_lockbox": 3,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 3,
+   "n_eligible": 3,
+   "n_lockbox": 3,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC4": {
+  "non_locus": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC5": {
+  "non_locus": {
+   "n_confirmed": 1,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.5
+  },
+  "overall": {
+   "n_confirmed": 1,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.5
+  }
+ },
+ "CTRL_PC6": {
+  "non_locus": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 2,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC7": {
+  "non_locus": {
+   "n_confirmed": 1,
+   "n_eligible": 1,
+   "n_lockbox": 1,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 1,
+   "n_eligible": 1,
+   "n_lockbox": 1,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC8": {
+  "non_locus": {
+   "n_confirmed": 1,
+   "n_eligible": 1,
+   "n_lockbox": 1,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  },
+  "overall": {
+   "n_confirmed": 1,
+   "n_eligible": 1,
+   "n_lockbox": 1,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 1.0
+  }
+ },
+ "CTRL_PC9": {
+  "non_locus": {
+   "n_confirmed": 0,
+   "n_eligible": 2,
+   "n_lockbox": 2,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  },
+  "overall": {
+   "n_confirmed": 0,
+   "n_eligible": 3,
+   "n_lockbox": 3,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.0
+  }
+ },
+ "H1S_silencing_GI": {
+  "non_locus": {
+   "n_confirmed": 6,
+   "n_eligible": 20,
+   "n_lockbox": 14,
+   "n_rare": 6,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 6,
+   "rate": 0.42857142857142855
+  },
+  "overall": {
+   "n_confirmed": 9,
+   "n_eligible": 24,
+   "n_lockbox": 18,
+   "n_rare": 6,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 6,
+   "rate": 0.5
+  }
+ },
+ "H1_within_complex_GI": {
+  "non_locus": {
+   "n_confirmed": 2,
+   "n_eligible": 5,
+   "n_lockbox": 4,
+   "n_rare": 1,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 1,
+   "rate": 0.5
+  },
+  "overall": {
+   "n_confirmed": 2,
+   "n_eligible": 5,
+   "n_lockbox": 4,
+   "n_rare": 1,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 1,
+   "rate": 0.5
+  }
+ },
+ "H2_submodule_divergence": {
+  "beats_all_matched_sets": {
+   "n_confirmed": 26,
+   "n_eligible": 40,
+   "n_lockbox": 40,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.65
+  },
+  "no_sets": {
+   "n_confirmed": 0,
+   "n_eligible": 0,
+   "n_lockbox": 0,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": null
+  },
+  "non_locus": {
+   "n_confirmed": 67,
+   "n_eligible": 97,
+   "n_lockbox": 97,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.6907216494845361
+  },
+  "not_beats_all": {
+   "n_confirmed": 50,
+   "n_eligible": 69,
+   "n_lockbox": 69,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.7246376811594203
+  },
+  "overall": {
+   "n_confirmed": 76,
+   "n_eligible": 109,
+   "n_lockbox": 109,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.6972477064220184
+  }
+ },
+ "H3a_lineage_atlas": {
+  "beats_all_matched_sets": {
+   "n_confirmed": 287,
+   "n_eligible": 502,
+   "n_lockbox": 502,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.5717131474103586
+  },
+  "no_sets": {
+   "n_confirmed": 30,
+   "n_eligible": 62,
+   "n_lockbox": 62,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.4838709677419355
+  },
+  "non_locus": {
+   "n_confirmed": 524,
+   "n_eligible": 942,
+   "n_lockbox": 942,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.5562632696390658
+  },
+  "not_beats_all": {
+   "n_confirmed": 284,
+   "n_eligible": 581,
+   "n_lockbox": 581,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.48881239242685026
+  },
+  "overall": {
+   "n_confirmed": 601,
+   "n_eligible": 1145,
+   "n_lockbox": 1145,
+   "n_rare": 0,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 0,
+   "rate": 0.5248908296943231
+  }
+ },
+ "H3b_driver_family": {
+  "beats_all_matched_sets": {
+   "n_confirmed": 42,
+   "n_eligible": 103,
+   "n_lockbox": 94,
+   "n_rare": 9,
+   "n_rare_not_evaluable": 5,
+   "n_rare_pass": 4,
+   "rate": 0.44680851063829785
+  },
+  "no_sets": {
+   "n_confirmed": 3,
+   "n_eligible": 7,
+   "n_lockbox": 6,
+   "n_rare": 1,
+   "n_rare_not_evaluable": 1,
+   "n_rare_pass": 0,
+   "rate": 0.5
+  },
+  "non_locus": {
+   "n_confirmed": 42,
+   "n_eligible": 121,
+   "n_lockbox": 110,
+   "n_rare": 11,
+   "n_rare_not_evaluable": 6,
+   "n_rare_pass": 5,
+   "rate": 0.38181818181818183
+  },
+  "not_beats_all": {
+   "n_confirmed": 15,
+   "n_eligible": 51,
+   "n_lockbox": 50,
+   "n_rare": 1,
+   "n_rare_not_evaluable": 0,
+   "n_rare_pass": 1,
+   "rate": 0.3
+  },
+  "overall": {
+   "n_confirmed": 60,
+   "n_eligible": 161,
+   "n_lockbox": 150,
+   "n_rare": 11,
+   "n_rare_not_evaluable": 6,
+   "n_rare_pass": 5,
+   "rate": 0.4
+  }
+ }
+}

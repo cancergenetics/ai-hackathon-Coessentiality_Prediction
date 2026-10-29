@@ -157,3 +157,152 @@ unchanged.
 - H1S (exploratory): Z0149|ERBB3, Z0194|PRR15L, Z0260|B3GNT5 and Z0273|CST6 are relabelled.
 - Also in the reporting layer: Z0164|MAP2K4 (H1) is labelled NOT EVALUABLE, because its counted tests were not
   evaluable (ruling R2, applied without re-running H1).
+
+## A3: lockbox permutation seeds; BENCH `within_line_rank` declared not run
+
+| | |
+|---|---|
+| Time (UTC) | 2026-10-29T02:03:27Z |
+| Amends | `21fe1be1cdfe9d9b5b68c02c1b5a46b2b5b66a69` (registry as of main `75bf5e6`, plus the dry-check stop note) |
+| Decided by | PI rulings on `results/part2/lockbox_confirm/BLOCKED.md` |
+| Applied by | `scripts/52_amend_A3.py` (numbered `49_amend_A3.py` until main's scripts 48/49 were merged; `--check` re-derives the edit from the amended commit) |
+| Statement | **before any lockbox read; no L values read** |
+
+The lockbox ledger does not exist, no target list has been written, and no lockbox outcome has been loaded.
+
+**(a) Lockbox permutation seeds.** The registry fixed the discovery permutation seeds but not the seed of the exact
+PatientID-blocked Freedman-Lane permutation that a confirmation runs in L when fewer than 20 context (or loss) models
+are in L. A3 adds `seeds.lockbox_permutation`:
+
+| Entries | Seed |
+|---|---|
+| `H3a_lineage_atlas` | 6100 |
+| `H3b_driver_family` | 6200 |
+| `H1_within_complex_GI` | 6300 |
+| `H1S_silencing_GI` | 6400 |
+| `H2_submodule_divergence` | 6500 |
+| `BRIDGE-L_confirmation_rate` | 6600 |
+| `CTRL_*` | 6700 + registry index (the index of the registered control seed 4400 + index): CTRL_PC1 6700 … CTRL_PC19a 6718, CTRL_PC19b 6719 … CTRL_PC22 6722 |
+
+- `confirm.confirm_entry` uses `seed + i`, where i is the hit's position in the target list's hit order, which is
+  sorted by (context, unit). This is the same convention as the discovery runs (`perm_seed + row index`).
+- Collision check: every value under `seeds` / `calibration.seed` in every entry (4000–4422, 4500, 4600, 4700, 4800,
+  5100, 5200, 7000, 7100) and every seed named in DESIGN.md, RESEARCH_TREE.md and docs/registry/*.md (3000, 5000,
+  7000). No base seed collides, so no block was shifted by +50.
+- Offset ranges overlap other bases, as they already do for the discovery seeds (for example, H3a 6100 + up to 1,144
+  hits). They are independent streams on different data.
+
+**(b) BENCH `within_line_rank` is NOT RUN.** `cscore.score(method="within_line_rank")` ranks each line's effect among
+*all* genes. The registered BENCH read is "all members of the complexes in the primary and secondary pair sets", so
+the entry is internally inconsistent. The PI chose not to widen the lockbox read. `BENCH_complex_vs_gene` now carries
+`multiverse.not_run: [within_line_rank]` with a reason. This is reported as a limitation. The other multiverse items
+(eigengene, g* by |beta|, T1/T2 pairs) are unchanged.
+
+`registry.amendment_changes(committed, amended) == []` holds for all 30 touched entries (29 seed entries plus BENCH),
+and every declared path changed (`tests/test_part2_lockbox_driver.py`).
+
+## A4: BENCH secondary not run; multiverse point estimates only; H1S rare-route N axes not evaluable
+
+| | |
+|---|---|
+| Time (UTC) | 2026-10-29T02:42:37Z |
+| Amends | `b349e98868ec8fb5d75b9f0f10e162ade9b6efe2` (lockbox machinery and A3) |
+| Decided by | PI rulings on `results/part2/lockbox_confirm/GAPS.md` |
+| Applied by | `scripts/53_amend_A4.py` (numbered `50_amend_A4.py` until the same merge; `--check`) |
+| Statement | **before any lockbox read; no L values read** |
+
+The lockbox ledger still does not exist, and no target list or L outcome has been written or loaded.
+
+- **G1 (`BENCH_complex_vs_gene`).** Both secondary components are declared NOT RUN: the A–L correlation against
+  matched random gene sets (seed 7100), and the number of distinct complexes among the g*. They are recorded in
+  `estimand_secondary_not_run` with a reason.
+  - Reason: both are under-specified, so specifying them now would add analyst choices. The random-set comparison
+    would also need L values of non-member genes, which would widen the registered member-only BENCH read. This is
+    the same reasoning as A3(b).
+  - The PI chose not to widen the read. Both components are reported as limitations.
+- **G2 (`BENCH_complex_vs_gene`, `BRIDGE-L_confirmation_rate`).** The multiverses report point estimates only, with no
+  bootstrap CIs (`multiverse.ci: point estimate only`). The registry is silent on this, and the multiverse is
+  descriptive. The primary BENCH and BRIDGE-L estimands keep their registered CIs.
+- **G3 (`H1S_silencing_GI`).** `lockbox.rare_route_fitted_parameters: not evaluable`.
+  - Scope: the N-axis calls on non-lockbox-testable events, whose DEMETER2 rare route would need fitted baselines.
+    They are listed in `lockbox.rare_route_not_evaluable`: Z0018|IGSF11, Z0018|SOX10, Z0035|PAX8, Z0084|NFATC2,
+    Z0149|SPDEF, Z0316|IGF1R, all on the N axis.
+  - Ruling: these calls are NOT EVALUABLE in L, with no CRISPR or DEMETER2 refit. H1S is exploratory.
+
+**Accepted literal readings** (GAPS.md section 2, accepted as written):
+1. Breadth is taken over all of C's members. g* is chosen among the members after the context's removals.
+2. The multiverse "g* by largest |beta|" is the member with the largest beta in the complex's A direction (ties: t).
+3. The BENCH pair sets ("those contexts") are BENCH's 41 lockbox-testable H3a/H3b contexts. The single BENCH read
+   covers the members of every complex in the primary and secondary pair sets.
+4. The BRIDGE-L GLS pass uses the H3a/H3b machinery: removals, per-context covariates, 12/12 evaluability, a screen
+   at q < 0.1, 10,000 Freedman-Lane permutations, and seed 4500 for both calls.
+   - No pseudo-context calibration is run, because the entry has no `calibration` field.
+   - The pass runs after every confirmatory entry is closed and is committed before its read.
+5. BRIDGE-L rates:
+   - Cluster size is the number of frozen members.
+   - The zavg status comes from the H3a/H3b confirmation tables; there is no new zavg read.
+   - Rare-context hits are excluded ("lockbox-testable contexts only").
+   - The matched-coverage subset is `validation.match_coverage` (FZ-C D5) applied to the level-1 clusters.
+6. A hit whose context is testable in the frozen list but has fewer than 5/5 L models after complete cases is not
+   confirmed and is flagged. It does not take the rare-context route.
+7. Hits are ordered by (context, unit). The permutation seed is `seeds.lockbox_permutation` (A3) + hit index.
+
+`registry.amendment_changes(committed, amended) == []` holds for the three touched entries, and every declared path
+changed (`tests/test_part2_lockbox_driver.py`). The engine fix to `bench.bridge_rate` (indexing the `map` column rather
+than calling the `DataFrame.map` method) is not a registry change. It has a regression test.
+
+## A5: erratum to A4 G1; distinct-complex count reported; H1S rare route on A alignment; BRIDGE-L multiverse CIs
+
+| | |
+|---|---|
+| Time (UTC) | 2026-10-29T03:25:03Z |
+| Amends | `b64109790478261569cdbc74d2eda6c31154cd4c` (A4, the pre-read review `2bd58c0` and main merged) |
+| Decided by | PI rulings on the pre-read code review (`results/part2/verify/lockbox_code_review.md`, GO-WITH-NOTES) |
+| Applied by | `scripts/54_amend_A5.py` (`--check`) |
+| Statement | **before any lockbox read; no L values read** |
+
+The lockbox ledger still does not exist, and no target list or L outcome has been written or loaded.
+
+- **Erratum to A4 G1's reason (`BENCH_complex_vs_gene`).**
+  - A4 said the random-set comparison "needs L values of non-member genes". That is wrong. `calib.matched_random_sets`
+    draws the sets from the members of frozen coarse complexes, which the registered BENCH read covers.
+  - The A–L random-set correlation stays NOT RUN, and under-specification is now its only reason: the correlation
+    statistic, the number of sets, the matching tolerances, the pair set and the summary are all unregistered.
+  - The corrected reason is in `estimand_secondary_not_run_reason`.
+- **A4 reversed for the number of distinct complexes among the g\*.** It is computed on A only (920 g\* genes, 353
+  complexes containing a g\*, 353 complexes in the pairs) and is reported. `estimand_secondary_not_run` now holds only
+  the A–L random-set correlation.
+- **G3 (`H1S_silencing_GI`).** The six rare-route N axes use the A CRISPR alignment parameters (baselines b_j and N′)
+  on DEMETER2, as the registry prescribes ("alignment from A baselines").
+  - Leave-one-lineage-out and leave-one-model-out run for them as well.
+  - The A4 "NOT EVALUABLE" ruling and its wording are withdrawn.
+  - The six calls are recorded in `lockbox.rare_route_fitted_parameters: A CRISPR parameters` and
+    `lockbox.rare_route_fitted_hits`: Z0018|IGSF11, Z0018|SOX10, Z0035|PAX8, Z0084|NFATC2, Z0149|SPDEF, Z0316|IGF1R,
+    all on the N axis.
+- **BRIDGE-L multiverse.** It reports bootstrap CIs, using the primary resampling (B 2000, seed 5200; under 1 min),
+  which reverses A4 G2 for this entry. The BENCH multiverse stays point estimates only. The primary estimands keep
+  their registered CIs.
+
+**Accepted readings added explicitly** (in addition to A4's):
+8. Controls in lineage-like contexts get an unrestricted, PatientID-blocked Freedman-Lane permutation, not one
+   within lineage.
+   - The lineage-like contexts are `melanoma`, `heme` and `heme_vs_breast` (`cscore.LINEAGE_LIKE`).
+   - This reading decides PC17, because `melanoma` has n_L 19 < 20, so its permutation runs.
+9. H1/H1S permutations in L are PatientID-blocked within lineage, as in the discovery runs.
+10. Breadth is taken over all of C's members, the removed ones included. g\* and S_C are after removals. The PI kept
+    the literal reading to avoid adding an analyst choice, and it is disclosed as a limitation.
+11. Breadth terciles are formed by `rank(method="first")`, so ties are broken by the (context, unit) order of the pairs
+    (disclosed; review N11).
+    - The multiverse variants use the primary pairs' terciles (review N8).
+    - The T1/T2 subset keeps each pair's primary tercile.
+
+**Reporting fixes before the read** (review notes; no registry field):
+- **N4:** each confirmation table carries `promotable`. A confirmed call whose `label_final` differs from the engine
+  class, or which is not headline-eligible (E2, NOT EVALUABLE, exploratory), gets the status "confirmed (not
+  promotable …)". PTEN and TP53 can never show as headline.
+- **N5:** a rare-route hit whose DEMETER2 test cannot be fitted (the gene is missing, or too few DEMETER2 models) is
+  "NOT EVALUABLE (DEMETER2 not available)", not "failed".
+- **N12:** `bridge_rate` renormalises the pooled bin weights over the bins present in each map (disclosed).
+
+`registry.amendment_changes(committed, amended) == []` holds for the three touched entries, and every declared path
+changed (`tests/test_part2_lockbox_driver.py`).

@@ -1,0 +1,4 @@
+context	unit	beta	alternative	level	eligible	lockbox_testable	beta_L	se_L	df_L	n_L	n_context_L	p_L_hc3	p_L	p_L_perm	n_ref_L	testable_L	same_sign	confirmed	ci90_L_lo	ci90_L_hi	ci95_L_lo	ci95_L_hi	loso_same_sign	loso_folds	lomo_same_sign	demeter2_same_sign	rare_route_pass	rare_route_note	route	confirmed_final	promotable	status
+FOCAD_del_or_MSI_H	HBS1L (10767)	-0.207648	less	G	True	True				235	19				216	True	False	False											lockbox	False	False	not confirmed
+FOCAD_del_or_MSI_H	PELO (53918)	-0.656232	less	G	True	True				235	19				216	True	False	False											lockbox	False	False	not confirmed
+FOCAD_del_or_MSI_H	Z0286	-0.119182	less	C	True	True				235	19				216	True	False	False											lockbox	False	False	not confirmed

@@ -1,0 +1,59 @@
+{
+ "analysis_id": "CTRL_PC19a",
+ "contexts": [
+  "PTEN_LoF_noPIK3CAhs"
+ ],
+ "genes": [
+  "AKT1 (207)",
+  "AKT2 (208)",
+  "GNB2 (2783)",
+  "MAPKAP1 (79109)",
+  "MLST8 (64223)",
+  "MTOR (2475)",
+  "PDPK1 (5170)",
+  "PIK3CA (5290)",
+  "PIK3CB (5291)",
+  "RHEB (6009)",
+  "RICTOR (253260)",
+  "RPTOR (57521)",
+  "YBX1 (4904)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.14011595471006588,
+   "context": "PTEN_LoF_noPIK3CAhs",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "PIK3CB (5291)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.04162242117477958,
+   "context": "PTEN_LoF_noPIK3CAhs",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0077"
+  }
+ ],
+ "units": {
+  "PIK3CB (5291)": [
+   "PIK3CB (5291)"
+  ],
+  "Z0077": [
+   "AKT1 (207)",
+   "AKT2 (208)",
+   "GNB2 (2783)",
+   "MAPKAP1 (79109)",
+   "MLST8 (64223)",
+   "MTOR (2475)",
+   "PDPK1 (5170)",
+   "PIK3CA (5290)",
+   "PIK3CB (5291)",
+   "RHEB (6009)",
+   "RICTOR (253260)",
+   "RPTOR (57521)",
+   "YBX1 (4904)"
+  ]
+ }
+}

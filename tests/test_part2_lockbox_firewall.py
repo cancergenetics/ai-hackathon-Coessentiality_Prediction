@@ -106,3 +106,36 @@ def test_construction_runs_use_A_only():
     for bad in ("universe_models", "universe_model_ids", "crispr_model_ids", "lockbox_models", "LOCKBOX",
                 "load_gene_effect"):
         assert bad not in rs, bad
+
+
+# ------------------------------------------------------------------------------------------------ persisted reads (R1)
+# The crash-recovery copies of lockbox reads (data_cache/part2/lockbox_reads/, hash ledger results/part2/
+# lockbox_reads.jsonl) are a second route to L values. Only the reader / resume code in assoc.py, the confirmation step
+# that resumes (confirm.py) and the lockbox driver may name them; any other module or script under src/ or scripts/
+# (verify scripts included) fails. Tests are exempt (they exercise the mechanism on synthetic repositories).
+PERSISTED = [r"lockbox_reads", r"resume_lockbox_read", r"_persist_read", r"_reads_dir", r"_reads_sidecar"]
+PERSISTED_ALLOWED = {"src/part2/assoc.py", "src/part2/confirm.py", "scripts/51_lockbox_confirm.py"}
+ALL_CODE = sorted((ROOT / "src").rglob("*.py")) + sorted((ROOT / "scripts").rglob("*.py"))
+
+
+def test_persisted_lockbox_reads_only_in_reader_resume_and_driver():
+    hits = [h for h in _hits(ALL_CODE, PERSISTED) if h[0] not in PERSISTED_ALLOWED]
+    assert not hits, hits
+    tree = ast.parse((ROOT / "src" / "part2" / "assoc.py").read_text())
+    docs = {id(n.body[0].value) for n in ast.walk(tree)
+            if isinstance(n, (ast.Module, ast.FunctionDef, ast.ClassDef)) and n.body
+            and isinstance(n.body[0], ast.Expr) and isinstance(n.body[0].value, ast.Constant)}
+
+    def names_dir(n):                                          # a string naming the directory (docstrings excluded)
+        return isinstance(n, ast.Constant) and isinstance(n.value, str) and "lockbox_reads" in n.value \
+            and id(n) not in docs
+
+    def calls(name):
+        return lambda n: isinstance(n, ast.Call) and getattr(n.func, "id", getattr(n.func, "attr", None)) == name
+
+    assert sorted(x for x in _top_level_with(tree, names_dir) if x) == ["_reads_dir", "_reads_sidecar"]
+    assert _top_level_with(tree, calls("_persist_read")) == ["read_lockbox"]
+    assert _top_level_with(tree, calls("_reads_dir")) == ["_persist_read"]
+    assert sorted(_top_level_with(tree, calls("_reads_sidecar"))) == ["_persist_read", "resume_lockbox_read"]
+    fn = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "resume_lockbox_read")
+    assert not any(isinstance(n, ast.Attribute) and n.attr == "outcome_loader" for n in ast.walk(fn))

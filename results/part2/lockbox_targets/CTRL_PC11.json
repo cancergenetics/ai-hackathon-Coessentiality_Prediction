@@ -1,0 +1,45 @@
+{
+ "analysis_id": "CTRL_PC11",
+ "contexts": [
+  "NRF2_active"
+ ],
+ "genes": [
+  "AIFM1 (9131)",
+  "ARF4 (378)",
+  "CHCHD4 (131474)",
+  "NFE2L2 (4780)",
+  "SUCO (51430)",
+  "TAPT1 (202018)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.4768307927528477,
+   "context": "NRF2_active",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "NFE2L2 (4780)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.2531074797417058,
+   "context": "NRF2_active",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0264"
+  }
+ ],
+ "units": {
+  "NFE2L2 (4780)": [
+   "NFE2L2 (4780)"
+  ],
+  "Z0264": [
+   "AIFM1 (9131)",
+   "ARF4 (378)",
+   "CHCHD4 (131474)",
+   "NFE2L2 (4780)",
+   "SUCO (51430)",
+   "TAPT1 (202018)"
+  ]
+ }
+}
