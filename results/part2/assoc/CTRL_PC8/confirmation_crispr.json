@@ -1,0 +1,31 @@
+{
+ "analysis_id": "CTRL_PC8",
+ "hits": [
+  {
+   "beta_A": -0.9035137953,
+   "beta_L": -0.8806670933,
+   "ci95_L": [
+    -1.1615653398,
+    -0.5997688468
+   ],
+   "confirmed": true,
+   "context": "LoF:STAG2",
+   "df_L": 4.9304017099,
+   "n_L": 301,
+   "n_context_L": 5,
+   "n_ref_L": 296,
+   "p_L": 8.1471e-06,
+   "p_L_hc3": 0.000249245,
+   "p_L_perm": 8.1471e-06,
+   "same_sign": true,
+   "se_L": 0.1088105727,
+   "testable": true,
+   "unit": "STAG1 (10274)"
+  }
+ ],
+ "n_confirmed": 1,
+ "n_hits": 1,
+ "n_testable": 1,
+ "n_tested": 1,
+ "source": "crispr"
+}
