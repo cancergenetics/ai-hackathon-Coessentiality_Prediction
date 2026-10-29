@@ -1,0 +1,52 @@
+{
+ "analysis_id": "CTRL_PC15",
+ "hits": [
+  {
+   "beta_A": -0.3504797132,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "SMARCB1_LoF_or_SS18SSX",
+   "df_L": null,
+   "n_L": 298,
+   "n_context_L": 4,
+   "n_ref_L": 294,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": false,
+   "unit": "BRD9 (65980)"
+  },
+  {
+   "beta_A": -0.2187536877,
+   "beta_L": null,
+   "ci95_L": [
+    null,
+    null
+   ],
+   "confirmed": false,
+   "context": "SMARCB1_LoF_or_SS18SSX",
+   "df_L": null,
+   "n_L": 298,
+   "n_context_L": 4,
+   "n_ref_L": 294,
+   "p_L": null,
+   "p_L_hc3": null,
+   "p_L_perm": null,
+   "same_sign": false,
+   "se_L": null,
+   "testable": false,
+   "unit": "Z0186"
+  }
+ ],
+ "n_confirmed": 0,
+ "n_hits": 2,
+ "n_testable": 0,
+ "n_tested": 2,
+ "source": "crispr"
+}
