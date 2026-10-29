@@ -1,0 +1,62 @@
+{
+ "H1S_silencing_GI": {
+  "analysis_id": "H1S_silencing_GI",
+  "both": 29,
+  "conservative_only": 0,
+  "label": "sensitivity analysis (GPD tail; PI ruling R3); not a trial",
+  "n_conservative": 29,
+  "n_families_selected_conservative": null,
+  "n_gpd_used_among_primary": 10,
+  "n_pperm_below_analytic_among_primary": 19,
+  "n_primary": 31,
+  "primary_only": 2
+ },
+ "H1_within_complex_GI": {
+  "analysis_id": "H1_within_complex_GI",
+  "both": 5,
+  "conservative_only": 0,
+  "label": "sensitivity analysis (GPD tail; PI ruling R3); not a trial",
+  "n_conservative": 5,
+  "n_families_selected_conservative": null,
+  "n_gpd_used_among_primary": 4,
+  "n_pperm_below_analytic_among_primary": 3,
+  "n_primary": 5,
+  "primary_only": 0
+ },
+ "H2_submodule_divergence": {
+  "analysis_id": "H2_submodule_divergence",
+  "both": 107,
+  "conservative_only": 0,
+  "label": "sensitivity analysis (GPD tail; PI ruling R3); not a trial",
+  "n_conservative": 107,
+  "n_families_selected_conservative": 210,
+  "n_gpd_used_among_primary": 54,
+  "n_pperm_below_analytic_among_primary": 48,
+  "n_primary": 109,
+  "primary_only": 2
+ },
+ "H3a_lineage_atlas": {
+  "analysis_id": "H3a_lineage_atlas",
+  "both": 1113,
+  "conservative_only": 0,
+  "label": "sensitivity analysis (GPD tail; PI ruling R3); not a trial",
+  "n_conservative": 1113,
+  "n_families_selected_conservative": 21,
+  "n_gpd_used_among_primary": 346,
+  "n_pperm_below_analytic_among_primary": 435,
+  "n_primary": 1145,
+  "primary_only": 32
+ },
+ "H3b_driver_family": {
+  "analysis_id": "H3b_driver_family",
+  "both": 130,
+  "conservative_only": 0,
+  "label": "sensitivity analysis (GPD tail; PI ruling R3); not a trial",
+  "n_conservative": 130,
+  "n_families_selected_conservative": 13,
+  "n_gpd_used_among_primary": 65,
+  "n_pperm_below_analytic_among_primary": 103,
+  "n_primary": 161,
+  "primary_only": 31
+ }
+}

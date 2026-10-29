@@ -1,0 +1,170 @@
+{
+ "analysis_id": "H1S_silencing_GI",
+ "axes_changing": [
+  {
+   "conservative": false,
+   "primary": true,
+   "unit": "Z0035|ATP8B1|N"
+  },
+  {
+   "conservative": false,
+   "primary": true,
+   "unit": "Z0018|ZEB2|N"
+  }
+ ],
+ "both": 29,
+ "conservative_only": 0,
+ "fdr": {
+  "method": "bh",
+  "q": 0.05
+ },
+ "label": "sensitivity analysis (GPD tail; PI ruling R3); not a trial",
+ "n_conservative": 29,
+ "n_families_selected_conservative": null,
+ "n_gpd_used_among_primary": 10,
+ "n_pperm_below_analytic_among_primary": 19,
+ "n_primary": 31,
+ "per_context": {
+  "H1loss:ARHGAP29": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:ATP8B1": {
+   "both": 0,
+   "conservative": 0,
+   "primary": 1
+  },
+  "H1loss:B3GNT5": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:BLNK": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:BTK": {
+   "both": 3,
+   "conservative": 3,
+   "primary": 3
+  },
+  "H1loss:CCND1": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:CDH1": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:CST6": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:EBF1": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:EGFR": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:ERBB3": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:FOSL1": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:HNF1B": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:IGF1R": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:IGSF11": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:LLGL2": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:MYD88": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:MYEOV": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:NFATC2": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:PAX8": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:PRR15L": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:RIPK4": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:SOX10": {
+   "both": 2,
+   "conservative": 2,
+   "primary": 2
+  },
+  "H1loss:SPDEF": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:SYK": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:TNS3": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:YAP1": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:ZEB2": {
+   "both": 0,
+   "conservative": 0,
+   "primary": 1
+  }
+ },
+ "primary_only": 2
+}
