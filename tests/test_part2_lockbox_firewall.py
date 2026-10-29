@@ -1,6 +1,6 @@
 """Lockbox firewall (DESIGN v3.1 §0 F2/F5; round2_ai_failure M-C1): static checks over Part 2 code.
 
-1. No Part 2 file (src/part2, scripts/3x, Part 2 tests other than the firewall tests) names hu.MAP or test_eval.
+1. No Part 2 file (src/part2, scripts/3x-6x, Part 2 tests other than the firewall tests) names hu.MAP or test_eval.
 2. Outcome data (CRISPR gene effect, ScreenGeneEffect, DEMETER2) is named only in the loader modules
    (data.py / paths.py), the construction code (scores.py, genefilter.py, pipeline.py, scripts/31 for the Part 1
    reproduction run) and assoc.py; inside assoc.py only in ``_default_outcome_loader``, and the outcome loader is
@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = sorted((ROOT / "src" / "part2").glob("*.py"))
-SCRIPTS = sorted((ROOT / "scripts").glob("[34]*_*.py"))
+SCRIPTS = sorted((ROOT / "scripts").glob("[3-6]*_*.py"))
 TESTS = sorted(p for p in (ROOT / "tests").glob("test_part2_*.py") if "firewall" not in p.name)
 FILES = SRC + SCRIPTS
 
