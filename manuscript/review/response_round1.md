@@ -1,6 +1,6 @@
 # Response to the referee, round 1
 
-We thank the referee for a careful and constructive report. The referee's checks of our numbers were all correct, and every major issue was about how results should be stated. We agree with almost all of them. The revision narrows several claims, adds four post hoc, descriptive analyses on the construction set A (R-1 to R-4; `results/part2/revision/`, intent 4157f1e committed before computation, independently reproduced in `results/part2/verify/revision_analyses_review.md`), and corrects the wording the referee flagged. No registered result, call or metric changed. No lockbox value or test-set file was opened for the revision. Where a request needed new data access or new computation that is not in committed results, we did not do it and say so below.
+We thank the referee for a careful and constructive report. The referee's checks of our numbers were all correct, and every major issue was about how results should be stated. We agree with almost all of them. The revision narrows several claims, adds four post hoc, descriptive analyses on the construction set A (R-1 to R-4; `results/part2/revision/`, intent 4157f1e committed before computation, independently reproduced in `results/part2/verify/revision_analyses_review.md`; *[round 2: the check was not blind and did not rerun script 58 or re-implement the empirical-Bayes power step; see N3]*), and corrects the wording the referee flagged. No registered result, call or metric changed. No lockbox value or test-set file was opened for the revision. Where a request needed new data access or new computation that is not in committed results, we did not do it and say so below.
 
 Locations refer to the revised `manuscript/main.md` (sections), `manuscript/supplementary.md` (Supplementary Notes, "SN"), figures and tables. A clean copy without source comments is in `manuscript/submission/`.
 
@@ -37,7 +37,7 @@ We agree that the first-version labels were uneven. R-2 and R-3 replace them; th
 - **Point 2 (positive-ρ lineages).** Skin and Head and Neck now appear in the text, and the Fig. 3b legend points to them. Bone SNAPC and Head and Neck EGFR/GRB2 remain examples: they are beyond the spline trend, outside the less reliable lineages and supported in DEMETER2. Their trend direction is shown in Table S9.
 - **Point 3 (never-expressed excess).** The excess now discounts leads in the affected lineages, as described under (d).
 
-The text now leads only with findings that are T1, in a reliable lineage and supported in DEMETER2. It states that the labels are a post hoc selection for presentation.
+The text now leads only with findings that are T1, in a reliable lineage and supported in DEMETER2. *[Round 2: "reliable lineage" was not supported. Three of the four examples are in lineages with never-expressed rates of 0.19–0.22, and all four lie beyond the trend in its own direction; the text now gives the rates and relies on DEMETER2 (N2).]* It states that the labels are a post hoc selection for presentation.
 
 ### M3. Bridges framed too strongly; power argument applied asymmetrically
 
@@ -48,7 +48,7 @@ The text now leads only with findings that are T1, in a reliable lineage and sup
 
 ### M4. BENCH: partly failed bootstrap; Discussion overstates the result
 
-1. **Re-run with an explicit failure policy.** Not done. Any bootstrap re-run needs the lockbox values again, and this revision opened no lockbox data. We list it as an open item.
+1. **Re-run with an explicit failure policy.** Not done. Any bootstrap re-run needs the lockbox values again, and this revision opened no lockbox data. We list it as an open item. *[Round 2: stated too strongly. The persisted, hash-checked L reads exist and could be re-read; we chose not to make a second, post hoc look at L, to keep the single-read design.]*
 2. **Reporting.** The result is now "inconclusive, with a point estimate favouring the complex" (+0.240; 60% of high-tercile pairs favour the complex). The registered interval is called unreliable (16.5% failed fits; 1,032 of 2,000 replicates on reduced pair sets; lower bound −0.122 with per-replicate design) (Results, "Complex scores against their best gene: inconclusive"; SN 5, 6, 15).
 3. **"The complex is not the right unit"** is removed, and so are "complex scores did not replicate better" and "the conclusion holds either way". The low-tercile result is described as largely expected from the definition of breadth.
 
@@ -63,12 +63,12 @@ The text now leads only with findings that are T1, in a reliable lineage and sup
 
 - **Count.** The text now says: "For 11 of the 24 events, the mean complex-wide (non-paralog) dependency changed by less than ±0.1 Chronos units (90% CI inside the margin)". It adds that for ARID1A the paralogue did change, so 10 events showed no change on any tested axis. The abstract no longer carries an H1 count, and the cover letter is aligned (minor 11).
 - **Fig. 4d.** The panel title now reads "H1, 24 events: complex-wide labels + 2 paralog calls", and the legend explains that the bars count 26 labels.
-- **Residual-SD units and ±0.05 sensitivity.** Not done; neither is in the committed outputs. The text and SN 15 say so.
+- **Residual-SD units and ±0.05 sensitivity.** Not done; neither is in the committed outputs. The text and SN 15 say so. *[Correction, round 2: this reason was wrong for the ±0.05 sensitivity. The committed `classes.tsv` holds every event's 90% CI, so the sensitivity is a column filter: 0 of the 11 neutral events stay neutral at ±0.05 (R-5; `manuscript/review/response_round2.md`, N1). The reason stands for residual-SD units, which need the per-fit residual SD, which was not exported.]*
 - **Margin against H3a effects.** The text now notes that 325 H3a discoveries are smaller than half the margin, so "neutral" means "no change larger than 0.1", not "no change". L re-establishes equivalence for only 2 of 11 events (SN 12, 15).
 
 ### M7. Strongest findings
 
-- **Alternative registry readings.** Not done. The counts under the alternative leave-one-out unit and ranking were not computed, and the text says so.
+- **Alternative registry readings.** Not done. The counts under the alternative leave-one-out unit and ranking were not computed, and the text says so. *[Round 2: now bounded from committed tables (R-5): 252–254 findings; ranking changes only the order.]*
 - **Testability split.** Results and SN 16 now give it. The leave-one-out check applies fully to 199 findings and partly to 49; 6 passed the rare-context route instead (EP300 → CREBBP and five EWSR1-fusion findings). The strict (Bowel) and vacuous (Pancreas) cases are stated.
 - **Wording.** The cover letter now says the 254 were "confirmed in held-out lines (or, for five, by a rare-context route that is not an independent replication)", and that EP300 → CREBBP "passed only the rare-context route". The Discussion says the same.
 - **Timing.** The Results and cover letter state that the rule was applied after the lockbox read. The abstract no longer mentions the 254, to keep within 150 words.
@@ -149,10 +149,10 @@ These need the authors and remain open: the author list and corresponding author
 |---|---|
 | M2(d) rescaling by never-expressed inflation | New computation, not in committed results; reliability flag reported instead |
 | M3.2 formal minimal detectable difference | Bootstrap SD not committed; the CI bounds are interpreted instead |
-| M4.1 BENCH re-run with a failure policy | Needs the lockbox values again |
+| M4.1 BENCH re-run with a failure policy | Needs the lockbox values again *[round 2: a choice, not an impossibility; see M4.1]* |
 | M5 preprocessing-matched baseline; leave-one-large-cluster-out ΔAP | Needs the test labels again (a second look) |
-| M6 margin in residual-SD units; ±0.05 sensitivity | Not in committed outputs |
-| M7 counts under the alternative registry readings | Not computed |
+| M6 margin in residual-SD units; ±0.05 sensitivity | Not in committed outputs *[round 2: true for residual-SD units only; the ±0.05 sensitivity is now reported, 0 of 11]* |
+| M7 counts under the alternative registry readings | Not computed *[round 2: bounded, R-5]* |
 | Minor 5 CI for 13.3% vs 9.1% | Superseded by the R-1(b) reference |
 | Minor 9 L effect of g* alone | Not in committed outputs; Δ reported |
 | Number checker on the supplement and cover letter | The supplement needs the alias convention first |
