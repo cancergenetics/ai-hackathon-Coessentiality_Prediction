@@ -1,0 +1,53 @@
+{
+ "analysis_id": "CTRL_PC5",
+ "contexts": [
+  "BRAF_vs_RAS_hotspot"
+ ],
+ "genes": [
+  "FOSL1 (8061)",
+  "GOLGA7 (51125)",
+  "ICMT (23463)",
+  "NRAS (4893)",
+  "PRKCE (5581)",
+  "RAF1 (5894)",
+  "RCE1 (9986)",
+  "RPS6KA3 (6197)",
+  "SHOC2 (8036)",
+  "ZDHHC5 (25921)"
+ ],
+ "hits": [
+  {
+   "alternative": "greater",
+   "beta_A": 0.5202591028098251,
+   "context": "BRAF_vs_RAS_hotspot",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "SHOC2 (8036)"
+  },
+  {
+   "alternative": "greater",
+   "beta_A": 0.10463030225027356,
+   "context": "BRAF_vs_RAS_hotspot",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0132"
+  }
+ ],
+ "units": {
+  "SHOC2 (8036)": [
+   "SHOC2 (8036)"
+  ],
+  "Z0132": [
+   "FOSL1 (8061)",
+   "GOLGA7 (51125)",
+   "ICMT (23463)",
+   "NRAS (4893)",
+   "PRKCE (5581)",
+   "RAF1 (5894)",
+   "RCE1 (9986)",
+   "RPS6KA3 (6197)",
+   "SHOC2 (8036)",
+   "ZDHHC5 (25921)"
+  ]
+ }
+}
