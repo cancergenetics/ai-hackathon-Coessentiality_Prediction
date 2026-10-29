@@ -49,6 +49,11 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - BENCH: the conclusion rests on the top-tercile CI. 16.5% of bootstrap resample fits fail silently; with covariates assembled per resample the lower bound is −0.122. Disclose this; the "complex does not beat its best gene" conclusion holds either way. Drop the iid Spearman p.
   - The intent note names the wrong H1 axis (the affected one is EP300 P, not ARID1A P); disclosed.
   - Merged into main.
+- D15 (M6, 2026-10-29):
+  - The manuscript draft is complete and merged (3efa551; about 22k words in the main text, too long, to be condensed to journal length before peer review).
+  - Third registry↔code gap: the registered per-hit robustness checks (LOSO, leave-top-2-out; DESIGN strongest-findings rule) were never computed. They are now being computed on A only, with the rule fixed in advance, against an intent naming the candidates. They run after the lockbox read, which is disclosed.
+  - The firewall allowlists the two PI-authorised review scripts (52b61a3).
+  - Reference check is running.
 
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
