@@ -40,6 +40,8 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - Crash policy: each read matrix is persisted to data_cache with its hash committed at once, a resume mode never re-calls the loader, and hand-closing an unconfirmed entry is impossible.
   - A full dress rehearsal on A with a dummy L loader runs before the single read.
 
+- D11 (M4, 2026-10-29): Framing of H1. All three headline-eligible H1 events recover biology that is already pre-registered or known: ARID1A→paralog (ARID1B) IS control PC6; FOCAD sensitisation overlaps PC10 (FOCAD loss → PELO/HBS1L); EP300→CREBBP compensation matches prior literature (post hoc label). They are reported as recoveries/validations, not novel discoveries, and no claim is counted twice with its control. The informative H1 result is that most registered tumour-suppressor losses (11 events) leave their complex's dependency unchanged, a TOST-neutral finding. Novelty claims rest on lockbox-confirmed, complex-specific (beats all matched sets), non-locus H3a/H3b associations. H2 ranks use |t| (split β not committed; disclosed). Member-resolved β_j profiles (registered "also reported") will be exported.
+
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
 - [x] M1 Literature → LITERATURE.md (161 refs verified; 8 ranked directions D1–D8)
