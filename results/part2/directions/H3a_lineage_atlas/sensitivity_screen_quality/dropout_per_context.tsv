@@ -1,0 +1,24 @@
+context	n_context_primary	n_ref_primary	n_context_sens	n_ref_sens	dropped_context	dropped_ref
+lineage:Biliary Tract	27	980	27	861	0	119
+lineage:Bladder/Urinary Tract	25	982	25	863	0	119
+lineage:Bone	44	963	38	850	6	113
+lineage:Bowel	64	943	47	841	17	102
+lineage:Breast	50	957	45	843	5	114
+lineage:CNS/Brain	99	908	80	808	19	100
+lineage:Cervix	13	994	13	875	0	119
+lineage:Esophagus/Stomach	72	935	64	824	8	111
+lineage:Head and Neck	58	949	42	846	16	103
+lineage:Kidney	26	981	24	864	2	117
+lineage:Liver	19	988	18	870	1	118
+lineage:Lung	93	914	85	803	8	111
+lineage:Lymphoid	73	934	69	819	4	115
+lineage:Myeloid	33	974	30	858	3	116
+lineage:Ovary/Fallopian Tube	46	961	41	847	5	114
+lineage:Pancreas	53	954	47	841	6	113
+lineage:Peripheral Nervous System	35	972	28	860	7	112
+lineage:Pleura	16	991	16	872	0	119
+lineage:Prostate	14	993	10	878	4	115
+lineage:Skin	51	956	48	840	3	116
+lineage:Soft Tissue	38	969	38	850	0	119
+lineage:Uterus	28	979	24	864	4	115
+melanoma	50	957	47	841	3	116
