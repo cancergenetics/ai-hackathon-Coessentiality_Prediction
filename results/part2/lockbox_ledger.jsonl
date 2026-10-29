@@ -1,0 +1,1 @@
+{"analysis_id": "CTRL_PC1", "direction": "controls", "head": "5cb2aae55d39e220ea42c2fe42165771f13cf40c", "n_genes": 8, "registry_blob": "0a217135c020dd73709563d8ad69097410a9d0e5", "source": "crispr", "targets_blob": "fb57b13d0b3e203a51663ae82aa441121e386188", "targets_file": "results/part2/lockbox_targets/CTRL_PC1.json", "time": "2026-10-29T06:50:05+0000"}
