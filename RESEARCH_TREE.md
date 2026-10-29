@@ -48,5 +48,8 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - [x] Association engine (48d1076; synthetic). H3a FDR fix 02f62ee (BB rate 0.046, pooled 0.068 over 1,000 simulations)
   - [x] FZ-X (408593e; A1 84a0c43; A2 + fixes fb264b8; merged bba129c; manifest sha f23a5b51…). Lineage atlas (H3a): 23 lineages, m 8,441. Driver/genome-state contexts (H3b): 20 contexts, m 7,340; KMT2D and EWSR1 fusion go by the rare-context route; CREBBP, KMT2A-r, BCR::ABL1, PAX3/7::FOXO1 and SS18::SSX are dropped (<12 A models). H1: 24 genetic-loss events (m 28, 22 lockbox-testable). H1S: 317 silencing events (m 338, exploratory). BRIDGE-L: 8,717 + 7,577. Controls: PC7/8/18/21/22 not evaluable, so H2 has no controls and is exploratory. Freeze 23 s, deterministic.
   - [x] FZ-X independent review (f6e7ffd; delta ec3513e): ACCEPT. Independent recomputation matches exactly; no outcomes read; no trials or lockbox ledger.
-  - [ ] Controls run → H3a → H3b → H1 → H2 → lockbox confirmations → BENCH / BRIDGE-L
+  - [x] Controls, single look (intent e82b657 → results 4b5f800, 28 s). All 15 evaluable complex-level controls recovered (p 1e-88 … 0.023 for PC19a). Kill rule: H3a 2/2, H3b 10/10, H1 3/3 pass; H2 has none evaluable, so exploratory. PC16 is gene-level only and mixed (MLLT1 p=0.063; not counted, as registered).
+  - [x] Controls independent review (fd17c32): ACCEPT-WITH-NOTES. Own HC3/Satterthwaite code reproduces 15 tests exactly. Notes: lineage levels with <2 models are merged into the reference (engine convention not stated in DESIGN §2.5; at most 2% change in p; disclosed in Methods). H1 control coverage is thin: PC6 and PC12 are single paralog genes, only PC15 is multi-gene.
+  - [ ] A-side discovery, registry order: H3a → H3b → H1 (+ SMARCB1 CN sensitivity) → H1S → H2
+  - [ ] Lockbox confirmations → BENCH / BRIDGE-L
 - [ ] M-final Manuscript + peer review + REPORT.md
