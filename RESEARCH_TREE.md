@@ -60,6 +60,12 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - LOSO partly testable: H3a 21 (Pancreas 17), H3b 33;
   - scale-effect concordance, the Lymphoid essential-complex shift (ρ −0.24; Myeloid −0.135): 142/207 H3a hits concordant, 79 with |residual z| ≥ 2.
   Reporting: the paper leads with T1, non-control, residual-z-robust hits (e.g. Ovary CDH1/PAX8, Bone SNAPC, Lung APC/AXIN1, Head and Neck EGFR/GRB2, Pleura EXT1/2, Lymphoid/Myeloid AP2) and labels scale-concordant lymphoid/myeloid hits on essential machinery as a possible lineage-scale artefact.
+- D17 (M6, 2026-10-29): Peer review round 1: MAJOR REVISION. The process and the numbers reproduce; the issues are interpretive. Response plan:
+  - post hoc A-only revision analyses R-1..R-4: non-member matched sets plus a selection-aware reference; a non-linear lineage trend with one uniform artefact rule across all lineages; DEMETER2 checks on A for the lead hits; power-expected BRIDGE-L for both maps;
+  - BENCH called inconclusive;
+  - overstatements fixed ("label-free", "locked before the test data existed", 11/24 count, EP300 rare route);
+  - a clean submission copy with no HTML comments, trimmed to the journal limits.
+  Blocking items that need the user: author list, repository URL/DOI (including Part 1), confirming the DepMap release, licence checks.
 - D17 (M6, 2026-10-29): Submission version of the manuscript. main.md condensed (Introduction + Results + Discussion + Conclusions about 6.3k words, Methods about 3.6k, Abstract 190); extended limitations, full deviations table, sensitivity, calibration and per-direction detail moved to Supplementary Notes 10–16; Table 3 (amendments with timing) in the main text. The provisional 261/29 set is replaced by the registered 254 (Supplementary Table S9, `scripts/tab_strongest.py`). Post hoc reporting labels (D16): lead example = H3a, T1, not a control readout, |residual z| ≥ 2 (37); possible lineage-scale artefact = H3a Lymphoid/Myeloid, scale-concordant, |residual z| < 2 (56). Reference-check edits E1–E15 applied (M14 Efron, M15 Schuirmann, M16 Yates added to LITERATURE §10). `scripts/check_manuscript_numbers.py` checks every main-text number against its source comment: 579/579 matched after fixing comment citations (no numeric value error found). No figure showed provisional content, so no figure was regenerated; Table S7's Markdown is relabelled as an earlier, unregistered subset.
 
 ## Tree
