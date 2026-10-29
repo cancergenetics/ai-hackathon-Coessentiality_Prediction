@@ -1,0 +1,55 @@
+{
+ "analysis_id": "CTRL_PC12",
+ "contexts": [
+  "VPS4B_loss"
+ ],
+ "genes": [
+  "CHMP1A (5119)",
+  "CHMP2A (27243)",
+  "CHMP3 (51652)",
+  "CHMP4B (128866)",
+  "IST1 (9798)",
+  "VPS4A (27183)",
+  "VPS4B (9525)",
+  "VRK1 (7443)",
+  "VTA1 (51534)",
+  "ZNF236 (7776)",
+  "ZNF407 (55628)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.25435623906200183,
+   "context": "VPS4B_loss",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "VPS4A (27183)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.25339930168733965,
+   "context": "VPS4B_loss",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0115"
+  }
+ ],
+ "units": {
+  "VPS4A (27183)": [
+   "VPS4A (27183)"
+  ],
+  "Z0115": [
+   "CHMP1A (5119)",
+   "CHMP2A (27243)",
+   "CHMP3 (51652)",
+   "CHMP4B (128866)",
+   "IST1 (9798)",
+   "VPS4A (27183)",
+   "VPS4B (9525)",
+   "VRK1 (7443)",
+   "VTA1 (51534)",
+   "ZNF236 (7776)",
+   "ZNF407 (55628)"
+  ]
+ }
+}
