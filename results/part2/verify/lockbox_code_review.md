@@ -215,3 +215,124 @@ export PART1_DIR=".../coessentiality_protein complexes"; export PYTHONHASHSEED=0
 .venv/bin/python -m pytest -q --runxfail tests/test_lockbox_review_adversarial.py   # the 5 gaps fail as described
 .venv/bin/python -m pytest -q tests/test_part2_assoc.py tests/test_part2_fzx.py     # 24 passed
 ```
+
+## Re-check (fixes `5082cc8`, A5, rehearsal `fb54005`; merged into `review-lockbox`)
+
+Date: 2026-10-29. Code, registry and git history only. **No L value was read**: no lockbox row was loaded, the
+lockbox model list was not opened, and no real-data driver mode was run.
+
+### Final verdict: GO, with one small pre-read condition (R1)
+
+### 1. The MUST items are closed in substance, not only in tests
+
+**MUST-1: inputs are pinned and the target list holds eligibility and route. Closed.**
+- `require_clean` refuses any tracked uncommitted change. It is called in `run_entry`, `bench_stage`, `bridge_stage`
+  and the preflight.
+- `committed()` / `committed_blob` are applied to `controls_summary.tsv` and `classes.tsv`.
+- `lockbox_testable.tsv` is checked as committed and against its FZX-manifest SHA (`World.testable_sha`, set in
+  `real_world`).
+- `real_world` also pins the H1 event files, the GLS map, the FZX manifest, the cluster tables and the D8 calibration
+  tables.
+- The target list now records `eligible`, `route`, `label_final`, `headline_eligible`, `event` and `axis` per hit.
+- `confirm_entry` checks that the target list is committed and that `(context, unit, beta_A, alternative)` equals its
+  committed hits before any read.
+- On resume, `_check_target_hits` also compares eligibility and route.
+- S2: `check_A` (`World.E_A` ⊆ A).
+- S1: `read_lockbox` allows one read per entry, whatever the source.
+
+**MUST-2: persist, hash and resume. Closed, and it matches D10.**
+- `read_lockbox(persist=True)` writes the matrix to `data_cache/part2/lockbox_reads/` (gitignored) right after the
+  load and commits its SHA-256 to `results/part2/lockbox_reads.jsonl`.
+- `resume_lockbox_read` never calls the loader. It requires a committed ledger line, an open entry, and exactly one
+  committed hash record whose SHA matches the file.
+- The driver resumes only with `--resume`; without it, an entry that already has a ledger line is refused.
+- BENCH resume re-checks its pairs against the committed target list.
+- The BRIDGE-L resume reuses the committed GLS tables. The GLS pass is never re-run.
+
+**MUST-2: the close guard. Closed.** `close_entry` requires the committed confirmation output of any read that had
+targets. BENCH and BRIDGE-L name their own outputs.
+
+**MUST-2: A-side checks before the target lists. Closed.**
+- `bench_a_side`, run before the BENCH target list and in the preflight, refuses missing g*, g*(beta) or breadth. It
+  computes every eigengene A fit and fixes the terciles once (N8).
+- `bridge_a_side`, also in the preflight, runs `check_frozen` on the GLS inputs and the coverage matching.
+- Remaining window, unavoidable and fail-closed: a crash between the loader return and the hash commit. My test shows
+  that nothing can then resume, close or re-read.
+
+**MUST-3. Closed.** The erratum to A4's reason, D10 on main, and readings 8–11 are recorded.
+
+### 2. A5 against D10 (main `2b97138`)
+
+A5 matches every D10 bullet:
+- the G1 erratum;
+- the distinct-g* count reported (A only);
+- the H1S rare route on the A CRISPR alignment, with LOSO and LOMO;
+- bootstrap CIs for the BRIDGE-L multiverse, while BENCH stays point estimates only;
+- readings 8, 9 and 10 (breadth stays literal);
+- the crash policy and the rehearsal.
+
+A5 adds two things that are disclosures, not registry fields: reading 11 (ties and fixed terciles) and the N4, N5 and
+N12 reporting fixes.
+
+The registry diff from `b641097` to `fb54005` touches only:
+- `BENCH_complex_vs_gene.yaml`: `estimand_secondary_not_run(_reason)` and the A5 record;
+- `BRIDGE-L_confirmation_rate.yaml`: `multiverse.ci` and the A5 record;
+- `H1S_silencing_GI.yaml`: `lockbox.rare_route_fitted_parameters` and `rare_route_fitted_hits` replace
+  `rare_route_not_evaluable`, plus the A5 record;
+- `AMENDMENTS.md`, and two lines of README (one read per entry; persistence).
+
+`54_amend_A5.py --check` and `53_amend_A4.py --check` both pass, and `amendment_changes == []` is tested.
+
+### 3. The rehearsal and the absence of any real read
+
+**The dummy loader could not have returned real L values.** `scripts/verify/lockbox_rehearsal.py` forwards a request
+to the project loader only when `set(ids) <= A`. Any other request, including every lockbox read (all L IDs; L ∩ A is
+empty), gets `rng.normal` values built from the IDs and gene keys alone.
+
+Guards: a marker file, a plain clone, and an `origin` remote. The real `main()` calls `real_world()` with no loader
+override.
+
+**The recorded output agrees.** `rehearsal.json` in the session scratchpad shows 30 dummy calls, all `('crispr', 338)`,
+and 30 entries closed.
+
+**No real L read exists anywhere.**
+- `git log --all` on `lockbox_ledger.jsonl`, `lockbox_reads.jsonl` and `lockbox_targets` is empty.
+- None of these files, and no `data_cache/part2/lockbox_reads`, exists in the main repo or in any worktree. Main's
+  `data_cache/part2/assoc` has no BRIDGE-L tables.
+- The scratchpad holds two other ledgers, and neither is a real read:
+  - `gate/`: the BLOCKED.md order simulation, 30 lines all with `n_genes: 0` (zero-target; nothing loaded);
+  - `synth1/`: a synthetic repo with a synthetic lockbox manifest.
+- No `.lockbox_rehearsal` clone remains.
+
+**The GLS disclosure is acceptable.** The pass is mechanical and deterministic, and it changes no choice. Recommendation
+(N13): in the real run, assert that the GLS discovery counts equal the rehearsal's 1,206 / 139, as a determinism
+check, and cite REHEARSAL.md in the trial accounting.
+
+### 4. The adversarial tests
+
+- My original 10 tests from `2bd58c0` pass **unmodified**: run with `--runxfail` and with only the script rename
+  48→51, 10/10. The producer's edits to the file are exactly the five marker removals and the rename.
+- I added 3 re-check tests. All 13 pass (77 s):
+  - a failure to commit the persisted hash: fail-closed, no resume, no hand close, one loader call;
+  - a committed change to a hypothesis input after the read: `--resume` refuses;
+  - resume refused after close, and for an unread entry.
+- Also passing: the lockbox driver, firewall, registry, assoc and FZX tests, 68 tests. I did not run the full suite,
+  because some of its tests touch the real gene-effect cache or the lockbox model list.
+
+### R1 (before the read; small, needs no re-review beyond the diff)
+
+Persistence creates a second, un-ledgered route to L values: raw parquet files under
+`data_cache/part2/lockbox_reads/`. `tests/test_part2_lockbox_firewall.py` does not scan for it, and the `assoc`
+docstring still says `read_lockbox` is the only path. Two fixes:
+1. Add `lockbox_reads` and `resume_lockbox_read` to the firewall scan, allowed only in `assoc.py` and the driver.
+2. Have the PI state the retention rule, so that persisted matrices do not stay readable for unregistered analyses.
+   Suggestion: delete each one after its entry is closed. The committed SHA remains as provenance, and resume is
+   refused for closed entries anyway.
+
+### Notes (no action needed before the read)
+
+- **N14.** The preflight no longer cross-checks `lockbox.rare_route_fitted_hits` against the hits it computes. The
+  check that existed under A4 was removed. Restoring it is a one-liner.
+- **N15.** Resume attempts are not ledgered before the persisted matrix is used. `require_clean` forces any code change
+  between attempts to be committed, so the residual risk is small. A committed "resume" line would close it.
+- **N16.** REHEARSAL.md gives 9,734 s in total; `rehearsal.json` has `total_s` 9,727.5. The difference is immaterial.

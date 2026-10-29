@@ -225,3 +225,72 @@ def test_second_source_read_of_same_entry_refused(base):
     with pytest.raises(assoc.FirewallError):
         assoc.read_lockbox(aid, confirm.target_path(w.proj, aid), proj=w.proj, source="demeter2")
     assert len(calls) == 1
+
+
+# ------------------------------------------------------------------------------------------------ re-check (A5, resume)
+def _crash_first_control(D, w):
+    aid = D.confirm_order(w.proj)[0]
+    sp = D.build_spec(w, aid)
+
+    def boom(E_L, c, u):
+        raise RuntimeError("simulated crash after the read")
+
+    sp.score_L = boom
+    with pytest.raises(RuntimeError, match="simulated crash"):
+        D.run_entry(w, sp)
+    return aid
+
+
+def test_persist_hash_commit_failure_is_fail_closed(base):
+    """The read happened but its hash could not be committed (pre-commit hook rejects lockbox_reads.jsonl): no resume,
+    no hand close, no second loader call."""
+    D = base["D"]
+    w, calls = fresh(base, "persist_commit_fails")
+    hook = w.proj.root / ".git" / "hooks" / "pre-commit"
+    hook.parent.mkdir(parents=True, exist_ok=True)
+    hook.write_text("#!/bin/sh\ngit diff --cached --name-only | grep -q lockbox_reads && exit 1\nexit 0\n")
+    hook.chmod(0o755)
+    aid = D.confirm_order(w.proj)[0]
+    with pytest.raises(assoc.FreezeError, match="hash could not be committed"):
+        D.run_entry(w, D.build_spec(w, aid))
+    hook.unlink()
+    assert len(calls) == 1
+    wr = dataclasses.replace(w, resume=True)
+    with pytest.raises(REFUSALS):
+        D.run_entry(wr, D.build_spec(wr, aid))
+    with pytest.raises(REFUSALS):
+        assoc.resume_lockbox_read(aid, proj=w.proj)
+    with pytest.raises(RegistryError):
+        confirm.close_entry(w.proj, aid)
+    assert len(calls) == 1
+
+
+def test_resume_refused_when_committed_inputs_change_after_the_read(base):
+    """After a crash, committing a changed hypothesis input (a control's A beta) makes --resume refuse: the hits no
+    longer match the committed target list. The loader is never called again."""
+    D = base["D"]
+    w, calls = fresh(base, "resume_inputs_changed")
+    aid = _crash_first_control(D, w)
+    p = w.proj.results_dir / "controls" / "controls_summary.tsv"
+    t = pd.read_csv(p, sep="\t")
+    m = (t.entry == aid) & t.beta.notna()
+    t.loc[m, "beta"] = t.loc[m, "beta"] * 1.5
+    t.to_csv(p, sep="\t", index=False)
+    confirm.commit_paths(w.proj, [p], "tamper: control A beta changed after the read")
+    wr = dataclasses.replace(w, resume=True)
+    with pytest.raises(RegistryError, match="differ from the committed target list"):
+        D.run_entry(wr, D.build_spec(wr, aid))
+    assert len(calls) == 1 and not confirm.is_closed(w.proj, aid)
+
+
+def test_resume_refused_after_close_and_for_unread_entries(base):
+    D = base["D"]
+    w, calls = fresh(base, "resume_closed")
+    a0, a1 = D.confirm_order(w.proj)[:2]
+    D.run_entry(w, D.build_spec(w, a0))
+    assert confirm.is_closed(w.proj, a0) and len(calls) == 1
+    with pytest.raises(assoc.FirewallError, match="closed"):
+        assoc.resume_lockbox_read(a0, proj=w.proj)
+    with pytest.raises(assoc.FirewallError, match="no committed ledger line"):
+        assoc.resume_lockbox_read(a1, proj=w.proj)
+    assert len(calls) == 1
