@@ -9,13 +9,11 @@ Pipeline
   classify          class calls per axis with TOST (+/-0.1 Chronos), P-vs-N contrast, member breadth and the matched
                     random-set null (K = 1000, seed 7000 + event index), plus the collapse index.
 
-Alignment sign. The registry's score_rule writes y_N = mean of -sign(b_j) * effect_j and states that kappa_N > 0
-when dependency magnitude grows in its baseline direction. These disagree (b_j < 0 and effect_j becoming more negative
-give -sign(b_j) * effect_j = effect_j decreasing, i.e. kappa_N < 0). The class rules (sensitisation kappa_N > 0,
-collapse kappa_N < 0) and the hypothesis use the stated meaning, so this module implements
+Alignment sign. This module implements
     y_N(m) = mean_j sign(b_j) * effect_j(m)      (ALIGN = +1)
-i.e. the signed dependency magnitude in the baseline direction. Flagged for the PI (open issue); ALIGN is the one
-place to change if the PI rules for the literal formula.
+i.e. the signed dependency magnitude in the baseline direction, so kappa_N > 0 when dependency grows (registry
+stated meaning and class rules). The registry formula text read '-sign(b_j)' (a sign typo); corrected by erratum E1
+(PI ruling R1, docs/registry/AMENDMENTS.md), semantics unchanged.
 
 Collapse index = -kappa_N / mean_{j in N'} |b_j|: the fraction of the baseline dependency magnitude lost in loss
 lines (1 = members' dependency fully gone; < 0 = sensitisation). Reported, not a class condition.

@@ -240,7 +240,7 @@ def test_h1_and_h1s_event_split(entries, eid, loss_class, units_file):
         assert c["lockbox_testable"] == bool(c["n_L"] >= 5 and c["ref_L"] >= 5), c["id"]
     units = (FZX / units_file).read_text().split()
     assert e["complex_set_hash"] == registry.set_hash(units) and e["family_m"]["value"] == len(units)
-    assert [a["id"] for a in e["amendments"]] == ["A1", "A2"]
+    assert [a["id"] for a in e["amendments"]] == ["A1", "A2", "E1"]           # E1: score_rule erratum (R1)
 
 
 def test_h1s_is_exploratory_copy_of_h1(entries):

@@ -114,3 +114,26 @@ event and count tables.
   sex_female on `Z0104` (H3b) and on `G0100` (BRIDGE-L). RBMX is now removed, so n_used goes from 12 to 11 and from
   8 to 7.
 - n, evaluable status, every m, every unit set and hash, the control units and the H1 event list are unchanged.
+
+## E1: erratum, sign typo in the H1 / H1S aligned-score formula
+
+| | |
+|---|---|
+| Time (UTC) | 2026-10-29T00:41:42Z |
+| Amends | A2 version of both entries, commit `fb264b8bd997ebf27c934aaed4f793a1433522fb` |
+| Decided by | PI ruling R1, after the H1 discovery run (`d12c627`) |
+| Entries | `H1_within_complex_GI`, `H1S_silencing_GI`; `changed_paths: [score_rule]` |
+
+**Typo correction, semantics unchanged, identified after the H1 run, implementation predates it.**
+
+- The `score_rule` read `y_N(m) = mean over j in N' of -sign(b_j) * effect_j(m)`. For an essential member
+  (b_j < 0), more dependency is a more negative effect, so the literal formula gives kappa_N < 0 when dependency
+  grows. That contradicts the entry's own stated meaning ("kappa_N > 0 when dependency magnitude grows in its
+  baseline direction") and its class rules (residual sensitisation iff kappa_N > 0).
+- Corrected text: `sign(b_j) * effect_j(m)`. Nothing else changes.
+- The engine has implemented the stated semantics (`h1.ALIGN = +1`, `y_N = mean_j sign(b_j) * effect_j`) since
+  commit `201d8bfa1814d5d7fa7f7981c39fc1bf33363b85` (2026-10-28T20:09:59Z, "Part 2 association engine"), tested on
+  synthetic data from `040e0df` (`tests/test_part2_h1h2.py::test_alignment_sign_and_collapse_index`), i.e. before
+  any real-data run. The H1 discovery run (`d12c627`) therefore used the registered semantics.
+- The H1 trial line carries the pre-erratum registry blob (`ebfbaad4…`); the post-erratum blob differs only in
+  `score_rule` and the `amendments` record. H1S has not been run before E1.
