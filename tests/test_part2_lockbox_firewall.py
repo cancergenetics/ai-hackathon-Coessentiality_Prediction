@@ -114,7 +114,10 @@ def test_construction_runs_use_A_only():
 # that resumes (confirm.py) and the lockbox driver may name them; any other module or script under src/ or scripts/
 # (verify scripts included) fails. Tests are exempt (they exercise the mechanism on synthetic repositories).
 PERSISTED = [r"lockbox_reads", r"resume_lockbox_read", r"_persist_read", r"_reads_dir", r"_reads_sidecar"]
-PERSISTED_ALLOWED = {"src/part2/assoc.py", "src/part2/confirm.py", "scripts/51_lockbox_confirm.py"}
+# The two lockbox results-review scripts call resume_lockbox_read (the sanctioned resume path, loader never called).
+# The PI authorised that access, for reading only, in the reviewer's brief (RESEARCH_TREE D14; review 63e0e62).
+PERSISTED_ALLOWED = {"src/part2/assoc.py", "src/part2/confirm.py", "scripts/51_lockbox_confirm.py",
+                     "scripts/verify/lockbox_results_review.py", "scripts/verify/lockbox_results_review_bench.py"}
 ALL_CODE = sorted((ROOT / "src").rglob("*.py")) + sorted((ROOT / "scripts").rglob("*.py"))
 
 
