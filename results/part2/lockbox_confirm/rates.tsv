@@ -1,0 +1,68 @@
+entry	subset	n_eligible	n_lockbox	n_confirmed	rate	n_rare	n_rare_pass	n_rare_not_evaluable
+CTRL_PC1	overall	2	2	2	1	0	0	0
+CTRL_PC1	non_locus	2	2	2	1	0	0	0
+CTRL_PC2	overall	4	4	4	1	0	0	0
+CTRL_PC2	non_locus	4	4	4	1	0	0	0
+CTRL_PC3	overall	3	3	3	1	0	0	0
+CTRL_PC3	non_locus	3	3	3	1	0	0	0
+CTRL_PC4	overall	2	2	2	1	0	0	0
+CTRL_PC4	non_locus	2	2	2	1	0	0	0
+CTRL_PC5	overall	2	2	1	0.5	0	0	0
+CTRL_PC5	non_locus	2	2	1	0.5	0	0	0
+CTRL_PC6	overall	2	2	2	1	0	0	0
+CTRL_PC6	non_locus	2	2	2	1	0	0	0
+CTRL_PC7	overall	1	1	1	1	0	0	0
+CTRL_PC7	non_locus	1	1	1	1	0	0	0
+CTRL_PC8	overall	1	1	1	1	0	0	0
+CTRL_PC8	non_locus	1	1	1	1	0	0	0
+CTRL_PC9	overall	3	3	0	0	0	0	0
+CTRL_PC9	non_locus	2	2	0	0	0	0	0
+CTRL_PC10	overall	3	3	0	0	0	0	0
+CTRL_PC10	non_locus	3	3	0	0	0	0	0
+CTRL_PC11	overall	2	2	2	1	0	0	0
+CTRL_PC11	non_locus	2	2	2	1	0	0	0
+CTRL_PC12	overall	2	2	0	0	0	0	0
+CTRL_PC12	non_locus	2	2	0	0	0	0	0
+CTRL_PC13	overall	2	2	0	0	0	0	0
+CTRL_PC13	non_locus	2	2	0	0	0	0	0
+CTRL_PC14	overall	3	3	2	0.666667	0	0	0
+CTRL_PC14	non_locus	3	3	2	0.666667	0	0	0
+CTRL_PC15	overall	2	0	0		2	1	1
+CTRL_PC15	non_locus	2	0	0		2	1	1
+CTRL_PC16	overall	2	0	0		2	1	0
+CTRL_PC16	non_locus	2	0	0		2	1	0
+CTRL_PC17	overall	3	3	3	1	0	0	0
+CTRL_PC17	non_locus	3	3	3	1	0	0	0
+CTRL_PC18	overall	1	1	0	0	0	0	0
+CTRL_PC18	non_locus	1	1	0	0	0	0	0
+CTRL_PC19a	overall	2	2	2	1	0	0	0
+CTRL_PC19a	non_locus	2	2	2	1	0	0	0
+CTRL_PC19b	overall	2	2	2	1	0	0	0
+CTRL_PC19b	non_locus	2	2	2	1	0	0	0
+CTRL_PC20	overall	2	2	2	1	0	0	0
+CTRL_PC20	non_locus	2	2	2	1	0	0	0
+CTRL_PC21	overall	2	2	0	0	0	0	0
+CTRL_PC21	non_locus	2	2	0	0	0	0	0
+CTRL_PC22	overall	1	0	0		1	0	1
+CTRL_PC22	non_locus	1	0	0		1	0	1
+H3a_lineage_atlas	overall	1145	1145	601	0.524891	0	0	0
+H3a_lineage_atlas	non_locus	942	942	524	0.556263	0	0	0
+H3a_lineage_atlas	beats_all_matched_sets	502	502	287	0.571713	0	0	0
+H3a_lineage_atlas	not_beats_all	581	581	284	0.488812	0	0	0
+H3a_lineage_atlas	no_sets	62	62	30	0.483871	0	0	0
+H3b_driver_family	overall	161	150	60	0.4	11	5	6
+H3b_driver_family	non_locus	121	110	42	0.381818	11	5	6
+H3b_driver_family	beats_all_matched_sets	103	94	42	0.446809	9	4	5
+H3b_driver_family	not_beats_all	51	50	15	0.3	1	1	0
+H3b_driver_family	no_sets	7	6	3	0.5	1	0	1
+H1_within_complex_GI	overall	5	4	2	0.5	1	1	0
+H1_within_complex_GI	non_locus	5	4	2	0.5	1	1	0
+H1S_silencing_GI	overall	24	18	9	0.5	6	6	0
+H1S_silencing_GI	non_locus	20	14	6	0.428571	6	6	0
+H2_submodule_divergence	overall	109	109	76	0.697248	0	0	0
+H2_submodule_divergence	non_locus	97	97	67	0.690722	0	0	0
+H2_submodule_divergence	beats_all_matched_sets	40	40	26	0.65	0	0	0
+H2_submodule_divergence	not_beats_all	69	69	50	0.724638	0	0	0
+H2_submodule_divergence	no_sets	0	0	0		0	0	0
+BRIDGE-L_confirmation_rate	overall	1345	1335	764	0.572285	10	3	6
+BRIDGE-L_confirmation_rate	non_locus	1137	1127	668	0.592724	10	3	6
