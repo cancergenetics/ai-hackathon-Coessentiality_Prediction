@@ -1,0 +1,19 @@
+{
+ "command": "PART1_DIR=... PYTHONHASHSEED=0 /usr/bin/time -l .venv/bin/python scripts/44_run_direction.py --id H3a_lineage_atlas",
+ "code_commit": "beda09f862300249cd2961ccabf54413e5c9009f",
+ "intent_commit": "228077a",
+ "pid": 92356,
+ "start_utc": "2026-10-29T00:20:39Z",
+ "end_utc": "2026-10-29T00:28:10Z",
+ "exit_status": 0,
+ "wall_s": 450.67,
+ "user_s": 413.01,
+ "sys_s": 36.48,
+ "peak_rss_bytes": 3040428032,
+ "peak_memory_footprint_bytes": 2209746088,
+ "n_runs": 1,
+ "relook": false,
+ "n_trial_lines": 1,
+ "n_perm": 10000,
+ "note": "Single look. No re-run. Waited by PID (kill -0)."
+}

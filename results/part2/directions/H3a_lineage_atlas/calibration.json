@@ -1,0 +1,226 @@
+{
+ "bb_families_selected": 0,
+ "bb_rejections": 0,
+ "expected": 0.05,
+ "frac_p_lt_001": 0.010572207084468665,
+ "frac_p_lt_005": 0.04888283378746594,
+ "n_pseudo": 100,
+ "n_tests": 36700,
+ "not_run": [
+  "random gene sets matched for size, essentiality and coherence",
+  "dispersed never-expressed sets",
+  "segment-matched null for CN contexts (H3b)"
+ ],
+ "not_run_reason": "no engine implementation; reported-only negative controls that do not enter discovery (the pre-declared response depends on the pseudo-context fraction only)",
+ "per_context": [
+  {
+   "context": "lineage:Biliary Tract",
+   "frac_p_lt_001": 0.009809264305177113,
+   "frac_p_lt_005": 0.05449591280653951,
+   "lineage_context": true,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4600
+  },
+  {
+   "context": "lineage:Bladder/Urinary Tract",
+   "frac_p_lt_001": 0.012534059945504087,
+   "frac_p_lt_005": 0.05449591280653951,
+   "lineage_context": true,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4601
+  },
+  {
+   "context": "lineage:Bone",
+   "frac_p_lt_001": 0.008174386920980926,
+   "frac_p_lt_005": 0.04250681198910082,
+   "lineage_context": true,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4602
+  },
+  {
+   "context": "lineage:Bowel",
+   "frac_p_lt_001": 0.008174386920980926,
+   "frac_p_lt_005": 0.048501362397820165,
+   "lineage_context": true,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4603
+  },
+  {
+   "context": "lineage:Breast",
+   "frac_p_lt_001": 0.008719346049046322,
+   "frac_p_lt_005": 0.04250681198910082,
+   "lineage_context": true,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4604
+  },
+  {
+   "context": "lineage:CNS/Brain",
+   "frac_p_lt_001": 0.011989100817438692,
+   "frac_p_lt_005": 0.05013623978201635,
+   "lineage_context": true,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4605
+  },
+  {
+   "context": "lineage:Cervix",
+   "frac_p_lt_001": 0.010899182561307902,
+   "frac_p_lt_005": 0.045231607629427795,
+   "lineage_context": true,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4606
+  },
+  {
+   "context": "lineage:Esophagus/Stomach",
+   "frac_p_lt_001": 0.008174386920980926,
+   "frac_p_lt_005": 0.04087193460490463,
+   "lineage_context": true,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4607
+  },
+  {
+   "context": "lineage:Head and Neck",
+   "frac_p_lt_001": 0.01430517711171662,
+   "frac_p_lt_005": 0.05994550408719346,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4608
+  },
+  {
+   "context": "lineage:Kidney",
+   "frac_p_lt_001": 0.012942779291553134,
+   "frac_p_lt_005": 0.05108991825613079,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4609
+  },
+  {
+   "context": "lineage:Liver",
+   "frac_p_lt_001": 0.01430517711171662,
+   "frac_p_lt_005": 0.04904632152588556,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4610
+  },
+  {
+   "context": "lineage:Lung",
+   "frac_p_lt_001": 0.012942779291553134,
+   "frac_p_lt_005": 0.055858310626702996,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4611
+  },
+  {
+   "context": "lineage:Lymphoid",
+   "frac_p_lt_001": 0.011580381471389645,
+   "frac_p_lt_005": 0.04495912806539509,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4612
+  },
+  {
+   "context": "lineage:Myeloid",
+   "frac_p_lt_001": 0.006811989100817439,
+   "frac_p_lt_005": 0.040190735694822885,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4613
+  },
+  {
+   "context": "lineage:Ovary/Fallopian Tube",
+   "frac_p_lt_001": 0.008174386920980926,
+   "frac_p_lt_005": 0.04904632152588556,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4614
+  },
+  {
+   "context": "lineage:Pancreas",
+   "frac_p_lt_001": 0.01226158038147139,
+   "frac_p_lt_005": 0.05449591280653951,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4615
+  },
+  {
+   "context": "lineage:Peripheral Nervous System",
+   "frac_p_lt_001": 0.01226158038147139,
+   "frac_p_lt_005": 0.06198910081743869,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4616
+  },
+  {
+   "context": "lineage:Pleura",
+   "frac_p_lt_001": 0.006130790190735695,
+   "frac_p_lt_005": 0.04223433242506812,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4617
+  },
+  {
+   "context": "lineage:Prostate",
+   "frac_p_lt_001": 0.010217983651226158,
+   "frac_p_lt_005": 0.055858310626702996,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4618
+  },
+  {
+   "context": "lineage:Skin",
+   "frac_p_lt_001": 0.01226158038147139,
+   "frac_p_lt_005": 0.05108991825613079,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4619
+  },
+  {
+   "context": "lineage:Soft Tissue",
+   "frac_p_lt_001": 0.013623978201634877,
+   "frac_p_lt_005": 0.04427792915531335,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4620
+  },
+  {
+   "context": "lineage:Uterus",
+   "frac_p_lt_001": 0.008174386920980926,
+   "frac_p_lt_005": 0.04155313351498638,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4621
+  },
+  {
+   "context": "melanoma",
+   "frac_p_lt_001": 0.010217983651226158,
+   "frac_p_lt_005": 0.04700272479564033,
+   "lineage_context": true,
+   "n_pseudo": 4,
+   "n_tests": 1468,
+   "seed": 4622
+  }
+ ],
+ "response_fires": false,
+ "threshold": 0.075
+}
