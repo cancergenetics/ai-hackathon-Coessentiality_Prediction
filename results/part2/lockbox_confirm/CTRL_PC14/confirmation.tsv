@@ -1,0 +1,4 @@
+context	unit	beta	alternative	level	eligible	lockbox_testable	beta_L	se_L	df_L	n_L	n_context_L	p_L_hc3	p_L	p_L_perm	n_ref_L	testable_L	same_sign	confirmed	ci90_L_lo	ci90_L_hi	ci95_L_lo	ci95_L_hi	loso_same_sign	loso_folds	lomo_same_sign	demeter2_same_sign	rare_route_pass	rare_route_note	route	confirmed_final	promotable	status
+LoF:RB1	CCND1 (595)	0.976463	greater	G	True	True	0.58482	0.129025	22.8974	300	17	7.53297e-05	1.54398e-06	1.54398e-06	283	True	True	True	0.363647	0.805993	0.317846	0.851794							lockbox	True	True	confirmed
+LoF:RB1	CDK4 (1019)	0.448356	greater	G	True	True	0.363966	0.120277	22.8974	300	17	0.00301497	0.00319968	0.00319968	283	True	True	True	0.157787	0.570144	0.115092	0.612839							lockbox	True	True	confirmed
+LoF:RB1	CDK6 (1021)	0.527629	greater	G	True	True	0.235442	0.146526	22.8974	300	17	0.0608979	0.0616938	0.0616938	283	True	True	False	-0.0157317	0.486616	-0.0677451	0.53863							lockbox	False	False	not confirmed
