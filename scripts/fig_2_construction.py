@@ -9,7 +9,7 @@ Panels
  b  coverage of S genes by A-essentiality class
  c  split-half selection grid (z0, k): the criterion is flat across z0 at k = 10
  d  tiers (T1 BioPlex, T2 protein co-abundance, T3-neg, T3-nc)
- e  map-to-map variability: per-complex median best-match Jaccard in 20 bootstrap maps vs random size-matched sets
+ e  map-to-map variability: per-complex median best-match Jaccard in 20 subsample (80%, PatientID-blocked) maps vs random size-matched sets
  f  bridge forest plot: primary endpoint (null), sensitivities, secondary endpoints
 
 Usage: python scripts/fig_2_construction.py
@@ -138,7 +138,7 @@ def main() -> None:
         ax.plot(pos + off, p95, ls="", marker="_", ms=7, mew=1.2, color="black")
     ax.set_xticks(pos)
     ax.set_xticklabels(BINS)
-    ax.set_ylabel("Median best-match Jaccard\nin 20 bootstrap maps")
+    ax.set_ylabel("Median best-match Jaccard\nin 20 subsample maps")
     ax.set_ylim(0, 1.02)
     ax.set_title("Variability", loc="left")
     az = var["zavg_BEF"]["pairwise"]["ari_both"]["median"]

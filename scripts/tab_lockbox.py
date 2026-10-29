@@ -17,8 +17,10 @@ Outputs (manuscript/tables/):
                                   corrected (non-confirmatory), defect-sensitive count, post hoc power expectation
   tableS7_lockbox_h3.{md,tsv}, tableS7_lockbox_h3_full.tsv
                                   every H3a / H3b discovery with its L effect and calls; the Markdown lists the
-                                  'strongest specific' set: primary-confirmed, beats all matched sets, not locus,
-                                  not defect-sensitive, not a registered control readout
+                                  registered strongest findings (results/part2/robustness/strongest_findings.tsv,
+                                  = Table S9) in registered rank order. Revision round 1 (2026-10-29): the Markdown
+                                  previously listed an earlier, unregistered 'strongest specific' subset, kept in the
+                                  full TSV as the column earlier_unregistered_set.
   tableS8_lockbox_h1_h2_bench_bridge.{md,tsv}
                                   H1 per event axis (primary and corrected), H2 by split rank, BENCH, BRIDGE-L
 
@@ -158,15 +160,21 @@ def h3_table(derived: dict, rel: pd.DataFrame) -> pd.DataFrame:
         x = x.assign(direction=short, members=[P.gene_label(u, mem, 8) for u in x.unit])
         allx.append(x)
     t = pd.concat(allx)
-    t = t.assign(abs_t=t.t.abs()).sort_values(["direction", "strongest", "abs_t"], ascending=[True, False, False])
+    reg = _tsv("results/part2/robustness/strongest_findings.tsv")[["direction", "context", "unit", "rank"]]
+    reg = reg.rename(columns={"rank": "registered_rank_S9"})
+    t = t.merge(reg, on=["direction", "context", "unit"], how="left")
+    t["registered_strongest_S9"] = t.registered_rank_S9.notna()
+    t = t.rename(columns={"strongest": "earlier_unregistered_set"})
+    t = t.assign(abs_t=t.t.abs()).sort_values(["direction", "registered_strongest_S9", "registered_rank_S9", "abs_t"],
+                                              ascending=[True, False, True, False])
     cols = ["direction", "context", "unit", "members", "n_context", "beta", "ci95_lo", "ci95_hi", "t", "q_final",
             "locus", "beats_all", "control", "cons", "screen", "route", "n_context_L", "beta_L", "ci95_L_lo",
             "ci95_L_hi", "p_L", "primary_call", "corrected_call", "defect_sensitive", "beta_L_relook", "p_L_relook",
-            "strongest", "scale_caveat"]
+            "registered_strongest_S9", "registered_rank_S9", "earlier_unregistered_set", "scale_caveat"]
     t[cols].to_csv(S.TAB_DIR / "tableS7_lockbox_h3_full.tsv", sep="\t", index=False)
     top = []
-    for short, k in (("H3a", 30), ("H3b", 29)):
-        x = t[(t.direction == short) & t.strongest].head(k).copy()
+    for short, k in (("H3a", 30), ("H3b", 45)):
+        x = t[(t.direction == short) & t.registered_strongest_S9].head(k).copy()
         x["context"] = x.context.map(P.short_ctx)
         x["β_A [95% CI]"] = [S.fmt_ci(b, lo, hi, 3, True) for b, lo, hi in zip(x.beta, x.ci95_lo, x.ci95_hi)]
         x["β_L [95% CI]"] = [S.fmt_ci(b, lo, hi, 3, True) for b, lo, hi in zip(x.beta_L, x.ci95_L_lo, x.ci95_L_hi)]
@@ -178,17 +186,15 @@ def h3_table(derived: dict, rel: pd.DataFrame) -> pd.DataFrame:
         top.append(x[["direction", "context", "unit", "members", "lines A / L", "β_A [95% CI]", "β_L [95% CI]",
                       "p_L", "kept: GPD / screen", "notes"]])
     md = pd.concat(top)
-    write("tableS7_lockbox_h3", "Supplementary Table S7: lockbox results for H3a / H3b discoveries; an earlier, "
-          "unregistered confirmed complex-specific subset",
-          ["This Markdown view lists an earlier, unregistered selection (two filters not in the registry: beats all "
-           "matched sets; not a control readout). It is NOT the registered strongest-findings list, which is "
-           "Supplementary Table S9 (results/part2/robustness/strongest_findings.tsv; 254 findings).",
-           "Rows: the confirmed complex-specific discoveries, ranked by A |t| (never by the GPD p): confirmed in the "
-           "primary lockbox read (same sign, one-sided p_L < 0.05; exact PatientID-blocked permutation when L has "
-           "< 20 context lines), |t| in A above that of all 10 matched random gene sets of the unit in that "
-           "context, not a locus cluster, not defect-sensitive, and not the readout of a registered positive "
-           "control. Top 30 H3a rows of 261 and all 29 H3b rows; tableS7_lockbox_h3_full.tsv lists all 1,306 "
+    write("tableS7_lockbox_h3", "Supplementary Table S7: lockbox results for H3a / H3b discoveries; rows shown are "
+          "the registered strongest findings (Table S9)",
+          ["Rows: the registered strongest findings (results/part2/robustness/strongest_findings.tsv; Supplementary "
+           "Table S9), in registered rank order (tier, then A |t|): the first 30 of 207 H3a findings and all 45 H3b "
+           "findings (rare-context-route rows have no L estimate). tableS7_lockbox_h3_full.tsv lists all 1,306 "
            "discoveries with every flag and both calls.",
+           "Revision round 1: an earlier version of this view listed an unregistered 'strongest specific' subset "
+           "(beats all matched sets; not a control readout). That subset is kept only as the column "
+           "earlier_unregistered_set of the full TSV.",
            "β in Chronos units; negative = more dependent in the context. β_L is the same model refitted in the "
            "338 lockbox lines; its 95% CI is the HC3 interval, so for contexts with < 20 L lines (decided by the "
            "permutation p) it can include 0 while the call is 'confirmed'.",
