@@ -110,3 +110,82 @@ The engine also writes `results/part2/assoc/<ID>/sensitivity_screen_quality_summ
 
 No lockbox read, no other direction, no hu.MAP / STRING / curated complexes. H2, which is parented on the primary
 H3a / H3b discoveries, is not re-run.
+
+---
+
+## Results (appended after the runs; the intent above was committed first as `9a1e565`)
+
+**Standing.** These are sensitivity results. The primary H3a and H3b discoveries are unchanged, and no trial line was
+written: the SHA-256 of `trials.jsonl` was the same before and after both runs. Code: script 48, as committed in
+`9a1e565`. The engine records show `head` = `6fb48d5`, which differs from `9a1e565` only by the post hoc specificity
+files. Outputs: `<ID>/sensitivity_screen_quality/`.
+
+| | H3a | H3b |
+|---|---|---|
+| Evaluable m (families) | 8,074 (22), primary 8,441 (23) | 6,973 (19), primary 7,340 (20) |
+| Screened, permutation | 1,383 (primary 1,666) | 151 (primary 190) |
+| Discoveries, sensitivity | 939 (772 non-locus) | 119 (85 non-locus) |
+| Primary discoveries surviving | **843 / 1,145 (73.6%)** | **115 / 161 (71.4%)** |
+| Lost / new | 302 / 96 | 46 / 4 |
+| Pseudo-context fraction p < 0.05 | 0.0489 → 0.0490 (+0.0001) | 0.0454 → 0.0444 (−0.0010) |
+| Pseudo-context BB rejections | 0 → 0; response does not fire | 0 → 0; response does not fire |
+| Runtime / peak RSS | 381 s / 2.91 GB | 165 s / 2.98 GB |
+
+Not evaluable under complete case: Prostate in H3a and LoF:KMT2D in H3b. Neither had primary discoveries.
+
+**H3a per lineage.** Surviving out of primary, then new, from `comparison_per_context.tsv`:
+
+| Lineage | Surviving / primary | New |
+|---|---|---|
+| Lymphoid | 188/197 | +8 |
+| Head and Neck | 99/126 | +22 |
+| CNS/Brain | 86/107 | +9 |
+| melanoma | 78/91 | +9 |
+| Myeloid | 63/81 | +9 |
+| Bone | 49/69 | +11 |
+| PNS | 48/86 | +2 |
+| Skin | 39/57 | +1 |
+| Pancreas | 35/48 | +5 |
+| Bowel | 34/62 | +5 |
+| Breast | 32/55 | +2 |
+| Lung | 27/48 | +6 |
+| Kidney | 24/38 | +1 |
+| Pleura | 9/9 | +1 |
+| Soft Tissue | 7/9 | 0 |
+| Ovary | 6/8 | +1 |
+| Uterus | 6/11 | +1 |
+| Bladder | 6/6 | +3 |
+| Cervix | 3/4 | 0 |
+| Liver | 2/3 | 0 |
+| **Esophagus/Stomach** | **2/30** | 0 |
+
+Biliary Tract had 0 primary discoveries, and so did Prostate, which is not evaluable here.
+
+**H3b per context.** Surviving out of primary, then new:
+
+| Context | Surviving / primary | New |
+|---|---|---|
+| TP53_altered | 77/92 | +2 |
+| WGD | 12/26 | 0 |
+| EWSR1 fusion | 8/11 | 0 |
+| MSI_H | 7/14 | +1 |
+| BRAF | 2/4 | 0 |
+| KRAS | 1/3 | 0 |
+| NRF2_active | 0/2 | 0 |
+| 9p21_loss | 2/2 | 0 |
+| RB1 | 2/2 | 0 |
+| PTEN | 1/2 | +1 |
+| SMARCA4 | 1/1 | 0 |
+| NRAS | 1/1 | 0 |
+| sex_female | 1/1 | 0 |
+
+**Lymphoid "scale effect".** The Spearman ρ between unit essentiality and the lymphoid β is −0.240 (p 3e-6) in the
+primary run and −0.228 (p 1e-5) in the sensitivity. Screen quality (NNMD, CasActivity) does not explain it.
+- All lineages are in `H3a_lineage_atlas/sensitivity_screen_quality/scale_effect_rho.tsv`.
+- Head and Neck goes from +0.20 to +0.17, Skin from +0.21 to +0.17 and Bone from +0.19 to +0.22.
+
+**Caveat.** The sensitivity changes two things at once: it adds the covariates, and it drops 119 models by complete
+case. That is 11.8% of A, including all KY-only (Sanger) screens. Lost discoveries therefore mix covariate adjustment
+with lost power and a changed sample. The pre-declared design does not separate the two.
+
+Esophagus/Stomach (30 → 2) and WGD (26 → 12) are the most sensitive contexts. Read them with this caveat.

@@ -1,0 +1,21 @@
+context	m_primary	m_sens	disc_primary	disc_sens	surviving	lost	new	surviving_frac
+9p21_loss	367	367	2	2	2	0	0	1.0
+LoF:ARID1A	367	367	0	0	0	0	0	
+LoF:KMT2D	367	0	0	0	0	0	0	
+LoF:PTEN	367	367	2	2	1	1	1	0.5
+LoF:RB1	367	367	2	2	2	0	0	1.0
+LoF:SMARCA4	367	367	1	1	1	0	0	1.0
+LoF:STAG2	367	367	0	0	0	0	0	
+LoY	367	367	0	0	0	0	0	
+MSI_H	367	367	14	8	7	7	1	0.5
+MYCN_amp	367	367	0	0	0	0	0	
+MYC_amp	367	367	0	0	0	0	0	
+NRF2_active	367	367	2	0	0	2	0	0.0
+TP53_altered	367	367	92	79	77	15	2	0.837
+WGD	367	367	26	12	12	14	0	0.4615
+fusion:EWSR1::FLI1|ERG	367	367	11	8	8	3	0	0.7273
+hotspot:BRAF	367	367	4	2	2	2	0	0.5
+hotspot:KRAS	367	367	3	1	1	2	0	0.3333
+hotspot:NRAS	367	367	1	1	1	0	0	1.0
+hotspot:PIK3CA	367	367	0	0	0	0	0	
+sex_female	367	367	1	1	1	0	0	1.0

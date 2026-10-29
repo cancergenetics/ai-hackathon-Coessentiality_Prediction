@@ -64,6 +64,12 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
     - [x] H1 (ef41ddb → d12c627): 24 evaluable (registered 28); 5 discoveries. Paralog compensation: ARID1A→P κ −0.37, EP300→P −1.09. Sensitisation: FOCAD 0.14. Within margin (R5): TP53, PTEN. SMARCB1 neutral, including the CN sensitivity.
     - [x] Independent review (bff6cad): ACCEPT-WITH-NOTES. All 15,781 analytic tests reproduced; discovery sets exact; no reruns; no lockbox models. Under p_cons, H3a loses 32 and H3b loses 31. Lymphoid scale effect noted.
     - [~] R1–R5 fixes, H1S, H2, registered calibrations, GPD sensitivity
-    - [ ] Screen-quality sensitivity (pre-declared, D8)
+    - [x] Screen-quality sensitivity (pre-declared, D8; sensitivity, not a trial): intent 9a1e565, results in
+      `results/part2/directions/SENSITIVITY_SCREEN.md`. Adds ScreenNNMD + CasActivity; complete case drops 119 A
+      models, including all KY-only screens. H3a: 843/1,145 survive (73.6%), 96 new; Esophagus/Stomach 2/30;
+      Lymphoid 188/197. H3b: 115/161 (71.4%), 4 new; WGD 12/26, MSI_H 7/14. Pseudo-context fraction 0.049 → 0.049
+      (H3a) and 0.045 → 0.044 (H3b). Lymphoid scale ρ −0.240 → −0.228 (not explained by screen quality).
+    - [x] Post hoc descriptive complex-specificity counts (not error control; `results/part2/directions/SPECIFICITY.md`):
+      β outside the central 95% of matched random sets for H3a 699/1,083, H3b 124/154 and H2 78/109.
   - [ ] Lockbox confirmations → BENCH / BRIDGE-L
 - [ ] M-final Manuscript + peer review + REPORT.md
