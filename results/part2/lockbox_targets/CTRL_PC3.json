@@ -1,0 +1,48 @@
+{
+ "analysis_id": "CTRL_PC3",
+ "contexts": [
+  "TP53_altered"
+ ],
+ "genes": [
+  "CDKN1A (1026)",
+  "TP53 (7157)",
+  "USP28 (57646)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.2305294265245384,
+   "context": "TP53_altered",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "CDKN1A (1026)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.6256376639766994,
+   "context": "TP53_altered",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "TP53 (7157)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.19211356436429772,
+   "context": "TP53_altered",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "USP28 (57646)"
+  }
+ ],
+ "units": {
+  "CDKN1A (1026)": [
+   "CDKN1A (1026)"
+  ],
+  "TP53 (7157)": [
+   "TP53 (7157)"
+  ],
+  "USP28 (57646)": [
+   "USP28 (57646)"
+  ]
+ }
+}
