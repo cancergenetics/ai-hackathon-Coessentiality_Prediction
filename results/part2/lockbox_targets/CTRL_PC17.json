@@ -1,0 +1,86 @@
+{
+ "analysis_id": "CTRL_PC17",
+ "contexts": [
+  "melanoma"
+ ],
+ "genes": [
+  "BRAF (673)",
+  "CRTC2 (200186)",
+  "CRTC3 (64784)",
+  "DUSP10 (11221)",
+  "DUSP4 (1846)",
+  "ELAVL1 (1994)",
+  "ELOA (6924)",
+  "MAFF (23764)",
+  "MAP2K1 (5604)",
+  "MAP2K2 (5605)",
+  "MAPK1 (5594)",
+  "MITF (4286)",
+  "NAV2 (89797)",
+  "PEA15 (8682)",
+  "PTP4A1 (7803)",
+  "SOX10 (6663)",
+  "SOX9 (6662)",
+  "SREK1 (140890)",
+  "TFAP2A (7020)",
+  "TXN (7295)",
+  "ZEB2 (9839)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.4760935846382015,
+   "context": "melanoma",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "MITF (4286)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -1.3764554907759101,
+   "context": "melanoma",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "SOX10 (6663)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.4023609774373618,
+   "context": "melanoma",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0018"
+  }
+ ],
+ "units": {
+  "MITF (4286)": [
+   "MITF (4286)"
+  ],
+  "SOX10 (6663)": [
+   "SOX10 (6663)"
+  ],
+  "Z0018": [
+   "BRAF (673)",
+   "CRTC2 (200186)",
+   "CRTC3 (64784)",
+   "DUSP10 (11221)",
+   "DUSP4 (1846)",
+   "ELAVL1 (1994)",
+   "ELOA (6924)",
+   "MAFF (23764)",
+   "MAP2K1 (5604)",
+   "MAP2K2 (5605)",
+   "MAPK1 (5594)",
+   "MITF (4286)",
+   "NAV2 (89797)",
+   "PEA15 (8682)",
+   "PTP4A1 (7803)",
+   "SOX10 (6663)",
+   "SOX9 (6662)",
+   "SREK1 (140890)",
+   "TFAP2A (7020)",
+   "TXN (7295)",
+   "ZEB2 (9839)"
+  ]
+ }
+}
