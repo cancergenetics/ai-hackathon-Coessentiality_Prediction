@@ -1,0 +1,70 @@
+{
+ "loso_unit": {
+  "H1": "OncotreeLineage",
+  "H3a": "OncotreePrimaryDisease",
+  "H3b": "OncotreeLineage"
+ },
+ "peak_rss_bytes": 2487566336,
+ "per_direction": {
+  "H1": {
+   "candidates": 2,
+   "computed": 5,
+   "loso_and_top2": 2,
+   "loso_fail_any_fold": 0,
+   "loso_no_evaluable_fold": 0,
+   "loso_robust": 2,
+   "strongest": 2,
+   "strongest_per_tier": {
+    "T1": 1,
+    "T3-neg": 1
+   },
+   "strongest_units": 2,
+   "top2_robust": 2,
+   "writer_specific_set": 0,
+   "writer_specific_set_strongest": 0
+  },
+  "H3a": {
+   "candidates": 524,
+   "computed": 524,
+   "loso_and_top2": 207,
+   "loso_fail_any_fold": 317,
+   "loso_no_evaluable_fold": 0,
+   "loso_robust": 207,
+   "strongest": 207,
+   "strongest_per_tier": {
+    "T1": 124,
+    "T2": 56,
+    "T3-neg": 27
+   },
+   "strongest_units": 137,
+   "top2_robust": 519,
+   "writer_specific_set": 261,
+   "writer_specific_set_strongest": 107
+  },
+  "H3b": {
+   "candidates": 46,
+   "computed": 46,
+   "loso_and_top2": 45,
+   "loso_fail_any_fold": 1,
+   "loso_no_evaluable_fold": 0,
+   "loso_robust": 45,
+   "strongest": 45,
+   "strongest_per_tier": {
+    "T1": 27,
+    "T2": 9,
+    "T3-neg": 9
+   },
+   "strongest_units": 41,
+   "top2_robust": 46,
+   "writer_specific_set": 29,
+   "writer_specific_set_strongest": 28
+  }
+ },
+ "rule": "discovery q < 0.05 AND primary lockbox-confirmed (or rare-context route passed) AND not defect-sensitive (R7) AND not locus AND LOSO-robust (every evaluable fold same sign, p < 0.05); H1 also non-neutral and headline-eligible (E2); ranked by tier class then |t_A|",
+ "runtime_s": 117.5,
+ "timing_s": {
+  "H1": 1.9,
+  "H3a": 82.2,
+  "H3b": 21.8
+ }
+}
