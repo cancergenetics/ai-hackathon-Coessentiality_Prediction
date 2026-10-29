@@ -29,7 +29,7 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - R3: The GPD-extrapolated p stays primary. Pre-declared sensitivity: p_cons = max(p_perm, p_analytic). Tables show "<1e-4 (GPD)", and ranking is by effect size or |t|.
   - R4: The registered calibrations (matched random sets, never-expressed sets, CN segment null, H2 random splits) were not implemented in the engine. They are built and run after the discovery runs, before any lockbox read, with their responses applied mechanically. This is a disclosed deviation.
   - R5: Post hoc and conservative (E2). When a non-neutral H1 class and TOST-neutral both hold (PTEN collapse, TP53 sensitisation), the label is "detectable, within equivalence margin". These are not headline findings, and lockbox confirmation cannot promote them.
-  - Pre-declared post hoc sensitivity, before it is computed: H3a/H3b with a per-model screen-quality covariate from CRISPRConfounders.csv (DATA.md). Motivation: the review found the lymphoid "scale effect" (ρ −0.24). Report the surviving fraction per lineage; the primary is unchanged.
+  - Pre-declared post hoc sensitivity, before it is computed: H3a/H3b with covariates ScreenNNMD + CasActivity (per model, from CRISPRConfounders.csv; growth pattern excluded as collinear with lineage), all else as registered. Motivation: the review found the lymphoid "scale effect" (ρ −0.24). Report the surviving fraction per lineage; the primary is unchanged.
 
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
