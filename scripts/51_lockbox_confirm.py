@@ -261,7 +261,7 @@ class Spec:
     score_D2: object              # (context, unit) -> Series over DEMETER2 A rows, or None (gene not screened)
     ctx_all: pd.DataFrame         # all models x the hits' contexts
     cov_A: dict
-    cov_all: dict
+    cov_all: object               # models -> {context: covariates over those L rows} (R6)
     lineage_contexts: set
     extra_genes: list = field(default_factory=list)
     needs_fit: list = field(default_factory=list)   # rare-route hits whose DEMETER2 score needs fitted parameters
@@ -281,10 +281,17 @@ def _route(world: World, aid: str, hits: pd.DataFrame, by_event: bool = False) -
     return pd.Series(out, index=hits.index, dtype=bool)
 
 
-def _cov(world: World, e: dict, ctxs) -> tuple[dict, dict]:
+def l_covariates(world: World, e: dict, ctxs, models) -> dict:
+    """R6 fix: the L covariate design is assembled over the L rows actually read, exactly as the A side assembled it
+    over A rows (covariates.per_context on the source table of those models; assoc._design then applies the engine's
+    conventions, incl. merging FE levels with < 2 models into the reference). The former all-model assembly subset to
+    L could leave a single-model lineage as its own group (leverage 1; results/part2/lockbox_confirm/README.md, R6)."""
+    return covmod.per_context(e, ctxs, world.cov.reindex(list(models)))[0]
+
+
+def _cov(world: World, e: dict, ctxs) -> tuple[dict, object]:
     ca, _ = covmod.per_context(e, ctxs, world.cov.reindex(world.A))
-    call, _ = covmod.per_context(e, ctxs, world.cov)
-    return ca, call
+    return ca, (lambda models: l_covariates(world, e, ctxs, models))
 
 
 def _lineage(e: dict, ctxs) -> set:
@@ -1118,6 +1125,82 @@ def run_all(world: World) -> dict:
                 peak_rss_bytes=int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
 
 
+# ------------------------------------------------------------------------------------------------ R6 relook
+def _finite(v) -> bool:
+    return v is not None and isinstance(v, (int, float)) and np.isfinite(v)
+
+
+def relook(world: World, ruling: str, mode: str) -> pd.DataFrame:
+    """PI ruling R6: a disclosed, NON-CONFIRMATORY relook through the resume path (assoc.resume_lockbox_read with
+    relook=<ruling>; never the loader; no ledger line -- it is not a read). The L covariate design is the fixed one
+    (assembled over the L rows read). mode 'check': every committed successful L fit (beta_L finite) is recomputed and
+    returned next to the committed values (reproduction check); 'refit': only the lockbox-route fits that failed.
+    Seeds, hit order, blocks and strata are those of the single read (lockbox_permutation + hit index)."""
+    if mode not in ("check", "refit"):
+        raise ValueError(mode)
+    proj, rows = world.proj, []
+    for aid in confirm_order(proj) + [BRIDGE_ID]:
+        e, _ = entry(world, aid)
+        if aid == BRIDGE_ID:
+            res = pd.concat([committed_table(proj, BRIDGE_ID, tag).assign(family=tag)
+                             for tag in ("discovery_H3a", "discovery_H3b")], ignore_index=True)
+            spec = spec_h3(world, BRIDGE_ID, fm=world.gls, disc=res)
+        else:
+            spec = build_spec(world, aid)
+        eng = json.loads(committed(world, proj.results_dir / "assoc" / aid / "confirmation_crispr.json").read_text())
+        eh = eng["hits"]
+        if [(h["context"], h["unit"]) for h in eh] != list(zip(spec.hits.context, spec.hits.unit)):
+            raise RuntimeError(f"{aid}: committed confirmation rows differ from the hits")
+        if mode == "check":
+            sel = [i for i, h in enumerate(eh) if _finite(h["beta_L"])]
+        else:
+            sel = [i for i, h in enumerate(eh) if not _finite(h["beta_L"]) and bool(spec.hits.lockbox_testable.iloc[i])
+                   and bool(spec.hits.eligible.iloc[i])]
+        if not sel:
+            continue
+        E_L = assoc.resume_lockbox_read(aid, proj=proj, relook=ruling)
+        covL = spec.cov_all(E_L.index)
+        seed = lockbox_seed(e)
+        for i in sel:
+            r = spec.hits.iloc[i]
+            st = None if r.context in spec.lineage_contexts else world.cov.OncotreeLineage
+            y = spec.score_L(E_L, r.context, r.unit)
+            tt = confirm.lockbox_test(y, spec.ctx_all[r.context], covL.get(r.context), float(r.beta),
+                                      blocks=world.cov.PatientID, strata=st, n_perm=world.n_perm, seed=seed + i)
+            h = eh[i]
+            row = dict(entry=aid, hit_index=i, context=r.context, unit=r.unit, beta_A=float(r.beta),
+                       eligible=bool(r.eligible), lockbox_testable=bool(r.lockbox_testable))
+            for k in ("beta_L", "se_L", "p_L", "p_L_perm", "n_L", "n_context_L", "confirmed"):
+                row[f"{k}_committed"] = h.get(k)
+                row[f"{k}_relook"] = tt[k]
+            lo, hi = tt["ci95_L"]
+            row.update(ci95_L_lo_relook=lo, ci95_L_hi_relook=hi, testable_L_relook=tt["testable"],
+                       same_sign_relook=tt["same_sign"])
+            rows.append(row)
+        world.say(f"R6 relook ({mode}) {aid}: {len(sel)} fits")
+    return pd.DataFrame(rows)
+
+
+def check_identical(chk: pd.DataFrame, tol: float = 1e-10) -> dict:
+    """Reproduction check: relook estimates and p-values equal the committed ones (relative tolerance for float
+    round-off only)."""
+    out = dict(n=int(len(chk)))
+    bad = np.zeros(len(chk), bool)
+    for k in ("beta_L", "se_L", "p_L"):
+        a = chk[f"{k}_committed"].astype(float).values
+        b = chk[f"{k}_relook"].astype(float).values
+        d = np.abs(a - b) > tol * np.maximum(1.0, np.abs(a))
+        d |= np.isnan(a) != np.isnan(b)
+        bad |= d
+        out[f"max_abs_diff_{k}"] = float(np.nanmax(np.abs(a - b))) if len(a) else 0.0
+    flips = chk.confirmed_committed.astype(bool) != (chk.testable_L_relook & chk.same_sign_relook &
+                                                     (chk.p_L_relook.astype(float) < 0.05))
+    out.update(n_differ=int(bad.sum()), identical=bool(not bad.any()),
+               n_differ_by_entry=chk[bad].entry.value_counts().to_dict(),
+               n_confirmed_status_differs=int(flips.sum()))
+    return out
+
+
 def real_world(outcome_loader=None) -> World:
     """The real inputs. outcome_loader: only for the dress rehearsal in a throw-away clone (scripts/verify/
     lockbox_rehearsal.py); the real run uses the project loader."""
@@ -1156,10 +1239,25 @@ def main():
     g.add_argument("--run", action="store_true")
     ap.add_argument("--resume", action="store_true", help="with --run: finish entries already read, from their "
                                                           "persisted matrices; the loader is never called for them")
+    g.add_argument("--relook", metavar="RULING", help="PI-ruled non-confirmatory relook through the resume path "
+                                                      "(R6); needs --mode and --out")
+    ap.add_argument("--mode", choices=["check", "refit"])
+    ap.add_argument("--out", type=Path)
     a = ap.parse_args()
     t0 = time.time()
     world = real_world()
     world.resume = bool(a.resume)
+    if a.relook:
+        if not (a.mode and a.out):
+            raise SystemExit("--relook needs --mode and --out")
+        tab = relook(world, a.relook, a.mode)
+        tab.to_csv(a.out, sep="\t", index=False, float_format="%.10g")
+        res = dict(mode=a.mode, n=int(len(tab)), runtime_s=round(time.time() - t0, 1),
+                   peak_rss_bytes=int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
+        if a.mode == "check":
+            res.update(check_identical(tab))
+        print(json.dumps(res, indent=1, default=str))
+        return
     if a.dry_check:
         pf = preflight(world)
         pf["dry_runtime_s"] = round(time.time() - t0, 1)

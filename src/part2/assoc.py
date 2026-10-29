@@ -628,9 +628,16 @@ def _persist_read(proj: Project, analysis_id: str, source: str, df: pd.DataFrame
         raise FreezeError(f"read persisted at {proj.rel(p)} but its hash could not be committed: {r2.stderr.strip()}")
 
 
-def resume_lockbox_read(analysis_id: str, proj: Project | None = None, source: str = "crispr") -> pd.DataFrame:
+RELOOK_README = "results/part2/lockbox_confirm/README.md"
+RELOOK_INTENT = "results/part2/lockbox_confirm/CORRECTED_REFIT_INTENT.md"
+
+
+def resume_lockbox_read(analysis_id: str, proj: Project | None = None, source: str = "crispr",
+                        relook: str | None = None) -> pd.DataFrame:
     """The persisted matrix of an entry that already read the lockbox (committed ledger line and committed hash);
-    the outcome loader is never called. Refused if the hash differs or the entry is already closed."""
+    the outcome loader is never called. Refused if the hash differs or the entry is already closed -- unless `relook`
+    names a PI ruling (e.g. 'R6') whose note is committed verbatim in RELOOK_README and whose committed RELOOK_INTENT
+    names it: a disclosed, non-confirmatory relook (no ledger line; it is not a read)."""
     proj = proj or Project()
     led = [json.loads(l) for l in _committed_text(proj, proj.ledger).splitlines() if l.strip()] \
         if proj.ledger.exists() else []
@@ -638,7 +645,16 @@ def resume_lockbox_read(analysis_id: str, proj: Project | None = None, source: s
         raise FirewallError(f"{analysis_id}: no committed ledger line; nothing to resume")
     entry, _ = registry.load_entry(proj.registry_dir, analysis_id, root=proj.root)
     if entry["status"] == "closed":
-        raise FirewallError(f"{analysis_id} is closed; nothing to resume")
+        if relook is None:
+            raise FirewallError(f"{analysis_id} is closed; nothing to resume")
+        note, intent = proj.root / RELOOK_README, proj.root / RELOOK_INTENT
+        for p in (note, intent):
+            try:
+                registry.committed_blob(proj.root, p)
+            except RegistryError as e:
+                raise FirewallError(f"relook {relook}: {proj.rel(p)} must be committed ({e})") from e
+        if f'"{relook} (PI' not in note.read_text() or relook not in intent.read_text():
+            raise FirewallError(f"relook {relook}: no committed PI note / intent naming it")
     sc = _reads_sidecar(proj)
     recs = [json.loads(l) for l in _committed_text(proj, sc).splitlines() if l.strip()] if sc.exists() else []
     recs = [r for r in recs if r["analysis_id"] == analysis_id and r["source"] == source]

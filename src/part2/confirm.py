@@ -143,7 +143,10 @@ def confirm_entry(analysis_id: str, hits: pd.DataFrame, score_L, contexts_L: pd.
                   resume: bool = False) -> pd.DataFrame:
     """Read the lockbox for the committed target list and test every hit.
     hits: columns context, unit, beta (A). score_L(E_L, context, unit) -> Series over L models (same score, removals,
-    A-fitted parameters). contexts_L / covariates_L: L labels (DataFrame or {context: DataFrame})."""
+    A-fitted parameters). contexts_L / covariates_L: L labels (DataFrame or {context: DataFrame}). covariates_L may
+    also be a callable models -> {context: DataFrame}: the L covariate design is then assembled over the rows actually
+    read (R6: the registered analysis fits within L with the registered covariates; an all-model assembly subset to L
+    can leave a single-model lineage as its own group, leverage 1)."""
     proj = proj or assoc.Project()
     tp = target_path(proj, analysis_id)
     try:
@@ -158,6 +161,8 @@ def confirm_entry(analysis_id: str, hits: pd.DataFrame, score_L, contexts_L: pd.
         E_L = assoc.resume_lockbox_read(analysis_id, proj=proj, source=source)
     else:
         E_L = assoc.read_lockbox(analysis_id, tp, proj=proj, source=source, persist=persist)
+    if callable(covariates_L):
+        covariates_L = covariates_L(E_L.index)
     rows = []
     for i, r in enumerate(hits.itertuples(index=False)):
         if E_L.empty:

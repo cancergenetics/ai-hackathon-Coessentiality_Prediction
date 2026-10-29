@@ -7,6 +7,7 @@ real runner. Checks: planted confirmations reproduced and the A-only effect fail
 KMT2D and the EWSR1 fusion only; BENCH / BRIDGE-L refused out of order (driver gate and assoc.read_lockbox); re-reads
 refused; ledger order; E2 labels never promoted. No DepMap data is read."""
 import dataclasses
+import types
 import importlib.util
 import json
 import shutil
@@ -467,3 +468,67 @@ def test_bench_delta_fixed_terciles():
     assert list(r["table"].tercile) == fixed and "mean_mid" not in r["summary"]
     with pytest.raises(ValueError):
         bench.bench_delta(pairs, sL, E, ctx, None, B=2, seed=1, tercile=fixed[:3])
+
+
+# ------------------------------------------------------------------------------------------------ R6
+def test_r6_l_covariates_assembled_on_L_rows():
+    """R6: an L subset without the all-model reference lineage and with a single-model lineage. Assembled over all
+    models and then subset (the defect), the single model becomes its own group and HC3 refuses (leverage 1);
+    assembled over the L rows (the fix, as the A side does), the engine merges it into the reference and the fit
+    works."""
+    from part2 import covariates as covmod, stats
+    from part2.robust import fit_one
+    D = _script("51_lockbox_confirm.py")
+    rng = np.random.default_rng(0)
+    A = [f"A{i}" for i in range(60)]
+    L = [f"L{i}" for i in range(41)]
+    lin = ["Aaa"] * 20 + ["Bbb"] * 20 + ["Ccc"] * 20 + ["Bbb"] * 20 + ["Ccc"] * 20 + ["Zzz"]
+    cov = pd.DataFrame(dict(OncotreeLineage=lin), index=A + L)
+    ctx = pd.Series(np.r_[rng.random(60) < 0.3, rng.random(41) < 0.3].astype(float), index=A + L)
+    ctx[L[:8]] = np.nan                                           # a context with NaN labels for some L models
+    e = {"id": "toy", "covariates": ["lineage_FE"], "context_family": {"contexts": [{"id": "c"}]}}
+    old = covmod.per_context(e, ["c"], cov)[0]["c"].reindex(L)
+    X, _, _ = assoc._design(ctx.reindex(L), old)
+    with pytest.raises(ValueError, match="leverage"):
+        stats.HC3Design(X, 1)
+    new = D.l_covariates(types.SimpleNamespace(cov=cov), e, ["c"], L)["c"]
+    X2, _, _ = assoc._design(ctx.reindex(L), new)
+    stats.HC3Design(X2, 1)                                        # no error
+    y = pd.Series(rng.standard_normal(41), index=L)
+    assert not fit_one(y, ctx.reindex(L), old)["ok"] and fit_one(y, ctx.reindex(L), new)["ok"]
+
+
+def test_r6_relook_path_needs_committed_ruling_and_reproduces(runs):
+    """The relook reads persisted matrices of CLOSED entries only with a committed PI note and intent naming the
+    ruling, never calls the loader, writes no ledger line, and (synthetic: the fix changes no design there) reproduces
+    every committed fit."""
+    D, base = runs["D"], runs["world"]
+    root = base.proj.root.parent / "relook"
+    shutil.copytree(base.proj.root, root, symlinks=True)
+    calls = []
+    inner = base.proj.outcome_loader
+    A = set(base.A)
+
+    def loader(ids, genes, source):
+        if not set(ids) <= A:
+            calls.append(source)
+        return inner(ids, genes, source)
+
+    w = dataclasses.replace(base, proj=assoc.Project(root=root, outcome_loader=loader), log=[], _d2=None)
+    aid = D.confirm_order(w.proj)[0]
+    with pytest.raises(assoc.FirewallError, match="closed"):
+        assoc.resume_lockbox_read(aid, proj=w.proj)
+    with pytest.raises(assoc.FirewallError, match="committed"):
+        assoc.resume_lockbox_read(aid, proj=w.proj, relook="R6")
+    for rel, txt in ((assoc.RELOOK_README, '"R6 (PI, synthetic). Relook authorised."\n'),
+                     (assoc.RELOOK_INTENT, "R6 intent (synthetic)\n")):
+        (root / rel).parent.mkdir(parents=True, exist_ok=True)
+        (root / rel).write_text(txt)
+    confirm.commit_paths(w.proj, [root / assoc.RELOOK_README, root / assoc.RELOOK_INTENT], "R6 note + intent")
+    with pytest.raises(assoc.FirewallError):
+        assoc.resume_lockbox_read(aid, proj=w.proj, relook="R7")
+    n_led = len(w.proj.ledger.read_text().splitlines())
+    chk = D.relook(w, "R6", "check")
+    res = D.check_identical(chk)
+    assert res["identical"] and res["n"] > 0 and res["n_confirmed_status_differs"] == 0, res
+    assert calls == [] and len(w.proj.ledger.read_text().splitlines()) == n_led
