@@ -1,0 +1,47 @@
+{
+ "label": "POST HOC, DESCRIPTIVE (revision R-4); A estimates and committed L sample sizes only",
+ "n_hits": {
+  "zavg": 1267,
+  "gls": 1326
+ },
+ "n_lockbox_testable_incl_not_evaluable": 2630,
+ "bin_weights": {
+  "9-16": 0.3371,
+  "3-4": 0.2788,
+  "5-8": 0.258,
+  "17-60": 0.1261
+ },
+ "observed": {
+  "rate_zavg": 0.5136746353050908,
+  "rate_gls": 0.5784829744934724,
+  "diff": -0.06480833918838158,
+  "committed_R7_primary_evaluable": {
+   "diff": -0.0648,
+   "ci95": [
+    -0.1069,
+    -0.0246
+   ]
+  }
+ },
+ "headline": {
+  "power": "eb_mean_var",
+  "df": "df_pred_L",
+  "exp_zavg": 0.45882317147310103,
+  "sd_zavg": 0.013567981326473851,
+  "exp_gls": 0.481711333446462,
+  "sd_gls": 0.013204016383343585,
+  "exp_diff": -0.022888161973360965,
+  "sd_diff": 0.018932410462673497,
+  "obs_zavg": 0.5136746353050908,
+  "obs_gls": 0.5784829744934724,
+  "obs_diff": -0.06480833918838158,
+  "obs_minus_exp": -0.041920177215020615,
+  "z_obs_minus_exp": -2.2142017942020127,
+  "exp_zavg_unweighted": 0.4656549098198447,
+  "exp_gls_unweighted": 0.4793826030674856,
+  "obs_zavg_unweighted": 0.5217048145224941,
+  "obs_gls_unweighted": 0.5761689291101055
+ },
+ "runtime_s": 1.2,
+ "peak_rss_bytes": 250904576
+}

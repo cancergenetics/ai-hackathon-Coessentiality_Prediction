@@ -1,0 +1,7 @@
+direction	generator	n_units	status_unavailable	status_ok	status_tolerances doubled	n_sets	med_abs_d_ess	p95_abs_d_ess	med_abs_d_coh	p95_abs_d_coh	median_target_coh_available	median_target_coh_unavailable	generation_s	test_s
+H3a_lineage_atlas	nbr	367	277	57	33	900	0.06053	0.1807	0.7168	1.894	8.934	12.34	235.9	0.9
+H3a_lineage_atlas	unif	367	367			0						11.38	239	0
+H3a_lineage_atlas	ess	367	12	352	3	3550	0.05079	0.09557	11.4	18.54	11.39	10.5	10.6	3.6
+H3b_driver_family	nbr	367	280	55	32	870	0.06116	0.1806	0.7441	1.884	8.832	12.35	236.1	10.1
+H3b_driver_family	unif	367	367			0						11.38	234	0
+H3b_driver_family	ess	367	13	352	2	3540	0.05157	0.09554	11.37	18.54	11.38	11.05	10.7	44.9

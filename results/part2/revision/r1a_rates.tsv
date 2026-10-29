@@ -1,0 +1,459 @@
+direction	scope	set_type	context	n_units	n_tests	frac_p_lt_005
+H3a_lineage_atlas	all_units	real	pooled	367	8441	0.2808
+H3a_lineage_atlas	all_units	real	lineage:Biliary Tract	367	367	0.1335
+H3a_lineage_atlas	all_units	real	lineage:Bladder/Urinary Tract	367	367	0.2098
+H3a_lineage_atlas	all_units	real	lineage:Bone	367	367	0.3406
+H3a_lineage_atlas	all_units	real	lineage:Bowel	367	367	0.3379
+H3a_lineage_atlas	all_units	real	lineage:Breast	367	367	0.3052
+H3a_lineage_atlas	all_units	real	lineage:CNS/Brain	367	367	0.3978
+H3a_lineage_atlas	all_units	real	lineage:Cervix	367	367	0.1744
+H3a_lineage_atlas	all_units	real	lineage:Esophagus/Stomach	367	367	0.2071
+H3a_lineage_atlas	all_units	real	lineage:Head and Neck	367	367	0.4578
+H3a_lineage_atlas	all_units	real	lineage:Kidney	367	367	0.2561
+H3a_lineage_atlas	all_units	real	lineage:Liver	367	367	0.1390
+H3a_lineage_atlas	all_units	real	lineage:Lung	367	367	0.3052
+H3a_lineage_atlas	all_units	real	lineage:Lymphoid	367	367	0.5722
+H3a_lineage_atlas	all_units	real	lineage:Myeloid	367	367	0.3624
+H3a_lineage_atlas	all_units	real	lineage:Ovary/Fallopian Tube	367	367	0.1608
+H3a_lineage_atlas	all_units	real	lineage:Pancreas	367	367	0.2997
+H3a_lineage_atlas	all_units	real	lineage:Peripheral Nervous System	367	367	0.3869
+H3a_lineage_atlas	all_units	real	lineage:Pleura	367	367	0.1907
+H3a_lineage_atlas	all_units	real	lineage:Prostate	367	367	0.0926
+H3a_lineage_atlas	all_units	real	lineage:Skin	367	367	0.3134
+H3a_lineage_atlas	all_units	real	lineage:Soft Tissue	367	367	0.2371
+H3a_lineage_atlas	all_units	real	lineage:Uterus	367	367	0.2016
+H3a_lineage_atlas	all_units	real	melanoma	367	367	0.3760
+H3a_lineage_atlas	all_units	member_sets	pooled	350	80500	0.2814
+H3a_lineage_atlas	all_units	member_sets	lineage:Biliary Tract	350	3500	0.1063
+H3a_lineage_atlas	all_units	member_sets	lineage:Bladder/Urinary Tract	350	3500	0.2029
+H3a_lineage_atlas	all_units	member_sets	lineage:Bone	350	3500	0.3403
+H3a_lineage_atlas	all_units	member_sets	lineage:Bowel	350	3500	0.3183
+H3a_lineage_atlas	all_units	member_sets	lineage:Breast	350	3500	0.3031
+H3a_lineage_atlas	all_units	member_sets	lineage:CNS/Brain	350	3500	0.3789
+H3a_lineage_atlas	all_units	member_sets	lineage:Cervix	350	3500	0.1351
+H3a_lineage_atlas	all_units	member_sets	lineage:Esophagus/Stomach	350	3500	0.2323
+H3a_lineage_atlas	all_units	member_sets	lineage:Head and Neck	350	3500	0.4469
+H3a_lineage_atlas	all_units	member_sets	lineage:Kidney	350	3500	0.2403
+H3a_lineage_atlas	all_units	member_sets	lineage:Liver	350	3500	0.1583
+H3a_lineage_atlas	all_units	member_sets	lineage:Lung	350	3500	0.3243
+H3a_lineage_atlas	all_units	member_sets	lineage:Lymphoid	350	3500	0.5971
+H3a_lineage_atlas	all_units	member_sets	lineage:Myeloid	350	3500	0.3697
+H3a_lineage_atlas	all_units	member_sets	lineage:Ovary/Fallopian Tube	350	3500	0.1777
+H3a_lineage_atlas	all_units	member_sets	lineage:Pancreas	350	3500	0.3306
+H3a_lineage_atlas	all_units	member_sets	lineage:Peripheral Nervous System	350	3500	0.3723
+H3a_lineage_atlas	all_units	member_sets	lineage:Pleura	350	3500	0.2074
+H3a_lineage_atlas	all_units	member_sets	lineage:Prostate	350	3500	0.1043
+H3a_lineage_atlas	all_units	member_sets	lineage:Skin	350	3500	0.3163
+H3a_lineage_atlas	all_units	member_sets	lineage:Soft Tissue	350	3500	0.2354
+H3a_lineage_atlas	all_units	member_sets	lineage:Uterus	350	3500	0.1757
+H3a_lineage_atlas	all_units	member_sets	melanoma	350	3500	0.3989
+H3a_lineage_atlas	all_units	nonmember_nbr	pooled	90	20700	0.2509
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Biliary Tract	90	900	0.0244
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Bladder/Urinary Tract	90	900	0.1278
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Bone	90	900	0.2622
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Bowel	90	900	0.2267
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Breast	90	900	0.4244
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:CNS/Brain	90	900	0.2044
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Cervix	90	900	0.4911
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Esophagus/Stomach	90	900	0.2800
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Head and Neck	90	900	0.4800
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Kidney	90	900	0.1567
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Liver	90	900	0.1389
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Lung	90	900	0.2833
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Lymphoid	90	900	0.6389
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Myeloid	90	900	0.0933
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Ovary/Fallopian Tube	90	900	0.0844
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Pancreas	90	900	0.4933
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Peripheral Nervous System	90	900	0.4256
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Pleura	90	900	0.0800
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Prostate	90	900	0.1400
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Skin	90	900	0.1367
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Soft Tissue	90	900	0.3089
+H3a_lineage_atlas	all_units	nonmember_nbr	lineage:Uterus	90	900	0.1178
+H3a_lineage_atlas	all_units	nonmember_nbr	melanoma	90	900	0.1511
+H3a_lineage_atlas	common_units_nbr	real	pooled	90	2070	0.2304
+H3a_lineage_atlas	common_units_nbr	real	lineage:Biliary Tract	90	90	0.1111
+H3a_lineage_atlas	common_units_nbr	real	lineage:Bladder/Urinary Tract	90	90	0.1667
+H3a_lineage_atlas	common_units_nbr	real	lineage:Bone	90	90	0.2778
+H3a_lineage_atlas	common_units_nbr	real	lineage:Bowel	90	90	0.2556
+H3a_lineage_atlas	common_units_nbr	real	lineage:Breast	90	90	0.2778
+H3a_lineage_atlas	common_units_nbr	real	lineage:CNS/Brain	90	90	0.3222
+H3a_lineage_atlas	common_units_nbr	real	lineage:Cervix	90	90	0.1111
+H3a_lineage_atlas	common_units_nbr	real	lineage:Esophagus/Stomach	90	90	0.1778
+H3a_lineage_atlas	common_units_nbr	real	lineage:Head and Neck	90	90	0.4333
+H3a_lineage_atlas	common_units_nbr	real	lineage:Kidney	90	90	0.1889
+H3a_lineage_atlas	common_units_nbr	real	lineage:Liver	90	90	0.1222
+H3a_lineage_atlas	common_units_nbr	real	lineage:Lung	90	90	0.2000
+H3a_lineage_atlas	common_units_nbr	real	lineage:Lymphoid	90	90	0.5222
+H3a_lineage_atlas	common_units_nbr	real	lineage:Myeloid	90	90	0.2889
+H3a_lineage_atlas	common_units_nbr	real	lineage:Ovary/Fallopian Tube	90	90	0.1000
+H3a_lineage_atlas	common_units_nbr	real	lineage:Pancreas	90	90	0.1667
+H3a_lineage_atlas	common_units_nbr	real	lineage:Peripheral Nervous System	90	90	0.3444
+H3a_lineage_atlas	common_units_nbr	real	lineage:Pleura	90	90	0.1667
+H3a_lineage_atlas	common_units_nbr	real	lineage:Prostate	90	90	0.0778
+H3a_lineage_atlas	common_units_nbr	real	lineage:Skin	90	90	0.2778
+H3a_lineage_atlas	common_units_nbr	real	lineage:Soft Tissue	90	90	0.2111
+H3a_lineage_atlas	common_units_nbr	real	lineage:Uterus	90	90	0.1444
+H3a_lineage_atlas	common_units_nbr	real	melanoma	90	90	0.3556
+H3a_lineage_atlas	common_units_nbr	member_sets	pooled	90	20700	0.2476
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Biliary Tract	90	900	0.1200
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Bladder/Urinary Tract	90	900	0.1800
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Bone	90	900	0.3178
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Bowel	90	900	0.2389
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Breast	90	900	0.2811
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:CNS/Brain	90	900	0.3400
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Cervix	90	900	0.1456
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Esophagus/Stomach	90	900	0.2022
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Head and Neck	90	900	0.4356
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Kidney	90	900	0.2178
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Liver	90	900	0.1289
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Lung	90	900	0.2833
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Lymphoid	90	900	0.5256
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Myeloid	90	900	0.3011
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Ovary/Fallopian Tube	90	900	0.1444
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Pancreas	90	900	0.2289
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Peripheral Nervous System	90	900	0.3522
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Pleura	90	900	0.1722
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Prostate	90	900	0.0811
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Skin	90	900	0.2811
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Soft Tissue	90	900	0.1944
+H3a_lineage_atlas	common_units_nbr	member_sets	lineage:Uterus	90	900	0.1600
+H3a_lineage_atlas	common_units_nbr	member_sets	melanoma	90	900	0.3622
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	pooled	90	20700	0.2509
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Biliary Tract	90	900	0.0244
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Bladder/Urinary Tract	90	900	0.1278
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Bone	90	900	0.2622
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Bowel	90	900	0.2267
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Breast	90	900	0.4244
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:CNS/Brain	90	900	0.2044
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Cervix	90	900	0.4911
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Esophagus/Stomach	90	900	0.2800
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Head and Neck	90	900	0.4800
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Kidney	90	900	0.1567
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Liver	90	900	0.1389
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Lung	90	900	0.2833
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Lymphoid	90	900	0.6389
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Myeloid	90	900	0.0933
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Ovary/Fallopian Tube	90	900	0.0844
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Pancreas	90	900	0.4933
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Peripheral Nervous System	90	900	0.4256
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Pleura	90	900	0.0800
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Prostate	90	900	0.1400
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Skin	90	900	0.1367
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Soft Tissue	90	900	0.3089
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	lineage:Uterus	90	900	0.1178
+H3a_lineage_atlas	common_units_nbr	nonmember_nbr	melanoma	90	900	0.1511
+H3a_lineage_atlas	all_units	nonmember_unif	pooled	0	0	
+H3a_lineage_atlas	common_units_unif	real	pooled	0	0	
+H3a_lineage_atlas	common_units_unif	member_sets	pooled	0	0	
+H3a_lineage_atlas	common_units_unif	nonmember_unif	pooled	0	0	
+H3a_lineage_atlas	all_units	nonmember_ess	pooled	355	81650	0.1657
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Biliary Tract	355	3550	0.0749
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Bladder/Urinary Tract	355	3550	0.0961
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Bone	355	3550	0.1606
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Bowel	355	3550	0.1721
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Breast	355	3550	0.2220
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:CNS/Brain	355	3550	0.2400
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Cervix	355	3550	0.1039
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Esophagus/Stomach	355	3550	0.1335
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Head and Neck	355	3550	0.3124
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Kidney	355	3550	0.1451
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Liver	355	3550	0.0707
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Lung	355	3550	0.1555
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Lymphoid	355	3550	0.3454
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Myeloid	355	3550	0.1794
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Ovary/Fallopian Tube	355	3550	0.1358
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Pancreas	355	3550	0.1501
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Peripheral Nervous System	355	3550	0.2237
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Pleura	355	3550	0.1011
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Prostate	355	3550	0.0654
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Skin	355	3550	0.2110
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Soft Tissue	355	3550	0.1237
+H3a_lineage_atlas	all_units	nonmember_ess	lineage:Uterus	355	3550	0.1321
+H3a_lineage_atlas	all_units	nonmember_ess	melanoma	355	3550	0.2575
+H3a_lineage_atlas	common_units_ess	real	pooled	355	8165	0.2814
+H3a_lineage_atlas	common_units_ess	real	lineage:Biliary Tract	355	355	0.1380
+H3a_lineage_atlas	common_units_ess	real	lineage:Bladder/Urinary Tract	355	355	0.2169
+H3a_lineage_atlas	common_units_ess	real	lineage:Bone	355	355	0.3324
+H3a_lineage_atlas	common_units_ess	real	lineage:Bowel	355	355	0.3380
+H3a_lineage_atlas	common_units_ess	real	lineage:Breast	355	355	0.2986
+H3a_lineage_atlas	common_units_ess	real	lineage:CNS/Brain	355	355	0.3944
+H3a_lineage_atlas	common_units_ess	real	lineage:Cervix	355	355	0.1775
+H3a_lineage_atlas	common_units_ess	real	lineage:Esophagus/Stomach	355	355	0.2113
+H3a_lineage_atlas	common_units_ess	real	lineage:Head and Neck	355	355	0.4592
+H3a_lineage_atlas	common_units_ess	real	lineage:Kidney	355	355	0.2563
+H3a_lineage_atlas	common_units_ess	real	lineage:Liver	355	355	0.1408
+H3a_lineage_atlas	common_units_ess	real	lineage:Lung	355	355	0.3042
+H3a_lineage_atlas	common_units_ess	real	lineage:Lymphoid	355	355	0.5803
+H3a_lineage_atlas	common_units_ess	real	lineage:Myeloid	355	355	0.3606
+H3a_lineage_atlas	common_units_ess	real	lineage:Ovary/Fallopian Tube	355	355	0.1634
+H3a_lineage_atlas	common_units_ess	real	lineage:Pancreas	355	355	0.3042
+H3a_lineage_atlas	common_units_ess	real	lineage:Peripheral Nervous System	355	355	0.3915
+H3a_lineage_atlas	common_units_ess	real	lineage:Pleura	355	355	0.1915
+H3a_lineage_atlas	common_units_ess	real	lineage:Prostate	355	355	0.0958
+H3a_lineage_atlas	common_units_ess	real	lineage:Skin	355	355	0.3070
+H3a_lineage_atlas	common_units_ess	real	lineage:Soft Tissue	355	355	0.2338
+H3a_lineage_atlas	common_units_ess	real	lineage:Uterus	355	355	0.2056
+H3a_lineage_atlas	common_units_ess	real	melanoma	355	355	0.3718
+H3a_lineage_atlas	common_units_ess	member_sets	pooled	342	78660	0.2824
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Biliary Tract	342	3420	0.1079
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Bladder/Urinary Tract	342	3420	0.2067
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Bone	342	3420	0.3409
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Bowel	342	3420	0.3152
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Breast	342	3420	0.3079
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:CNS/Brain	342	3420	0.3795
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Cervix	342	3420	0.1319
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Esophagus/Stomach	342	3420	0.2292
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Head and Neck	342	3420	0.4471
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Kidney	342	3420	0.2360
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Liver	342	3420	0.1614
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Lung	342	3420	0.3249
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Lymphoid	342	3420	0.6012
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Myeloid	342	3420	0.3743
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Ovary/Fallopian Tube	342	3420	0.1813
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Pancreas	342	3420	0.3345
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Peripheral Nervous System	342	3420	0.3722
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Pleura	342	3420	0.2026
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Prostate	342	3420	0.1067
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Skin	342	3420	0.3173
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Soft Tissue	342	3420	0.2365
+H3a_lineage_atlas	common_units_ess	member_sets	lineage:Uterus	342	3420	0.1798
+H3a_lineage_atlas	common_units_ess	member_sets	melanoma	342	3420	0.3991
+H3a_lineage_atlas	common_units_ess	nonmember_ess	pooled	355	81650	0.1657
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Biliary Tract	355	3550	0.0749
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Bladder/Urinary Tract	355	3550	0.0961
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Bone	355	3550	0.1606
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Bowel	355	3550	0.1721
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Breast	355	3550	0.2220
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:CNS/Brain	355	3550	0.2400
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Cervix	355	3550	0.1039
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Esophagus/Stomach	355	3550	0.1335
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Head and Neck	355	3550	0.3124
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Kidney	355	3550	0.1451
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Liver	355	3550	0.0707
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Lung	355	3550	0.1555
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Lymphoid	355	3550	0.3454
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Myeloid	355	3550	0.1794
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Ovary/Fallopian Tube	355	3550	0.1358
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Pancreas	355	3550	0.1501
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Peripheral Nervous System	355	3550	0.2237
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Pleura	355	3550	0.1011
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Prostate	355	3550	0.0654
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Skin	355	3550	0.2110
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Soft Tissue	355	3550	0.1237
+H3a_lineage_atlas	common_units_ess	nonmember_ess	lineage:Uterus	355	3550	0.1321
+H3a_lineage_atlas	common_units_ess	nonmember_ess	melanoma	355	3550	0.2575
+H3b_driver_family	all_units	real	pooled	367	7340	0.1199
+H3b_driver_family	all_units	real	9p21_loss	367	367	0.1063
+H3b_driver_family	all_units	real	LoF:ARID1A	367	367	0.0736
+H3b_driver_family	all_units	real	LoF:KMT2D	367	367	0.0654
+H3b_driver_family	all_units	real	LoF:PTEN	367	367	0.1308
+H3b_driver_family	all_units	real	LoF:RB1	367	367	0.1335
+H3b_driver_family	all_units	real	LoF:SMARCA4	367	367	0.1390
+H3b_driver_family	all_units	real	LoF:STAG2	367	367	0.0545
+H3b_driver_family	all_units	real	LoY	367	367	0.0436
+H3b_driver_family	all_units	real	MSI_H	367	367	0.1689
+H3b_driver_family	all_units	real	MYCN_amp	367	367	0.1035
+H3b_driver_family	all_units	real	MYC_amp	367	367	0.0790
+H3b_driver_family	all_units	real	NRF2_active	367	367	0.0817
+H3b_driver_family	all_units	real	TP53_altered	367	367	0.3815
+H3b_driver_family	all_units	real	WGD	367	367	0.1880
+H3b_driver_family	all_units	real	fusion:EWSR1::FLI1|ERG	367	367	0.1798
+H3b_driver_family	all_units	real	hotspot:BRAF	367	367	0.1172
+H3b_driver_family	all_units	real	hotspot:KRAS	367	367	0.1417
+H3b_driver_family	all_units	real	hotspot:NRAS	367	367	0.1063
+H3b_driver_family	all_units	real	hotspot:PIK3CA	367	367	0.0436
+H3b_driver_family	all_units	real	sex_female	367	367	0.0599
+H3b_driver_family	all_units	member_sets	pooled	351	70200	0.1160
+H3b_driver_family	all_units	member_sets	9p21_loss	351	3510	0.0838
+H3b_driver_family	all_units	member_sets	LoF:ARID1A	351	3510	0.0789
+H3b_driver_family	all_units	member_sets	LoF:KMT2D	351	3510	0.0513
+H3b_driver_family	all_units	member_sets	LoF:PTEN	351	3510	0.1447
+H3b_driver_family	all_units	member_sets	LoF:RB1	351	3510	0.1405
+H3b_driver_family	all_units	member_sets	LoF:SMARCA4	351	3510	0.1436
+H3b_driver_family	all_units	member_sets	LoF:STAG2	351	3510	0.0470
+H3b_driver_family	all_units	member_sets	LoY	351	3510	0.0348
+H3b_driver_family	all_units	member_sets	MSI_H	351	3510	0.1402
+H3b_driver_family	all_units	member_sets	MYCN_amp	351	3510	0.0915
+H3b_driver_family	all_units	member_sets	MYC_amp	351	3510	0.0860
+H3b_driver_family	all_units	member_sets	NRF2_active	351	3510	0.0815
+H3b_driver_family	all_units	member_sets	TP53_altered	351	3510	0.3929
+H3b_driver_family	all_units	member_sets	WGD	351	3510	0.1883
+H3b_driver_family	all_units	member_sets	fusion:EWSR1::FLI1|ERG	351	3510	0.1732
+H3b_driver_family	all_units	member_sets	hotspot:BRAF	351	3510	0.1120
+H3b_driver_family	all_units	member_sets	hotspot:KRAS	351	3510	0.1396
+H3b_driver_family	all_units	member_sets	hotspot:NRAS	351	3510	0.1103
+H3b_driver_family	all_units	member_sets	hotspot:PIK3CA	351	3510	0.0325
+H3b_driver_family	all_units	member_sets	sex_female	351	3510	0.0476
+H3b_driver_family	all_units	nonmember_nbr	pooled	87	17400	0.1076
+H3b_driver_family	all_units	nonmember_nbr	9p21_loss	87	870	0.2287
+H3b_driver_family	all_units	nonmember_nbr	LoF:ARID1A	87	870	0.1828
+H3b_driver_family	all_units	nonmember_nbr	LoF:KMT2D	87	870	0.0103
+H3b_driver_family	all_units	nonmember_nbr	LoF:PTEN	87	870	0.0333
+H3b_driver_family	all_units	nonmember_nbr	LoF:RB1	87	870	0.0770
+H3b_driver_family	all_units	nonmember_nbr	LoF:SMARCA4	87	870	0.2701
+H3b_driver_family	all_units	nonmember_nbr	LoF:STAG2	87	870	0.0379
+H3b_driver_family	all_units	nonmember_nbr	LoY	87	870	0.0609
+H3b_driver_family	all_units	nonmember_nbr	MSI_H	87	870	0.1345
+H3b_driver_family	all_units	nonmember_nbr	MYCN_amp	87	870	0.0241
+H3b_driver_family	all_units	nonmember_nbr	MYC_amp	87	870	0.0138
+H3b_driver_family	all_units	nonmember_nbr	NRF2_active	87	870	0.0299
+H3b_driver_family	all_units	nonmember_nbr	TP53_altered	87	870	0.3690
+H3b_driver_family	all_units	nonmember_nbr	WGD	87	870	0.1414
+H3b_driver_family	all_units	nonmember_nbr	fusion:EWSR1::FLI1|ERG	87	870	0.0115
+H3b_driver_family	all_units	nonmember_nbr	hotspot:BRAF	87	870	0.3115
+H3b_driver_family	all_units	nonmember_nbr	hotspot:KRAS	87	870	0.0138
+H3b_driver_family	all_units	nonmember_nbr	hotspot:NRAS	87	870	0.0989
+H3b_driver_family	all_units	nonmember_nbr	hotspot:PIK3CA	87	870	0.0161
+H3b_driver_family	all_units	nonmember_nbr	sex_female	87	870	0.0862
+H3b_driver_family	common_units_nbr	real	pooled	87	1740	0.1132
+H3b_driver_family	common_units_nbr	real	9p21_loss	87	87	0.0345
+H3b_driver_family	common_units_nbr	real	LoF:ARID1A	87	87	0.0920
+H3b_driver_family	common_units_nbr	real	LoF:KMT2D	87	87	0.1034
+H3b_driver_family	common_units_nbr	real	LoF:PTEN	87	87	0.0805
+H3b_driver_family	common_units_nbr	real	LoF:RB1	87	87	0.1494
+H3b_driver_family	common_units_nbr	real	LoF:SMARCA4	87	87	0.0805
+H3b_driver_family	common_units_nbr	real	LoF:STAG2	87	87	0.0805
+H3b_driver_family	common_units_nbr	real	LoY	87	87	0.0690
+H3b_driver_family	common_units_nbr	real	MSI_H	87	87	0.2759
+H3b_driver_family	common_units_nbr	real	MYCN_amp	87	87	0.1724
+H3b_driver_family	common_units_nbr	real	MYC_amp	87	87	0.0115
+H3b_driver_family	common_units_nbr	real	NRF2_active	87	87	0.0460
+H3b_driver_family	common_units_nbr	real	TP53_altered	87	87	0.4023
+H3b_driver_family	common_units_nbr	real	WGD	87	87	0.2184
+H3b_driver_family	common_units_nbr	real	fusion:EWSR1::FLI1|ERG	87	87	0.1839
+H3b_driver_family	common_units_nbr	real	hotspot:BRAF	87	87	0.0575
+H3b_driver_family	common_units_nbr	real	hotspot:KRAS	87	87	0.0690
+H3b_driver_family	common_units_nbr	real	hotspot:NRAS	87	87	0.0690
+H3b_driver_family	common_units_nbr	real	hotspot:PIK3CA	87	87	0.0345
+H3b_driver_family	common_units_nbr	real	sex_female	87	87	0.0345
+H3b_driver_family	common_units_nbr	member_sets	pooled	87	17400	0.1116
+H3b_driver_family	common_units_nbr	member_sets	9p21_loss	87	870	0.0920
+H3b_driver_family	common_units_nbr	member_sets	LoF:ARID1A	87	870	0.1080
+H3b_driver_family	common_units_nbr	member_sets	LoF:KMT2D	87	870	0.0770
+H3b_driver_family	common_units_nbr	member_sets	LoF:PTEN	87	870	0.1149
+H3b_driver_family	common_units_nbr	member_sets	LoF:RB1	87	870	0.1448
+H3b_driver_family	common_units_nbr	member_sets	LoF:SMARCA4	87	870	0.1138
+H3b_driver_family	common_units_nbr	member_sets	LoF:STAG2	87	870	0.0563
+H3b_driver_family	common_units_nbr	member_sets	LoY	87	870	0.0425
+H3b_driver_family	common_units_nbr	member_sets	MSI_H	87	870	0.1552
+H3b_driver_family	common_units_nbr	member_sets	MYCN_amp	87	870	0.1115
+H3b_driver_family	common_units_nbr	member_sets	MYC_amp	87	870	0.0678
+H3b_driver_family	common_units_nbr	member_sets	NRF2_active	87	870	0.0701
+H3b_driver_family	common_units_nbr	member_sets	TP53_altered	87	870	0.3621
+H3b_driver_family	common_units_nbr	member_sets	WGD	87	870	0.1552
+H3b_driver_family	common_units_nbr	member_sets	fusion:EWSR1::FLI1|ERG	87	870	0.1655
+H3b_driver_family	common_units_nbr	member_sets	hotspot:BRAF	87	870	0.0885
+H3b_driver_family	common_units_nbr	member_sets	hotspot:KRAS	87	870	0.1069
+H3b_driver_family	common_units_nbr	member_sets	hotspot:NRAS	87	870	0.0954
+H3b_driver_family	common_units_nbr	member_sets	hotspot:PIK3CA	87	870	0.0391
+H3b_driver_family	common_units_nbr	member_sets	sex_female	87	870	0.0644
+H3b_driver_family	common_units_nbr	nonmember_nbr	pooled	87	17400	0.1076
+H3b_driver_family	common_units_nbr	nonmember_nbr	9p21_loss	87	870	0.2287
+H3b_driver_family	common_units_nbr	nonmember_nbr	LoF:ARID1A	87	870	0.1828
+H3b_driver_family	common_units_nbr	nonmember_nbr	LoF:KMT2D	87	870	0.0103
+H3b_driver_family	common_units_nbr	nonmember_nbr	LoF:PTEN	87	870	0.0333
+H3b_driver_family	common_units_nbr	nonmember_nbr	LoF:RB1	87	870	0.0770
+H3b_driver_family	common_units_nbr	nonmember_nbr	LoF:SMARCA4	87	870	0.2701
+H3b_driver_family	common_units_nbr	nonmember_nbr	LoF:STAG2	87	870	0.0379
+H3b_driver_family	common_units_nbr	nonmember_nbr	LoY	87	870	0.0609
+H3b_driver_family	common_units_nbr	nonmember_nbr	MSI_H	87	870	0.1345
+H3b_driver_family	common_units_nbr	nonmember_nbr	MYCN_amp	87	870	0.0241
+H3b_driver_family	common_units_nbr	nonmember_nbr	MYC_amp	87	870	0.0138
+H3b_driver_family	common_units_nbr	nonmember_nbr	NRF2_active	87	870	0.0299
+H3b_driver_family	common_units_nbr	nonmember_nbr	TP53_altered	87	870	0.3690
+H3b_driver_family	common_units_nbr	nonmember_nbr	WGD	87	870	0.1414
+H3b_driver_family	common_units_nbr	nonmember_nbr	fusion:EWSR1::FLI1|ERG	87	870	0.0115
+H3b_driver_family	common_units_nbr	nonmember_nbr	hotspot:BRAF	87	870	0.3115
+H3b_driver_family	common_units_nbr	nonmember_nbr	hotspot:KRAS	87	870	0.0138
+H3b_driver_family	common_units_nbr	nonmember_nbr	hotspot:NRAS	87	870	0.0989
+H3b_driver_family	common_units_nbr	nonmember_nbr	hotspot:PIK3CA	87	870	0.0161
+H3b_driver_family	common_units_nbr	nonmember_nbr	sex_female	87	870	0.0862
+H3b_driver_family	all_units	nonmember_unif	pooled	0	0	
+H3b_driver_family	common_units_unif	real	pooled	0	0	
+H3b_driver_family	common_units_unif	member_sets	pooled	0	0	
+H3b_driver_family	common_units_unif	nonmember_unif	pooled	0	0	
+H3b_driver_family	all_units	nonmember_ess	pooled	354	70800	0.0878
+H3b_driver_family	all_units	nonmember_ess	9p21_loss	354	3540	0.0692
+H3b_driver_family	all_units	nonmember_ess	LoF:ARID1A	354	3540	0.0746
+H3b_driver_family	all_units	nonmember_ess	LoF:KMT2D	354	3540	0.0401
+H3b_driver_family	all_units	nonmember_ess	LoF:PTEN	354	3540	0.0734
+H3b_driver_family	all_units	nonmember_ess	LoF:RB1	354	3540	0.0972
+H3b_driver_family	all_units	nonmember_ess	LoF:SMARCA4	354	3540	0.0907
+H3b_driver_family	all_units	nonmember_ess	LoF:STAG2	354	3540	0.0288
+H3b_driver_family	all_units	nonmember_ess	LoY	354	3540	0.0554
+H3b_driver_family	all_units	nonmember_ess	MSI_H	354	3540	0.1138
+H3b_driver_family	all_units	nonmember_ess	MYCN_amp	354	3540	0.1124
+H3b_driver_family	all_units	nonmember_ess	MYC_amp	354	3540	0.0644
+H3b_driver_family	all_units	nonmember_ess	NRF2_active	354	3540	0.0449
+H3b_driver_family	all_units	nonmember_ess	TP53_altered	354	3540	0.2963
+H3b_driver_family	all_units	nonmember_ess	WGD	354	3540	0.1842
+H3b_driver_family	all_units	nonmember_ess	fusion:EWSR1::FLI1|ERG	354	3540	0.1144
+H3b_driver_family	all_units	nonmember_ess	hotspot:BRAF	354	3540	0.0590
+H3b_driver_family	all_units	nonmember_ess	hotspot:KRAS	354	3540	0.0689
+H3b_driver_family	all_units	nonmember_ess	hotspot:NRAS	354	3540	0.0624
+H3b_driver_family	all_units	nonmember_ess	hotspot:PIK3CA	354	3540	0.0466
+H3b_driver_family	all_units	nonmember_ess	sex_female	354	3540	0.0599
+H3b_driver_family	common_units_ess	real	pooled	354	7080	0.1192
+H3b_driver_family	common_units_ess	real	9p21_loss	354	354	0.1045
+H3b_driver_family	common_units_ess	real	LoF:ARID1A	354	354	0.0763
+H3b_driver_family	common_units_ess	real	LoF:KMT2D	354	354	0.0650
+H3b_driver_family	common_units_ess	real	LoF:PTEN	354	354	0.1328
+H3b_driver_family	common_units_ess	real	LoF:RB1	354	354	0.1271
+H3b_driver_family	common_units_ess	real	LoF:SMARCA4	354	354	0.1412
+H3b_driver_family	common_units_ess	real	LoF:STAG2	354	354	0.0565
+H3b_driver_family	common_units_ess	real	LoY	354	354	0.0424
+H3b_driver_family	common_units_ess	real	MSI_H	354	354	0.1695
+H3b_driver_family	common_units_ess	real	MYCN_amp	354	354	0.0989
+H3b_driver_family	common_units_ess	real	MYC_amp	354	354	0.0763
+H3b_driver_family	common_units_ess	real	NRF2_active	354	354	0.0847
+H3b_driver_family	common_units_ess	real	TP53_altered	354	354	0.3729
+H3b_driver_family	common_units_ess	real	WGD	354	354	0.1893
+H3b_driver_family	common_units_ess	real	fusion:EWSR1::FLI1|ERG	354	354	0.1836
+H3b_driver_family	common_units_ess	real	hotspot:BRAF	354	354	0.1130
+H3b_driver_family	common_units_ess	real	hotspot:KRAS	354	354	0.1412
+H3b_driver_family	common_units_ess	real	hotspot:NRAS	354	354	0.1045
+H3b_driver_family	common_units_ess	real	hotspot:PIK3CA	354	354	0.0452
+H3b_driver_family	common_units_ess	real	sex_female	354	354	0.0593
+H3b_driver_family	common_units_ess	member_sets	pooled	343	68600	0.1160
+H3b_driver_family	common_units_ess	member_sets	9p21_loss	343	3430	0.0843
+H3b_driver_family	common_units_ess	member_sets	LoF:ARID1A	343	3430	0.0802
+H3b_driver_family	common_units_ess	member_sets	LoF:KMT2D	343	3430	0.0510
+H3b_driver_family	common_units_ess	member_sets	LoF:PTEN	343	3430	0.1472
+H3b_driver_family	common_units_ess	member_sets	LoF:RB1	343	3430	0.1341
+H3b_driver_family	common_units_ess	member_sets	LoF:SMARCA4	343	3430	0.1466
+H3b_driver_family	common_units_ess	member_sets	LoF:STAG2	343	3430	0.0478
+H3b_driver_family	common_units_ess	member_sets	LoY	343	3430	0.0329
+H3b_driver_family	common_units_ess	member_sets	MSI_H	343	3430	0.1434
+H3b_driver_family	common_units_ess	member_sets	MYCN_amp	343	3430	0.0883
+H3b_driver_family	common_units_ess	member_sets	MYC_amp	343	3430	0.0860
+H3b_driver_family	common_units_ess	member_sets	NRF2_active	343	3430	0.0831
+H3b_driver_family	common_units_ess	member_sets	TP53_altered	343	3430	0.3904
+H3b_driver_family	common_units_ess	member_sets	WGD	343	3430	0.1895
+H3b_driver_family	common_units_ess	member_sets	fusion:EWSR1::FLI1|ERG	343	3430	0.1732
+H3b_driver_family	common_units_ess	member_sets	hotspot:BRAF	343	3430	0.1134
+H3b_driver_family	common_units_ess	member_sets	hotspot:KRAS	343	3430	0.1411
+H3b_driver_family	common_units_ess	member_sets	hotspot:NRAS	343	3430	0.1058
+H3b_driver_family	common_units_ess	member_sets	hotspot:PIK3CA	343	3430	0.0332
+H3b_driver_family	common_units_ess	member_sets	sex_female	343	3430	0.0478
+H3b_driver_family	common_units_ess	nonmember_ess	pooled	354	70800	0.0878
+H3b_driver_family	common_units_ess	nonmember_ess	9p21_loss	354	3540	0.0692
+H3b_driver_family	common_units_ess	nonmember_ess	LoF:ARID1A	354	3540	0.0746
+H3b_driver_family	common_units_ess	nonmember_ess	LoF:KMT2D	354	3540	0.0401
+H3b_driver_family	common_units_ess	nonmember_ess	LoF:PTEN	354	3540	0.0734
+H3b_driver_family	common_units_ess	nonmember_ess	LoF:RB1	354	3540	0.0972
+H3b_driver_family	common_units_ess	nonmember_ess	LoF:SMARCA4	354	3540	0.0907
+H3b_driver_family	common_units_ess	nonmember_ess	LoF:STAG2	354	3540	0.0288
+H3b_driver_family	common_units_ess	nonmember_ess	LoY	354	3540	0.0554
+H3b_driver_family	common_units_ess	nonmember_ess	MSI_H	354	3540	0.1138
+H3b_driver_family	common_units_ess	nonmember_ess	MYCN_amp	354	3540	0.1124
+H3b_driver_family	common_units_ess	nonmember_ess	MYC_amp	354	3540	0.0644
+H3b_driver_family	common_units_ess	nonmember_ess	NRF2_active	354	3540	0.0449
+H3b_driver_family	common_units_ess	nonmember_ess	TP53_altered	354	3540	0.2963
+H3b_driver_family	common_units_ess	nonmember_ess	WGD	354	3540	0.1842
+H3b_driver_family	common_units_ess	nonmember_ess	fusion:EWSR1::FLI1|ERG	354	3540	0.1144
+H3b_driver_family	common_units_ess	nonmember_ess	hotspot:BRAF	354	3540	0.0590
+H3b_driver_family	common_units_ess	nonmember_ess	hotspot:KRAS	354	3540	0.0689
+H3b_driver_family	common_units_ess	nonmember_ess	hotspot:NRAS	354	3540	0.0624
+H3b_driver_family	common_units_ess	nonmember_ess	hotspot:PIK3CA	354	3540	0.0466
+H3b_driver_family	common_units_ess	nonmember_ess	sex_female	354	3540	0.0599
