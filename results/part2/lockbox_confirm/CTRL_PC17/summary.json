@@ -1,0 +1,29 @@
+{
+ "analysis_id": "CTRL_PC17",
+ "ledger": [
+  {
+   "analysis_id": "CTRL_PC17",
+   "direction": "controls",
+   "head": "0c6c758375b46f94b0552c700f9241b6f2171ab4",
+   "n_genes": 21,
+   "registry_blob": "4e7851936d72d1add558d3ebcc5b1e217a707264",
+   "source": "crispr",
+   "targets_blob": "2ee04eee7efd6adbf9104a83543a1df3db4a4d9b",
+   "targets_file": "results/part2/lockbox_targets/CTRL_PC17.json",
+   "time": "2026-10-29T06:50:58+0000"
+  }
+ ],
+ "lockbox_seed": 6716,
+ "n_confirmed": 3,
+ "n_eligible": 3,
+ "n_eligible_lockbox": 3,
+ "n_eligible_rare": 0,
+ "n_hits": 3,
+ "n_perm": 10000,
+ "n_rare_pass": 0,
+ "n_target_genes": 21,
+ "peak_rss_bytes": 3268345856,
+ "registry_blob": "4e7851936d72d1add558d3ebcc5b1e217a707264",
+ "resumed": false,
+ "runtime_s": 1.8
+}

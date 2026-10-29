@@ -1,0 +1,4 @@
+context	unit	beta	alternative	level	eligible	lockbox_testable	beta_L	se_L	df_L	n_L	n_context_L	p_L_hc3	p_L	p_L_perm	n_ref_L	testable_L	same_sign	confirmed	ci90_L_lo	ci90_L_hi	ci95_L_lo	ci95_L_hi	loso_same_sign	loso_folds	lomo_same_sign	demeter2_same_sign	rare_route_pass	rare_route_note	route	confirmed_final	promotable	status
+melanoma	MITF (4286)	-0.476094	less	G	True	True	-0.606628	0.119858	21.1004	338	19	2.55857e-05	6.72794e-13	6.72794e-13	319	True	True	True	-0.812827	-0.400429	-0.855814	-0.357442							lockbox	True	True	confirmed
+melanoma	SOX10 (6663)	-1.37646	less	G	True	True	-1.41215	0.152222	21.1004	338	19	3.39618e-09	2.1892e-18	2.1892e-18	319	True	True	True	-1.67403	-1.15027	-1.72862	-1.09568							lockbox	True	True	confirmed
+melanoma	Z0018	-0.402361	less	C	True	True	-0.398514	0.0416764	21.1004	338	19	2.0162e-09	4.4551e-16	4.4551e-16	319	True	True	True	-0.470213	-0.326816	-0.48516	-0.311868							lockbox	True	True	confirmed
