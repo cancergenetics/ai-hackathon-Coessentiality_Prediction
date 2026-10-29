@@ -1,0 +1,50 @@
+# Supplementary Table S3: complex-specific context discoveries (A side)
+
+| direction | context | unit | members | context lines (A) | β [95% CI] | abs t | tier | kept: GPD / screen | control |
+|---|---|---|---|---|---|---|---|---|---|
+| H3a | Lymphoid | Z0016 | ATRN, BCAR1, CRK, CRKL, DOCK5, ELMO2, FERMT2, ILK +14 | 73 | +0.182 [+0.159, +0.205] | 15.7 | T1 | yes / yes |  |
+| H3a | Lymphoid | Z0030 | ADSL, ADSS2, ATIC, CAD, CTPS1, DHODH, FPGS, GART +10 | 73 | -0.291 [-0.335, -0.247] | 13.2 | T2 | yes / yes |  |
+| H3a | melanoma | Z0018 | BRAF, CRTC2, CRTC3, DUSP10, DUSP4, ELAVL1, ELOA, MAFF +13 | 50 | -0.402 [-0.468, -0.337] | 12.2 | T1 | yes / yes | control readout |
+| H3a | Lymphoid | Z0190 | E4F1, PSMB5, PSMB6, PSMB7, THAP1 | 73 | +0.484 [+0.394, +0.573] | 10.7 | T1 | yes / yes |  |
+| H3a | Lymphoid | Z0059 | ARHGEF7, CD151, DLG5, EFR3A, GIT2, ITGA3, ITGB1, MARK2 +7 | 73 | +0.104 [+0.085, +0.124] | 10.7 | T1 | yes / yes |  |
+| H3a | Lymphoid | Z0264 | AIFM1, ARF4, CHCHD4, NFE2L2, SUCO, TAPT1 | 73 | +0.138 [+0.112, +0.163] | 10.7 | T3-neg | yes / yes | control unit, other context |
+| H3a | Myeloid | Z0016 | ATRN, BCAR1, CRK, CRKL, DOCK5, ELMO2, FERMT2, ILK +14 | 33 | +0.138 [+0.111, +0.165] | 10.5 | T1 | yes / yes |  |
+| H3a | Lymphoid | Z0113 | CCND3, CEBPA, GFI1, IRF8, LYL1, MBNL1, MEF2D, MYB +3 | 73 | -0.155 [-0.187, -0.124] | 9.8 | T2 | yes / yes | control unit, other context |
+| H3a | Skin | Z0018 | BRAF, CRTC2, CRTC3, DUSP10, DUSP4, ELAVL1, ELOA, MAFF +13 | 51 | -0.357 [-0.431, -0.282] | 9.6 | T1 | yes / yes | control unit, other context |
+| H3a | Lymphoid | Z0196 | PPP1CC, PPP1R11, PPP1R2, PPP1R7, SUGT1 | 73 | +0.179 [+0.141, +0.217] | 9.5 | T1 | yes / yes |  |
+| H3a | CNS/Brain | Z0249 | AHCY, GALE, GFPT1, GNPNAT1, IPMK, IPPK, ITPK1, MPI +10 | 99 | +0.120 [+0.094, +0.145] | 9.3 | T2 | yes / yes |  |
+| H3a | Lymphoid | Z0067 | B3GALT6, B3GAT3, B4GALT7, EXT1, EXT2, EXTL3, FGFR1, FRS2 +6 | 73 | +0.085 [+0.066, +0.104] | 8.8 | T1 | yes / yes |  |
+| H3a | Myeloid | Z0067 | B3GALT6, B3GAT3, B4GALT7, EXT1, EXT2, EXTL3, FGFR1, FRS2 +6 | 33 | +0.101 [+0.078, +0.125] | 8.8 | T1 | yes / yes |  |
+| H3a | Lymphoid | Z0153 | ALAD, ALAS1, CPOX, FECH, HMBS, PPOX, UROD, UROS | 73 | -0.186 [-0.228, -0.144] | 8.8 | T3-neg | yes / yes |  |
+| H3a | Lymphoid | Z0147 | EEFSEC, G6PD, GPX4, PSTK, SECISBP2, SEPHS2, SEPSECS, TXNDC17 +1 | 73 | -0.207 [-0.254, -0.159] | 8.7 | T2 | yes / yes |  |
+| H3a | CNS/Brain | Z0328 | SLC3A2, SLC7A1, SLC7A5, TRPM7 | 99 | +0.176 [+0.136, +0.216] | 8.7 | T2 | yes / yes |  |
+| H3a | Lymphoid | Z0363 | ACTR1A, DYNC1LI1, DYNC1LI2, DYNLRB1, NDE1 | 73 | +0.199 [+0.153, +0.245] | 8.7 | T1 | yes / yes |  |
+| H3a | Lymphoid | Z0009 | ACO2, BOLA3, DLD, DLST, FDX1, FH, GCSH, GLRX5 +17 | 73 | -0.130 [-0.161, -0.100] | 8.5 | T1 | yes / yes |  |
+| H3a | Lymphoid | Z0186 | BRD9, CREBBP, EP300, SIRT1, SMARCD1 | 73 | -0.241 [-0.298, -0.184] | 8.4 | T3-neg | yes / yes | control unit, other context |
+| H3a | Bowel | Z0092 | AGR2, BCL9L, CTNNB1, FERMT1, FOXA2, GATA6, HNF1A, HNF4A +4 | 64 | -0.262 [-0.325, -0.200] | 8.4 | T2 | yes / yes |  |
+| H3a | Myeloid | Z0001 | ABCB7, CIAO1, CIAO2B, CIAO3, CIAPIN1, FDX2, FXN, GFER +21 | 33 | +0.145 [+0.109, +0.180] | 8.4 | T1 | yes / yes |  |
+| H3a | melanoma | Z0051 | CALM1, CCNJ, CHCHD2, EGFR, FKBP9, GAB1, GRB2, LRRC57 +8 | 50 | +0.113 [+0.086, +0.140] | 8.3 | T1 | yes / yes |  |
+| H3a | Lymphoid | Z0292 | AIP, CMIP, GNB1, PDE4D, PPP2R5C, PRKAR1A, STK11 | 73 | -0.125 [-0.155, -0.095] | 8.2 | T3-neg | yes / yes |  |
+| H3a | melanoma | Z0028 | ACTB, ARHGAP21, BTBD9, CAP1, CAPZB, CFL1, CORO1C, IQGAP1 +10 | 50 | +0.117 [+0.088, +0.145] | 8.2 | T1 | yes / yes |  |
+| H3a | Lymphoid | Z0271 | NAF1, NHP2, NOP10, SHQ1 | 73 | +0.131 [+0.099, +0.163] | 8.1 | T1 | yes / yes |  |
+| H3b | TP53_altered | Z0166 | DDX31, ERCC6L2, MDM2, MDM4, OTUB1, PPM1D, UBE2D3, WDR89 | 668 | +0.285 [+0.254, +0.316] | 18.0 | T3-neg | yes / yes | control readout |
+| H3b | TP53_altered | Z0158 | ATM, CCDC6, FBXO42, GPATCH8, PABIR1, SHLD1, SHLD2, TP53BP1 | 668 | -0.100 [-0.120, -0.080] | 10.0 | T3-neg | yes / yes |  |
+| H3b | LoF:RB1 | Z0069 | CCNE1, CCNE2, CDK2, DR1, E2F1, E2F3, KAT14, MYSM1 +6 | 49 | -0.201 [-0.245, -0.158] | 9.3 | T1 | yes / yes |  |
+| H3b | LoF:PTEN | Z0316 | ATP2C1, CNPY2, CPD, FURIN, HSP90B1, IGF1R, INSR, IRS1 +4 | 88 | +0.096 [+0.073, +0.120] | 8.1 | T2 | yes / yes |  |
+| H3b | TP53_altered | Z0222 | HEATR1, UTP15, WDR43, WDR75 | 668 | +0.157 [+0.118, +0.197] | 7.8 | T1 | yes / yes |  |
+| H3b | TP53_altered | Z0152 | AK6, NOB1, PARN, PDCD2, PDCD2L, RPS11, RPS27A, RPS7 | 668 | +0.106 [+0.078, +0.134] | 7.4 | T2 | yes / yes |  |
+| H3b | TP53_altered | Z0146 | DDX21, DNAJC2, DRG1, HSPA14, NOLC1, NUCLEOLIN, PINX1, ZC3H15 +1 | 668 | +0.070 [+0.050, +0.090] | 6.9 | T1 | yes / yes |  |
+| H3b | hotspot:NRAS | Z0132 | FOSL1, GOLGA7, ICMT, NRAS, PRKCE, RAF1, RCE1, RPS6KA3 +2 | 48 | -0.175 [-0.226, -0.124] | 6.8 | T3-neg | yes / yes | control unit, other context |
+| H3b | hotspot:BRAF | Z0018 | BRAF, CRTC2, CRTC3, DUSP10, DUSP4, ELAVL1, ELOA, MAFF +13 | 66 | -0.161 [-0.209, -0.114] | 6.8 | T1 | yes / yes | control unit, other context |
+| H3b | TP53_altered | Z0184 | NOP56, NOPCHAP1, NUFIP1, SRFBP1, ZNHIT3, ZNHIT6 | 668 | +0.081 [+0.057, +0.104] | 6.7 | T1 | yes / yes |  |
+| H3b | TP53_altered | Z0219 | GNB1L, TELO2, TTI1, TTI2 | 668 | -0.097 [-0.126, -0.067] | 6.5 | T2 | yes / yes |  |
+| H3b | TP53_altered | Z0066 | ASF1A, BRAP, CABIN1, CHAF1A, HAPSTR1, HIRA, HUWE1, NASP +6 | 668 | +0.061 [+0.042, +0.080] | 6.3 | T1 | yes / yes |  |
+| H3b | MSI_H | Z0157 | ARL10, BPNT1, DVL3, GML, HDAC1, PSD4, RTN3, WRN | 59 | -0.152 [-0.201, -0.103] | 6.2 | T3-neg | yes / yes | control readout |
+| H3b | EWSR1 fusion | Z0160 | BCL11B, CDH11, EWSR1, FLI1, IRS4, PREX1, RNF216, TRIM8 | 15 | -0.274 [-0.366, -0.182] | 6.1 | T3-neg | yes / yes |  |
+| H3b | TP53_altered | Z0041 | BIRC6, DNAJA1, DNAJC7, EIF2B2, EIF2B3, EIF2B4, EIF2B5, HECTD1 +9 | 668 | -0.053 [-0.070, -0.035] | 6.0 | T1 | yes / yes |  |
+
+- Rows: the strongest H3a / H3b discoveries (ranked by |t|, never by the GPD p) that are not in a locus cluster and whose |t| exceeds that of every one of the unit's 10 matched random gene sets in the same context (D8 'beats all matched sets' flag). tableS3_context_discoveries_full.tsv lists all 1,306 discoveries with every flag.
+- Members: first 8 member symbols of the frozen unit (gene content only; no curated or literature label). β in Chronos units: negative = more dependent in the context.
+- 'control readout': the same context and unit as a registered positive control (Table S1); 'control unit, other context': the unit is a control readout in a different (sometimes overlapping) context. Such rows are not independent discoveries.
+- Lockbox confirmation: [[LOCKBOX: per-discovery L effect, 95% CI and confirmation flag]].
+- Sources: results/part2/directions/{H3a_lineage_atlas,H3b_driver_family}/{discoveries,discoveries_report}.tsv, calibration_D8_tests.tsv.gz, sensitivity_screen_quality/discoveries.tsv; specificity_discoveries.tsv.gz; script scripts/tab_part2_discoveries.py.

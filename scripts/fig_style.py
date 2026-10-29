@@ -23,6 +23,8 @@ SEED = 0
 # Committed inputs (paths relative to the repository root)
 TEST_RESULTS = "results/test_eval/test_results.json"
 SCORE_RECORDS = "results/test_eval/score_records/test"
+PR_CURVES = "results/test_eval/export/pr_curves.tsv.gz"      # descriptive, non-confirmatory export (ddd6e83)
+AP_BY_SIZE = "results/test_eval/export/ap_by_size.tsv"
 CONSTR = "results/part2/construction"
 BRIDGE = f"{CONSTR}/bridge/bridge.json"
 TIERS = f"{CONSTR}/tiers/summary.json"

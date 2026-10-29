@@ -1,21 +1,25 @@
 """Figure 1: the single confirmatory look of the locked method on the withheld hu.MAP test pairs.
 
-Input: results/test_eval/test_results.json only (committed in 0861e59; written by scripts/21_evaluate_test.py).
-No label or score file is read. Full precision-recall curves would need the test labels joined to the score TSVs,
-neither of which is committed, so panel a shows the protocol's pre-specified operating points instead.
+Inputs (committed only): results/test_eval/test_results.json (0861e59; scripts/21_evaluate_test.py) and the
+non-confirmatory descriptive export results/test_eval/export/{pr_curves.tsv.gz, ap_by_size.tsv}
+(scripts/23_export_test_curves.py; ddd6e83). No label or score file is read here.
 
 Panels
- a  precision at recall 0.10 / 0.25 / 0.50 (ITT) and the rule (b) operating point with cluster-bootstrap CIs
+ a  precision-recall curves (ITT; descriptive export), with the rule (b) operating point and its cluster-bootstrap
+    CIs and the protocol's precision at recall 0.10 / 0.25 / 0.50 (open symbols)
  b  paired Delta AP with 95% cluster-bootstrap CIs (B = 2,000, seed 0), ITT and S1
  c  isotonic reliability (train-fitted calibrator, log-spaced bins, ITT)
  d  pooled vs cluster-structured AP (ITT): the macro-AP caveat
  e  AP by protein-novelty stratum C1/C2/C3 with Delta AP vs GLS
+ f  macro per-cluster AP by positive pairs per test cluster, zavg_BEF vs GLS (descriptive export; within-bin
+    cluster-resample CIs, not the protocol bootstrap)
 
 Usage: python scripts/fig_1_test_evaluation.py
 """
 from __future__ import annotations
 
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 import fig_style as S
@@ -28,31 +32,38 @@ def main() -> None:
     itt, s1 = R["itt"], R["mapped_only"]
     shown = ["zavg_BEF", "B", "gls_signed", "spearman_signed", "pearson_signed", "spec_k20_tinf_std"]
 
-    fig = plt.figure(figsize=(7.2, 7.4))
-    gs = fig.add_gridspec(3, 2, height_ratios=[1.0, 1.0, 0.9], hspace=0.55, wspace=0.42)
+    pr = pd.read_csv(S.ROOT / S.PR_CURVES, sep="\t")
+    pr = pr[pr.universe == "itt"]
+    abs_ = pd.read_csv(S.ROOT / S.AP_BY_SIZE, sep="\t")
 
-    # ---------- a: operating points
+    fig = plt.figure(figsize=(7.2, 9.6))
+    gs = fig.add_gridspec(4, 2, height_ratios=[1.0, 1.0, 0.9, 0.8], hspace=0.62, wspace=0.42)
+
+    # ---------- a: precision-recall curves (descriptive export) with operating points
     ax = fig.add_subplot(gs[0, 0])
     S.panel_label(ax, "a")
     stat = itt["bootstrap"]["cluster"]["stat"]
     for m in shown:
+        c = pr[pr.method == m].sort_values("recall")
+        ap = c.ap_increment.sum()
+        ax.plot(c.recall, c.precision, lw=0.9 if m == "zavg_BEF" else 0.7, color=S.COLOR[m],
+                label=f"{S.SHORT[m]} (AP {ap:.3f})", zorder=3 if m == "zavg_BEF" else 2)
         mm = itt["metrics"][m]
-        rec = [0.10, 0.25, 0.50]
-        prec = [mm["P@R0.1"], mm["P@R0.25"], mm["P@R0.5"]]
-        ax.plot(rec, prec, ls=":", lw=0.8, color=S.COLOR[m], marker=S.MARKER[m], ms=3, mfc="white")
+        ax.plot([0.10, 0.25, 0.50], [mm["P@R0.1"], mm["P@R0.25"], mm["P@R0.5"]], ls="", color=S.COLOR[m],
+                marker=S.MARKER[m], ms=2.8, mfc="white", mew=0.6)
         p, r = stat[f"{m}|precision_rule_b"], stat[f"{m}|recall_rule_b"]
         ax.errorbar(r["point"], p["point"], xerr=[[r["point"] - r["ci_low"]], [r["ci_high"] - r["point"]]],
                     yerr=[[p["point"] - p["ci_low"]], [p["ci_high"] - p["point"]]], fmt=S.MARKER[m],
-                    color=S.COLOR[m], ms=4.5, lw=0.7, capsize=1.5, label=S.SHORT[m])
+                    color=S.COLOR[m], ms=3.8, lw=0.6, capsize=1.2, zorder=4)
     prev = itt["prevalence_design"]
     ax.axhline(prev, color=S.OI["grey"], lw=0.6, ls="--")
-    ax.text(0.01, prev + 0.015, f"prevalence {prev:.4f}", fontsize=5.5, color=S.OI["grey"], ha="left")
-    ax.set_xlim(0, 0.55)
+    ax.text(0.99, prev + 0.015, f"prevalence {prev:.4f}", fontsize=5.5, color=S.OI["grey"], ha="right")
+    ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.set_xlabel("Recall")
     ax.set_ylabel("Precision")
-    ax.set_title("Operating points (ITT)", loc="left")
-    ax.legend(frameon=False, loc="upper right", handletextpad=0.3, borderaxespad=0.2)
+    ax.set_title("Precision–recall (ITT; descriptive export)", loc="left")
+    ax.legend(frameon=False, loc="upper right", handletextpad=0.3, borderaxespad=0.2, fontsize=5.2)
 
     # ---------- b: Delta AP forest
     ax = fig.add_subplot(gs[0, 1])
@@ -166,6 +177,35 @@ def main() -> None:
     ax.set_title("Generalisation to proteins not seen among train positives", loc="left")
     ax.legend(frameon=False, ncol=5, loc="upper left", fontsize=5.5)
     ax.set_ylim(0, max(ax.get_ylim()[1], 0.6))
+
+    # ---------- f: macro per-cluster AP by positive pairs per cluster (descriptive export)
+    ax = fig.add_subplot(gs[3, :])
+    S.panel_label(ax, "f")
+    bins = ["1", "2-5", "6-20", "21-100", "101+"]
+    sub = abs_[(abs_.universe == "itt") & (abs_.bin_by == "n_pos_pairs")]
+    w = 0.36
+    x0 = np.arange(len(bins))
+    for i, m in enumerate(["zavg_BEF", "gls_signed"]):
+        sm = sub[sub.method == m].set_index("bin")
+        vals = [sm.loc[b, "macro_ap"] for b in bins]
+        lo = [sm.loc[b, "macro_ap_ci_low"] for b in bins]
+        hi = [sm.loc[b, "macro_ap_ci_high"] for b in bins]
+        xx = x0 + (i - 0.5) * w
+        ax.bar(xx, vals, width=w, color=S.COLOR[m], label=S.SHORT[m])
+        ax.errorbar(xx, vals, yerr=[np.subtract(vals, lo), np.subtract(hi, vals)], fmt="none", color="black",
+                    lw=0.6, capsize=1)
+    sz = sub[sub.method == "zavg_BEF"].set_index("bin")
+    ticks = [f"{b} positive pair{'s' if b != '1' else ''}\n{int(sz.loc[b, 'n_clusters'])} clusters, "
+             f"{int(sz.loc[b, 'pooled_n_pos']):,} pos.\nΔ macro AP vs GLS:\n"
+             + S.fmt_ci(sz.loc[b, "macro_ap_minus_gls"], sz.loc[b, "macro_ap_minus_gls_ci_low"],
+                        sz.loc[b, "macro_ap_minus_gls_ci_high"], 3, True) for b in bins]
+    ax.set_xticks(x0)
+    ax.set_xticklabels(ticks, fontsize=5.6)
+    ax.set_ylabel("Macro per-cluster AP\n(within-bin resample CI)")
+    ax.set_ylim(0, 0.7)
+    ax.set_title("Macro per-cluster AP by positive pairs per test cluster (ITT; descriptive, non-confirmatory)",
+                 loc="left")
+    ax.legend(frameon=False, ncol=2, loc="upper left", fontsize=5.5)
 
     S.save(fig, "fig1_test_evaluation")
 
