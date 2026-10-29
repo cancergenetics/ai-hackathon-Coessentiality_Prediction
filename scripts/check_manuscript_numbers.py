@@ -24,6 +24,10 @@ paragraph segment with no following comment); UNRESOLVED (the comment names no r
 times, versions, citation years) are removed before extraction.
 
 Usage:  python scripts/check_manuscript_numbers.py [manuscript/main.md] [--out results/verify_manuscript/number_check.tsv]
+        python scripts/check_manuscript_numbers.py manuscript/supplementary.md --start-at "## Supplementary Note 15" \
+            --stop-at "## Supplementary Note 18" --out results/verify_manuscript/number_check_supplement.tsv
+Aliases may also be declared in any later comment in the quoted form '"LB" = results/part2/lockbox_confirm'
+(the supplement's convention); the first declaration of a name wins.
 Reads committed files only (no dataset, no lockbox read). Exit status 1 if any number is UNMATCHED.
 """
 from __future__ import annotations
@@ -317,6 +321,13 @@ def parse_aliases(md: str):
         m = re.search(r'"RVD"\s+its output folder\s+(\S+?)\.?(?=\s|$)', first.group(1))
         if m:
             al.setdefault("RVD", m.group(1).rstrip("."))
+    # quoted declarations in any comment ('"LB" = results/part2/lockbox_confirm;'), as the supplement uses them;
+    # the first declaration of a name wins, and only path-like values count
+    for c in re.finditer(r"<!--(.*?)-->", md, re.S):
+        for m in re.finditer(r'"([A-Z][A-Z0-9]*)"\s*=\s*(\S+)', c.group(1)):
+            v = m.group(2).rstrip(".;,")
+            if "/" in v or v.lower().endswith(EXTS):
+                al.setdefault(m.group(1), v)
     return al
 
 
@@ -473,12 +484,22 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("md", nargs="?", default="manuscript/main.md")
     ap.add_argument("--out", default="results/verify_manuscript/number_check.tsv")
+    ap.add_argument("--start-at", default=None,
+                    help="heading at which checking starts (default: the whole file after the alias comment)")
     ap.add_argument("--stop-at", default="## Figure legends",
                     help="heading at which checking stops (legends, tables list and references are not checked)")
     args = ap.parse_args()
     md_full = open(os.path.join(ROOT, args.md)).read()
     stop = md_full.find(args.stop_at)
     md = md_full if stop < 0 else md_full[:stop]
+    if args.start_at:
+        start = md.find(args.start_at)
+        if start < 0:
+            sys.exit(f"--start-at heading not found: {args.start_at}")
+        head = re.search(r"<!--.*?-->", md_full, re.S)
+        # keep the alias comment first so that segments() starts after it; line numbers are offset accordingly
+        md = ("\n" * md_full.count("\n", 0, head.start()) + head.group(0)
+              + "\n" * md_full.count("\n", head.end(), start) + md[start:])
     res = Resolver(parse_aliases(md_full))
     rows = []
     for line, claim, comment in segments(md):
@@ -503,7 +524,8 @@ def main():
         w.writerows(rows)
     from collections import Counter
     c = Counter(r[2] for r in rows)
-    print(f"{args.md}: {len(rows)} numbers checked (text before '{args.stop_at}')")
+    scope = (f"from '{args.start_at}' " if args.start_at else "") + f"before '{args.stop_at}'"
+    print(f"{args.md}: {len(rows)} numbers checked (text {scope})")
     for k in ("matched", "UNMATCHED", "UNRESOLVED", "NO-SOURCE"):
         print(f"  {k:10s} {c.get(k, 0)}")
     sup = Counter(r[3] for r in rows if r[2] == "matched")

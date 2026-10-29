@@ -1,4 +1,4 @@
-# results/part2/revision: referee round 1, analyses R-1 to R-4
+# results/part2/revision: referee round 1 (analyses R-1 to R-4) and round 2 (R-5)
 
 **Every analysis in this folder is POST HOC and DESCRIPTIVE.** None is registered, none is a trial, none carries error
 control, and none changes a registry entry, discovery, confirmation, primary result, ledger or `trials.jsonl`
@@ -8,7 +8,8 @@ control, and none changes a registry entry, discovery, confirmation, primary res
   persisted read or L row was opened. R-4 reads only the committed L sample sizes (`n_L`, `n_context_L`, by column) and
   the committed R7 primary call labels. No hu.MAP, STRING or curated complex resource.
 - **Code.** `src/part2/revision.py` (tested in `tests/test_part2_revision.py`), `scripts/58_rev_matched_sets.py` (R-1),
-  `59_rev_scale_effect.py` (R-2), `60_rev_demeter2.py` (R-3), `61_rev_bridge_power.py` (R-4).
+  `59_rev_scale_effect.py` (R-2), `60_rev_demeter2.py` (R-3), `61_rev_bridge_power.py` (R-4),
+  `62_rev_round2.py` (R-5, round 2; committed tables only, intent `INTENT_round2.md`).
 - **Seeds.** Fixed as in `INTENT.md`: entry calibration seeds 4600 / 4700 for set generation, entry permutation seeds
   4000 / 4100 for the random-atlas permutations, `PYTHONHASHSEED=0`.
 
@@ -69,8 +70,10 @@ BB rejections over the non-member tests (families = contexts):
 - Essentiality-matched sets **without** coherence are less often associated: 16.6% against 28.1% (H3a) and 8.8%
   against 11.9% (H3b). That is still well above 5%.
 - So the parity result is "a complex is not more context-associated than a coherent, essentiality-matched gene module".
-  It is not "than any essentiality-matched gene set". Coherence, not complex membership, carries most of the excess
-  over essentiality alone.
+  It is not "than any essentiality-matched gene set". Sets matched for coherence behave like complexes; sets matched
+  for essentiality alone associate less often. (Round 2: an earlier sentence attributed the excess to coherence. That
+  attribution is dropped, because coherence is itself measured on A as co-variation across lines, so matching on it
+  partly conditions on the outcome.)
 - Caveat: N-nbr could be matched for only about a quarter of the units, and these are the less coherent ones.
 - Like-for-like on the same 90 / 87 units: real 0.230, N-nbr 0.251, N-ess 0.164 (H3a); real 0.113, N-nbr 0.108,
   N-ess 0.084 (H3b) (`r1a_rates.tsv`; added after the independent review, 19ad2ae).
@@ -216,11 +219,71 @@ Observed rates: zavg 0.514 (1,267 hits), GLS 0.578 (1,326 hits). The df sensitiv
   (`r4_by_map_family.tsv`).
 - The remaining −0.042 is about 2.2 SD beyond the power expectation. This SD treats hits as independent; hits share
   units and contexts and the EB prior is estimated, so the z is approximate. The headline model under-predicts the
-  observed level of both maps (zavg by 0.055, GLS by 0.096). GLS hits out-confirm their expected rate in every
+  observed level of both maps (zavg by 0.055, GLS by 0.097; 0.5785 − 0.4817 = 0.0968, corrected from
+  0.096 in referee round 2). GLS hits out-confirm their expected rate in every
   size bin (`r4_by_size_bin.tsv`): observed 0.57–0.59 against expected 0.47–0.50. zavg hits do so less: 0.48–0.57
   against 0.42–0.49.
 - So the BRIDGE-L difference is **not fully explained by power**. This is a descriptive reading of one post hoc
   comparison.
+
+## R-5 Referee round 2: three counts from committed tables (POST HOC)
+
+Intent `INTENT_round2.md` (4a7c715) was committed before any value was computed. Script `scripts/62_rev_round2.py`
+reads committed tables only. It refits nothing, opens no dataset, lockbox value or test label, and changes no label,
+call or rank. Output: `r5_summary.json` plus the three TSVs below.
+
+### A1. H1 neutrality at ±0.05 (referee N1)
+
+Source: `results/part2/directions/H1_within_complex_GI/classes.tsv`, the 11 events labelled NEUTRAL, all TOST-neutral
+at the registered ±0.1. **0 of 11** have a committed 90% CI inside ±0.05, and the count is the same with closed
+bounds, so no event sits on the boundary. The smallest symmetric margin that would contain each CI ranges from 0.059
+(STK11) to 0.097 (KDM6A), median 0.076 (`r5_h1_margin_005.tsv`). This confirms the referee's count. The neutral call
+rests entirely on the registered ±0.1 margin. The registered label is unchanged.
+
+### A2. Strongest findings under the alternative registry readings (referee round 1 M7.2)
+
+**H1 LOSO unit** (registered reading: lineage; alternative: primary disease, the H3a unit).
+- The unit applies only to H1 rows. H3a (207) and H3b (45) are unchanged.
+- Of the 5 H1 eligible calls, only the 2 candidates can change: ARID1A P and EP300 P. The other three fail on
+  non-LOSO criteria. FOCAD N is defect-sensitive, PTEN N was not confirmed, and TP53 N is not headline-eligible
+  under E2.
+- Bound under the alternative reading: H1 0–2, total **252–254**. Whether either call changes is **not determined**,
+  because the per-fold H1 fits by primary disease are not committed and no A refit was made in this round. Under the
+  registered unit, both calls passed all 30 lineage folds with none skipped.
+- If an H1 call dropped, every finding ranked below it would move up one place.
+
+**Ranking** ("A statistic × tier"; registered reading: tier class, then |t_A|). Ranking selects nothing, so all 254
+findings stay the same under any reading. Only the order changes (`r5_ranking_alternatives.tsv`):
+
+| Reading | Rows whose rank changes | Spearman vs registered | Top-10 / top-30 overlap | Median / max rank shift |
+|---|---|---|---|---|
+| alt1: \|t_A\| alone | 254 | 0.37 | 5 / 17 | 58.5 / 217 |
+| alt2: \|t_A\| × tier weight (T1 3, T2 2, T3 1; illustrative, not registered) | 225 | 0.89 | 9 / 28 | 10 / 174 |
+
+The rank of each highlighted finding under registered / alt1 / alt2:
+- Ovary Z0035: 85 / 143 / 98
+- Bone Z0303: 53 / 100 / 60
+- Head and Neck Z0051: 19 / 34 / 21
+- Myeloid Z0254: 49 / 94 / 54
+- RB1 loss Z0069: 7 / 13 / 8
+- ARID1A P: 60 / 110 / 67
+- EP300 P: 229 / 66 / 224
+
+Reading: the H1 LOSO reading can change at most the two H1 calls, and the ranking reading changes only the order. Of
+the alternatives, ignoring tier reorders the list the most. No count in the text depends on rank.
+
+### A3. Spread of the R-1(b) selection-aware reference across the 10 random atlases (referee N5)
+
+Per atlas, the share of random-atlas discoveries that beat all ten others in their group is given below
+(`r5_atlas_flag_range.tsv`). The pooled rates reproduce `r1_summary.json`: 3,649 / 11,087 and 667 / 1,381.
+
+| | Per-atlas range | Median | Pooled | Real discoveries | Atlases at or above the real rate |
+|---|---|---|---|---|---|
+| H3a | 0.291–0.364 | 0.333 | 0.329 | 0.464 | 0 of 10 |
+| H3b | 0.448–0.517 | 0.482 | 0.483 | 0.669 | 0 of 10 |
+
+This is a spread across atlases, not a confidence interval for the real rate. Real discoveries and atlas
+discoveries share units, contexts and lines.
 
 ## Files
 
@@ -233,6 +296,8 @@ Observed rates: zavg 0.514 (1,267 hits), GLS 0.578 (1,326 hits). The df sensitiv
 | `r2_trend_by_context.tsv`, `r2_strongest_h3a.tsv`, `r2_leads_corrected.tsv`, `r2_summary.json` | R-2 |
 | `r3_demeter2_per_hit.tsv`, `r3_summary.json` | R-3 |
 | `r4_bridge_power.tsv`, `r4_by_map_family.tsv`, `r4_by_size_bin.tsv`, `r4_per_hit.tsv.gz`, `r4_summary.json` | R-4 |
+| `INTENT_round2.md` | Round-2 intent for R-5 (committed first, 4a7c715) |
+| `r5_h1_margin_005.tsv`, `r5_ranking_alternatives.tsv`, `r5_atlas_flag_range.tsv`, `r5_summary.json` | R-5 (round 2) |
 
 ## Reproduce
 
@@ -242,4 +307,5 @@ export PART1_DIR=".../coessentiality_protein complexes"; export PYTHONHASHSEED=0
 .venv/bin/python scripts/59_rev_scale_effect.py
 .venv/bin/python scripts/60_rev_demeter2.py        # needs r2_strongest_h3a.tsv
 .venv/bin/python scripts/61_rev_bridge_power.py
+.venv/bin/python scripts/62_rev_round2.py          # R-5; committed tables only
 ```

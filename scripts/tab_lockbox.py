@@ -20,7 +20,11 @@ Outputs (manuscript/tables/):
                                   registered strongest findings (results/part2/robustness/strongest_findings.tsv,
                                   = Table S9) in registered rank order. Revision round 1 (2026-10-29): the Markdown
                                   previously listed an earlier, unregistered 'strongest specific' subset, kept in the
-                                  full TSV as the column earlier_unregistered_set.
+                                  full TSV as the column earlier_unregistered_set. Revision round 2: the
+                                  Markdown 'notes' column uses the revised scale label (R-2,
+                                  rev_scale_artefact_possible from results/part2/revision/r2_strongest_h3a.tsv)
+                                  instead of the first-version 'lymphoid beta > 0' heuristic, which stays in the
+                                  full TSV as scale_caveat_v1.
   tableS8_lockbox_h1_h2_bench_bridge.{md,tsv}
                                   H1 per event axis (primary and corrected), H2 by split rank, BENCH, BRIDGE-L
 
@@ -164,13 +168,19 @@ def h3_table(derived: dict, rel: pd.DataFrame) -> pd.DataFrame:
     reg = reg.rename(columns={"rank": "registered_rank_S9"})
     t = t.merge(reg, on=["direction", "context", "unit"], how="left")
     t["registered_strongest_S9"] = t.registered_rank_S9.notna()
+    r2 = _tsv("results/part2/revision/r2_strongest_h3a.tsv")[["context", "unit", "scale_artefact_possible"]]
+    r2 = r2.rename(columns={"scale_artefact_possible": "rev_scale_artefact_possible"}).assign(direction="H3a")
+    t = t.merge(r2, on=["direction", "context", "unit"], how="left", validate="many_to_one")
+    t["rev_scale_artefact_possible"] = t.rev_scale_artefact_possible.astype(str).eq("True")
+    t = t.rename(columns={"scale_caveat": "scale_caveat_v1"})
     t = t.rename(columns={"strongest": "earlier_unregistered_set"})
     t = t.assign(abs_t=t.t.abs()).sort_values(["direction", "registered_strongest_S9", "registered_rank_S9", "abs_t"],
                                               ascending=[True, False, True, False])
     cols = ["direction", "context", "unit", "members", "n_context", "beta", "ci95_lo", "ci95_hi", "t", "q_final",
             "locus", "beats_all", "control", "cons", "screen", "route", "n_context_L", "beta_L", "ci95_L_lo",
             "ci95_L_hi", "p_L", "primary_call", "corrected_call", "defect_sensitive", "beta_L_relook", "p_L_relook",
-            "registered_strongest_S9", "registered_rank_S9", "earlier_unregistered_set", "scale_caveat"]
+            "registered_strongest_S9", "registered_rank_S9", "earlier_unregistered_set", "scale_caveat_v1",
+            "rev_scale_artefact_possible"]
     t[cols].to_csv(S.TAB_DIR / "tableS7_lockbox_h3_full.tsv", sep="\t", index=False)
     top = []
     for short, k in (("H3a", 30), ("H3b", 45)):
@@ -181,8 +191,8 @@ def h3_table(derived: dict, rel: pd.DataFrame) -> pd.DataFrame:
         x["p_L"] = x.p_L.map(lambda v: f"{v:.1e}")
         x["lines A / L"] = [f"{a} / {int(b)}" for a, b in zip(x.n_context, x.n_context_L)]
         x["kept: GPD / screen"] = [f"{'yes' if a else 'no'} / {'yes' if b else 'no'}" for a, b in zip(x.cons, x.screen)]
-        x["notes"] = [("; ".join(z for z in (c, "lymphoid β > 0: scale caveat" if sc else "") if z))
-                      for c, sc in zip(x.control, x.scale_caveat)]
+        x["notes"] = [("; ".join(z for z in (c, "possible scale artefact (revised rule)" if sc else "") if z))
+                      for c, sc in zip(x.control, x.rev_scale_artefact_possible)]
         top.append(x[["direction", "context", "unit", "members", "lines A / L", "β_A [95% CI]", "β_L [95% CI]",
                       "p_L", "kept: GPD / screen", "notes"]])
     md = pd.concat(top)
@@ -199,8 +209,12 @@ def h3_table(derived: dict, rel: pd.DataFrame) -> pd.DataFrame:
            "338 lockbox lines; its 95% CI is the HC3 interval, so for contexts with < 20 L lines (decided by the "
            "permutation p) it can include 0 while the call is 'confirmed'.",
            "'control unit, other context': the unit is a registered control readout in another context; not an "
-           "independent finding. 'Lymphoid β > 0: scale caveat': lower lymphoid dependency on an essential "
-           "unit is partly the lymphoid scale effect (main text, 'Two lineage-level artefacts').",
+           "independent finding. 'Possible scale artefact (revised rule)': H3a finding whose sign is the one the "
+           "context's spline trend of β on unit essentiality predicts and whose residual is within two residual "
+           "SDs of it, in any lineage (post hoc revision analysis R-2; Table S9 rev_scale_artefact_possible). "
+           "Revision round 2: this column previously used the first-version heuristic (every lymphoid β > 0), "
+           "kept in the full TSV as scale_caveat_v1; a finding beyond the trend in its own direction is not "
+           "flagged by the rule and is not thereby cleared of a scale artefact.",
            "'kept: GPD / screen' = kept under the two A-side sensitivities (p = max(p_perm, analytic p); "
            "ScreenNNMD + CasActivity covariates).",
            "Members: first 8 member symbols of the frozen unit; any functional reading in the text is post hoc.",
