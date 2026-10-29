@@ -32,6 +32,13 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - Pre-declared post hoc sensitivity, before it is computed: H3a/H3b with covariates ScreenNNMD + CasActivity (per model, from CRISPRConfounders.csv; growth pattern excluded as collinear with lineage), all else as registered. Motivation: the review found the lymphoid "scale effect" (ρ −0.24). Report the surviving fraction per lineage; the primary is unchanged.
   - Calibration response scope (review 2, M2): the registered response is "if that fraction exceeds 0.075". In the entry, "that fraction" is the pseudo-context p<0.05 rate, so the literal reading applies and the response did not fire. The never-expressed excess (H3a 13.5%, in melanoma/Skin/Lymphoid) is reported as a finding, not as a trigger. Under the broader reading the response would only widen permutation re-testing to p<0.01, which can add discoveries but not remove them. This reading was confirmed after the results were seen, which is disclosed.
   - Reporting: every H3a/H3b discovery carries a "beats all matched sets" flag (H3a 502/1,145; 62 have no sets), and each H2 discovery its rank against its own splits. H2's summary.json "confirmatory/headline" fields are registry defaults; the kill rule makes H2 exploratory (README note).
+- D9 (M4, 2026-10-29): The lockbox dry check (21fe1be) stopped before any L read, because these registered steps had no code: BENCH secondary, BRIDGE-L GLS discovery and multiverse, a lockbox driver with the rare-context route, and lockbox permutation seeds. Rulings: implement them exactly as registered. Amendment A3 registers the seeds and declares BENCH within_line_rank NOT RUN (the registry is internally inconsistent: genome-wide L ranks against a member-only read; the lockbox read is not widened). An independent code review comes before the single read.
+- D10 (M4, 2026-10-29): Lockbox amendments before any read.
+  - A4 (d9a42dd): BENCH secondary A–L random-set correlation NOT RUN (under-specified); BENCH multiverse reports point estimates only; accepted literal readings.
+  - Pre-read code review (2bd58c0): GO-WITH-NOTES.
+  - A5: erratum to A4's G1 reason; the distinct-complex count among g* is reported (A-only); the H1S rare route uses A CRISPR alignment; BRIDGE-L multiverse gets bootstrap CIs; readings recorded (lineage-like controls get an unrestricted PatientID-blocked permutation, which decides PC17; H1 permutations are PatientID-blocked within lineage; breadth over all members kept literal).
+  - Crash policy: each read matrix is persisted to data_cache with its hash committed at once, a resume mode never re-calls the loader, and hand-closing an unconfirmed entry is impossible.
+  - A full dress rehearsal on A with a dummy L loader runs before the single read.
 
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
@@ -71,6 +78,12 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
     - [!] Registered calibrations (44f30ca, 1e674bd → fd582a6 / 4fb83d7 / 1a2a445; implemented after the discovery runs, D8 R4). No response fired. Matched random sets reach p<0.05 as often as real complexes: H3a 28.1% vs 28.1%, H3b 11.6% vs 12.0%. 502/1,145 H3a discoveries beat all their matched sets. Never-expressed sets: H3a 13.5% (expected 5%), H3b 6.2%. H2 random splits: 78 rejections vs 109 real. CN segment null 6.0% (≤0.075, no response). → Context associations at complex level are mostly NOT complex-specific; complex-specific subsets and the H1 mechanistic panel carry the novelty.
     - [x] GPD sensitivity (7b754f8 → 7e33c6e): lost H3a 32/1,145, H3b 31/161, H1 0/5, H1S 2/31, H2 2/109; agrees with the reviewer
     - [x] Independent review 2 (bdd083d): ACCEPT-WITH-NOTES. Recomputes are exact; GPD counts match from independent code; E1/E2/R2 are sound. Merged into main 5cd9e02.
-    - [~] Screen-quality sensitivity (pre-declared, D8) + post hoc complex-specificity counts
-  - [ ] Lockbox confirmations → BENCH / BRIDGE-L
+    - [x] Screen-quality sensitivity (pre-declared, D8; sensitivity, not a trial): intent 9a1e565, results in
+      `results/part2/directions/SENSITIVITY_SCREEN.md`. Adds ScreenNNMD + CasActivity; complete case drops 119 A
+      models, including all KY-only screens. H3a: 843/1,145 survive (73.6%), 96 new; Esophagus/Stomach 2/30;
+      Lymphoid 188/197. H3b: 115/161 (71.4%), 4 new; WGD 12/26, MSI_H 7/14. Pseudo-context fraction 0.049 → 0.049
+      (H3a) and 0.045 → 0.044 (H3b). Lymphoid scale ρ −0.240 → −0.228 (not explained by screen quality).
+    - [x] Post hoc descriptive complex-specificity counts (not error control; `results/part2/directions/SPECIFICITY.md`):
+      β outside the central 95% of matched random sets for H3a 699/1,083, H3b 124/154 and H2 78/109.
+  - [~] Lockbox confirmations → BENCH / BRIDGE-L (D9: machinery being completed; review before read)
 - [ ] M-final Manuscript + peer review + REPORT.md

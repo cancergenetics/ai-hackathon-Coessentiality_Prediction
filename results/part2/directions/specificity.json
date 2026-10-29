@@ -1,0 +1,375 @@
+{
+ "H2_submodule_divergence": {
+  "n_discoveries": 109,
+  "n_with_sets": 109,
+  "n_without_sets": 0,
+  "null": "random_split",
+  "outside_beta": 78,
+  "outside_beta_same_side": 78,
+  "outside_t": 51,
+  "per_context": {
+   "TP53_altered": {
+    "discoveries": 5,
+    "outside_beta": 3,
+    "outside_t": 3,
+    "with_sets": 5
+   },
+   "WGD": {
+    "discoveries": 1,
+    "outside_beta": 1,
+    "outside_t": 1,
+    "with_sets": 1
+   },
+   "hotspot:BRAF": {
+    "discoveries": 1,
+    "outside_beta": 1,
+    "outside_t": 1,
+    "with_sets": 1
+   },
+   "hotspot:KRAS": {
+    "discoveries": 1,
+    "outside_beta": 1,
+    "outside_t": 0,
+    "with_sets": 1
+   },
+   "lineage:Bone": {
+    "discoveries": 6,
+    "outside_beta": 3,
+    "outside_t": 2,
+    "with_sets": 6
+   },
+   "lineage:Bowel": {
+    "discoveries": 4,
+    "outside_beta": 3,
+    "outside_t": 2,
+    "with_sets": 4
+   },
+   "lineage:Breast": {
+    "discoveries": 1,
+    "outside_beta": 1,
+    "outside_t": 0,
+    "with_sets": 1
+   },
+   "lineage:CNS/Brain": {
+    "discoveries": 11,
+    "outside_beta": 9,
+    "outside_t": 4,
+    "with_sets": 11
+   },
+   "lineage:Esophagus/Stomach": {
+    "discoveries": 1,
+    "outside_beta": 1,
+    "outside_t": 1,
+    "with_sets": 1
+   },
+   "lineage:Head and Neck": {
+    "discoveries": 9,
+    "outside_beta": 6,
+    "outside_t": 4,
+    "with_sets": 9
+   },
+   "lineage:Kidney": {
+    "discoveries": 6,
+    "outside_beta": 4,
+    "outside_t": 3,
+    "with_sets": 6
+   },
+   "lineage:Lung": {
+    "discoveries": 1,
+    "outside_beta": 0,
+    "outside_t": 0,
+    "with_sets": 1
+   },
+   "lineage:Lymphoid": {
+    "discoveries": 31,
+    "outside_beta": 20,
+    "outside_t": 13,
+    "with_sets": 31
+   },
+   "lineage:Myeloid": {
+    "discoveries": 8,
+    "outside_beta": 7,
+    "outside_t": 5,
+    "with_sets": 8
+   },
+   "lineage:Pancreas": {
+    "discoveries": 4,
+    "outside_beta": 3,
+    "outside_t": 3,
+    "with_sets": 4
+   },
+   "lineage:Peripheral Nervous System": {
+    "discoveries": 5,
+    "outside_beta": 5,
+    "outside_t": 3,
+    "with_sets": 5
+   },
+   "lineage:Pleura": {
+    "discoveries": 1,
+    "outside_beta": 1,
+    "outside_t": 1,
+    "with_sets": 1
+   },
+   "lineage:Skin": {
+    "discoveries": 4,
+    "outside_beta": 3,
+    "outside_t": 2,
+    "with_sets": 4
+   },
+   "lineage:Soft Tissue": {
+    "discoveries": 1,
+    "outside_beta": 1,
+    "outside_t": 1,
+    "with_sets": 1
+   },
+   "melanoma": {
+    "discoveries": 8,
+    "outside_beta": 5,
+    "outside_t": 2,
+    "with_sets": 8
+   }
+  },
+  "regenerated_check": {
+   "max_rel_t_diff": 4.716393782805705e-06,
+   "rows_compared": 2180
+  }
+ },
+ "H3a_lineage_atlas": {
+  "n_discoveries": 1145,
+  "n_with_sets": 1083,
+  "n_without_sets": 62,
+  "null": "matched_random_set",
+  "outside_beta": 699,
+  "outside_beta_same_side": 698,
+  "outside_t": 718,
+  "per_context": {
+   "lineage:Bladder/Urinary Tract": {
+    "discoveries": 6,
+    "outside_beta": 4,
+    "outside_t": 5,
+    "with_sets": 5
+   },
+   "lineage:Bone": {
+    "discoveries": 69,
+    "outside_beta": 49,
+    "outside_t": 50,
+    "with_sets": 65
+   },
+   "lineage:Bowel": {
+    "discoveries": 62,
+    "outside_beta": 44,
+    "outside_t": 44,
+    "with_sets": 62
+   },
+   "lineage:Breast": {
+    "discoveries": 55,
+    "outside_beta": 40,
+    "outside_t": 39,
+    "with_sets": 50
+   },
+   "lineage:CNS/Brain": {
+    "discoveries": 107,
+    "outside_beta": 60,
+    "outside_t": 60,
+    "with_sets": 99
+   },
+   "lineage:Cervix": {
+    "discoveries": 4,
+    "outside_beta": 3,
+    "outside_t": 3,
+    "with_sets": 4
+   },
+   "lineage:Esophagus/Stomach": {
+    "discoveries": 30,
+    "outside_beta": 22,
+    "outside_t": 25,
+    "with_sets": 30
+   },
+   "lineage:Head and Neck": {
+    "discoveries": 126,
+    "outside_beta": 65,
+    "outside_t": 64,
+    "with_sets": 121
+   },
+   "lineage:Kidney": {
+    "discoveries": 38,
+    "outside_beta": 29,
+    "outside_t": 28,
+    "with_sets": 37
+   },
+   "lineage:Liver": {
+    "discoveries": 3,
+    "outside_beta": 2,
+    "outside_t": 3,
+    "with_sets": 3
+   },
+   "lineage:Lung": {
+    "discoveries": 48,
+    "outside_beta": 41,
+    "outside_t": 40,
+    "with_sets": 46
+   },
+   "lineage:Lymphoid": {
+    "discoveries": 197,
+    "outside_beta": 79,
+    "outside_t": 79,
+    "with_sets": 187
+   },
+   "lineage:Myeloid": {
+    "discoveries": 81,
+    "outside_beta": 43,
+    "outside_t": 50,
+    "with_sets": 77
+   },
+   "lineage:Ovary/Fallopian Tube": {
+    "discoveries": 8,
+    "outside_beta": 7,
+    "outside_t": 8,
+    "with_sets": 8
+   },
+   "lineage:Pancreas": {
+    "discoveries": 48,
+    "outside_beta": 38,
+    "outside_t": 38,
+    "with_sets": 43
+   },
+   "lineage:Peripheral Nervous System": {
+    "discoveries": 86,
+    "outside_beta": 54,
+    "outside_t": 58,
+    "with_sets": 79
+   },
+   "lineage:Pleura": {
+    "discoveries": 9,
+    "outside_beta": 7,
+    "outside_t": 8,
+    "with_sets": 8
+   },
+   "lineage:Skin": {
+    "discoveries": 57,
+    "outside_beta": 36,
+    "outside_t": 37,
+    "with_sets": 54
+   },
+   "lineage:Soft Tissue": {
+    "discoveries": 9,
+    "outside_beta": 7,
+    "outside_t": 7,
+    "with_sets": 7
+   },
+   "lineage:Uterus": {
+    "discoveries": 11,
+    "outside_beta": 9,
+    "outside_t": 11,
+    "with_sets": 11
+   },
+   "melanoma": {
+    "discoveries": 91,
+    "outside_beta": 60,
+    "outside_t": 61,
+    "with_sets": 87
+   }
+  },
+  "regenerated_check": {
+   "max_rel_t_diff": 4.951484906913319e-06,
+   "rows_compared": 80500
+  }
+ },
+ "H3b_driver_family": {
+  "n_discoveries": 161,
+  "n_with_sets": 154,
+  "n_without_sets": 7,
+  "null": "matched_random_set",
+  "outside_beta": 124,
+  "outside_beta_same_side": 123,
+  "outside_t": 128,
+  "per_context": {
+   "9p21_loss": {
+    "discoveries": 2,
+    "outside_beta": 2,
+    "outside_t": 2,
+    "with_sets": 2
+   },
+   "LoF:PTEN": {
+    "discoveries": 2,
+    "outside_beta": 2,
+    "outside_t": 2,
+    "with_sets": 2
+   },
+   "LoF:RB1": {
+    "discoveries": 2,
+    "outside_beta": 2,
+    "outside_t": 2,
+    "with_sets": 2
+   },
+   "LoF:SMARCA4": {
+    "discoveries": 1,
+    "outside_beta": 0,
+    "outside_t": 1,
+    "with_sets": 1
+   },
+   "MSI_H": {
+    "discoveries": 14,
+    "outside_beta": 13,
+    "outside_t": 13,
+    "with_sets": 14
+   },
+   "NRF2_active": {
+    "discoveries": 2,
+    "outside_beta": 2,
+    "outside_t": 2,
+    "with_sets": 2
+   },
+   "TP53_altered": {
+    "discoveries": 92,
+    "outside_beta": 63,
+    "outside_t": 63,
+    "with_sets": 86
+   },
+   "WGD": {
+    "discoveries": 26,
+    "outside_beta": 22,
+    "outside_t": 24,
+    "with_sets": 26
+   },
+   "fusion:EWSR1::FLI1|ERG": {
+    "discoveries": 11,
+    "outside_beta": 10,
+    "outside_t": 10,
+    "with_sets": 10
+   },
+   "hotspot:BRAF": {
+    "discoveries": 4,
+    "outside_beta": 3,
+    "outside_t": 4,
+    "with_sets": 4
+   },
+   "hotspot:KRAS": {
+    "discoveries": 3,
+    "outside_beta": 3,
+    "outside_t": 3,
+    "with_sets": 3
+   },
+   "hotspot:NRAS": {
+    "discoveries": 1,
+    "outside_beta": 1,
+    "outside_t": 1,
+    "with_sets": 1
+   },
+   "sex_female": {
+    "discoveries": 1,
+    "outside_beta": 1,
+    "outside_t": 1,
+    "with_sets": 1
+   }
+  },
+  "regenerated_check": {
+   "max_rel_t_diff": 4.953423561587201e-06,
+   "rows_compared": 70200
+  }
+ },
+ "label": "post hoc descriptive specificity filter (not registered error control)",
+ "peak_rss_bytes": 3359260672,
+ "quantiles": "numpy linear 2.5% / 97.5% of the finite matched-set values; outside = strictly below the 2.5% or above the 97.5% quantile",
+ "runtime_s": 114.8
+}

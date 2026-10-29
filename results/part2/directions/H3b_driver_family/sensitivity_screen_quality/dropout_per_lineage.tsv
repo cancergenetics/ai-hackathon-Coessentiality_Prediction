@@ -1,0 +1,31 @@
+OncotreeLineage	n_A	dropped	frac_dropped
+CNS/Brain	99	19	0.1919
+Lung	93	8	0.086
+Lymphoid	73	4	0.0548
+Esophagus/Stomach	72	8	0.1111
+Bowel	64	17	0.2656
+Head and Neck	58	16	0.2759
+Pancreas	53	6	0.1132
+Skin	51	3	0.0588
+Breast	50	5	0.1
+Ovary/Fallopian Tube	46	5	0.1087
+Bone	44	6	0.1364
+Soft Tissue	38	0	0.0
+Peripheral Nervous System	35	7	0.2
+Myeloid	33	3	0.0909
+Uterus	28	4	0.1429
+Biliary Tract	27	0	0.0
+Kidney	26	2	0.0769
+Bladder/Urinary Tract	25	0	0.0
+Liver	19	1	0.0526
+Pleura	16	0	0.0
+Prostate	14	4	0.2857
+Cervix	13	0	0.0
+Thyroid	8	0	0.0
+Ampulla of Vater	7	0	0.0
+Eye	7	0	0.0
+Testis	4	0	0.0
+Adrenal Gland	1	0	0.0
+Other	1	1	1.0
+Fibroblast	1	0	0.0
+Vulva/Vagina	1	0	0.0

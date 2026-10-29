@@ -1,0 +1,83 @@
+{
+ "analysis_id": "H3b_driver_family",
+ "label": "sensitivity_screen_quality",
+ "standing": "sensitivity analysis (pre-declared, D8); not a trial",
+ "registry_blob": "9cf55f21099f108ade10211b3d54ec4e8d0fbaac",
+ "head": "236adef3daee1438858bf32f97a1dc5912f578aa",
+ "added": [
+  "NNMD",
+  "CasActivity"
+ ],
+ "confounder_columns": {
+  "NNMD": "ScreenNNMD",
+  "CasActivity": "CasActivity"
+ },
+ "n_perm": 10000,
+ "seeds": {
+  "permutation": 4100,
+  "pseudo_contexts": 4700
+ },
+ "m_evaluable": 6973,
+ "m_evaluable_primary": 7340,
+ "n_families": 19,
+ "n_screened_perm": 151,
+ "n_discovery": 119,
+ "n_discovery_nonlocus": 85,
+ "n_discovery_primary": 161,
+ "n_surviving": 115,
+ "n_lost": 46,
+ "n_new": 4,
+ "surviving_frac": 0.7143,
+ "pseudo_context": {
+  "primary": 0.04544959128065395,
+  "sensitivity": 0.0444141689373297,
+  "change": -0.001035422343324252,
+  "primary_bb_rejections": 0,
+  "sensitivity_bb_rejections": 0,
+  "response_fires": false,
+  "threshold": 0.075
+ },
+ "trial_ledger_sha256_unchanged": "5de7bc4c5400a92163bf3adfbe0ec65b0aae01e6b443a8985bfa18b8c578d125",
+ "runtime_s": 151.2,
+ "peak_rss_bytes": 2982051840
+}
+                   context  m_primary  m_sens  disc_primary  disc_sens  surviving  lost  new  surviving_frac
+0                9p21_loss        367     367             2          2          2     0    0          1.0000
+1               LoF:ARID1A        367     367             0          0          0     0    0             NaN
+2                LoF:KMT2D        367       0             0          0          0     0    0             NaN
+3                 LoF:PTEN        367     367             2          2          1     1    1          0.5000
+4                  LoF:RB1        367     367             2          2          2     0    0          1.0000
+5              LoF:SMARCA4        367     367             1          1          1     0    0          1.0000
+6                LoF:STAG2        367     367             0          0          0     0    0             NaN
+7                      LoY        367     367             0          0          0     0    0             NaN
+8                    MSI_H        367     367            14          8          7     7    1          0.5000
+9                 MYCN_amp        367     367             0          0          0     0    0             NaN
+10                 MYC_amp        367     367             0          0          0     0    0             NaN
+11             NRF2_active        367     367             2          0          0     2    0          0.0000
+12            TP53_altered        367     367            92         79         77    15    2          0.8370
+13                     WGD        367     367            26         12         12    14    0          0.4615
+14  fusion:EWSR1::FLI1|ERG        367     367            11          8          8     3    0          0.7273
+15            hotspot:BRAF        367     367             4          2          2     2    0          0.5000
+16            hotspot:KRAS        367     367             3          1          1     2    0          0.3333
+17            hotspot:NRAS        367     367             1          1          1     0    0          1.0000
+18          hotspot:PIK3CA        367     367             0          0          0     0    0             NaN
+19              sex_female        367     367             1          1          1     0    0          1.0000
+wall 163.6 s; peak RSS 2.98 GB
+      165.12 real       157.54 user         5.67 sys
+          2982051840  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              340928  page reclaims
+                 416  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  68  voluntary context switches
+              125627  involuntary context switches
+       2144559948143  instructions retired
+        528196289399  cycles elapsed
+          2219609328  peak memory footprint

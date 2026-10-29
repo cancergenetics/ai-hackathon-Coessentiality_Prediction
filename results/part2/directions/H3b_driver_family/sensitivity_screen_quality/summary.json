@@ -1,0 +1,427 @@
+{
+ "added": [
+  "NNMD",
+  "CasActivity"
+ ],
+ "analysis_id": "H3b_driver_family",
+ "confounder_columns": {
+  "CasActivity": "CasActivity",
+  "NNMD": "ScreenNNMD"
+ },
+ "covariates": {
+  "9p21_loss": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "Ploidy",
+   "WGD",
+   "TP53_altered",
+   "NNMD",
+   "CasActivity"
+  ],
+  "LoF:ARID1A": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "LoF:KMT2D": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "LoF:PTEN": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "LoF:RB1": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "LoF:SMARCA4": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "LoF:STAG2": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "LoY": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "Ploidy",
+   "WGD",
+   "TP53_altered",
+   "NNMD",
+   "CasActivity"
+  ],
+  "MSI_H": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "NNMD",
+   "CasActivity"
+  ],
+  "MYCN_amp": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "Ploidy",
+   "WGD",
+   "TP53_altered",
+   "NNMD",
+   "CasActivity"
+  ],
+  "MYC_amp": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "Ploidy",
+   "WGD",
+   "TP53_altered",
+   "NNMD",
+   "CasActivity"
+  ],
+  "NRF2_active": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "TP53_altered": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "WGD": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "TP53_altered",
+   "NNMD",
+   "CasActivity"
+  ],
+  "fusion:EWSR1::FLI1|ERG": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "NNMD",
+   "CasActivity"
+  ],
+  "hotspot:BRAF": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "hotspot:KRAS": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "hotspot:NRAS": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "hotspot:PIK3CA": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "log_burden",
+   "MSIScore",
+   "NNMD",
+   "CasActivity"
+  ],
+  "sex_female": [
+   "lineage_FE",
+   "library",
+   "ScreenType3DO",
+   "ModelType",
+   "NNMD",
+   "CasActivity"
+  ]
+ },
+ "dropout_complete_case": {
+  "models_dropped_any_context": 119,
+  "per_lineage": [
+   {
+    "OncotreeLineage": "CNS/Brain",
+    "dropped": 19,
+    "frac_dropped": 0.1919,
+    "n_A": 99
+   },
+   {
+    "OncotreeLineage": "Lung",
+    "dropped": 8,
+    "frac_dropped": 0.086,
+    "n_A": 93
+   },
+   {
+    "OncotreeLineage": "Lymphoid",
+    "dropped": 4,
+    "frac_dropped": 0.0548,
+    "n_A": 73
+   },
+   {
+    "OncotreeLineage": "Esophagus/Stomach",
+    "dropped": 8,
+    "frac_dropped": 0.1111,
+    "n_A": 72
+   },
+   {
+    "OncotreeLineage": "Bowel",
+    "dropped": 17,
+    "frac_dropped": 0.2656,
+    "n_A": 64
+   },
+   {
+    "OncotreeLineage": "Head and Neck",
+    "dropped": 16,
+    "frac_dropped": 0.2759,
+    "n_A": 58
+   },
+   {
+    "OncotreeLineage": "Pancreas",
+    "dropped": 6,
+    "frac_dropped": 0.1132,
+    "n_A": 53
+   },
+   {
+    "OncotreeLineage": "Skin",
+    "dropped": 3,
+    "frac_dropped": 0.0588,
+    "n_A": 51
+   },
+   {
+    "OncotreeLineage": "Breast",
+    "dropped": 5,
+    "frac_dropped": 0.1,
+    "n_A": 50
+   },
+   {
+    "OncotreeLineage": "Ovary/Fallopian Tube",
+    "dropped": 5,
+    "frac_dropped": 0.1087,
+    "n_A": 46
+   },
+   {
+    "OncotreeLineage": "Bone",
+    "dropped": 6,
+    "frac_dropped": 0.1364,
+    "n_A": 44
+   },
+   {
+    "OncotreeLineage": "Soft Tissue",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 38
+   },
+   {
+    "OncotreeLineage": "Peripheral Nervous System",
+    "dropped": 7,
+    "frac_dropped": 0.2,
+    "n_A": 35
+   },
+   {
+    "OncotreeLineage": "Myeloid",
+    "dropped": 3,
+    "frac_dropped": 0.0909,
+    "n_A": 33
+   },
+   {
+    "OncotreeLineage": "Uterus",
+    "dropped": 4,
+    "frac_dropped": 0.1429,
+    "n_A": 28
+   },
+   {
+    "OncotreeLineage": "Biliary Tract",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 27
+   },
+   {
+    "OncotreeLineage": "Kidney",
+    "dropped": 2,
+    "frac_dropped": 0.0769,
+    "n_A": 26
+   },
+   {
+    "OncotreeLineage": "Bladder/Urinary Tract",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 25
+   },
+   {
+    "OncotreeLineage": "Liver",
+    "dropped": 1,
+    "frac_dropped": 0.0526,
+    "n_A": 19
+   },
+   {
+    "OncotreeLineage": "Pleura",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 16
+   },
+   {
+    "OncotreeLineage": "Prostate",
+    "dropped": 4,
+    "frac_dropped": 0.2857,
+    "n_A": 14
+   },
+   {
+    "OncotreeLineage": "Cervix",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 13
+   },
+   {
+    "OncotreeLineage": "Thyroid",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 8
+   },
+   {
+    "OncotreeLineage": "Ampulla of Vater",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 7
+   },
+   {
+    "OncotreeLineage": "Eye",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 7
+   },
+   {
+    "OncotreeLineage": "Testis",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 4
+   },
+   {
+    "OncotreeLineage": "Adrenal Gland",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 1
+   },
+   {
+    "OncotreeLineage": "Other",
+    "dropped": 1,
+    "frac_dropped": 1.0,
+    "n_A": 1
+   },
+   {
+    "OncotreeLineage": "Fibroblast",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 1
+   },
+   {
+    "OncotreeLineage": "Vulva/Vagina",
+    "dropped": 0,
+    "frac_dropped": 0.0,
+    "n_A": 1
+   }
+  ]
+ },
+ "head": "236adef3daee1438858bf32f97a1dc5912f578aa",
+ "label": "sensitivity_screen_quality",
+ "m_evaluable": 6973,
+ "m_evaluable_primary": 7340,
+ "n_discovery": 119,
+ "n_discovery_nonlocus": 85,
+ "n_discovery_primary": 161,
+ "n_families": 19,
+ "n_lost": 46,
+ "n_new": 4,
+ "n_perm": 10000,
+ "n_screened_perm": 151,
+ "n_surviving": 115,
+ "peak_rss_bytes": 2982051840,
+ "pseudo_context": {
+  "change": -0.001035422343324252,
+  "primary": 0.04544959128065395,
+  "primary_bb_rejections": 0,
+  "response_fires": false,
+  "sensitivity": 0.0444141689373297,
+  "sensitivity_bb_rejections": 0,
+  "threshold": 0.075
+ },
+ "registry_blob": "9cf55f21099f108ade10211b3d54ec4e8d0fbaac",
+ "runtime_s": 151.2,
+ "seeds": {
+  "permutation": 4100,
+  "pseudo_contexts": 4700
+ },
+ "standing": "sensitivity analysis (pre-declared, D8); not a trial",
+ "surviving_frac": 0.7143,
+ "trial_ledger_sha256_unchanged": "5de7bc4c5400a92163bf3adfbe0ec65b0aae01e6b443a8985bfa18b8c578d125"
+}
