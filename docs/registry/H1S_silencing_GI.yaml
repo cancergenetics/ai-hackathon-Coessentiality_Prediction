@@ -4194,8 +4194,8 @@ lockbox:
     DEMETER2 on A models + leave-one-model-out, same sign), labelled. Neutral calls are not confirmed; their L
     90% CI is reported. L effects are reported for every event.
   target_list: results/part2/lockbox_targets/H1S_silencing_GI.json
-  rare_route_fitted_parameters: not evaluable
-  rare_route_not_evaluable:
+  rare_route_fitted_parameters: A CRISPR parameters
+  rare_route_fitted_hits:
     - "Z0018|IGSF11|N"
     - "Z0018|SOX10|N"
     - "Z0035|PAX8|N"
@@ -4291,4 +4291,13 @@ amendments:
       (registry silent); they are NOT EVALUABLE in L, with no CRISPR or DEMETER2 refit (H1S is exploratory). Record:
       docs/registry/AMENDMENTS.md.
     changed_paths: [lockbox.rare_route_fitted_parameters, lockbox.rare_route_not_evaluable]
+  - id: A5
+    timestamp_utc: 2026-10-29T03:25:03Z
+    amends_commit: b64109790478261569cdbc74d2eda6c31154cd4c
+    reason: >
+      PI ruling A5 (G3) on the pre-read code review, before any lockbox read; no L values read. The rare-route N axes
+      of the six non-lockbox-testable H1S calls use the A CRISPR alignment parameters (baselines b_j and N'), as the
+      registry's 'alignment from A baselines' prescribes; LOSO and leave-one-model-out run for them too. The A4 NOT
+      EVALUABLE ruling is withdrawn. Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [lockbox.rare_route_fitted_parameters, lockbox.rare_route_not_evaluable, lockbox.rare_route_fitted_hits]
 status: open

@@ -4,8 +4,8 @@ Synthetic data only (tests/part2_synth_lockbox.py): no DepMap value and no lockb
 touched. Every test works on its own copy of a synthetic repository in which the A side is committed and nothing has
 been read. The outcome loader is wrapped so that every call for non-A (lockbox) rows is counted.
 
-Properties that hold today are plain tests. Gaps found in review are written as the desired property and marked
-``xfail(strict=True)``: they fail loudly (XPASS -> error) once the gap is closed, so the marker must then be removed.
+Properties that hold today are plain tests. Gaps found in review were written as the desired property and marked
+``xfail(strict=True)``; the five markers were removed once the fixes made them pass (MUST-1, S1, S2).
 See results/part2/verify/lockbox_code_review.md.
 """
 import dataclasses
@@ -153,8 +153,6 @@ def test_target_list_tampered_after_intent(base):
     assert calls[0]["n_genes"] == len(genes) + 1
 
 
-@pytest.mark.xfail(strict=True, reason="REVIEW GAP: confirm_entry tests the hits it is given, not the hits of the "
-                                       "committed target list (no cross-check)")
 def test_hits_must_match_committed_target_list(base):
     D = base["D"]
     w, calls = fresh(base, "hits_tamper")
@@ -170,9 +168,6 @@ def test_hits_must_match_committed_target_list(base):
     assert calls == []
 
 
-@pytest.mark.xfail(strict=True, reason="REVIEW GAP: inputs that decide eligibility / route (classes.tsv, "
-                                       "lockbox_testable.tsv) are read from the working tree without a "
-                                       "committed/clean check, and eligibility/route are not in the target list")
 @pytest.mark.parametrize("which", ["classes", "testable"])
 def test_uncommitted_eligibility_or_route_inputs_refused(base, which):
     D = base["D"]
@@ -184,7 +179,7 @@ def test_uncommitted_eligibility_or_route_inputs_refused(base, which):
         t["class_complex_wide"] = "COLLAPSE"                # every N-axis call becomes 'eligible'
     else:
         aid = "H3b_driver_family"
-        p = w.proj.root / S._script("48_lockbox_confirm.py").TESTABLE_REL
+        p = w.proj.root / S._script("51_lockbox_confirm.py").TESTABLE_REL
         t = pd.read_csv(p, sep="\t", keep_default_na=False)
         t.loc[t.context.isin(list(S.RARE)), "lockbox_testable"] = True     # rare contexts re-routed to 'lockbox'
     t.to_csv(p, sep="\t", index=False)
@@ -207,8 +202,6 @@ def test_loader_returning_lockbox_rows_for_A_is_refused(base):
         assoc.load_A_effects(proj=assoc.Project(root=w.proj.root, outcome_loader=leaky))
 
 
-@pytest.mark.xfail(strict=True, reason="REVIEW NOTE (defence in depth): the driver trusts World.E_A; only "
-                                       "real_world() (via 44.real_env) checks the A hash")
 def test_driver_refuses_world_with_lockbox_rows_in_A(base):
     sim = base["info"]["sim"]
     D = base["D"]
@@ -223,8 +216,6 @@ def test_driver_refuses_world_with_lockbox_rows_in_A(base):
     assert pf["gaps"], "an L model in World.E_A passed the preflight"
 
 
-@pytest.mark.xfail(strict=True, reason="REVIEW GAP: read_lockbox allows one read per entry *per source*; the "
-                                       "registry stopping rules allow one read (crispr) per entry")
 def test_second_source_read_of_same_entry_refused(base):
     D = base["D"]
     w, calls = fresh(base, "second_source")

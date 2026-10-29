@@ -520,9 +520,12 @@ def _ledger(proj: Project) -> list[dict]:
     return [json.loads(l) for l in proj.ledger.read_text().splitlines() if l.strip()]
 
 
-def read_lockbox(analysis_id: str, targets_file, proj: Project | None = None, source: str = "crispr") -> pd.DataFrame:
+def read_lockbox(analysis_id: str, targets_file, proj: Project | None = None, source: str = "crispr",
+                 persist: bool = False) -> pd.DataFrame:
     """Return outcome data of lockbox models for the genes of a committed target list (JSON:
-    {"analysis_id": ..., "genes": [...], ...}). One read per registry entry; ledger committed before the read."""
+    {"analysis_id": ..., "genes": [...], ...}). One read per registry entry (any source; review S1); ledger committed
+    before the read. persist=True: the matrix is stored at once under data_cache/part2/lockbox_reads/ (gitignored) and
+    its SHA-256 is committed to results/part2/lockbox_reads.jsonl (crash recovery: resume_lockbox_read)."""
     proj = proj or Project()
     entry, blob = registry.load_entry(proj.registry_dir, analysis_id, root=proj.root)
     tp = Path(targets_file)
@@ -545,8 +548,8 @@ def read_lockbox(analysis_id: str, targets_file, proj: Project | None = None, so
         except RegistryError as e:
             raise FreezeError(f"lockbox ledger has uncommitted changes: {e}") from e
     led = _ledger(proj)
-    if any(r["analysis_id"] == analysis_id and r.get("source", "crispr") == source for r in led):
-        raise FirewallError(f"{analysis_id} already read the lockbox ({source}); one read per registry entry")
+    if any(r["analysis_id"] == analysis_id for r in led):
+        raise FirewallError(f"{analysis_id} already read the lockbox; one read per registry entry (any source)")
     if entry["direction"] in ("benchmark", "bridge"):
         allent = registry.load_all(proj.registry_dir)
         confirm = [k for k, e in allent.items() if e["direction"] in registry.CONFIRMATORY]
@@ -586,4 +589,56 @@ def read_lockbox(analysis_id: str, targets_file, proj: Project | None = None, so
     df = proj.outcome_loader(Lm, genes, source)
     if not set(df.index) <= set(Lm):
         raise FirewallError("outcome loader returned non-lockbox models")
+    if persist:
+        _persist_read(proj, analysis_id, source, df)
     return df
+
+
+def _reads_dir(proj: Project) -> Path:
+    return proj.cache_dir / "lockbox_reads"
+
+
+def _reads_sidecar(proj: Project) -> Path:
+    return proj.results_dir / "lockbox_reads.jsonl"
+
+
+def _persist_read(proj: Project, analysis_id: str, source: str, df: pd.DataFrame) -> None:
+    """Store a read matrix (gitignored) and commit its SHA-256 at once (PI crash-recovery decision, review MUST-2)."""
+    d = _reads_dir(proj)
+    d.mkdir(parents=True, exist_ok=True)
+    p = d / f"{analysis_id}__{source}.parquet"
+    if p.exists():
+        raise FirewallError(f"{proj.rel(p)} already exists; a read is persisted once")
+    df.to_parquet(p)
+    rec = dict(time=time.strftime("%Y-%m-%dT%H:%M:%S%z"), analysis_id=analysis_id, source=source,
+               file=proj.rel(p), sha256=_sha_file(p), n_models=int(df.shape[0]), n_genes=int(df.shape[1]))
+    sc = _reads_sidecar(proj)
+    _append_jsonl(sc, rec)
+    rel = proj.rel(sc)
+    r1 = git(proj.root, "add", "--", rel, check=False)
+    r2 = git(proj.root, "commit", "-q", "-m", f"lockbox read persisted: {analysis_id} ({source}) sha256 "
+             f"{rec['sha256'][:16]}", "--", rel, check=False) if r1.returncode == 0 else r1
+    if r2.returncode != 0:
+        raise FreezeError(f"read persisted at {proj.rel(p)} but its hash could not be committed: {r2.stderr.strip()}")
+
+
+def resume_lockbox_read(analysis_id: str, proj: Project | None = None, source: str = "crispr") -> pd.DataFrame:
+    """The persisted matrix of an entry that already read the lockbox (committed ledger line and committed hash);
+    the outcome loader is never called. Refused if the hash differs or the entry is already closed."""
+    proj = proj or Project()
+    led = [json.loads(l) for l in _committed_text(proj, proj.ledger).splitlines() if l.strip()] \
+        if proj.ledger.exists() else []
+    if not any(r["analysis_id"] == analysis_id for r in led):
+        raise FirewallError(f"{analysis_id}: no committed ledger line; nothing to resume")
+    entry, _ = registry.load_entry(proj.registry_dir, analysis_id, root=proj.root)
+    if entry["status"] == "closed":
+        raise FirewallError(f"{analysis_id} is closed; nothing to resume")
+    sc = _reads_sidecar(proj)
+    recs = [json.loads(l) for l in _committed_text(proj, sc).splitlines() if l.strip()] if sc.exists() else []
+    recs = [r for r in recs if r["analysis_id"] == analysis_id and r["source"] == source]
+    if len(recs) != 1:
+        raise FirewallError(f"{analysis_id}: {len(recs)} committed persisted-read records (need exactly 1)")
+    p = proj.root / recs[0]["file"]
+    if not p.exists() or _sha_file(p) != recs[0]["sha256"]:
+        raise FirewallError(f"{analysis_id}: persisted read missing or its SHA-256 differs from the committed hash")
+    return pd.read_parquet(p)

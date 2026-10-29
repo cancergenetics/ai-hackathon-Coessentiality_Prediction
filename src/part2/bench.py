@@ -43,14 +43,20 @@ def _signed_t(y, ctx, cov, sign) -> float:
 
 
 def bench_delta(pairs: pd.DataFrame, score_L, E_L: pd.DataFrame, contexts_L: pd.DataFrame, covariates_L,
-                blocks_L: pd.Series | None = None, B: int = 2000, seed: int = 5100) -> dict:
+                blocks_L: pd.Series | None = None, B: int = 2000, seed: int = 5100, tercile=None) -> dict:
     """pairs: columns context, unit, beta_A, gstar, breadth (A). Returns per-pair table, mean Delta and per-tercile
-    means with 95% bootstrap CIs."""
+    means with 95% bootstrap CIs. tercile: per-pair labels fixed elsewhere (multiverse: the primary pairs' breadth
+    terciles, review N8); default = terciles of this pair set's breadth (ties broken by pair order, N11)."""
     ys = {(r.context, r.unit): (score_L(E_L, r.context, r.unit), E_L[r.gstar].astype(float).clip(-3, 3))
           for r in pairs.itertuples(index=False)}
     cov_of = (lambda c: covariates_L.get(c)) if isinstance(covariates_L, dict) else (lambda c: covariates_L)
-    terc = pd.qcut(pairs.breadth.rank(method="first"), 3, labels=["low", "mid", "high"]) if len(pairs) >= 3 \
-        else pd.Series(["high"] * len(pairs), index=pairs.index)
+    if tercile is not None:
+        terc = pd.Series(list(tercile), index=pairs.index)
+        if len(terc) != len(pairs):
+            raise ValueError("tercile labels do not match the pairs")
+    else:
+        terc = pd.qcut(pairs.breadth.rank(method="first"), 3, labels=["low", "mid", "high"]) if len(pairs) >= 3 \
+            else pd.Series(["high"] * len(pairs), index=pairs.index)
 
     def deltas(rows_idx):
         out = []

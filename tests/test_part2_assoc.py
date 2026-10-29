@@ -228,6 +228,14 @@ def test_read_lockbox_rules(proj):
     with pytest.raises(FirewallError, match="closed"):           # ledger lines exist but entries are still open
         assoc.read_lockbox("bench_toy", tb, proj=proj)
     from part2 import confirm
+    # an entry read with targets cannot be closed before its confirmation output is committed (review S6 / MUST-2)
+    with pytest.raises(RegistryError, match="not committed"):
+        confirm.close_entry(proj, "H3b_toy")
+    for k in ("H3b_toy", "H1_toy"):
+        o = proj.results_dir / "assoc" / k / "confirmation_crispr.json"
+        o.parent.mkdir(parents=True, exist_ok=True)
+        o.write_text("{}\n")
+    commit_all(proj.root)
     confirm.close_entry(proj, "H3b_toy")
     confirm.close_entry(proj, "H1_toy")
     assert confirm.is_closed(proj, "H1_toy")

@@ -15,7 +15,7 @@ Each touched entry gets an `amendments` item (id A3, UTC timestamp, amends_commi
 reason, changed_paths); registry.amendment_changes(committed, new) must be [] and every declared path must change.
 Text edits only (the registry YAML subset has no writer); the result is re-parsed and validated before writing.
 
-Usage: .venv/bin/python scripts/49_amend_A3.py [--check]
+Usage: .venv/bin/python scripts/52_amend_A3.py [--check]
 """
 from __future__ import annotations
 

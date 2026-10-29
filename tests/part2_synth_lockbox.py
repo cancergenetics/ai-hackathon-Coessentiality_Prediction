@@ -1,4 +1,4 @@
-"""Synthetic world for the lockbox driver (scripts/48_lockbox_confirm.py); helper for tests/test_part2_lockbox_driver.py.
+"""Synthetic world for the lockbox driver (scripts/51_lockbox_confirm.py); helper for tests/test_part2_lockbox_driver.py.
 
 part2.synth.simulate plus:
   * planted lockbox pattern: the synthetic effects (MSI_H -> WRN complex, hotspot:KRAS -> KRAS complex, H1 ARID1A ->
@@ -40,9 +40,8 @@ SEEDS = {"H3a_lineage_atlas": (4000, 6100), "H3b_driver_family": (4100, 6200), "
          "H2_submodule_divergence": (4300, 6500)}
 E2_LABEL = "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)"
 CTRL_INDEX = {"CTRL_PC1": 0, "CTRL_PC6": 5, "CTRL_PC20": 20, "CTRL_PC21": 21}
-RULINGS_BENCH = ("estimand_secondary_not_run:\n  - \"A-L correlation vs matched random gene sets\"\n"
-                 "  - \"number of distinct complexes among the g*\"\n")       # mirrors A4 (G1)
-RULING_H1 = "lockbox:\n  rare_route_fitted_parameters: not evaluable\n"       # mirrors A4 (G3) for H1S
+RULINGS_BENCH = "estimand_secondary_not_run:\n  - \"A-L correlation vs matched random gene sets\"\n"  # A4/A5
+RULING_H1 = "lockbox:\n  rare_route_fitted_parameters: A CRISPR parameters\n"       # mirrors A5 (G3) for H1S
 
 
 def _script(name):
@@ -131,7 +130,7 @@ def testable_list(sim, fold, entries: dict, events) -> pd.DataFrame:
 def build_world(root: Path, seed: int = 0, n_perm: int = P.N_PERM, K: int = 200, B_bench: int = 30,
                 B_bridge: int = 200):
     """Synthetic project with committed A-side runs; returns (World, info)."""
-    D = _script("48_lockbox_confirm.py")
+    D = _script("51_lockbox_confirm.py")
     R44 = _script("44_run_direction.py")
     sim = synth.simulate(seed)
     truth = plant(sim, seed)
@@ -189,7 +188,7 @@ def build_world(root: Path, seed: int = 0, n_perm: int = P.N_PERM, K: int = 200,
     gctx = [dict(c, covariates=cov_of[c["id"]]) for c in h3a_ctx + h3b_ctx]
     (reg / "BRIDGE-L_confirmation_rate.yaml").write_text(synth.entry_yaml(
         "BRIDGE-L_confirmation_rate", "bridge", gctx, gls.coarse(), "S_C_mean_winsor3", synth.BASE_COV, bb, fin,
-        extra=_seeds(4500, 6600, {"bootstrap": 5200}) + "multiverse:\n  ci: point estimate only\n"))
+        extra=_seeds(4500, 6600, {"bootstrap": 5200}) + "multiverse:\n  ci: bootstrap as primary\n"))
     entries = registry.load_all(reg)
     tl = testable_list(sim, sim.fold, entries, events)
     fz = root / "results" / "part2" / "fzx"

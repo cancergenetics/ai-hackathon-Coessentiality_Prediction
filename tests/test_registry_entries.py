@@ -241,7 +241,8 @@ def test_h1_and_h1s_event_split(entries, eid, loss_class, units_file):
     units = (FZX / units_file).read_text().split()
     assert e["complex_set_hash"] == registry.set_hash(units) and e["family_m"]["value"] == len(units)
     # E1: score_rule erratum (R1); A3: lockbox permutation seed (pre-read)
-    assert [a["id"] for a in e["amendments"]] == ["A1", "A2", "E1", "A3"] + (["A4"] if loss_class == "silencing" else [])
+    assert [a["id"] for a in e["amendments"]] == ["A1", "A2", "E1", "A3"] + \
+        (["A4", "A5"] if loss_class == "silencing" else [])
 
 
 def test_h1s_is_exploratory_copy_of_h1(entries):

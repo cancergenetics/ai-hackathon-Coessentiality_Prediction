@@ -37,13 +37,22 @@ BRIDGE-L: the registered GLS-map discovery on A (two run_association calls, 23 H
 Report: rates per direction (overall, non-locus, beats-all-matched-sets vs not), the H1 per-event table, BENCH and
   BRIDGE-L estimates (results/part2/lockbox_confirm/REPORT.json, rates.tsv, h1_events.tsv).
 
-Registry rulings the entries do not yet contain are refused up front (preflight) -- nothing is read while a gap is
-open: BENCH `estimand_secondary` (correlation, R, pair_set, matching, summary), BENCH / BRIDGE-L `multiverse.ci`, and,
-only where a rare-route hit needs fitted parameters on DEMETER2, the entry's `lockbox.rare_route_fitted_parameters`.
+Registry rulings the entries do not contain are refused up front (preflight) -- nothing is read while a gap is open.
+Amendments A4/A5: BENCH secondary A-L random-set correlation NOT RUN, distinct-complex count among g* reported (A
+only); BENCH multiverse point estimates, BRIDGE-L multiverse bootstrap CIs; H1S rare-route N axes use the A CRISPR
+alignment (`lockbox.rare_route_fitted_parameters`); a gene missing from DEMETER2 makes the rare route NOT EVALUABLE.
+Review MUST-1/2 (results/part2/verify/lockbox_code_review.md): refused unless the tracked tree is clean and every input
+that decides hits, eligibility or route is committed (lockbox_testable.tsv also against its FZ-X manifest hash); the
+target list records each hit's eligibility, route, E2 label and headline flag, and confirm_entry checks the hits
+against it; every read matrix is persisted (data_cache/part2/lockbox_reads/, hash committed at once) and `--resume`
+finishes an entry from it without calling the loader; every A-side computation and validity check (g*, eigengene
+fits, GLS frozen inputs, coverage tables) runs before the corresponding target list is committed. Run the read under
+`caffeinate -i` (macOS).
 
 Usage (PART1_DIR set, PYTHONHASHSEED=0):
-    .venv/bin/python scripts/48_lockbox_confirm.py --dry-check     # A side only: hits, routes, gaps; no L read
-    .venv/bin/python scripts/48_lockbox_confirm.py --run           # the single read (refused while gaps are open)
+    .venv/bin/python scripts/51_lockbox_confirm.py --dry-check     # A side only: hits, routes, gaps; no L read
+    caffeinate -i .venv/bin/python scripts/51_lockbox_confirm.py --run            # the single read
+    caffeinate -i .venv/bin/python scripts/51_lockbox_confirm.py --run --resume   # after a crash: persisted reads only
 """
 from __future__ import annotations
 
@@ -83,8 +92,9 @@ GLS_MAP = "results/part2/fzx/gls_engine_membership.tsv"
 CLUSTERS = {"zavg": "results/part2/construction/zavg_map/clusters.tsv",
             "gls": "results/part2/construction/gls_map/clusters.tsv"}
 RARE_LABEL = "not lockbox-testable"
-FIT_RULINGS = ("A CRISPR parameters", "DEMETER2 A refit", "not evaluable")
-NOT_EVALUABLE = FIT_RULINGS[2]          # A4 (G3): such rare-route hits are NOT EVALUABLE in L
+FIT_RULINGS = ("A CRISPR parameters", "DEMETER2 A refit")      # A5 (G3): H1S uses the A CRISPR alignment
+D2_NA = "NOT EVALUABLE (DEMETER2 not available)"                # review N5
+FZX_MANIFEST = "results/part2/fzx/FZX_manifest.json"
 
 
 class GapError(RegistryError):
@@ -123,6 +133,9 @@ class World:
     n_perm: int = N_PERM
     B_bench: int = B_BENCH
     B_bridge: int = B_BRIDGE
+    testable_sha: str | None = None       # FZ-X manifest hash of the frozen lockbox-testable list (real run)
+    persist: bool = True                  # persist every read matrix (PI crash-recovery decision)
+    resume: bool = False                  # finish entries already read, from their persisted matrices only
     log: list = field(default_factory=list)
     _d2: pd.DataFrame | None = None
 
@@ -137,7 +150,11 @@ class World:
         return self._d2
 
     def testable(self) -> pd.DataFrame:
-        t = pd.read_csv(self.proj.root / TESTABLE_REL, sep="\t", keep_default_na=False)
+        p = self.proj.root / TESTABLE_REL
+        registry.committed_blob(self.proj.root, p)                    # MUST-1: committed and clean
+        if self.testable_sha is not None and assoc._sha_file(p) != self.testable_sha:
+            raise RegistryError(f"{TESTABLE_REL} differs from its FZ-X manifest hash")
+        t = pd.read_csv(p, sep="\t", keep_default_na=False)
         t["lockbox_testable"] = t.lockbox_testable.astype(str).str.lower() == "true"
         return t
 
@@ -153,6 +170,31 @@ class World:
 
 def entry(world: World, aid: str):
     return registry.load_entry(world.proj.registry_dir, aid, root=world.proj.root)
+
+
+def committed(world: World, path) -> Path:
+    """MUST-1: an input that decides hits, eligibility or route must be committed and clean at HEAD."""
+    p = Path(path)
+    p = p if p.is_absolute() else world.proj.root / p
+    registry.committed_blob(world.proj.root, p)
+    return p
+
+
+def require_clean(world: World) -> None:
+    r = registry.git(world.proj.root, "status", "--porcelain", "--untracked-files=no", check=False)
+    if r.returncode != 0 or r.stdout.strip():
+        raise RegistryError(f"tracked files have uncommitted changes (refused): {r.stdout.strip()[:300]}")
+
+
+def check_A(world: World) -> None:
+    """Review S2: the A matrix the driver uses holds A models only."""
+    bad = set(world.E_A.index) - set(assoc.a_models(world.proj))
+    if bad:
+        raise assoc.FirewallError(f"World.E_A holds {len(bad)} non-A models (e.g. {sorted(bad)[:2]})")
+
+
+def _not_run(items, key: str) -> bool:
+    return any(key.lower() in str(s).lower() for s in (items or []))
 
 
 def primary_contexts(e: dict) -> list:
@@ -255,7 +297,7 @@ def _sorted(h: pd.DataFrame) -> pd.DataFrame:
 
 def spec_controls(world: World, aid: str) -> Spec:
     e, _ = entry(world, aid)
-    tab = pd.read_csv(world.proj.results_dir / "controls" / "controls_summary.tsv", sep="\t")
+    tab = pd.read_csv(committed(world, world.proj.results_dir / "controls" / "controls_summary.tsv"), sep="\t")
     rows = tab[(tab.entry == aid) & tab.beta.notna()]
     hits = _sorted(pd.DataFrame(dict(context=rows.context.values, unit=rows.unit.values,
                                      beta=rows.beta.values.astype(float), alternative=rows.alternative.values,
@@ -380,7 +422,8 @@ def spec_h1(world: World, aid: str) -> Spec:
     comps = {ev.id: h1.component_scores(world.E_A, ev, lossA_g[ev.gene]) for ev in events}
     disc = committed_table(world.proj, aid)
     rmap = {r.unit: r for r in disc.itertuples(index=False)}
-    cls = pd.read_csv(world.proj.results_dir / "directions" / aid / "classes.tsv", sep="\t", keep_default_na=False)
+    cls = pd.read_csv(committed(world, world.proj.results_dir / "directions" / aid / "classes.tsv"), sep="\t",
+                      keep_default_na=False)
     cmap = {r["event"]: r for r in cls.to_dict("records")}
     rows = []
     for ev in events:
@@ -450,14 +493,15 @@ def rare_routes(world: World, spec: Spec) -> dict:
     for i, r in spec.hits.iterrows():
         if r.lockbox_testable or not r.eligible:
             continue
-        if r.unit in spec.needs_fit and _fit_ruling(world, spec.aid) == NOT_EVALUABLE:
-            out[i] = dict(not_evaluable_L=True)                 # A4 (G3): no CRISPR or DEMETER2 refit
-            continue
         yA = spec.score_A(r.context, r.unit)
         yD = spec.score_D2(r.context, r.unit)
         res = confirm.rare_route(yA, spec.ctx_all[r.context].reindex(world.A), spec.cov_A.get(r.context), groups,
                                  float(r.beta), yD)
         res.pop("loso_full", None)
+        res["rare_route_note"] = ""
+        if res["demeter2_same_sign"] is None:                  # N5: DEMETER2 missing -> not evaluable, not 'fail'
+            res["rare_route_pass"] = None
+            res["rare_route_note"] = D2_NA
         out[i] = res
     return out
 
@@ -470,23 +514,49 @@ def _with_ci90(t: pd.DataFrame) -> pd.DataFrame:
     return t.drop(columns=["ci95_L"])
 
 
+def _promotable(r) -> bool:
+    """N4: an E2-relabelled call (label_final differs from the engine class) or a call that is not headline-eligible
+    (E2, NOT EVALUABLE, exploratory entry) can never be promoted by a confirmation."""
+    lab, cls = getattr(r, "label_final", None), getattr(r, "class_engine", None)
+    he = str(getattr(r, "headline_eligible", "True"))
+    return not ((isinstance(lab, str) and isinstance(cls, str) and lab != cls) or he == "False")
+
+
 def _status(r) -> str:
     if not r.eligible:
         return "not eligible (no non-neutral call; L effect reported)"
-    if not r.lockbox_testable and bool(r.not_evaluable_L):
-        return "NOT EVALUABLE in L (A4: the rare route would need fitted DEMETER2 parameters)"
     if not r.lockbox_testable:
+        if r.rare_route_pass is None or (isinstance(r.rare_route_pass, float) and np.isnan(r.rare_route_pass)):
+            return f"{RARE_LABEL}: rare-context route {D2_NA}"
         return f"{RARE_LABEL}: rare-context route {'passed' if r.rare_route_pass else 'failed'}"
     if not r.testable_L:
         return "lockbox-testable (frozen list) but < 5 context or reference L models after complete case"
-    return "confirmed" if r.confirmed_final else "not confirmed"
+    if r.confirmed_final:
+        return "confirmed" if _promotable(r) else "confirmed (not promotable: E2 label or not headline-eligible)"
+    return "not confirmed"
+
+
+def _check_target_hits(world: World, aid: str, ht: pd.DataFrame) -> None:
+    """Resume: the committed target list must hold exactly these hits, eligibility and route."""
+    tp = committed(world, confirm.target_path(world.proj, aid))
+    rec = json.loads(tp.read_text()).get("hits", [])
+    want = [(h["context"], h["unit"], float(h["beta_A"]), h["alternative"], h.get("eligible"), h.get("route"))
+            for h in rec]
+    got = [(str(r.context), str(r.unit), float(r.beta), str(r.alternative), bool(r.eligible), str(r.route))
+           for r in ht.itertuples(index=False)]
+    if want != got:
+        raise RegistryError(f"{aid}: hits / eligibility / route differ from the committed target list")
 
 
 def run_entry(world: World, spec: Spec, close: bool = True) -> pd.DataFrame:
     proj, aid = world.proj, spec.aid
+    require_clean(world)
+    check_A(world)
     e, blob = entry(world, aid)
-    if aid in _ledger_ids(proj):
-        raise assoc.FirewallError(f"{aid} already has a lockbox ledger line (single read)")
+    resuming = aid in _ledger_ids(proj)
+    if resuming and not world.resume:
+        raise assoc.FirewallError(f"{aid} already has a lockbox ledger line (single read; --resume re-uses the "
+                                  f"persisted matrix)")
     if e["status"] != "open":
         raise RegistryError(f"{aid} is not open")
     t0 = time.time()
@@ -494,13 +564,21 @@ def run_entry(world: World, spec: Spec, close: bool = True) -> pd.DataFrame:
     rare = rare_routes(world, spec)                                   # A side, before the read
     units = {u: spec.members_of(u) for u in sorted(set(spec.hits.unit))}
     genes = sorted(set(g for v in units.values() for g in v) | set(spec.extra_genes))
-    h4 = spec.hits[["context", "unit", "beta", "alternative"]]
-    confirm.write_target_list(proj, aid, genes, hits=h4, units=units, contexts=set(spec.hits.context),
-                              msg_suffix=" (single read)")
-    world.say(f"{aid}: target list committed ({len(genes)} genes, {len(h4)} hits); reading the lockbox")
+    ht = spec.hits.assign(route=np.where(spec.hits.lockbox_testable, "lockbox", RARE_LABEL))
+    cols = ["context", "unit", "beta", "alternative", "eligible", "route"] + \
+        [c for c in ("label_final", "headline_eligible", "event", "axis") if c in ht]
+    h4 = ht[["context", "unit", "beta", "alternative"]]
+    if resuming:
+        _check_target_hits(world, aid, ht)
+        world.say(f"{aid}: RESUME from the persisted read (the loader is not called)")
+    else:
+        confirm.write_target_list(proj, aid, genes, hits=ht[cols], units=units, contexts=set(spec.hits.context),
+                                  msg_suffix=" (single read)")
+        world.say(f"{aid}: target list committed ({len(genes)} genes, {len(h4)} hits); reading the lockbox")
     res = confirm.confirm_entry(aid, h4, spec.score_L, spec.ctx_all, spec.cov_all, proj=proj,
                                 blocks=world.cov.PatientID, strata=world.cov.OncotreeLineage,
-                                lineage_contexts=spec.lineage_contexts, n_perm=world.n_perm, seed=seed, write=True)
+                                lineage_contexts=spec.lineage_contexts, n_perm=world.n_perm, seed=seed, write=True,
+                                persist=world.persist and not resuming, resume=resuming)
     out = spec.hits.copy()
     if len(res):
         if list(res.unit) != list(out.unit) or list(res.context) != list(out.context):
@@ -512,24 +590,25 @@ def run_entry(world: World, spec: Spec, close: bool = True) -> pd.DataFrame:
         for c in ("beta_L", "se_L", "p_L", "confirmed", "testable_L", "same_sign"):
             out[c] = np.nan if c not in ("confirmed", "testable_L", "same_sign") else False
     rr = pd.DataFrame.from_dict(rare, orient="index") if rare else pd.DataFrame()
-    for c in ("loso_same_sign", "loso_folds", "lomo_same_sign", "demeter2_same_sign", "rare_route_pass"):
+    for c in ("loso_same_sign", "loso_folds", "lomo_same_sign", "demeter2_same_sign", "rare_route_pass",
+              "rare_route_note"):
         out[c] = rr[c].reindex(out.index) if c in rr else np.nan
-    out["not_evaluable_L"] = rr["not_evaluable_L"].reindex(out.index).fillna(False).astype(bool) \
-        if "not_evaluable_L" in rr else False
     out["route"] = np.where(out.lockbox_testable, "lockbox", RARE_LABEL)
     out["confirmed_final"] = out.eligible & out.lockbox_testable & out.confirmed.fillna(False).astype(bool)
     out["rare_route_pass"] = out.rare_route_pass.astype(object)
+    out["promotable"] = [bool(r.confirmed_final and _promotable(r)) for r in out.itertuples(index=False)]
     out["status"] = [_status(r) for r in out.itertuples(index=False)]
     d = world.out(aid)
     d.mkdir(parents=True, exist_ok=True)
     out.to_csv(d / "confirmation.tsv", sep="\t", index=False, float_format="%.6g")
     led = [r for r in assoc._ledger(proj) if r["analysis_id"] == aid]
+    resumed = dict(resumed=bool(resuming))
     el = out[out.eligible]
     summ = dict(analysis_id=aid, registry_blob=blob, lockbox_seed=seed, n_perm=world.n_perm, n_hits=int(len(out)),
                 n_eligible=int(len(el)), n_eligible_lockbox=int(el.lockbox_testable.sum()),
                 n_eligible_rare=int((~el.lockbox_testable).sum()), n_confirmed=int(out.confirmed_final.sum()),
                 n_rare_pass=int((el.rare_route_pass == True).sum()),  # noqa: E712
-                n_target_genes=len(genes), ledger=led, runtime_s=round(time.time() - t0, 1),
+                n_target_genes=len(genes), ledger=led, runtime_s=round(time.time() - t0, 1), **resumed,
                 peak_rss_bytes=int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
     (d / "summary.json").write_text(json.dumps(summ, indent=1, sort_keys=True, default=str) + "\n")
     eng = proj.results_dir / "assoc" / aid / "confirmation_crispr.json"
@@ -542,9 +621,10 @@ def run_entry(world: World, spec: Spec, close: bool = True) -> pd.DataFrame:
 
 
 # ------------------------------------------------------------------------------------------------ late gate
-def gate_late(world: World, aid: str) -> None:
+def gate_late(world: World, aid: str) -> bool:
     """BENCH / BRIDGE-L: refused (before any work) unless every confirmatory entry has a committed ledger line and is
-    committed with status closed (the same rule assoc.read_lockbox enforces at the read)."""
+    committed with status closed (the same rule assoc.read_lockbox enforces at the read). Returns True when `aid`
+    itself already read and --resume finishes it from the persisted matrix."""
     proj = world.proj
     allent = registry.load_all(proj.registry_dir)
     conf = [k for k, e in allent.items() if e["direction"] in registry.CONFIRMATORY]
@@ -557,7 +637,10 @@ def gate_late(world: World, aid: str) -> None:
         raise assoc.FirewallError(f"{aid} before every confirmation is read and closed: missing {missing[:5]}, "
                                   f"open {open_[:5]}")
     if aid in done:
+        if world.resume and allent[aid]["status"] == "open":
+            return True
         raise assoc.FirewallError(f"{aid} already has a lockbox ledger line (single read)")
+    return False
 
 
 def _bench_pairs(world: World, e: dict) -> tuple[pd.DataFrame, pd.DataFrame, dict, dict]:
@@ -591,20 +674,44 @@ def _bench_pairs(world: World, e: dict) -> tuple[pd.DataFrame, pd.DataFrame, dic
     return pd.DataFrame(rows), _sorted(sec[["context", "unit", "beta", "source"]]), ca, {"contexts": ctxs}
 
 
+def bench_a_side(world: World, e: dict) -> dict:
+    """Everything BENCH computes on A, with its validity checks, before the target list is committed (MUST-2b)."""
+    pairs, sec_all, covA, info = _bench_pairs(world, e)
+    bad = pairs[pairs.gstar.isna() | pairs.gstar_beta.isna() | pairs.breadth.isna()]
+    if len(bad):
+        raise RuntimeError(f"BENCH: g* / g*(beta) / breadth missing for {len(bad)} pairs, e.g. "
+                           f"{bad[['context', 'unit']].head(3).values.tolist()}")
+    terc = pd.Series(np.asarray(pd.qcut(pairs.breadth.rank(method="first"), 3, labels=["low", "mid", "high"]))
+                     if len(pairs) >= 3 else ["high"] * len(pairs), index=pairs.index)   # N8: fixed once (N11 ties)
+    fits = {}
+    for r in pairs.itertuples(index=False):
+        rem = cscore.removal_for_context(r.context, world.homdel.get(r.context))
+        k = (rem, r.unit)
+        if k not in fits:
+            f = cscore.unit_scores(world.E_A, world.fmap, [r.unit], rem, world.annot, method="eigengene")[2]
+            if r.unit not in f:
+                raise RuntimeError(f"BENCH: no eigengene A fit for {r.unit} in {r.context}")
+            fits[k] = f[r.unit]
+    return dict(pairs=pairs, sec_all=sec_all, covA=covA, contexts=info["contexts"], tercile=terc, eig_fits=fits)
+
+
 def bench_stage(world: World) -> dict:
-    gate_late(world, BENCH_ID)
+    resuming = gate_late(world, BENCH_ID)
+    require_clean(world)
+    check_A(world)
     proj = world.proj
     e, blob = entry(world, BENCH_ID)
     rul = rulings(world)
     sec_spec, sec_not_run = rul["bench_secondary"], rul["bench_secondary_not_run"]
+    al_not_run, distinct_not_run = _not_run(sec_not_run, "A-L correlation"), _not_run(sec_not_run, "distinct")
     ci_rule = rul["bench_multiverse_ci"]
     check_bench_rulings(sec_spec, ci_rule, sec_not_run)
     t0 = time.time()
     seeds = e["seeds"]
-    pairs, sec_all, covA, info = _bench_pairs(world, e)
-    ctxs = info["contexts"]
+    a = bench_a_side(world, e)
+    pairs, sec_all, ctxs, terc, eig_fits = a["pairs"], a["sec_all"], a["contexts"], a["tercile"], a["eig_fits"]
     sets = {}
-    if not sec_not_run:
+    if not al_not_run:
         sec_pairs = pairs[["context", "unit"]] if sec_spec["pair_set"] == "primary" else sec_all[["context", "unit"]]
         units_sec = sorted(set(sec_pairs.unit))
         ess = calib.clip_essentiality(world.E_A)
@@ -615,9 +722,18 @@ def bench_stage(world: World) -> dict:
                    | {g for v in sets.values() for g in v})
     p4 = pairs.rename(columns={"beta_A": "beta"}).assign(alternative="two-sided")[["context", "unit", "beta",
                                                                                      "alternative"]]
-    confirm.write_target_list(proj, BENCH_ID, genes, hits=p4, contexts=set(ctxs), msg_suffix=" (single read)")
-    world.say(f"BENCH: target list committed ({len(genes)} genes, {len(pairs)} primary pairs); reading the lockbox")
-    E_L = assoc.read_lockbox(BENCH_ID, confirm.target_path(proj, BENCH_ID), proj=proj)
+    tp = confirm.target_path(proj, BENCH_ID)
+    if resuming:
+        want = [(h["context"], h["unit"], float(h["beta_A"]), h["alternative"])
+                for h in json.loads(committed(world, tp).read_text()).get("hits", [])]
+        if confirm.hit_keys(p4) != want:
+            raise RegistryError("BENCH: pairs differ from the committed target list")
+        world.say("BENCH: RESUME from the persisted read (the loader is not called)")
+        E_L = assoc.resume_lockbox_read(BENCH_ID, proj=proj)
+    else:
+        confirm.write_target_list(proj, BENCH_ID, genes, hits=p4, contexts=set(ctxs), msg_suffix=" (single read)")
+        world.say(f"BENCH: target list committed ({len(genes)} genes, {len(pairs)} primary pairs); reading the lockbox")
+        E_L = assoc.read_lockbox(BENCH_ID, tp, proj=proj, persist=world.persist)
     Lidx = E_L.index
     ctxL = world.ctx.reindex(Lidx)
     covL, _ = covmod.per_context(e, ctxs, world.cov.reindex(Lidx))
@@ -630,29 +746,29 @@ def bench_stage(world: World) -> dict:
         return cscore.unit_scores(E, world.fmap, [u], rem(c), world.annot)[0][u]
 
     B = world.B_bench
-    prim = bench.bench_delta(pairs, sL, E_L, ctxL, covL, blocks_L=blocksL, B=B, seed=int(seeds["bootstrap"]))
+    prim = bench.bench_delta(pairs, sL, E_L, ctxL, covL, blocks_L=blocksL, B=B, seed=int(seeds["bootstrap"]),
+                             tercile=terc)
     tab = prim["table"]
     rho = sst.spearmanr(tab.delta, tab.breadth, nan_policy="omit")
     out = dict(analysis_id=BENCH_ID, registry_blob=blob, n_L_models=int(len(Lidx)), B=B,
                seed=int(seeds["bootstrap"]), primary=prim["summary"],
                trend_spearman_delta_breadth=dict(rho=float(rho.statistic), p=float(rho.pvalue)))
-    out["distinct"] = "NOT RUN (amendment A4 G1)" if sec_not_run else bench.distinct_gstar(pairs, world.fmap)
+    out["distinct"] = "NOT RUN" if distinct_not_run else bench.distinct_gstar(pairs, world.fmap)   # A5: reported
     # multiverse (reported, never selected); within_line_rank NOT RUN (A3(b))
     Bm = B if ci_rule == "bootstrap as primary" else 1
-    fits = {}
-
-    def sL_eig(E, c, u):
-        k = (rem(c), u)
-        if k not in fits:
-            fits[k] = cscore.unit_scores(world.E_A, world.fmap, [u], rem(c), world.annot, method="eigengene")[2][u]
+    def sL_eig(E, c, u):                         # A-fitted eigengene (fits computed before the read)
         return cscore.unit_scores(E, world.fmap, [u], rem(c), world.annot, method="eigengene",
-                                  fits={u: fits[k]})[0][u]
+                                  fits={u: eig_fits[(rem(c), u)]})[0][u]
 
     mv = {}
-    for name, pp, fn in (("eigengene", pairs, sL_eig), ("gstar_largest_beta", pairs.assign(gstar=pairs.gstar_beta), sL),
-                         ("T1_T2_pairs", pairs[pairs.tier.isin(["T1", "T2"])].reset_index(drop=True), sL)):
+    t12 = pairs.tier.isin(["T1", "T2"]).values
+    for name, pp, fn, tt in (("eigengene", pairs, sL_eig, terc),
+                             ("gstar_largest_beta", pairs.assign(gstar=pairs.gstar_beta), sL, terc),
+                             ("T1_T2_pairs", pairs[t12].reset_index(drop=True), sL,
+                              terc[t12].reset_index(drop=True))):
         if len(pp):
-            r = bench.bench_delta(pp, fn, E_L, ctxL, covL, blocks_L=blocksL, B=Bm, seed=int(seeds["bootstrap"]))
+            r = bench.bench_delta(pp, fn, E_L, ctxL, covL, blocks_L=blocksL, B=Bm, seed=int(seeds["bootstrap"]),
+                                  tercile=tt)
             s = r["summary"]
             if Bm == 1:
                 s = {k: v for k, v in s.items() if not k.startswith("ci95") and k != "top_tercile_wins"}
@@ -660,10 +776,10 @@ def bench_stage(world: World) -> dict:
     mv["within_line_rank"] = "NOT RUN (amendment A3(b))"
     out["multiverse"] = mv
     out["multiverse_ci"] = ci_rule
-    # secondary: A-L correlation vs matched random sets (NOT RUN under A4 G1)
-    out["secondary"] = "NOT RUN (amendment A4 G1)"
+    # secondary: A-L correlation vs matched random sets (NOT RUN under A4 G1 / A5)
+    out["secondary"] = "NOT RUN (amendments A4 G1, A5)"
     al = None
-    if not sec_not_run:
+    if not al_not_run:
         al = _bench_secondary(world, e, ctxs, sets, set_status, sec_spec, sec_pairs, rem, sL, E_L, ctxL, covL)
         out["secondary"] = dict({k: v for k, v in al.items() if k != "table"}, spec=sec_spec,
                                 matched_sets_status=set_status.status.value_counts().to_dict(),
@@ -677,7 +793,7 @@ def bench_stage(world: World) -> dict:
         al["table"].to_csv(d / "al_correlation_pairs.tsv", sep="\t", index=False, float_format="%.6g")
     (d / "bench.json").write_text(json.dumps(out, indent=1, sort_keys=True, default=float) + "\n")
     confirm.commit_paths(proj, [d], f"Lockbox confirmations (single read): {BENCH_ID}")
-    confirm.close_entry(proj, BENCH_ID)
+    confirm.close_entry(proj, BENCH_ID, outputs=[d / "bench.json"])
     world.say(f"BENCH: mean Delta {out['primary']['mean']:.3f}; closed")
     return out
 
@@ -709,7 +825,7 @@ def check_bench_rulings(sec_spec, ci_rule, not_run=None) -> None:
     if ci_rule not in ("bootstrap as primary", "point estimate only"):
         raise GapError("BENCH multiverse: `multiverse.ci` ruling missing ('bootstrap as primary' | "
                        "'point estimate only')")
-    if not_run:                                    # A4 (G1): the secondary components are declared NOT RUN
+    if _not_run(not_run, "A-L correlation"):      # A4 (G1) / A5: the A-L random-set correlation is NOT RUN
         return
     need = ("correlation", "R", "pair_set", "matching", "summary")
     if not isinstance(sec_spec, dict) or any(k not in sec_spec for k in need):
@@ -757,15 +873,39 @@ def gls_discovery(world: World) -> pd.DataFrame:
     return res
 
 
+def bridge_a_side(world: World, e: dict) -> dict:
+    """GLS frozen inputs and the D5 coverage matching, checked before any BRIDGE-L work (MUST-2b)."""
+    man = list(dict.fromkeys(["results/part2/lockbox/manifest.json"] + list(e["frozen_inputs"])))
+    assoc.check_frozen(world.proj, world.inputs_gls, man)
+    if world.coverage_tables is None:
+        raise GapError("BRIDGE-L multiverse: no coverage tables for the matched gene coverage subset")
+    mz, mg, cov = validation.match_coverage(world.coverage_tables["zavg"], world.coverage_tables["gls"])
+    return dict(keep={("zavg", u) for u in mz.cluster_id} | {("gls", u) for u in mg.cluster_id}, coverage=cov)
+
+
+def _gls_trials(proj) -> list:
+    if not proj.trials.exists():
+        return []
+    return [json.loads(l) for l in proj.trials.read_text().splitlines()
+            if l.strip() and json.loads(l).get("analysis_id") == BRIDGE_ID]
+
+
 def bridge_stage(world: World) -> dict:
-    gate_late(world, BRIDGE_ID)
+    resuming = gate_late(world, BRIDGE_ID)
+    require_clean(world)
+    check_A(world)
     proj = world.proj
     e, blob = entry(world, BRIDGE_ID)
     ci_rule = rulings(world)["bridge_multiverse_ci"]
     if ci_rule not in ("bootstrap as primary", "point estimate only"):
         raise GapError("BRIDGE-L multiverse: `multiverse.ci` ruling missing")
     t0 = time.time()
-    res = gls_discovery(world)
+    a = bridge_a_side(world, e)
+    if world.resume and _gls_trials(proj):          # the GLS pass already committed: re-use it, never re-run
+        res = pd.concat([committed_table(proj, BRIDGE_ID, tag).assign(family=tag)
+                         for tag in ("discovery_H3a", "discovery_H3b")], ignore_index=True)
+    else:
+        res = gls_discovery(world)
     spec = spec_h3(world, BRIDGE_ID, fm=world.gls, disc=res)
     conf = run_entry(world, spec, close=False)
     rows = []
@@ -787,12 +927,10 @@ def bridge_stage(world: World) -> dict:
                primary=bench.bridge_rate(hits, B=B, seed=seed))
     Bm = B if ci_rule == "bootstrap as primary" else 0
     mv = dict(unweighted=bench.bridge_unweighted(hits, B=Bm, seed=seed))
-    if world.coverage_tables is not None:
-        mz, mg, cov = validation.match_coverage(world.coverage_tables["zavg"], world.coverage_tables["gls"])
-        keep = {("zavg", u) for u in mz.cluster_id} | {("gls", u) for u in mg.cluster_id}
-        sub = hits[[(m, u) in keep for m, u in zip(hits["map"], hits.unit)]]
-        mv["matched_gene_coverage"] = dict(_bridge_mv(sub, Bm, seed), coverage_matching=cov,
-                                           n_hits={m: int((sub["map"] == m).sum()) for m in ("zavg", "gls")})
+    keep = a["keep"]
+    sub = hits[[(m, u) in keep for m, u in zip(hits["map"], hits.unit)]]
+    mv["matched_gene_coverage"] = dict(_bridge_mv(sub, Bm, seed), coverage_matching=a["coverage"],
+                                       n_hits={m: int((sub["map"] == m).sum()) for m in ("zavg", "gls")})
     sub = hits[hits.tier.isin(["T1", "T2"])]
     mv["T1_T2_clusters"] = dict(_bridge_mv(sub, Bm, seed), n_hits={m: int((sub["map"] == m).sum()) for m in ("zavg", "gls")})
     out["multiverse"], out["multiverse_ci"] = mv, ci_rule
@@ -802,7 +940,8 @@ def bridge_stage(world: World) -> dict:
     hits.to_csv(d / "bridge_hits.tsv", sep="\t", index=False)
     (d / "bridge.json").write_text(json.dumps(out, indent=1, sort_keys=True, default=float) + "\n")
     confirm.commit_paths(proj, [d], f"Lockbox confirmations (single read): {BRIDGE_ID} estimate")
-    confirm.close_entry(proj, BRIDGE_ID)
+    confirm.close_entry(proj, BRIDGE_ID, outputs=[d / "bridge.json",
+                                                   proj.results_dir / "assoc" / BRIDGE_ID / "confirmation_crispr.json"])
     world.say(f"BRIDGE-L: diff {out['primary']['diff']:.3f} {out['primary']['ci95']}; closed")
     return out
 
@@ -836,8 +975,7 @@ def _rate(df: pd.DataFrame) -> dict:
     return dict(n_eligible=int(df.eligible.sum()), n_lockbox=int(len(lb)), n_confirmed=int(lb.confirmed_final.sum()),
                 rate=float(lb.confirmed_final.mean()) if len(lb) else None, n_rare=int(len(rr)),
                 n_rare_pass=int((rr.rare_route_pass == True).sum()),  # noqa: E712
-                n_not_evaluable_L=int((rr.not_evaluable_L.astype(str) == "True").sum()) if "not_evaluable_L" in rr
-                else 0)
+                n_rare_not_evaluable=int(rr.rare_route_pass.isna().sum()))
 
 
 def report(world: World) -> dict:
@@ -865,7 +1003,8 @@ def report(world: World) -> dict:
         if aid in H1_IDS:
             cols = ["event", "axis", "class_engine", "label_final", "headline_eligible", "eligible", "route",
                     "beta", "beta_L", "ci95_L_lo", "ci95_L_hi", "ci90_L_lo", "ci90_L_hi", "p_L", "p_L_perm",
-                    "n_context_L", "n_ref_L", "confirmed_final", "rare_route_pass", "status"]
+                    "n_context_L", "n_ref_L", "confirmed_final", "promotable", "rare_route_pass", "rare_route_note",
+                    "status"]
             t[[c for c in cols if c in t]].rename(columns={"beta": "beta_A"}).to_csv(
                 world.out() / f"{aid}_events.tsv", sep="\t", index=False, float_format="%.6g")
     for aid, f in ((BENCH_ID, "bench.json"), (BRIDGE_ID, "bridge.json")):
@@ -886,6 +1025,11 @@ def preflight(world: World) -> dict:
     gaps, entries = [], {}
     order = confirm_order(proj)
     led = _ledger_ids(proj)
+    for fn in (require_clean, check_A):
+        try:
+            fn(world)
+        except (RegistryError, assoc.FirewallError) as ex:
+            gaps.append(str(ex))
     for aid in order + [BENCH_ID, BRIDGE_ID]:
         e, blob = entry(world, aid)
         info = dict(direction=e["direction"], status=e["status"], blob=blob)
@@ -893,26 +1037,26 @@ def preflight(world: World) -> dict:
             info["lockbox_seed"] = lockbox_seed(e) if aid != BENCH_ID else None
         except GapError as ex:
             gaps.append(str(ex))
-        if aid in led:
+        if aid in led and not (world.resume and e["status"] == "open"):
             gaps.append(f"{aid}: a lockbox ledger line already exists")
-        if confirm.target_path(proj, aid).exists():
+        if confirm.target_path(proj, aid).exists() and not (world.resume and aid in led):
             gaps.append(f"{aid}: a target list already exists")
         if aid in order:
-            sp = build_spec(world, aid)
+            try:
+                sp = build_spec(world, aid)
+            except (RegistryError, RuntimeError, assoc.FreezeError, KeyError) as ex:
+                gaps.append(f"{aid}: {ex}")
+                entries[aid] = info
+                continue
             h = sp.hits
             info.update(n_hits=int(len(h)), n_eligible=int(h.eligible.sum()),
                         n_rare=int((h.eligible & ~h.lockbox_testable).sum()),
                         rare_contexts=sorted(set(h.context[h.eligible & ~h.lockbox_testable])))
-            ne = (e.get("lockbox") or {}).get("rare_route_not_evaluable")
             fit_needed = [u for u in sp.needs_fit
                           if not bool(h.lockbox_testable[h.unit == u].all()) and bool(h.eligible[h.unit == u].any())]
             if fit_needed:
                 try:
-                    r = _fit_ruling(world, aid)
-                    info["rare_route_fitted_parameters"] = r
-                    if r == NOT_EVALUABLE and ne is not None and sorted(ne) != sorted(fit_needed):
-                        gaps.append(f"{aid}: registered rare_route_not_evaluable {sorted(ne)} differs from the hits "
-                                    f"that need fitted parameters {sorted(fit_needed)}")
+                    info["rare_route_fitted_parameters"] = _fit_ruling(world, aid)
                 except GapError as ex:
                     gaps.append(f"{ex} [hits: {fit_needed[:8]}]")
                 info["needs_fitted_parameters"] = sorted(fit_needed)
@@ -928,6 +1072,18 @@ def preflight(world: World) -> dict:
     eb, _ = entry(world, BRIDGE_ID)
     if registry.set_hash(world.gls.coarse()) != eb["complex_set_hash"]:
         gaps.append("GLS map does not match the BRIDGE-L complex_set_hash")
+    try:                                              # MUST-2b / S3: late A-side failures surface here, before any read
+        b = bridge_a_side(world, eb)
+        entries[BRIDGE_ID]["coverage_matching"] = b["coverage"]
+    except Exception as ex:                           # noqa: BLE001 -- every failure is a gap
+        gaps.append(f"BRIDGE-L A side: {type(ex).__name__}: {ex}")
+    try:
+        ba = bench_a_side(world, entry(world, BENCH_ID)[0])
+        entries[BENCH_ID].update(n_pairs=int(len(ba["pairs"])), n_secondary_pairs=int(len(ba["sec_all"])),
+                                 n_eigengene_fits=len(ba["eig_fits"]),
+                                 tercile_counts=ba["tercile"].value_counts().to_dict())
+    except Exception as ex:                           # noqa: BLE001
+        gaps.append(f"BENCH A side: {type(ex).__name__}: {ex}")
     return dict(order=order + [BENCH_ID, BRIDGE_ID], entries=entries, gaps=gaps, rulings=rul)
 
 
@@ -937,9 +1093,13 @@ def run_all(world: World) -> dict:
         raise GapError("preflight: " + " | ".join(pf["gaps"]))
     t0 = time.time()
     for aid in confirm_order(world.proj):
+        if world.resume and confirm.is_closed(world.proj, aid):
+            continue
         run_entry(world, build_spec(world, aid))
-    b = bench_stage(world)
-    g = bridge_stage(world)
+    b = bench_stage(world) if not (world.resume and confirm.is_closed(world.proj, BENCH_ID)) else \
+        json.loads((world.out(BENCH_ID) / "bench.json").read_text())
+    g = bridge_stage(world) if not (world.resume and confirm.is_closed(world.proj, BRIDGE_ID)) else \
+        json.loads((world.out(BRIDGE_ID) / "bridge.json").read_text())
     rep = report(world)
     confirm.commit_paths(world.proj, [world.out() / "REPORT.json", world.out() / "rates.tsv"] +
                          sorted(world.out().glob("*_events.tsv")),
@@ -948,11 +1108,17 @@ def run_all(world: World) -> dict:
                 peak_rss_bytes=int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
 
 
-def real_world() -> World:
+def real_world(outcome_loader=None) -> World:
+    """The real inputs. outcome_loader: only for the dress rehearsal in a throw-away clone (scripts/verify/
+    lockbox_rehearsal.py); the real run uses the project loader."""
     R44 = _script("44_run_direction.py")
     R34 = _script("34_run_controls.py")
     env = R44.real_env()
     root = env.proj.root
+    if outcome_loader is not None:
+        env.proj = assoc.Project(root=root, outcome_loader=outcome_loader)
+    for rel in (R44.H1_EVENTS, R44.H1_SPLIT, GLS_MAP, FZX_MANIFEST, *CLUSTERS.values()):
+        registry.committed_blob(root, root / rel)                     # MUST-1
     ctx_full = pd.read_parquet(root / R44.CTX)
     loss = pd.read_parquet(root / R44.H1_LOSS)
     cov = covmod.source_table(ctx_full, ctx_full.index)
@@ -963,11 +1129,14 @@ def real_world() -> World:
     for k in ("H3a_lineage_atlas", "H3b_driver_family", "H2_submodule_divergence"):
         p = root / "results" / "part2" / "directions" / k / "calibration_D8_tests.tsv.gz"
         if p.exists():
+            registry.committed_blob(root, p)
             ct[k] = pd.read_csv(p, sep="\t")
+    man = json.loads((root / FZX_MANIFEST).read_text())["files"]
     return World(proj=env.proj, fmap=env.fmap, gls=gls, ctx=ctx_full, loss=loss, cov=cov, E_A=env.E_A,
                  annot=env.annot, homdel=env.homdel, ctrl_homdel=R34.homdel_shares(ctx_full, env.E_A.index),
                  events={k: R44.load_events(k, root) for k in H1_IDS}, inputs_gls=[R44.CTX, GLS_MAP, R44.HOMDEL],
-                 pair_scores=lambda: R44.load_pair_scores(root), coverage_tables=cl, calib_tests=ct)
+                 pair_scores=lambda: R44.load_pair_scores(root), coverage_tables=cl, calib_tests=ct,
+                 testable_sha=man[TESTABLE_REL])
 
 
 def main():
@@ -975,9 +1144,12 @@ def main():
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--dry-check", action="store_true")
     g.add_argument("--run", action="store_true")
+    ap.add_argument("--resume", action="store_true", help="with --run: finish entries already read, from their "
+                                                          "persisted matrices; the loader is never called for them")
     a = ap.parse_args()
     t0 = time.time()
     world = real_world()
+    world.resume = bool(a.resume)
     if a.dry_check:
         pf = preflight(world)
         pf["dry_runtime_s"] = round(time.time() - t0, 1)

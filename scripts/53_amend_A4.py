@@ -12,7 +12,7 @@ G3  H1S_silencing_GI: `lockbox.rare_route_fitted_parameters: not evaluable` -- t
     refit); listed in `lockbox.rare_route_not_evaluable`. H1S is exploratory.
 The other literal readings of GAPS.md section 2 are accepted as written (record: docs/registry/AMENDMENTS.md, A4).
 
-Usage: .venv/bin/python scripts/50_amend_A4.py [--check]
+Usage: .venv/bin/python scripts/53_amend_A4.py [--check]
 """
 from __future__ import annotations
 
@@ -122,13 +122,20 @@ def plan() -> dict:
     return out
 
 
+def applied_commit() -> str:
+    """The first commit whose BENCH entry carries the A4 record."""
+    log = git("log", "--reverse", "--format=%H", "-S", "  - id: A4", "--", "docs/registry/BENCH_complex_vs_gene.yaml")
+    return log.split()[0] if log.split() else "HEAD"
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
     a = ap.parse_args()
     p = plan()
-    if a.check:
-        bad = [k for k, (t, *_) in p.items() if (REG / f"{k}.yaml").read_text() != t]
+    if a.check:                            # against the commit that applied A4 (A5+ edit the same files later)
+        c = applied_commit()
+        bad = [k for k, (t, *_) in p.items() if git("show", f"{c}:docs/registry/{k}.yaml") != t]
         print("A4 applied" if not bad else f"differs: {bad}")
         raise SystemExit(1 if bad else 0)
     for k, (t, paths, _, _) in p.items():

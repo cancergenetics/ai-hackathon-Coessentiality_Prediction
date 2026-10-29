@@ -1,5 +1,5 @@
-"""Lockbox driver (scripts/48_lockbox_confirm.py), BENCH secondary / BRIDGE-L additions (src/part2/bench.py) and
-amendment A3 (scripts/49_amend_A3.py), tested before any real lockbox read.
+"""Lockbox driver (scripts/51_lockbox_confirm.py), BENCH secondary / BRIDGE-L additions (src/part2/bench.py) and
+amendment A3 (scripts/52_amend_A3.py), tested before any real lockbox read.
 
 Synthetic world (tests/part2_synth_lockbox.py): a planted lockbox confirmation / failure pattern, two rare contexts
 (LoF:KMT2D, fusion:EWSR1::FLI1|ERG with < 5 L models), synthetic DEMETER2, a GLS comparator map; A-side runs by the
@@ -153,14 +153,15 @@ def test_bench_and_bridge_outputs(runs):
     assert np.isfinite(b["primary"]["mean"]) and len(b["primary"]["ci95"]) == 2
     assert b["multiverse"]["within_line_rank"].startswith("NOT RUN")
     assert set(b["multiverse"]) >= {"eigengene", "gstar_largest_beta", "T1_T2_pairs"}
-    # A4 (G1): both secondary components NOT RUN; (G2) multiverse point estimates only, primary keeps its CIs
-    assert b["secondary"] == "NOT RUN (amendment A4 G1)" and b["distinct"] == "NOT RUN (amendment A4 G1)"
+    # A4/A5: the A-L random-set correlation NOT RUN, the distinct-complex count reported (A only); BENCH multiverse
+    # point estimates only (primary keeps its CIs); BRIDGE-L multiverse with bootstrap CIs (A5)
+    assert b["secondary"].startswith("NOT RUN") and b["distinct"]["n_distinct_gstar"] >= 1
     assert not (runs["world"].out("BENCH_complex_vs_gene") / "al_correlation_pairs.tsv").exists()
     for k in ("eigengene", "gstar_largest_beta", "T1_T2_pairs"):
         assert np.isfinite(b["multiverse"][k]["mean"]) and not any(x.startswith("ci95") for x in b["multiverse"][k])
     assert np.isfinite(g["primary"]["diff"]) and len(g["primary"]["ci95"]) == 2
     assert set(g["multiverse"]) >= {"unweighted", "matched_gene_coverage", "T1_T2_clusters"}
-    assert all("ci95" not in v for v in g["multiverse"].values())
+    assert all(len(v["ci95"]) == 2 for k, v in g["multiverse"].items() if "note" not in v)
     rep = out["report"]
     assert rep["H3b_driver_family"]["overall"]["n_rare"] == 2
     # the GLS discovery pass is two trial lines (one BB family each), committed before the BRIDGE-L read
@@ -170,10 +171,11 @@ def test_bench_and_bridge_outputs(runs):
     assert [r["tag"] for r in gl] == ["discovery_H3a", "discovery_H3b"]
 
 
-def test_rare_route_needing_fitted_parameters_is_not_evaluable(runs):
-    """A4 (G3): an eligible N-axis call on a non-testable event whose DEMETER2 rare route would need fitted baselines is
-    NOT EVALUABLE in L under `rare_route_fitted_parameters: not evaluable`; a P-axis call (a plain mean) still takes
-    the rare route. A side only (the synthetic H1 events are all lockbox-testable, so the routes are forced here)."""
+def test_rare_route_with_A_alignment_and_missing_demeter2(runs):
+    """A5 (G3): an eligible N-axis call on a non-testable event takes the rare route with the A CRISPR alignment
+    (baselines and N' from A) on DEMETER2, with LOSO and leave-one-model-out. N5: when DEMETER2 is not available the
+    route is NOT EVALUABLE, not 'failed'. A side only (synthetic H1 events are all lockbox-testable, so the routes are
+    forced here)."""
     D, w = runs["D"], runs["world"]
     sp = D.build_spec(w, "H1_within_complex_GI")
     h = sp.hits
@@ -182,11 +184,22 @@ def test_rare_route_needing_fitted_parameters_is_not_evaluable(runs):
     h.loc[[n_i, p_i], "lockbox_testable"] = False
     sp.needs_fit = [h.unit[n_i]]
     rr = D.rare_routes(w, sp)
-    assert rr[n_i] == {"not_evaluable_L": True}
-    assert "rare_route_pass" in rr[p_i] and rr[p_i]["demeter2_same_sign"] is not None
+    for i in (n_i, p_i):
+        assert rr[i]["demeter2_same_sign"] is not None and rr[i]["loso_folds"] > 0 and rr[i]["rare_route_note"] == ""
+        assert isinstance(rr[i]["rare_route_pass"], bool)
+    eid = h.unit[n_i].rsplit("|", 1)[0]
+    import part2.h1 as h1m
+    y = sp.score_D2(h.context[n_i], h.unit[n_i])            # = aligned score on DEMETER2 with the A parameters
+    ev = {e.id: e for e in w.events["H1_within_complex_GI"]}[eid]
+    lossA = w.loss.reindex(w.A).rename(columns=lambda c: c.split(":", 1)[1])
+    cA = h1m.component_scores(w.E_A, ev, lossA[ev.gene])
+    pd.testing.assert_series_equal(y, h1m.aligned_score(w.D2_A(), cA.Nprime, cA.b))
+    sp.score_D2 = lambda c, u: None                         # gene not in DEMETER2
+    rr = D.rare_routes(w, sp)
+    assert rr[n_i]["rare_route_pass"] is None and rr[n_i]["rare_route_note"] == D.D2_NA
     row = h.loc[n_i].copy()
-    row["not_evaluable_L"], row["rare_route_pass"], row["testable_L"], row["confirmed_final"] = True, None, False, False
-    assert D._status(row).startswith("NOT EVALUABLE in L")
+    row["rare_route_pass"], row["testable_L"], row["confirmed_final"] = None, False, False
+    assert D._status(row) == f"{D.RARE_LABEL}: rare-context route {D.D2_NA}"
 
 
 # ------------------------------------------------------------------------------------------------ unit pieces
@@ -221,7 +234,7 @@ def test_effect_rsd_and_al_correlation():
 def test_real_registry_bench_rulings():
     """Without A4 the BENCH secondary gap is refused; with A4 (secondary NOT RUN, multiverse point estimates) the
     guard passes."""
-    D = _script("48_lockbox_confirm.py")
+    D = _script("51_lockbox_confirm.py")
     eb = registry.load_yaml((REG / "BENCH_complex_vs_gene.yaml").read_text())
     ci = (eb.get("multiverse") or {}).get("ci")
     with pytest.raises(D.GapError):
@@ -238,7 +251,7 @@ def _show(commit, path):
 
 
 def test_amendment_A3_seeds_and_bench_not_run():
-    A3 = _script("49_amend_A3.py")
+    A3 = _script("52_amend_A3.py")
     entries = registry.load_all(REG)
     seeds = {k: e.get("seeds", {}).get("lockbox_permutation") for k, e in entries.items()}
     exp = dict(A3.LOCKBOX_SEEDS)
@@ -275,8 +288,12 @@ def test_amendment_A3_seeds_and_bench_not_run():
 
 # ------------------------------------------------------------------------------------------------ amendment A4
 def test_amendment_A4_rulings():
-    A4 = _script("50_amend_A4.py")
-    entries = registry.load_all(REG)
+    """A4 as applied (its own commit); A5 later amends the same fields (test_amendment_A5_rulings)."""
+    A4 = _script("53_amend_A4.py")
+    c = A4.applied_commit()
+    if _show(c, "docs/registry/BENCH_complex_vs_gene.yaml") is None:
+        pytest.skip("no history with the A4 commit")
+    entries = {p.stem: registry.load_yaml(_show(c, f"docs/registry/{p.name}")) for p in sorted(REG.glob("*.yaml"))}
     eb, eg, es = (entries[k] for k in ("BENCH_complex_vs_gene", "BRIDGE-L_confirmation_rate", "H1S_silencing_GI"))
     assert len(eb["estimand_secondary_not_run"]) == 2 and "estimand_secondary" not in eb
     assert eb["multiverse"]["ci"] == eg["multiverse"]["ci"] == "point estimate only"
@@ -296,8 +313,148 @@ def test_amendment_A4_rulings():
         old = registry.load_yaml(old_txt)
         assert registry.amendment_changes(old, entries[k]) == [], k
         assert registry.changed_top_paths(old, entries[k], rec[0]["changed_paths"]) == set(rec[0]["changed_paths"])
-        assert (REG / f"{k}.yaml").read_text() == A4.plan()[k][0], k
+        assert _show(A4.applied_commit(), f"docs/registry/{k}.yaml") == A4.plan()[k][0], k
     txt = (REG / "AMENDMENTS.md").read_text()
     assert "## A4" in txt and A4.AMENDS in txt and A4.TIMESTAMP in txt
     a4 = txt[txt.index("## A4"):]
     assert "before any lockbox read; no L values read" in a4 and "accepted literal readings" in a4.lower()
+
+
+# ------------------------------------------------------------------------------------------------ amendment A5
+def test_amendment_A5_rulings():
+    A5 = _script("54_amend_A5.py")
+    entries = registry.load_all(REG)
+    eb, eg, es = (entries[k] for k in ("BENCH_complex_vs_gene", "BRIDGE-L_confirmation_rate", "H1S_silencing_GI"))
+    assert len(eb["estimand_secondary_not_run"]) == 1 and "A-L correlation" in eb["estimand_secondary_not_run"][0]
+    assert "non-member" in eb["estimand_secondary_not_run_reason"] and "Erratum" in eb["estimand_secondary_not_run_reason"]
+    assert eb["multiverse"]["ci"] == "point estimate only" and eg["multiverse"]["ci"] == "bootstrap as primary"
+    assert es["lockbox"]["rare_route_fitted_parameters"] == "A CRISPR parameters"
+    assert "rare_route_not_evaluable" not in es["lockbox"]
+    assert sorted(es["lockbox"]["rare_route_fitted_hits"]) == sorted(A5.H1S_FITTED)
+    assert [k for k, e in entries.items() if any(a["id"] == "A5" for a in e.get("amendments", []))] == \
+        sorted(A5.REASONS)
+    for k in A5.REASONS:
+        rec = [a for a in entries[k]["amendments"] if a["id"] == "A5"]
+        assert len(rec) == 1 and rec[0]["amends_commit"] == A5.AMENDS and rec[0]["timestamp_utc"] == A5.TIMESTAMP
+        assert "before any lockbox read; no L values read" in rec[0]["reason"], k
+        assert registry.validate(entries[k], k) == [], k
+        old_txt = _show(A5.AMENDS, f"docs/registry/{k}.yaml")
+        if old_txt is None:
+            pytest.skip("no history with the amended commit")
+        old = registry.load_yaml(old_txt)
+        assert registry.amendment_changes(old, entries[k]) == [], k
+        assert registry.changed_top_paths(old, entries[k], rec[0]["changed_paths"]) == set(rec[0]["changed_paths"])
+        assert (REG / f"{k}.yaml").read_text() == A5.plan()[k][0], k
+    txt = (REG / "AMENDMENTS.md").read_text()
+    a5 = txt[txt.index("## A5"):]
+    assert A5.AMENDS in a5 and A5.TIMESTAMP in a5 and "before any lockbox read; no L values read" in a5
+    for s in ("Accepted readings", "heme_vs_breast", "PC17", "within lineage", "all of C's members", "N11"):
+        assert s in a5, s
+
+
+# ------------------------------------------------------------------------------------------------ MUST-1 / MUST-2
+def test_target_list_records_eligibility_and_route(runs):
+    w = runs["world"]
+    rec = json.loads(confirm.target_path(w.proj, "H1_within_complex_GI").read_text())
+    h = rec["hits"]
+    assert all({"eligible", "route", "label_final", "headline_eligible", "event", "axis"} <= set(x) for x in h)
+    t = _conf(w, "H1_within_complex_GI")
+    assert [(x["unit"], x["eligible"], x["route"]) for x in h] == list(zip(t.unit, t.eligible, t.route))
+    rec = json.loads(confirm.target_path(w.proj, "H3b_driver_family").read_text())
+    assert {x["route"] for x in rec["hits"] if x["context"] in S.RARE} == {"not lockbox-testable"}
+
+
+def test_e2_status_not_promotable(runs):
+    h = _conf(runs["world"], "H1_within_complex_GI")
+    e2 = h[h.label_final == S.E2_LABEL]
+    assert len(e2) and (e2.status == "confirmed (not promotable: E2 label or not headline-eligible)").all()
+    assert not e2.promotable.astype(str).eq("True").any()
+    ok = h[h.confirmed_final & (h.label_final == h.class_engine) & (h.headline_eligible.astype(str) == "True")]
+    assert len(ok) and ok.promotable.astype(str).eq("True").all() and (ok.status == "confirmed").all()
+
+
+def test_reads_are_persisted_with_committed_hash(runs):
+    w = runs["world"]
+    sc = [json.loads(l) for l in (w.proj.results_dir / "lockbox_reads.jsonl").read_text().splitlines()]
+    led = [json.loads(l) for l in w.proj.ledger.read_text().splitlines()]
+    assert [r["analysis_id"] for r in sc] == [r["analysis_id"] for r in led if r["n_genes"] > 0]
+    for r in sc:
+        assert assoc._sha_file(w.proj.root / r["file"]) == r["sha256"]
+    assert assoc._committed_text(w.proj, w.proj.results_dir / "lockbox_reads.jsonl").count("\n") == len(sc)
+
+
+def test_crash_after_read_resume_without_loader(runs):
+    """MUST-2a: a crash after a read leaves the persisted matrix with its committed hash; close_entry by hand is refused;
+    --resume finishes the entry from the persisted matrix without calling the loader; a tampered file is refused."""
+    D, base = runs["D"], runs["world"]
+    root = base.proj.root.parent / "resume"
+    shutil.copytree(runs["copy"].proj.root, root, symlinks=True)        # copy: one entry read and closed already
+    calls = []
+    inner = base.proj.outcome_loader
+    A = set(base.A)
+
+    def loader(ids, genes, source):
+        if not set(ids) <= A:
+            calls.append(source)
+        return inner(ids, genes, source)
+
+    w = dataclasses.replace(base, proj=assoc.Project(root=root, outcome_loader=loader), log=[], _d2=None)
+    aid = D.confirm_order(w.proj)[1]
+    sp = D.build_spec(w, aid)
+    good = sp.score_L
+
+    def boom(E_L, c, u):
+        raise RuntimeError("simulated crash after the read")
+    sp.score_L = boom
+    with pytest.raises(RuntimeError, match="simulated crash"):
+        D.run_entry(w, sp)
+    assert calls == ["crispr"]
+    with pytest.raises(registry.RegistryError, match="not committed"):
+        confirm.close_entry(w.proj, aid)                       # cannot be closed by hand
+    with pytest.raises(assoc.FirewallError):
+        D.run_entry(w, D.build_spec(w, aid))                   # no resume flag: refused
+    wr = dataclasses.replace(w, resume=True)
+    rec = [json.loads(l) for l in (root / "results/part2/lockbox_reads.jsonl").read_text().splitlines()][-1]
+    f = root / rec["file"]
+    raw = f.read_bytes()
+    f.write_bytes(raw + b"x")
+    with pytest.raises(assoc.FirewallError, match="SHA-256"):
+        D.run_entry(wr, D.build_spec(wr, aid))
+    f.write_bytes(raw)
+    out = D.run_entry(wr, D.build_spec(wr, aid))
+    assert calls == ["crispr"] and confirm.is_closed(w.proj, aid) and len(out)
+    ref = _conf(runs["world"], aid)                          # the uncrashed run on the same synthetic L
+    assert list(out.confirmed_final) == list(ref.confirmed_final)
+    assert json.loads((w.out(aid) / "summary.json").read_text())["resumed"] is True
+    assert good is not None
+
+
+def test_close_entry_refused_without_output(runs):
+    D, base = runs["D"], runs["world"]
+    root = base.proj.root.parent / "noclose"
+    shutil.copytree(runs["copy"].proj.root, root, symlinks=True)
+    w = dataclasses.replace(base, proj=assoc.Project(root=root, outcome_loader=base.proj.outcome_loader), log=[])
+    aid = D.confirm_order(w.proj)[1]
+    sp = D.build_spec(w, aid)
+    units = {u: sp.members_of(u) for u in sorted(set(sp.hits.unit))}
+    confirm.write_target_list(w.proj, aid, sorted({g for v in units.values() for g in v}),
+                              hits=sp.hits[["context", "unit", "beta", "alternative"]], units=units)
+    assoc.read_lockbox(aid, confirm.target_path(w.proj, aid), proj=w.proj)
+    with pytest.raises(registry.RegistryError, match="not committed"):
+        confirm.close_entry(w.proj, aid)
+
+
+def test_bench_delta_fixed_terciles():
+    rng = np.random.default_rng(3)
+    n = 120
+    idx = pd.Index([f"m{i}" for i in range(n)])
+    E = pd.DataFrame(rng.standard_normal((n, 8)), idx, [f"g{j}" for j in range(8)])
+    ctx = pd.DataFrame(dict(c=(rng.random(n) < 0.3).astype(float)), idx)
+    pairs = pd.DataFrame(dict(context=["c"] * 4, unit=["u0", "u1", "u2", "u3"], beta_A=[-1.0] * 4,
+                              gstar=["g4", "g5", "g6", "g7"], breadth=[0.1, 0.2, 0.3, 0.4]))
+    sL = lambda E_, c, u: E_.iloc[:, int(u[1]):int(u[1]) + 2].mean(axis=1)  # noqa: E731
+    fixed = ["high", "high", "low", "low"]
+    r = bench.bench_delta(pairs, sL, E, ctx, None, B=5, seed=1, tercile=fixed)
+    assert list(r["table"].tercile) == fixed and "mean_mid" not in r["summary"]
+    with pytest.raises(ValueError):
+        bench.bench_delta(pairs, sL, E, ctx, None, B=2, seed=1, tercile=fixed[:3])

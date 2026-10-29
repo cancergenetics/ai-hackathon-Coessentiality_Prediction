@@ -1,7 +1,7 @@
 # Lockbox confirmations: STOPPED at the dry check (no read)
 
 > **Update (same day, still no read).** The PI ruled on this note, and the missing machinery has been built:
-> - the driver `scripts/48_lockbox_confirm.py`;
+> - the driver `scripts/51_lockbox_confirm.py`;
 > - BENCH secondary and the BRIDGE-L GLS runner and multiverse;
 > - amendment A3, which fixes the lockbox seeds and declares BENCH `within_line_rank` not run.
 >

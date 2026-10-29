@@ -7,16 +7,26 @@
 > - The literal readings in section 2 are accepted.
 >
 > With these rulings the driver's preflight passes without reading any L value.
+>
+> **Superseded in part by amendment A5 and the review fixes.** A5 follows the pre-read code review
+> (`results/part2/verify/lockbox_code_review.md`, GO-WITH-NOTES):
+> - G1 reason erratum: the A–L random-set correlation stays NOT RUN, and the distinct-complex count is reported.
+> - G3: the A CRISPR alignment is used, together with LOSO and LOMO.
+> - The BRIDGE-L multiverse gets bootstrap CIs.
+> - Readings 8–11 are added.
+>
+> Review MUST-1/2 fixes: committed-input checks, eligibility and route in the target list, a hit cross-check at the
+> read, persisted reads with resume, a close guard, A-side checks before each target list, and a dress rehearsal.
 
 Date: 2026-10-29.
 
 **No lockbox read.** The ledger does not exist, no target list has been written, and no L value has been loaded.
 
 This note follows the PI rulings on `BLOCKED.md`. The machinery is in place:
-- `scripts/48_lockbox_confirm.py` (the driver);
+- `scripts/51_lockbox_confirm.py` (the driver);
 - `src/part2/bench.py`: BENCH secondary, the BRIDGE-L unweighted rate, and a `bridge_rate` bug fix;
 - the BRIDGE-L GLS-map discovery runner (`gls_discovery` in the driver);
-- amendment A3 (`scripts/49_amend_A3.py`).
+- amendment A3 (`scripts/52_amend_A3.py`).
 
 It is tested on synthetic data in `tests/test_part2_lockbox_driver.py`.
 

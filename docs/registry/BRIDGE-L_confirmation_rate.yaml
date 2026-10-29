@@ -452,7 +452,7 @@ lockbox:
 multiverse:
   other: [unweighted confirmation rate, matched gene coverage subset, T1/T2 clusters only]
   use: "reported, never selected"
-  ci: point estimate only
+  ci: bootstrap as primary
 seeds:
   permutation: 4500
   bootstrap: 5200
@@ -486,5 +486,13 @@ amendments:
       PI ruling A4 (G2) on results/part2/lockbox_confirm/GAPS.md, before any lockbox read; no L values read. The
       multiverse reports point estimates only (registry silent; descriptive); the primary estimand keeps its
       registered CI. Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [multiverse.ci]
+  - id: A5
+    timestamp_utc: 2026-10-29T03:25:03Z
+    amends_commit: b64109790478261569cdbc74d2eda6c31154cd4c
+    reason: >
+      PI ruling A5 on the pre-read code review, before any lockbox read; no L values read. The BRIDGE-L multiverse
+      reports bootstrap CIs (the primary resampling, B 2000, seed 5200; under 1 min), reversing A4 G2 for this entry.
+      Record: docs/registry/AMENDMENTS.md.
     changed_paths: [multiverse.ci]
 status: open
