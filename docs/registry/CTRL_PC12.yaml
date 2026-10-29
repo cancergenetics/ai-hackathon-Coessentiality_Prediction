@@ -94,4 +94,4 @@ amendments:
       (context, unit) order). H3a 6100, H3b 6200, H1 6300, H1S 6400, H2 6500, BRIDGE-L 6600, CTRL 6700 + registry
       index; checked against every registered or documented seed, no collision. Record: docs/registry/AMENDMENTS.md.
     changed_paths: [seeds.lockbox_permutation]
-status: open
+status: closed
