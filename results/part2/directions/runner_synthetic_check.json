@@ -1,0 +1,133 @@
+{
+ "H3_runtime_s": 13.8,
+ "H3a": {
+  "metrics": {
+   "n_discoveries": 15,
+   "true_pos": 15,
+   "false_pos": 0,
+   "other": 0,
+   "n_truth": 47,
+   "n_planted": 7,
+   "power": 1.0,
+   "fdp": 0.0,
+   "fdp_bb": 0.0,
+   "n_families_selected": 8
+  },
+  "calibration": {
+   "n_pseudo": 100,
+   "n_tests": 9000,
+   "frac_p_lt_005": 0.04733333333333333,
+   "response_fires": false,
+   "bb_rejections": 0
+  },
+  "m": 720,
+  "screened": 17
+ },
+ "H3b": {
+  "metrics": {
+   "n_discoveries": 5,
+   "true_pos": 5,
+   "false_pos": 0,
+   "other": 0,
+   "n_truth": 5,
+   "n_planted": 5,
+   "power": 1.0,
+   "fdp": 0.0,
+   "fdp_bb": 0.0,
+   "n_families_selected": 5
+  },
+  "calibration": {
+   "n_pseudo": 100,
+   "n_tests": 9000,
+   "frac_p_lt_005": 0.04488888888888889,
+   "response_fires": false,
+   "bb_rejections": 0
+  },
+  "m": 540,
+  "screened": 5
+ },
+ "H3a_lineage_atlas_equals_reference": true,
+ "H3b_driver_family_equals_reference": true,
+ "H2": {
+  "metrics": {
+   "n_discoveries": 6,
+   "true_pos": 4,
+   "false_pos": 0,
+   "other": 0,
+   "n_truth": 8,
+   "n_planted": 2,
+   "power": 1.0,
+   "fdp": 0.0,
+   "fdp_bb": 0.0,
+   "n_families_selected": 4
+  },
+  "n_eligible_families": 4,
+  "m": 8,
+  "runtime_s": 2.0
+ },
+ "H1": {
+  "accuracy": 1.0,
+  "n_axes": 7,
+  "m": 7,
+  "class_counts": {
+   "complex_wide": {
+    "NEUTRAL": 3,
+    "COLLAPSE": 1,
+    "RESIDUAL SENSITISATION": 1
+   },
+   "paralog": {
+    "not evaluable": 3,
+    "PARALOG COMPENSATION": 1,
+    "NEUTRAL": 1
+   }
+  },
+  "runtime_s": 10.8
+ },
+ "sensitivity": [
+  {
+   "event": "C0010|ARID1A",
+   "covariate_set": "primary (registered)",
+   "n_complete": 665,
+   "class_paralog": "PARALOG COMPENSATION",
+   "beta_P": -0.8262282285717052
+  },
+  {
+   "event": "C0010|ARID1A",
+   "covariate_set": "CN-covariate sensitivity",
+   "n_complete": 584,
+   "class_paralog": "PARALOG COMPENSATION",
+   "beta_P": -0.8119399214965342
+  }
+ ],
+ "sensitivity_primary_reproduces_classes": true,
+ "second_run_refused": {
+  "H3a_lineage_atlas": true,
+  "H2_submodule_divergence": true,
+  "H1_within_complex_GI": true
+ },
+ "files": [
+  "H1_within_complex_GI/classes.tsv",
+  "H1_within_complex_GI/discoveries.tsv",
+  "H1_within_complex_GI/sensitivity_ARID1A_CN.tsv",
+  "H1_within_complex_GI/summary.json",
+  "H1_within_complex_GI/tests.tsv.gz",
+  "H2_submodule_divergence/discoveries.tsv",
+  "H2_submodule_divergence/summary.json",
+  "H2_submodule_divergence/tests.tsv.gz",
+  "H3a_lineage_atlas/calibration.json",
+  "H3a_lineage_atlas/discoveries.tsv",
+  "H3a_lineage_atlas/summary.json",
+  "H3a_lineage_atlas/tests.tsv.gz",
+  "H3b_driver_family/calibration.json",
+  "H3b_driver_family/discoveries.tsv",
+  "H3b_driver_family/summary.json",
+  "H3b_driver_family/tests.tsv.gz"
+ ],
+ "trial_lines": [
+  "H3a_lineage_atlas",
+  "H3b_driver_family",
+  "H2_submodule_divergence",
+  "H1_within_complex_GI"
+ ],
+ "wall_s": 40.8
+}
