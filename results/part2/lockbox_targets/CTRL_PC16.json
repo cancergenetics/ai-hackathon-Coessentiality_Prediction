@@ -1,0 +1,36 @@
+{
+ "analysis_id": "CTRL_PC16",
+ "contexts": [
+  "KMT2A_r_vs_nonNPM1c"
+ ],
+ "genes": [
+  "MEN1 (4221)",
+  "MLLT1 (4298)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.7448432970503975,
+   "context": "KMT2A_r_vs_nonNPM1c",
+   "eligible": true,
+   "route": "not lockbox-testable",
+   "unit": "MEN1 (4221)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.2566602493357216,
+   "context": "KMT2A_r_vs_nonNPM1c",
+   "eligible": true,
+   "route": "not lockbox-testable",
+   "unit": "MLLT1 (4298)"
+  }
+ ],
+ "units": {
+  "MEN1 (4221)": [
+   "MEN1 (4221)"
+  ],
+  "MLLT1 (4298)": [
+   "MLLT1 (4298)"
+  ]
+ }
+}
