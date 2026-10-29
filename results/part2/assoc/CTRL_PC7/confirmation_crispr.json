@@ -1,0 +1,31 @@
+{
+ "analysis_id": "CTRL_PC7",
+ "hits": [
+  {
+   "beta_A": -0.5097813136,
+   "beta_L": -0.4659451635,
+   "ci95_L": [
+    -0.9672038365,
+    0.0353135094
+   ],
+   "confirmed": true,
+   "context": "LoF:SMARCA4",
+   "df_L": 14.0971142308,
+   "n_L": 301,
+   "n_context_L": 10,
+   "n_ref_L": 291,
+   "p_L": 0.00369963,
+   "p_L_hc3": 0.0330294763,
+   "p_L_perm": 0.00369963,
+   "same_sign": true,
+   "se_L": 0.2338613219,
+   "testable": true,
+   "unit": "SMARCA2 (6595)"
+  }
+ ],
+ "n_confirmed": 1,
+ "n_hits": 1,
+ "n_testable": 1,
+ "n_tested": 1,
+ "source": "crispr"
+}
