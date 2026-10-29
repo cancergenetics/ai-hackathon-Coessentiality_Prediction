@@ -1,0 +1,51 @@
+{
+ "analysis_id": "H2_submodule_divergence",
+ "registry_blob": "484da0f11375db0cd17f7230782be3c082a75bd4",
+ "status": "open",
+ "pending": null,
+ "placeholder_strings": [],
+ "A_models": 1007,
+ "A_hash": "bd28f78d612bef9f",
+ "seeds": {
+  "permutation": 4300,
+  "random_splits": 4800
+ },
+ "q": {
+  "method": "stagewise_bb",
+  "parent_directions": [
+   "H3a",
+   "H3b"
+  ],
+  "q": 0.05
+ },
+ "frozen_inputs": {
+  "data_cache/part2/contexts/context_table.parquet": "ba73a37195a2822db83d4ef7736dd94f6844f8637603e6ab7fe2216c99c3cbbd",
+  "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a",
+  "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2"
+ },
+ "zavg_A_block_sha256": null,
+ "missing_context_columns": [],
+ "n_eligible_families": 210,
+ "m_evaluable": 452,
+ "n_tests": 452,
+ "registered_m": "set by the committed H3a and H3b discovery runs (formula fixed here)",
+ "n_families": 23,
+ "n_screened_synthetic": 1,
+ "n_discovery_synthetic": 0,
+ "trial_line_preview": {
+  "models_hash": "bd28f78d612bef9f",
+  "n_models": 1007,
+  "n_units": 109,
+  "n_tests": 452,
+  "n_evaluable": 452,
+  "inputs": {
+   "data_cache/part2/contexts/context_table.parquet": "ba73a37195a2822db83d4ef7736dd94f6844f8637603e6ab7fe2216c99c3cbbd",
+   "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a",
+   "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2"
+  }
+ },
+ "perm_s_per_hit_within_lineage": 0.88,
+ "perm_s_per_hit_unrestricted": 0.23,
+ "dry_runtime_s": 20.0,
+ "peak_rss_bytes": 2796912640
+}

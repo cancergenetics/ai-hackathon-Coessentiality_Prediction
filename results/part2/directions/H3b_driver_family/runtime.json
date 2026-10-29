@@ -1,0 +1,19 @@
+{
+ "command": "PART1_DIR=... PYTHONHASHSEED=0 /usr/bin/time -l .venv/bin/python scripts/44_run_direction.py --id H3b_driver_family",
+ "code_commit": "beda09f862300249cd2961ccabf54413e5c9009f",
+ "intent_commit": "388924a",
+ "pid": 93880,
+ "start_utc": "2026-10-29T00:30:03Z",
+ "end_utc": "2026-10-29T00:33:22Z",
+ "exit_status": 0,
+ "wall_s": 199.45,
+ "user_s": 193.20,
+ "sys_s": 5.45,
+ "peak_rss_bytes": 3094003712,
+ "peak_memory_footprint_bytes": 2203487472,
+ "n_runs": 1,
+ "relook": false,
+ "n_trial_lines": 1,
+ "n_perm": 10000,
+ "note": "Single look. No re-run. Waited by PID (kill -0)."
+}

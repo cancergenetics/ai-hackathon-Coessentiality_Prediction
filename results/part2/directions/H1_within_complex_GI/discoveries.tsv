@@ -1,0 +1,6 @@
+context	unit	n	n_context	beta	se	df	ci95_lo	ci95_hi	t	p	p_perm	p_final	q_final	tier	locus	covariates_dropped
+H1loss:ARID1A	Z0109|ARID1A|P	895	37	-0.374329	0.0681458	45.6405	-0.511528	-0.237129	-5.49306	1.68846e-06	1.86573e-07	1.86573e-07	2.47334e-06	T1	False	lineage_FE:Fibroblast;lineage_FE:Other;lineage_FE:Vulva/Vagina
+H1loss:EP300	Z0186|EP300|P	916	12	-1.09326	0.169273	12.0753	-1.46182	-0.724698	-6.45855	3.0303e-05	2.06112e-07	2.06112e-07	2.47334e-06	T3-neg	False	lineage_FE:Fibroblast;lineage_FE:Other;lineage_FE:Vulva/Vagina
+H1loss:TP53	Z0158|TP53|N	923	605	0.056413	0.0114345	357.509	0.0339257	0.0789003	4.93359	1.23957e-06	3.91875e-06	3.91875e-06	3.135e-05	T3-neg	False	lineage_FE:Fibroblast;lineage_FE:Other;lineage_FE:Vulva/Vagina
+H1loss:FOCAD	Z0286|FOCAD|N	731	30	0.139649	0.0268603	34.9911	0.0851191	0.194179	5.19908	8.78955e-06	3.82431e-05	3.82431e-05	0.000229458	T2	False	lineage_FE:Fibroblast;lineage_FE:Other;lineage_FE:Vulva/Vagina;library:LibraryTKOv3
+H1loss:PTEN	Z0130|PTEN|N	933	94	-0.0567466	0.0214304	121.547	-0.0991717	-0.0143214	-2.64795	0.00917208	0.00909909	0.00909909	0.0436756	T1	False	lineage_FE:Fibroblast;lineage_FE:Other;lineage_FE:Vulva/Vagina

@@ -1,0 +1,53 @@
+{
+ "analysis_id": "H1_within_complex_GI",
+ "registry_blob": "ebfbaad407c552982c46586a3277602c76539803",
+ "status": "open",
+ "pending": null,
+ "placeholder_strings": [],
+ "A_models": 1007,
+ "A_hash": "bd28f78d612bef9f",
+ "seeds": {
+  "permutation": 4200,
+  "matched_null": 7000
+ },
+ "q": {
+  "method": "bh",
+  "q": 0.05
+ },
+ "frozen_inputs": {
+  "data_cache/part2/contexts/context_table.parquet": "ba73a37195a2822db83d4ef7736dd94f6844f8637603e6ab7fe2216c99c3cbbd",
+  "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a",
+  "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2",
+  "data_cache/part2/fzx/h1_loss_table.parquet": "89f6c359882d4b56e0d31ace3e2bfc4af0c8c54299372f35823a3b6b1c63fafc",
+  "results/part2/fzx/h1_events.tsv": "e0297989f795a54fc7a15e82d2dd1494a8514a913ec8476cc10acbf23aab5f58",
+  "results/part2/fzx/h1_event_split_A2.tsv": "941cc32177a703e2e5683a72ae336bdb9e78fd0e153f9fe776f1974c644f9dca"
+ },
+ "zavg_A_block_sha256": "6cac0e53a9c07d5720e3d3015c02bbb2ada9d23424de08119ea6e80051ed4962",
+ "missing_context_columns": [],
+ "n_events": 24,
+ "m_evaluable": 26,
+ "n_tests": 28,
+ "registered_m": 28,
+ "n_families": 23,
+ "n_screened_synthetic": 0,
+ "n_discovery_synthetic": 0,
+ "trial_line_preview": {
+  "models_hash": "bd28f78d612bef9f",
+  "n_models": 1007,
+  "n_units": 28,
+  "n_tests": 28,
+  "n_evaluable": 26,
+  "inputs": {
+   "data_cache/part2/contexts/context_table.parquet": "ba73a37195a2822db83d4ef7736dd94f6844f8637603e6ab7fe2216c99c3cbbd",
+   "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a",
+   "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2",
+   "data_cache/part2/fzx/h1_loss_table.parquet": "89f6c359882d4b56e0d31ace3e2bfc4af0c8c54299372f35823a3b6b1c63fafc",
+   "results/part2/fzx/h1_events.tsv": "e0297989f795a54fc7a15e82d2dd1494a8514a913ec8476cc10acbf23aab5f58",
+   "results/part2/fzx/h1_event_split_A2.tsv": "941cc32177a703e2e5683a72ae336bdb9e78fd0e153f9fe776f1974c644f9dca"
+  }
+ },
+ "perm_s_per_hit_within_lineage": 0.87,
+ "perm_s_per_hit_unrestricted": 0.24,
+ "dry_runtime_s": 20.1,
+ "peak_rss_bytes": 3679076352
+}

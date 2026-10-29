@@ -1,0 +1,238 @@
+{
+ "analysis_id": "H3a_lineage_atlas",
+ "direction": "H3a",
+ "registry_blob": "4caaa1f5d0b5dc229f33b7e5c620b32619d35ee2",
+ "head": "228077ad0f1905b32774da2cb66ce8242eaafbd5",
+ "standing": "confirmatory",
+ "headline": true,
+ "kill_rule_verdict": "passes",
+ "fdr": {
+  "method": "benjamini_bogomolov",
+  "families": "contexts",
+  "q": 0.05
+ },
+ "m_evaluable": 8441,
+ "n_tests": 8441,
+ "n_not_evaluable": 0,
+ "n_families": 23,
+ "registered_m": 8441,
+ "n_p_lt_005": 2370,
+ "n_reject_analytic": 1248,
+ "n_screened_perm": 1666,
+ "n_discovery": 1145,
+ "n_discovery_nonlocus": 942,
+ "discoveries_per_context": {
+  "lineage:Lymphoid": 197,
+  "lineage:Head and Neck": 126,
+  "lineage:CNS/Brain": 107,
+  "melanoma": 91,
+  "lineage:Peripheral Nervous System": 86,
+  "lineage:Myeloid": 81,
+  "lineage:Bone": 69,
+  "lineage:Bowel": 62,
+  "lineage:Skin": 57,
+  "lineage:Breast": 55,
+  "lineage:Lung": 48,
+  "lineage:Pancreas": 48,
+  "lineage:Kidney": 38,
+  "lineage:Esophagus/Stomach": 30,
+  "lineage:Uterus": 11,
+  "lineage:Pleura": 9,
+  "lineage:Soft Tissue": 9,
+  "lineage:Ovary/Fallopian Tube": 8,
+  "lineage:Bladder/Urinary Tract": 6,
+  "lineage:Cervix": 4,
+  "lineage:Liver": 3
+ },
+ "trial_line": {
+  "analysis_id": "H3a_lineage_atlas",
+  "direction": "H3a",
+  "fdr_method": "benjamini_bogomolov",
+  "head": "228077ad0f1905b32774da2cb66ce8242eaafbd5",
+  "inputs": {
+   "data_cache/part2/contexts/context_table.parquet": "ba73a37195a2822db83d4ef7736dd94f6844f8637603e6ab7fe2216c99c3cbbd",
+   "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2",
+   "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a"
+  },
+  "models_hash": "bd28f78d612bef9f",
+  "n_contexts": 23,
+  "n_discovery": 1145,
+  "n_evaluable": 8441,
+  "n_families_selected": 22,
+  "n_families_selected_perm": 21,
+  "n_models": 1007,
+  "n_p_lt_005": 2370,
+  "n_perm": 10000,
+  "n_perm_retested": 1666,
+  "n_reject": 1248,
+  "n_tests": 8441,
+  "n_units": 367,
+  "registry_blob": "4caaa1f5d0b5dc229f33b7e5c620b32619d35ee2",
+  "runtime_s": 435.94,
+  "tag": "discovery",
+  "time": "2026-10-29T00:28:09+0000"
+ },
+ "runtime_s": 438.7,
+ "peak_rss_bytes": 3040428032,
+ "n_perm": 10000,
+ "seeds": {
+  "permutation": 4000,
+  "pseudo_contexts": 4600
+ },
+ "calibration": {
+  "n_pseudo": 100,
+  "n_tests": 36700,
+  "frac_p_lt_005": 0.04888283378746594,
+  "expected": 0.05,
+  "frac_p_lt_001": 0.010572207084468665,
+  "threshold": 0.075,
+  "response_fires": false,
+  "bb_rejections": 0,
+  "bb_families_selected": 0,
+  "not_run": [
+   "random gene sets matched for size, essentiality and coherence",
+   "dispersed never-expressed sets",
+   "segment-matched null for CN contexts (H3b)"
+  ],
+  "not_run_reason": "no engine implementation; reported-only negative controls that do not enter discovery (the pre-declared response depends on the pseudo-context fraction only)"
+ },
+ "covariates_dropped_by_rule": {},
+ "removals": {
+  "lineage:Biliary Tract": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Bladder/Urinary Tract": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Bone": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Bowel": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Breast": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:CNS/Brain": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Cervix": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Esophagus/Stomach": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Head and Neck": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Kidney": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Liver": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Lung": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Lymphoid": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Myeloid": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Ovary/Fallopian Tube": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Pancreas": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Peripheral Nervous System": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Pleura": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Prostate": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Skin": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Soft Tissue": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "lineage:Uterus": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  },
+  "melanoma": {
+   "n_units_with_removal": 0,
+   "n_units_not_evaluable": 0
+  }
+ },
+ "covariates_dropped_by_design": {
+  "lineage:Biliary Tract": [],
+  "lineage:Bladder/Urinary Tract": [],
+  "lineage:Bone": [],
+  "lineage:Bowel": [],
+  "lineage:Breast": [],
+  "lineage:CNS/Brain": [],
+  "lineage:Cervix": [],
+  "lineage:Esophagus/Stomach": [],
+  "lineage:Head and Neck": [],
+  "lineage:Kidney": [],
+  "lineage:Liver": [],
+  "lineage:Lung": [],
+  "lineage:Lymphoid": [],
+  "lineage:Myeloid": [],
+  "lineage:Ovary/Fallopian Tube": [],
+  "lineage:Pancreas": [],
+  "lineage:Peripheral Nervous System": [],
+  "lineage:Pleura": [],
+  "lineage:Prostate": [],
+  "lineage:Skin": [],
+  "lineage:Soft Tissue": [],
+  "lineage:Uterus": [],
+  "melanoma": []
+ }
+}
+wall 438.9 s; peak RSS 3.04 GB
+      450.67 real       413.01 user        36.48 sys
+          3040428032  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              307718  page reclaims
+                 233  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  40  voluntary context switches
+               83053  involuntary context switches
+       5116578099159  instructions retired
+       1517560725784  cycles elapsed
+          2209746088  peak memory footprint

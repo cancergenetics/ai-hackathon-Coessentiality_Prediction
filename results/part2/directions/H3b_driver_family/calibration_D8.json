@@ -1,0 +1,386 @@
+{
+ "analysis_id": "H3b_driver_family",
+ "label": "registered calibration run after the discovery run (D8; PI ruling R4)",
+ "matched_random_sets": {
+  "R_per_unit": 10,
+  "bb": {
+   "families_selected": 12,
+   "rejections": 1278
+  },
+  "discoveries_exceeding_all_matched_sets": {
+   "n": 103,
+   "n_without_sets": 7,
+   "of": 161
+  },
+  "n_sets": 3510,
+  "per_context": {
+   "9p21_loss": {
+    "random": {
+     "frac_p_lt_001": 0.03133903133903134,
+     "frac_p_lt_005": 0.08376068376068375,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.04087193460490463,
+     "frac_p_lt_005": 0.10626702997275204,
+     "n_tests": 367
+    }
+   },
+   "LoF:ARID1A": {
+    "random": {
+     "frac_p_lt_001": 0.021367521367521368,
+     "frac_p_lt_005": 0.07891737891737892,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.01634877384196185,
+     "frac_p_lt_005": 0.07356948228882834,
+     "n_tests": 367
+    }
+   },
+   "LoF:KMT2D": {
+    "random": {
+     "frac_p_lt_001": 0.007692307692307693,
+     "frac_p_lt_005": 0.05128205128205128,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.008174386920980926,
+     "frac_p_lt_005": 0.0653950953678474,
+     "n_tests": 367
+    }
+   },
+   "LoF:PTEN": {
+    "random": {
+     "frac_p_lt_001": 0.04586894586894587,
+     "frac_p_lt_005": 0.14472934472934473,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.03814713896457766,
+     "frac_p_lt_005": 0.1307901907356948,
+     "n_tests": 367
+    }
+   },
+   "LoF:RB1": {
+    "random": {
+     "frac_p_lt_001": 0.0584045584045584,
+     "frac_p_lt_005": 0.14045584045584045,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.051771117166212535,
+     "frac_p_lt_005": 0.1335149863760218,
+     "n_tests": 367
+    }
+   },
+   "LoF:SMARCA4": {
+    "random": {
+     "frac_p_lt_001": 0.05868945868945869,
+     "frac_p_lt_005": 0.14358974358974358,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.04904632152588556,
+     "frac_p_lt_005": 0.13896457765667575,
+     "n_tests": 367
+    }
+   },
+   "LoF:STAG2": {
+    "random": {
+     "frac_p_lt_001": 0.008547008547008548,
+     "frac_p_lt_005": 0.04700854700854701,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.010899182561307902,
+     "frac_p_lt_005": 0.05449591280653951,
+     "n_tests": 367
+    }
+   },
+   "LoY": {
+    "random": {
+     "frac_p_lt_001": 0.007407407407407408,
+     "frac_p_lt_005": 0.034757834757834755,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.005449591280653951,
+     "frac_p_lt_005": 0.043596730245231606,
+     "n_tests": 367
+    }
+   },
+   "MSI_H": {
+    "random": {
+     "frac_p_lt_001": 0.06695156695156695,
+     "frac_p_lt_005": 0.14017094017094017,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.06267029972752043,
+     "frac_p_lt_005": 0.16893732970027248,
+     "n_tests": 367
+    }
+   },
+   "MYCN_amp": {
+    "random": {
+     "frac_p_lt_001": 0.017378917378917377,
+     "frac_p_lt_005": 0.09145299145299145,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.01634877384196185,
+     "frac_p_lt_005": 0.10354223433242507,
+     "n_tests": 367
+    }
+   },
+   "MYC_amp": {
+    "random": {
+     "frac_p_lt_001": 0.023931623931623933,
+     "frac_p_lt_005": 0.08603988603988603,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.02452316076294278,
+     "frac_p_lt_005": 0.07901907356948229,
+     "n_tests": 367
+    }
+   },
+   "NRF2_active": {
+    "random": {
+     "frac_p_lt_001": 0.023361823361823363,
+     "frac_p_lt_005": 0.08148148148148149,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.013623978201634877,
+     "frac_p_lt_005": 0.08174386920980926,
+     "n_tests": 367
+    }
+   },
+   "TP53_altered": {
+    "random": {
+     "frac_p_lt_001": 0.2512820512820513,
+     "frac_p_lt_005": 0.39287749287749285,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.25885558583106266,
+     "frac_p_lt_005": 0.3814713896457766,
+     "n_tests": 367
+    }
+   },
+   "WGD": {
+    "random": {
+     "frac_p_lt_001": 0.08774928774928775,
+     "frac_p_lt_005": 0.1883190883190883,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.09264305177111716,
+     "frac_p_lt_005": 0.1880108991825613,
+     "n_tests": 367
+    }
+   },
+   "fusion:EWSR1::FLI1|ERG": {
+    "random": {
+     "frac_p_lt_001": 0.08717948717948718,
+     "frac_p_lt_005": 0.17321937321937322,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.07901907356948229,
+     "frac_p_lt_005": 0.17983651226158037,
+     "n_tests": 367
+    }
+   },
+   "hotspot:BRAF": {
+    "random": {
+     "frac_p_lt_001": 0.04643874643874644,
+     "frac_p_lt_005": 0.11196581196581197,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.051771117166212535,
+     "frac_p_lt_005": 0.11716621253405994,
+     "n_tests": 367
+    }
+   },
+   "hotspot:KRAS": {
+    "random": {
+     "frac_p_lt_001": 0.05071225071225071,
+     "frac_p_lt_005": 0.1396011396011396,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.04904632152588556,
+     "frac_p_lt_005": 0.14168937329700274,
+     "n_tests": 367
+    }
+   },
+   "hotspot:NRAS": {
+    "random": {
+     "frac_p_lt_001": 0.03418803418803419,
+     "frac_p_lt_005": 0.11025641025641025,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.03814713896457766,
+     "frac_p_lt_005": 0.10626702997275204,
+     "n_tests": 367
+    }
+   },
+   "hotspot:PIK3CA": {
+    "random": {
+     "frac_p_lt_001": 0.005413105413105413,
+     "frac_p_lt_005": 0.03247863247863248,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.013623978201634877,
+     "frac_p_lt_005": 0.043596730245231606,
+     "n_tests": 367
+    }
+   },
+   "sex_female": {
+    "random": {
+     "frac_p_lt_001": 0.008547008547008548,
+     "frac_p_lt_005": 0.04757834757834758,
+     "n_tests": 3510
+    },
+    "real": {
+     "frac_p_lt_001": 0.010899182561307902,
+     "frac_p_lt_005": 0.05994550408719346,
+     "n_tests": 367
+    }
+   }
+  },
+  "pooled": {
+   "frac_p_lt_001": 0.047122507122507123,
+   "frac_p_lt_005": 0.115997150997151,
+   "n_tests": 70200
+  },
+  "real_pooled": {
+   "frac_p_lt_001": 0.04659400544959128,
+   "frac_p_lt_005": 0.11989100817438691,
+   "n_tests": 7340
+  },
+  "seed": "default_rng([4700, unit index])",
+  "status": {
+   "ok": 338,
+   "tolerances doubled": 13,
+   "unavailable": 16
+  }
+ },
+ "never_expressed_sets": {
+  "bb": {
+   "families_selected": 1,
+   "rejections": 1
+  },
+  "expected_frac": 0.05,
+  "expr_file_sha256": "fbdc49015fd9b97ba0db0c23914b85f8e4b8e809db29ab44ed660620c3e34f35",
+  "n_sets": 100,
+  "pool": 558,
+  "pooled": {
+   "frac_p_lt_001": 0.012696800406297613,
+   "frac_p_lt_005": 0.062468257998984256,
+   "n_tests": 1969
+  },
+  "seed": "default_rng([4700, 1000000])",
+  "sizes_min_max": [
+   3,
+   27
+  ]
+ },
+ "peak_rss_bytes": 4576903168,
+ "registry_blob": "9cf55f21099f108ade10211b3d54ec4e8d0fbaac",
+ "registry_calibration": {
+  "negative_controls": "Pseudo-contexts: 100 per direction, each matched to a real context in size and lineage composition (lineage-stratified, PatientID-blocked random relabelling of A models; for lineage contexts, random A model sets of the same size), run through the same machinery; random gene sets matched for size, essentiality and coherence, and dispersed never-expressed sets, scored per context. Reported: fraction of pseudo-context tests with p < 0.05 (expected 0.05) and BB rejections (expected ~0). Pre-declared response: if that fraction exceeds 0.075, every real test with p < 0.01 (not only q < 0.1) is re-tested by permutation and BB is re-run. CN contexts additionally get a segment-matched null: pseudo-contexts from hom-del / amp segments of other loci (results/part2/contexts/segments_ge8.tsv) with n_A within +/-25% (round-2 biology item 9).\n",
+  "seed": 4700
+ },
+ "runtime_s": 86.3,
+ "segment_null": {
+  "bb": {
+   "families_selected": 3,
+   "rejections": 3
+  },
+  "per_context": {
+   "9p21_loss": {
+    "event": "homdel",
+    "frac_p_lt_001": 0.00909090909090909,
+    "frac_p_lt_005": 0.04454545454545455,
+    "n_segments": 3,
+    "n_target": 148,
+    "n_tests": 1100,
+    "segments": [
+     "5q35.3 homdel BTNL3",
+     "19q13.41 homdel SIGLEC14",
+     "Yp11.2 homdel RPS4Y1"
+    ]
+   },
+   "MYCN_amp": {
+    "event": "highamp",
+    "frac_p_lt_001": 0.013556559745166308,
+    "frac_p_lt_005": 0.06148603600266687,
+    "n_segments": 37,
+    "n_target": 28,
+    "n_tests": 13499,
+    "segments": [
+     "5q31.3 highamp PCDHB7",
+     "6p21.31 highamp CLPS",
+     "7p11.2 highamp EGFR",
+     "8q24.13 highamp TATDN1-MTSS1",
+     "8q24.13 highamp ZNF572",
+     "8q24.13 highamp SQLE-NSMCE2",
+     "8q24.13 highamp TRIB1",
+     "8q24.21 highamp LRATD2",
+     "11q13.3 highamp TESMIN",
+     "11q13.3 highamp CPT1A",
+     "11q13.3 highamp MRPL21",
+     "11q13.3 highamp IGHMBP2",
+     "11q13.3 highamp MRGPRD",
+     "11q13.3-q13.4 highamp SHANK2",
+     "12p12.1 highamp BCAT1-IRAG2",
+     "12p12.1 highamp DNAI7-KRAS",
+     "12p12.1 highamp LMNTD1",
+     "12p12.1 highamp RASSF8",
+     "12p12.1 highamp BHLHE41",
+     "12p12.1-12p11.23 highamp SSPN-ITPR2",
+     "12p11.23 highamp INTS13",
+     "12q13.3-q14.1-12q14.1 highamp OS9-CTDSP2",
+     "12q15 highamp RAP1B",
+     "12q15 highamp NUP107",
+     "12q15 highamp SLC35E3-CPM",
+     "12q15 highamp LYZ-YEATS4",
+     "12q15 highamp FRS2-CCT2",
+     "14q11.2 highamp OR4Q3",
+     "14q11.2 highamp OR4N2",
+     "14q11.2 highamp OR4K2",
+     "14q11.2 highamp OR4K1",
+     "17p11.2 highamp MAP2K3",
+     "17q12 highamp NEUROD2-TCAP",
+     "17q12 highamp PNMT-MIEN1",
+     "17q12 highamp GRB7",
+     "17q12-q21.1 highamp IKZF3",
+     "21p11.2 highamp TPTE"
+    ]
+   },
+   "MYC_amp": {
+    "event": "highamp",
+    "frac_p_lt_001": null,
+    "frac_p_lt_005": null,
+    "n_segments": 0,
+    "n_target": 174,
+    "n_tests": 0,
+    "segments": []
+   }
+  },
+  "pooled": {
+   "frac_p_lt_001": 0.013220083567367627,
+   "frac_p_lt_005": 0.060209603397492976,
+   "n_tests": 14599
+  },
+  "response_fires": false,
+  "threshold": 0.075
+ }
+}

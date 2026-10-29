@@ -1,0 +1,311 @@
+{
+ "H1_within_complex_GI": {
+  "changed": [
+   {
+    "event": "Z0130|PTEN",
+    "class_complex_wide": "COLLAPSE",
+    "label_final": "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)",
+    "class_paralog": "not evaluable",
+    "label_final_paralog": "not evaluable"
+   },
+   {
+    "event": "Z0158|TP53",
+    "class_complex_wide": "RESIDUAL SENSITISATION",
+    "label_final": "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)",
+    "class_paralog": "not evaluable",
+    "label_final_paralog": "not evaluable"
+   },
+   {
+    "event": "Z0164|MAP2K4",
+    "class_complex_wide": "INCONCLUSIVE",
+    "label_final": "NOT EVALUABLE",
+    "class_paralog": "INCONCLUSIVE",
+    "label_final_paralog": "NOT EVALUABLE"
+   }
+  ],
+  "label_counts": {
+   "NEUTRAL": 11,
+   "INCONCLUSIVE": 6,
+   "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)": 2,
+   "not evaluable": 2,
+   "NOT EVALUABLE": 1,
+   "INCONCLUSIVE (null unavailable)": 1,
+   "RESIDUAL SENSITISATION": 1
+  },
+  "headline_eligible": [
+   "Z0109|ARID1A",
+   "Z0186|EP300",
+   "Z0286|FOCAD"
+  ],
+  "m_sensitivity": {
+   "m_evaluable": 24,
+   "m_registered": 28,
+   "discoveries": [
+    {
+     "unit": "Z0109|ARID1A|P",
+     "q": 2.47334e-06,
+     "q_at_registered_m": 2.8855680000000003e-06,
+     "kept": true
+    },
+    {
+     "unit": "Z0186|EP300|P",
+     "q": 2.47334e-06,
+     "q_at_registered_m": 2.8855680000000003e-06,
+     "kept": true
+    },
+    {
+     "unit": "Z0286|FOCAD|N",
+     "q": 0.000229458,
+     "q_at_registered_m": 0.0002677017,
+     "kept": true
+    },
+    {
+     "unit": "Z0130|PTEN|N",
+     "q": 0.0436756,
+     "q_at_registered_m": 0.050954904,
+     "kept": false
+    },
+    {
+     "unit": "Z0158|TP53|N",
+     "q": 3.135e-05,
+     "q_at_registered_m": 3.6575e-05,
+     "kept": true
+    }
+   ]
+  }
+ },
+ "H1S_silencing_GI": {
+  "changed": [
+   {
+    "event": "Z0149|ERBB3",
+    "class_complex_wide": "COLLAPSE",
+    "label_final": "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)",
+    "class_paralog": "not evaluable",
+    "label_final_paralog": "not evaluable"
+   },
+   {
+    "event": "Z0194|PRR15L",
+    "class_complex_wide": "RESIDUAL SENSITISATION",
+    "label_final": "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)",
+    "class_paralog": "not evaluable",
+    "label_final_paralog": "not evaluable"
+   },
+   {
+    "event": "Z0260|B3GNT5",
+    "class_complex_wide": "COLLAPSE",
+    "label_final": "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)",
+    "class_paralog": "NEUTRAL",
+    "label_final_paralog": "NEUTRAL"
+   },
+   {
+    "event": "Z0273|CST6",
+    "class_complex_wide": "COLLAPSE",
+    "label_final": "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)",
+    "class_paralog": "not evaluable",
+    "label_final_paralog": "not evaluable"
+   }
+  ],
+  "label_counts": {
+   "NEUTRAL": 191,
+   "INCONCLUSIVE": 45,
+   "NOT EVALUABLE": 27,
+   "COLLAPSE": 20,
+   "not evaluable": 17,
+   "INCONCLUSIVE (null unavailable)": 13,
+   "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)": 4
+  },
+  "headline_eligible": [],
+  "m_sensitivity": {
+   "m_evaluable": 293,
+   "m_registered": 338,
+   "discoveries": [
+    {
+     "unit": "Z0035|ARHGAP29|N",
+     "q": 0.0226386,
+     "q_at_registered_m": 0.02611557,
+     "kept": true
+    },
+    {
+     "unit": "Z0035|ATP8B1|N",
+     "q": 0.0302736,
+     "q_at_registered_m": 0.034923174,
+     "kept": true
+    },
+    {
+     "unit": "Z0260|B3GNT5|N",
+     "q": 0.00676086,
+     "q_at_registered_m": 0.00779922,
+     "kept": true
+    },
+    {
+     "unit": "Z0319|BLNK|N",
+     "q": 0.00676086,
+     "q_at_registered_m": 0.00779922,
+     "kept": true
+    },
+    {
+     "unit": "Z0319|BTK|N",
+     "q": 2.52717e-05,
+     "q_at_registered_m": 2.9153007e-05,
+     "kept": true
+    },
+    {
+     "unit": "Z0319|BTK|P",
+     "q": 4.02225e-05,
+     "q_at_registered_m": 4.64000485e-05,
+     "kept": true
+    },
+    {
+     "unit": "Z0321|BTK|N",
+     "q": 0.00861679,
+     "q_at_registered_m": 0.009940182352941177,
+     "kept": true
+    },
+    {
+     "unit": "Z0037|CCND1|N",
+     "q": 4.2789e-05,
+     "q_at_registered_m": 4.936064119999999e-05,
+     "kept": true
+    },
+    {
+     "unit": "Z0035|CDH1|N",
+     "q": 0.0302736,
+     "q_at_registered_m": 0.034923174,
+     "kept": true
+    },
+    {
+     "unit": "Z0273|CST6|N",
+     "q": 0.0292971,
+     "q_at_registered_m": 0.03379662,
+     "kept": true
+    },
+    {
+     "unit": "Z0319|EBF1|N",
+     "q": 0.00861679,
+     "q_at_registered_m": 0.009940182352941177,
+     "kept": true
+    },
+    {
+     "unit": "Z0051|EGFR|N",
+     "q": 0.0229281,
+     "q_at_registered_m": 0.026449528695652175,
+     "kept": true
+    },
+    {
+     "unit": "Z0149|ERBB3|N",
+     "q": 0.0200454,
+     "q_at_registered_m": 0.02312400315789474,
+     "kept": true
+    },
+    {
+     "unit": "Z0132|FOSL1|N",
+     "q": 0.000411766,
+     "q_at_registered_m": 0.0004750060466666667,
+     "kept": true
+    },
+    {
+     "unit": "Z0035|HNF1B|N",
+     "q": 0.0162762,
+     "q_at_registered_m": 0.018775899999999998,
+     "kept": true
+    },
+    {
+     "unit": "Z0316|IGF1R|N",
+     "q": 0.0302736,
+     "q_at_registered_m": 0.034923174,
+     "kept": true
+    },
+    {
+     "unit": "Z0018|IGSF11|N",
+     "q": 0.00861679,
+     "q_at_registered_m": 0.009940182352941177,
+     "kept": true
+    },
+    {
+     "unit": "Z0005|LLGL2|N",
+     "q": 0.0302736,
+     "q_at_registered_m": 0.034923174,
+     "kept": true
+    },
+    {
+     "unit": "Z0311|MYD88|N",
+     "q": 0.0302736,
+     "q_at_registered_m": 0.034923174,
+     "kept": true
+    },
+    {
+     "unit": "Z0037|MYEOV|N",
+     "q": 0.000724277,
+     "q_at_registered_m": 0.0008355148750000001,
+     "kept": true
+    },
+    {
+     "unit": "Z0084|NFATC2|N",
+     "q": 0.0219728,
+     "q_at_registered_m": 0.025347465000000003,
+     "kept": true
+    },
+    {
+     "unit": "Z0035|PAX8|N",
+     "q": 0.00149885,
+     "q_at_registered_m": 0.0017290502666666666,
+     "kept": true
+    },
+    {
+     "unit": "Z0194|PRR15L|N",
+     "q": 0.0415829,
+     "q_at_registered_m": 0.04796939612903226,
+     "kept": true
+    },
+    {
+     "unit": "Z0035|RIPK4|N",
+     "q": 0.000724277,
+     "q_at_registered_m": 0.0008355148750000001,
+     "kept": true
+    },
+    {
+     "unit": "Z0018|SOX10|N",
+     "q": 1.77645e-05,
+     "q_at_registered_m": 2.0492872399999998e-05,
+     "kept": true
+    },
+    {
+     "unit": "Z0018|SOX10|P",
+     "q": 4.02225e-05,
+     "q_at_registered_m": 4.64000485e-05,
+     "kept": true
+    },
+    {
+     "unit": "Z0149|SPDEF|N",
+     "q": 0.00861679,
+     "q_at_registered_m": 0.009940182352941177,
+     "kept": true
+    },
+    {
+     "unit": "Z0319|SYK|N",
+     "q": 0.00676086,
+     "q_at_registered_m": 0.00779922,
+     "kept": true
+    },
+    {
+     "unit": "Z0016|TNS3|N",
+     "q": 0.00292971,
+     "q_at_registered_m": 0.003379662,
+     "kept": true
+    },
+    {
+     "unit": "Z0059|YAP1|N",
+     "q": 0.0302736,
+     "q_at_registered_m": 0.034923174,
+     "kept": true
+    },
+    {
+     "unit": "Z0018|ZEB2|N",
+     "q": 0.0223216,
+     "q_at_registered_m": 0.025749805714285715,
+     "kept": true
+    }
+   ]
+  }
+ }
+}

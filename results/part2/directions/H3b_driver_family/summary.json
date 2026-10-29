@@ -1,0 +1,287 @@
+{
+ "analysis_id": "H3b_driver_family",
+ "calibration": {
+  "bb_families_selected": 0,
+  "bb_rejections": 0,
+  "expected": 0.05,
+  "frac_p_lt_001": 0.008583106267029973,
+  "frac_p_lt_005": 0.04544959128065395,
+  "n_pseudo": 100,
+  "n_tests": 36700,
+  "not_run": [
+   "random gene sets matched for size, essentiality and coherence",
+   "dispersed never-expressed sets",
+   "segment-matched null for CN contexts (H3b)"
+  ],
+  "not_run_reason": "no engine implementation; reported-only negative controls that do not enter discovery (the pre-declared response depends on the pseudo-context fraction only)",
+  "response_fires": false,
+  "threshold": 0.075
+ },
+ "covariates_dropped_by_design": {
+  "9p21_loss": [
+   "library:LibraryTKOv3",
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "LoF:ARID1A": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "LoF:KMT2D": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "LoF:PTEN": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "LoF:RB1": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "LoF:SMARCA4": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "LoF:STAG2": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "LoY": [
+   "library:LibraryBrunello",
+   "library:LibraryTKOv3",
+   "lineage_FE:Breast",
+   "lineage_FE:Cervix",
+   "lineage_FE:Eye",
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Ovary/Fallopian Tube",
+   "lineage_FE:Uterus",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "MSI_H": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "MYCN_amp": [
+   "library:LibraryTKOv3",
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "MYC_amp": [
+   "library:LibraryTKOv3",
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "NRF2_active": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "TP53_altered": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "WGD": [
+   "library:LibraryTKOv3",
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "fusion:EWSR1::FLI1|ERG": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "hotspot:BRAF": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "hotspot:KRAS": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "hotspot:NRAS": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "hotspot:PIK3CA": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ],
+  "sex_female": [
+   "lineage_FE:Fibroblast",
+   "lineage_FE:Other",
+   "lineage_FE:Vulva/Vagina"
+  ]
+ },
+ "covariates_dropped_by_rule": {},
+ "direction": "H3b",
+ "discoveries_per_context": {
+  "9p21_loss": 2,
+  "LoF:PTEN": 2,
+  "LoF:RB1": 2,
+  "LoF:SMARCA4": 1,
+  "MSI_H": 14,
+  "NRF2_active": 2,
+  "TP53_altered": 92,
+  "WGD": 26,
+  "fusion:EWSR1::FLI1|ERG": 11,
+  "hotspot:BRAF": 4,
+  "hotspot:KRAS": 3,
+  "hotspot:NRAS": 1,
+  "sex_female": 1
+ },
+ "fdr": {
+  "families": "contexts",
+  "method": "benjamini_bogomolov",
+  "q": 0.05
+ },
+ "head": "388924a1e0617f4dc073eab3ce4b7bce2026c973",
+ "headline": true,
+ "kill_rule_verdict": "passes",
+ "m_evaluable": 7340,
+ "n_discovery": 161,
+ "n_discovery_nonlocus": 121,
+ "n_families": 20,
+ "n_not_evaluable": 0,
+ "n_p_lt_005": 880,
+ "n_perm": 10000,
+ "n_reject_analytic": 138,
+ "n_screened_perm": 190,
+ "n_tests": 7340,
+ "peak_rss_bytes": 3094003712,
+ "registered_m": 7340,
+ "registry_blob": "9cf55f21099f108ade10211b3d54ec4e8d0fbaac",
+ "removals": {
+  "9p21_loss": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 7
+  },
+  "LoF:ARID1A": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 1
+  },
+  "LoF:KMT2D": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 1
+  },
+  "LoF:PTEN": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 1
+  },
+  "LoF:RB1": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 0
+  },
+  "LoF:SMARCA4": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 1
+  },
+  "LoF:STAG2": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 1
+  },
+  "LoY": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 4
+  },
+  "MSI_H": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 0
+  },
+  "MYCN_amp": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 15
+  },
+  "MYC_amp": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 13
+  },
+  "NRF2_active": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 9
+  },
+  "TP53_altered": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 1
+  },
+  "WGD": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 0
+  },
+  "fusion:EWSR1::FLI1|ERG": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 2
+  },
+  "hotspot:BRAF": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 2
+  },
+  "hotspot:KRAS": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 5
+  },
+  "hotspot:NRAS": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 5
+  },
+  "hotspot:PIK3CA": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 1
+  },
+  "sex_female": {
+   "n_units_not_evaluable": 0,
+   "n_units_with_removal": 4
+  }
+ },
+ "runtime_s": 187.3,
+ "seeds": {
+  "permutation": 4100,
+  "pseudo_contexts": 4700
+ },
+ "standing": "confirmatory",
+ "trial_line": {
+  "analysis_id": "H3b_driver_family",
+  "direction": "H3b",
+  "fdr_method": "benjamini_bogomolov",
+  "head": "388924a1e0617f4dc073eab3ce4b7bce2026c973",
+  "inputs": {
+   "data_cache/part2/contexts/context_table.parquet": "ba73a37195a2822db83d4ef7736dd94f6844f8637603e6ab7fe2216c99c3cbbd",
+   "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2",
+   "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a"
+  },
+  "models_hash": "bd28f78d612bef9f",
+  "n_contexts": 20,
+  "n_discovery": 161,
+  "n_evaluable": 7340,
+  "n_families_selected": 13,
+  "n_families_selected_perm": 13,
+  "n_models": 1007,
+  "n_p_lt_005": 880,
+  "n_perm": 10000,
+  "n_perm_retested": 190,
+  "n_reject": 138,
+  "n_tests": 7340,
+  "n_units": 367,
+  "registry_blob": "9cf55f21099f108ade10211b3d54ec4e8d0fbaac",
+  "runtime_s": 174.61,
+  "tag": "discovery",
+  "time": "2026-10-29T00:33:22+0000"
+ }
+}

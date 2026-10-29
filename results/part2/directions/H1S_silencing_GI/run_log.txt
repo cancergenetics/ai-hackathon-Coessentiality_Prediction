@@ -1,0 +1,135 @@
+{
+ "analysis_id": "H1S_silencing_GI",
+ "direction": "H1S",
+ "registry_blob": "57187c82b04cff9044842800a90376774af92d91",
+ "head": "b865595da4fcfe564fd53dda68ae5fc92ee9eef9",
+ "standing": "exploratory",
+ "headline": false,
+ "kill_rule_verdict": null,
+ "fdr": {
+  "method": "bh",
+  "q": 0.05
+ },
+ "m_evaluable": 293,
+ "n_tests": 321,
+ "n_not_evaluable": 28,
+ "n_families": 271,
+ "registered_m": 338,
+ "n_p_lt_005": 63,
+ "n_reject_analytic": 32,
+ "n_screened_perm": 49,
+ "n_discovery": 31,
+ "n_discovery_nonlocus": 26,
+ "discoveries_per_context": {
+  "H1loss:BTK": 3,
+  "H1loss:SOX10": 2,
+  "H1loss:ARHGAP29": 1,
+  "H1loss:ATP8B1": 1,
+  "H1loss:B3GNT5": 1,
+  "H1loss:BLNK": 1,
+  "H1loss:CCND1": 1,
+  "H1loss:CDH1": 1,
+  "H1loss:CST6": 1,
+  "H1loss:EBF1": 1,
+  "H1loss:EGFR": 1,
+  "H1loss:ERBB3": 1,
+  "H1loss:FOSL1": 1,
+  "H1loss:HNF1B": 1,
+  "H1loss:IGF1R": 1,
+  "H1loss:IGSF11": 1,
+  "H1loss:LLGL2": 1,
+  "H1loss:MYD88": 1,
+  "H1loss:MYEOV": 1,
+  "H1loss:NFATC2": 1,
+  "H1loss:PAX8": 1,
+  "H1loss:PRR15L": 1,
+  "H1loss:RIPK4": 1,
+  "H1loss:SPDEF": 1,
+  "H1loss:SYK": 1,
+  "H1loss:TNS3": 1,
+  "H1loss:YAP1": 1,
+  "H1loss:ZEB2": 1
+ },
+ "trial_line": {
+  "analysis_id": "H1S_silencing_GI",
+  "direction": "H1S",
+  "fdr_method": "bh",
+  "head": "b865595da4fcfe564fd53dda68ae5fc92ee9eef9",
+  "inputs": {
+   "data_cache/part2/contexts/context_table.parquet": "ba73a37195a2822db83d4ef7736dd94f6844f8637603e6ab7fe2216c99c3cbbd",
+   "data_cache/part2/fzx/h1_loss_table.parquet": "89f6c359882d4b56e0d31ace3e2bfc4af0c8c54299372f35823a3b6b1c63fafc",
+   "results/part2/fzx/h1_event_split_A2.tsv": "941cc32177a703e2e5683a72ae336bdb9e78fd0e153f9fe776f1974c644f9dca",
+   "results/part2/fzx/h1_events.tsv": "e0297989f795a54fc7a15e82d2dd1494a8514a913ec8476cc10acbf23aab5f58",
+   "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2",
+   "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a"
+  },
+  "models_hash": "bd28f78d612bef9f",
+  "n_contexts": 313,
+  "n_discovery": 31,
+  "n_evaluable": 293,
+  "n_families_selected": null,
+  "n_families_selected_perm": null,
+  "n_models": 1007,
+  "n_p_lt_005": 63,
+  "n_perm": 10000,
+  "n_perm_retested": 49,
+  "n_reject": 32,
+  "n_tests": 321,
+  "n_units": 338,
+  "registry_blob": "57187c82b04cff9044842800a90376774af92d91",
+  "runtime_s": 36.97,
+  "tag": "discovery",
+  "time": "2026-10-29T00:50:16+0000"
+ },
+ "runtime_s": 424.6,
+ "peak_rss_bytes": 4191420416,
+ "n_perm": 10000,
+ "K_null": 1000,
+ "seeds": {
+  "permutation": 4200,
+  "matched_null": 7000
+ },
+ "n_events": 317,
+ "class_counts": {
+  "complex_wide": {
+   "NEUTRAL": 191,
+   "INCONCLUSIVE": 45,
+   "NOT EVALUABLE": 27,
+   "COLLAPSE": 23,
+   "not evaluable": 17,
+   "INCONCLUSIVE (null unavailable)": 13,
+   "RESIDUAL SENSITISATION": 1
+  },
+  "paralog": {
+   "not evaluable": 296,
+   "NEUTRAL": 10,
+   "INCONCLUSIVE": 8,
+   "INCONCLUSIVE (paralog relief, exploratory)": 2,
+   "NOT EVALUABLE": 1
+  }
+ },
+ "classify_runtime_s": 385.8,
+ "covariates_dropped_by_rule": {},
+ "calibration": {
+  "note": "H1/H1S calibration is the per-event matched random-set null (classes.tsv: N_/P_null_q025, q975, status, sets); the entry has no pseudo-context field"
+ }
+}
+wall 424.9 s; peak RSS 4.19 GB
+      437.42 real       424.19 user        11.65 sys
+          4191420416  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              809099  page reclaims
+               19976  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 348  voluntary context switches
+              162581  involuntary context switches
+       5473324314549  instructions retired
+       1433849402962  cycles elapsed
+          2243564080  peak memory footprint

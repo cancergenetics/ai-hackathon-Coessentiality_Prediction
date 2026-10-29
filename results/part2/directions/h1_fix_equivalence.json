@@ -1,0 +1,54 @@
+{
+ "after_equals_before": true,
+ "before": {
+  "e2e_pipeline_json": "dbbf564f39cfdc90c2eebbc1522dce6ad11698c6675465201d416c75d39b0c7a",
+  "h1_classes": [
+   [
+    "C0010|ARID1A",
+    "NEUTRAL",
+    "PARALOG COMPENSATION"
+   ],
+   [
+    "C0011|GLOSB",
+    "COLLAPSE",
+    "not evaluable"
+   ],
+   [
+    "C0012|GLOSC",
+    "RESIDUAL SENSITISATION",
+    "not evaluable"
+   ],
+   [
+    "C0013|STAG2",
+    "NEUTRAL",
+    "NEUTRAL"
+   ],
+   [
+    "C0014|GLOSE",
+    "NEUTRAL",
+    "not evaluable"
+   ]
+  ],
+  "runner_files": {
+   "H1_within_complex_GI/classes.tsv": "012bd71e592ff5db98d8f1d95e9938223565bb317fd486a1bfcc9637d7b324e8",
+   "H1_within_complex_GI/discoveries.tsv": "29e9af2e8e2e57b6d42b5a967f2974fa0f2bed1fa5fa52fe49264fd381e6daca",
+   "H1_within_complex_GI/sensitivity_ARID1A_CN.tsv": "298cb110691d0e363b2f16b24702ea96f2518d018d8f232c244bf9692a1861bd",
+   "H1_within_complex_GI/summary.json": "e8f01c0a33fc70ddb6dd3cc6bf8f6c4e337ef4b6ffa1ee14b5246abcc0afec39",
+   "H1_within_complex_GI/tests.tsv.gz": "b4853d8a18e3a5202ecda2dd9a71679f077bb96035632374179eefe52d19f650",
+   "H2_submodule_divergence/discoveries.tsv": "a2988cb5f676ee95da8e9db6c904832edf0c8f4635eecc56c2cfb29707861c51",
+   "H2_submodule_divergence/summary.json": "999e064cd9f8a85a81efa0af6945131551d03e59f7fd816c38f8b502f6a65fb8",
+   "H2_submodule_divergence/tests.tsv.gz": "1eb6b0767cd22a1307981b207d38dd029f3aeb8a55331b58f57ce8c3426f39a5",
+   "H3a_lineage_atlas/calibration.json": "d830ece9f6eb0d2d875da2319571524a4aef5ce24f9fcbfaaa91025bee00f5eb",
+   "H3a_lineage_atlas/discoveries.tsv": "96529c37383b06c3fd97f4e19254572a1ccf555b6cae66104b872ef58df348de",
+   "H3a_lineage_atlas/summary.json": "141c2d6ac61b088ae92e5495a3fbb92bc24eebaeb0ca856179e4d460c46ba9db",
+   "H3a_lineage_atlas/tests.tsv.gz": "47d9772b1490209b94521f7d97807ae9177f183d53e37deb1b392adc91be6974",
+   "H3b_driver_family/calibration.json": "522a606d9882c3f49facd6c646579233ea8d5d5909a3329cd1a00cccfd66cbec",
+   "H3b_driver_family/discoveries.tsv": "af92513b0c8b3872d89390200e529f00d9f1e6cfdf4ca06eb77d356e97910b5f",
+   "H3b_driver_family/summary.json": "9a6dd244e8186f594d20c8f384c97bcddee28c2147d6e06bb9d079346395d84a",
+   "H3b_driver_family/tests.tsv.gz": "b74fd8ef53e6fc2235f4347beea8cdc2e8d7af882bb12c8592ce1c4d2166d8e1"
+  }
+ },
+ "identical": true,
+ "n_files": 17,
+ "note": "PI ruling R2: synthetic e2e pipeline + direction runner (seed 0), SHA-256 of every output before (code c3c4422) and after the h1 NOT EVALUABLE fix; volatile fields removed. No DepMap data."
+}

@@ -9,13 +9,11 @@ Pipeline
   classify          class calls per axis with TOST (+/-0.1 Chronos), P-vs-N contrast, member breadth and the matched
                     random-set null (K = 1000, seed 7000 + event index), plus the collapse index.
 
-Alignment sign. The registry's score_rule writes y_N = mean of -sign(b_j) * effect_j and states that kappa_N > 0
-when dependency magnitude grows in its baseline direction. These disagree (b_j < 0 and effect_j becoming more negative
-give -sign(b_j) * effect_j = effect_j decreasing, i.e. kappa_N < 0). The class rules (sensitisation kappa_N > 0,
-collapse kappa_N < 0) and the hypothesis use the stated meaning, so this module implements
+Alignment sign. This module implements
     y_N(m) = mean_j sign(b_j) * effect_j(m)      (ALIGN = +1)
-i.e. the signed dependency magnitude in the baseline direction. Flagged for the PI (open issue); ALIGN is the one
-place to change if the PI rules for the literal formula.
+i.e. the signed dependency magnitude in the baseline direction, so kappa_N > 0 when dependency grows (registry
+stated meaning and class rules). The registry formula text read '-sign(b_j)' (a sign typo); corrected by erratum E1
+(PI ruling R1, docs/registry/AMENDMENTS.md), semantics unchanged.
 
 Collapse index = -kappa_N / mean_{j in N'} |b_j|: the fraction of the baseline dependency magnitude lost in loss
 lines (1 = members' dependency fully gone; < 0 = sensitisation). Reported, not a class condition.
@@ -344,6 +342,8 @@ def matched_null(E_A: pd.DataFrame, fmap: FrozenMap, event: Event, axis: str, co
     X, ok = _xy(ctx, cov, E_A.index)
     f = fit_columns(X, Ymat[ok])
     nb = f.beta.dropna().values
+    if len(nb) == 0:                                      # no null fit succeeded (degenerate design): no quantiles
+        return dict(status="null unavailable", n_sets=len(sets), q025=np.nan, q975=np.nan, null=nb)
     return dict(status=status, n_sets=len(sets), q025=float(np.quantile(nb, 0.025)),
                 q975=float(np.quantile(nb, 0.975)), null=nb, target_ess=t_ess, target_coh=t_coh)
 
@@ -371,6 +371,16 @@ def _axis_fit(y: pd.Series, ctx, cov, alternative="two-sided") -> dict:
     return f
 
 
+NOT_EVALUABLE = "NOT EVALUABLE"
+
+
+def _counted_evaluable(rmap: dict, unit: str) -> bool:
+    """The axis's counted test exists in the run_association table and is evaluable (>= 12 / 12 after complete case,
+    full-rank design without a leverage-1 row). Otherwise the axis is NOT EVALUABLE and no matched null is drawn."""
+    r = rmap.get(unit)
+    return bool(r is not None and bool(r.evaluable))
+
+
 def classify(events, comps: dict, res: pd.DataFrame, E_A: pd.DataFrame, loss_A: pd.DataFrame, covariates: dict,
              fmap: FrozenMap, annot: Annotation, essentiality: pd.Series, pair_scores: pd.DataFrame | None,
              q: float = 0.05, K: int = 1000, seed0: int = 7000, max_attempts: int = 100_000) -> pd.DataFrame:
@@ -391,7 +401,10 @@ def classify(events, comps: dict, res: pd.DataFrame, E_A: pd.DataFrame, loss_A: 
             row["beta_Nraw"] = _axis_fit(c.y["Nraw"], ctx, cov)["beta"]
         # ---- complex-wide axis
         cls_n = "not evaluable"
-        if "N" in c.y:
+        if "N" in c.y and not _counted_evaluable(rmap, f"{e.id}|N"):
+            cls_n = NOT_EVALUABLE                         # counted test not evaluable: no fit, no matched null
+            row.update(N_null_status="skipped (counted test not evaluable)")
+        elif "N" in c.y:
             fN = _axis_fit(c.y["N"], ctx, cov)
             r = rmap.get(f"{e.id}|N")
             qn = float(getattr(r, qcol)) if r is not None and pd.notna(getattr(r, qcol)) else np.nan
@@ -420,7 +433,10 @@ def classify(events, comps: dict, res: pd.DataFrame, E_A: pd.DataFrame, loss_A: 
                        N_most_shifted=str(prof.beta.abs().idxmax()))
         # ---- paralog axis
         cls_p = "not evaluable"
-        if "P" in c.y:
+        if "P" in c.y and not _counted_evaluable(rmap, f"{e.id}|P"):
+            cls_p = NOT_EVALUABLE
+            row.update(P_null_status="skipped (counted test not evaluable)")
+        elif "P" in c.y:
             fP = _axis_fit(c.y["P"], ctx, cov)
             r = rmap.get(f"{e.id}|P")
             qp = float(getattr(r, qcol)) if r is not None and pd.notna(getattr(r, qcol)) else np.nan

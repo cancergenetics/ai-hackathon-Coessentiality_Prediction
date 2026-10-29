@@ -1,0 +1,90 @@
+{
+ "K_null": 1000,
+ "analysis_id": "H1_within_complex_GI",
+ "calibration": {
+  "note": "H1/H1S calibration is the per-event matched random-set null (classes.tsv: N_/P_null_q025, q975, status, sets); the entry has no pseudo-context field"
+ },
+ "class_counts": {
+  "complex_wide": {
+   "COLLAPSE": 1,
+   "INCONCLUSIVE": 7,
+   "INCONCLUSIVE (null unavailable)": 1,
+   "NEUTRAL": 11,
+   "RESIDUAL SENSITISATION": 2,
+   "not evaluable": 2
+  },
+  "paralog": {
+   "INCONCLUSIVE": 2,
+   "PARALOG COMPENSATION": 2,
+   "not evaluable": 20
+  }
+ },
+ "classify_runtime_s": 35.7,
+ "covariates_dropped_by_rule": {},
+ "direction": "H1",
+ "discoveries_per_context": {
+  "H1loss:ARID1A": 1,
+  "H1loss:EP300": 1,
+  "H1loss:FOCAD": 1,
+  "H1loss:PTEN": 1,
+  "H1loss:TP53": 1
+ },
+ "fdr": {
+  "method": "bh",
+  "q": 0.05
+ },
+ "head": "ef41ddbb056c005e731c4643b494fcef45e04eea",
+ "headline": true,
+ "kill_rule_verdict": "passes",
+ "m_evaluable": 24,
+ "n_discovery": 5,
+ "n_discovery_nonlocus": 5,
+ "n_events": 24,
+ "n_families": 22,
+ "n_not_evaluable": 2,
+ "n_p_lt_005": 5,
+ "n_perm": 10000,
+ "n_reject_analytic": 5,
+ "n_screened_perm": 5,
+ "n_tests": 26,
+ "peak_rss_bytes": 3686465536,
+ "registered_m": 28,
+ "registry_blob": "ebfbaad407c552982c46586a3277602c76539803",
+ "runtime_s": 41.3,
+ "seeds": {
+  "matched_null": 7000,
+  "permutation": 4200
+ },
+ "standing": "confirmatory",
+ "trial_line": {
+  "analysis_id": "H1_within_complex_GI",
+  "direction": "H1",
+  "fdr_method": "bh",
+  "head": "ef41ddbb056c005e731c4643b494fcef45e04eea",
+  "inputs": {
+   "data_cache/part2/contexts/context_table.parquet": "ba73a37195a2822db83d4ef7736dd94f6844f8637603e6ab7fe2216c99c3cbbd",
+   "data_cache/part2/fzx/h1_loss_table.parquet": "89f6c359882d4b56e0d31ace3e2bfc4af0c8c54299372f35823a3b6b1c63fafc",
+   "results/part2/fzx/h1_event_split_A2.tsv": "941cc32177a703e2e5683a72ae336bdb9e78fd0e153f9fe776f1974c644f9dca",
+   "results/part2/fzx/h1_events.tsv": "e0297989f795a54fc7a15e82d2dd1494a8514a913ec8476cc10acbf23aab5f58",
+   "results/part2/fzx/lof_homdel_shares.tsv": "1eac6ce97ee2a0a08bdaa5e1bb8907138c7dd7c80c15270e5306c308a8d369b2",
+   "results/part2/fzx/zavg_engine_membership.tsv": "6a06223345989157af2fbd74eab23c6f5351216f57703dc2d97cdfbc8e0f037a"
+  },
+  "models_hash": "bd28f78d612bef9f",
+  "n_contexts": 24,
+  "n_discovery": 5,
+  "n_evaluable": 24,
+  "n_families_selected": null,
+  "n_families_selected_perm": null,
+  "n_models": 1007,
+  "n_p_lt_005": 5,
+  "n_perm": 10000,
+  "n_perm_retested": 5,
+  "n_reject": 5,
+  "n_tests": 26,
+  "n_units": 28,
+  "registry_blob": "ebfbaad407c552982c46586a3277602c76539803",
+  "runtime_s": 5.23,
+  "tag": "discovery",
+  "time": "2026-10-29T00:35:10+0000"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "command": "PART1_DIR=... PYTHONHASHSEED=0 /usr/bin/time -l .venv/bin/python scripts/44_run_direction.py --id H1_within_complex_GI",
+ "code_commit": "beda09f862300249cd2961ccabf54413e5c9009f",
+ "intent_commit": "ef41ddb",
+ "pid": 94321,
+ "start_utc": "2026-10-29T00:34:53Z",
+ "end_utc": "2026-10-29T00:35:46Z",
+ "exit_status": 0,
+ "wall_s": 53.35,
+ "user_s": 50.57,
+ "sys_s": 1.93,
+ "peak_rss_bytes": 3686465536,
+ "peak_memory_footprint_bytes": 2203847920,
+ "n_runs": 1,
+ "relook": false,
+ "n_trial_lines": 1,
+ "n_perm": 10000,
+ "K_null": 1000,
+ "note": "Single look. No re-run. Waited by PID (kill -0). m = 24 evaluable of 26 tests built (registered 28): the N axes of Z0186|EP300 and Z0304|SMAD4 have |N'| = 1 after the |b_j| >= 0.1 baseline rule (registered rule), and Z0164|MAP2K4 has 11 loss models after complete case."
+}

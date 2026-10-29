@@ -1,0 +1,44 @@
+{
+ "analysis_id": "H1_within_complex_GI",
+ "axes_changing": [],
+ "both": 5,
+ "conservative_only": 0,
+ "fdr": {
+  "method": "bh",
+  "q": 0.05
+ },
+ "label": "sensitivity analysis (GPD tail; PI ruling R3); not a trial",
+ "n_conservative": 5,
+ "n_families_selected_conservative": null,
+ "n_gpd_used_among_primary": 4,
+ "n_pperm_below_analytic_among_primary": 3,
+ "n_primary": 5,
+ "per_context": {
+  "H1loss:ARID1A": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:EP300": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:FOCAD": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:PTEN": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  },
+  "H1loss:TP53": {
+   "both": 1,
+   "conservative": 1,
+   "primary": 1
+  }
+ },
+ "primary_only": 0
+}

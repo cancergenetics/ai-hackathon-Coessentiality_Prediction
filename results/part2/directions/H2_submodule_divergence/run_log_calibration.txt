@@ -1,0 +1,54 @@
+{
+ "analysis_id": "H2_submodule_divergence",
+ "label": "registered calibration run after the discovery run (D8; PI ruling R4)",
+ "registry_blob": "484da0f11375db0cd17f7230782be3c082a75bd4",
+ "random_splits": {
+  "R": 20,
+  "seed": "default_rng([4800, sub index, context index])",
+  "n_tested_pairs": 452,
+  "pooled": {
+   "n_tests": 9040,
+   "frac_p_lt_005": 0.3747787610619469,
+   "frac_p_lt_001": 0.23396017699115043
+  },
+  "stagewise_rejections_per_replicate": {
+   "mean": 78.3,
+   "max": 90
+  },
+  "real": {
+   "n_discovery": 109,
+   "n_tests": 452,
+   "frac_p_lt_005": 0.46017699115044247,
+   "frac_p_lt_001": 0.3163716814159292
+  }
+ },
+ "pseudo_contexts_stagewise": {
+  "pooled": {
+   "n_tests": 1988,
+   "frac_p_lt_005": 0.049798792756539235,
+   "frac_p_lt_001": 0.007042253521126761
+  },
+  "stagewise_rejections": 6,
+  "expected": "~0"
+ },
+ "runtime_s": 33.0,
+ "peak_rss_bytes": 2595127296
+}
+       34.44 real        32.21 user         1.25 sys
+          2595258368  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              295532  page reclaims
+                 394  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  48  voluntary context switches
+               21390  involuntary context switches
+        392912564403  instructions retired
+        110941629902  cycles elapsed
+          2218331352  peak memory footprint
