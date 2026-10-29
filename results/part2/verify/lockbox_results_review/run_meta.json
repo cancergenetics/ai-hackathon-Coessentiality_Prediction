@@ -1,0 +1,15 @@
+{
+ "loader_calls": [
+  {
+   "source": "crispr",
+   "n": 1007,
+   "all_A": true
+  },
+  {
+   "source": "demeter2",
+   "n": 1007,
+   "all_A": true
+  }
+ ],
+ "runtime_s": 57.6
+}

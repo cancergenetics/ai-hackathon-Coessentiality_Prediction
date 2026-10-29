@@ -1,0 +1,2 @@
+unit	full_beta_A	full_ok	loso_folds	loso_same_sign	lomo_context_models	lomo_same_sign	demeter2_beta	demeter2_same_sign	prod_loso	prod_lomo	prod_d2	prod_pass	n_context_A
+Z0186|EP300|P	-1.0932567567988538	True	30	True	12	True	-0.2040689369295013	True	True	True	True	True	12
