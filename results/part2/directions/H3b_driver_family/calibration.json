@@ -1,0 +1,199 @@
+{
+ "bb_families_selected": 0,
+ "bb_rejections": 0,
+ "expected": 0.05,
+ "frac_p_lt_001": 0.008583106267029973,
+ "frac_p_lt_005": 0.04544959128065395,
+ "n_pseudo": 100,
+ "n_tests": 36700,
+ "not_run": [
+  "random gene sets matched for size, essentiality and coherence",
+  "dispersed never-expressed sets",
+  "segment-matched null for CN contexts (H3b)"
+ ],
+ "not_run_reason": "no engine implementation; reported-only negative controls that do not enter discovery (the pre-declared response depends on the pseudo-context fraction only)",
+ "per_context": [
+  {
+   "context": "hotspot:KRAS",
+   "frac_p_lt_001": 0.008719346049046322,
+   "frac_p_lt_005": 0.04959128065395095,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4700
+  },
+  {
+   "context": "hotspot:NRAS",
+   "frac_p_lt_001": 0.006539509536784741,
+   "frac_p_lt_005": 0.03596730245231607,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4701
+  },
+  {
+   "context": "hotspot:BRAF",
+   "frac_p_lt_001": 0.007629427792915531,
+   "frac_p_lt_005": 0.0446866485013624,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4702
+  },
+  {
+   "context": "hotspot:PIK3CA",
+   "frac_p_lt_001": 0.008719346049046322,
+   "frac_p_lt_005": 0.04250681198910082,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4703
+  },
+  {
+   "context": "TP53_altered",
+   "frac_p_lt_001": 0.010354223433242507,
+   "frac_p_lt_005": 0.046866485013623976,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4704
+  },
+  {
+   "context": "MSI_H",
+   "frac_p_lt_001": 0.005449591280653951,
+   "frac_p_lt_005": 0.03923705722070845,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4705
+  },
+  {
+   "context": "WGD",
+   "frac_p_lt_001": 0.009809264305177113,
+   "frac_p_lt_005": 0.04577656675749319,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4706
+  },
+  {
+   "context": "9p21_loss",
+   "frac_p_lt_001": 0.005449591280653951,
+   "frac_p_lt_005": 0.05449591280653951,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4707
+  },
+  {
+   "context": "MYC_amp",
+   "frac_p_lt_001": 0.005994550408719346,
+   "frac_p_lt_005": 0.03433242506811989,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4708
+  },
+  {
+   "context": "MYCN_amp",
+   "frac_p_lt_001": 0.008174386920980926,
+   "frac_p_lt_005": 0.04795640326975477,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4709
+  },
+  {
+   "context": "LoY",
+   "frac_p_lt_001": 0.005994550408719346,
+   "frac_p_lt_005": 0.041961852861035424,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4710
+  },
+  {
+   "context": "sex_female",
+   "frac_p_lt_001": 0.010354223433242507,
+   "frac_p_lt_005": 0.05940054495912807,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4711
+  },
+  {
+   "context": "NRF2_active",
+   "frac_p_lt_001": 0.010899182561307902,
+   "frac_p_lt_005": 0.05068119891008174,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4712
+  },
+  {
+   "context": "LoF:ARID1A",
+   "frac_p_lt_001": 0.013623978201634877,
+   "frac_p_lt_005": 0.055040871934604906,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4713
+  },
+  {
+   "context": "LoF:SMARCA4",
+   "frac_p_lt_001": 0.014168937329700272,
+   "frac_p_lt_005": 0.0555858310626703,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4714
+  },
+  {
+   "context": "LoF:STAG2",
+   "frac_p_lt_001": 0.007629427792915531,
+   "frac_p_lt_005": 0.038692098092643054,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4715
+  },
+  {
+   "context": "LoF:PTEN",
+   "frac_p_lt_001": 0.008174386920980926,
+   "frac_p_lt_005": 0.04904632152588556,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4716
+  },
+  {
+   "context": "LoF:RB1",
+   "frac_p_lt_001": 0.009264305177111716,
+   "frac_p_lt_005": 0.04305177111716621,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4717
+  },
+  {
+   "context": "LoF:KMT2D",
+   "frac_p_lt_001": 0.009809264305177113,
+   "frac_p_lt_005": 0.0446866485013624,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4718
+  },
+  {
+   "context": "fusion:EWSR1::FLI1|ERG",
+   "frac_p_lt_001": 0.004904632152588556,
+   "frac_p_lt_005": 0.029427792915531336,
+   "lineage_context": false,
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "seed": 4719
+  }
+ ],
+ "response_fires": false,
+ "threshold": 0.075
+}
