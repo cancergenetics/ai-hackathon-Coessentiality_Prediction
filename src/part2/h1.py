@@ -342,6 +342,8 @@ def matched_null(E_A: pd.DataFrame, fmap: FrozenMap, event: Event, axis: str, co
     X, ok = _xy(ctx, cov, E_A.index)
     f = fit_columns(X, Ymat[ok])
     nb = f.beta.dropna().values
+    if len(nb) == 0:                                      # no null fit succeeded (degenerate design): no quantiles
+        return dict(status="null unavailable", n_sets=len(sets), q025=np.nan, q975=np.nan, null=nb)
     return dict(status=status, n_sets=len(sets), q025=float(np.quantile(nb, 0.025)),
                 q975=float(np.quantile(nb, 0.975)), null=nb, target_ess=t_ess, target_coh=t_coh)
 
@@ -369,6 +371,16 @@ def _axis_fit(y: pd.Series, ctx, cov, alternative="two-sided") -> dict:
     return f
 
 
+NOT_EVALUABLE = "NOT EVALUABLE"
+
+
+def _counted_evaluable(rmap: dict, unit: str) -> bool:
+    """The axis's counted test exists in the run_association table and is evaluable (>= 12 / 12 after complete case,
+    full-rank design without a leverage-1 row). Otherwise the axis is NOT EVALUABLE and no matched null is drawn."""
+    r = rmap.get(unit)
+    return bool(r is not None and bool(r.evaluable))
+
+
 def classify(events, comps: dict, res: pd.DataFrame, E_A: pd.DataFrame, loss_A: pd.DataFrame, covariates: dict,
              fmap: FrozenMap, annot: Annotation, essentiality: pd.Series, pair_scores: pd.DataFrame | None,
              q: float = 0.05, K: int = 1000, seed0: int = 7000, max_attempts: int = 100_000) -> pd.DataFrame:
@@ -389,7 +401,10 @@ def classify(events, comps: dict, res: pd.DataFrame, E_A: pd.DataFrame, loss_A: 
             row["beta_Nraw"] = _axis_fit(c.y["Nraw"], ctx, cov)["beta"]
         # ---- complex-wide axis
         cls_n = "not evaluable"
-        if "N" in c.y:
+        if "N" in c.y and not _counted_evaluable(rmap, f"{e.id}|N"):
+            cls_n = NOT_EVALUABLE                         # counted test not evaluable: no fit, no matched null
+            row.update(N_null_status="skipped (counted test not evaluable)")
+        elif "N" in c.y:
             fN = _axis_fit(c.y["N"], ctx, cov)
             r = rmap.get(f"{e.id}|N")
             qn = float(getattr(r, qcol)) if r is not None and pd.notna(getattr(r, qcol)) else np.nan
@@ -418,7 +433,10 @@ def classify(events, comps: dict, res: pd.DataFrame, E_A: pd.DataFrame, loss_A: 
                        N_most_shifted=str(prof.beta.abs().idxmax()))
         # ---- paralog axis
         cls_p = "not evaluable"
-        if "P" in c.y:
+        if "P" in c.y and not _counted_evaluable(rmap, f"{e.id}|P"):
+            cls_p = NOT_EVALUABLE
+            row.update(P_null_status="skipped (counted test not evaluable)")
+        elif "P" in c.y:
             fP = _axis_fit(c.y["P"], ctx, cov)
             r = rmap.get(f"{e.id}|P")
             qp = float(getattr(r, qcol)) if r is not None and pd.notna(getattr(r, qcol)) else np.nan
