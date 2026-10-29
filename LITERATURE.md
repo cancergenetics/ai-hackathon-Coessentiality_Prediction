@@ -665,7 +665,7 @@ Common elements apply to every direction:
 11. Brohée S, van Helden J. Evaluation of clustering algorithms for protein-protein interaction networks. *BMC Bioinformatics* 2006;7:488. doi:10.1186/1471-2105-7-488
 12. Vlasblom J, Wodak SJ. Markov clustering versus affinity propagation for the partitioning of protein interaction graphs. *BMC Bioinformatics* 2009;10:99. doi:10.1186/1471-2105-10-99
 13. Choobdar S, et al., Marbach D. Assessment of network module identification across complex diseases. *Nat Methods* 2019;16:843–852. doi:10.1038/s41592-019-0509-5
-14. Monti S, Tamayo P, Mesirov J, Golub T. Consensus clustering. *Mach Learn* 2003;52:91–118. doi:10.1023/A:1023949509487
+14. Monti S, Tamayo P, Mesirov J, Golub T. Consensus clustering: a resampling-based method for class discovery and visualization of gene expression microarray data. *Mach Learn* 2003;52:91–118. doi:10.1023/A:1023949509487
 15. Lancichinetti A, Fortunato S. Consensus clustering in complex networks. *Sci Rep* 2012;2:336. doi:10.1038/srep00336
 16. Jeub LGS, Sporns O, Fortunato S. Multiresolution consensus clustering in networks. *Sci Rep* 2018;8:3259. doi:10.1038/s41598-018-21352-7
 17. Langfelder P, Horvath S. WGCNA: an R package for weighted correlation network analysis. *BMC Bioinformatics* 2008;9:559. doi:10.1186/1471-2105-9-559
@@ -694,10 +694,10 @@ Common elements apply to every direction:
 38. Luck K, et al., Calderwood MA. A reference map of the human binary protein interactome. *Nature* 2020;580:402–408. doi:10.1038/s41586-020-2188-x
 39. Sowa ME, Bennett EJ, Gygi SP, Harper JW. Defining the human deubiquitinating enzyme interaction landscape. *Cell* 2009;138:389–403. doi:10.1016/j.cell.2009.04.042
 40. Mellacheruvu D, et al., Nesvizhskii AI. The CRAPome. *Nat Methods* 2013;10:730–736. doi:10.1038/nmeth.2557
-41. Szklarczyk D, et al., von Mering C. The STRING database in 2023. *Nucleic Acids Res* 2023;51:D638–D646. doi:10.1093/nar/gkac1000
+41. Szklarczyk D, et al., von Mering C. The STRING database in 2023: protein–protein association networks and functional enrichment analyses for any sequenced genome of interest. *Nucleic Acids Res* 2023;51:D638–D646. doi:10.1093/nar/gkac1000
 42. Szklarczyk D, et al., von Mering C. The STRING database in 2025. *Nucleic Acids Res* 2025;53:D730–D737. doi:10.1093/nar/gkae1113. PMID 39558183
 43. Tsitsiridis G, et al., Ruepp A. CORUM: the comprehensive resource of mammalian protein complexes–2022. *Nucleic Acids Res* 2023;51:D539–D545. doi:10.1093/nar/gkac1015
-44. Meldal BHM, et al., Orchard S. Complex Portal 2022. *Nucleic Acids Res* 2022;50:D578–D586. doi:10.1093/nar/gkab991
+44. Meldal BHM, et al., Orchard S. Complex Portal 2022: new curation frontiers. *Nucleic Acids Res* 2022;50:D578–D586. doi:10.1093/nar/gkab991
 
 **Co-essentiality networks, modules and rewiring**
 45. Pan J, et al., Kadoch C. Interrogation of mammalian protein complex structure, function, and membership using genome-scale fitness screens. *Cell Syst* 2018;6:555–568. doi:10.1016/j.cels.2018.04.011 [FT]
@@ -718,10 +718,10 @@ Common elements apply to every direction:
 
 **DepMap methods and statistics**
 60. Tsherniak A, et al., Hahn WC. Defining a cancer dependency map. *Cell* 2017;170:564–576. doi:10.1016/j.cell.2017.06.010. PMID 28753430
-61. Meyers RM, et al., Tsherniak A. Computational correction of copy number effect improves specificity of CRISPR–Cas9 essentiality screens. *Nat Genet* 2017;49:1779–1784. doi:10.1038/ng.3984
+61. Meyers RM, et al., Tsherniak A. Computational correction of copy number effect improves specificity of CRISPR–Cas9 essentiality screens in cancer cells. *Nat Genet* 2017;49:1779–1784. doi:10.1038/ng.3984
 62. Dempster JM, et al., Iorio F. Agreement between two large pan-cancer CRISPR-Cas9 gene dependency data sets. *Nat Commun* 2019;10:5817. doi:10.1038/s41467-019-13805-y
 63. Dempster JM, et al. Extracting biological insights from the Project Achilles genome-scale CRISPR screens in cancer cell lines. *bioRxiv* 2019. doi:10.1101/720243
-64. Dempster JM, et al., McFarland JM. Chronos. *Genome Biol* 2021;22:343. doi:10.1186/s13059-021-02540-7. PMID 34930405
+64. Dempster JM, et al., McFarland JM. Chronos: a cell population dynamics model of CRISPR experiments that improves inference of gene fitness effects. *Genome Biol* 2021;22:343. doi:10.1186/s13059-021-02540-7. PMID 34930405
 65. Behan FM, et al., Garnett MJ. Prioritization of cancer therapeutic targets using CRISPR–Cas9 screens. *Nature* 2019;568:511–516. doi:10.1038/s41586-019-1103-9. PMID 30971826 [ABS]
 66. Pacini C, et al., Garnett MJ. A comprehensive clinically informed map of dependencies in cancer cells and framework for target prioritization. *Cancer Cell* 2024;42:301–316. doi:10.1016/j.ccell.2023.12.016. PMID 38215750 [ABS]
 67. Pacini C, et al., Iorio F. Integrated cross-study datasets of genetic dependencies in cancer. *Nat Commun* 2021;12:1661. doi:10.1038/s41467-021-21898-7
@@ -734,14 +734,14 @@ Common elements apply to every direction:
 74. Aguirre AJ, et al., Hahn WC. Genomic copy number dictates a gene-independent cell response to CRISPR/Cas9 targeting. *Cancer Discov* 2016;6:914–929. doi:10.1158/2159-8290.CD-16-0154
 75. Munoz DM, et al., Schlabach MR. CRISPR screens provide a comprehensive assessment of cancer vulnerabilities but generate false-positive hits for highly amplified genomic regions. *Cancer Discov* 2016;6:900–913. doi:10.1158/2159-8290.CD-16-0178
 76. Lazar NH, et al., Haque IS. High-resolution genome-wide mapping of chromosome-arm-scale truncations induced by CRISPR–Cas9 editing. *Nat Genet* 2024;56:1482–1493. doi:10.1038/s41588-024-01758-y. PMID 38811841
-77. McFarland JM, et al., Tsherniak A. Improved estimation of cancer dependencies from large-scale RNAi screens. *Nat Commun* 2018;9:4610. doi:10.1038/s41467-018-06916-5
+77. McFarland JM, et al., Tsherniak A. Improved estimation of cancer dependencies from large-scale RNAi screens using model-based normalization and data integration. *Nat Commun* 2018;9:4610. doi:10.1038/s41467-018-06916-5
 78. Ghandi M, et al., Sellers WR. Next-generation characterization of the Cancer Cell Line Encyclopedia. *Nature* 2019;569:503–508. doi:10.1038/s41586-019-1186-3
 79. Corsello SM, et al., Golub TR. Discovering the anticancer potential of non-oncology drugs by systematic viability profiling. *Nat Cancer* 2020;1:235–248. doi:10.1038/s43018-019-0018-6
 80. McDonald ER 3rd, et al., Sellers WR. Project DRIVE. *Cell* 2017;170:577–592. doi:10.1016/j.cell.2017.07.005
 81. Dharia NV, et al., Stegmaier K. A first-generation pediatric cancer dependency map. *Nat Genet* 2021;53:529–538. doi:10.1038/s41588-021-00819-w
 82. Shi X, et al., Dezso Z. Building a translational cancer dependency map for The Cancer Genome Atlas. *Nat Cancer* 2024;5:1176–1194. doi:10.1038/s43018-024-00789-y
-83. Benjamini Y, Hochberg Y. Controlling the false discovery rate. *J R Stat Soc B* 1995;57:289–300. doi:10.1111/j.2517-6161.1995.tb02031.x
-84. Van den Berge K, Soneson C, Robinson MD, Clement L. stageR. *Genome Biol* 2017;18:151. doi:10.1186/s13059-017-1277-0
+83. Benjamini Y, Hochberg Y. Controlling the false discovery rate: a practical and powerful approach to multiple testing. *J R Stat Soc B* 1995;57:289–300. doi:10.1111/j.2517-6161.1995.tb02031.x
+84. Van den Berge K, Soneson C, Robinson MD, Clement L. stageR: a general stage-wise method for controlling the gene-level false discovery rate in differential expression and differential transcript usage. *Genome Biol* 2017;18:151. doi:10.1186/s13059-017-1277-0
 85. Winkler AM, Ridgway GR, Webster MA, Smith SM, Nichols TE. Permutation inference for the general linear model. *NeuroImage* 2014;92:381–397. doi:10.1016/j.neuroimage.2014.01.060
 86. Ritchie ME, et al., Smyth GK. limma powers differential expression analyses. *Nucleic Acids Res* 2015;43:e47. doi:10.1093/nar/gkv007
 87. Liu Y, Xie J. Cauchy combination test. *J Am Stat Assoc* 2020;115:393–402. doi:10.1080/01621459.2018.1554485
@@ -839,22 +839,27 @@ Common elements apply to every direction:
 - Exact BioPlex HCT116 interaction count and OpenCell target count: [unverified].
 - Behan 2019 and Pacini 2024 statistical details: [unverified beyond abstract].
 
-## 10. Methods references (added at manuscript drafting; to be verified by the reference checker)
+## 10. Methods references (added at manuscript drafting; verified 2026-10-29)
 
-Added by the writer on 2026-10-29 for statistical and resource methods cited in `manuscript/main.md`. These records have **not** been checked against Crossref or Europe PMC. Entries or fields marked **[VERIFY]** are ones the writer is not sure of.
+Added by the writer on 2026-10-29 for statistical and resource methods cited in `manuscript/main.md`. All entries were verified against Crossref (and JSTOR / Statistics Canada / secondary records for the three items without a DOI) by the independent reference check on 2026-10-29 (`results/verify_manuscript/reference_check.md`); no retraction or expression of concern was found. M14–M16 were added from that check (edits E5, E6, E10).
 
 M1. Benjamini Y, Bogomolov M. Selective inference on multiple families of hypotheses. *J R Stat Soc B* 2014;76:297–318. doi:10.1111/rssb.12028
 M2. Simes RJ. An improved Bonferroni procedure for multiple tests of significance. *Biometrika* 1986;73:751–754. doi:10.1093/biomet/73.3.751
-M3. Holm S. A simple sequentially rejective multiple test procedure. *Scand J Stat* 1979;6:65–70. No DOI; JSTOR 4615733 [VERIFY]
+M3. Holm S. A simple sequentially rejective multiple test procedure. *Scand J Stat* 1979;6:65–70. No DOI; JSTOR 4615733
 M4. MacKinnon JG, White H. Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. *J Econom* 1985;29:305–325. doi:10.1016/0304-4076(85)90158-7
-M5. Long JS, Ervin LH. Using heteroscedasticity consistent standard errors in the linear regression model. *Am Stat* 2000;54:217–224. doi:10.1080/00031305.2000.10474549 [VERIFY]
+M5. Long JS, Ervin LH. Using heteroscedasticity consistent standard errors in the linear regression model. *Am Stat* 2000;54:217–224. doi:10.1080/00031305.2000.10474549
 M6. Satterthwaite FE. An approximate distribution of estimates of variance components. *Biometrics Bull* 1946;2:110–114. doi:10.2307/3002019
-M7. Bell RM, McCaffrey DF. Bias reduction in standard errors for linear regression with multi-stage samples. *Surv Methodol* 2002;28:169–181. No DOI [VERIFY]
+M7. Bell RM, McCaffrey DF. Bias reduction in standard errors for linear regression with multi-stage samples. *Surv Methodol* 2002;28(2):169–181. No DOI; Statistics Canada catalogue 12-001-X20020029058
 M8. Knijnenburg TA, Wessels LFA, Reinders MJT, Shmulevich I. Fewer permutations, more accurate P-values. *Bioinformatics* 2009;25:i161–i168. doi:10.1093/bioinformatics/btp211
-M9. Sechidis K, Tsoumakas G, Vlahavas I. On the stratification of multi-label data. In: *ECML PKDD 2011*, LNCS 6913:145–158. doi:10.1007/978-3-642-23808-6_10 [VERIFY]
-M10. Dyer SC, et al. Ensembl 2025. *Nucleic Acids Res* 2025;53:D948–D957. doi:10.1093/nar/gkae1071 [VERIFY: authors, pages, DOI; the release paper matching Ensembl 116 may differ]
-M11. Seal RL, et al. Genenames.org: the HGNC resources in 2023. *Nucleic Acids Res* 2023;51:D1003–D1009. doi:10.1093/nar/gkac888 [VERIFY]
+M9. Sechidis K, Tsoumakas G, Vlahavas I. On the stratification of multi-label data. In: *ECML PKDD 2011*, LNCS 6913:145–158. doi:10.1007/978-3-642-23808-6_10
+M10. Dyer SC, et al. Ensembl 2025. *Nucleic Acids Res* 2025;53:D948–D957. doi:10.1093/nar/gkae1071 (metadata verified; superseded for Ensembl 116 by M16, which the manuscript now cites)
+M11. Seal RL, et al. Genenames.org: the HGNC resources in 2023. *Nucleic Acids Res* 2023;51:D1003–D1009. doi:10.1093/nar/gkac888
 
 Also cited in the manuscript (Kish effective number of clusters; adjusted Rand index):
-M12. Kish L. *Survey Sampling*. New York: Wiley; 1965. Book, no DOI [VERIFY]
+M12. Kish L. *Survey Sampling*. New York: Wiley; 1965. Book, no DOI
 M13. Hubert L, Arabie P. Comparing partitions. *J Classif* 1985;2:193–218. doi:10.1007/BF01908075
+
+Added from the reference check (2026-10-29; each verified in Crossref by the checker):
+M14. Efron B. Tweedie's formula and selection bias. *J Am Stat Assoc* 2011;106(496):1602–1614. doi:10.1198/jasa.2011.tm11181 (empirical-Bayes posterior in the post hoc power aid; edit E5)
+M15. Schuirmann DJ. A comparison of the two one-sided tests procedure and the power approach for assessing the equivalence of average bioavailability. *J Pharmacokinet Biopharm* 1987;15(6):657–680. doi:10.1007/BF01068419 (TOST equivalence criterion for neutral H1 events; edit E6)
+M16. Yates AD, et al. Ensembl 2026. *Nucleic Acids Res* 2026;54:D1053–D1060. doi:10.1093/nar/gkaf1239 (describes Ensembl release 116; replaces M10 in the manuscript; edit E10)

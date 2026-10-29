@@ -1,4 +1,4 @@
-# Supplementary Table S7: lockbox results for H3a / H3b discoveries; the strongest complex-specific findings
+# Supplementary Table S7: lockbox results for H3a / H3b discoveries; an earlier, unregistered confirmed complex-specific subset
 
 | direction | context | unit | members | lines A / L | β_A [95% CI] | β_L [95% CI] | p_L | kept: GPD / screen | notes |
 |---|---|---|---|---|---|---|---|---|---|
@@ -62,9 +62,10 @@
 | H3b | MSI_H | Z0339 | CAB39, NRBP1, OXSR1, TSC22D2, WNK1 | 59 / 20 | +0.102 [+0.048, +0.157] | +0.110 [+0.010, +0.211] | 1.6e-02 | yes / no |  |
 | H3b | TP53_altered | Z0188 | CENPO, CENPP, CENPQ, CENPU, ZNF367 | 668 / 219 | +0.043 [+0.018, +0.067] | +0.044 [-0.007, +0.095] | 4.4e-02 | yes / no |  |
 
-- Rows: the 'strongest specific' discoveries, ranked by A |t| (never by the GPD p): confirmed in the primary lockbox read (same sign, one-sided p_L < 0.05; exact PatientID-blocked permutation when L has < 20 context lines), |t| in A above that of all 10 matched random gene sets of the unit in that context, not a locus cluster, not defect-sensitive, and not the readout of a registered positive control. Top 30 H3a rows of 261 and all 29 H3b rows; tableS7_lockbox_h3_full.tsv lists all 1,306 discoveries with every flag and both calls.
+- This Markdown view lists an earlier, unregistered selection (two filters not in the registry: beats all matched sets; not a control readout). It is NOT the registered strongest-findings list, which is Supplementary Table S9 (results/part2/robustness/strongest_findings.tsv; 254 findings).
+- Rows: the confirmed complex-specific discoveries, ranked by A |t| (never by the GPD p): confirmed in the primary lockbox read (same sign, one-sided p_L < 0.05; exact PatientID-blocked permutation when L has < 20 context lines), |t| in A above that of all 10 matched random gene sets of the unit in that context, not a locus cluster, not defect-sensitive, and not the readout of a registered positive control. Top 30 H3a rows of 261 and all 29 H3b rows; tableS7_lockbox_h3_full.tsv lists all 1,306 discoveries with every flag and both calls.
 - β in Chronos units; negative = more dependent in the context. β_L is the same model refitted in the 338 lockbox lines; its 95% CI is the HC3 interval, so for contexts with < 20 L lines (decided by the permutation p) it can include 0 while the call is 'confirmed'.
-- 'control unit, other context': the unit is a registered control readout in another context; not an independent finding. 'Lymphoid β > 0: scale caveat': lower lymphoid dependency on an essential unit is partly the lymphoid scale effect (main text §4.5).
+- 'control unit, other context': the unit is a registered control readout in another context; not an independent finding. 'Lymphoid β > 0: scale caveat': lower lymphoid dependency on an essential unit is partly the lymphoid scale effect (main text, 'Two lineage-level artefacts').
 - 'kept: GPD / screen' = kept under the two A-side sensitivities (p = max(p_perm, analytic p); ScreenNNMD + CasActivity covariates).
 - Members: first 8 member symbols of the frozen unit; any functional reading in the text is post hoc.
 - Sources: results/part2/lockbox_confirm/{H3a_lineage_atlas,H3b_driver_family}/confirmation.tsv, primary_relabelled_R7.tsv.gz, corrected_refit_nonconfirmatory.tsv; A-side flags from results/part2/directions (via scripts/part2_report.py); script scripts/tab_lockbox.py.

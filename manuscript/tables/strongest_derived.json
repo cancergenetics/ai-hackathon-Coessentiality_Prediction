@@ -1,0 +1,49 @@
+{
+ "h3a_lymphoid_myeloid": 113,
+ "h3a_lymphoid_myeloid_concordant": 75,
+ "h3b_T1_noncontrol": 25,
+ "lead_example": 37,
+ "lead_example_lymphoid_myeloid": 10,
+ "lead_example_per_context": {
+  "lineage:Bone": 4,
+  "lineage:Breast": 1,
+  "lineage:CNS/Brain": 2,
+  "lineage:Head and Neck": 1,
+  "lineage:Kidney": 3,
+  "lineage:Lung": 4,
+  "lineage:Lymphoid": 5,
+  "lineage:Myeloid": 5,
+  "lineage:Ovary/Fallopian Tube": 1,
+  "lineage:Pancreas": 2,
+  "lineage:Peripheral Nervous System": 1,
+  "lineage:Pleura": 1,
+  "lineage:Soft Tissue": 3,
+  "melanoma": 4
+ },
+ "median_unit_essentiality_all_units": -0.298,
+ "median_unit_essentiality_artefact": -0.629,
+ "median_unit_essentiality_h3a_strongest": -0.411,
+ "n": 254,
+ "note": "post hoc, descriptive reporting labels (D16); they select and rank nothing",
+ "per_direction": {
+  "H1": 2,
+  "H3a": 207,
+  "H3b": 45
+ },
+ "possible_lineage_scale_artefact": 56,
+ "possible_lineage_scale_artefact_per_context": {
+  "lineage:Lymphoid": 52,
+  "lineage:Myeloid": 4
+ },
+ "possible_lineage_scale_artefact_positive_beta": 38,
+ "tier": {
+  "T1": 152,
+  "T2": 65,
+  "T3-neg": 37
+ },
+ "units_per_direction": {
+  "H1": 2,
+  "H3a": 137,
+  "H3b": 41
+ }
+}

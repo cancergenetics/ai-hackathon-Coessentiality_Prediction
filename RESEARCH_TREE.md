@@ -60,6 +60,7 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - LOSO partly testable: H3a 21 (Pancreas 17), H3b 33;
   - scale-effect concordance, the Lymphoid essential-complex shift (ρ −0.24; Myeloid −0.135): 142/207 H3a hits concordant, 79 with |residual z| ≥ 2.
   Reporting: the paper leads with T1, non-control, residual-z-robust hits (e.g. Ovary CDH1/PAX8, Bone SNAPC, Lung APC/AXIN1, Head and Neck EGFR/GRB2, Pleura EXT1/2, Lymphoid/Myeloid AP2) and labels scale-concordant lymphoid/myeloid hits on essential machinery as a possible lineage-scale artefact.
+- D17 (M6, 2026-10-29): Submission version of the manuscript. main.md condensed (Introduction + Results + Discussion + Conclusions about 6.3k words, Methods about 3.6k, Abstract 190); extended limitations, full deviations table, sensitivity, calibration and per-direction detail moved to Supplementary Notes 10–16; Table 3 (amendments with timing) in the main text. The provisional 261/29 set is replaced by the registered 254 (Supplementary Table S9, `scripts/tab_strongest.py`). Post hoc reporting labels (D16): lead example = H3a, T1, not a control readout, |residual z| ≥ 2 (37); possible lineage-scale artefact = H3a Lymphoid/Myeloid, scale-concordant, |residual z| < 2 (56). Reference-check edits E1–E15 applied (M14 Efron, M15 Schuirmann, M16 Yates added to LITERATURE §10). `scripts/check_manuscript_numbers.py` checks every main-text number against its source comment: 579/579 matched after fixing comment citations (no numeric value error found). No figure showed provisional content, so no figure was regenerated; Table S7's Markdown is relabelled as an earlier, unregistered subset.
 
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
@@ -107,4 +108,5 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
     - [x] Post hoc descriptive complex-specificity counts (not error control; `results/part2/directions/SPECIFICITY.md`):
       β outside the central 95% of matched random sets for H3a 699/1,083, H3b 124/154 and H2 78/109.
   - [x] Lockbox confirmations, BENCH, BRIDGE-L (D12–D14; review PASS 63e0e62). H3a 0.525; H3b evaluable 0.49 / all-in 0.40 / corrected 0.46; H2 0.70; controls 29/31 (corrected 39/42); H1: ARID1A P confirmed (control PC6), EP300 P rare route passed, FOCAD defect-sensitive (corrected confirms), TP53 confirmed but within margin, PTEN not confirmed. BENCH: the complex does not beat its best gene. BRIDGE-L −0.065 [−0.107, −0.025] favours GLS. Read 2.6 h, 3.67 GB.
-- [ ] M-final Manuscript + peer review + REPORT.md
+- [~] M-final Manuscript + peer review + REPORT.md
+  - [x] Submission version: condensed main text, registered strongest findings (254), reference fixes E1–E15, number check (D17)

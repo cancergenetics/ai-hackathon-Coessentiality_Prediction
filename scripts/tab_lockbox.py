@@ -178,9 +178,12 @@ def h3_table(derived: dict, rel: pd.DataFrame) -> pd.DataFrame:
         top.append(x[["direction", "context", "unit", "members", "lines A / L", "β_A [95% CI]", "β_L [95% CI]",
                       "p_L", "kept: GPD / screen", "notes"]])
     md = pd.concat(top)
-    write("tableS7_lockbox_h3", "Supplementary Table S7: lockbox results for H3a / H3b discoveries; the strongest "
-          "complex-specific findings",
-          ["Rows: the 'strongest specific' discoveries, ranked by A |t| (never by the GPD p): confirmed in the "
+    write("tableS7_lockbox_h3", "Supplementary Table S7: lockbox results for H3a / H3b discoveries; an earlier, "
+          "unregistered confirmed complex-specific subset",
+          ["This Markdown view lists an earlier, unregistered selection (two filters not in the registry: beats all "
+           "matched sets; not a control readout). It is NOT the registered strongest-findings list, which is "
+           "Supplementary Table S9 (results/part2/robustness/strongest_findings.tsv; 254 findings).",
+           "Rows: the confirmed complex-specific discoveries, ranked by A |t| (never by the GPD p): confirmed in the "
            "primary lockbox read (same sign, one-sided p_L < 0.05; exact PatientID-blocked permutation when L has "
            "< 20 context lines), |t| in A above that of all 10 matched random gene sets of the unit in that "
            "context, not a locus cluster, not defect-sensitive, and not the readout of a registered positive "
@@ -191,7 +194,7 @@ def h3_table(derived: dict, rel: pd.DataFrame) -> pd.DataFrame:
            "permutation p) it can include 0 while the call is 'confirmed'.",
            "'control unit, other context': the unit is a registered control readout in another context; not an "
            "independent finding. 'Lymphoid β > 0: scale caveat': lower lymphoid dependency on an essential "
-           "unit is partly the lymphoid scale effect (main text §4.5).",
+           "unit is partly the lymphoid scale effect (main text, 'Two lineage-level artefacts').",
            "'kept: GPD / screen' = kept under the two A-side sensitivities (p = max(p_perm, analytic p); "
            "ScreenNNMD + CasActivity covariates).",
            "Members: first 8 member symbols of the frozen unit; any functional reading in the text is post hoc.",
