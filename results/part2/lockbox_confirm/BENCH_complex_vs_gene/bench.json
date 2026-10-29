@@ -1,0 +1,68 @@
+{
+ "B": 2000,
+ "analysis_id": "BENCH_complex_vs_gene",
+ "distinct": {
+  "n_distinct_complexes_in_pairs": 353,
+  "n_distinct_complexes_of_gstar": 353,
+  "n_distinct_gstar": 920,
+  "n_pairs": 1295
+ },
+ "multiverse": {
+  "T1_T2_pairs": {
+   "mean": -0.08375097852172134,
+   "mean_high": 0.22108862430922413,
+   "mean_low": -0.3038633959283011,
+   "mean_mid": -0.17932547842092278,
+   "n_pairs": 949
+  },
+  "eigengene": {
+   "mean": -0.12465669608901415,
+   "mean_high": 0.2197328530267405,
+   "mean_low": -0.46649116517023326,
+   "mean_mid": -0.12721770438349062,
+   "n_pairs": 1295
+  },
+  "gstar_largest_beta": {
+   "mean": -0.07606892962001571,
+   "mean_high": 0.27273992968399813,
+   "mean_low": -0.38075070036622566,
+   "mean_mid": -0.1202984012139166,
+   "n_pairs": 1295
+  },
+  "within_line_rank": "NOT RUN (amendment A3(b))"
+ },
+ "multiverse_ci": "point estimate only",
+ "n_L_models": 338,
+ "peak_rss_bytes": 3350216704,
+ "primary": {
+  "ci95": [
+   -0.15489594365355985,
+   0.03134294350050036
+  ],
+  "ci95_high": [
+   -0.03295186711471449,
+   0.3624797734298852
+  ],
+  "ci95_low": [
+   -0.5145882366148353,
+   -0.20101326906640968
+  ],
+  "ci95_mid": [
+   -0.225676189904529,
+   0.15534927229134843
+  ],
+  "mean": -0.0659717166570546,
+  "mean_high": 0.23999443244352095,
+  "mean_low": -0.3379161353077717,
+  "mean_mid": -0.10007238383649508,
+  "top_tercile_wins": false
+ },
+ "registry_blob": "e07880b9ae8b4ebaacf708c179d7fd7cc0a37ddb",
+ "runtime_s": 8192.7,
+ "secondary": "NOT RUN (amendments A4 G1, A5)",
+ "seed": 5100,
+ "trend_spearman_delta_breadth": {
+  "p": 2.576611371841304e-13,
+  "rho": 0.20137745812571442
+ }
+}
