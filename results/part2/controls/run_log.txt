@@ -1,0 +1,80 @@
+{
+ "H3a": {
+  "n_controls": 2,
+  "evaluable": 2,
+  "recovered": 2,
+  "fraction": 1.0,
+  "verdict": "passes",
+  "thin_coverage": true,
+  "controls": [
+   "PC17",
+   "PC20"
+  ]
+ },
+ "H3b": {
+  "n_controls": 11,
+  "evaluable": 10,
+  "recovered": 10,
+  "fraction": 1.0,
+  "verdict": "passes",
+  "thin_coverage": false,
+  "controls": [
+   "PC1",
+   "PC10",
+   "PC11",
+   "PC13",
+   "PC18",
+   "PC19a",
+   "PC19b",
+   "PC2",
+   "PC4",
+   "PC5",
+   "PC9"
+  ]
+ },
+ "H1": {
+  "n_controls": 5,
+  "evaluable": 3,
+  "recovered": 3,
+  "fraction": 1.0,
+  "verdict": "passes",
+  "thin_coverage": false,
+  "controls": [
+   "PC12",
+   "PC15",
+   "PC6",
+   "PC7",
+   "PC8"
+  ]
+ },
+ "H2": {
+  "n_controls": 2,
+  "evaluable": 0,
+  "recovered": 0,
+  "fraction": null,
+  "verdict": "n/a (0 evaluable controls; direction exploratory)",
+  "thin_coverage": false,
+  "controls": [
+   "PC21",
+   "PC22"
+  ]
+ }
+}
+       28.04 real        13.31 user         5.75 sys
+          2561245184  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              866326  page reclaims
+                4159  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 507  voluntary context switches
+               51195  involuntary context switches
+        199390269364  instructions retired
+         48711505856  cycles elapsed
+          2204306648  peak memory footprint
