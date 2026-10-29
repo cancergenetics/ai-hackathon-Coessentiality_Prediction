@@ -1,0 +1,52 @@
+{
+ "analysis_id": "CTRL_PC9",
+ "contexts": [
+  "9p21_loss"
+ ],
+ "genes": [
+  "PRMT5 (10419)",
+  "PRPF38B (55119)",
+  "SAP18 (10284)",
+  "WDR77 (79084)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.2835782461470183,
+   "context": "9p21_loss",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "PRMT5 (10419)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.46731370175168074,
+   "context": "9p21_loss",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "WDR77 (79084)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.23717806807525757,
+   "context": "9p21_loss",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0228"
+  }
+ ],
+ "units": {
+  "PRMT5 (10419)": [
+   "PRMT5 (10419)"
+  ],
+  "WDR77 (79084)": [
+   "WDR77 (79084)"
+  ],
+  "Z0228": [
+   "PRMT5 (10419)",
+   "PRPF38B (55119)",
+   "SAP18 (10284)",
+   "WDR77 (79084)"
+  ]
+ }
+}
