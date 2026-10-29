@@ -200,3 +200,53 @@ the entry is internally inconsistent. The PI chose not to widen the lockbox read
 
 `registry.amendment_changes(committed, amended) == []` holds for all 30 touched entries (29 seed entries plus BENCH),
 and every declared path changed (`tests/test_part2_lockbox_driver.py`).
+
+## A4: BENCH secondary not run; multiverse point estimates only; H1S rare-route N axes not evaluable
+
+| | |
+|---|---|
+| Time (UTC) | 2026-10-29T02:42:37Z |
+| Amends | `b349e98868ec8fb5d75b9f0f10e162ade9b6efe2` (lockbox machinery and A3) |
+| Decided by | PI rulings on `results/part2/lockbox_confirm/GAPS.md` |
+| Applied by | `scripts/50_amend_A4.py` (`--check`) |
+| Statement | **before any lockbox read; no L values read** |
+
+The lockbox ledger still does not exist, and no target list or L outcome has been written or loaded.
+
+- **G1 (`BENCH_complex_vs_gene`).** Both secondary components are declared NOT RUN: the A–L correlation against
+  matched random gene sets (seed 7100), and the number of distinct complexes among the g*. They are recorded in
+  `estimand_secondary_not_run` with a reason.
+  - Reason: both are under-specified, so specifying them now would add analyst choices. The random-set comparison
+    would also need L values of non-member genes, which would widen the registered member-only BENCH read. This is
+    the same reasoning as A3(b).
+  - The PI chose not to widen the read. Both components are reported as limitations.
+- **G2 (`BENCH_complex_vs_gene`, `BRIDGE-L_confirmation_rate`).** The multiverses report point estimates only, with no
+  bootstrap CIs (`multiverse.ci: point estimate only`). The registry is silent on this, and the multiverse is
+  descriptive. The primary BENCH and BRIDGE-L estimands keep their registered CIs.
+- **G3 (`H1S_silencing_GI`).** `lockbox.rare_route_fitted_parameters: not evaluable`.
+  - Scope: the N-axis calls on non-lockbox-testable events, whose DEMETER2 rare route would need fitted baselines.
+    They are listed in `lockbox.rare_route_not_evaluable`: Z0018|IGSF11, Z0018|SOX10, Z0035|PAX8, Z0084|NFATC2,
+    Z0149|SPDEF, Z0316|IGF1R, all on the N axis.
+  - Ruling: these calls are NOT EVALUABLE in L, with no CRISPR or DEMETER2 refit. H1S is exploratory.
+
+**Accepted literal readings** (GAPS.md section 2, accepted as written):
+1. Breadth is taken over all of C's members. g* is chosen among the members after the context's removals.
+2. The multiverse "g* by largest |beta|" is the member with the largest beta in the complex's A direction (ties: t).
+3. The BENCH pair sets ("those contexts") are BENCH's 41 lockbox-testable H3a/H3b contexts. The single BENCH read
+   covers the members of every complex in the primary and secondary pair sets.
+4. The BRIDGE-L GLS pass uses the H3a/H3b machinery: removals, per-context covariates, 12/12 evaluability, a screen
+   at q < 0.1, 10,000 Freedman-Lane permutations, and seed 4500 for both calls.
+   - No pseudo-context calibration is run, because the entry has no `calibration` field.
+   - The pass runs after every confirmatory entry is closed and is committed before its read.
+5. BRIDGE-L rates:
+   - Cluster size is the number of frozen members.
+   - The zavg status comes from the H3a/H3b confirmation tables; there is no new zavg read.
+   - Rare-context hits are excluded ("lockbox-testable contexts only").
+   - The matched-coverage subset is `validation.match_coverage` (FZ-C D5) applied to the level-1 clusters.
+6. A hit whose context is testable in the frozen list but has fewer than 5/5 L models after complete cases is not
+   confirmed and is flagged. It does not take the rare-context route.
+7. Hits are ordered by (context, unit). The permutation seed is `seeds.lockbox_permutation` (A3) + hit index.
+
+`registry.amendment_changes(committed, amended) == []` holds for the three touched entries, and every declared path
+changed (`tests/test_part2_lockbox_driver.py`). The engine fix to `bench.bridge_rate` (indexing the `map` column rather
+than calling the `DataFrame.map` method) is not a registry change. It has a regression test.

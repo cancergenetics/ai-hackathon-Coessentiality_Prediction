@@ -153,10 +153,14 @@ def test_bench_and_bridge_outputs(runs):
     assert np.isfinite(b["primary"]["mean"]) and len(b["primary"]["ci95"]) == 2
     assert b["multiverse"]["within_line_rank"].startswith("NOT RUN")
     assert set(b["multiverse"]) >= {"eigengene", "gstar_largest_beta", "T1_T2_pairs"}
-    assert np.isfinite(b["secondary"]["r_complex"]) and len(b["secondary"]["r_random"]) == 5
-    assert b["distinct"]["n_distinct_gstar"] >= 1
+    # A4 (G1): both secondary components NOT RUN; (G2) multiverse point estimates only, primary keeps its CIs
+    assert b["secondary"] == "NOT RUN (amendment A4 G1)" and b["distinct"] == "NOT RUN (amendment A4 G1)"
+    assert not (runs["world"].out("BENCH_complex_vs_gene") / "al_correlation_pairs.tsv").exists()
+    for k in ("eigengene", "gstar_largest_beta", "T1_T2_pairs"):
+        assert np.isfinite(b["multiverse"][k]["mean"]) and not any(x.startswith("ci95") for x in b["multiverse"][k])
     assert np.isfinite(g["primary"]["diff"]) and len(g["primary"]["ci95"]) == 2
     assert set(g["multiverse"]) >= {"unweighted", "matched_gene_coverage", "T1_T2_clusters"}
+    assert all("ci95" not in v for v in g["multiverse"].values())
     rep = out["report"]
     assert rep["H3b_driver_family"]["overall"]["n_rare"] == 2
     # the GLS discovery pass is two trial lines (one BB family each), committed before the BRIDGE-L read
@@ -164,6 +168,25 @@ def test_bench_and_bridge_outputs(runs):
     tr = [json.loads(l) for l in w.proj.trials.read_text().splitlines()]
     gl = [r for r in tr if r["analysis_id"] == "BRIDGE-L_confirmation_rate"]
     assert [r["tag"] for r in gl] == ["discovery_H3a", "discovery_H3b"]
+
+
+def test_rare_route_needing_fitted_parameters_is_not_evaluable(runs):
+    """A4 (G3): an eligible N-axis call on a non-testable event whose DEMETER2 rare route would need fitted baselines is
+    NOT EVALUABLE in L under `rare_route_fitted_parameters: not evaluable`; a P-axis call (a plain mean) still takes
+    the rare route. A side only (the synthetic H1 events are all lockbox-testable, so the routes are forced here)."""
+    D, w = runs["D"], runs["world"]
+    sp = D.build_spec(w, "H1_within_complex_GI")
+    h = sp.hits
+    n_i = h.index[h.eligible & (h.axis == "N")][0]
+    p_i = h.index[h.eligible & (h.axis == "P")][0]
+    h.loc[[n_i, p_i], "lockbox_testable"] = False
+    sp.needs_fit = [h.unit[n_i]]
+    rr = D.rare_routes(w, sp)
+    assert rr[n_i] == {"not_evaluable_L": True}
+    assert "rare_route_pass" in rr[p_i] and rr[p_i]["demeter2_same_sign"] is not None
+    row = h.loc[n_i].copy()
+    row["not_evaluable_L"], row["rare_route_pass"], row["testable_L"], row["confirmed_final"] = True, None, False, False
+    assert D._status(row).startswith("NOT EVALUABLE in L")
 
 
 # ------------------------------------------------------------------------------------------------ unit pieces
@@ -195,11 +218,17 @@ def test_effect_rsd_and_al_correlation():
         bench.al_correlation(pairs, sc, sc, ctx, ctx, {}, {}, method=None)
 
 
-def test_real_registry_gaps_are_refused():
+def test_real_registry_bench_rulings():
+    """Without A4 the BENCH secondary gap is refused; with A4 (secondary NOT RUN, multiverse point estimates) the
+    guard passes."""
     D = _script("48_lockbox_confirm.py")
     eb = registry.load_yaml((REG / "BENCH_complex_vs_gene.yaml").read_text())
+    ci = (eb.get("multiverse") or {}).get("ci")
     with pytest.raises(D.GapError):
-        D.check_bench_rulings(eb.get("estimand_secondary"), (eb.get("multiverse") or {}).get("ci"))
+        D.check_bench_rulings(eb.get("estimand_secondary"), ci)
+    with pytest.raises(D.GapError):
+        D.check_bench_rulings(None, None, eb.get("estimand_secondary_not_run"))
+    D.check_bench_rulings(eb.get("estimand_secondary"), ci, eb.get("estimand_secondary_not_run"))
 
 
 # ------------------------------------------------------------------------------------------------ amendment A3
@@ -240,5 +269,35 @@ def test_amendment_A3_seeds_and_bench_not_run():
     assert "before any lockbox read; no L values read" in txt
     # the script re-derives exactly the committed text
     if _show(A3.AMENDS, "docs/registry/H3a_lineage_atlas.yaml") is not None:
-        plan = A3.plan()
-        assert all((REG / f"{k}.yaml").read_text() == t for k, (t, *_) in plan.items())
+        plan, c = A3.plan(), A3.applied_commit()
+        assert all(_show(c, f"docs/registry/{k}.yaml") == t for k, (t, *_) in plan.items())
+
+
+# ------------------------------------------------------------------------------------------------ amendment A4
+def test_amendment_A4_rulings():
+    A4 = _script("50_amend_A4.py")
+    entries = registry.load_all(REG)
+    eb, eg, es = (entries[k] for k in ("BENCH_complex_vs_gene", "BRIDGE-L_confirmation_rate", "H1S_silencing_GI"))
+    assert len(eb["estimand_secondary_not_run"]) == 2 and "estimand_secondary" not in eb
+    assert eb["multiverse"]["ci"] == eg["multiverse"]["ci"] == "point estimate only"
+    assert es["lockbox"]["rare_route_fitted_parameters"] == "not evaluable"
+    assert sorted(es["lockbox"]["rare_route_not_evaluable"]) == sorted(A4.H1S_NOT_EVALUABLE)
+    # every other entry is untouched by A4
+    assert [k for k, e in entries.items() if any(a["id"] == "A4" for a in e.get("amendments", []))] == \
+        sorted(A4.REASONS)
+    for k in A4.REASONS:
+        rec = [a for a in entries[k]["amendments"] if a["id"] == "A4"]
+        assert len(rec) == 1 and rec[0]["amends_commit"] == A4.AMENDS and rec[0]["timestamp_utc"] == A4.TIMESTAMP
+        assert "before any lockbox read; no L values read" in rec[0]["reason"], k
+        assert registry.validate(entries[k], k) == [], k
+        old_txt = _show(A4.AMENDS, f"docs/registry/{k}.yaml")
+        if old_txt is None:
+            pytest.skip("no history with the amended commit")
+        old = registry.load_yaml(old_txt)
+        assert registry.amendment_changes(old, entries[k]) == [], k
+        assert registry.changed_top_paths(old, entries[k], rec[0]["changed_paths"]) == set(rec[0]["changed_paths"])
+        assert (REG / f"{k}.yaml").read_text() == A4.plan()[k][0], k
+    txt = (REG / "AMENDMENTS.md").read_text()
+    assert "## A4" in txt and A4.AMENDS in txt and A4.TIMESTAMP in txt
+    a4 = txt[txt.index("## A4"):]
+    assert "before any lockbox read; no L values read" in a4 and "accepted literal readings" in a4.lower()

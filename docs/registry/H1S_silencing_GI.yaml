@@ -4194,6 +4194,14 @@ lockbox:
     DEMETER2 on A models + leave-one-model-out, same sign), labelled. Neutral calls are not confirmed; their L
     90% CI is reported. L effects are reported for every event.
   target_list: results/part2/lockbox_targets/H1S_silencing_GI.json
+  rare_route_fitted_parameters: not evaluable
+  rare_route_not_evaluable:
+    - "Z0018|IGSF11|N"
+    - "Z0018|SOX10|N"
+    - "Z0035|PAX8|N"
+    - "Z0084|NFATC2|N"
+    - "Z0149|SPDEF|N"
+    - "Z0316|IGF1R|N"
 multiverse:
   scores: [eigengene of the N component, within_line_rank, expression_masked, pan_essential_referenced]
   covariate_sensitivity: [NNMD, doubling_time, CasActivity, GrowthPattern]
@@ -4274,4 +4282,13 @@ amendments:
       (context, unit) order). H3a 6100, H3b 6200, H1 6300, H1S 6400, H2 6500, BRIDGE-L 6600, CTRL 6700 + registry
       index; checked against every registered or documented seed, no collision. Record: docs/registry/AMENDMENTS.md.
     changed_paths: [seeds.lockbox_permutation]
+  - id: A4
+    timestamp_utc: 2026-10-29T02:42:37Z
+    amends_commit: b349e98868ec8fb5d75b9f0f10e162ade9b6efe2
+    reason: >
+      PI ruling A4 (G3) on results/part2/lockbox_confirm/GAPS.md, before any lockbox read; no L values read. The
+      N-axis calls on non-lockbox-testable events would need fitted baselines on DEMETER2 for the rare-context route
+      (registry silent); they are NOT EVALUABLE in L, with no CRISPR or DEMETER2 refit (H1S is exploratory). Record:
+      docs/registry/AMENDMENTS.md.
+    changed_paths: [lockbox.rare_route_fitted_parameters, lockbox.rare_route_not_evaluable]
 status: open

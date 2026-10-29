@@ -180,13 +180,20 @@ def plan() -> dict:
     return out
 
 
+def applied_commit() -> str:
+    """The first commit whose H3a entry carries the A3 record."""
+    log = git("log", "--reverse", "--format=%H", "-S", "  - id: A3", "--", "docs/registry/H3a_lineage_atlas.yaml")
+    return log.split()[0] if log.split() else "HEAD"
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true", help="verify the working tree equals the planned amendment")
     a = ap.parse_args()
     p = plan()
-    if a.check:
-        bad = [k for k, (t, *_) in p.items() if (REG / f"{k}.yaml").read_text() != t]
+    if a.check:                            # against the commit that applied A3 (A4+ may edit the same files later)
+        c = applied_commit()
+        bad = [k for k, (t, *_) in p.items() if git("show", f"{c}:docs/registry/{k}.yaml") != t]
         print("A3 applied" if not bad else f"differs: {bad}")
         raise SystemExit(1 if bad else 0)
     for k, (t, paths, _, new) in p.items():

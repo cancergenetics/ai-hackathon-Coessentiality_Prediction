@@ -83,7 +83,8 @@ GLS_MAP = "results/part2/fzx/gls_engine_membership.tsv"
 CLUSTERS = {"zavg": "results/part2/construction/zavg_map/clusters.tsv",
             "gls": "results/part2/construction/gls_map/clusters.tsv"}
 RARE_LABEL = "not lockbox-testable"
-FIT_RULINGS = ("A CRISPR parameters", "DEMETER2 A refit")
+FIT_RULINGS = ("A CRISPR parameters", "DEMETER2 A refit", "not evaluable")
+NOT_EVALUABLE = FIT_RULINGS[2]          # A4 (G3): such rare-route hits are NOT EVALUABLE in L
 
 
 class GapError(RegistryError):
@@ -187,6 +188,7 @@ def rulings(world: World) -> dict:
     out = {}
     eb, _ = entry(world, BENCH_ID)
     out["bench_secondary"] = eb.get("estimand_secondary")
+    out["bench_secondary_not_run"] = eb.get("estimand_secondary_not_run")      # A4 (G1)
     out["bench_multiverse_ci"] = (eb.get("multiverse") or {}).get("ci")
     eg, _ = entry(world, BRIDGE_ID)
     out["bridge_multiverse_ci"] = (eg.get("multiverse") or {}).get("ci")
@@ -448,6 +450,9 @@ def rare_routes(world: World, spec: Spec) -> dict:
     for i, r in spec.hits.iterrows():
         if r.lockbox_testable or not r.eligible:
             continue
+        if r.unit in spec.needs_fit and _fit_ruling(world, spec.aid) == NOT_EVALUABLE:
+            out[i] = dict(not_evaluable_L=True)                 # A4 (G3): no CRISPR or DEMETER2 refit
+            continue
         yA = spec.score_A(r.context, r.unit)
         yD = spec.score_D2(r.context, r.unit)
         res = confirm.rare_route(yA, spec.ctx_all[r.context].reindex(world.A), spec.cov_A.get(r.context), groups,
@@ -468,6 +473,8 @@ def _with_ci90(t: pd.DataFrame) -> pd.DataFrame:
 def _status(r) -> str:
     if not r.eligible:
         return "not eligible (no non-neutral call; L effect reported)"
+    if not r.lockbox_testable and bool(r.not_evaluable_L):
+        return "NOT EVALUABLE in L (A4: the rare route would need fitted DEMETER2 parameters)"
     if not r.lockbox_testable:
         return f"{RARE_LABEL}: rare-context route {'passed' if r.rare_route_pass else 'failed'}"
     if not r.testable_L:
@@ -507,6 +514,8 @@ def run_entry(world: World, spec: Spec, close: bool = True) -> pd.DataFrame:
     rr = pd.DataFrame.from_dict(rare, orient="index") if rare else pd.DataFrame()
     for c in ("loso_same_sign", "loso_folds", "lomo_same_sign", "demeter2_same_sign", "rare_route_pass"):
         out[c] = rr[c].reindex(out.index) if c in rr else np.nan
+    out["not_evaluable_L"] = rr["not_evaluable_L"].reindex(out.index).fillna(False).astype(bool) \
+        if "not_evaluable_L" in rr else False
     out["route"] = np.where(out.lockbox_testable, "lockbox", RARE_LABEL)
     out["confirmed_final"] = out.eligible & out.lockbox_testable & out.confirmed.fillna(False).astype(bool)
     out["rare_route_pass"] = out.rare_route_pass.astype(object)
@@ -587,19 +596,21 @@ def bench_stage(world: World) -> dict:
     proj = world.proj
     e, blob = entry(world, BENCH_ID)
     rul = rulings(world)
-    sec_spec = rul["bench_secondary"]
+    sec_spec, sec_not_run = rul["bench_secondary"], rul["bench_secondary_not_run"]
     ci_rule = rul["bench_multiverse_ci"]
-    check_bench_rulings(sec_spec, ci_rule)
+    check_bench_rulings(sec_spec, ci_rule, sec_not_run)
     t0 = time.time()
     seeds = e["seeds"]
     pairs, sec_all, covA, info = _bench_pairs(world, e)
     ctxs = info["contexts"]
-    sec_pairs = pairs[["context", "unit"]] if sec_spec["pair_set"] == "primary" else sec_all[["context", "unit"]]
-    units_sec = sorted(set(sec_pairs.unit))
-    ess = calib.clip_essentiality(world.E_A)
-    ps = world.pair_scores() if callable(world.pair_scores) else world.pair_scores
-    sets, set_status = calib.matched_random_sets(world.E_A, world.fmap, units_sec, ess, ps, int(sec_spec["R"]),
-                                                 int(seeds["matched_sets"]))
+    sets = {}
+    if not sec_not_run:
+        sec_pairs = pairs[["context", "unit"]] if sec_spec["pair_set"] == "primary" else sec_all[["context", "unit"]]
+        units_sec = sorted(set(sec_pairs.unit))
+        ess = calib.clip_essentiality(world.E_A)
+        ps = world.pair_scores() if callable(world.pair_scores) else world.pair_scores
+        sets, set_status = calib.matched_random_sets(world.E_A, world.fmap, units_sec, ess, ps, int(sec_spec["R"]),
+                                                     int(seeds["matched_sets"]))
     genes = sorted({g for u in set(pairs.unit) | set(sec_all.unit) for g in world.fmap.members[u]}
                    | {g for v in sets.values() for g in v})
     p4 = pairs.rename(columns={"beta_A": "beta"}).assign(alternative="two-sided")[["context", "unit", "beta",
@@ -624,8 +635,8 @@ def bench_stage(world: World) -> dict:
     rho = sst.spearmanr(tab.delta, tab.breadth, nan_policy="omit")
     out = dict(analysis_id=BENCH_ID, registry_blob=blob, n_L_models=int(len(Lidx)), B=B,
                seed=int(seeds["bootstrap"]), primary=prim["summary"],
-               trend_spearman_delta_breadth=dict(rho=float(rho.statistic), p=float(rho.pvalue)),
-               distinct=bench.distinct_gstar(pairs, world.fmap))
+               trend_spearman_delta_breadth=dict(rho=float(rho.statistic), p=float(rho.pvalue)))
+    out["distinct"] = "NOT RUN (amendment A4 G1)" if sec_not_run else bench.distinct_gstar(pairs, world.fmap)
     # multiverse (reported, never selected); within_line_rank NOT RUN (A3(b))
     Bm = B if ci_rule == "bootstrap as primary" else 1
     fits = {}
@@ -649,7 +660,30 @@ def bench_stage(world: World) -> dict:
     mv["within_line_rank"] = "NOT RUN (amendment A3(b))"
     out["multiverse"] = mv
     out["multiverse_ci"] = ci_rule
-    # secondary: A-L correlation vs matched random sets; distinct complexes among g*
+    # secondary: A-L correlation vs matched random sets (NOT RUN under A4 G1)
+    out["secondary"] = "NOT RUN (amendment A4 G1)"
+    al = None
+    if not sec_not_run:
+        al = _bench_secondary(world, e, ctxs, sets, set_status, sec_spec, sec_pairs, rem, sL, E_L, ctxL, covL)
+        out["secondary"] = dict({k: v for k, v in al.items() if k != "table"}, spec=sec_spec,
+                                matched_sets_status=set_status.status.value_counts().to_dict(),
+                                seed=int(seeds["matched_sets"]))
+    out["runtime_s"] = round(time.time() - t0, 1)
+    out["peak_rss_bytes"] = int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
+    d = world.out(BENCH_ID)
+    d.mkdir(parents=True, exist_ok=True)
+    tab.to_csv(d / "bench_pairs.tsv", sep="\t", index=False, float_format="%.6g")
+    if al is not None:
+        al["table"].to_csv(d / "al_correlation_pairs.tsv", sep="\t", index=False, float_format="%.6g")
+    (d / "bench.json").write_text(json.dumps(out, indent=1, sort_keys=True, default=float) + "\n")
+    confirm.commit_paths(proj, [d], f"Lockbox confirmations (single read): {BENCH_ID}")
+    confirm.close_entry(proj, BENCH_ID)
+    world.say(f"BENCH: mean Delta {out['primary']['mean']:.3f}; closed")
+    return out
+
+
+def _bench_secondary(world, e, ctxs, sets, set_status, sec_spec, sec_pairs, rem, sL, E_L, ctxL, covL) -> dict:
+    """BENCH secondary (only if registered; A4 G1 declared it NOT RUN): bench.al_correlation vs matched sets."""
     ctxA = world.ctx.reindex(world.A)
     covAll, _ = covmod.per_context(e, ctxs, world.cov.reindex(world.A))
     removal_cache = {}
@@ -667,25 +701,16 @@ def bench_stage(world: World) -> dict:
     def setL(c, u, r):
         return calib.score_sets(E_L, {"s": sets[f"{u}#r{r}"]}, rem(c), world.annot)["s"]
 
-    al = bench.al_correlation(sec_pairs, sA, lambda c, u: sL(E_L, c, u), ctxA, ctxL, covAll, covL, setA, setL,
-                              R=int(sec_spec["R"]), method=str(sec_spec["correlation"]))
-    out["secondary"] = dict({k: v for k, v in al.items() if k != "table"}, spec=sec_spec,
-                            matched_sets_status=set_status.status.value_counts().to_dict(),
-                            seed=int(seeds["matched_sets"]))
-    out["runtime_s"] = round(time.time() - t0, 1)
-    out["peak_rss_bytes"] = int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
-    d = world.out(BENCH_ID)
-    d.mkdir(parents=True, exist_ok=True)
-    tab.to_csv(d / "bench_pairs.tsv", sep="\t", index=False, float_format="%.6g")
-    al["table"].to_csv(d / "al_correlation_pairs.tsv", sep="\t", index=False, float_format="%.6g")
-    (d / "bench.json").write_text(json.dumps(out, indent=1, sort_keys=True, default=float) + "\n")
-    confirm.commit_paths(proj, [d], f"Lockbox confirmations (single read): {BENCH_ID}")
-    confirm.close_entry(proj, BENCH_ID)
-    world.say(f"BENCH: mean Delta {out['primary']['mean']:.3f}; closed")
-    return out
+    return bench.al_correlation(sec_pairs, sA, lambda c, u: sL(E_L, c, u), ctxA, ctxL, covAll, covL, setA, setL,
+                                R=int(sec_spec["R"]), method=str(sec_spec["correlation"]))
 
 
-def check_bench_rulings(sec_spec, ci_rule) -> None:
+def check_bench_rulings(sec_spec, ci_rule, not_run=None) -> None:
+    if ci_rule not in ("bootstrap as primary", "point estimate only"):
+        raise GapError("BENCH multiverse: `multiverse.ci` ruling missing ('bootstrap as primary' | "
+                       "'point estimate only')")
+    if not_run:                                    # A4 (G1): the secondary components are declared NOT RUN
+        return
     need = ("correlation", "R", "pair_set", "matching", "summary")
     if not isinstance(sec_spec, dict) or any(k not in sec_spec for k in need):
         raise GapError(f"BENCH secondary: registry ruling `estimand_secondary` with {need} is missing")
@@ -693,9 +718,6 @@ def check_bench_rulings(sec_spec, ci_rule) -> None:
         raise GapError("BENCH secondary: correlation must be pearson|spearman and pair_set primary|secondary")
     if "matched_random_sets" not in str(sec_spec["matching"]):
         raise GapError("BENCH secondary: only calib.matched_random_sets is implemented as the matching rule")
-    if ci_rule not in ("bootstrap as primary", "point estimate only"):
-        raise GapError("BENCH multiverse: `multiverse.ci` ruling missing ('bootstrap as primary' | "
-                       "'point estimate only')")
 
 
 def gls_discovery(world: World) -> pd.DataFrame:
@@ -813,7 +835,9 @@ def _rate(df: pd.DataFrame) -> dict:
     rr = df[df.eligible & ~df.lockbox_testable]
     return dict(n_eligible=int(df.eligible.sum()), n_lockbox=int(len(lb)), n_confirmed=int(lb.confirmed_final.sum()),
                 rate=float(lb.confirmed_final.mean()) if len(lb) else None, n_rare=int(len(rr)),
-                n_rare_pass=int((rr.rare_route_pass == True).sum()))  # noqa: E712
+                n_rare_pass=int((rr.rare_route_pass == True).sum()),  # noqa: E712
+                n_not_evaluable_L=int((rr.not_evaluable_L.astype(str) == "True").sum()) if "not_evaluable_L" in rr
+                else 0)
 
 
 def report(world: World) -> dict:
@@ -879,15 +903,23 @@ def preflight(world: World) -> dict:
             info.update(n_hits=int(len(h)), n_eligible=int(h.eligible.sum()),
                         n_rare=int((h.eligible & ~h.lockbox_testable).sum()),
                         rare_contexts=sorted(set(h.context[h.eligible & ~h.lockbox_testable])))
-            if sp.needs_fit:
+            ne = (e.get("lockbox") or {}).get("rare_route_not_evaluable")
+            fit_needed = [u for u in sp.needs_fit
+                          if not bool(h.lockbox_testable[h.unit == u].all()) and bool(h.eligible[h.unit == u].any())]
+            if fit_needed:
                 try:
-                    _fit_ruling(world, aid)
+                    r = _fit_ruling(world, aid)
+                    info["rare_route_fitted_parameters"] = r
+                    if r == NOT_EVALUABLE and ne is not None and sorted(ne) != sorted(fit_needed):
+                        gaps.append(f"{aid}: registered rare_route_not_evaluable {sorted(ne)} differs from the hits "
+                                    f"that need fitted parameters {sorted(fit_needed)}")
                 except GapError as ex:
-                    gaps.append(f"{ex} [hits: {sp.needs_fit[:8]}]")
+                    gaps.append(f"{ex} [hits: {fit_needed[:8]}]")
+                info["needs_fitted_parameters"] = sorted(fit_needed)
         entries[aid] = info
     rul = rulings(world)
     try:
-        check_bench_rulings(rul["bench_secondary"], rul["bench_multiverse_ci"])
+        check_bench_rulings(rul["bench_secondary"], rul["bench_multiverse_ci"], rul["bench_secondary_not_run"])
     except GapError as ex:
         gaps.append(str(ex))
     if rul["bridge_multiverse_ci"] not in ("bootstrap as primary", "point estimate only"):

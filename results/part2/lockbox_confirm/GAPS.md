@@ -1,5 +1,13 @@
 # Lockbox machinery before the read: the gaps that remain
 
+> **Resolved by amendment A4 (PI rulings, before any lockbox read; no L values read).**
+> - G1: BENCH secondary is NOT RUN.
+> - G2: the multiverses report point estimates only.
+> - G3: the six H1S N-axis rare-route calls are NOT EVALUABLE in L.
+> - The literal readings in section 2 are accepted.
+>
+> With these rulings the driver's preflight passes without reading any L value.
+
 Date: 2026-10-29.
 
 **No lockbox read.** The ledger does not exist, no target list has been written, and no L value has been loaded.

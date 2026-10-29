@@ -332,12 +332,12 @@ def test_amendment_A1_is_the_only_non_fill_change(entries, man):
         if k in ("H1_within_complex_GI", "H1S_silencing_GI"):
             assert [a["id"] for a in am][:2] == ["A1", "A2"] and am[0]["amends_commit"] == c, k
             # E1: erratum (score_rule only); A3: lockbox permutation seed (pre-read)
-            assert [a["id"] for a in am][2:] in ([], ["E1"], ["E1", "A3"]), k
+            assert [a["id"] for a in am][2:] in ([], ["E1"], ["E1", "A3"], ["E1", "A3", "A4"]), k
             assert registry.amendment_changes(h1_fzx, e) == [], k
             declared = am[0]["changed_paths"]
             assert registry.changed_top_paths(h1_fzx, e, declared) == set(declared), k
         else:
-            assert [a["id"] for a in am] in ([], ["A3"]), k                    # A3 (pre-read): seeds / BENCH not-run
+            assert [a["id"] for a in am] in ([], ["A3"], ["A3", "A4"]), k      # A3 / A4 (pre-read amendments)
             old = registry.load_yaml(_show(c, f"docs/registry/{k}.yaml"))
             assert [p for p in registry.amendment_changes(old, e) if p != "status"] == [], k
     assert set(entries["H1_within_complex_GI"]["amendments"][0]["changed_paths"]) == {

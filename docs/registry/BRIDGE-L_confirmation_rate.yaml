@@ -452,6 +452,7 @@ lockbox:
 multiverse:
   other: [unweighted confirmation rate, matched gene coverage subset, T1/T2 clusters only]
   use: "reported, never selected"
+  ci: point estimate only
 seeds:
   permutation: 4500
   bootstrap: 5200
@@ -478,4 +479,12 @@ amendments:
       (context, unit) order). H3a 6100, H3b 6200, H1 6300, H1S 6400, H2 6500, BRIDGE-L 6600, CTRL 6700 + registry
       index; checked against every registered or documented seed, no collision. Record: docs/registry/AMENDMENTS.md.
     changed_paths: [seeds.lockbox_permutation]
+  - id: A4
+    timestamp_utc: 2026-10-29T02:42:37Z
+    amends_commit: b349e98868ec8fb5d75b9f0f10e162ade9b6efe2
+    reason: >
+      PI ruling A4 (G2) on results/part2/lockbox_confirm/GAPS.md, before any lockbox read; no L values read. The
+      multiverse reports point estimates only (registry silent; descriptive); the primary estimand keeps its
+      registered CI. Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [multiverse.ci]
 status: open

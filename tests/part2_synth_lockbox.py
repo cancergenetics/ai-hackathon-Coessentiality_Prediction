@@ -40,8 +40,9 @@ SEEDS = {"H3a_lineage_atlas": (4000, 6100), "H3b_driver_family": (4100, 6200), "
          "H2_submodule_divergence": (4300, 6500)}
 E2_LABEL = "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)"
 CTRL_INDEX = {"CTRL_PC1": 0, "CTRL_PC6": 5, "CTRL_PC20": 20, "CTRL_PC21": 21}
-RULINGS_BENCH = ("estimand_secondary:\n  correlation: pearson\n  R: 5\n  pair_set: secondary\n"
-                 "  matching: calib.matched_random_sets (D8 rule)\n  summary: synthetic\n")
+RULINGS_BENCH = ("estimand_secondary_not_run:\n  - \"A-L correlation vs matched random gene sets\"\n"
+                 "  - \"number of distinct complexes among the g*\"\n")       # mirrors A4 (G1)
+RULING_H1 = "lockbox:\n  rare_route_fitted_parameters: not evaluable\n"       # mirrors A4 (G3) for H1S
 
 
 def _script(name):
@@ -170,7 +171,8 @@ def build_world(root: Path, seed: int = 0, n_perm: int = P.N_PERM, K: int = 200,
     h1_ctx = [dict(id=e.context, covariates=e.covariates) for e in {e.context: e for e in events}.values()]
     (reg / "H1_within_complex_GI.yaml").write_text(synth.entry_yaml(
         "H1_within_complex_GI", "H1", h1_ctx, h1m.units_of(events), "member_resolved", synth.BASE_COV,
-        dict(method="bh", q=0.05), fin, extra=_seeds(*SEEDS["H1_within_complex_GI"], {"matched_null": 7000})))
+        dict(method="bh", q=0.05), fin,
+        extra=_seeds(*SEEDS["H1_within_complex_GI"], {"matched_null": 7000}) + RULING_H1))
     for k, i in CTRL_INDEX.items():
         p = reg / f"{k}.yaml"
         p.write_text(p.read_text() + _seeds(4400 + i, 6700 + i))
@@ -187,7 +189,7 @@ def build_world(root: Path, seed: int = 0, n_perm: int = P.N_PERM, K: int = 200,
     gctx = [dict(c, covariates=cov_of[c["id"]]) for c in h3a_ctx + h3b_ctx]
     (reg / "BRIDGE-L_confirmation_rate.yaml").write_text(synth.entry_yaml(
         "BRIDGE-L_confirmation_rate", "bridge", gctx, gls.coarse(), "S_C_mean_winsor3", synth.BASE_COV, bb, fin,
-        extra=_seeds(4500, 6600, {"bootstrap": 5200}) + "multiverse:\n  ci: bootstrap as primary\n"))
+        extra=_seeds(4500, 6600, {"bootstrap": 5200}) + "multiverse:\n  ci: point estimate only\n"))
     entries = registry.load_all(reg)
     tl = testable_list(sim, sim.fold, entries, events)
     fz = root / "results" / "part2" / "fzx"
