@@ -137,3 +137,23 @@ event and count tables.
   any real-data run. The H1 discovery run (`d12c627`) therefore used the registered semantics.
 - The H1 trial line carries the pre-erratum registry blob (`ebfbaad4…`); the post-erratum blob differs only in
   `score_rule` and the `amendments` record. H1S has not been run before E1.
+
+## E2: reporting rule when a non-neutral H1 class and TOST-neutral both hold (post hoc, conservative)
+
+| | |
+|---|---|
+| Time (UTC) | 2026-10-29T01:07Z |
+| Decided by | PI ruling R5, after the H1 run and its independent review (branch review-discovery, `bff6cad`) |
+| Entries | `H1_within_complex_GI`, `H1S_silencing_GI`; **reporting layer only, no registry field changed** |
+
+**Post hoc and conservative.** The registry gives no precedence between a non-neutral class (residual sensitisation,
+collapse, paralog compensation) and the TOST-neutral criterion (90% CI inside ±0.1 Chronos). When both hold, the
+reported label is "DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)". The engine's class stays in its own column
+(`class_complex_wide` / `class_paralog`); `label_final` / `label_final_paralog` carry the reported label
+(`scripts/47_h1_label_final.py`). Such events are not headline findings. They still go to lockbox confirmation on
+their registered statistic, but a confirmation cannot promote them. Engine class logic, q-values and trial lines are
+unchanged.
+- H1: Z0130|PTEN (collapse) and Z0158|TP53 (residual sensitisation) are relabelled.
+- H1S (exploratory): Z0149|ERBB3, Z0194|PRR15L, Z0260|B3GNT5 and Z0273|CST6 are relabelled.
+- Also in the reporting layer: Z0164|MAP2K4 (H1) is labelled NOT EVALUABLE, because its counted tests were not
+  evaluable (ruling R2, applied without re-running H1).
