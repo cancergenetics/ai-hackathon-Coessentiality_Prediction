@@ -495,4 +495,4 @@ amendments:
       reports bootstrap CIs (the primary resampling, B 2000, seed 5200; under 1 min), reversing A4 G2 for this entry.
       Record: docs/registry/AMENDMENTS.md.
     changed_paths: [multiverse.ci]
-status: open
+status: closed
