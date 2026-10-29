@@ -1,6 +1,6 @@
 # Supplementary Information
 
-**A label-free co-essentiality score wins a pre-registered held-out test, but its advantage does not carry over to complexes or to complex-level cancer dependencies**
+**A co-essentiality score selected on training complexes wins a single held-out test but yields neither better-supported complexes nor more replicable complex-level dependencies in DepMap**
 
 ## Contents
 
@@ -20,6 +20,8 @@
 - Supplementary Note 14. Deviations from pre-registration (full table)
 - Supplementary Note 15. Extended limitations
 - Supplementary Note 16. The registered strongest findings
+- Supplementary Note 17. Revision analyses R-1 to R-4 (post hoc, descriptive) and requests not carried out
+- Supplementary Note 18. Glossary of identifiers
 - Supplementary Tables S1–S9 (files)
 
 ---
@@ -31,12 +33,29 @@ The Part 1 method was locked at commit c7f95ee (28 October 2026, 12:55:43 UTC). 
 | ID | Who | What | Consequence |
 |---|---|---|---|
 | T0 / D0 | PI | Line counts (3,312 / 597,426) and the first 3 lines of each file, as a format check | None |
-| T1 | Part 1 audit agent | Label-free descriptive counts: overlaps, strata, mappability | Known when the protocol was written; the choices follow Part 1's design |
-| D1 | Part 1 audit agent, intermediate run | Counted test pairs in Part 1's label-free top-pair table (zavg_BEF ≥ 3), which is equivalent to precision and recall at z ≥ 3 | Counts deleted; PI never saw them; rule (a) reported only as "non-blind (D1)" and enters no verdict |
+| T1 | Part 1 audit agent | Descriptive counts without labels: overlaps, strata, mappability | Known when the protocol was written; the choices follow Part 1's design |
+| D1 | Part 1 audit agent, intermediate run | Counted test pairs in Part 1's unsupervised top-pair table (zavg_BEF ≥ 3), which is equivalent to precision and recall at z ≥ 3 | Counts deleted; PI never saw them; rule (a) reported only as "non-blind (D1)" and enters no verdict |
 | T2 | Protocol author | Octal dump of the first ~200 bytes of the positive file | None |
-| T3 | Everyone | Genome-wide label-free scores covering all test pairs existed | The single-look guarantee is procedural |
+| T3 | Everyone | Genome-wide unsupervised scores covering all test pairs existed | The single-look guarantee is procedural |
 
 Decision notes D2–D4 concern data scope and are not contacts. D2: no CORUM or Complex Portal was obtained, so any naming of complexes is post hoc. D3: the locked verdict is computed on S1, and ITT is quoted alongside. D4: the scope of Part 2 was cut, and BioPlex is used for validation only. An independent audit found no evidence that test information entered Part 1 (docs/part1_audit.md).
+
+*Wording.* The first version said the score was "locked before the test data existed". The hu.MAP 3.0 test split was published earlier [Fischer 2025]; what is true is that the method was locked 59.6 min before the test files reached this project and was never run on them before the single look.
+
+*Order of Part 2 design relative to the test (28 October 2026, UTC).*
+
+| Time | Event | Commit |
+|---|---|---|
+| 12:55:43 | Part 1 method locked | c7f95ee |
+| 13:55 | Test files reach the project | – |
+| 15:08 | DESIGN v1 (Part 2) | d6bf744 |
+| 17:37 | DESIGN v3.1, final after three review rounds | bdb8816 |
+| 18:14 | Test protocol frozen | 039a843 |
+| 18:18 | Test labels first read (the single look) | looks.jsonl |
+| 18:52 | Test look results committed | 0861e59 |
+| 19:27 | Part 2 registry draft (29 entries) | ee45596 |
+
+The Part 2 design was written after the test files arrived, and the Part 2 registry after the Part 1 result was known (zavg_BEF had won). Nothing indicates that Part 2 used test information, and Part 2 code cannot read the test files (firewall tests); Part 2 uses zavg_BEF regardless of the test outcome (DESIGN §1).
 
 ## Supplementary Note 2. Methods detail
 
@@ -103,7 +122,7 @@ The median EB shrinkage factor is 0.74 (H3a) and 0.59 (H3b). Split by the comple
 
 ## Supplementary Note 5. BENCH and BRIDGE-L estimands
 
-*BENCH.* For each primary pair (an H3a or H3b discovery in a lockbox-testable context), g* is the member with the largest A |t| in the complex's direction, chosen in A after the context's removals (ties broken by |β|). Δ = t_L(S_C) − t_L(g*), signed toward the A direction. Breadth is the fraction of all members, removed ones included, with one-sided p < 0.05 in A (literal reading, A5). Terciles are formed on the primary pairs' breadth with ties broken by pair order (A5, reading 11). The 95% CI is a PatientID-blocked bootstrap over L lines with pairs and g* fixed (B = 2,000, seed 5100). The registered criterion is the high-tercile CI. The pairs cover 1,295 (C, c) combinations in 353 complexes with 920 distinct g*. The bootstrap failure rate (16.5%) and the sensitivity of the CI to covariate assembly are in the main text (BENCH) and Supplementary Note 12. Not run: the within-line-rank multiverse score (A3) and the A–L random-set correlation (A4, A5).
+*BENCH.* For each primary pair (an H3a or H3b discovery in a lockbox-testable context), g* is the member with the largest A |t| in the complex's direction, chosen in A after the context's removals (ties broken by |β|). Δ = t_L(S_C) − t_L(g*), signed toward the A direction. Breadth is the fraction of all members, removed ones included, with one-sided p < 0.05 in A (literal reading, A5). Terciles are formed on the primary pairs' breadth with ties broken by pair order (A5, reading 11). The 95% CI is a PatientID-blocked bootstrap over L lines with pairs and g* fixed (B = 2,000, seed 5100). The registered criterion is the high-tercile CI. The pairs cover 1,295 (C, c) combinations in 353 complexes with 920 distinct g*. The bootstrap failure rate (16.5%) and the sensitivity of the CI to covariate assembly are in the main text (BENCH) and Supplementary Note 12. Not run: the within-line-rank multiverse score (A3) and the A–L random-set correlation (A4, A5). Because 16.5% of bootstrap fits failed silently and the lower bound moves from −0.033 to −0.122 with the design assembled within replicates, the revised manuscript treats the registered interval as unreliable and the BENCH result as inconclusive, with a point estimate favouring the complex in the high tercile; the first version's conclusion that the complex "does not beat its best gene" is withdrawn.
 
 *BRIDGE-L.* GLS-map discovery used the H3a/H3b machinery on A: per-context covariates, 12/12 evaluability, a screen at q < 0.1, 10,000 Freedman–Lane permutations, seed 4500 and BB at q = 0.05 in two calls. It gave 1,206 lineage and 139 driver discoveries. The zavg statuses come from the H3a and H3b confirmation tables, so no new zavg read was made. Per map, the confirmation rate is computed within the size bins {3–4, 5–8, 9–16, 17–60} and averaged with the pooled bin weights of the discovered clusters. Weights are renormalised over the bins present (A5, N12), and rare-context hits are excluded. The CI is a bootstrap over hits within map and bin (B = 2,000, seed 5200).
 
@@ -118,7 +137,7 @@ Thirty entries, all closed. "m" is the registered test count or the size of the 
 | H1_within_complex_GI | H1 | 28 | confirmatory | 5 discoveries; 3 headline-eligible | ARID1A P confirmed (= PC6); EP300 P rare route passed; FOCAD N NE (defect) [confirmed; no claim]; TP53 N confirmed, not promotable; PTEN N not confirmed |
 | H1S_silencing_GI | H1S | 338 | exploratory | 31 discoveries | 9/17 evaluable [9/17]; rare route 6/6 pass |
 | H2_submodule_divergence | H2 | set by H3 discoveries | exploratory (no evaluable control) | 109 discoveries | 76/108 evaluable [77/109] |
-| BENCH_complex_vs_gene | benchmark | 1,295 pairs | confirmatory (estimation) | — | high tercile Δ +0.240 (−0.033 to +0.362): complex did not out-replicate best gene |
+| BENCH_complex_vs_gene | benchmark | 1,295 pairs | confirmatory (estimation) | — | high tercile Δ +0.240 (−0.033 to +0.362): inconclusive (bootstrap partly failed; interval unreliable) |
 | BRIDGE-L_confirmation_rate | bridge | 16,294 (GLS map) | secondary bridge | 1,345 GLS-map discoveries | Δ −0.065 (−0.107 to −0.025): favours GLS |
 | CTRL_PC1 (WRN, MSI-H) | H3b | 2 | control | recovered | 2/2 |
 | CTRL_PC2 (MDM2/PPM1D/USP7, TP53 WT) | H3b | 4 | control | recovered | 4/4 |
@@ -210,7 +229,7 @@ These scripts read committed result files only, never datasets, data caches or p
 
 ## Supplementary Note 10. Extended test-evaluation results and calibration details
 
-*Inference.* The Holm-adjusted p-values for the three primary ΔAP comparisons were < 0.0005 (GLS; no replicate ≤ 0 out of 2,000), 0.022 (Spearman) and 0.018 (Pearson). The intervals were stable across Monte-Carlo seeds 1–4 (lower bound of the GLS comparison 0.078–0.082). The secondary protein bootstrap (+0.093 to +0.154) and the anti-conservative pair bootstrap (+0.111 to +0.132) gave narrower intervals for the same comparison. AUROC was 0.789 (0.735–0.829); the gain over GLS was +0.059 (+0.030 to +0.090), while the interval for the gain over Spearman included 0 (+0.033, −0.003 to +0.067).
+*Inference.* The Holm-adjusted p-values for the three primary ΔAP comparisons were < 0.003 (GLS; no replicate ≤ 0 of 2,000, so the two-sided bootstrap p is < 0.001 and its Holm adjustment < 0.003; the first version's "< 0.0005" gave the one-sided bound without the factor 3), 0.022 (Spearman) and 0.018 (Pearson). The intervals were stable across Monte-Carlo seeds 1–4 (lower bound of the GLS comparison 0.078–0.082). The secondary protein bootstrap (+0.093 to +0.154) and the anti-conservative pair bootstrap (+0.111 to +0.132) gave narrower intervals for the same comparison. AUROC was 0.789 (0.735–0.829); the gain over GLS was +0.059 (+0.030 to +0.090), while the interval for the gain over Spearman included 0 (+0.033, −0.003 to +0.067).
 
 *Locked verdict on S1.* S1 has 3,159 positives and 563,648 negatives. On S1, AP was 0.349 (0.274–0.435), and the gains were +0.127 (+0.089 to +0.167), +0.135 (+0.024 to +0.229) and +0.143 (+0.038 to +0.233) against GLS, Spearman and Pearson. The macro per-cluster AP ratio against GLS was 1.017 (0.955–1.161), which passes the 0.95 non-inferiority margin but shows no per-cluster advantage.
 
@@ -246,9 +265,9 @@ These scripts read committed result files only, never datasets, data caches or p
 
 In H3a, 1,666 tests passed the screen and were re-tested by permutation; Biliary Tract and Prostate had no discovery. In H3b, 190 tests were re-tested. Discovery counts per lineage track the number of lines (Spearman 0.70). Registered-control readouts among the H3b discoveries are TP53 alteration with the MDM2/MDM4/PPM1D unit, MSI-H with the WRN unit, MTAP/9p21 loss with the PRMT5/WDR77 unit (a locus cluster) and NRF2 activation with the NFE2L2-containing unit (Supplementary Table S3, "control readout").
 
-*Matched sets.* BB applied to the random-set tests selected 21 H3a families and made 11,861 rejections. Of the 1,145 H3a discoveries, 62 have no matched sets, and of the 161 H3b discoveries 7. A post hoc, descriptive filter requested after these results were seen, β outside the central 95% of the matched sets' β, gives 699 of 1,083 (H3a) and 124 of 154 (H3b); with 10 sets per complex the quantiles are coarse, and the filter neither defines nor removes a discovery. Specificity by lineage: Lymphoid 42 of 197 discoveries beat all matched sets (21%), against 22 of 30 for Esophagus/Stomach and 28 of 48 for Lung.
+*Matched sets.* BB applied to the random-set tests selected 21 H3a families and made 11,861 rejections from 80,500 tests (14.7%), against 1,145 of 8,441 (13.6%) for the complexes. Seventeen complexes had no matched sets and 12 had both tolerances doubled (H3a). Of the 1,145 H3a discoveries, 62 have no matched sets, and of the 161 H3b discoveries 7. A post hoc, descriptive filter requested after these results were seen, β outside the central 95% of the matched sets' β, gives 699 of 1,083 (H3a) and 124 of 154 (H3b); with 10 sets per complex the quantiles are coarse, and the filter neither defines nor removes a discovery. Specificity by lineage: Lymphoid 42 of 197 discoveries beat all matched sets (21%), against 22 of 30 for Esophagus/Stomach and 28 of 48 for Lung.
 
-*Complex-specific A-side examples (not the registered strongest list).* Ranked by |t|, the strongest complex-specific lineage associations on A are lymphoid lines' lower dependency on a unit of ATRN, BCAR1, CRK, CRKL, ILK, ITGAV, ITGB5 and FERMT2 (β = +0.182) and their higher dependency on ADSL, ATIC, CAD, CTPS1, DHODH, GART, GMPS and IMPDH2 (−0.291). Others include lymphoid ALAD–UROS (−0.186), lymphoid EEFSEC/GPX4/PSTK/SECISBP2/SEPHS2/SEPSECS/TXNRD1 (−0.207), bowel CTNNB1/TCF7L2/HNF1A/HNF4A/GATA6/FOXA2 (−0.262) and CNS/Brain SLC3A2/SLC7A1/SLC7A5/TRPM7 (+0.176). The melanoma BRAF/MAP2K1/MAPK1/DUSP4/MITF association is the readout of control PC17. Among driver contexts: TP53-altered lines with ATM/TP53BP1/SHLD1/SHLD2/CCDC6/FBXO42 (−0.100), RB1-LoF lines with CCNE1/CCNE2/CDK2/E2F1/E2F3/TFDP1/SKP2 (−0.201), PTEN-LoF lines with IGF1R/INSR/IRS1/IRS2/FURIN (+0.096) and EWSR1-fusion lines with the EWSR1/FLI1-containing unit (−0.274; rare-context route). The bowel unit fails the registered leave-one-primary-disease-out check (Supplementary Note 16) and is therefore not among the strongest findings.
+*Flagged A-side examples (first-version "beats all matched sets" flag, which Supplementary Note 17 shows is largely produced by selection; not the registered strongest list).* Ranked by |t|, the strongest complex-specific lineage associations on A are lymphoid lines' lower dependency on a unit of ATRN, BCAR1, CRK, CRKL, ILK, ITGAV, ITGB5 and FERMT2 (β = +0.182) and their higher dependency on ADSL, ATIC, CAD, CTPS1, DHODH, GART, GMPS and IMPDH2 (−0.291). Others include lymphoid ALAD–UROS (−0.186), lymphoid EEFSEC/GPX4/PSTK/SECISBP2/SEPHS2/SEPSECS/TXNRD1 (−0.207), bowel CTNNB1/TCF7L2/HNF1A/HNF4A/GATA6/FOXA2 (−0.262) and CNS/Brain SLC3A2/SLC7A1/SLC7A5/TRPM7 (+0.176). The melanoma BRAF/MAP2K1/MAPK1/DUSP4/MITF association is the readout of control PC17. Among driver contexts: TP53-altered lines with ATM/TP53BP1/SHLD1/SHLD2/CCDC6/FBXO42 (−0.100), RB1-LoF lines with CCNE1/CCNE2/CDK2/E2F1/E2F3/TFDP1/SKP2 (−0.201), PTEN-LoF lines with IGF1R/INSR/IRS1/IRS2/FURIN (+0.096) and EWSR1-fusion lines with the EWSR1/FLI1-containing unit (−0.274; rare-context route). The bowel unit fails the registered leave-one-primary-disease-out check (Supplementary Note 16) and is therefore not among the strongest findings.
 
 *Never-expressed sets and response scope.* The H3a never-expressed excess (13.5%; 13 BB rejections) is concentrated in melanoma (33%), Skin (28%) and Lymphoid (27%); in H3b the rate was 6.2% (1 rejection). The registered response ("if that fraction exceeds 0.075") refers to the pseudo-context fraction, which was 0.049, so it did not fire. Under a broader reading it would have fired, but its consequence (permutation re-testing of every real test with p < 0.01, then BB again) can add discoveries and cannot remove any. The literal reading was fixed before the calibrations ran but after the discovery outcomes were known, and confirmed after the calibration results were seen. The copy-number segment null gave 6.0% overall (9p21 loss 4.5%; MYCN amplification 6.1%), within the 0.075 threshold; no qualifying segment existed for MYC amplification.
 
@@ -262,7 +281,7 @@ In H3a, 1,666 tests passed the screen and were re-tested by permutation; Biliary
 
 *Other labels.* Inconclusive: MED12, PLAA, SMARCA4, KEAP1, VHL, BRCA1 and PBRM1 (matched null unavailable). Not classed: EP300 and SMAD4 (complex-wide axis) and MAP2K4 (11 complete-case loss lines; not evaluable under ruling R2). SMARCB1 copy-number sensitivity: κ_N = +0.025 (90% CI −0.038 to +0.089; 15 loss lines among 732 complete cases), against +0.018 (−0.043 to +0.080; 17 of 960) in the primary analysis.
 
-*H1S (exploratory).* 321 tests; m = 293 evaluable (registered 338, because 28 events have a leverage-1 design); 31 BH discoveries, 26 outside locus clusters. Labels: 20 collapse, 4 detectable-within-margin (E2), 191 neutral, 45 inconclusive, 13 with no matched null and 44 not evaluable; two paralog-relief calls (SOX10, BTK). Collapse calls are dominated by lineage-restricted non-expression of B-cell, melanocyte and renal genes, which is the confounding A1 anticipated. In the lockbox, 9 of 17 evaluable calls were confirmed and all six rare-route calls passed; none is promoted.
+*H1S (exploratory).* Amendment A1 moved 318 silencing events to H1S; A2 then moved one of them, SMARCB1, to H1 as a genetic loss, leaving 317 events (registered m 338). They gave 321 tests (317 complex-wide axes and 4 paralog axes); m = 293 were evaluable (the remainder have a leverage-1 design); 31 BH discoveries, 26 outside locus clusters. Labels: 20 collapse, 4 detectable-within-margin (E2), 191 neutral, 45 inconclusive, 13 with no matched null and 44 not evaluable; two paralog-relief calls (SOX10, BTK). Collapse calls are dominated by lineage-restricted non-expression of B-cell, melanocyte and renal genes, which is the confounding A1 anticipated. In the lockbox, 9 of 17 evaluable calls were confirmed and all six rare-route calls passed; none is promoted.
 
 ### H2
 
@@ -298,7 +317,7 @@ All three sensitivities were declared before they were computed; none writes a t
 
 ## Supplementary Note 14. Deviations from pre-registration (full table)
 
-Every amendment (A), erratum (E), ruling (R) and decision note (D5–D16) after the design freeze, with its timing relative to access to outcomes. Outcome access points (UTC): test labels 28 Oct 18:18; first A-side association outcome 29 Oct 00:20 (H3a run); H1 outcome 00:35; registered calibration outcomes from 01:03; first lockbox (L) value 06:50:05; last L read 09:23:05. Part 1 disclosures D0–D4 are in Supplementary Note 1.
+Every amendment (A), erratum (E), ruling (R) and decision note (D5–D19) after the design freeze, with its timing relative to access to outcomes. Outcome access points (UTC): test labels 28 Oct 18:18; first A-side association outcome 29 Oct 00:20 (H3a run); H1 outcome 00:35; registered calibration outcomes from 01:03; first lockbox (L) value 06:50:05; last L read 09:23:05. Part 1 disclosures D0–D4 are in Supplementary Note 1.
 
 | ID | What changed | When (UTC) | Relative to outcome access | Effect on reported results |
 |---|---|---|---|---|
@@ -325,18 +344,21 @@ Every amendment (A), erratum (E), ruling (R) and decision note (D5–D16) after 
 | D14 | Results review PASS; reporting rules (H3b three rates; BRIDGE-L R7 headline; BENCH on the top-tercile CI with disclosure, no iid p; power aid; beats-all gap not evidence); intent erratum (EP300 P, not ARID1A P) | 29 Oct 11:38 | **After the read** | Reporting only; numbers unchanged |
 | D15 | Registered per-hit robustness (leave-one-out, leave-top-2-out) computed on A, against an intent and candidate list committed first (fd03b03) | 29 Oct, after the read | **After the read**; A only, no L value opened | The strongest-findings list (254) replaces the earlier provisional set |
 | D16 | Strongest findings fixed by the registered rule (readings: H1 leave-one-out unit is lineage; ranking is tier then \|t_A\|); post hoc descriptive annotations (matched sets, control recovery, partial testability, scale-effect concordance); reporting rule: lead with T1, non-control, residual-robust hits; label scale-concordant lymphoid/myeloid hits as a possible lineage-scale artefact | 29 Oct, after D15 | **After the read**; post hoc readings and labels | Supplementary Table S9; labels select and rank nothing |
+| D17 | Submission version; post hoc reporting labels (lead example; possible lineage-scale artefact) | 29 Oct, after D16 | **After the read** | Superseded by the revised labels (D19) |
+| D18 | Peer review round 1 (major revision): response plan | 29 Oct | **After the read** | Interpretation and reporting |
+| D19 (R-1 to R-4) | Revision analyses: non-member matched sets and selection-aware flag reference; spline trend with one artefact rule in all lineages; DEMETER2 on A; BRIDGE-L power for both maps; intent 4157f1e committed before computation | 29 Oct | **After the read and peer review**; A only; L sample sizes and primary call labels only | Narrower matched-set reading; flag no longer defines "complex-specific"; revised labels in Table S9; BENCH called inconclusive |
 | (not run) | Alternative scores (eigengene, within-line rank, expression-masked, pan-essential-referenced) per hit for H3a/H3b; per-hit robustness for H1S and H2 | — | Never run | H1S and H2 are exploratory and outside the strongest-findings rule |
 
 ## Supplementary Note 15. Extended limitations
 
 *Part 1 (test evaluation)*
-1. **The single-look guarantee is procedural.** The test labels were plain files, and label-free genome-wide scores covering the test pairs already existed. Incident D1 shows that the risk was real; one operating point is non-blind as a result.
+1. **The single-look guarantee is procedural.** The test labels were plain files, and unsupervised genome-wide scores covering the test pairs already existed. Incident D1 shows that the risk was real; one operating point is non-blind as a result.
 2. **The gain is carried by pair-rich clusters.** Macro per-cluster AP does not differ from GLS's; in the descriptive size breakdown, made after the look, zavg_BEF is not better than GLS for clusters with ≤ 5 positive pairs. The test has 238 clusters with a Kish effective number of 21.3, so CIs are wide for Spearman and Pearson.
 3. **Training-label re-measurement.** zavg_BEF was selected on hu.MAP training labels derived from Complex Portal [Fischer 2025], so agreement with physical complexes partly re-measures that selection.
 4. **Calibration.** Calibration-in-the-large of the train-fitted isotonic calibrator was 0.893 on the test set, with no CI pre-specified; no recalibration was made, and the calibrators' own sampling error is not propagated.
 
 *Complex map and bridges*
-5. **Both bridges failed.** The BioPlex bridge is null, protein co-abundance favours GLS, and BRIDGE-L is negative. The locus-cluster explanation of the BioPlex deficit is post hoc and does not explain BRIDGE-L.
+5. **Neither bridge supports the map.** The primary (BioPlex) bridge is null, with an interval that allows an advantage of up to 0.031 for zavg or 0.075 for GLS; protein co-abundance favours GLS; the secondary bridge (BRIDGE-L) is negative, and power accounts for roughly a quarter to two fifths of its difference (Supplementary Note 17). The locus-cluster explanation of the BioPlex deficit is post hoc and does not explain BRIDGE-L.
 6. **Selection is flat across z0** at k = 10, so a different z0 could have been selected on the same evidence.
 7. **Locus clusters are frequent** (28% at level 1); they are flagged, not removed, and T2 is not locus-aware.
 8. **Stability has no chance baseline.** The variability analysis shares subsamples with the frozen map, and its random reference is a floor.
@@ -344,17 +366,18 @@ Every amendment (A), erratum (E), ruling (R) and decision note (D5–D16) after 
 10. **Coverage.** About 40% of S genes are in no level-1 complex, including SMARCA2, STAG1 and KIF18A, which limits paralog-based analyses.
 
 *Context associations (H3a, H3b, H2)*
-11. **Most complex-level context associations are not complex-specific.** The "beats all matched sets" flag rests on only 10 sets per complex and is a coarse screen; 69 discoveries have no matched sets, and the 95% filter is post hoc. Selective FDR controls the average within-family error over selected families, not the pooled error (0.068 in simulation).
+11. **Context associations are shared by coherent co-dependency modules.** The registered comparators are fragments of other complexes; coherent non-member modules could be matched for only 90 of 367 (the less coherent) units; essentiality-only sets are associated less often. The "beats all matched sets" flag rests on 10 sets per complex, is met by a third of random-atlas discoveries after selection, and no longer defines complex-specificity; 69 discoveries have no matched sets, and the 95% filter is post hoc.
+11b. **Selective FDR.** BB controls the average within-family error over selected families, not the pooled error (0.068 in a simulation that planted lineage effects only). Its guarantee assumes independence across families and PRDS within them; lineage contexts share reference lines and H3b contexts overlap, and no simulation covered the H3b dependence. Permutation p-values for screened tests re-enter the procedure (a hybrid p). With 21 of 23 H3a families selected, BB is close to within-family BH at q ≈ 0.046.
 12. **Calibrations implemented after the discovery runs** (R4). The literal reading of the response scope was fixed before the calibrations ran and confirmed after their results were seen; a broader reading would have added re-tests but removed none.
 13. **GPD tail.** Extrapolated permutation p-values can lie many orders of magnitude below the analytic p; using the larger drops 32 H3a, 31 H3b, 2 H1S and 2 H2 discoveries.
-14. **Screen quality and scale.** About a quarter of H3a/H3b discoveries are lost with screen-quality covariates (with 119 lines dropped). Esophagus/Stomach, WGD and MSI-H are fragile. The lymphoid association between complex essentiality and β (ρ −0.24) persists after adjustment and suggests a Chronos dynamic-range effect. Never-expressed sets show a residual lineage artefact (13.5% at p < 0.05).
+14. **Screen quality and scale.** About a quarter of H3a/H3b discoveries are lost with screen-quality covariates (with 119 lines dropped). Esophagus/Stomach, WGD and MSI-H are fragile. The lymphoid association between complex essentiality and β (ρ −0.24) persists after adjustment and suggests a Chronos dynamic-range effect. Never-expressed sets show a residual lineage artefact (13.5% at p < 0.05); we did not rescale statistics by a per-context inflation factor and instead mark leads in melanoma and Lymphoid as less reliable.
 15. **Per-hit robustness was computed after the lockbox read.** The registered leave-one-out and leave-top-2-out checks were deferred at the discovery runs and run after the read, on A only, against a committed candidate list. Alternative scores (eigengene, within-line rank, expression-masked, pan-essential-referenced) remain not run. The leave-one-primary-disease-out rule is strict where one disease dominates a lineage (Bowel kept 0 of 29 candidates) and partly untestable where the remainder has fewer than two lines (21 H3a and 33 H3b findings).
-16. **The scale-effect annotation is a linear, per-context descriptive model.** The lead and artefact labels in Table S9 depend on an unregistered residual threshold (|z| ≥ 2) and were fixed after the robustness results were known; they are reporting labels, not tests.
+16. **The scale-effect labels are descriptive and incomplete.** The revised rule (spline trend, all lineages) cannot flag findings beyond the trend in its own direction (26 of 37 leads), and four leads lie within 0.05 of the unregistered |z| = 2 threshold. The labels were fixed after the robustness results were known. They select the examples shown in the text, so they are a post hoc selection for presentation, not purely descriptive annotations; BioPlex tiers (validation data) also steer which findings are highlighted (T1 leads).
 17. **H2 is exploratory and mostly reproduced by random splits** (78.3 vs 109 stage-wise rejections). Lockbox confirmation (0.70) shows that the divergence recurs, not that it is sub-module-specific; the rank-1 subset was not confirmed more often.
 
 *H1*
 18. **The H1 headline events re-find known biology.** ARID1A → ARID1B is control PC6; FOCAD → PELO–HBS1L overlaps control PC10. EP300 → CREBBP rests on 12 A loss lines at the evaluability floor, a module without physical support (T3-neg) and the rare-context route (4 L loss lines). The FOCAD lockbox call is defect-sensitive.
-19. **Neutral H1 events rest on A.** L has a median of 8 loss lines per neutral event, and only 2 of 11 L 90% CIs lie inside ±0.1.
+19. **Neutral H1 events rest on A, under a loose margin.** L has a median of 8 loss lines per neutral event, and only 2 of 11 L 90% CIs lie inside ±0.1. The ±0.1 margin is larger than many H3a effects called real (325 of 1,145 have |β| < 0.05). The registered margin in residual-SD units and a ±0.05 sensitivity were not reported. One of the 11 (ARID1A) is neutral only on the complex-wide axis.
 20. **Thin control coverage.** H3a rests on two controls, the H1 pass on one multi-gene readout, and H2 has none; five controls were not evaluable at complex level; in L, four controls are defect-sensitive.
 21. **Amendments and post hoc rules.** A1 and A2 changed the H1 panel before any H1 run, from labels only. E1 corrected a sign typo after the run, matching the code that ran. E2 and the 95% specificity filter are post hoc. The PTEN call depends on the evaluability-adjusted m (q = 0.044 at m = 24, 0.051 at the registered 28). The member-resolved profiles were exported after the discovery run, from A only, during the lockbox read window.
 
@@ -362,8 +385,9 @@ Every amendment (A), erratum (E), ruling (R) and decision note (D5–D16) after 
 22. **A defect in the confirmation driver**, found only after the read although the dress rehearsal had shown its failures. The handling rules (R6, R7) were made after the outcomes were seen; they keep the read as executed as primary and strip claims from all 53 defect-sensitive calls, at the cost of H3b's WGD context and four controls. The H3b rates depend on how failures are counted (0.40–0.49).
 23. **Lockbox size and power.** L has 338 lines, about a third of A. The rare-context route re-uses A lines and DEMETER2 and is not an independent replication. Non-confirmation of small effects is often uninformative (325 of 1,145 H3a discoveries have |β| < 0.05).
 24. **The power aid is post hoc.** It was computed after the read by the reviewer, is not registered, pools an empirical-Bayes prior across contexts, treats correlated tests as independent and uses normal approximations.
-25. **BENCH.** 16.5% of bootstrap pair × replicate fits fail and are dropped; the high-tercile CI depends on how the covariate design is assembled within a replicate (lower bound −0.033 or −0.122). Within-line-rank scoring and the A–L random-set correlation were not run, and the multiverse is point estimates only.
-26. **The loader count is inferred** from ledger invariants and file times, because the run log was not committed.
+25. **BENCH is inconclusive.** 16.5% of bootstrap pair × replicate fits fail and are dropped; the high-tercile CI depends on how the covariate design is assembled within a replicate (lower bound −0.033 or −0.122), so the registered interval is unreliable. A re-run with an explicit failure policy needs the lockbox values and was not done. Within-line-rank scoring and the A–L random-set correlation were not run, and the multiverse is point estimates only.
+26. **The loader count is inferred** from ledger invariants and file times, because the run log of the lockbox loader was not committed; it is permanently lost.
+26b. **Lockbox independence.** L lines were part of the data on which zavg_BEF was developed in Part 1, and their Chronos values were inferred jointly with A in the same release. Confirmation establishes reproducibility within DepMap 26Q3 processing, not independence from shared artefacts. The power aid's prior includes gene-set-generic and scale effects, which would also replicate, so agreement with power cannot separate biology from reproducible artefacts.
 
 *General*
 27. **Single cell-line resource.** All dependencies come from one CRISPR resource (DepMap 26Q3, Chronos); DEMETER2 enters only the rare-context route. No result has been tested in another screen collection, under different culture conditions or in vivo.
@@ -387,7 +411,106 @@ Every amendment (A), erratum (E), ruling (R) and decision note (D5–D16) after 
 
 *Scale-effect annotation.* For each H3a context, β was regressed on unit essentiality over all 367 tested units (slope, intercept, Spearman ρ and residual SD in `results/part2/robustness/scale_effect_by_context.tsv`). Concordant means the hit's β has the sign of its fitted value; where the slope is near 0, the fitted sign is set mostly by the context's intercept, so "concordant" there means "same sign as the lineage-wide shift". Lymphoid ρ is −0.24 and Myeloid −0.135 (slope −0.029); the other lineages have |ρ| ≤ 0.21, mostly positive. Overall, 142 of 207 H3a findings are concordant, 79 have |residual z| ≥ 2 and 55 are both.
 
-*Reporting labels (Table S9; post hoc, D16).* 37 H3a findings are lead examples (T1, no control annotation, |residual z| ≥ 2); 10 of them are lymphoid or myeloid. 56 findings (52 lymphoid, 4 myeloid) are labelled a possible lineage-scale artefact (concordant, |residual z| < 2); 38 of them have positive β, and their median unit essentiality is −0.63, against −0.41 for all H3a findings and −0.30 over all 367 units. Of the 45 H3b findings, 25 are T1 and not control readouts.
+*Testability.* The leave-one-out check was fully applicable to 199 findings (H3a 186, H3b 12, H1 ARID1A → ARID1B), partly applicable to 49 lockbox-route findings (H3a 21, H3b 28 TP53-altered) and replaced by the rare-context route for 6 (five EWSR1-fusion H3b findings and EP300 → CREBBP). Counts under the alternative readings of the two ambiguous registry items were not computed.
+
+*Revised reporting labels (Table S9, `rev_*` columns; post hoc, Supplementary Note 17).* The first-version labels below are kept in Table S9 for traceability; the revised manuscript uses the revised labels: 95 possible scale artefacts in any lineage, 37 leads (26 beyond the trend in its direction; 9 in less reliable lineages; 29 of 35 evaluable concordant in DEMETER2).
+
+*First-version reporting labels (Table S9; post hoc, D16).* 37 H3a findings are lead examples (T1, no control annotation, |residual z| ≥ 2); 10 of them are lymphoid or myeloid. 56 findings (52 lymphoid, 4 myeloid) are labelled a possible lineage-scale artefact (concordant, |residual z| < 2); 38 of them have positive β, and their median unit essentiality is −0.63, against −0.41 for all H3a findings and −0.30 over all 367 units. Of the 45 H3b findings, 25 are T1 and not control readouts.
+
+## Supplementary Note 17. Revision analyses (referee round 1; post hoc, descriptive)
+
+Four analyses were run after peer review, on the construction set A only, with an intent committed before any value was computed (`results/part2/revision/INTENT.md`, 4157f1e; results 740f439). None is registered, none is a test with error control, and none changes a registry entry, discovery, confirmation or ledger. No lockbox value was read; R-4 uses only committed L sample sizes and the committed primary call labels. An independent agent reproduced every number and returned PASS-WITH-NOTES; its notes are reflected below.
+
+*R-1(a). Matched sets drawn from genes outside every complex.* The pool is the 2,380 S genes in no unit of the map. Three generators were declared in advance: coherent neighbourhoods matched on size, essentiality and coherence (N-nbr); uniform draws with the same matching (N-unif); and uniform draws matched on size and essentiality only (N-ess). Uniform draws never reached complex-level coherence (0 units). N-nbr could be matched for 90 of 367 units in H3a (87 in H3b), and these are the less coherent units (median target coherence 8.9 z against 12.3 z for the others). N-ess could be matched for 355 (H3a) and 354 (H3b).
+
+| Direction | Units compared | Complexes | Sets from other complexes | Coherent non-member sets (N-nbr) | Essentiality-only sets (N-ess) |
+|---|---|---|---|---|---|
+| H3a | all 367 | 0.281 | 0.281 | – | – |
+| H3a | the 90 with N-nbr sets | 0.230 | 0.248 | 0.251 | 0.164 |
+| H3a | the 355 with N-ess sets | 0.281 | 0.282 | – | 0.166 |
+| H3b | all 367 | 0.120 | 0.116 | – | – |
+| H3b | the 87 with N-nbr sets | 0.113 | 0.112 | 0.108 | 0.084 |
+| H3b | the 354 with N-ess sets | 0.119 | 0.116 | – | 0.088 |
+
+Selective FDR over the non-member tests made 1,666 of 20,700 (N-nbr) and 2,459 of 81,650 (N-ess) rejections in H3a, and 44 of 17,400 and 337 of 70,800 in H3b. Over the complex-member matched sets it made 11,861 of 80,500 in H3a, against 1,145 of 8,441 for the complexes. Reading: a complex is not more context-associated than a coherent, essentiality-matched co-dependency module; sets matched on essentiality alone are associated less often, though still well above 5%. The coherent non-member comparison rests on the less coherent quarter of the map.
+
+*R-1(b). Selection-aware reference for "beats all matched sets".* Ten random atlases, each replacing every unit by its r-th matched set, went through the full discovery procedure (screen, 10,000-permutation re-test, selective FDR; full mode). They gave 1,016 to 1,277 H3a discoveries per atlas (mean 1,109; real 1,145) and a mean of 138 in H3b (real 161).
+
+| | H3a | H3b |
+|---|---|---|
+| Real discoveries beating all 10 matched sets | 502 / 1,083 = 0.464 | 103 / 154 = 0.669 |
+| Random-atlas discoveries beating the 9 sibling sets and the real unit | 3,649 / 11,087 = 0.329 | 667 / 1,381 = 0.483 |
+| Same flag over all random tests (no selection; 1/11 = 0.091) | 0.087 | 0.087 |
+| Mean P(\|t\| real discovery > \|t\| random discovery), same context | 0.482 | 0.476 |
+| Same for \|β\| | 0.493 | 0.494 |
+
+Real discoveries beat their own matched sets more often than random discoveries beat theirs, but across discoveries their |t| and |β| are not larger. The excess is relative to each complex's own matched sets, not an effect-size advantage. The first version's unconditional contrast (13.3% of all H3a tests against 9.1% under exchangeability; no CI, because tests share complexes and lines) is superseded by this reference. Per-context values: `REV/r1b_per_context.tsv` (Fig. 6b).
+
+*R-2. Lineage scale effect with a non-linear trend.* Per H3a context, a natural cubic spline (4 df) of β on unit essentiality was fitted over all 367 units. It raises R² only slightly (Lymphoid 0.068 linear, 0.120 spline; every other context ≤ 0.083). One rule was applied in every lineage: *possible scale artefact* = sign as the fitted trend predicts and |spline residual z| < 2; *lead* = T1, not a control readout, |spline residual z| ≥ 2 and not a possible scale artefact. Results: 95 of 207 H3a findings are possible scale artefacts (56 under the first version's Lymphoid/Myeloid-only rule); 37 are leads (35 kept, Bone Z0130 and Myeloid Z0278 lost, CNS/Brain Z0146 and Breast Z0253 new). 26 of the 37 lie beyond the trend in the trend's direction, which the rule cannot flag by construction, and four lie within 0.05 of |z| = 2 (Bone Z0001, Breast Z0253, Lung Z0087, Kidney Z0362), so the lead set is sensitive to the threshold. Never-expressed gene sets reach p < 0.05 in 27% of Lymphoid and 33% of melanoma tests (Skin 28%); the 9 leads in these lineages (Lymphoid 5, melanoma 4) are marked less reliable in Table S9 (`rev_lineage_less_reliable`). Not done: excluding scale-concordant leads (referee M2(c)), because the rule as specified keeps them and we report them instead; and rescaling statistics by a per-context inflation factor from the never-expressed sets (M2(d)), which would need new computation; the never-expressed rate is reported as a reliability column instead.
+
+*R-3. DEMETER2 on A.* The same complex score, removals and HC3 design were refitted on DEMETER2 for the 423 A models with RNAi data (no FDR).
+
+| Hits | Evaluable | Same sign | One-sided p < 0.05 | Spearman β_A vs β_D2 |
+|---|---|---|---|---|
+| Revised leads | 35 of 37 | 29 | 20 | 0.86 |
+| Leads with ≥ 12 context models | 28 | 24 | 18 | 0.87 |
+| All 207 H3a strongest | 194 | 157 | 88 | 0.65 |
+
+Not evaluable: Peripheral Nervous System Z0190 (no PNS model has DEMETER2 data) and Kidney Z0362 (fit failed). Discordant leads: Soft Tissue Z0080 and Z0336, Kidney Z0323, Pancreas Z0283, Lung Z0001 and Bone Z0001. Same sign but weak (one-sided p 0.10–0.14): Lymphoid Z0190, melanoma Z0190, Pleura Z0067 (6 context models) and Lung Z0150. Per-hit values are in Table S9 (`rev_D2_*`).
+
+*R-4. BRIDGE-L power comparison.* The lockbox review's power aid was applied unchanged to the zavg-map and GLS-map hits, with an empirical-Bayes prior per map and family.
+
+| Power version | Expected zavg | Expected GLS | Expected Δ (SD) | Observed Δ | Share of observed Δ |
+|---|---|---|---|---|---|
+| Naive | 0.686 | 0.703 | −0.017 (0.018) | −0.065 | 26% |
+| EB posterior mean | 0.500 | 0.526 | −0.026 (0.018) | −0.065 | 41% |
+| EB mean + variance (headline) | 0.459 | 0.482 | −0.023 (0.019) | −0.065 | 35% |
+
+GLS-map discoveries have larger A effects (median |β| 0.081 against 0.066) and similar |z| and L counts. The headline remainder (−0.042, 2.2 SDs) uses an SD that treats hits as independent and ignores uncertainty in the prior, so it is approximate. The headline model also under-predicts both maps' observed levels (zavg 0.459 against 0.514; GLS 0.482 against 0.578), more so for GLS; GLS hits exceed their expected rate in every size bin (0.57–0.59 against 0.47–0.50), zavg hits less so (0.48–0.57 against 0.42–0.49). Reading: power accounts for roughly a quarter to two fifths of the BRIDGE-L difference.
+
+*Referee requests not carried out, and why.*
+- Preprocessing-matched GLS or Spearman baseline, and ΔAP leaving out each of the six largest test clusters (M5): both need the test labels again, i.e. a second look at the test set, which the protocol forbids and this revision did not open.
+- BENCH bootstrap with an explicit failure policy (M4.1): needs the lockbox values again; not done. The registered interval is reported as unreliable and the result as inconclusive.
+- H1 margin in residual-SD units and a ±0.05 sensitivity (M6): not in committed outputs; not computed.
+- Counts of the strongest findings under the alternative registry readings (M7.2): not computed.
+- Per-context rescaling by never-expressed inflation (M2(d)): not computed (above).
+
+*Best gene g* of the text-highlighted findings (BENCH, committed lockbox results).* Δ = t_L(complex) − t_L(g*), signed toward the A direction (positive: the complex replicated better than its best gene). The L estimate of g* alone is not in the committed outputs.
+
+| Context | Unit (members) | g* | Breadth | Δ |
+|---|---|---|---|---|
+| Ovary/Fallopian Tube | Z0035 (17) | PAX8 | 0.59 | +1.05 |
+| Bone | Z0303 (5) | SNAPC5 | 0.80 | +1.29 |
+| Lung | Z0174 (6) | CSNK1A1 | 0.83 | +0.17 |
+| Head and Neck | Z0051 (16) | GRB2 | 0.50 | −1.23 |
+| Pleura | Z0067 (14) | FGFR1 | 0.93 | +0.63 |
+| Myeloid | Z0254 (12) | DNM2 | 0.83 | −1.69 |
+| Lymphoid | Z0030 (18) | ADSS2 | 0.83 | +0.47 |
+| RB1 loss | Z0069 (14) | SKP2 | 0.79 | +0.83 |
+
+## Supplementary Note 18. Glossary of identifiers
+
+| Identifier | Meaning |
+|---|---|
+| zavg_BEF | The locked Part 1 co-complex score (mean of three z-scored similarity components) |
+| ITT, S1 | All canonical test pairs (intention-to-score); pairs mapped under every method |
+| C1–C3 | Test pairs with both, one or neither protein among training-positive proteins |
+| A, L, U | Construction set (1,007 lines), lockbox (338 lines), their union (1,345 lines) |
+| S | The 6,022 genes with a dependency in ≥ 1% of A lines |
+| Z0001–Z0367 | Level-1 complex (unit) identifiers of the frozen zavg map; Z0xxx.n are sub-modules |
+| T1, T2, T3-neg, T3-nc | Tiers: BioPlex-supported; co-abundant (not T1); tested, unsupported; not testable |
+| H3a, H3b, H1, H1S, H2 | Lineage atlas; driver/genome-state family; within-complex genetic interactions; exploratory silencing events; sub-module divergence |
+| BENCH | Complex score against its best member in the lockbox |
+| BRIDGE-L | Registered secondary bridge: lockbox confirmation of zavg-map against GLS-map discoveries |
+| PC1–PC22 (PC19a/b) | Pre-registered positive controls (23 entries) |
+| Rare-context route | For contexts with < 5 L lines: leave-one-lineage-out, DEMETER2 on A lines and leave-one-line-out must agree in sign; re-uses A lines, not an independent replication |
+| FZ-C, FZ-X, FZ-LB | Freeze points: complex maps; contexts, families and events; lockbox split |
+| A1–A5 | Registry amendments (H1 panel; lockbox seeds and readings) |
+| E1, E2 | Errata: H1 sign typo; "detectable, within equivalence margin" label |
+| R1–R7 | PI rulings; R4 = calibrations implemented after discovery; R6, R7 = handling of the lockbox driver defect |
+| D0–D19 | Decision notes in RESEARCH_TREE.md (D1 = the non-blind z ≥ 3 operating point) |
+| R-1 to R-4 | Revision analyses (Supplementary Note 17) |
+| Defect-sensitive | A lockbox call that differs between the read as executed and the corrected relook; carries no claim |
 
 ## Supplementary Tables
 
@@ -399,6 +522,6 @@ Every amendment (A), erratum (E), ruling (R) and decision note (D5–D16) after 
 | S4 | H1 panel, 24 events | `manuscript/tables/tableS4_h1_panel.md` (full `.tsv`) |
 | S5 | H2 discoveries with rank against own random splits | `manuscript/tables/tableS5_h2_split_ranks.md` (full `.tsv`) |
 | S6 | Lockbox confirmation rates per direction: evaluable / all-in / corrected, defect-sensitive counts, power expectation | `manuscript/tables/tableS6_lockbox_rates.md` |
-| S7 | Lockbox results for all H3a/H3b discoveries (its Markdown rows list the earlier, unregistered "strongest specific" subset; the registered list is S9) | `manuscript/tables/tableS7_lockbox_h3.md` (full `tableS7_lockbox_h3_full.tsv`) |
+| S7 | Lockbox results for all H3a/H3b discoveries; the Markdown rows show the registered strongest findings (S9) in rank order; the earlier unregistered subset is only a column of the full TSV | `manuscript/tables/tableS7_lockbox_h3.md` (full `tableS7_lockbox_h3_full.tsv`) |
 | S8 | Lockbox results for H1, H2, BENCH and BRIDGE-L | `manuscript/tables/tableS8_lockbox_h1_h2_bench_bridge.md` |
-| S9 | The 254 registered strongest findings with post hoc annotations and reporting labels (lead example; possible lineage-scale artefact) | `manuscript/tables/tableS9_strongest_findings.md` (all rows: `tableS9_strongest_findings.tsv`; counts: `strongest_derived.json`) |
+| S9 | The 254 registered strongest findings with post hoc annotations, first-version labels and the revised labels (spline trend, one rule in all lineages, never-expressed reliability, DEMETER2) | `manuscript/tables/tableS9_strongest_findings.md` (all rows: `tableS9_strongest_findings.tsv`; counts: `strongest_derived.json`) |
