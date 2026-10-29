@@ -162,3 +162,200 @@ export PART1_DIR=".../coessentiality_protein complexes"; export PYTHONHASHSEED=0
 .venv/bin/python scripts/verify/discovery_full.py   --out <scratch>/dr   # all 15,781 H3a/H3b tests, ~30 s
 .venv/bin/python scripts/verify/discovery_review.py --out <scratch>/dr   # sample, FDR, TOST, GPD, sanity, ~1 min
 ```
+
+---
+
+# Review 2: H1S, H2, calibrations, GPD sensitivity, errata
+
+Reviewer: the same independent agent (did not produce the runs). Reviewed state: producer `f4e99dd`, merged into
+`review-discovery`. New script: `scripts/verify/discovery_review2.py` (does not import `src/part2`; it reuses
+`discovery_lib.py` / `discovery_review.py`). PI rulings R1–R5: RESEARCH_TREE.md D8 (main `3f5e8fd`).
+
+## Verdict: ACCEPT-WITH-NOTES
+
+The process is clean. Every quantity I recomputed reproduces exactly:
+- 10 analytic tests;
+- the H1S BH and H2 stage-wise discovery sets;
+- the GPD sensitivity counts;
+- the H3a matched-set and never-expressed rates (RNG-mirrored to |Δt| ≤ 5e-5);
+- the H2 random-split rejections.
+
+The R2 fix cannot change an H1 discovery, and E1/E2 touch only text and reporting columns. The substantive finding
+comes from the calibrations themselves:
+- **H3a.** Lineage signal is about as common in matched random sets as in the real complexes.
+- **H2.** Most sub-module divergence is reproduced by random splits.
+
+The READMEs say so, but claims must be scoped accordingly (M1).
+
+## MUST (disclosure and reporting; no re-run)
+
+**M1. Every H3a / H3b / H2 claim must carry the calibration background, and specificity must be shown per hit.**
+- **H3a matched random sets.** p < 0.05 in 28.1% of random-set tests against 28.1% of real tests. That makes 1,145
+  discoveries "lineage moves this gene set", not "lineage moves this complex specifically".
+  - Across all 8,050 evaluable real tests with 10 sets, the real unit beats all of its matched sets 13.3% of the
+    time. Exchangeable sets would give 9.1% (1/11). So unit-specificity is real but modest.
+  - The same holds for H3b (13.3%).
+  - Add a per-discovery `exceeds_all_matched` flag to `discoveries_report.tsv` (H3a 502 of 1,145, 62 without sets;
+    H3b 103 of 161). Restrict "complex-specific" wording to flagged hits.
+- **H3a never-expressed sets.** 13.5% against 5% expected, with 13 BB rejections. The rate is concentrated in
+  melanoma (0.33), Skin (0.28) and Lymphoid (0.27). These are the same lineages where the review-1 scale effect
+  appeared.
+  - Report the per-lineage never-expressed rate next to each lineage's discovery count.
+  - Read those lineages together with the pre-declared ScreenNNMD + CasActivity sensitivity (D8).
+- **H2 random splits.** Mean 78.3 stage-wise rejections per replicate (range 66–90), against 109 real. A
+  sub-module-specific claim needs each discovery's rank against its own 20 splits; that is not yet reported.
+  Without it, H2 discoveries should be described as within-parent heterogeneity.
+
+**M2. State the scope of the registered response explicitly.**
+- The registry `calibration` text lists pseudo-contexts, matched random sets and never-expressed sets in one
+  sentence, then says "if *that fraction* exceeds 0.075 …". The producer reads "that fraction" as the
+  pseudo-context fraction only, plus the CN segment null for H3b CN contexts. That reading is grammatically right,
+  and it was fixed in `1e674bd` before the calibration ran, but after the discovery outcomes.
+- Under the broader reading, the H3a never-expressed rate (0.135) would have fired the response.
+- Firing would not have been conservative: it re-tests p < 0.01 by permutation and re-runs BB. Permuting context
+  labels does not remove a screen-level shift that is shared by the gene set, so it would not address what the
+  never-expressed sets detect.
+- Add one sentence to D8 recording this reading and its consequence.
+
+## Checks
+
+**1. Process: pass.**
+- **Commit order** (from `git log` and file birth times in the producer worktree):
+
+  | Item | Intent / pre-declaration | Run start | Outputs born | Results commit |
+  |---|---|---|---|---|
+  | H1S | `b865595` 00:49:17 | 00:49:24 | 00:56:42 (trial 00:50:16) | `06c8cd1` 00:57:05 |
+  | H2 | `5ea25ca` 00:57:57 | 00:58:04 | 00:59:01 (trial 00:59:01) | `1274e40` 00:59:25 |
+  | GPD sensitivity | `7b754f8` 00:59:34 | — | 00:59:43–44 | `7e33c6e` 00:59:52 |
+  | Calibrations | code `44f30ca` 01:02:23, intent `1e674bd` 01:02:49 | H3a log 01:02:57; H3b 01:03:54; H2 01:05:37 | 01:03:34 / 01:05:22 / 01:06:11 | `fd582a6` / `4fb83d7` / `1a2a445` |
+
+- **Ledger.** trials.jsonl has exactly one discovery line each for H1S and H2, and the same lines appear on every
+  branch that holds them. Calibrations and GPD write no trial line; neither intent promises one.
+- **No reruns.**
+  - `data_cache/part2/assoc/{H1S,H2}/discovery.parquet` have birth = modification = trial time.
+  - Each calibration output has birth = modification, and the runner refuses a second run.
+  - The producer reflog is linear.
+  - `scripts/44_run_direction.py` is unchanged since `beda09f`.
+- **A only.** No lockbox model ID appears in any file changed `bff6cad..f4e99dd`. max n is 962 (H1S) and 888 (H2).
+  The calibration runner uses the A-hash-checked environment.
+- **Minor.** The intents' "planned start" (00:52 / 01:02) is later than the actual start. This is immaterial
+  because each intent commit precedes its run.
+- **GPD independence.**
+  - The producer's `scripts/45_gpd_sensitivity.py` (file born 00:50:14) re-runs the engine `assoc._fdr` on the
+    SHA-verified parquet tables. My numbers came from my own BB / BH on `tests.tsv.gz`. No code is shared.
+  - The quantity is a deterministic function of committed data, and the PI fixed the rule (R3). Knowing my counts
+    could not tune anything.
+  - Agreement is exact: H3a 1,113, H3b 130, H1 5. I also recomputed the producer's new numbers: H1S 29 (losing
+    ATP8B1|N and ZEB2|N) and H2 107.
+  - The "<1e-4" label is equivalent to "the GPD branch was used". The engine fits the GPD only when there are 0
+    exceedances and returns min(p_GPD, 1/10,001).
+- **E1.**
+  - The registry diff (`c3c4422`) is the one `score_rule` line plus the E1 `amendments` record, in both H1 and H1S.
+  - The `h1.py` change is docstring only.
+  - `ALIGN = +1.0` and the code that uses it are in `201d8bf` (2026-10-28 20:09), an ancestor of the H1 run
+    `d12c627`. The sign test is in `040e0df` (20:16), an ancestor of the H1 intent.
+  - My review-1 N' sizes already confirmed that the run used sign(b_j).
+
+**2. R2 fix: pass, with a note on scope.**
+- **What changed.** `b3e8043` changes two things:
+  - `matched_null` returns "null unavailable" when no null fit succeeded. This is the empty case.
+  - `classify` classes every axis whose counted test is absent or not evaluable as NOT EVALUABLE, with no fit and no
+    null draw. This part is broader than "empty null": it relabels any non-evaluable axis, which previously got
+    INCONCLUSIVE from a fit.
+- **Effect on H1.** Both changes are confined to tests that never enter BH. Matched-null seeds are per event
+  (7000 + event index), so skipping a draw shifts no other event's stream. For H1 the only affected event is
+  MAP2K4 (n_context 11), which goes from INCONCLUSIVE to NOT EVALUABLE. This is applied in the reporting layer
+  (E2). No discovery, q or other class can change.
+- **Hash check.** I re-ran `scripts/verify/45_h1_fix_equivalence.py` on clean `git archive` trees of `c3c4422` and
+  `b3e8043`. All 17 hashes (16 runner files + e2e JSON) are identical before and after, and equal the committed
+  values. The check is vacuous for the changed branch, however: the synthetic project has no present-but-non-evaluable
+  axis and no empty null. The producer's new unit test is what exercises it.
+- **Tests.** `test_part2_calib`, `test_part2_h1h2`, `test_registry_entries` and `test_part2_fzx` pass (47).
+
+**3. Calibrations: implemented as registered (operational choices fixed before running); recomputed exactly.**
+- **Registry fields.**
+  - Sets, matching variables and seeds (4600 / 4700 / 4800) follow the `calibration` fields.
+  - R = 10 (H3) and R = 20 (H2), the H1 matched-null tolerances (±0.1 essentiality, ±1.0 z coherence, doubled
+    once), 100 never-expressed sets and the ±25% segment rule are the producer's choices. They were declared in
+    the intent before running.
+  - Matched sets are subsets of other frozen complexes. Coherence matching makes them complex-like, so this is a
+    complex-vs-other-complexes background (see M1).
+- **Responses.**
+  - Only the CN segment null carries a response. It was computed and compared mechanically: pooled 0.060 ≤ 0.075,
+    and per context 0.045 / 0.061, so it did not fire.
+  - MYC_amp has no qualifying segment, so it has no null.
+  - The 9p21 null rests on 3 segments, one of which is Yp11.2 (RPS4Y1) hom-del, a LoY proxy.
+  - MYCN contributes 13,499 of the 14,599 pooled tests.
+- **H3a matched sets, subsample.** I took 30 random units and mirrored the RNG with my own sampler.
+  - Status was 28 ok, 1 tolerances doubled and 1 unavailable, giving 290 sets.
+  - All 6,670 committed tests matched (max |Δt| 4.5e-5, max relative Δp 4.7e-6). The p < 0.05 rate is 28.9% in
+    both. Real tests in the same units: 25.5%.
+  - Exceed-all: 41 of 80 discoveries, both mine and committed.
+  - An independent draw on the same units (own stream) gives 30.3% and 40 of 80.
+  - The full 502 / 1,145 (62 without sets) reproduces from the committed tables.
+- **Never-expressed sets.**
+  - My own read of the raw expression CSV gives 958 RNA-profiled A models and a pool of exactly 558 genes.
+  - The mirrored sets reproduce all 2,300 tests (max |Δt| 5e-6): 13.48% and 13 BB rejections.
+  - An independent draw gives 12.8% and 8 BB rejections.
+- **H2 random splits.**
+  - The mirrored draw reproduces all 9,040 tests (max |Δt| 4.9e-5): rate 0.375; stage-wise rejections mean 78.3,
+    range 66–90.
+  - An independent stream gives 0.376 and mean 81.6 (58–103).
+
+**4. H1S / H2: pass.**
+- **Analytic tests.** 5 H1S tests (3 discoveries, 2 not) and 5 H2 tests (3 discoveries, 2 not; lineage and
+  TP53_altered contexts) match. Maximum relative differences are 2.4e-6 (β), 1.6e-6 (SE), 1.3e-6 (df) and 2.0e-6
+  (p), and n matches exactly.
+  - H1S uses ALIGN = +1, reference-model baselines and the event covariates.
+  - H2 uses Y_s = S_s − (a + b S_sib), with an OLS fit over A after the context's removals, and the context
+    covariates + NNMD + CasActivity.
+- **H2 stage-wise, from the committed p.** There are 210 (context, parent) families, at levels q R_x / m_x =
+  0.0067824 (H3a parents) and 0.0010967 (H3b parents).
+  - On p_final: 109 discoveries, identical set.
+  - On analytic p: 112 rejections, identical.
+- **H1S BH.** m = 293 gives 31 discoveries, identical set. Padding to the registered m = 338 keeps all 31.
+- **H1S m.** Of 317 events, all have |N| ≥ 2 and 21 have |P| ≥ 1, so m = 338 as registered.
+  - My |N'| equals the committed value for all 317 events. 17 have |N'| < 2, and they are exactly the 17 N units
+    absent from the test table, giving 321 tests. This is the rule already applied in H1 (EP300, SMAD4).
+  - The remaining 28 are leverage-1 designs, for which HC3 is undefined. They were listed from labels only before
+    the run (`degenerate_designs.tsv`, `446395d`). Result: 293.
+
+**5. E2: pass.**
+- Both `classes.tsv` files gain three appended columns (`label_final`, `label_final_paralog`, `headline_eligible`).
+  All 46 original columns are cell-identical to the run commits (`d12c627`, `06c8cd1`).
+- `tests.tsv.gz`, `discoveries.tsv`, `summary.json` and the trial lines are untouched.
+- The rule is applied exactly. H1: PTEN and TP53 become DETECTABLE-WITHIN-MARGIN, and MAP2K4 becomes NOT
+  EVALUABLE. H1S: 4 N-axis relabels (ERBB3, PRR15L, B3GNT5, CST6), which equals the count of non-neutral axes with
+  N_tost; there are 0 P-axis relabels. `headline_eligible` is False for all H1S events.
+
+## Notes
+
+- **N1.** H2 `summary.json` carries `standing: confirmatory` and `headline: true`. These come from the runner
+  defaults, because the H2 entry has no `standing` field. This contradicts its exploratory status, which follows
+  from its 0 evaluable controls (README, intent, `kill_rule_verdict`). Correct it in the reporting layer so no
+  downstream tally reads it as headline.
+- **N2.** E2 writes its columns into the run's own `classes.tsv`. The original cells are preserved, but a separate
+  reporting file would keep run outputs byte-identical to their commits.
+- **N3.** R3 asks tables to show "<1e-4 (GPD)". `discoveries_report.tsv` writes "<1e-4". The meaning is the same;
+  align the string.
+- **N4.** The H2 pseudo-contexts give 6 stage-wise rejections, against about 0 expected (pooled p < 0.05 = 0.050).
+  This is small relative to 109, but it is non-zero and should be reported as is (it is).
+- **N5.** Review-1 N2 (MAP2K4) is resolved by E2. M2 (PTEN) is resolved by R5/E2, and the README reports the m
+  dependence (q 0.044 at m = 24, 0.051 at m = 28).
+
+## Not verified (part 2)
+
+- The H1S matched null, contrast and breadth calls.
+- H1S / H2 permutation p.
+- The H3b matched / never-expressed / segment tests: I checked the committed tables and the response arithmetic
+  only.
+- The H2 pseudo-context replay.
+
+## Reproduce (part 2)
+
+```
+export PART1_DIR=".../coessentiality_protein complexes"; export PYTHONHASHSEED=0
+.venv/bin/python scripts/verify/discovery_review2.py --out <scratch>/dr2      # ~85 s
+# R2: git archive c3c4422 / b3e8043 into clean trees, copy scripts/verify/45_h1_fix_equivalence.py into the first,
+# run it in each, compare the JSONs with each other and with results/part2/directions/h1_fix_equivalence.json
+```
