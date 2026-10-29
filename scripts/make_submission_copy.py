@@ -55,6 +55,11 @@ def main() -> None:
         (OUT / name).write_text(clean)
         assert "<!--" not in clean and "-->" not in clean, name
         if name == "main.md":
+            figs = sorted((SRC / "figures").glob("fig*.pdf"))
+            listing = "Figure files (PDF; PNG alongside): " + "; ".join(
+                f"Fig. {f.name[3]} `../figures/{f.name}`" for f in figs) + ".\n\n"
+            clean = clean.replace("## Figure legends\n\n", "## Figure legends\n\n" + listing, 1)
+            (OUT / name).write_text(clean)
             counts["abstract"] = words(section(clean, "## Abstract", ("\n## ", "\n---")))
             body = "".join(section(clean, h, ("\n## Methods", "\n## Discussion", "\n## Results", "\n---\n\n## M"))
                            for h in ("## Introduction", "## Results", "## Discussion"))
