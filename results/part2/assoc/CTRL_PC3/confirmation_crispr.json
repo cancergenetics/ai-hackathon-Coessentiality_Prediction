@@ -1,0 +1,73 @@
+{
+ "analysis_id": "CTRL_PC3",
+ "hits": [
+  {
+   "beta_A": -0.2305294265,
+   "beta_L": -0.2247616089,
+   "ci95_L": [
+    -0.2954689114,
+    -0.1540543064
+   ],
+   "confirmed": true,
+   "context": "TP53_altered",
+   "df_L": 127.543321525,
+   "n_L": 328,
+   "n_context_L": 219,
+   "n_ref_L": 109,
+   "p_L": 2.3e-09,
+   "p_L_hc3": 2.3e-09,
+   "p_L_perm": null,
+   "same_sign": true,
+   "se_L": 0.0357335262,
+   "testable": true,
+   "unit": "CDKN1A (1026)"
+  },
+  {
+   "beta_A": -0.625637664,
+   "beta_L": -0.6255987524,
+   "ci95_L": [
+    -0.7495260369,
+    -0.5016714678
+   ],
+   "confirmed": true,
+   "context": "TP53_altered",
+   "df_L": 127.543321525,
+   "n_L": 328,
+   "n_context_L": 219,
+   "n_ref_L": 109,
+   "p_L": 5.203341446e-18,
+   "p_L_hc3": 5.203341446e-18,
+   "p_L_perm": null,
+   "same_sign": true,
+   "se_L": 0.0626294415,
+   "testable": true,
+   "unit": "TP53 (7157)"
+  },
+  {
+   "beta_A": -0.1921135644,
+   "beta_L": -0.1966629163,
+   "ci95_L": [
+    -0.2545381902,
+    -0.1387876423
+   ],
+   "confirmed": true,
+   "context": "TP53_altered",
+   "df_L": 127.543321525,
+   "n_L": 328,
+   "n_context_L": 219,
+   "n_ref_L": 109,
+   "p_L": 3e-10,
+   "p_L_hc3": 3e-10,
+   "p_L_perm": null,
+   "same_sign": true,
+   "se_L": 0.0292485718,
+   "testable": true,
+   "unit": "USP28 (57646)"
+  }
+ ],
+ "n_confirmed": 3,
+ "n_hits": 3,
+ "n_testable": 3,
+ "n_tested": 3,
+ "source": "crispr"
+}
