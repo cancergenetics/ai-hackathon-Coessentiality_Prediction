@@ -63,7 +63,12 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
     - [x] H3b (388924a → 5e1c1d1): m 7,340; 161 discoveries in 13 families (121 non-locus); pseudo 0.045; 199 s
     - [x] H1 (ef41ddb → d12c627): 24 evaluable (registered 28); 5 discoveries. Paralog compensation: ARID1A→P κ −0.37, EP300→P −1.09. Sensitisation: FOCAD 0.14. Within margin (R5): TP53, PTEN. SMARCB1 neutral, including the CN sensitivity.
     - [x] Independent review (bff6cad): ACCEPT-WITH-NOTES. All 15,781 analytic tests reproduced; discovery sets exact; no reruns; no lockbox models. Under p_cons, H3a loses 32 and H3b loses 31. Lymphoid scale effect noted.
-    - [~] R1–R5 fixes, H1S, H2, registered calibrations, GPD sensitivity
-    - [ ] Screen-quality sensitivity (pre-declared, D8)
+    - [x] R1–R5 applied (E1 c3c4422: ALIGN predates the H1 run, 201d8bf; R2 fix b3e8043, synthetic outputs identical by hash; E2 labels 0dae2ba)
+    - [x] H1S (b865595 → 06c8cd1; exploratory): m 293 (registered 338, evaluability), 31 discoveries. Classes: collapse 23, sensitisation 1 (4 relabelled E2), neutral 191, not evaluable 27.
+    - [x] H2 (5ea25ca → 1274e40; exploratory): 210 families, m 452, 109 discoveries
+    - [!] Registered calibrations (44f30ca, 1e674bd → fd582a6 / 4fb83d7 / 1a2a445; implemented after the discovery runs, D8 R4). No response fired. Matched random sets reach p<0.05 as often as real complexes: H3a 28.1% vs 28.1%, H3b 11.6% vs 12.0%. 502/1,145 H3a discoveries beat all their matched sets. Never-expressed sets: H3a 13.5% (expected 5%), H3b 6.2%. H2 random splits: 78 rejections vs 109 real. CN segment null 6.0% (≤0.075, no response). → Context associations at complex level are mostly NOT complex-specific; complex-specific subsets and the H1 mechanistic panel carry the novelty.
+    - [x] GPD sensitivity (7b754f8 → 7e33c6e): lost H3a 32/1,145, H3b 31/161, H1 0/5, H1S 2/31, H2 2/109; agrees with the reviewer
+    - [~] Independent review 2 (H1S, H2, calibrations, errata)
+    - [~] Screen-quality sensitivity (pre-declared, D8) + post hoc complex-specificity counts
   - [ ] Lockbox confirmations → BENCH / BRIDGE-L
 - [ ] M-final Manuscript + peer review + REPORT.md
