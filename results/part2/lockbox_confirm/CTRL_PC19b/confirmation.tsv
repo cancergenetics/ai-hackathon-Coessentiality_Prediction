@@ -1,0 +1,3 @@
+context	unit	beta	alternative	level	eligible	lockbox_testable	beta_L	se_L	df_L	n_L	n_context_L	p_L_hc3	p_L	p_L_perm	n_ref_L	testable_L	same_sign	confirmed	ci90_L_lo	ci90_L_hi	ci95_L_lo	ci95_L_hi	loso_same_sign	loso_folds	lomo_same_sign	demeter2_same_sign	rare_route_pass	rare_route_note	route	confirmed_final	promotable	status
+PIK3CA_hotspot_noPTENLoF	PIK3CA (5290)	-0.528048	less	G	True	True	-0.484968	0.119923	39.5589	309	32	0.000117983	0.000117983		277	True	True	True	-0.686955	-0.282982	-0.727427	-0.24251							lockbox	True	True	confirmed
+PIK3CA_hotspot_noPTENLoF	Z0077	-0.0717526	less	C	True	True	-0.135063	0.0538643	39.5589	309	32	0.00818478	0.00818478		277	True	True	True	-0.225787	-0.0443399	-0.243965	-0.0261617							lockbox	True	True	confirmed

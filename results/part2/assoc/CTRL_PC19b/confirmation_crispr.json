@@ -1,0 +1,52 @@
+{
+ "analysis_id": "CTRL_PC19b",
+ "hits": [
+  {
+   "beta_A": -0.5280478073,
+   "beta_L": -0.4849684788,
+   "ci95_L": [
+    -0.7274266244,
+    -0.2425103333
+   ],
+   "confirmed": true,
+   "context": "PIK3CA_hotspot_noPTENLoF",
+   "df_L": 39.5589065325,
+   "n_L": 309,
+   "n_context_L": 32,
+   "n_ref_L": 277,
+   "p_L": 0.0001179833,
+   "p_L_hc3": 0.0001179833,
+   "p_L_perm": null,
+   "same_sign": true,
+   "se_L": 0.1199232515,
+   "testable": true,
+   "unit": "PIK3CA (5290)"
+  },
+  {
+   "beta_A": -0.0717526186,
+   "beta_L": -0.1350634369,
+   "ci95_L": [
+    -0.243965155,
+    -0.0261617189
+   ],
+   "confirmed": true,
+   "context": "PIK3CA_hotspot_noPTENLoF",
+   "df_L": 39.5589065325,
+   "n_L": 309,
+   "n_context_L": 32,
+   "n_ref_L": 277,
+   "p_L": 0.00818478,
+   "p_L_hc3": 0.00818478,
+   "p_L_perm": null,
+   "same_sign": true,
+   "se_L": 0.0538643405,
+   "testable": true,
+   "unit": "Z0077"
+  }
+ ],
+ "n_confirmed": 2,
+ "n_hits": 2,
+ "n_testable": 2,
+ "n_tested": 2,
+ "source": "crispr"
+}
