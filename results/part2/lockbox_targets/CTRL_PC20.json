@@ -1,0 +1,55 @@
+{
+ "analysis_id": "CTRL_PC20",
+ "contexts": [
+  "heme"
+ ],
+ "genes": [
+  "CCND3 (896)",
+  "CEBPA (1050)",
+  "GFI1 (2672)",
+  "IRF8 (3394)",
+  "LYL1 (4066)",
+  "MBNL1 (4154)",
+  "MEF2D (4209)",
+  "MYB (4602)",
+  "PTPN7 (5778)",
+  "RPS6KA1 (6195)",
+  "SPI1 (6688)"
+ ],
+ "hits": [
+  {
+   "alternative": "less",
+   "beta_A": -0.6915021287616465,
+   "context": "heme",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "MYB (4602)"
+  },
+  {
+   "alternative": "less",
+   "beta_A": -0.21076753910646684,
+   "context": "heme",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0113"
+  }
+ ],
+ "units": {
+  "MYB (4602)": [
+   "MYB (4602)"
+  ],
+  "Z0113": [
+   "CCND3 (896)",
+   "CEBPA (1050)",
+   "GFI1 (2672)",
+   "IRF8 (3394)",
+   "LYL1 (4066)",
+   "MBNL1 (4154)",
+   "MEF2D (4209)",
+   "MYB (4602)",
+   "PTPN7 (5778)",
+   "RPS6KA1 (6195)",
+   "SPI1 (6688)"
+  ]
+ }
+}
