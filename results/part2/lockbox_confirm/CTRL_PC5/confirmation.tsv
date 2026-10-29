@@ -1,0 +1,3 @@
+context	unit	beta	alternative	level	eligible	lockbox_testable	beta_L	se_L	df_L	n_L	n_context_L	p_L_hc3	p_L	p_L_perm	n_ref_L	testable_L	same_sign	confirmed	ci90_L_lo	ci90_L_hi	ci95_L_lo	ci95_L_hi	loso_same_sign	loso_folds	lomo_same_sign	demeter2_same_sign	rare_route_pass	rare_route_note	route	confirmed_final	promotable	status
+BRAF_vs_RAS_hotspot	SHOC2 (8036)	0.520259	greater	G	True	True	0.506548	0.148763	13.0201	89	22	0.00234347	0.00234347		67	True	True	True	0.243129	0.769966	0.185215	0.82788							lockbox	True	True	confirmed
+BRAF_vs_RAS_hotspot	Z0132	0.10463	greater	C	True	True	0.0895849	0.0514847	13.0201	89	22	0.0527101	0.0527101		67	True	True	False	-0.00158028	0.18075	-0.0216235	0.200793							lockbox	False	False	not confirmed
