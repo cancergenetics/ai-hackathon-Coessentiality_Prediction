@@ -1,0 +1,5 @@
+direction	controls	evaluable	recovered	verdict
+H1	PC12, PC15, PC6, PC7, PC8	3	3	passes
+H2	PC21, PC22	0	0	n/a (0 evaluable controls; direction exploratory)
+H3a	PC17, PC20	2	2	passes
+H3b	PC1, PC10, PC11, PC13, PC18, PC19a, PC19b, PC2, PC4, PC5, PC9	10	10	passes
