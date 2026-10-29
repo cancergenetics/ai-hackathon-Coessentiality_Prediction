@@ -14,6 +14,7 @@ Scope: process only, since M3 (8f63b6e), as run by a PI agent managing coding, w
    - The dress rehearsal (REHEARSAL.md) used a random dummy loader, ran 2.7 h, reported "no error", and never inspected fit status. It had the same 53 failures (D12).
    - The pre-read review (lockbox_code_review.md, GO-WITH-NOTES) compared the driver with the registry in tables and closed MUST-1 to MUST-3, but did not execute the L path against the A path on the same rows.
    - The defect was found only after the single read, by the R6 reproduction check.
+   - *Correction (2026-10-29, revision round 1):* the line above is inaccurate. The defect was found first through the 53 failed fits after the single read (D12, R6). The R6 reproduction check (68f0d3f) then found the second footprint, the 510 successful fits shifted by the spurious column (D13). The rule that follows (lesson 14) is unchanged.
    - Rehearsals and reviews must assert outcomes (fit counts, equality with the A-side path), not completion.
 3. **Stop scoping a remediation before measuring the defect's footprint.**
    - R6 (4d48039) authorised a refit of 53 failed fits.

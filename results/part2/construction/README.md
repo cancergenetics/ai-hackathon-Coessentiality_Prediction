@@ -188,7 +188,7 @@ Full table: `summary/zavg_top_T1_complexes.tsv`.
 | zavg_BEF halves (8) | 119–129 s each | ≤ 2.9 GB |
 | GLS (29 runs) | 1–3 s each (A has only 4 missingness patterns) | ≤ 1.75 GB |
 | Pearson on A | 2 s | – |
-| All 58 score runs | 4,218 s | – |
+| All 59 score runs (29 zavg_BEF: A, 20 subsamples, 8 halves; 29 GLS; 1 Pearson) | 4,218 s | – |
 | Split-half selection (48 jobs, 3 processes) | 4,115 s wall | ≤ 2.5 GB per worker |
 | Map build: zavg / GLS (stage 1 on 3 processes) | 250 s / 242 s | – |
 | Tiers + bridge + pair AP | 52 s | 2.8 GB |

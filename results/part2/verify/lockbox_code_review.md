@@ -1,5 +1,9 @@
 # Lockbox machinery: independent pre-read code review
 
+> **Note added 2026-10-29 (revision round 1).** This review predates a renumbering of the scripts. Old → current
+> names: `48_lockbox_confirm.py` → `scripts/51_lockbox_confirm.py`; `49_amend_A3.py` → `scripts/52_amend_A3.py`;
+> `50_amend_A4.py` → `scripts/53_amend_A4.py`. The review text below is left as written.
+
 Date: 2026-10-29. Reviewed commit: `d9a42dd` (branch `worktree-agent-a3ec5565842d4e968`; the review branch
 `review-lockbox` starts there and adds only this note and `tests/test_lockbox_review_adversarial.py`).
 Scope: `scripts/48_lockbox_confirm.py`, the `src/part2/bench.py` changes, the `confirm.*` / `assoc.read_lockbox`

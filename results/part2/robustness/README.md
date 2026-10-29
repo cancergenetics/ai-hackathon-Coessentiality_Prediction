@@ -94,10 +94,16 @@ The one H3b failure is MSI_H Z0334, which failed 1 of 30 lineage folds.
 Three caveats from the manuscript carry over to this list:
 
 - **Lymphoid scale effect.** 55 of the 92 lymphoid strongest findings have positive β (lower lymphoid dependency on
-  the unit). The manuscript's lymphoid scale-effect caveat (§4.5) applies to them.
-- **Control readouts.** 2 rows are registered control readouts (`control` column), which the manuscript does not count
-  as separate findings.
-- **Control units in other contexts.** 21 rows involve control units read out in another context.
+  the unit). The manuscript's lineage-scale caveat applies to them (main text, Results, "Possible lineage-scale
+  artefacts", and Supplementary Note 16; this README earlier cited "§4.5" of a superseded draft). The revision analysis
+  R-2 (`results/part2/revision/`, post hoc) replaces the Lymphoid/Myeloid-only label with one rule for all lineages.
+- **Control readouts.** The literal `control` column marks 2 rows "control readout" (H3b MSI_H Z0157, PC1; TP53_altered
+  Z0166, PC2). The post hoc
+  `control_recovery` annotation below, which also counts by-definition equivalent contexts (e.g. H1loss:ARID1A =
+  LoF:ARID1A, PC6; Lymphoid/Myeloid within heme, PC20), marks **7** readouts. The manuscript uses the annotation count
+  (7). *Corrected 2026-10-29: this caveat gave only the literal count (2), which did not match the annotation count (7).*
+- **Control units in other contexts.** The literal `control` column marks 21 rows "control unit, other context"; the
+  `control_recovery` annotation, after moving equivalent contexts to "readout", gives 18.
 
 ## Post hoc descriptive annotations (PI ruling; not filters, not tests)
 
