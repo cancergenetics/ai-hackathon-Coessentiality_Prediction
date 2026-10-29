@@ -1,0 +1,52 @@
+{
+ "analysis_id": "CTRL_PC20",
+ "hits": [
+  {
+   "beta_A": -0.6915021288,
+   "beta_L": -0.6751413136,
+   "ci95_L": [
+    -0.9457626775,
+    -0.4045199496
+   ],
+   "confirmed": true,
+   "context": "heme",
+   "df_L": 44.3433952941,
+   "n_L": 338,
+   "n_context_L": 35,
+   "n_ref_L": 303,
+   "p_L": 4.3398e-06,
+   "p_L_hc3": 4.3398e-06,
+   "p_L_perm": null,
+   "same_sign": true,
+   "se_L": 0.1343082817,
+   "testable": true,
+   "unit": "MYB (4602)"
+  },
+  {
+   "beta_A": -0.2107675391,
+   "beta_L": -0.2415911988,
+   "ci95_L": [
+    -0.308138976,
+    -0.1750434217
+   ],
+   "confirmed": true,
+   "context": "heme",
+   "df_L": 44.3433952941,
+   "n_L": 338,
+   "n_context_L": 35,
+   "n_ref_L": 303,
+   "p_L": 1.9e-09,
+   "p_L_hc3": 1.9e-09,
+   "p_L_perm": null,
+   "same_sign": true,
+   "se_L": 0.033027391,
+   "testable": true,
+   "unit": "Z0113"
+  }
+ ],
+ "n_confirmed": 2,
+ "n_hits": 2,
+ "n_testable": 2,
+ "n_tested": 2,
+ "source": "crispr"
+}
