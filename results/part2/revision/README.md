@@ -19,6 +19,10 @@ control, and none changes a registry entry, discovery, confirmation, primary res
 | 59 (R-2) | 1.5 s | 0.19 GB |
 | 60 (R-3) | 14 s | 2.93 GB |
 | 61 (R-4) | 2.7 s | 0.25 GB |
+| 62 (R-5) | 1.6 s (PI rerun, outputs byte-identical) | 0.17 GB |
+
+Wall times are whole-process (interpreter start and imports included). The `runtime_s` fields in the summary JSONs
+time the computation only (58: 1,795.6 s; 59: 0.11 s; 60: 12.6 s; 61: 1.2 s).
 
 **Reproduction checks (all passed).**
 - The regenerated complex-member matched sets reproduce every committed calibration t (H3a 80,500, H3b 70,200 tests)
