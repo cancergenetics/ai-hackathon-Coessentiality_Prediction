@@ -1,0 +1,48 @@
+{
+ "analysis_id": "CTRL_PC14",
+ "contexts": [
+  "LoF:RB1"
+ ],
+ "genes": [
+  "CCND1 (595)",
+  "CDK4 (1019)",
+  "CDK6 (1021)"
+ ],
+ "hits": [
+  {
+   "alternative": "greater",
+   "beta_A": 0.9764633103807787,
+   "context": "LoF:RB1",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "CCND1 (595)"
+  },
+  {
+   "alternative": "greater",
+   "beta_A": 0.44835588164558726,
+   "context": "LoF:RB1",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "CDK4 (1019)"
+  },
+  {
+   "alternative": "greater",
+   "beta_A": 0.5276294400523129,
+   "context": "LoF:RB1",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "CDK6 (1021)"
+  }
+ ],
+ "units": {
+  "CCND1 (595)": [
+   "CCND1 (595)"
+  ],
+  "CDK4 (1019)": [
+   "CDK4 (1019)"
+  ],
+  "CDK6 (1021)": [
+   "CDK6 (1021)"
+  ]
+ }
+}
