@@ -4300,4 +4300,4 @@ amendments:
       registry's 'alignment from A baselines' prescribes; LOSO and leave-one-model-out run for them too. The A4 NOT
       EVALUABLE ruling is withdrawn. Record: docs/registry/AMENDMENTS.md.
     changed_paths: [lockbox.rare_route_fitted_parameters, lockbox.rare_route_not_evaluable, lockbox.rare_route_fitted_hits]
-status: open
+status: closed
