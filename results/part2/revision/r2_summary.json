@@ -1,0 +1,178 @@
+{
+ "label": "POST HOC, DESCRIPTIVE (revision R-2); committed A-side files only",
+ "trend": "natural cubic spline, df = 4 (boundary knots = range, interior knots at 25/50/75% quantiles), OLS, residual SD ddof = 5",
+ "n_h3a_strongest": 207,
+ "abs_residual_z_nl_ge_2": 79,
+ "abs_residual_z_lin_ge_2": 79,
+ "concordant_nl": 152,
+ "concordant_lin": 142,
+ "scale_artefact_possible": 95,
+ "lead_corrected": 37,
+ "lead_D16": 37,
+ "artefact_D16": 56,
+ "lead_corrected_concordant_nl": 26,
+ "lead_corrected_beats_all_matched_sets": 28,
+ "transitions_lead": {
+  "True->True": 35,
+  "True->False": 2,
+  "False->True": 2,
+  "False->False": 168
+ },
+ "transitions_artefact": {
+  "True->True": 47,
+  "True->False": 9,
+  "False->True": 48,
+  "False->False": 103
+ },
+ "D16_leads_lost": [
+  [
+   "lineage:Bone",
+   "Z0130",
+   2.276,
+   1.837
+  ],
+  [
+   "lineage:Myeloid",
+   "Z0278",
+   -2.096,
+   -1.858
+  ]
+ ],
+ "new_leads": [
+  [
+   "lineage:CNS/Brain",
+   "Z0146",
+   -1.906,
+   -2.333
+  ],
+  [
+   "lineage:Breast",
+   "Z0253",
+   1.818,
+   2.041
+  ]
+ ],
+ "per_context": {
+  "lineage:Lymphoid": {
+   "n": 92,
+   "abs_z_nl_ge_2": 19,
+   "scale_artefact_possible": 53,
+   "lead_corrected": 5,
+   "never_expressed_frac_p_lt_005": 0.27
+  },
+  "lineage:Myeloid": {
+   "n": 21,
+   "abs_z_nl_ge_2": 10,
+   "scale_artefact_possible": 10,
+   "lead_corrected": 4,
+   "never_expressed_frac_p_lt_005": 0.01
+  },
+  "lineage:Pancreas": {
+   "n": 17,
+   "abs_z_nl_ge_2": 6,
+   "scale_artefact_possible": 7,
+   "lead_corrected": 2,
+   "never_expressed_frac_p_lt_005": 0.09
+  },
+  "lineage:CNS/Brain": {
+   "n": 14,
+   "abs_z_nl_ge_2": 7,
+   "scale_artefact_possible": 7,
+   "lead_corrected": 3,
+   "never_expressed_frac_p_lt_005": 0.17
+  },
+  "lineage:Lung": {
+   "n": 12,
+   "abs_z_nl_ge_2": 6,
+   "scale_artefact_possible": 4,
+   "lead_corrected": 4,
+   "never_expressed_frac_p_lt_005": 0.12
+  },
+  "lineage:Bone": {
+   "n": 11,
+   "abs_z_nl_ge_2": 6,
+   "scale_artefact_possible": 5,
+   "lead_corrected": 3,
+   "never_expressed_frac_p_lt_005": 0.19
+  },
+  "melanoma": {
+   "n": 11,
+   "abs_z_nl_ge_2": 6,
+   "scale_artefact_possible": 3,
+   "lead_corrected": 4,
+   "never_expressed_frac_p_lt_005": 0.33
+  },
+  "lineage:Esophagus/Stomach": {
+   "n": 5,
+   "abs_z_nl_ge_2": 1,
+   "scale_artefact_possible": 2,
+   "lead_corrected": 0,
+   "never_expressed_frac_p_lt_005": 0.16
+  },
+  "lineage:Kidney": {
+   "n": 5,
+   "abs_z_nl_ge_2": 3,
+   "scale_artefact_possible": 2,
+   "lead_corrected": 3,
+   "never_expressed_frac_p_lt_005": 0.19
+  },
+  "lineage:Peripheral Nervous System": {
+   "n": 5,
+   "abs_z_nl_ge_2": 3,
+   "scale_artefact_possible": 1,
+   "lead_corrected": 1,
+   "never_expressed_frac_p_lt_005": 0.11
+  },
+  "lineage:Soft Tissue": {
+   "n": 5,
+   "abs_z_nl_ge_2": 5,
+   "scale_artefact_possible": 0,
+   "lead_corrected": 3,
+   "never_expressed_frac_p_lt_005": 0.12
+  },
+  "lineage:Ovary/Fallopian Tube": {
+   "n": 3,
+   "abs_z_nl_ge_2": 3,
+   "scale_artefact_possible": 0,
+   "lead_corrected": 1,
+   "never_expressed_frac_p_lt_005": 0.22
+  },
+  "lineage:Breast": {
+   "n": 2,
+   "abs_z_nl_ge_2": 2,
+   "scale_artefact_possible": 0,
+   "lead_corrected": 2,
+   "never_expressed_frac_p_lt_005": 0.1
+  },
+  "lineage:Bladder/Urinary Tract": {
+   "n": 1,
+   "abs_z_nl_ge_2": 0,
+   "scale_artefact_possible": 0,
+   "lead_corrected": 0,
+   "never_expressed_frac_p_lt_005": 0.08
+  },
+  "lineage:Head and Neck": {
+   "n": 1,
+   "abs_z_nl_ge_2": 1,
+   "scale_artefact_possible": 0,
+   "lead_corrected": 1,
+   "never_expressed_frac_p_lt_005": 0.19
+  },
+  "lineage:Pleura": {
+   "n": 1,
+   "abs_z_nl_ge_2": 1,
+   "scale_artefact_possible": 0,
+   "lead_corrected": 1,
+   "never_expressed_frac_p_lt_005": 0.13
+  },
+  "lineage:Skin": {
+   "n": 1,
+   "abs_z_nl_ge_2": 0,
+   "scale_artefact_possible": 1,
+   "lead_corrected": 0,
+   "never_expressed_frac_p_lt_005": 0.28
+  }
+ },
+ "runtime_s": 0.11,
+ "peak_rss_bytes": 193806336
+}
