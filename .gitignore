@@ -1,16 +1,28 @@
-# restricted / large raw data: never commit
-/datasets/
+# input data, third-party code and caches: never commit
+# (only the placeholder READMEs in datasets/ and external/ are tracked)
+/datasets/**
+!/datasets/**/
+!/datasets/**/README.md
+/external/**
+!/external/README.md
 data_cache/
-external/
-.venv/
-__pycache__/
-*.pyc
-.DS_Store
 *.npy
 *.npz
 *.parquet
 *.feather
 *.pkl
+*.h5
+*.xlsx
+
+# environments, caches, OS
+.venv/
+.env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+.claude/
+
+# local build outputs
 manuscript/*.built.md
 manuscript/~$*
-.claude/

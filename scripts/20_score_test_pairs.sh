@@ -16,7 +16,8 @@ P1="$ROOT/external/part1_locked"
 LOCK=c7f95ee007576be9311c0a5f08c6ac63ca23a009
 MODE="${1:?usage: $0 train|dryrun|test}"
 
-test "$(git -C "$P1" rev-parse HEAD)" = "$LOCK" || { echo "Part 1 clone is not at $LOCK" >&2; exit 1; }
+# the locked commit, or the content-identical public mirror (src/testeval/part1.py::lock_state)
+"$PY" -c "import sys; sys.path.insert(0, 'src'); from testeval.part1 import lock_state; s = lock_state(); sys.exit(0 if s['matches'] else 'Part 1 clone is not at $LOCK or its verified public mirror')"
 if [ -n "$(git -C "$P1" status --porcelain -- src scripts results)" ]; then
   echo "Part 1 clone has local modifications" >&2; exit 1
 fi

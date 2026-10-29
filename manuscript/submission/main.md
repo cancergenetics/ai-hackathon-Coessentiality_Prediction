@@ -212,7 +212,7 @@ No restricted data are shared. The analysis uses public releases that readers ob
 
 ## Code availability
 
-All code, the frozen test protocol, the registry, amendments and tests are at [REPO_URL] (archive: [ARCHIVE_DOI]); the locked Part 1 method is at [PART1_REPO_URL], commit c7f95ee.
+All code, the frozen test protocol, the registry, amendments and tests are at https://github.com/cancergenetics/ai-hackathon-Coessentiality_Prediction (archive: [ARCHIVE_DOI]); the locked Part 1 method is commit c7f95ee of the Part 1 repository, published as https://github.com/cancergenetics/ai-hackathon-Coessentiality (commit 3c684c9, identical for every file used here; `external/README.md`).
 
 ---
 

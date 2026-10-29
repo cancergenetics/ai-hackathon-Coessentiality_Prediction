@@ -497,7 +497,7 @@ Reviewers, the peer reviewer included, and producers share a model family. Revie
 
 **Placeholders the human authors must fill in before submission** (agents cannot resolve these): <!-- RR1 "Items blocking submission"; RR2 "Not changed"; RT: D18 -->
 - [AUTHORS], [CORRESPONDING_AUTHOR], [COMPETING_INTERESTS];
-- [REPO_URL] and [ARCHIVE_DOI] for this repository, and [PART1_REPO_URL] for Part 1 (commit c7f95ee), which must also be made public;
+- [ARCHIVE_DOI] for this repository (https://github.com/cancergenetics/ai-hackathon-Coessentiality_Prediction). Part 1 is public at https://github.com/cancergenetics/ai-hackathon-Coessentiality; its commit 3c684c9 is content-identical to the locked c7f95ee for every file used here (`external/README.md`);
 - [DEPMAP_RELEASE_CONFIRMATION];
 - licence checks: [LICENCE_HUMAP], [LICENCE_CCLE_PROTEOMICS], [LICENCE_BIOPLEX];
 - [HGNC_DOWNLOAD_DATE].

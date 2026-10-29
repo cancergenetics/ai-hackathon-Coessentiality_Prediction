@@ -9,7 +9,7 @@ from __future__ import annotations
 import subprocess
 import sys
 
-from part2.paths import LOCKED_COMMIT, PART1, PART1_MVP_SRC
+from part2.paths import LOCKED_COMMIT, LOCKED_OBJECTS, PART1, PART1_MVP_SRC, PUBLIC_MIRROR_COMMIT
 
 for _p in (str(PART1_MVP_SRC), str(PART1)):
     if _p not in sys.path:
@@ -35,7 +35,10 @@ def lock_state() -> dict:
         return subprocess.run(["git", "-C", str(PART1), *a], capture_output=True, text=True).stdout.strip()
     head = g("rev-parse", "HEAD")
     dirty = [l for l in g("status", "--porcelain").splitlines() if l.strip() and l[3:] != "datasets"]
-    return dict(commit=head, expected=LOCKED_COMMIT, matches=head == LOCKED_COMMIT, modified=dirty,
+    objects_match = all(g("rev-parse", f"HEAD:{p}") == oid for p, oid in LOCKED_OBJECTS.items())
+    via = "locked commit" if head == LOCKED_COMMIT else \
+        "public mirror, content-identical" if head == PUBLIC_MIRROR_COMMIT and objects_match else None
+    return dict(commit=head, expected=LOCKED_COMMIT, matches=via is not None, via=via, modified=dirty,
                 clean=not dirty)
 
 

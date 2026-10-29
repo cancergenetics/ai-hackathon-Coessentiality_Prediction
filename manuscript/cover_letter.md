@@ -24,7 +24,7 @@ Protocols, decision rules, calibrations and confirmation rules were frozen and c
 - Every amendment, erratum and ruling is listed with its timing relative to outcome access.
 - The work was carried out by AI agents under a human principal investigator, with independent agent reviews at each stage. [CORRESPONDING_AUTHOR] takes responsibility for the analysis.
 
-All inputs are public DepMap (including CCLE proteomics), BioPlex, Ensembl, HGNC and hu.MAP releases. No restricted data are shared. The analysis is reproducible from these releases and the committed code, registry and result files ([REPO_URL]; [ARCHIVE_DOI]). The manuscript has not been submitted elsewhere. Competing interests: [COMPETING_INTERESTS].
+All inputs are public DepMap (including CCLE proteomics), BioPlex, Ensembl, HGNC and hu.MAP releases. No restricted data are shared. The analysis is reproducible from these releases and the committed code, registry and result files (https://github.com/cancergenetics/ai-hackathon-Coessentiality_Prediction; [ARCHIVE_DOI]). The manuscript has not been submitted elsewhere. Competing interests: [COMPETING_INTERESTS].
 
 Sincerely,
 

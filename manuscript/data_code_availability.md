@@ -57,6 +57,6 @@ Figures and tables regenerate from committed results alone (`manuscript/suppleme
 
 The test look and the lockbox read were single-use by design, and the ledger refuses a second lockbox read. Re-running them therefore requires a fresh repository state. Any such re-run is non-confirmatory.
 
-**Repository URL and archive identifier:** [REPO_URL]; archive [ARCHIVE_DOI]. **Part 1 repository:** [PART1_REPO_URL] (commit c7f95ee). No public archive has been created yet; the user must supply these before submission.
+**Repository URL and archive identifier:** https://github.com/cancergenetics/ai-hackathon-Coessentiality_Prediction; archive [ARCHIVE_DOI]. **Part 1 repository:** https://github.com/cancergenetics/ai-hackathon-Coessentiality. That public release has a fresh git history: its commit 3c684c9 has the same git object ids as the locked commit c7f95ee for every Part 1 file this project reads, and `scripts/00_setup_part1.sh` verifies this (`external/README.md`). No public archive has been created yet; the user must supply the DOI before submission.
 
 **Lockbox loader run log:** the run log of the single lockbox read was not committed and is permanently lost; the loader call count (30) is inferred from ledger invariants and file times (Supplementary Note 15).
