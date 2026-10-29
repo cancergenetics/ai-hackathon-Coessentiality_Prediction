@@ -46,5 +46,5 @@
 - Rows: the strongest H3a / H3b discoveries (ranked by |t|, never by the GPD p) that are not in a locus cluster and whose |t| exceeds that of every one of the unit's 10 matched random gene sets in the same context (D8 'beats all matched sets' flag). tableS3_context_discoveries_full.tsv lists all 1,306 discoveries with every flag.
 - Members: first 8 member symbols of the frozen unit (gene content only; no curated or literature label). β in Chronos units: negative = more dependent in the context.
 - 'control readout': the same context and unit as a registered positive control (Table S1); 'control unit, other context': the unit is a control readout in a different (sometimes overlapping) context. Such rows are not independent discoveries.
-- Lockbox confirmation: [[LOCKBOX: per-discovery L effect, 95% CI and confirmation flag]].
+- Lockbox confirmation: per-discovery L effect, 95% CI, primary and corrected calls and the defect-sensitive flag are in Supplementary Table S7 (tableS7_lockbox_h3_full.tsv).
 - Sources: results/part2/directions/{H3a_lineage_atlas,H3b_driver_family}/{discoveries,discoveries_report}.tsv, calibration_D8_tests.tsv.gz, sensitivity_screen_quality/discoveries.tsv; specificity_discoveries.tsv.gz; script scripts/tab_part2_discoveries.py.

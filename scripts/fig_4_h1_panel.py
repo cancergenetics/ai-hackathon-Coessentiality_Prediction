@@ -1,7 +1,7 @@
 """Figure 4: H1 within-complex genetic interactions on construction set A (headline mechanistic panel).
 
 Inputs (committed only): results/part2/directions/H1_within_complex_GI/{classes.tsv, discoveries.tsv,
-sensitivity_SMARCB1_CN.tsv}, results/part2/directions/h1_label_final.json (E2 labels),
+sensitivity_SMARCB1_CN.tsv, member_profiles.tsv}, results/part2/directions/h1_label_final.json (E2 labels),
 results/part2/fzx/h1_events.tsv (member composition), results/part2/controls/controls_summary.tsv (gene-level
 control readouts quoted in panel c), results/part2/directions/H1S_silencing_GI/summary.json.
 
@@ -10,9 +10,9 @@ Panels
     matched random-member null 2.5-97.5% (grey bar), reported label (colour), BH discovery (star); SMARCB1 with the
     pre-declared copy-number covariates as an extra row
  b  paralog axis: beta_P with 90% CI and its matched null, for the four events with an in-complex paralog
- c  member composition of the three headline-eligible events (ARID1A, EP300, FOCAD): event gene, paralogs (P),
-    counted non-paralog members (N'), members without a baseline direction, most shifted member; the per-member
-    coefficients (registered report item) are not in the committed run outputs and are not drawn
+ c  member-resolved profiles (registered "also reported" item): each member's loss coefficient beta_j with 95% CI
+    for the three headline-eligible events (ARID1A, EP300, FOCAD) and the two E2 events (TP53, PTEN), from
+    member_profiles.tsv (scripts/55_export_member_profiles.py; A only, descriptive)
  d  reported labels of the 24 H1 events (complex-wide axis; paralog compensation counted on the paralog axis)
  e  reported labels of the 317 H1S events (exploratory)
 
@@ -59,7 +59,7 @@ def main() -> None:
     lab = S.load_json(f"{P.DIR}/h1_label_final.json")
 
     fig = plt.figure(figsize=(7.2, 8.4))
-    gs = fig.add_gridspec(3, 2, height_ratios=[2.1, 1.35, 0.85], width_ratios=[1.35, 1], hspace=0.48, wspace=0.5)
+    gs = fig.add_gridspec(3, 2, height_ratios=[2.1, 1.35, 0.85], width_ratios=[1.35, 1], hspace=0.75, wspace=0.5)
 
     # ---------- a: kappa_N forest
     ax = fig.add_subplot(gs[0, 0])
@@ -126,57 +126,51 @@ def main() -> None:
     ax.set_xlabel("β_P (Chronos; 90% CI)  < 0 = paralog more essential")
     ax.set_title("Paralog axis (in-complex paralogs P)", loc="left")
 
-    # ---------- c: member composition of headline-eligible events
-    ax = fig.add_subplot(gs[1, :])
-    S.panel_label(ax, "c")
-    ev = [e for e in lab[P.H1]["headline_eligible"]]
-    role_col = {"event": "black", "P": S.OI["vermillion"], "N'": S.OI["blue"], "nobase": "#CCCCCC"}
+    # ---------- c: member-resolved profiles (registered "also reported"; A only, descriptive export 55)
+    mp = pd.read_csv(S.ROOT / f"{P.DIR}/{P.H1}/member_profiles.tsv", sep="\t")
+    ev = ["Z0109|ARID1A", "Z0186|EP300", "Z0286|FOCAD", "Z0158|TP53", "Z0130|PTEN"]
+    sub = gs[1, :].subgridspec(1, len(ev), wspace=0.95)
+    role_col = {"P": S.OI["vermillion"], "N'": S.OI["blue"], "nobase": "#9E9E9E"}
     ctl_g = ctl[ctl.level == "G"]
-    for i, e in enumerate(ev):
-        r = c[c.event == e].iloc[0]
-        yy = len(ev) - 1 - i
-        nob = set(_syms(r.N_no_baseline))
-        genes = ([(r.gene, "event")] + [(g, "P") for g in _syms(r.P)]
-                 + [(g, "N'") for g in _syms(r.N) if g not in nob] + [(g, "nobase") for g in _syms(r.N) if g in nob])
-        shifted = r.N_most_shifted.split(" ")[0] if isinstance(r.N_most_shifted, str) else None
-        for j, (g, role) in enumerate(genes):
-            ax.add_patch(Rectangle((j * 1.0, yy - 0.4), 0.92, 0.8, color=role_col[role], lw=0))
-            ax.text(j + 0.46, yy, g, ha="center", va="center", fontsize=4.6,
-                    color="white" if role in ("event", "P", "N'") else "black", rotation=90)
-            if g == shifted:
-                ax.plot(j + 0.46, yy + 0.5, marker="v", color="black", ms=3)
-        if pd.notna(r.beta_P) and r.label_final_paralog == "PARALOG COMPENSATION":
-            stat = (f"β_P {r.beta_P:+.2f} (95% CI {r.ci95_lo_P:+.2f} to {r.ci95_hi_P:+.2f}), null "
-                    f"{r.P_null_q025:+.2f}…{r.P_null_q975:+.2f}; P−N contrast {r.contrast_beta:+.2f} "
-                    f"(p {r.contrast_p:.1g}); {int(r.n_context_P)} loss lines")
-        else:
-            stat = (f"κ_N {r.kappa_N:+.3f} (95% CI {r.ci95_lo_N:+.3f} to {r.ci95_hi_N:+.3f}), null "
-                    f"{r.N_null_q025:+.3f}…{r.N_null_q975:+.3f}; {r.N_frac_aligned_pos:.0%} of N' aligned > 0; "
-                    f"{int(r.n_context_N)} loss lines")
-        if pd.notna(r.kappa_N) and r.label_final_paralog == "PARALOG COMPENSATION":
-            stat += f"\ncomplex-wide κ_N {r.kappa_N:+.3f} (90% CI {r.kappa_N_ci90_lo:+.3f} to {r.kappa_N_ci90_hi:+.3f}): " \
-                    f"{r.label_final.lower()}"
-        elif pd.isna(r.kappa_N):
-            stat += f"\ncomplex-wide axis not evaluable (|N'| = {int(r.n_Nprime)})"
-        ax.text(len(genes) + 0.4, yy, stat, va="center", fontsize=5.0)
-        ax.text(-0.3, yy, f"{r.gene} loss\n{r.unit} ({r.type})", ha="right", va="center", fontsize=5.6,
-                fontweight="bold")
-    # gene-level control readouts on A, quoted with their own contexts
+    for k, e in enumerate(ev):
+        ax = fig.add_subplot(sub[0, k])
+        if k == 0:
+            S.panel_label(ax, "c")
+            ax0 = ax
+        m = mp[mp.event == e].copy()
+        m["role"] = np.where(m.axis == "P", "P", np.where(m.in_aligned_set, "N'", "nobase"))
+        m["o"] = m.role.map({"P": 0, "N'": 1, "nobase": 2})
+        m = m.sort_values(["o", "beta"])
+        yy = np.arange(len(m))[::-1]
+        ax.axvline(0, color="black", lw=0.5)
+        for y0, (_, r) in zip(yy, m.iterrows()):
+            col = role_col[r.role]
+            ax.errorbar(r.beta, y0, xerr=[[r.beta - r.ci95_lo], [r.ci95_hi - r.beta]], fmt="o", color=col,
+                        mfc=col if r.role != "nobase" else "white", ms=2.6, lw=0.7, capsize=0.8)
+        ax.set_yticks(yy)
+        ax.set_yticklabels([g.split(" ")[0] for g in m.member], fontsize=4.6)
+        ax.tick_params(axis="x", labelsize=5)
+        ax.set_ylim(-0.7, len(m) - 0.3)
+        r0 = c[c.event == e].iloc[0]
+        tag = {"Z0109|ARID1A": "PC6 readout", "Z0286|FOCAD": "overlaps PC10", "Z0186|EP300": "T3-neg unit",
+               "Z0158|TP53": "E2: within margin", "Z0130|PTEN": "E2: within margin"}[e]
+        ax.set_title(f"{r0.gene} loss ({e.split('|')[0]})\nn={int(m.n_loss.iloc[0])}; {tag}",
+                     loc="left", fontsize=5.4)
+        ax.set_xlabel("β_j (95% CI)", fontsize=5.2)
+    hs = [plt.Line2D([], [], marker="o", ls="", color=role_col["P"], ms=2.6, label="in-complex paralog (P)"),
+          plt.Line2D([], [], marker="o", ls="", color=role_col["N'"], ms=2.6, label="counted member (N')"),
+          plt.Line2D([], [], marker="o", ls="", color=role_col["nobase"], mfc="white", ms=2.6,
+                     label="no baseline direction (|b| < 0.1)")]
+    ax0.legend(handles=hs, frameon=False, fontsize=4.8, ncol=3, loc="upper left", bbox_to_anchor=(-0.3, -0.24))
     notes = []
     for ent, gene in (("CTRL_PC6", "ARID1B"), ("CTRL_PC10", "PELO"), ("CTRL_PC10", "HBS1L")):
         g = ctl_g[(ctl_g.entry == ent) & ctl_g.unit.str.startswith(gene + " ")]
         if len(g):
             g = g.iloc[0]
             notes.append(f"{ent[5:]} {gene} in {g.context}: β {g.beta:+.2f} (one-sided p {g.p:.1g})")
-    ax.text(-3.0, -0.95, "Gene-level control readouts on A (own contexts, Table S1): " + "; ".join(notes),
-            fontsize=4.8, color="#555555", va="center")
-    ax.set_xlim(-3.2, 30)
-    ax.set_ylim(-1.2, len(ev) - 0.3)
-    ax.axis("off")
-    hs = [Rectangle((0, 0), 1, 1, color=role_col[k]) for k in role_col]
-    ax.legend(hs, ["lost gene", "in-complex paralog (P)", "counted member (N')", "no baseline direction (|b| < 0.1)"],
-              frameon=False, fontsize=4.8, ncol=4, loc="upper left", bbox_to_anchor=(0.0, 1.12))
-    ax.set_title("Member composition of the headline-eligible events (▼ most shifted N member)", loc="left", pad=14)
+    ax0.text(-0.3, -0.42, "β_j: member coefficient of loss (A, Chronos; < 0 = member more essential in loss lines). "
+             "Gene-level control readouts on A (own contexts, Table S1):\n" + "; ".join(notes),
+             fontsize=4.6, color="#555555", transform=ax0.transAxes, va="top")
 
     # ---------- d: label counts H1 vs H1S
     order = ["PARALOG COMPENSATION", "RESIDUAL SENSITISATION", "COLLAPSE",

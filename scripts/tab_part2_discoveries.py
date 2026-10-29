@@ -79,7 +79,8 @@ def h3_tables(derived: dict) -> None:
            "label). β in Chronos units: negative = more dependent in the context.",
            "'control readout': the same context and unit as a registered positive control (Table S1); 'control unit, other context': the unit is a control readout in a different (sometimes overlapping) context. Such rows are "
            "not independent discoveries.",
-           "Lockbox confirmation: [[LOCKBOX: per-discovery L effect, 95% CI and confirmation flag]].",
+           "Lockbox confirmation: per-discovery L effect, 95% CI, primary and corrected calls and the "
+           "defect-sensitive flag are in Supplementary Table S7 (tableS7_lockbox_h3_full.tsv).",
            "Sources: results/part2/directions/{H3a_lineage_atlas,H3b_driver_family}/{discoveries,"
            "discoveries_report}.tsv, calibration_D8_tests.tsv.gz, sensitivity_screen_quality/discoveries.tsv; "
            "specificity_discoveries.tsv.gz; script scripts/tab_part2_discoveries.py."], md)
@@ -124,9 +125,10 @@ def h1_table(derived: dict) -> None:
            "Reported labels apply E2 (post hoc, conservative): a non-neutral class whose 90% CI also lies inside "
            "±0.1 is 'DETECTABLE, WITHIN EQUIVALENCE MARGIN (negligible)'. MAP2K4 (11 complete-case loss lines) "
            "is NOT EVALUABLE (R2).",
-           "Per-member coefficients (β_j with 95% CI) are a registered report item but are not in the committed "
-           "run outputs; see Fig. 4 legend.",
-           "Lockbox: [[LOCKBOX: per-event L confirmation of κ_N / β_P]].",
+           "Per-member coefficients (β_j with 95% CI), a registered 'also reported' item, were exported after the "
+           "discovery run by scripts/55_export_member_profiles.py (A only, descriptive): "
+           "results/part2/directions/H1_within_complex_GI/member_profiles.tsv; drawn in Fig. 4c.",
+           "Lockbox: per-event L estimates and calls (primary and corrected) are in Supplementary Table S8.",
            "Sources: results/part2/directions/H1_within_complex_GI/{classes,discoveries}.tsv, "
            "results/part2/fzx/h1_events.tsv; script scripts/tab_part2_discoveries.py."], df)
     c.to_csv(S.TAB_DIR / "tableS4_h1_panel_full.tsv", sep="\t", index=False)
