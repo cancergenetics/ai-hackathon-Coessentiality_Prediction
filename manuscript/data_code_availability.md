@@ -29,6 +29,7 @@
 - `results/part2/contexts/`, `results/part2/fzx/`: context definitions, unit sets, H1 events and the lockbox-testable list;
 - `results/part2/controls/`, `results/part2/directions/`: controls and A-side discoveries, calibrations and sensitivities;
 - `results/part2/lockbox_confirm/`: lockbox confirmations, the R6/R7 records, the corrected relook, BENCH and BRIDGE-L;
+- `results/part2/robustness/`: the registered per-hit robustness checks, the 254 strongest findings and their post hoc annotations;
 - `results/part2/verify/`: independent reviews;
 - `results/part2/trials.jsonl`, `results/part2/lockbox_ledger.jsonl`, `results/part2/lockbox_reads.jsonl`: trial and lockbox ledgers.
 
