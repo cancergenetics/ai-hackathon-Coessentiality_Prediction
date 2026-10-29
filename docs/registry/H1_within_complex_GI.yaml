@@ -481,6 +481,7 @@ implementation_note: >
 seeds:
   permutation: 4200
   matched_null: 7000
+  lockbox_permutation: 6300
 success_criterion: >
   Per event: class by the rules above; non-neutral classes lockbox-confirmed (or the labelled rare-context
   route), LOSO-robust and not in a locus cluster to enter the strongest findings. Direction: H1 is supported if
@@ -530,4 +531,14 @@ amendments:
       201d8bfa1814d5d7fa7f7981c39fc1bf33363b85 (2026-10-28T20:09:59Z), before any real-data run; tested by
       tests/test_part2_h1h2.py::test_alignment_sign_and_collapse_index. Record: docs/registry/AMENDMENTS.md.
     changed_paths: [score_rule]
+  - id: A3
+    timestamp_utc: 2026-10-29T02:03:27Z
+    amends_commit: 21fe1be1cdfe9d9b5b68c02c1b5a46b2b5b66a69
+    reason: >
+      PI ruling A3(a) on the lockbox dry check (results/part2/lockbox_confirm/BLOCKED.md), before any lockbox read; no
+      L values read. The lockbox confirmation permutation seed was not registered: lockbox_permutation is the seed of
+      the exact PatientID-blocked Freedman-Lane permutation in L (confirm.confirm_entry: seed + hit index, hits in
+      (context, unit) order). H3a 6100, H3b 6200, H1 6300, H1S 6400, H2 6500, BRIDGE-L 6600, CTRL 6700 + registry
+      index; checked against every registered or documented seed, no collision. Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [seeds.lockbox_permutation]
 status: open

@@ -70,6 +70,7 @@ multiverse:
   use: "reported per control; never selected; the kill rule uses the primary readout only"
 seeds:
   permutation: 4400
+  lockbox_permutation: 6700
 success_criterion: "recovered: expected sign with one-sided HC3 p < 0.05 in A at the complex level; lockbox confirmation reported separately"
 stopping_rule: >
   Runs once, in the single controls script after FZ-C and FZ-X, together with every other control
@@ -81,4 +82,15 @@ frozen_inputs:
   - results/part2/lockbox/manifest.json
   - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
   - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration, lockbox-testable list
+amendments:
+  - id: A3
+    timestamp_utc: 2026-10-29T02:03:27Z
+    amends_commit: 21fe1be1cdfe9d9b5b68c02c1b5a46b2b5b66a69
+    reason: >
+      PI ruling A3(a) on the lockbox dry check (results/part2/lockbox_confirm/BLOCKED.md), before any lockbox read; no
+      L values read. The lockbox confirmation permutation seed was not registered: lockbox_permutation is the seed of
+      the exact PatientID-blocked Freedman-Lane permutation in L (confirm.confirm_entry: seed + hit index, hits in
+      (context, unit) order). H3a 6100, H3b 6200, H1 6300, H1S 6400, H2 6500, BRIDGE-L 6600, CTRL 6700 + registry
+      index; checked against every registered or documented seed, no collision. Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [seeds.lockbox_permutation]
 status: open

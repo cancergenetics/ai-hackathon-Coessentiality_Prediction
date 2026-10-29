@@ -157,3 +157,46 @@ unchanged.
 - H1S (exploratory): Z0149|ERBB3, Z0194|PRR15L, Z0260|B3GNT5 and Z0273|CST6 are relabelled.
 - Also in the reporting layer: Z0164|MAP2K4 (H1) is labelled NOT EVALUABLE, because its counted tests were not
   evaluable (ruling R2, applied without re-running H1).
+
+## A3: lockbox permutation seeds; BENCH `within_line_rank` declared not run
+
+| | |
+|---|---|
+| Time (UTC) | 2026-10-29T02:03:27Z |
+| Amends | `21fe1be1cdfe9d9b5b68c02c1b5a46b2b5b66a69` (registry as of main `75bf5e6`, plus the dry-check stop note) |
+| Decided by | PI rulings on `results/part2/lockbox_confirm/BLOCKED.md` |
+| Applied by | `scripts/49_amend_A3.py` (`--check` re-derives the edit from the amended commit) |
+| Statement | **before any lockbox read; no L values read** |
+
+The lockbox ledger does not exist, no target list has been written, and no lockbox outcome has been loaded.
+
+**(a) Lockbox permutation seeds.** The registry fixed the discovery permutation seeds but not the seed of the exact
+PatientID-blocked Freedman-Lane permutation that a confirmation runs in L when fewer than 20 context (or loss) models
+are in L. A3 adds `seeds.lockbox_permutation`:
+
+| Entries | Seed |
+|---|---|
+| `H3a_lineage_atlas` | 6100 |
+| `H3b_driver_family` | 6200 |
+| `H1_within_complex_GI` | 6300 |
+| `H1S_silencing_GI` | 6400 |
+| `H2_submodule_divergence` | 6500 |
+| `BRIDGE-L_confirmation_rate` | 6600 |
+| `CTRL_*` | 6700 + registry index (the index of the registered control seed 4400 + index): CTRL_PC1 6700 … CTRL_PC19a 6718, CTRL_PC19b 6719 … CTRL_PC22 6722 |
+
+- `confirm.confirm_entry` uses `seed + i`, where i is the hit's position in the target list's hit order, which is
+  sorted by (context, unit). This is the same convention as the discovery runs (`perm_seed + row index`).
+- Collision check: every value under `seeds` / `calibration.seed` in every entry (4000–4422, 4500, 4600, 4700, 4800,
+  5100, 5200, 7000, 7100) and every seed named in DESIGN.md, RESEARCH_TREE.md and docs/registry/*.md (3000, 5000,
+  7000). No base seed collides, so no block was shifted by +50.
+- Offset ranges overlap other bases, as they already do for the discovery seeds (for example, H3a 6100 + up to 1,144
+  hits). They are independent streams on different data.
+
+**(b) BENCH `within_line_rank` is NOT RUN.** `cscore.score(method="within_line_rank")` ranks each line's effect among
+*all* genes. The registered BENCH read is "all members of the complexes in the primary and secondary pair sets", so
+the entry is internally inconsistent. The PI chose not to widen the lockbox read. `BENCH_complex_vs_gene` now carries
+`multiverse.not_run: [within_line_rank]` with a reason. This is reported as a limitation. The other multiverse items
+(eigengene, g* by |beta|, T1/T2 pairs) are unchanged.
+
+`registry.amendment_changes(committed, amended) == []` holds for all 30 touched entries (29 seed entries plus BENCH),
+and every declared path changed (`tests/test_part2_lockbox_driver.py`).

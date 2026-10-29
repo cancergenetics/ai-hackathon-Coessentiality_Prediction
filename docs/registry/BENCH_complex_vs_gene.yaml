@@ -431,6 +431,8 @@ multiverse:
   scores: [eigengene, within_line_rank]
   other: [g* chosen by largest |beta| instead of |t|, pair set restricted to T1/T2 complexes]
   use: "reported, never selected"
+  not_run: [within_line_rank]
+  not_run_reason: "needs genome-wide within-line ranks in L; the registered BENCH read covers complex members only (amendment A3(b), PI ruling: the read is not widened; reported as a limitation)"
 seeds:
   bootstrap: 5100
   matched_sets: 7100
@@ -447,4 +449,14 @@ frozen_inputs:
   - results/part2/lockbox/manifest.json
   - results/part2/construction/FZC_manifest.json   # FZ-C manifest: complex map, sub-modules, tiers, member/attachment rules
   - results/part2/fzx/FZX_manifest.json   # FZ-X manifest: context table freeze, family enumeration (m), lockbox-testable list, H1 events
+amendments:
+  - id: A3
+    timestamp_utc: 2026-10-29T02:03:27Z
+    amends_commit: 21fe1be1cdfe9d9b5b68c02c1b5a46b2b5b66a69
+    reason: >
+      PI ruling A3(b) on the lockbox dry check, before any lockbox read; no L values read. The multiverse score
+      within_line_rank needs genome-wide within-line ranks in L, but the registered BENCH read covers complex members
+      only, so the entry is internally inconsistent; the PI chose not to widen the lockbox read and within_line_rank
+      is declared NOT RUN (reported as a limitation). Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [multiverse.not_run, multiverse.not_run_reason]
 status: open

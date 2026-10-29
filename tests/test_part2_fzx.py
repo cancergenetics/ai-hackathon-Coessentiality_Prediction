@@ -319,7 +319,8 @@ def test_fzx_fill_changed_only_placeholders(entries, man):
 
 def test_amendment_A1_is_the_only_non_fill_change(entries, man):
     """FZ-X commit -> now: A1 is the only change; H1 and H1S differ from the FZ-X H1 entry only in A1's declared
-    paths (all of which changed); every other entry is identical to its FZ-X version (status may close later)."""
+    paths (all of which changed); every other entry is identical to its FZ-X version (status may close later) except
+    for the declared paths of the pre-read amendment A3."""
     c = _fzx_commit(man)
     h1_fzx_txt = _show(c, "docs/registry/H1_within_complex_GI.yaml")
     if h1_fzx_txt is None:
@@ -330,12 +331,13 @@ def test_amendment_A1_is_the_only_non_fill_change(entries, man):
         am = e.get("amendments", [])
         if k in ("H1_within_complex_GI", "H1S_silencing_GI"):
             assert [a["id"] for a in am][:2] == ["A1", "A2"] and am[0]["amends_commit"] == c, k
-            assert [a["id"] for a in am][2:] in ([], ["E1"]), k                 # E1: erratum (score_rule only)
+            # E1: erratum (score_rule only); A3: lockbox permutation seed (pre-read)
+            assert [a["id"] for a in am][2:] in ([], ["E1"], ["E1", "A3"]), k
             assert registry.amendment_changes(h1_fzx, e) == [], k
             declared = am[0]["changed_paths"]
             assert registry.changed_top_paths(h1_fzx, e, declared) == set(declared), k
         else:
-            assert am == [], k
+            assert [a["id"] for a in am] in ([], ["A3"]), k                    # A3 (pre-read): seeds / BENCH not-run
             old = registry.load_yaml(_show(c, f"docs/registry/{k}.yaml"))
             assert [p for p in registry.amendment_changes(old, e) if p != "status"] == [], k
     assert set(entries["H1_within_complex_GI"]["amendments"][0]["changed_paths"]) == {

@@ -1,5 +1,12 @@
 # Lockbox confirmations: STOPPED at the dry check (no read)
 
+> **Update (same day, still no read).** The PI ruled on this note, and the missing machinery has been built:
+> - the driver `scripts/48_lockbox_confirm.py`;
+> - BENCH secondary and the BRIDGE-L GLS runner and multiverse;
+> - amendment A3, which fixes the lockbox seeds and declares BENCH `within_line_rank` not run.
+>
+> The registry rulings still open are listed in `GAPS.md`. The driver refuses to read until they are recorded.
+
 Date: 2026-10-29. Code: main `75bf5e6`. Agent worktree `worktree-agent-a3ec5565842d4e968`.
 
 **Nothing was read from L.**

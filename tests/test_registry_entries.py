@@ -240,7 +240,8 @@ def test_h1_and_h1s_event_split(entries, eid, loss_class, units_file):
         assert c["lockbox_testable"] == bool(c["n_L"] >= 5 and c["ref_L"] >= 5), c["id"]
     units = (FZX / units_file).read_text().split()
     assert e["complex_set_hash"] == registry.set_hash(units) and e["family_m"]["value"] == len(units)
-    assert [a["id"] for a in e["amendments"]] == ["A1", "A2", "E1"]           # E1: score_rule erratum (R1)
+    # E1: score_rule erratum (R1); A3: lockbox permutation seed (pre-read)
+    assert [a["id"] for a in e["amendments"]] == ["A1", "A2", "E1", "A3"]
 
 
 def test_h1s_is_exploratory_copy_of_h1(entries):
@@ -251,6 +252,10 @@ def test_h1s_is_exploratory_copy_of_h1(entries):
     for k in ("score", "score_rule", "covariates", "covariate_rule", "statistic", "classes", "matched_null",
               "fdr_family", "paralog_definition", "units", "seeds", "multiverse", "frozen_inputs",
               "implementation_note"):
+        if k == "seeds":                       # A3: each entry has its own lockbox permutation seed (6300 / 6400)
+            assert {**s[k], "lockbox_permutation": 0} == {**h[k], "lockbox_permutation": 0}
+            assert (h[k]["lockbox_permutation"], s[k]["lockbox_permutation"]) == (6300, 6400)
+            continue
         assert s[k] == h[k], k
     assert s["family_m"]["formula"] == h["family_m"]["formula"]
     assert "never enter any kill tally or main claim" in s["kill_rule"]["rule"]
