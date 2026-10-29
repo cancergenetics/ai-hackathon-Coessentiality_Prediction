@@ -1,0 +1,338 @@
+{
+ "analysis_id": "H3a_lineage_atlas",
+ "label": "registered calibration run after the discovery run (D8; PI ruling R4)",
+ "matched_random_sets": {
+  "R_per_unit": 10,
+  "bb": {
+   "families_selected": 21,
+   "rejections": 11861
+  },
+  "discoveries_exceeding_all_matched_sets": {
+   "n": 502,
+   "n_without_sets": 62,
+   "of": 1145
+  },
+  "n_sets": 3500,
+  "per_context": {
+   "lineage:Biliary Tract": {
+    "random": {
+     "frac_p_lt_001": 0.03942857142857143,
+     "frac_p_lt_005": 0.10628571428571429,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.0326975476839237,
+     "frac_p_lt_005": 0.1335149863760218,
+     "n_tests": 367
+    }
+   },
+   "lineage:Bladder/Urinary Tract": {
+    "random": {
+     "frac_p_lt_001": 0.09542857142857143,
+     "frac_p_lt_005": 0.20285714285714285,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.09536784741144415,
+     "frac_p_lt_005": 0.2098092643051771,
+     "n_tests": 367
+    }
+   },
+   "lineage:Bone": {
+    "random": {
+     "frac_p_lt_001": 0.22657142857142856,
+     "frac_p_lt_005": 0.3402857142857143,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.20708446866485014,
+     "frac_p_lt_005": 0.3405994550408719,
+     "n_tests": 367
+    }
+   },
+   "lineage:Bowel": {
+    "random": {
+     "frac_p_lt_001": 0.18742857142857142,
+     "frac_p_lt_005": 0.3182857142857143,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.18528610354223432,
+     "frac_p_lt_005": 0.33787465940054495,
+     "n_tests": 367
+    }
+   },
+   "lineage:Breast": {
+    "random": {
+     "frac_p_lt_001": 0.17942857142857144,
+     "frac_p_lt_005": 0.30314285714285716,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.1771117166212534,
+     "frac_p_lt_005": 0.30517711171662126,
+     "n_tests": 367
+    }
+   },
+   "lineage:CNS/Brain": {
+    "random": {
+     "frac_p_lt_001": 0.26,
+     "frac_p_lt_005": 0.37885714285714284,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.27520435967302453,
+     "frac_p_lt_005": 0.3978201634877384,
+     "n_tests": 367
+    }
+   },
+   "lineage:Cervix": {
+    "random": {
+     "frac_p_lt_001": 0.046285714285714284,
+     "frac_p_lt_005": 0.13514285714285715,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.0681198910081744,
+     "frac_p_lt_005": 0.17438692098092642,
+     "n_tests": 367
+    }
+   },
+   "lineage:Esophagus/Stomach": {
+    "random": {
+     "frac_p_lt_001": 0.11257142857142857,
+     "frac_p_lt_005": 0.2322857142857143,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.10899182561307902,
+     "frac_p_lt_005": 0.20708446866485014,
+     "n_tests": 367
+    }
+   },
+   "lineage:Head and Neck": {
+    "random": {
+     "frac_p_lt_001": 0.32285714285714284,
+     "frac_p_lt_005": 0.44685714285714284,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.30517711171662126,
+     "frac_p_lt_005": 0.45776566757493187,
+     "n_tests": 367
+    }
+   },
+   "lineage:Kidney": {
+    "random": {
+     "frac_p_lt_001": 0.13657142857142857,
+     "frac_p_lt_005": 0.2402857142857143,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.1335149863760218,
+     "frac_p_lt_005": 0.2561307901907357,
+     "n_tests": 367
+    }
+   },
+   "lineage:Liver": {
+    "random": {
+     "frac_p_lt_001": 0.074,
+     "frac_p_lt_005": 0.15828571428571428,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.05994550408719346,
+     "frac_p_lt_005": 0.13896457765667575,
+     "n_tests": 367
+    }
+   },
+   "lineage:Lung": {
+    "random": {
+     "frac_p_lt_001": 0.186,
+     "frac_p_lt_005": 0.3242857142857143,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.16348773841961853,
+     "frac_p_lt_005": 0.30517711171662126,
+     "n_tests": 367
+    }
+   },
+   "lineage:Lymphoid": {
+    "random": {
+     "frac_p_lt_001": 0.5028571428571429,
+     "frac_p_lt_005": 0.5971428571428572,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.4877384196185286,
+     "frac_p_lt_005": 0.5722070844686649,
+     "n_tests": 367
+    }
+   },
+   "lineage:Myeloid": {
+    "random": {
+     "frac_p_lt_001": 0.24057142857142857,
+     "frac_p_lt_005": 0.3697142857142857,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.21525885558583105,
+     "frac_p_lt_005": 0.36239782016348776,
+     "n_tests": 367
+    }
+   },
+   "lineage:Ovary/Fallopian Tube": {
+    "random": {
+     "frac_p_lt_001": 0.08142857142857143,
+     "frac_p_lt_005": 0.1777142857142857,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.07084468664850137,
+     "frac_p_lt_005": 0.16076294277929154,
+     "n_tests": 367
+    }
+   },
+   "lineage:Pancreas": {
+    "random": {
+     "frac_p_lt_001": 0.202,
+     "frac_p_lt_005": 0.33057142857142857,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.1771117166212534,
+     "frac_p_lt_005": 0.2997275204359673,
+     "n_tests": 367
+    }
+   },
+   "lineage:Peripheral Nervous System": {
+    "random": {
+     "frac_p_lt_001": 0.24171428571428571,
+     "frac_p_lt_005": 0.3722857142857143,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.23978201634877383,
+     "frac_p_lt_005": 0.3869209809264305,
+     "n_tests": 367
+    }
+   },
+   "lineage:Pleura": {
+    "random": {
+     "frac_p_lt_001": 0.08114285714285714,
+     "frac_p_lt_005": 0.20742857142857143,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.05722070844686648,
+     "frac_p_lt_005": 0.1907356948228883,
+     "n_tests": 367
+    }
+   },
+   "lineage:Prostate": {
+    "random": {
+     "frac_p_lt_001": 0.023428571428571427,
+     "frac_p_lt_005": 0.10428571428571429,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.021798365122615803,
+     "frac_p_lt_005": 0.09264305177111716,
+     "n_tests": 367
+    }
+   },
+   "lineage:Skin": {
+    "random": {
+     "frac_p_lt_001": 0.18085714285714286,
+     "frac_p_lt_005": 0.3162857142857143,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.18256130790190736,
+     "frac_p_lt_005": 0.3133514986376022,
+     "n_tests": 367
+    }
+   },
+   "lineage:Soft Tissue": {
+    "random": {
+     "frac_p_lt_001": 0.1,
+     "frac_p_lt_005": 0.23542857142857143,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.09809264305177112,
+     "frac_p_lt_005": 0.23705722070844687,
+     "n_tests": 367
+    }
+   },
+   "lineage:Uterus": {
+    "random": {
+     "frac_p_lt_001": 0.07314285714285715,
+     "frac_p_lt_005": 0.1757142857142857,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.09264305177111716,
+     "frac_p_lt_005": 0.2016348773841962,
+     "n_tests": 367
+    }
+   },
+   "melanoma": {
+    "random": {
+     "frac_p_lt_001": 0.24114285714285713,
+     "frac_p_lt_005": 0.39885714285714285,
+     "n_tests": 3500
+    },
+    "real": {
+     "frac_p_lt_001": 0.2452316076294278,
+     "frac_p_lt_005": 0.3760217983651226,
+     "n_tests": 367
+    }
+   }
+  },
+  "pooled": {
+   "frac_p_lt_001": 0.16673291925465838,
+   "frac_p_lt_005": 0.2814037267080745,
+   "n_tests": 80500
+  },
+  "real_pooled": {
+   "frac_p_lt_001": 0.16088141215495794,
+   "frac_p_lt_005": 0.28077242032934485,
+   "n_tests": 8441
+  },
+  "seed": "default_rng([4600, unit index])",
+  "status": {
+   "ok": 338,
+   "tolerances doubled": 12,
+   "unavailable": 17
+  }
+ },
+ "never_expressed_sets": {
+  "bb": {
+   "families_selected": 5,
+   "rejections": 13
+  },
+  "expected_frac": 0.05,
+  "expr_file_sha256": "fbdc49015fd9b97ba0db0c23914b85f8e4b8e809db29ab44ed660620c3e34f35",
+  "n_sets": 100,
+  "pool": 558,
+  "pooled": {
+   "frac_p_lt_001": 0.04608695652173913,
+   "frac_p_lt_005": 0.13478260869565217,
+   "n_tests": 2300
+  },
+  "seed": "default_rng([4600, 1000000])",
+  "sizes_min_max": [
+   3,
+   27
+  ]
+ },
+ "peak_rss_bytes": 3733946368,
+ "registry_blob": "4caaa1f5d0b5dc229f33b7e5c620b32619d35ee2",
+ "registry_calibration": {
+  "negative_controls": "Pseudo-contexts: 100 per direction, each matched to a real context in size and lineage composition (lineage-stratified, PatientID-blocked random relabelling of A models; for lineage contexts, random A model sets of the same size), run through the same machinery; random gene sets matched for size, essentiality and coherence, and dispersed never-expressed sets, scored per context. Reported: fraction of pseudo-context tests with p < 0.05 (expected 0.05) and BB rejections (expected ~0). Pre-declared response: if that fraction exceeds 0.075, every real test with p < 0.01 (not only q < 0.1) is re-tested by permutation and BB is re-run.\n",
+  "seed": 4600
+ },
+ "runtime_s": 35.7
+}

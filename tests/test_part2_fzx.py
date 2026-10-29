@@ -329,7 +329,8 @@ def test_amendment_A1_is_the_only_non_fill_change(entries, man):
     for k, e in entries.items():
         am = e.get("amendments", [])
         if k in ("H1_within_complex_GI", "H1S_silencing_GI"):
-            assert [a["id"] for a in am] == ["A1", "A2"] and am[0]["amends_commit"] == c, k
+            assert [a["id"] for a in am][:2] == ["A1", "A2"] and am[0]["amends_commit"] == c, k
+            assert [a["id"] for a in am][2:] in ([], ["E1"]), k                 # E1: erratum (score_rule only)
             assert registry.amendment_changes(h1_fzx, e) == [], k
             declared = am[0]["changed_paths"]
             assert registry.changed_top_paths(h1_fzx, e, declared) == set(declared), k
@@ -465,3 +466,22 @@ def test_score_blocks_refuses_non_A_models(monkeypatch):
     monkeypatch.setattr(sys, "argv", ["31_score_blocks.py", "--set", "A"])
     with pytest.raises(mod.NotAModelsError):
         mod.main()
+
+
+def test_erratum_E1_changes_only_score_rule(entries):
+    """E1 (PI ruling R1): the H1 / H1S score_rule sign typo; only `score_rule` changed relative to the amended
+    commit, and the corrected text states the engine's semantics (h1.ALIGN = +1)."""
+    from part2 import h1
+    for k in ("H1_within_complex_GI", "H1S_silencing_GI"):
+        e1 = [a for a in entries[k]["amendments"] if a["id"] == "E1"]
+        assert len(e1) == 1 and e1[0]["changed_paths"] == ["score_rule"], k
+        old_txt = _show(e1[0]["amends_commit"], f"docs/registry/{k}.yaml")
+        if old_txt is None:
+            pytest.skip("no history with the amended commit")
+        old = registry.load_yaml(old_txt)
+        assert "E1" not in [a["id"] for a in old["amendments"]]
+        assert registry.amendment_changes(old, entries[k]) == [], k
+        assert registry.changed_top_paths(old, entries[k], ["score_rule"]) == {"score_rule"}, k
+        assert "of sign(b_j) * effect_j(m)" in entries[k]["score_rule"], k
+    assert h1.ALIGN == +1.0
+    assert "## E1" in (REG / "AMENDMENTS.md").read_text()

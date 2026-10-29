@@ -147,3 +147,31 @@ def test_kill_tally():
     assert k["H3b"]["verdict"] == "killed by controls" and k["H3b"]["fraction"] == pytest.approx(1 / 3)
     assert k["H3a"]["verdict"] == "passes" and k["H3a"]["thin_coverage"]
     assert k["H1"]["verdict"].startswith("n/a") and k["H2"]["evaluable"] == 0
+
+
+def test_not_evaluable_axis_and_empty_null_do_not_crash():
+    """PI ruling R2: an axis whose counted test is not evaluable (here a leverage-1 design: a covariate set to 1 in a
+    single model) is classed NOT EVALUABLE with no matched null; matched_null with no successful null fit returns
+    'null unavailable' instead of calling np.quantile on an empty array."""
+    sim = synth.simulate(1)
+    z = sim.lof * 0
+    loss, kind = h1.loss_calls(sim.lof, z, sim.lof, z + 5.0, sim.meta.OncotreeLineage)
+    events = h1.enumerate_events(sim.fmap, loss, kind, sim.annot, sim.fold)
+    A = sim.fold.index[sim.fold == "A"]
+    E = sim.E.loc[A]
+    ev = next(e for e in events if e.gene == "ARID1A")
+    c = h1.component_scores(E, ev, loss.loc[A, "ARID1A"])
+    cov = pd.DataFrame({"single": 0.0}, index=A)
+    cov.iloc[0, 0] = 1.0                                                  # leverage-1 row -> HC3Design refuses
+    kw = dict(annot=sim.annot, essentiality=E.clip(-3, 3).mean(), pair_scores=None, K=50, max_attempts=2000)
+    nl = h1.matched_null(E, sim.fmap, ev, "P", c, loss.loc[A, "ARID1A"], cov, **kw)
+    assert nl["status"] == "null unavailable" and len(nl["null"]) == 0 and np.isnan(nl["q025"])
+    units = [f"{ev.id}|{a}" for a in ev.axes]
+    res = pd.DataFrame(dict(context=ev.context, unit=units, evaluable=False, discovery=False, q_adj=np.nan,
+                            reason="design: leverage 1 observation"))
+    cls = h1.classify([ev], {ev.id: c}, res, E, loss.loc[A], {ev.context: cov}, sim.fmap, sim.annot,
+                      kw["essentiality"], None, K=50, max_attempts=2000)
+    r = cls.iloc[0]
+    for ax, col in (("N", "class_complex_wide"), ("P", "class_paralog")):
+        if ax in c.y:
+            assert r[col] == h1.NOT_EVALUABLE and r[f"{ax}_null_status"].startswith("skipped"), ax

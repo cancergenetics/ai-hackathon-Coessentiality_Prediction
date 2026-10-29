@@ -1,0 +1,20 @@
+{
+ "command": "PART1_DIR=... PYTHONHASHSEED=0 /usr/bin/time -l .venv/bin/python scripts/44_run_direction.py --id H1S_silencing_GI",
+ "code_commit": "b3e8043fd6d37ef1ff0230cee58c26dd3d0f9374",
+ "intent_commit": "b865595",
+ "pid": 97501,
+ "start_utc": "2026-10-29T00:49:24Z",
+ "end_utc": "2026-10-29T00:56:41Z",
+ "exit_status": 0,
+ "wall_s": 437.42,
+ "user_s": 424.19,
+ "sys_s": 11.65,
+ "peak_rss_bytes": 4191420416,
+ "peak_memory_footprint_bytes": 2243564080,
+ "n_runs": 1,
+ "relook": false,
+ "n_trial_lines": 1,
+ "n_perm": 10000,
+ "K_null": 1000,
+ "note": "Single look, exploratory entry. No re-run. Waited by PID (kill -0). 321 component tests built (registered 338; 17 N axes have |N'| < 2 after the baseline rule), m = 293 evaluable."
+}

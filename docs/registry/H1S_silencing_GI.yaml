@@ -4128,7 +4128,7 @@ score_rule: |
   y_P(m) = mean over P; beta_P = loss(g) coefficient on y_P (raw scale; beta_P < 0 = paralogs more dependent).
   Baseline b_j of member j in N = median effect of j over reference (loss = 0) A models; members with |b_j| <
      0.1 have no baseline direction, are left out of the aligned score and reported; N' = the rest.
-  Aligned score y_N(m) = mean over j in N' of -sign(b_j) * effect_j(m), so that kappa_N = loss(g) coefficient on
+  Aligned score y_N(m) = mean over j in N' of sign(b_j) * effect_j(m), so that kappa_N = loss(g) coefficient on
      y_N is > 0 when dependency magnitude grows in its baseline direction and < 0 when it shrinks toward 0.
   Also reported: beta_all = coefficient on S_{C minus g} (DESIGN estimand, all members but g), beta_Nraw on the
      raw mean over N, and the member-resolved profile (beta_j with 95% CI for every member).
@@ -4251,4 +4251,16 @@ amendments:
       from event counts and types only (no dependency values, association statistics or lockbox outcomes read).
       Record: docs/registry/AMENDMENTS.md.
     changed_paths: [direction, context_family.contexts, context_family.expected_events, complex_set_hash, family_m.value, fdr_rule, implementation_note]
+  - id: E1
+    timestamp_utc: 2026-10-29T00:41:42Z
+    amends_commit: fb264b8bd997ebf27c934aaed4f793a1433522fb
+    reason: >
+      Erratum E1 (PI ruling R1): typo correction, semantics unchanged, identified after the H1 run, implementation
+      predates it. The score_rule formula read '-sign(b_j) * effect_j(m)', which for an essential member (b_j < 0)
+      gives kappa_N < 0 when dependency grows, contradicting the entry's own stated meaning (kappa_N > 0 when
+      dependency magnitude grows in its baseline direction) and its class rules. Corrected to 'sign(b_j) *
+      effect_j(m)'. The engine has implemented the stated semantics (h1.ALIGN = +1) since commit
+      201d8bfa1814d5d7fa7f7981c39fc1bf33363b85 (2026-10-28T20:09:59Z), before any real-data run; tested by
+      tests/test_part2_h1h2.py::test_alignment_sign_and_collapse_index. Record: docs/registry/AMENDMENTS.md.
+    changed_paths: [score_rule]
 status: open
