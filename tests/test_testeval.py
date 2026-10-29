@@ -400,7 +400,11 @@ def test_only_entry_points_touch_test_files():
     # of other grep guards (they assert these names never appear in Part 2 code)
     assert sorted(hits) == ["audit_part1.py", "paths.py", "protocol.py", "test_part2_firewall.py",
                             "test_part2_lockbox_firewall.py"]
-    assert sorted(set(calls) - {"paths.py"}) == ["19_make_pair_files.py", "21_evaluate_test.py", "protocol.py"]
+    # 23_export_test_curves.py: post-look descriptive export (non-confirmatory, not a relook) of the PR curves and
+    # per-cluster APs the single look computed but did not export; it re-reads the labels through test_files() exactly
+    # as mode_test, asserts AP / macro AP equal test_results.json, is logged in looks.jsonl and feeds no verdict.
+    assert sorted(set(calls) - {"paths.py"}) == ["19_make_pair_files.py", "21_evaluate_test.py",
+                                                 "23_export_test_curves.py", "protocol.py"]
 
 
 def test_freeze_gate_rejects_drafts_and_hash_changes():

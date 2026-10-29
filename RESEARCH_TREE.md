@@ -23,6 +23,13 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
 - D5 (M3, 2026-10-28): FZ-C accepted with notes (results/part2/verify/fzc_review.md). Disclosed: contexts.py read proteomics for the LoF functional check (18:57) before the FZ-C commit. DESIGN permits this and it does not feed construction. Before G2: compute map-to-map variability. "zavg more stable" stays descriptive (no rewired baseline). The bridge null is reported with the pre-written fail paragraph.
 - D6 (M3): H3a/H3b error control is claimed as Benjamini–Bogomolov selective FDR (average over selected context families), not pooled FDP. The single-seed `false_pos <= 1` assertion was removed because BB does not guarantee it (holds in 69% of seeds); multi-sim FDR tests stay (results/part2/verify/h3a_fdr_diagnosis.md).
 - D7 (M3, 2026-10-28): H1 amendments, decided from event counts and labels only, before any H1 outcome (docs/registry/AMENDMENTS.md). A1: the 318 silencing events (TPM<1 rule; lineage-confounded, trivially non-dependent, would dilute the panel DESIGN expected at 10–20) become the exploratory family H1S, never headlined. A2: an event is genetic loss if ≥50% of its loss models carry LoF or hom-del (DESIGN §2.2 counts hom-del as LoF), which moves SMARCB1 to H1. Pre-declared before the H1 run: a CN-covariate sensitivity for SMARCB1, which keeps the base covariate set in the primary analysis.
+- D8 (M4, 2026-10-29): Rulings on the discovery runs.
+  - R1: H1 ALIGN=+1 stands. The registry's literal −sign(b) formula has a sign typo that contradicts its stated κ semantics and class rules (erratum E1).
+  - R2: The H1S crash (np.quantile on an empty null) is an engine bug. Fixed, with synthetic outputs identical by hash; H1 is not re-run.
+  - R3: The GPD-extrapolated p stays primary. Pre-declared sensitivity: p_cons = max(p_perm, p_analytic). Tables show "<1e-4 (GPD)", and ranking is by effect size or |t|.
+  - R4: The registered calibrations (matched random sets, never-expressed sets, CN segment null, H2 random splits) were not implemented in the engine. They are built and run after the discovery runs, before any lockbox read, with their responses applied mechanically. This is a disclosed deviation.
+  - R5: Post hoc and conservative (E2). When a non-neutral H1 class and TOST-neutral both hold (PTEN collapse, TP53 sensitisation), the label is "detectable, within equivalence margin". These are not headline findings, and lockbox confirmation cannot promote them.
+  - Pre-declared post hoc sensitivity, before it is computed: H3a/H3b with covariates ScreenNNMD + CasActivity (per model, from CRISPRConfounders.csv; growth pattern excluded as collinear with lineage), all else as registered. Motivation: the review found the lymphoid "scale effect" (ρ −0.24). Report the surviving fraction per lineage; the primary is unchanged.
 
 ## Tree
 - [x] M0 Setup: PROMPT.md, DATA.md, DATA_REQUEST.md, git, locked Part 1 clone, venv
@@ -35,8 +42,9 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
 - [x] P1 Test-set evaluation
   - [x] Part 1 audit → docs/part1_audit.md: PASS (timeline, references, content, hyper-parameters); test set pair-disjoint from train; 1,121 test proteins (329 shared with train)
   - [x] TEST_PROTOCOL v1.2 frozen 039a843 (marker sha 524c4d68…); intent ab674b7; started 7afcf06 (before labels); results 0861e59 (test_results.json sha e7617d79…); runtime 33 min eval + 3.3 min scoring
-  - [!] Single look, confirmatory: ITT AP zavg_BEF 0.333 [0.256,0.410] vs GLS 0.212, Spearman 0.204, Pearson 0.197 (B 0.310; post hoc PC-removed Pearson 0.239). ΔAP vs GLS +0.121 [+0.079,+0.159] (+57%), vs Spearman +0.129 [+0.023,+0.216], vs Pearson +0.136 [+0.039,+0.220]. AUROC 0.789 vs 0.730/0.756/0.749. Locked "clearly beats" verdict PASS on S1 (AP 0.349) and ITT; B fails vs GLS (as on IFT). Macro per-cluster AP ≈ GLS (0.297 vs 0.292): gain concentrated in large complexes, as in Part 1. Rule b P/R/F1 0.553/0.328/0.411.
+  - [!] Single look, confirmatory: ITT AP zavg_BEF 0.333 [0.256,0.410] vs GLS 0.212, Spearman 0.204, Pearson 0.197 (B 0.310; post hoc PC-removed Pearson 0.239). ΔAP vs GLS +0.121 [+0.079,+0.159] (+57%), vs Spearman +0.129 [+0.023,+0.216], vs Pearson +0.136 [+0.039,+0.220]. AUROC 0.789 vs 0.730/0.756/0.749. Locked "clearly beats" verdict PASS on S1 (AP 0.349) and ITT; B fails vs GLS (as on IFT). Macro per-cluster AP ≈ GLS (0.297 vs 0.292): gain carried by pair-rich clusters (persists without the 10 largest: AP 0.345 vs 0.264; manuscript draft), not by the many small clusters. Rule b P/R/F1 0.553/0.328/0.411.
   - [x] Independent re-derivation REPRODUCED (c69d828 numbers committed before comparison; 8d009f2): verdict-relevant numbers within 2.6e-15; 36 secondary calibration fields differ ≤4.1e-7 (ECE bin remainder rule; optimiser tolerance) — explained; 1% raw re-scoring agrees ≤3.5e-6
+  - [x] Descriptive export (ddd6e83; non-confirmatory, logged in looks.jsonl; AP reproduced to 6e-17): ITT macro AP by positive pairs per cluster, zavg_BEF − GLS: 1 pair −0.033 [−0.090, 0.023]; 2–5 pairs −0.024; 6–20 pairs +0.041 [0.008, 0.080]; 21–100 pairs +0.126; 101+ pairs +0.142. The gain grows with pairs per cluster (within-bin resample CIs, not the protocol bootstrap).
 - [ ] P2 Context-specific complex dependencies
   - [x] Construction infrastructure (29 tests; bit-exact zavg reproduction; toy ARI 0.875, null → 0 clusters)
   - [x] FZ-LB lockbox (bd865f8): L=338, A=1,007; contexts table (88 s); stats machinery (HC3 = statsmodels; FL type-I 0.05; BB-FDR 0.0975 @q=0.1)
@@ -50,6 +58,12 @@ DESIGN v3.1: lockbox L (25%, PatientID-blocked, lineage × genotype strata) and 
   - [x] FZ-X independent review (f6e7ffd; delta ec3513e): ACCEPT. Independent recomputation matches exactly; no outcomes read; no trials or lockbox ledger.
   - [x] Controls, single look (intent e82b657 → results 4b5f800, 28 s). All 15 evaluable complex-level controls recovered (p 1e-88 … 0.023 for PC19a). Kill rule: H3a 2/2, H3b 10/10, H1 3/3 pass; H2 has none evaluable, so exploratory. PC16 is gene-level only and mixed (MLLT1 p=0.063; not counted, as registered).
   - [x] Controls independent review (fd17c32): ACCEPT-WITH-NOTES. Own HC3/Satterthwaite code reproduces 15 tests exactly. Notes: lineage levels with <2 models are merged into the reference (engine convention not stated in DESIGN §2.5; at most 2% change in p; disclosed in Methods). H1 control coverage is thin: PC6 and PC12 are single paralog genes, only PC15 is multi-gene.
-  - [ ] A-side discovery, registry order: H3a → H3b → H1 (+ SMARCB1 CN sensitivity) → H1S → H2
+  - [~] A-side discovery, registry order (branch worktree-agent-a93ab7b0ac18823c3)
+    - [x] H3a (228077a → b0dbd83): m 8,441; 1,145 BB discoveries in 21 families (942 non-locus); pseudo-context p<0.05 rate 0.049; 451 s
+    - [x] H3b (388924a → 5e1c1d1): m 7,340; 161 discoveries in 13 families (121 non-locus); pseudo 0.045; 199 s
+    - [x] H1 (ef41ddb → d12c627): 24 evaluable (registered 28); 5 discoveries. Paralog compensation: ARID1A→P κ −0.37, EP300→P −1.09. Sensitisation: FOCAD 0.14. Within margin (R5): TP53, PTEN. SMARCB1 neutral, including the CN sensitivity.
+    - [x] Independent review (bff6cad): ACCEPT-WITH-NOTES. All 15,781 analytic tests reproduced; discovery sets exact; no reruns; no lockbox models. Under p_cons, H3a loses 32 and H3b loses 31. Lymphoid scale effect noted.
+    - [~] R1–R5 fixes, H1S, H2, registered calibrations, GPD sensitivity
+    - [ ] Screen-quality sensitivity (pre-declared, D8)
   - [ ] Lockbox confirmations → BENCH / BRIDGE-L
 - [ ] M-final Manuscript + peer review + REPORT.md
