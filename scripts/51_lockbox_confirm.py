@@ -134,6 +134,7 @@ class World:
     B_bench: int = B_BENCH
     B_bridge: int = B_BRIDGE
     testable_sha: str | None = None       # FZ-X manifest hash of the frozen lockbox-testable list (real run)
+    expect_gls: dict | None = None        # review N13: GLS discovery counts of the rehearsal (determinism check)
     persist: bool = True                  # persist every read matrix (PI crash-recovery decision)
     resume: bool = False                  # finish entries already read, from their persisted matrices only
     log: list = field(default_factory=list)
@@ -865,6 +866,11 @@ def gls_discovery(world: World) -> pd.DataFrame:
         paths.append(proj.results_dir / "assoc" / BRIDGE_ID / f"{tag}_summary.json")
         world.say(f"BRIDGE-L GLS {tag}: {int(res.discovery.sum())} discoveries / {int(res.evaluable.sum())} tests")
     res = pd.concat(res_all, ignore_index=True)
+    if world.expect_gls is not None:                   # N13: same deterministic pass as the rehearsal (REHEARSAL.md)
+        got = {tag: int(r.discovery.sum()) for tag, r in zip(("discovery_H3a", "discovery_H3b"), res_all)}
+        if got != world.expect_gls:
+            raise RuntimeError(f"BRIDGE-L GLS discovery counts {got} differ from the rehearsal {world.expect_gls}; "
+                               f"stopped before the BRIDGE-L target list")
     d = world.out(BRIDGE_ID)
     d.mkdir(parents=True, exist_ok=True)
     res[res.discovery].to_csv(d / "gls_discoveries.tsv", sep="\t", index=False, float_format="%.6g")
@@ -1060,6 +1066,10 @@ def preflight(world: World) -> dict:
                 except GapError as ex:
                     gaps.append(f"{ex} [hits: {fit_needed[:8]}]")
                 info["needs_fitted_parameters"] = sorted(fit_needed)
+            reg_fit = (e.get("lockbox") or {}).get("rare_route_fitted_hits")      # review N14
+            if reg_fit is not None and sorted(reg_fit) != sorted(fit_needed):
+                gaps.append(f"{aid}: registered rare_route_fitted_hits {sorted(reg_fit)} differ from the hits that "
+                            f"need fitted parameters {sorted(fit_needed)}")
         entries[aid] = info
     rul = rulings(world)
     try:
@@ -1136,7 +1146,7 @@ def real_world(outcome_loader=None) -> World:
                  annot=env.annot, homdel=env.homdel, ctrl_homdel=R34.homdel_shares(ctx_full, env.E_A.index),
                  events={k: R44.load_events(k, root) for k in H1_IDS}, inputs_gls=[R44.CTX, GLS_MAP, R44.HOMDEL],
                  pair_scores=lambda: R44.load_pair_scores(root), coverage_tables=cl, calib_tests=ct,
-                 testable_sha=man[TESTABLE_REL])
+                 testable_sha=man[TESTABLE_REL], expect_gls=dict(discovery_H3a=1206, discovery_H3b=139))
 
 
 def main():

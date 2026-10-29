@@ -12,7 +12,13 @@
   read per entry, enforces the read order (all confirmatory directions before benchmark / bridge), and records the
   read in the git-tracked ledger results/part2/lockbox_ledger.jsonl, committed BEFORE any outcome is loaded (if the
   commit fails the ledger is restored from HEAD and nothing is read).
-tests/test_part2_lockbox_firewall.py checks by AST/grep that no other Part 2 code reaches lockbox outcomes.
+* ``resume_lockbox_read(analysis_id)`` is the only other path: the crash-recovery copy that ``read_lockbox(...,
+  persist=True)`` stores under data_cache/part2/lockbox_reads/ (gitignored; SHA-256 committed at once), for an entry
+  that already read and is still open; it never calls the loader. Retention rule (PI, R1): the copies stay only in the
+  local gitignored data_cache until the manuscript's final reproduction check; they are never copied, committed or read
+  by any other code, and deleting them needs a PI note in the research tree.
+tests/test_part2_lockbox_firewall.py checks by AST/grep that no other Part 2 code reaches lockbox outcomes, and that only
+assoc.py, confirm.py and the lockbox driver name the persisted reads.
 """
 from __future__ import annotations
 
