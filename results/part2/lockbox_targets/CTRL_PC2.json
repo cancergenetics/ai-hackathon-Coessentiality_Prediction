@@ -1,0 +1,72 @@
+{
+ "analysis_id": "CTRL_PC2",
+ "contexts": [
+  "TP53_altered"
+ ],
+ "genes": [
+  "DDX31 (64794)",
+  "ERCC6L2 (375748)",
+  "MDM2 (4193)",
+  "MDM4 (4194)",
+  "OTUB1 (55611)",
+  "PPM1D (8493)",
+  "UBE2D3 (7323)",
+  "USP7 (7874)",
+  "WDR89 (112840)"
+ ],
+ "hits": [
+  {
+   "alternative": "greater",
+   "beta_A": 0.7722836073926129,
+   "context": "TP53_altered",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "MDM2 (4193)"
+  },
+  {
+   "alternative": "greater",
+   "beta_A": 0.34626671688665706,
+   "context": "TP53_altered",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "PPM1D (8493)"
+  },
+  {
+   "alternative": "greater",
+   "beta_A": 0.4121082093255132,
+   "context": "TP53_altered",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "USP7 (7874)"
+  },
+  {
+   "alternative": "greater",
+   "beta_A": 0.2851029440859669,
+   "context": "TP53_altered",
+   "eligible": true,
+   "route": "lockbox",
+   "unit": "Z0166"
+  }
+ ],
+ "units": {
+  "MDM2 (4193)": [
+   "MDM2 (4193)"
+  ],
+  "PPM1D (8493)": [
+   "PPM1D (8493)"
+  ],
+  "USP7 (7874)": [
+   "USP7 (7874)"
+  ],
+  "Z0166": [
+   "DDX31 (64794)",
+   "ERCC6L2 (375748)",
+   "MDM2 (4193)",
+   "MDM4 (4194)",
+   "OTUB1 (55611)",
+   "PPM1D (8493)",
+   "UBE2D3 (7323)",
+   "WDR89 (112840)"
+  ]
+ }
+}
