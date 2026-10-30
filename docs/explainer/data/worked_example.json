@@ -1,0 +1,1251 @@
+{
+ "unit": "Z0303",
+ "context": "lineage:Bone",
+ "analysis_id": "H3a_lineage_atlas",
+ "step1": {
+  "n_U": 1345,
+  "n_A": 1007,
+  "n_L": 338,
+  "seed": 3000,
+  "frac_L": 0.25,
+  "n_patients_straddling": 0,
+  "n_patients_A": 971,
+  "n_patients_L": 331,
+  "n_bone_A": 44,
+  "n_bone_L": 15,
+  "n_bone_U_strata": 59,
+  "target_bone_L": 15,
+  "bone_diseases_A": {
+   "Ewing Sarcoma": 23,
+   "Osteosarcoma": 18,
+   "Chondrosarcoma": 1,
+   "Giant Cell Tumor of Bone": 1,
+   "Chordoma": 1
+  },
+  "bone_diseases_L": {
+   "Osteosarcoma": 8,
+   "Ewing Sarcoma": 5,
+   "Chordoma": 1,
+   "Other": 1
+  },
+  "note": "L counts are model labels only (Model.csv); no L dependency value is read."
+ },
+ "step2": {
+  "members": [
+   "SNAPC1",
+   "SNAPC2",
+   "SNAPC3",
+   "SNAPC4",
+   "SNAPC5"
+  ],
+  "z0": 6.0,
+  "k": 10,
+  "n_S": 6022,
+  "n_level1": 367,
+  "pair_scores": [
+   {
+    "a": "SNAPC1",
+    "b": "SNAPC2",
+    "score": 21.713,
+    "rank_of_b_in_a": 1,
+    "rank_of_a_in_b": 1,
+    "mutual_topk": true,
+    "above_z0": true,
+    "edge_A": true,
+    "edge_in_subsample_graphs": 20
+   },
+   {
+    "a": "SNAPC1",
+    "b": "SNAPC3",
+    "score": 20.133,
+    "rank_of_b_in_a": 2,
+    "rank_of_a_in_b": 2,
+    "mutual_topk": true,
+    "above_z0": true,
+    "edge_A": true,
+    "edge_in_subsample_graphs": 20
+   },
+   {
+    "a": "SNAPC1",
+    "b": "SNAPC4",
+    "score": 14.714,
+    "rank_of_b_in_a": 4,
+    "rank_of_a_in_b": 2,
+    "mutual_topk": true,
+    "above_z0": true,
+    "edge_A": true,
+    "edge_in_subsample_graphs": 20
+   },
+   {
+    "a": "SNAPC1",
+    "b": "SNAPC5",
+    "score": 19.364,
+    "rank_of_b_in_a": 3,
+    "rank_of_a_in_b": 3,
+    "mutual_topk": true,
+    "above_z0": true,
+    "edge_A": true,
+    "edge_in_subsample_graphs": 20
+   },
+   {
+    "a": "SNAPC2",
+    "b": "SNAPC3",
+    "score": 21.492,
+    "rank_of_b_in_a": 2,
+    "rank_of_a_in_b": 1,
+    "mutual_topk": true,
+    "above_z0": true,
+    "edge_A": true,
+    "edge_in_subsample_graphs": 20
+   },
+   {
+    "a": "SNAPC2",
+    "b": "SNAPC4",
+    "score": 14.279,
+    "rank_of_b_in_a": 4,
+    "rank_of_a_in_b": 4,
+    "mutual_topk": true,
+    "above_z0": true,
+    "edge_A": true,
+    "edge_in_subsample_graphs": 20
+   },
+   {
+    "a": "SNAPC2",
+    "b": "SNAPC5",
+    "score": 21.195,
+    "rank_of_b_in_a": 3,
+    "rank_of_a_in_b": 1,
+    "mutual_topk": true,
+    "above_z0": true,
+    "edge_A": true,
+    "edge_in_subsample_graphs": 20
+   },
+   {
+    "a": "SNAPC3",
+    "b": "SNAPC4",
+    "score": 15.792,
+    "rank_of_b_in_a": 4,
+    "rank_of_a_in_b": 1,
+    "mutual_topk": true,
+    "above_z0": true,
+    "edge_A": true,
+    "edge_in_subsample_graphs": 20
+   },
+   {
+    "a": "SNAPC3",
+    "b": "SNAPC5",
+    "score": 19.917,
+    "rank_of_b_in_a": 3,
+    "rank_of_a_in_b": 2,
+    "mutual_topk": true,
+    "above_z0": true,
+    "edge_A": true,
+    "edge_in_subsample_graphs": 20
+   },
+   {
+    "a": "SNAPC4",
+    "b": "SNAPC5",
+    "score": 14.71,
+    "rank_of_b_in_a": 3,
+    "rank_of_a_in_b": 4,
+    "mutual_topk": true,
+    "above_z0": true,
+    "edge_A": true,
+    "edge_in_subsample_graphs": 20
+   }
+  ],
+  "member_score_matrix": [
+   [
+    null,
+    21.71,
+    20.13,
+    14.71,
+    19.36
+   ],
+   [
+    21.71,
+    null,
+    21.49,
+    14.28,
+    21.19
+   ],
+   [
+    20.13,
+    21.49,
+    null,
+    15.79,
+    19.92
+   ],
+   [
+    14.71,
+    14.28,
+    15.79,
+    null,
+    14.71
+   ],
+   [
+    19.36,
+    21.19,
+    19.92,
+    14.71,
+    null
+   ]
+  ],
+  "members_top10_in_S_on_A": {
+   "SNAPC1": [
+    "SNAPC2",
+    "SNAPC3",
+    "SNAPC5",
+    "SNAPC4",
+    "SNRPB2",
+    "SUPT3H",
+    "EAF1",
+    "ELL",
+    "ICE2",
+    "MED8"
+   ],
+   "SNAPC2": [
+    "SNAPC1",
+    "SNAPC3",
+    "SNAPC5",
+    "SNAPC4",
+    "SNRPB2",
+    "SUPT3H",
+    "ICE2",
+    "TGS1",
+    "USPL1",
+    "POU2F1"
+   ],
+   "SNAPC3": [
+    "SNAPC2",
+    "SNAPC1",
+    "SNAPC5",
+    "SNAPC4",
+    "SNRPB2",
+    "SUPT3H",
+    "CCNH",
+    "TBP",
+    "CDK7",
+    "TBCE"
+   ],
+   "SNAPC4": [
+    "SNAPC3",
+    "SNAPC1",
+    "SNAPC5",
+    "SNAPC2",
+    "SNRPB2",
+    "SUPT3H",
+    "TBCC",
+    "SDE2",
+    "BRCA1",
+    "CCNH"
+   ],
+   "SNAPC5": [
+    "SNAPC2",
+    "SNAPC3",
+    "SNAPC1",
+    "SNAPC4",
+    "SNRPB2",
+    "SUPT3H",
+    "WDR73",
+    "BRAT1",
+    "INTS9",
+    "POU2F1"
+   ]
+  },
+  "n_edges_A_graph": 10,
+  "n_pairs": 10,
+  "n_subsample_graphs": 20,
+  "coclustering_by_gamma": [
+   {
+    "j": 0,
+    "gamma": 0.05,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   },
+   {
+    "j": 1,
+    "gamma": 0.07071,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   },
+   {
+    "j": 2,
+    "gamma": 0.1,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   },
+   {
+    "j": 3,
+    "gamma": 0.1414,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   },
+   {
+    "j": 4,
+    "gamma": 0.2,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   },
+   {
+    "j": 5,
+    "gamma": 0.2828,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   },
+   {
+    "j": 6,
+    "gamma": 0.4,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   },
+   {
+    "j": 7,
+    "gamma": 0.5657,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   },
+   {
+    "j": 8,
+    "gamma": 0.8,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   },
+   {
+    "j": 9,
+    "gamma": 1.131,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   },
+   {
+    "j": 10,
+    "gamma": 1.6,
+    "frac_runs_all_five_together": 1.0,
+    "min_pair_freq": 1.0,
+    "mean_pair_freq": 1.0
+   }
+  ],
+  "gamma_grid": [
+   0.05,
+   0.07071,
+   0.1,
+   0.1414,
+   0.2,
+   0.2828,
+   0.4,
+   0.5657,
+   0.8,
+   1.131,
+   1.6
+  ],
+  "cluster_row": {
+   "gamma": 0.1,
+   "j_start": 2,
+   "j_end": 10,
+   "n_adjacent": 9,
+   "support": 1.0,
+   "stability": 0.3471,
+   "cohesion": 18.3308,
+   "n_pan": 5,
+   "n_selective": 0,
+   "locus": false,
+   "top_arm": "14q",
+   "arm_share": 0.2,
+   "window_share": 0.2
+  },
+  "cohesion_recomputed": 18.3308,
+  "locus_recomputed": {
+   "top_arm": "14q",
+   "arm_share": 0.2,
+   "top_band": "14q23",
+   "band_share": 0.2,
+   "window_share": 0.2,
+   "locus": false,
+   "member_locations": {
+    "SNAPC1": "14q23.2",
+    "SNAPC2": "19p13.2",
+    "SNAPC3": "9p22.3",
+    "SNAPC4": "9q34.3",
+    "SNAPC5": "15q22.31"
+   },
+   "member_chrom": {
+    "SNAPC1": "14",
+    "SNAPC2": "19",
+    "SNAPC3": "9",
+    "SNAPC4": "9",
+    "SNAPC5": "15"
+   }
+  },
+  "near_miss": [
+   {
+    "gene": "SNRPB2",
+    "cluster": "Z0285",
+    "mean_score_to_members": 11.74,
+    "max_score_to_members": 14.67,
+    "n_members_scoring_ge_z0": 5,
+    "n_mutual_topk_with_members": 3,
+    "n_edges_to_members_A": 3,
+    "rank_of_best_member_in_its_row": 4,
+    "its_own_top5": [
+     "TGS1",
+     "SNUPN",
+     "GEMIN4",
+     "SNAPC5",
+     "SNAPC2"
+    ],
+    "coclustering_with_members_gamma0p1": 0.54
+   },
+   {
+    "gene": "SUPT3H",
+    "cluster": "Z0143",
+    "mean_score_to_members": 9.873,
+    "max_score_to_members": 12.03,
+    "n_members_scoring_ge_z0": 5,
+    "n_mutual_topk_with_members": 0,
+    "n_edges_to_members_A": 0,
+    "rank_of_best_member_in_its_row": 11,
+    "its_own_top5": [
+     "ICE2",
+     "USPL1",
+     "EAF1",
+     "SUPT7L",
+     "ELL"
+    ],
+    "coclustering_with_members_gamma0p1": 0.25
+   },
+   {
+    "gene": "POU2F1",
+    "cluster": "",
+    "mean_score_to_members": 6.121,
+    "max_score_to_members": 7.851,
+    "n_members_scoring_ge_z0": 4,
+    "n_mutual_topk_with_members": 2,
+    "n_edges_to_members_A": 2,
+    "rank_of_best_member_in_its_row": 1,
+    "its_own_top5": [
+     "SNAPC1",
+     "PRDM1",
+     "SNAPC2",
+     "SUPT3H",
+     "SNAPC5"
+    ],
+    "coclustering_with_members_gamma0p1": 0.2
+   },
+   {
+    "gene": "ICE2",
+    "cluster": "Z0143",
+    "mean_score_to_members": 6.068,
+    "max_score_to_members": 8.911,
+    "n_members_scoring_ge_z0": 2,
+    "n_mutual_topk_with_members": 0,
+    "n_edges_to_members_A": 0,
+    "rank_of_best_member_in_its_row": 20,
+    "its_own_top5": [
+     "USPL1",
+     "ELL",
+     "EAF1",
+     "PHAX",
+     "SUPT3H"
+    ],
+    "coclustering_with_members_gamma0p1": 0.25
+   },
+   {
+    "gene": "CCNH",
+    "cluster": "Z0114.1",
+    "mean_score_to_members": 5.457,
+    "max_score_to_members": 8.324,
+    "n_members_scoring_ge_z0": 2,
+    "n_mutual_topk_with_members": 1,
+    "n_edges_to_members_A": 1,
+    "rank_of_best_member_in_its_row": 5,
+    "its_own_top5": [
+     "ERCC3",
+     "CDK7",
+     "GTF2H1",
+     "GTF2H3",
+     "SNAPC3"
+    ],
+    "coclustering_with_members_gamma0p1": 0.14
+   },
+   {
+    "gene": "TGS1",
+    "cluster": "Z0285",
+    "mean_score_to_members": 5.249,
+    "max_score_to_members": 7.19,
+    "n_members_scoring_ge_z0": 2,
+    "n_mutual_topk_with_members": 0,
+    "n_edges_to_members_A": 0,
+    "rank_of_best_member_in_its_row": 16,
+    "its_own_top5": [
+     "SNRPB2",
+     "SNUPN",
+     "GEMIN4",
+     "GEMIN8",
+     "GEMIN5"
+    ],
+    "coclustering_with_members_gamma0p1": 0.48
+   }
+  ],
+  "attached": [
+   {
+    "symbol": "INTU",
+    "x": 4,
+    "size": 5,
+    "q": 2.747e-10,
+    "locus_attach": false
+   }
+  ],
+  "tier": {
+   "tier": "T1",
+   "bioplex_edges": 7,
+   "bioplex_pairs": 10,
+   "null_mean_edges": 0.0164,
+   "q_bioplex": 0.00028778,
+   "mean_prot_r": 0.34132,
+   "q_prot": 0.0031402,
+   "note": "validation input, read after the map was frozen"
+  },
+  "variability": {
+   "jaccard_median": 0.7143,
+   "jaccard_q25": 0.2778,
+   "jaccard_q75": 0.8333,
+   "frac_ge_0_5": 0.65,
+   "random_p95": 0.1429
+  },
+  "selection": {
+   "selected": {
+    "z0": 6.0,
+    "k": 10,
+    "stat": 0.3427721463199648
+   },
+   "grid": [
+    {
+     "z0": 4.0,
+     "k": 10,
+     "stat": 0.3407,
+     "sd": 0.00953
+    },
+    {
+     "z0": 4.0,
+     "k": 20,
+     "stat": 0.2038,
+     "sd": 0.0128
+    },
+    {
+     "z0": 5.0,
+     "k": 10,
+     "stat": 0.3381,
+     "sd": 0.0193
+    },
+    {
+     "z0": 5.0,
+     "k": 20,
+     "stat": 0.2162,
+     "sd": 0.0203
+    },
+    {
+     "z0": 6.0,
+     "k": 10,
+     "stat": 0.3428,
+     "sd": 0.00471
+    },
+    {
+     "z0": 6.0,
+     "k": 20,
+     "stat": 0.2559,
+     "sd": 0.0189
+    }
+   ]
+  }
+ },
+ "step3": {
+  "context_definition": "OncotreeLineage == Bone vs all other A lines (one-vs-rest); lineage contexts remove no member",
+  "context_counts": {
+   "n_context": 44,
+   "n_ref": 963,
+   "n_nan": 0
+  },
+  "removal": {
+   "rule": "Removal(genes=(), cn_genes=(), retain=(), paralogs=True, chrY=False, ygenes=False, extra=())",
+   "removed": "",
+   "n_used": 5
+  },
+  "score_rule": "mean of members' CRISPRGeneEffect, each clipped to [-3, 3]; NaN if < 50% of members observed",
+  "n_score_nan": 0,
+  "example_lines": [
+   {
+    "ModelID": "ACH-002109",
+    "name": "ES8",
+    "lineage": "Bone",
+    "disease": "Ewing Sarcoma",
+    "score": -2.025,
+    "SNAPC1": -2.935,
+    "SNAPC2": -1.834,
+    "SNAPC3": -1.733,
+    "SNAPC4": -1.618,
+    "SNAPC5": -2.003
+   },
+   {
+    "ModelID": "ACH-002778",
+    "name": "NCCOS1X2C1",
+    "lineage": "Bone",
+    "disease": "Osteosarcoma",
+    "score": -2.017,
+    "SNAPC1": -2.625,
+    "SNAPC2": -2.025,
+    "SNAPC3": -1.77,
+    "SNAPC4": -1.206,
+    "SNAPC5": -2.457
+   },
+   {
+    "ModelID": "ACH-002142",
+    "name": "HUO3N1",
+    "lineage": "Bone",
+    "disease": "Osteosarcoma",
+    "score": -2.0,
+    "SNAPC1": -2.503,
+    "SNAPC2": -1.523,
+    "SNAPC3": -2.385,
+    "SNAPC4": -1.365,
+    "SNAPC5": -2.226
+   },
+   {
+    "ModelID": "ACH-002780",
+    "name": "NCCES1C1",
+    "lineage": "Bone",
+    "disease": "Ewing Sarcoma",
+    "score": -1.075,
+    "SNAPC1": -1.6,
+    "SNAPC2": -0.5838,
+    "SNAPC3": -1.157,
+    "SNAPC4": -0.9857,
+    "SNAPC5": -1.046
+   },
+   {
+    "ModelID": "ACH-001001",
+    "name": "143B",
+    "lineage": "Bone",
+    "disease": "Osteosarcoma",
+    "score": -1.151,
+    "SNAPC1": -1.506,
+    "SNAPC2": -1.165,
+    "SNAPC3": -1.239,
+    "SNAPC4": -0.7072,
+    "SNAPC5": -1.135
+   },
+   {
+    "ModelID": "ACH-001389",
+    "name": "SUM1315MO2",
+    "lineage": "Breast",
+    "disease": "Invasive Breast Carcinoma",
+    "score": -1.347,
+    "SNAPC1": -1.768,
+    "SNAPC2": -1.425,
+    "SNAPC3": -1.08,
+    "SNAPC4": -0.8773,
+    "SNAPC5": -1.586
+   },
+   {
+    "ModelID": "ACH-000672",
+    "name": "IALM",
+    "lineage": "Lung",
+    "disease": "Non-Small Cell Lung Cancer",
+    "score": -1.347,
+    "SNAPC1": -1.869,
+    "SNAPC2": -1.421,
+    "SNAPC3": -1.397,
+    "SNAPC4": -0.4828,
+    "SNAPC5": -1.564
+   },
+   {
+    "ModelID": "ACH-002806",
+    "name": "TB096",
+    "lineage": "CNS/Brain",
+    "disease": "Adult-Type Diffuse Glioma",
+    "score": -2.251,
+    "SNAPC1": -2.318,
+    "SNAPC2": -2.597,
+    "SNAPC3": -2.564,
+    "SNAPC4": -1.132,
+    "SNAPC5": -2.645
+   },
+   {
+    "ModelID": "ACH-000144",
+    "name": "RERFGC1B",
+    "lineage": "Esophagus/Stomach",
+    "disease": "Esophagogastric Adenocarcinoma",
+    "score": -0.3953,
+    "SNAPC1": -0.756,
+    "SNAPC2": -0.03265,
+    "SNAPC3": -0.0584,
+    "SNAPC4": -0.4899,
+    "SNAPC5": -0.6398
+   }
+  ],
+  "dist_in": {
+   "n": 44,
+   "mean": -1.559,
+   "median": -1.564,
+   "sd": 0.226,
+   "q10": -1.839,
+   "q90": -1.271,
+   "min": -2.025,
+   "max": -1.075
+  },
+  "dist_out": {
+   "n": 963,
+   "mean": -1.355,
+   "median": -1.347,
+   "sd": 0.2332,
+   "q10": -1.644,
+   "q90": -1.077,
+   "min": -2.251,
+   "max": -0.3953
+  },
+  "by_bone_disease": {
+   "Chondrosarcoma": {
+    "n": 1,
+    "mean": -1.774,
+    "median": -1.774,
+    "sd": null,
+    "q10": -1.774,
+    "q90": -1.774,
+    "min": -1.774,
+    "max": -1.774
+   },
+   "Chordoma": {
+    "n": 1,
+    "mean": -1.68,
+    "median": -1.68,
+    "sd": null,
+    "q10": -1.68,
+    "q90": -1.68,
+    "min": -1.68,
+    "max": -1.68
+   },
+   "Ewing Sarcoma": {
+    "n": 23,
+    "mean": -1.478,
+    "median": -1.486,
+    "sd": 0.2005,
+    "q10": -1.649,
+    "q90": -1.258,
+    "min": -2.025,
+    "max": -1.075
+   },
+   "Giant Cell Tumor of Bone": {
+    "n": 1,
+    "mean": -1.373,
+    "median": -1.373,
+    "sd": null,
+    "q10": -1.373,
+    "q90": -1.373,
+    "min": -1.373,
+    "max": -1.373
+   },
+   "Osteosarcoma": {
+    "n": 18,
+    "mean": -1.653,
+    "median": -1.687,
+    "sd": 0.2312,
+    "q10": -1.92,
+    "q90": -1.363,
+    "min": -2.017,
+    "max": -1.151
+   }
+  },
+  "raw_mean_difference": -0.2035,
+  "member_mean_effect_A": {
+   "SNAPC1": -1.809,
+   "SNAPC2": -1.458,
+   "SNAPC3": -1.211,
+   "SNAPC4": -0.95,
+   "SNAPC5": -1.392
+  },
+  "member_frac_below_m05_A": {
+   "SNAPC1": 0.998,
+   "SNAPC2": 0.996,
+   "SNAPC3": 0.9633,
+   "SNAPC4": 0.9603,
+   "SNAPC5": 0.9891
+  }
+ },
+ "step4": {
+  "model": "score ~ 1 + context + covariates (OLS); HC3 SE; Satterthwaite df; two-sided",
+  "covariates_registered": [
+   "library",
+   "ScreenType3DO",
+   "ModelType"
+  ],
+  "covariates_dropped_by_rule": [],
+  "design_columns": [
+   "intercept",
+   "context",
+   "library:LibraryAvana",
+   "library:LibraryBrunello",
+   "library:LibraryHumagneCD",
+   "library:LibraryKY",
+   "library:LibraryTKOv3",
+   "ScreenType3DO",
+   "ModelType:Organoid"
+  ],
+  "n_design_columns": 9,
+  "design_dropped": [],
+  "n": 1007,
+  "n_context": 44,
+  "refit": {
+   "beta": -0.210395,
+   "se_hc3": 0.0369604,
+   "t": -5.69245,
+   "df": 48.791,
+   "p": 7.02927e-07,
+   "ci95": [
+    -0.284678,
+    -0.136112
+   ]
+  },
+  "committed": {
+   "beta": -0.210395,
+   "se": 0.0369604,
+   "t": -5.69245,
+   "df": 48.791,
+   "p": 7.02927e-07,
+   "p_perm": 1.41042e-06,
+   "q_adj_analytic": 5.394e-05,
+   "q_final": 9.44871e-05,
+   "discovery": "True",
+   "ci95": [
+    -0.284678,
+    -0.136112
+   ],
+   "row_index": 1036
+  },
+  "reproduces": {
+   "beta": true,
+   "t": true,
+   "df": true,
+   "p_perm": true,
+   "q": true
+  },
+  "permutation": {
+   "n_perm": 10000,
+   "seed": 5036,
+   "scheme": "Freedman-Lane; whole PatientID blocks exchanged; unrestricted across lineages (lineage context)",
+   "p_perm_refit": 1.41042e-06,
+   "n_null_abs_t_ge_obs": 0,
+   "p_empirical": 9.999e-05,
+   "max_abs_null_t": 4.655,
+   "gpd_used": true,
+   "runtime_s": 0.37
+  },
+  "fdr": {
+   "method": "Benjamini-Bogomolov, families = 23 contexts, q = 0.05",
+   "M": 23,
+   "R": 21,
+   "family_simes_p": 5.24593e-07,
+   "family_q": 8.61832e-07,
+   "family_n_tests": 367,
+   "family_n_rejected": 69,
+   "within_family_level": 0.0456522,
+   "q_recomputed": 9.44869e-05,
+   "q_analytic_recomputed": 5.39401e-05,
+   "n_discoveries_total": 1145,
+   "m_evaluable": 8441,
+   "rank_in_bone_family_by_p": 6
+  }
+ },
+ "step5": {
+  "matched_rule": "10 sets drawn from other frozen complexes' members, matched on size (5), mean clipped A effect (+/-0.1) and mean pairwise zavg_BEF on A (+/-1.0); seed default_rng([4600, unit index])",
+  "unit_index": 302,
+  "target": {
+   "unit": "Z0303",
+   "size": 5,
+   "target_ess": -1.363987386226654,
+   "target_coh": 18.330812072753908,
+   "status": "ok"
+  },
+  "matched_sets": [
+   {
+    "set": "Z0303#r0",
+    "genes": [
+     "ATR",
+     "HUS1",
+     "RAD17",
+     "RAD9A",
+     "WEE1"
+    ],
+    "t_refit": -4.1854,
+    "t_committed": -4.1854,
+    "p_committed": 0.0001183
+   },
+   {
+    "set": "Z0303#r1",
+    "genes": [
+     "PSMA2",
+     "PSMG1",
+     "PSMG2",
+     "PSMG3",
+     "PSMG4"
+    ],
+    "t_refit": -2.7867,
+    "t_committed": -2.7867,
+    "p_committed": 0.007565
+   },
+   {
+    "set": "Z0303#r2",
+    "genes": [
+     "MED1",
+     "MED11",
+     "MED17",
+     "MED30",
+     "MED9"
+    ],
+    "t_refit": 0.94968,
+    "t_committed": 0.94968,
+    "p_committed": 0.347
+   },
+   {
+    "set": "Z0303#r3",
+    "genes": [
+     "ATP6V0C",
+     "ATP6V1D",
+     "ATP6V1E1",
+     "ATP6V1F",
+     "VMA12"
+    ],
+    "t_refit": -0.60495,
+    "t_committed": -0.60495,
+    "p_committed": 0.548
+   },
+   {
+    "set": "Z0303#r4",
+    "genes": [
+     "EIF3A",
+     "EIF3E",
+     "EIF3F",
+     "EIF3G",
+     "EIF3M"
+    ],
+    "t_refit": -0.44737,
+    "t_committed": -0.44737,
+    "p_committed": 0.6566
+   },
+   {
+    "set": "Z0303#r5",
+    "genes": [
+     "HAUS3",
+     "HAUS4",
+     "HAUS5",
+     "HAUS6",
+     "NEDD1"
+    ],
+    "t_refit": -4.4944,
+    "t_committed": -4.4944,
+    "p_committed": 4.298e-05
+   },
+   {
+    "set": "Z0303#r6",
+    "genes": [
+     "ATP6V1A",
+     "ATP6V1B2",
+     "ATP6V1C1",
+     "ATP6V1E1",
+     "ATP6V1G1"
+    ],
+    "t_refit": -0.4541,
+    "t_committed": -0.4541,
+    "p_committed": 0.6518
+   },
+   {
+    "set": "Z0303#r7",
+    "genes": [
+     "EIF3A",
+     "EIF3D",
+     "EIF3E",
+     "EIF3H",
+     "EIF3M"
+    ],
+    "t_refit": -1.67,
+    "t_committed": -1.67,
+    "p_committed": 0.1013
+   },
+   {
+    "set": "Z0303#r8",
+    "genes": [
+     "PSMB3",
+     "PSMG1",
+     "PSMG2",
+     "PSMG3",
+     "PSMG4"
+    ],
+    "t_refit": -2.6445,
+    "t_committed": -2.6445,
+    "p_committed": 0.01097
+   },
+   {
+    "set": "Z0303#r9",
+    "genes": [
+     "HAUS1",
+     "HAUS3",
+     "HAUS4",
+     "HAUS5",
+     "NEDD1"
+    ],
+    "t_refit": -3.6414,
+    "t_committed": -3.6414,
+    "p_committed": 0.000655
+   }
+  ],
+  "matched_reproduces": true,
+  "t_observed": -5.6924,
+  "n_matched_with_abs_t_ge_obs": 0,
+  "rank_of_observed": 1,
+  "matched_bone_all_units_frac_p_lt_005": 0.3403,
+  "real_bone_frac_p_lt_005": 0.3406,
+  "random_bone_frac_p_lt_005": 0.3403,
+  "never_expressed": {
+   "n_sets": 100,
+   "frac_p_lt_005": 0.19,
+   "t_values": [
+    -3.258,
+    0.4787,
+    -1.595,
+    0.02515,
+    -1.11,
+    -1.826,
+    -0.6871,
+    1.227,
+    -2.806,
+    -0.2385,
+    0.8582,
+    -1.505,
+    -1.048,
+    0.5471,
+    -0.2238,
+    -1.05,
+    -0.2053,
+    -0.9837,
+    0.3612,
+    -1.14,
+    -0.5252,
+    1.251,
+    -0.7537,
+    0.04828,
+    -3.129,
+    -2.364,
+    -0.3484,
+    -0.5518,
+    0.7136,
+    0.2312,
+    -3.163,
+    0.2781,
+    -0.2103,
+    -2.139,
+    -0.6207,
+    -1.845,
+    -0.1162,
+    -0.8323,
+    -0.8155,
+    -0.7842,
+    -2.209,
+    1.988,
+    -2.266,
+    -1.852,
+    1.43,
+    -0.4545,
+    -0.333,
+    -1.14,
+    -2.626,
+    -2.35,
+    0.2706,
+    0.8733,
+    -1.548,
+    -1.315,
+    -1.641,
+    -0.1166,
+    -0.2913,
+    0.089,
+    -1.725,
+    0.9307,
+    -0.7436,
+    -0.6482,
+    0.6648,
+    -0.5134,
+    -0.1701,
+    -1.047,
+    0.3025,
+    -2.216,
+    -0.2147,
+    -2.165,
+    0.4379,
+    -0.8251,
+    -0.8164,
+    0.145,
+    -2.737,
+    -0.9469,
+    -0.1932,
+    0.6802,
+    -0.3976,
+    -0.3909,
+    -0.8282,
+    -1.121,
+    0.7613,
+    -0.952,
+    -0.9657,
+    2.542,
+    -0.7207,
+    -2.785,
+    -3.45,
+    -0.07566,
+    -1.138,
+    -0.9976,
+    -2.312,
+    -1.48,
+    -2.099,
+    -0.8028,
+    -0.8748,
+    -2.169,
+    -0.5154,
+    -1.342
+   ],
+   "max_abs_t": 3.45,
+   "pooled_all_contexts": 0.1348
+  },
+  "pseudo_contexts": {
+   "n_pseudo": 5,
+   "n_tests": 1835,
+   "frac_p_lt_005": 0.04251,
+   "pooled_all_contexts": 0.04888
+  }
+ },
+ "step6": {
+  "lockbox": {
+   "source": "results/part2/lockbox_confirm/H3a_lineage_atlas/confirmation.tsv",
+   "beta_L": -0.251234,
+   "se_L": 0.0562944,
+   "df_L": 16.288,
+   "n_L": 338,
+   "n_context_L": 15,
+   "p_L_hc3": 0.000188413,
+   "p_L_perm": 0.00019998,
+   "p_L": 0.00019998,
+   "ci95_L": [
+    -0.370401,
+    -0.132067
+   ],
+   "same_sign": "True",
+   "status": "confirmed",
+   "primary_call_R7": "confirmed",
+   "corrected_call_R7": "confirmed",
+   "defect_sensitive": "False"
+  },
+  "robustness_committed": {
+   "loso_unit": "OncotreePrimaryDisease",
+   "loso_folds": 82,
+   "loso_pass": 82,
+   "loso_skipped": 0,
+   "top2_beta": -0.188043,
+   "top2_p": 2.18004e-06,
+   "breadth": 0.8,
+   "breadth_n": 5
+  },
+  "robustness_refit_A": {
+   "loso": {
+    "loso_folds": 82,
+    "loso_pass": 82,
+    "loso_skipped": 0,
+    "loso_robust": true
+   },
+   "top2": {
+    "top2_beta": -0.188043,
+    "top2_p": 2.18004e-06,
+    "top2_robust": true
+   },
+   "breadth": {
+    "breadth": 0.8,
+    "breadth_n": 5
+   },
+   "per_member": {
+    "SNAPC1": {
+     "beta": -0.2807,
+     "t": -4.941,
+     "p_one_sided": 4.78e-06
+    },
+    "SNAPC2": {
+     "beta": -0.1531,
+     "t": -2.179,
+     "p_one_sided": 0.0171
+    },
+    "SNAPC3": {
+     "beta": -0.2831,
+     "t": -5.443,
+     "p_one_sided": 8.43e-07
+    },
+    "SNAPC4": {
+     "beta": -0.03829,
+     "t": -0.8892,
+     "p_one_sided": 0.189
+    },
+    "SNAPC5": {
+     "beta": -0.2968,
+     "t": -5.682,
+     "p_one_sided": 3.64e-07
+    }
+   }
+  },
+  "strongest": {
+   "strongest": "True",
+   "rank": 53,
+   "tier": "T1",
+   "rank_alt_abs_t": 100,
+   "beats_all_matched_sets": "True",
+   "n_strongest_total": 254,
+   "ranks_alternatives": {
+    "rank_registered": 53,
+    "direction": "H3a",
+    "context": "lineage:Bone",
+    "unit": "Z0303",
+    "tier": "T1",
+    "t_A": -5.69245,
+    "rank_alt1_abs_t": 100,
+    "rank_alt2_abs_t_x_tierweight": 60
+   }
+  },
+  "scale_artefact": {
+   "essentiality": -1.364,
+   "fitted_beta_nl": -0.02175,
+   "residual_beta_nl": -0.1886,
+   "residual_z_nl": -3.701,
+   "concordant_nl": "True",
+   "scale_artefact_possible": "False",
+   "lead_corrected": "True"
+  },
+  "demeter2": {
+   "beta_D2": -0.095343,
+   "se_D2": 0.034113,
+   "t_D2": -2.7949,
+   "df_D2": 10.79,
+   "p_dir_D2": 0.0088625,
+   "n_D2": 328,
+   "n_context_D2": 11,
+   "same_sign": "True"
+  },
+  "bench": {
+   "gstar": "SNAPC5 (10302)",
+   "delta_tL_complex_minus_gstar": 1.29163,
+   "tercile": "high",
+   "breadth": 0.8
+  }
+ },
+ "runtime_s": 14.2
+}

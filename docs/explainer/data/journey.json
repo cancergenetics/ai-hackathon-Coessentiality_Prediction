@@ -1,0 +1,366 @@
+{
+ "phases": [
+  {
+   "name": "Setup",
+   "start": "2026-10-28T14:00",
+   "end": "2026-10-28T15:30"
+  },
+  {
+   "name": "Design review",
+   "start": "2026-10-28T15:30",
+   "end": "2026-10-28T18:05"
+  },
+  {
+   "name": "Held-out test + construction",
+   "start": "2026-10-28T18:05",
+   "end": "2026-10-28T22:40"
+  },
+  {
+   "name": "Discovery",
+   "start": "2026-10-28T22:40",
+   "end": "2026-10-29T01:45"
+  },
+  {
+   "name": "Lockbox preparation",
+   "start": "2026-10-29T01:45",
+   "end": "2026-10-29T06:44"
+  },
+  {
+   "name": "Lockbox read",
+   "start": "2026-10-29T06:44",
+   "end": "2026-10-29T12:00"
+  },
+  {
+   "name": "Findings",
+   "start": "2026-10-29T12:00",
+   "end": "2026-10-29T13:33"
+  },
+  {
+   "name": "Peer review",
+   "start": "2026-10-29T13:33",
+   "end": "2026-10-29T17:00"
+  },
+  {
+   "name": "Release",
+   "start": "2026-10-29T17:00",
+   "end": "2026-10-29T19:00"
+  }
+ ],
+ "events": [
+  {
+   "id": "e01",
+   "tp": null,
+   "datetime": "2026-10-28T14:28:36Z",
+   "phase": "Setup",
+   "title": "User brief: PI over agent teams",
+   "kind": "human",
+   "commit": null
+  },
+  {
+   "id": "e02",
+   "tp": null,
+   "datetime": "2026-10-28T15:05:14Z",
+   "phase": "Setup",
+   "title": "User: data yes, no CORUM/Complex Portal",
+   "kind": "human",
+   "commit": null
+  },
+  {
+   "id": "e03",
+   "tp": null,
+   "datetime": "2026-10-28T15:07:28Z",
+   "phase": "Setup",
+   "title": "User adds RNAi, paralogs, proteomics, fusions",
+   "kind": "human",
+   "commit": null
+  },
+  {
+   "id": "e04",
+   "tp": 1,
+   "datetime": "2026-10-28T15:36:02Z",
+   "phase": "Held-out test",
+   "title": "Harness dry run reproduces Part 1",
+   "kind": "result",
+   "commit": "7a842f2"
+  },
+  {
+   "id": "e05",
+   "tp": null,
+   "datetime": "2026-10-28T16:44:15Z",
+   "phase": "Design review",
+   "title": "User: continue (stop waiting on reviewer)",
+   "kind": "human",
+   "commit": null
+  },
+  {
+   "id": "e06",
+   "tp": 2,
+   "datetime": "2026-10-28T16:46:29Z",
+   "phase": "Design review",
+   "title": "Round 1: lockbox, registry, bridge proposed",
+   "kind": "review",
+   "commit": "061bd1d"
+  },
+  {
+   "id": "e07",
+   "tp": 2,
+   "datetime": "2026-10-28T17:30:35Z",
+   "phase": "Design review",
+   "title": "Round 2: bridge endpoint, driver contexts",
+   "kind": "review",
+   "commit": "5d9ead1"
+  },
+  {
+   "id": "e08",
+   "tp": 2,
+   "datetime": "2026-10-28T17:37:43Z",
+   "phase": "Design review",
+   "title": "Round 3: DESIGN v3.1 final",
+   "kind": "review",
+   "commit": "bdb8816"
+  },
+  {
+   "id": "e09",
+   "tp": 3,
+   "datetime": "2026-10-28T17:40:33Z",
+   "phase": "Design review",
+   "title": "User supplies gene coordinates for locus flag",
+   "kind": "human",
+   "commit": "05005a9"
+  },
+  {
+   "id": "e10",
+   "tp": 1,
+   "datetime": "2026-10-28T18:14:59Z",
+   "phase": "Held-out test",
+   "title": "Test protocol frozen",
+   "kind": "decision",
+   "commit": "039a843"
+  },
+  {
+   "id": "e11",
+   "tp": 1,
+   "datetime": "2026-10-28T18:52:20Z",
+   "phase": "Held-out test",
+   "title": "Single look: AP 0.333 vs GLS 0.212",
+   "kind": "result",
+   "commit": "0861e59"
+  },
+  {
+   "id": "e12",
+   "tp": 2,
+   "datetime": "2026-10-28T19:00:04Z",
+   "phase": "Construction",
+   "title": "Lockbox drawn: L 338, A 1,007",
+   "kind": "decision",
+   "commit": "4f6ecab"
+  },
+  {
+   "id": "e13",
+   "tp": 2,
+   "datetime": "2026-10-28T19:27:10Z",
+   "phase": "Construction",
+   "title": "Registry drafted: 29 entries",
+   "kind": "decision",
+   "commit": "ee45596"
+  },
+  {
+   "id": "e14",
+   "tp": 1,
+   "datetime": "2026-10-28T19:51:31Z",
+   "phase": "Held-out test",
+   "title": "Independent verifier reproduces test look",
+   "kind": "review",
+   "commit": "8d009f2"
+  },
+  {
+   "id": "e15",
+   "tp": 3,
+   "datetime": "2026-10-28T21:41:06Z",
+   "phase": "Construction",
+   "title": "Maps frozen: z0=6, k=10, 367 complexes",
+   "kind": "decision",
+   "commit": "27fa9b2"
+  },
+  {
+   "id": "e16",
+   "tp": 4,
+   "datetime": "2026-10-28T21:44:20Z",
+   "phase": "Construction",
+   "title": "BioPlex bridge null",
+   "kind": "failure",
+   "commit": "9498d05"
+  },
+  {
+   "id": "e17",
+   "tp": 5,
+   "datetime": "2026-10-28T21:50:32Z",
+   "phase": "Construction",
+   "title": "Permutation-tail FDR bug fixed",
+   "kind": "fix",
+   "commit": "02f62ee"
+  },
+  {
+   "id": "e18",
+   "tp": 5,
+   "datetime": "2026-10-28T23:57:28Z",
+   "phase": "Discovery",
+   "title": "Controls recovered; kill rule passes",
+   "kind": "result",
+   "commit": "4b5f800"
+  },
+  {
+   "id": "e19",
+   "tp": 5,
+   "datetime": "2026-10-29T00:28:51Z",
+   "phase": "Discovery",
+   "title": "Lineage atlas: 1,145 discoveries",
+   "kind": "result",
+   "commit": "b0dbd83"
+  },
+  {
+   "id": "e20",
+   "tp": 1,
+   "datetime": "2026-10-29T00:30:05Z",
+   "phase": "Discovery",
+   "title": "Test gain grows with pairs per cluster",
+   "kind": "result",
+   "commit": "ddd6e83"
+  },
+  {
+   "id": "e21",
+   "tp": 5,
+   "datetime": "2026-10-29T01:03:53Z",
+   "phase": "Discovery",
+   "title": "Matched sets associate equally (28.1% vs 28.1%)",
+   "kind": "failure",
+   "commit": "fd582a6"
+  },
+  {
+   "id": "e22",
+   "tp": 6,
+   "datetime": "2026-10-29T01:45:43Z",
+   "phase": "Lockbox preparation",
+   "title": "Dry check stops: lockbox code missing",
+   "kind": "fix",
+   "commit": "21fe1be"
+  },
+  {
+   "id": "e23",
+   "tp": 6,
+   "datetime": "2026-10-29T06:16:55Z",
+   "phase": "Lockbox preparation",
+   "title": "2.7 h dress rehearsal passes",
+   "kind": "decision",
+   "commit": "fb54005"
+  },
+  {
+   "id": "e24",
+   "tp": 6,
+   "datetime": "2026-10-29T06:47:06Z",
+   "phase": "Lockbox read",
+   "title": "Intent committed; single lockbox read begins",
+   "kind": "decision",
+   "commit": "ed065f4"
+  },
+  {
+   "id": "e25",
+   "tp": 4,
+   "datetime": "2026-10-29T09:24:32Z",
+   "phase": "Lockbox read",
+   "title": "BRIDGE-L negative: GLS map confirms more",
+   "kind": "failure",
+   "commit": "71f2206"
+  },
+  {
+   "id": "e26",
+   "tp": 6,
+   "datetime": "2026-10-29T10:11:29Z",
+   "phase": "Lockbox read",
+   "title": "Covariate defect: 53 failed fits",
+   "kind": "failure",
+   "commit": "4af8e60"
+  },
+  {
+   "id": "e27",
+   "tp": 6,
+   "datetime": "2026-10-29T10:41:49Z",
+   "phase": "Lockbox read",
+   "title": "R7: corrected relook of 560 fits",
+   "kind": "fix",
+   "commit": "b0ae055"
+  },
+  {
+   "id": "e28",
+   "tp": 6,
+   "datetime": "2026-10-29T11:37:54Z",
+   "phase": "Lockbox read",
+   "title": "Results review: confirmation matches power",
+   "kind": "review",
+   "commit": "63e0e62"
+  },
+  {
+   "id": "e29",
+   "tp": 7,
+   "datetime": "2026-10-29T12:15:04Z",
+   "phase": "Findings and manuscript",
+   "title": "Robustness gap: intent before computing",
+   "kind": "fix",
+   "commit": "fd03b03"
+  },
+  {
+   "id": "e30",
+   "tp": 7,
+   "datetime": "2026-10-29T12:38:48Z",
+   "phase": "Findings and manuscript",
+   "title": "Registered rule: 254 strongest findings",
+   "kind": "result",
+   "commit": "01f4c20"
+  },
+  {
+   "id": "e31",
+   "tp": 8,
+   "datetime": "2026-10-29T13:37:07Z",
+   "phase": "Peer review",
+   "title": "Peer review round 1: major revision",
+   "kind": "review",
+   "commit": "54efb7b"
+  },
+  {
+   "id": "e32",
+   "tp": 8,
+   "datetime": "2026-10-29T14:50:26Z",
+   "phase": "Peer review",
+   "title": "Selection-aware reference; uniform scale rule",
+   "kind": "result",
+   "commit": "740f439"
+  },
+  {
+   "id": "e33",
+   "tp": 8,
+   "datetime": "2026-10-29T15:36:55Z",
+   "phase": "Peer review",
+   "title": "Peer review round 2: minor revision",
+   "kind": "review",
+   "commit": "2382212"
+  },
+  {
+   "id": "e34",
+   "tp": null,
+   "datetime": "2026-10-29T17:23:34Z",
+   "phase": "Release",
+   "title": "User requests public GitHub release",
+   "kind": "human",
+   "commit": "7c34ddb"
+  },
+  {
+   "id": "e35",
+   "tp": null,
+   "datetime": "2026-10-29T18:14:15Z",
+   "phase": "Release",
+   "title": "User spots stale background waiter loop",
+   "kind": "human",
+   "commit": null
+  }
+ ]
+}

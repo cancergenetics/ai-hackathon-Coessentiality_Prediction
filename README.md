@@ -16,6 +16,8 @@ The rest of this repository is entirely AI generated. It includes the code, the 
 
 ## What is here
 
+**New readers:** start with [`docs/explainer/`](docs/explainer/README.md). It explains what the method does (with a worked example on real data: the SNAPC complex in bone cancers), how the agents arrived at it, and what was learned. `docs/explainer/explainer.html` is the same content as one interactive page; download it and open it in a browser.
+
 | file / directory | contents |
 |---|---|
 | `PROMPT.md` | the project brief, verbatim |
@@ -26,7 +28,7 @@ The rest of this repository is entirely AI generated. It includes the code, the 
 | `DATA.md` | data sources, versions, SHA-256 checksums and licences |
 | `LESSONS.md` | process lessons for running agentic research projects |
 | `manuscript/` | AI-written manuscript (`main.md`, `supplementary.md`), figures, tables, cover letter, data/code availability, peer-review reports and responses (`review/`), clean submission copy (`submission/`) |
-| `docs/` | frozen test protocol (`TEST_PROTOCOL.md`), Part 1 leakage audit, analysis registry and amendments (`registry/`), design reviews, retrospectives |
+| `docs/` | plain-language explainer (`explainer/`), frozen test protocol (`TEST_PROTOCOL.md`), Part 1 leakage audit, analysis registry and amendments (`registry/`), design reviews, retrospectives |
 | `src/` | `testeval/` (test-set evaluation harness, built on the locked Part 1 code) and `part2/` (complex construction, contexts, association engine, statistics, lockbox, revision analyses) |
 | `scripts/` | numbered pipeline scripts (`00_`–`62_`), figure and table scripts (`fig_*.py`, `tab_*.py`), manuscript checks, independent verification scripts (`verify/`) |
 | `tests/` | unit, synthetic end-to-end and firewall tests (test-label and lockbox access, forbidden resources) |
